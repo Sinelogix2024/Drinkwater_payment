@@ -66,3 +66,6 @@ Route::match(['get'],'/wateradvocate/{detail_access_token}', 'App\Http\Controlle
 Route::match(['post'],'/wateradvocate/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
 
 Route::match(['get'],'/orderDetail/{order_id}', 'App\Http\Controllers\Advocate\AdvocateController@orderDetail');
+
+// venom payment gateway response
+Route::match(['get'],'/venmo_server/{payerID}/{deviceData}/{amount}', 'App\Http\Controllers\BrainTreeController@venomResponse');

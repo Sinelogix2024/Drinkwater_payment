@@ -89,12 +89,7 @@
 
       <form id="basic-form" method="POST">
 
-        <button type="button" id="venmo-button" style="background:white;border-bottom: none;">
-          <img style="border-radius: 20px;" 
-            src="https://s2.r29static.com/bin/entry/1f8/0,0,2000,1050/x,80/1986150/image.jpg" 
-            height="50px" 
-            width="100px">
-        </button>
+     
         
         @csrf
         <input type="hidden" class="current_tab" value="step1_form">
@@ -651,6 +646,15 @@
 
                 <div class="bt-drop-in-wrapper">
                   <div id="bt-dropin"></div>
+
+                  <div id="bt-dropin_venmo">
+                  <button type="button" id="venmo-button" style="background:white;border-bottom: none;">
+                    <img style="border-radius: 20px;" 
+                      src="https://s2.r29static.com/bin/entry/1f8/0,0,2000,1050/x,80/1986150/image.jpg" 
+                      height="50px" 
+                      width="100px">
+                  </button>
+                </div>
                 </div>
 
                 <!-- <div class="flex_row">
