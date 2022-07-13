@@ -14,10 +14,41 @@
   <input type="hidden" value="{{url('/')}}" class="base_url">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+<style>
+  .loader{
+    background: #f1eeee91;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .loader img{
+    width: 100px;
+    animation: mover 1s infinite  alternate;
+  }
+  @-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
 
+  </style>
 </head>
 
-<img src="{{asset('images\loader.gif')}}" class="loader" style="width:100%;height:100%; display:none">
+
+
+<div class="loader" style="width:100%;height:100%; display:none">
+
+<img src="{{asset('images\drop.png')}}" />
+</div>
+
+
 
 <body class="body">
 
@@ -26,7 +57,7 @@
       <div class="welcome_wrapper text-center">
         <div class="tagline_wrap" data-aos="zoom-in-up" data-aos-duration="1500">
           <div class="tagline">
-            <span>Drink Water</span>
+            <span>Drink Watr</span>
             <span> Stay Strong.</span>
           </div>
           <figure class="logo"><img src="{{asset('images/logowater.png')}}" alt="Logo" /></figure>
@@ -57,6 +88,14 @@
     <div class="custom_container">
 
       <form id="basic-form" method="POST">
+
+        <button type="button" id="venmo-button" style="background:white;border-bottom: none;">
+          <img style="border-radius: 20px;" 
+            src="https://s2.r29static.com/bin/entry/1f8/0,0,2000,1050/x,80/1986150/image.jpg" 
+            height="50px" 
+            width="100px">
+        </button>
+        
         @csrf
         <input type="hidden" class="current_tab" value="step1_form">
 
@@ -68,7 +107,7 @@
             </div>
             <div class="tagline_wrap">
               <div class="tagline">
-                <span>Drink Water</span>
+                <span>Drink Watr</span>
                 <span> Stay Strong.</span>
               </div>
               <p>Your Path to daily hydration + wellness</p>
@@ -119,7 +158,7 @@
                 <div class="form_field">
                   <div class="text-field">
                     <select class="selectpicker" name="package" id="package1" required>
-                      <option value="">Select Package</option>
+                      <option value="">{{config('constants.package.default_drop_down_text')}}</option>
                       <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
                       <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
                       <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
@@ -132,7 +171,7 @@
                 <div class="form_field">
                   <div class="text-field">
                     <select class="selectpicker" name="delivery_frequency" id="delivery_frequency1" required>
-                      <option value="">Delivery frequency</option>
+                      <option value="">{{config('constants.package.delivery_freq_text')}}</option>
                       <option value="1">EVERY SUNDAY</option>
                       <option value="2">EVERY MONDAY</option>
                     </select>
@@ -151,7 +190,7 @@
             </div>
 
             <div class="dots_wrapper">
-              <button type="button" class="outline_btn m_r_20 main_content_back">Back</button>
+              {{-- <button type="button" class="outline_btn m_r_20 main_content_back">Back</button> --}}
               <button type="submit" class="primary_btn btn_effect">Next</button>
             </div>
           </div>
@@ -235,7 +274,7 @@
                     <div class="form_field">
                       <div class="text-field">
                         <select class="selectpicker custom_select" name="package" id="package2" required>
-                          <option value="">Select Package</option>
+                          <option value="">{{config('constants.package.default_drop_down_text')}}</option>
                           <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
                           <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
                           <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
@@ -247,7 +286,7 @@
                     <div class="form_field">
                       <div class="text-field custom_select">
                         <select class="selectpicker" name="delivery_frequency" id="delivery_frequency2" required>
-                          <option value="">Delivery frequency</option>
+                          <option value="">{{config('constants.package.delivery_freq_text')}}</option>
                           <option value="1">EVERY SUNDAY</option>
                           <option value="2">EVERY MONDAY</option>
                         </select>
@@ -325,7 +364,7 @@
                     <div class="form_field">
                       <div class="text-field">
                         <select class="selectpicker custom_select" name="package" id="package4" required>
-                          <option value="">Select Package</option>
+                          <option value="">{{config('constants.package.default_drop_down_text')}}</option>
                           <option value="1" selected>1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
                           <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
                           <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
@@ -337,7 +376,7 @@
                     <div class="form_field">
                       <div class="text-field custom_select">
                         <select class="selectpicker" name="delivery_frequency" id="delivery_frequency4" required>
-                          <option value="">Delivery frequency</option>
+                          <option value="">{{config('constants.package.delivery_freq_text')}}</option>
                           <option value="1" selected>EVERY SUNDAY</option>
                           <option value="2">EVERY MONDAY</option>
                         </select>
@@ -416,7 +455,7 @@
                         </select>
 
                         <select class="selectpicker custom_select" title="DELIVERY FREQUENCY" name="delivery_frequency" id="delivery_frequency5" required>
-                          <option value="">Delivery frequency</option>
+                          <option value="">{{config('constants.package.delivery_freq_text')}}</option>
                           <option value="1" selected>EVERY SUNDAY</option>
                           <option value="2">EVERY MONDAY</option>
                         </select>
@@ -429,6 +468,10 @@
 
                     <div class="form_field">
                       <div class="text-field">
+                        <select class="selectpicker custom_select final_page_edit_address_label">
+                          <option value="" selected>DELIVERY ADDRESS</option>
+                        </select>
+
                         <input type="text" class="shipping_address_final_page" placeholder="SHIPPING ADDRESS" disabled>
                         <button type="button" class="edit btn_effect edit_address_final_page">EDIT</button>
                       </div>
@@ -462,13 +505,18 @@
                     </div>
 
                     <div class="form_field">
+                      <span class="text-note shipping_add_final_page"></span>
+                      <span class="text-note citi_state_zip_final_page"></span>
+                    </div>
+
+                    <div class="form_field">
                       <div class="text-field">
 
                         <select class="selectpicker custom_select final_page_payment_source_label">
                           <option value="" selected>PAYMENT SOURCE</option>
                         </select>
 
-                        <select class="selectpicker custom_select payment_method" name="payment_method" id="payment_method">
+                        <select class="selectpicker custom_select payment_method payment_method_finl_page_class" name="payment_method" id="payment_method">
                           <option>SELECT PAYMENT METHOD</option>
                           <option value="1">CREDIT CARD</option>
                           <option value="2">DEBIT CARD</option>
@@ -478,7 +526,8 @@
 
                         <button type="button" class="edit btn_effect edit_payment_method_final_page">Edit</button>
                       </div>
-                      <span class="text-note">CARD ENDING IN <b><span class="last_4_digit_card"></span></b></span>
+                      {{-- <span class="text-note">CARD ENDING IN <b><span class="last_4_digit_card"></span></b></span> --}}
+                      {{-- <span class="text-note payment_method_final_page"></span> --}}
                     </div>
 
                     <div class="form_field">
@@ -619,7 +668,6 @@
                       </div>
                     </div>
                   </div> -->
-                </div>
 
                 <div class="flex_row m_t_50">
 
@@ -627,7 +675,7 @@
                     <div class="form_field">
                       <div class="text-field">
                         <select class="selectpicker custom_select" name="package" id="package3" required>
-                          <option value="">Select Package</option>
+                          <option value="">{{config('constants.package.default_drop_down_text')}}</option>
                           <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
                           <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
                           <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
@@ -639,7 +687,7 @@
                     <div class="form_field">
                       <div class="text-field custom_select">
                         <select class="selectpicker" name="delivery_frequency" id="delivery_frequency3" required>
-                          <option value="">Delivery frequency</option>
+                          <option value="">{{config('constants.package.delivery_freq_text')}}</option>
                           <option value="1">EVERY SUNDAY</option>
                           <option value="2">EVERY MONDAY</option>
                         </select>
@@ -676,7 +724,7 @@
 
   <div class="final_form" style="display: none;">
 
-    <main class="app_wrapper waterbg">
+    {{-- <main class="app_wrapper waterbg">
       <div class="custom_container">
 
         <div class="head_section">
@@ -772,6 +820,48 @@
         </div>
 
       </div>
+    </main> --}}
+
+    <main class="app_wrapper waterbg">
+      <div class="custom_container">
+          <div class="head_section"> 
+            <div class="brand">
+              <figure class="logo"><img src="{{asset('images/logowater.png')}}" alt="Logo" /></figure>
+              <span class="brand_txt">+ {{$advocateData->adv_first_name}} {{$advocateData->adv_last_name}}</span>
+            </div>
+
+              <div class="tagline_wrap">
+                  <div class="tagline">
+                          <span>Drink Wter</span>
+                          <span> Stay Strong.</span>
+                  </div>
+                  <p>Your Path to daily hydration + wellness</p>
+              </div>
+          </div>
+
+
+          <div class="form_wrapper edit_form_wrapper">
+              
+            
+              <p class="support_note">
+                  A RECEIPT FOR YOUR PURCHASE HAS BEEN TEXTED AND EMAILED TO THE CREDENTIALS YOU PROVIDED. FOR ANY SUPPORT, PLEASE EMAIL CLARITY@DRINKWATR.COM
+              </p>
+
+              <figure class="droplet_logowrap text-center">
+                  <span>DELIVERY PERFORMED BY</span>
+                  <img src="{{asset('images/droplet.png')}}" />
+              </figure>
+
+          </div>
+
+
+
+      </div>
+      <footer class="text-center">
+          <div class="custom_container">
+              ALL RIGHT RESERVED 2022 &copy WATR, LLC. | PRIVACY + LEGAL
+          </div>
+      </footer>
     </main>
 
   </div>
@@ -794,7 +884,15 @@
 <script src="{{asset('js/show.js')}}"></script>
 <script src="{{asset('js/aos.js')}}"></script>
 <script src="{{asset('js/custom.js')}}"></script>
+{{-- <script src="https://js.braintreegateway.com/web/3.85.3/js/client.min.js"></script> --}}
+{{-- <script src="https://js.braintreegateway.com/web/3.85.3/js/venmo.min.js"></script> --}}
+{{-- <script src="https://js.braintreegateway.com/web/3.85.3/js/data-collector.min.js"></script> --}}
 
+<script src="https://js.braintreegateway.com/web/3.77.0/js/client.min.js"></script>
+<script src="https://js.braintreegateway.com/web/3.77.0/js/venmo.min.js"></script>
+<script src="https://js.braintreegateway.com/web/3.77.0/js/data-collector.min.js"></script>
+
+<script src="{{asset('js/venmo.js')}}"></script>
 
 
 <style>
