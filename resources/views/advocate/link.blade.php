@@ -38,6 +38,13 @@
     100% { transform: translateY(-10px); }
 }
 
+apple-pay-button {
+  --apple-pay-button-width: 140px;
+  --apple-pay-button-height: 30px;
+  --apple-pay-button-border-radius: 5px;
+  --apple-pay-button-padding: 5px 0px;
+}
+
   </style>
 </head>
 
@@ -655,6 +662,10 @@
                       width="100px">
                   </button>
                 </div>
+
+                <div id="bt-dropin_applepay">
+                  <apple-pay-button buttonstyle="black" type="buy" locale="el-GR" style="display: block;"></apple-pay-button>
+                </div>
                 </div>
 
                 <!-- <div class="flex_row">
@@ -891,12 +902,17 @@
 {{-- <script src="https://js.braintreegateway.com/web/3.85.3/js/client.min.js"></script> --}}
 {{-- <script src="https://js.braintreegateway.com/web/3.85.3/js/venmo.min.js"></script> --}}
 {{-- <script src="https://js.braintreegateway.com/web/3.85.3/js/data-collector.min.js"></script> --}}
-
+<script src="https://applepay.cdn-apple.com/jsapi/v1/apple-pay-sdk.js"></script>
 <script src="https://js.braintreegateway.com/web/3.77.0/js/client.min.js"></script>
 <script src="https://js.braintreegateway.com/web/3.77.0/js/venmo.min.js"></script>
 <script src="https://js.braintreegateway.com/web/3.77.0/js/data-collector.min.js"></script>
-
 <script src="{{asset('js/venmo.js')}}"></script>
+
+
+<script src="https://js.braintreegateway.com/web/3.85.3/js/client.min.js"></script>
+<script src="https://js.braintreegateway.com/web/3.85.3/js/apple-pay.min.js"></script>
+
+<script src="{{asset('js/applepay.js')}}"></script>
 
 
 <style>
