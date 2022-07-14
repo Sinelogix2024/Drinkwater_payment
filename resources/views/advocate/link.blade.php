@@ -107,11 +107,7 @@ apple-pay-button {
               <figure class="logo"><img src="{{asset('images/logowater.png')}}" alt="Logo" /></figure>
               <span class="brand_txt">+ {{$advocateData->adv_first_name}} {{$advocateData->adv_last_name}}</span>
             </div>
-            <div class="tagline_wrap">
-              <div class="tagline">
-                <span>Drink Watr</span>
-                <span> Stay Strong.</span>
-              </div>
+            <div class="tagline_wrap">             
               <p>Your Path to daily hydration + wellness</p>
             </div>
           </div>
