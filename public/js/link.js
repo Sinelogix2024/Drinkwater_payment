@@ -395,7 +395,7 @@ $(document).ready(function() {
     }
 
 
-    $(".same_billing_address").click(function() {
+    $(".same_billing_address").click(function() {        
         $("#shipping_address").val($("#billing_address").val());
         $("#shipping_address2").val($("#billing_address2").val());
         $("#s_city_state_zip").val($("#b_city_state_zip").val());
