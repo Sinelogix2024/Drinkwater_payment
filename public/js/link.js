@@ -133,11 +133,16 @@ $(document).ready(function() {
         if(selected == 3){ // hide card form and show venom
             $("#bt-dropin").hide();
             $("#bt-dropin_venmo").show();
+            $("#bt-dropin_applepay").hide();
+        }else if(selected == 4){ // hide card form and show apple
+            $("#bt-dropin").hide();
+            $("#bt-dropin_venmo").hide();
+            $("#bt-dropin_applepay").show();
         }else{
             $("#bt-dropin").show();
             $("#bt-dropin_venmo").hide();
+            $("#bt-dropin_applepay").hide();
         }
-        console.log('Test :: 1 ::' + selected);
         
         //return false;
         localStorage.setItem("payment_method", selected);
