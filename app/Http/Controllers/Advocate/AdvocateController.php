@@ -59,7 +59,20 @@ class AdvocateController extends Controller
                 'options' => [ 'submitForSettlement' => True ]
             ]);
 
+            // $result_venmo = $gateway->transaction()->sale([
+            //     'amount' => $amount,
+            //     'paymentMethodNonce' => $request->payment_method_nonce,
+            //     'options' => [
+            //         'submitForSettlement' => true,
+            //         'venmo' => [
+            //           'profileId' => '1953896702662410263'
+            //         ]
+            //     ],
+            //     'deviceData' => "deviceDataFromTheClient",
+            // ]);
+
             $orderId = Order::insertGetId([
+                'odr_id' => 'ordr_dw_' . time() . '_' . date('Y_m_d'),
                 'odr_first_name' => $request->first_name,
                 'odr_last_name' => $request->last_name,
                 'odr_email' => $request->email,
@@ -88,31 +101,37 @@ class AdvocateController extends Controller
             $accountSid = getenv("TWILIO_ACCOUNT_SID");
             $authToken = getenv("TWILIO_AUTH_TOKEN");
             $client = new Client($accountSid, $authToken);
+
+            $body = 'Hey ' .$orderDetail->odr_first_name .' '. $orderDetail->odr_last_name. '! Order Placed.'. 
+            'Thanks For Shopping! Click on link to view Receipt. 
+            ' . '<a href="'.url('orderDetail/'. $orderDetail->odr_id).'"> TRACK </a>';
+
             try
             {
                 $client->messages->create(
-                    '+91'. $request->mobile,
+                    // '+91 '. $request->mobile,
+                    '+91 89808 98451',
                     array(
-                        'from' => '+19784875912',
-                        'body' => 'Hey ' .$data->adv_first_name .' '. $data->adv_first_name. '! Order Placed. Thanks For Shopping!'
+                        'from' => getenv("TWILIO_NUMBER"),
+                        'body' => $body
                     )
                 );
             }catch (Exception $e){
-                echo "Error: " . $e->getMessage();
+                dd( "Error: " . $e->getMessage() );
             } 
 
             return redirect()->back();
         }
     }
 
-    public function orderDetail()
+    public function orderDetail(Request $request)
     {
-        // return 
-        $orderDetail = Order::find(1);
+return $request->all();
+        $orderDetail = Order::where('odr_id', $request->order_id)->first();
 
         $advocateData = Advocate::where('adv_detail_access_token', $orderDetail->odr_adv_detail_access_token)->first();
 
-        return view('emails\order_placed', [
+        return view('emails\order_placed_new', [
             'advocateData' => $advocateData,
             'orderDetail' => $orderDetail
         ]);

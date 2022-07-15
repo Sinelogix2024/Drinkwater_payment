@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Order;
+use App\Models\Advocate;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +16,39 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Route::get('/', function () {
-//     return view('splash');
+//     // dd('test');
+
+//     // return view('pdf');
+
+
+//     $orderDetail = Order::find(1);
+
+//     // return 
+//     $advocateData = Advocate::where('adv_detail_access_token', '7p4MQhdEhl92jG9ZwpOOQBTJayd7qz1HonEjJKt0kFZ9hiCWqJ')->first();
+
+
+//     // return $advocateData;
+//     // return $orderDetail;
+
+//     $pdf = PDF::loadView('emails.order_placed_new',[
+//         'advocateData' => $advocateData,
+//         'orderDetail' => $orderDetail,
+//     ]);
+
+//     // $pdf = PDF::loadView('pdf');
+//     // $pdf = PDF::loadView('emails.test');
+
+//     $path = public_path('pdf_docs/');
+//     $fileName =  time().'.'. 'pdf' ;
+//     $pdf->save($path . '/' . $fileName);
+
+//     $generated_pdf_link = url('pdf_docs/'.$fileName);
+
+//     return response()->json($generated_pdf_link);
+
+//     return $pdf->download('pdfview.pdf');
+    
+//     return view('emails.order_placed_new');
 // })->name('splash');
 
 // Route::get('/welcome', function () {
@@ -31,4 +65,7 @@ Route::match(['post'],'/braintree', 'App\Http\Controllers\BrainTreeController@ca
 Route::match(['get'],'/wateradvocate/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
 Route::match(['post'],'/wateradvocate/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
 
-Route::match(['get'],'/orderDetail', 'App\Http\Controllers\Advocate\AdvocateController@orderDetail');
+Route::match(['get'],'/orderDetail/{order_id}', 'App\Http\Controllers\Advocate\AdvocateController@orderDetail');
+
+// venom payment gateway response
+Route::match(['get'],'/venmo_server/{payerID}/{deviceData}/{amount}', 'App\Http\Controllers\BrainTreeController@venomResponse');

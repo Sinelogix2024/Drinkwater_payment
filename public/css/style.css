@@ -204,6 +204,11 @@ section {
 .m_t_50 {
   margin-top: 50px !important; }
 
+.sm_12 {
+  max-width: 387px;
+  margin: 0 auto;
+  font-size: 16px !important; }
+
 .custom_container {
   max-width: 73.125rem;
   padding-left: 15px;
@@ -357,25 +362,45 @@ body {
     font-size: 32px;
     font-weight: 300;
     margin-bottom: 20px; }
+    @media (max-width: 640px) {
+      .welcome_wrapper .welcome_note {
+        font-size: 20px;
+        line-height: 1.8; } }
   .welcome_wrapper h1 {
     font-size: 42px;
     margin: 30px 0 0;
     font-weight: 500; }
+    @media (max-width: 640px) {
+      .welcome_wrapper h1 {
+        font-size: 22px; } }
 
 .head_section {
   text-align: center;
   padding: 46px 0;
   text-transform: uppercase; }
+  @media (max-width: 640px) {
+    .head_section {
+      padding: 26px 0 0; } }
   .head_section .brand {
     display: flex;
     align-items: center;
     justify-content: center; }
+    @media (max-width: 640px) {
+      .head_section .brand img {
+        width: 45px; } }
     .head_section .brand .brand_txt {
       font-size: 55px;
       margin-left: 10px; }
+      @media (max-width: 640px) {
+        .head_section .brand .brand_txt {
+          font-size: 22px; } }
 
+@media (max-width: 640px) {
+  .tagline_wrap {
+    width: 69%;
+    margin: 0 auto; } }
 .tagline_wrap .tagline {
-  width: 540px;
+  max-width: 540px;
   margin: 0 auto;
   font-size: 40px;
   display: flex;
@@ -384,6 +409,9 @@ body {
   font-weight: 300;
   margin-bottom: 20px;
   text-transform: uppercase; }
+  @media (max-width: 640px) {
+    .tagline_wrap .tagline {
+      font-size: 18px; } }
 .tagline_wrap p {
   font-size: 16px; }
 
