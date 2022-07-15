@@ -155,8 +155,8 @@ apple-pay-button {
               <div class="flex_col_sm_6">
                 <div class="form_field">
                   <div class="text-field">
-                    <select class="selectpicker" name="package" id="package1" required>
-                      <option value="">{{config('constants.package.default_drop_down_text')}}</option>
+                    <select class="selectpicker placeholder" name="package" id="package1" required data-dropup-auto="false" title="{{config('constants.package.default_drop_down_text')}}"> 
+                      <option data-hidden="true">{{config('constants.package.default_drop_down_text')}}</option>
                       <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
                       <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
                       <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
@@ -168,8 +168,8 @@ apple-pay-button {
               <div class="flex_col_sm_6">
                 <div class="form_field">
                   <div class="text-field">
-                    <select class="selectpicker" name="delivery_frequency" id="delivery_frequency1" required>
-                      <option value="">{{config('constants.package.delivery_freq_text')}}</option>
+                    <select class="selectpicker" name="delivery_frequency" id="delivery_frequency1" required data-dropup-auto="false" title="{{config('constants.package.delivery_freq_text')}}">
+                      <option selected disabled data-hidden="true">{{config('constants.package.delivery_freq_text')}}</option>
                       <option value="1">EVERY SUNDAY</option>
                       <option value="2">EVERY MONDAY</option>
                     </select>
@@ -210,69 +210,56 @@ apple-pay-button {
               </div>
 
               <div class="form_wrapper">
-                <div class="flex_row">
-                  <div class="flex_col_sm_6">
-                    <div class="form_field">
-                      <div class="text-field">
-                        <input type="text" value="" name="billing_address" id="billing_address" placeholder="BILLING ADDRESS1">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="flex_col_sm_6">
-                    <div class="form_field">
-                      <div class="text-field">
-                        <input type="text" name="shipping_address" id="shipping_address" placeholder="SHIPPING ADDRESS1">
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                
+                <div class="row">
 
-                <div class="flex_row">
-                  <div class="flex_col_sm_6">
-                    <div class="form_field">
-                      <div class="text-field">
-                        <input type="text" value="" name="billing_address2" id="billing_address2" placeholder="BILLING ADDRESS2">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="flex_col_sm_6">
-                    <div class="form_field">
-                      <div class="text-field">
-                        <input type="text" name="shipping_address2" id="shipping_address2" placeholder="SHIPPING ADDRESS2">
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
-                <div class="flex_row">
+  <div class="col-sm-6">
+      
+       <div class="form-group">    
+            <input type="text" value="" name="billing_address" id="billing_address" placeholder="DELIVERY ADDRESS1">  
+        </div>
+          <div class="form-group">    
+         <input type="text" value="" name="billing_address2" id="billing_address2" placeholder="DELIVERY ADDRESS2"> 
+        </div>
 
-                  <div class="flex_col_sm_6">
-                    <div class="form_field">
-                      <div class="text-field">
-                        <input type="text" value="" name="b_city_state_zip" id="b_city_state_zip" placeholder="CITY/STATE/ZIP">
-                      </div>
-                    </div>
-                  </div>
+        <div class="form-group">   
+         <input type="text" value="" name="b_city_state_zip" id="b_city_state_zip" placeholder="CITY/STATE/ZIP">
+         </div>
+           <div class="form-group billing_radio_btn_up">  
+           <input type="radio" name="same_billing_address" class="hide same_billing_address same_billing_address_up" id="billing" />
+                    <label class="" for="billing">(SAME AS DELIVERY ADDRESS)</label>
+              </div>
 
-                  <div class="flex_col_sm_6">
-                    <div class="form_field">
-                      <div class="text-field">
-                        <input type="text" name="s_city_state_zip" id="s_city_state_zip" placeholder="CITY/STATE/ZIP">
-                      </div>
-                    </div>
-                    <input type="radio" name="same_billing_address" class="hide same_billing_address" id="billing" />
-                    <label class="" for="billing">(SAME AS BILLING ADDRESS)</label>
-                  </div>
+  </div>
+  <div class="col-sm-6">
+      
+      <div class="form-group">    
+                   <input type="text" name="shipping_address" id="shipping_address" placeholder="SHIPPING ADDRESS1">
+        </div>
+          <div class="form-group">    
+          <input type="text" name="shipping_address2" id="shipping_address2" placeholder="SHIPPING ADDRESS2">
+        </div>
 
-                </div>
+        <div class="form-group">   
+           <input type="text" name="s_city_state_zip" id="s_city_state_zip" placeholder="CITY/STATE/ZIP">
+         </div>
+         <div class="form-group billing_radio_btn_down">  
+           <input type="radio" name="same_billing_address" class="hide same_billing_address same_billing_address_down" id="billing" />
+                    <label class="" for="billing">(SAME AS DELIVERY ADDRESS)</label>
+              </div>
+
+  </div>
+
+                </div>                                
 
                 <div class="flex_row m_t_50">
 
                   <div class="flex_col_sm_6">
                     <div class="form_field">
                       <div class="text-field">
-                        <select class="selectpicker custom_select" name="package" id="package2" required>
-                          <option value="">{{config('constants.package.default_drop_down_text')}}</option>
+                        <select class="selectpicker custom_select" name="package" id="package2" required data-dropup-auto="false" title="{{config('constants.package.default_drop_down_text')}}">
+                          <option selected disabled data-hidden="true">{{config('constants.package.default_drop_down_text')}}</option>
                           <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
                           <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
                           <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
@@ -283,8 +270,8 @@ apple-pay-button {
                   <div class="flex_col_sm_6">
                     <div class="form_field">
                       <div class="text-field custom_select">
-                        <select class="selectpicker" name="delivery_frequency" id="delivery_frequency2" required>
-                          <option value="">{{config('constants.package.delivery_freq_text')}}</option>
+                        <select class="selectpicker" name="delivery_frequency" id="delivery_frequency2" required data-dropup-auto="false" title="{{config('constants.package.delivery_freq_text')}}">
+                          <option selected disabled data-hidden="true">{{config('constants.package.delivery_freq_text')}}</option>
                           <option value="1">EVERY SUNDAY</option>
                           <option value="2">EVERY MONDAY</option>
                         </select>
@@ -346,8 +333,8 @@ apple-pay-button {
                   <div class="flex_col_sm_5">
                     <div class="form_field">
                       <div class="text-field custom_select">
-                        <select class="selectpicker payment_method" name="payment_method" id="payment_method">
-                          <option value="">SELECT PAYMENT METHOD</option>
+                        <select class="selectpicker payment_method" name="payment_method" id="payment_method" data-dropup-auto="false" title="SELECT PAYMENT METHOD">
+                          <option selected disabled data-hidden="true">SELECT PAYMENT METHOD</option>
                           <option value="1">CREDIT CARD</option>
                           <option value="2">DEBIT CARD</option>
                           <option value="3">VENMO </option>
@@ -361,9 +348,9 @@ apple-pay-button {
                   <div class="flex_col_sm_6">
                     <div class="form_field">
                       <div class="text-field">
-                        <select class="selectpicker custom_select" name="package" id="package4" required>
-                          <option value="">{{config('constants.package.default_drop_down_text')}}</option>
-                          <option value="1" selected>1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
+                        <select class="selectpicker custom_select" name="package" id="package4" required data-dropup-auto="false" title="{{config('constants.package.default_drop_down_text')}}">
+                          <option selected disabled data-hidden="true">{{config('constants.package.default_drop_down_text')}}</option>
+                          <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
                           <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
                           <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
                         </select>
@@ -373,8 +360,8 @@ apple-pay-button {
                   <div class="flex_col_sm_6">
                     <div class="form_field">
                       <div class="text-field custom_select">
-                        <select class="selectpicker" name="delivery_frequency" id="delivery_frequency4" required>
-                          <option value="">{{config('constants.package.delivery_freq_text')}}</option>
+                        <select class="selectpicker" name="delivery_frequency" id="delivery_frequency4" required data-dropup-auto="false" title="{{config('constants.package.delivery_freq_text')}}">
+                          <option value="" data-hidden="true">{{config('constants.package.delivery_freq_text')}}</option>
                           <option value="1" selected>EVERY SUNDAY</option>
                           <option value="2">EVERY MONDAY</option>
                         </select>
@@ -428,12 +415,12 @@ apple-pay-button {
                   <div class="flex_col_sm_12">
                     <div class="form_field">
                       <div class="text-field">
-                        <select class="selectpicker custom_select final_page_package_label">
-                          <option value="" selected>YOUR WELLNESS SOLUTION</option>
+                        <select class="selectpicker custom_select final_page_package_label" data-dropup-auto="false" title="YOUR WELLNESS SOLUTION">
+                          <option value="" selected data-hidden="true">YOUR WELLNESS SOLUTION</option>
                         </select>
 
-                        <select class="selectpicker custom_select" name="package" id="package5" required>
-                          <option value="">YOUR WELLNESS SOLUTION</option>
+                        <select class="selectpicker custom_select" name="package" id="package5" required data-dropup-auto="false" title="YOUR WELLNESS SOLUTION">
+                          <option value="" data-hidden="true">YOUR WELLNESS SOLUTION</option>
                           <option value="1" selected>1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
                           <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
                           <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
@@ -448,12 +435,12 @@ apple-pay-button {
                     <div class="form_field">
                       <div class="text-field">
 
-                        <select class="selectpicker custom_select final_page_delivery_freq_label">
-                          <option value="" selected>DELIVERY FREQUENCY</option>
+                        <select class="selectpicker custom_select final_page_delivery_freq_label" data-dropup-auto="false" title="DELIVERY FREQUENCY">
+                          <option value="" selected data-hidden="true">DELIVERY FREQUENCY</option>
                         </select>
 
-                        <select class="selectpicker custom_select" title="DELIVERY FREQUENCY" name="delivery_frequency" id="delivery_frequency5" required>
-                          <option value="">{{config('constants.package.delivery_freq_text')}}</option>
+                        <select class="selectpicker custom_select" title="DELIVERY FREQUENCY" name="delivery_frequency" id="delivery_frequency5" required data-dropup-auto="false">
+                          <option value="" data-hidden="true" title="{{config('constants.package.delivery_freq_text')}}">{{config('constants.package.delivery_freq_text')}}</option>
                           <option value="1" selected>EVERY SUNDAY</option>
                           <option value="2">EVERY MONDAY</option>
                         </select>
@@ -466,8 +453,8 @@ apple-pay-button {
 
                     <div class="form_field">
                       <div class="text-field">
-                        <select class="selectpicker custom_select final_page_edit_address_label">
-                          <option value="" selected>DELIVERY ADDRESS</option>
+                        <select class="selectpicker custom_select final_page_edit_address_label" data-dropup-auto="false" title="DELIVERY ADDRESS">
+                          <option value="" selected data-hidden="true">DELIVERY ADDRESS</option>
                         </select>
 
                         <input type="text" class="shipping_address_final_page" placeholder="SHIPPING ADDRESS" disabled>
@@ -510,12 +497,12 @@ apple-pay-button {
                     <div class="form_field">
                       <div class="text-field">
 
-                        <select class="selectpicker custom_select final_page_payment_source_label">
-                          <option value="" selected>PAYMENT SOURCE</option>
+                        <select class="selectpicker custom_select final_page_payment_source_label" data-dropup-auto="false" title="PAYMENT SOURCE">
+                          <option value="" selected data-hidden="true">PAYMENT SOURCE</option>
                         </select>
 
-                        <select class="selectpicker custom_select payment_method payment_method_finl_page_class" name="payment_method" id="payment_method">
-                          <option>SELECT PAYMENT METHOD</option>
+                        <select class="selectpicker custom_select payment_method payment_method_finl_page_class" name="payment_method" id="payment_method" data-dropup-auto="false" title="SELECT PAYMENT METHOD">
+                          <option data-hidden="true">SELECT PAYMENT METHOD</option>
                           <option value="1">CREDIT CARD</option>
                           <option value="2">DEBIT CARD</option>
                           <option value="3">VENMO </option>
@@ -615,8 +602,8 @@ apple-pay-button {
                   <div class="flex_col_sm_5">
                     <div class="form_field">
                       <div class="text-field custom_select">
-                        <select class="selectpicker payment_method" name="payment_method" id="payment_method">
-                          <option>SELECT PAYMENT METHOD</option>
+                        <select class="selectpicker payment_method" name="payment_method" id="payment_method" data-dropup-auto="false" title="SELECT PAYMENT METHOD">
+                          <option data-hidden="true">SELECT PAYMENT METHOD</option>
                           <option value="1">CREDIT CARD</option>
                           <option value="2">DEBIT CARD</option>
                           <option value="3">VENMO </option>
@@ -651,11 +638,12 @@ apple-pay-button {
                   <div id="bt-dropin"></div>
 
                   <div id="bt-dropin_venmo">
-                  <button type="button" id="venmo-button" style="background:white;border-bottom: none;">
+                  <button type="button" id="venmo-button" class="btn btn-outline-success" >
                     <img style="border-radius: 20px;" 
-                      src="https://s2.r29static.com/bin/entry/1f8/0,0,2000,1050/x,80/1986150/image.jpg" 
-                      height="50px" 
-                      width="100px">
+                      src="{{asset('images/venmo.png')}}" 
+                      height="35px" 
+                      width="35px">
+                      <b>PayNow</b>
                   </button>
                 </div>
 
@@ -685,8 +673,8 @@ apple-pay-button {
                   <div class="flex_col_sm_6">
                     <div class="form_field">
                       <div class="text-field">
-                        <select class="selectpicker custom_select" name="package" id="package3" required>
-                          <option value="">{{config('constants.package.default_drop_down_text')}}</option>
+                        <select class="selectpicker custom_select" name="package" id="package3" required data-dropup-auto="false" title="{{config('constants.package.default_drop_down_text')}}">
+                          <option value="" data-hidden="true">{{config('constants.package.default_drop_down_text')}}</option>
                           <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
                           <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
                           <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
@@ -697,8 +685,8 @@ apple-pay-button {
                   <div class="flex_col_sm_6">
                     <div class="form_field">
                       <div class="text-field custom_select">
-                        <select class="selectpicker" name="delivery_frequency" id="delivery_frequency3" required>
-                          <option value="">{{config('constants.package.delivery_freq_text')}}</option>
+                        <select class="selectpicker" name="delivery_frequency" id="delivery_frequency3" required data-dropup-auto="false" title="{{config('constants.package.delivery_freq_text')}}">
+                          <option value="" data-hidden="true">{{config('constants.package.delivery_freq_text')}}</option>
                           <option value="1">EVERY SUNDAY</option>
                           <option value="2">EVERY MONDAY</option>
                         </select>

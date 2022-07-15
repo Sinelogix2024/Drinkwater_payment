@@ -183,6 +183,22 @@ section {
 .desktop_hide {
   display: none !important; }
 
+div#bt-dropin_venmo {
+    text-align: center;
+    position: relative;
+    right: 40px;
+}
+@media (min-width: 577px) {
+  .billing_radio_btn_up{
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  .billing_radio_btn_down{
+    display: none;
+  }
+}
+
 @media (max-width: 766px) {
   .mob_reverse {
     flex-flow: column-reverse !important; }
