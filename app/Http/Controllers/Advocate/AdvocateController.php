@@ -30,13 +30,12 @@ class AdvocateController extends Controller
         if( $request->method() == 'GET')
         {
             $clientToken = $gateway->clientToken()->generate();
-
+          
             $data = Advocate::where([
                 ['adv_detail_access_token',$request->detail_access_token]
             ])->first();
     
-            if( $data ){
-        
+            if( $data ){        
                 return view('advocate/link', [ 
                     'advocateData' => $data,
                     'client_token' => $clientToken 
@@ -110,7 +109,7 @@ class AdvocateController extends Controller
             {
                 $client->messages->create(
                     // '+91 '. $request->mobile,
-                    '+91 89808 98451',
+                    getenv('TWILIO_TO_SEND_NUMBER'),
                     array(
                         'from' => getenv("TWILIO_NUMBER"),
                         'body' => $body
@@ -136,4 +135,7 @@ return $request->all();
             'orderDetail' => $orderDetail
         ]);
     }
+
+
+
 }
