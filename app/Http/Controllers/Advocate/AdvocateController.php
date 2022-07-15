@@ -109,9 +109,10 @@ class AdvocateController extends Controller
             try
             {
                 $client->messages->create(
-                    '+91'. $request->mobile,
+                    // '+91 '. $request->mobile,
+                    '+91 89808 98451',
                     array(
-                        'from' => '+19784875912',
+                        'from' => getenv("TWILIO_NUMBER"),
                         'body' => $body
                     )
                 );
@@ -125,6 +126,7 @@ class AdvocateController extends Controller
 
     public function orderDetail(Request $request)
     {
+return $request->all();
         $orderDetail = Order::where('odr_id', $request->order_id)->first();
 
         $advocateData = Advocate::where('adv_detail_access_token', $orderDetail->odr_adv_detail_access_token)->first();

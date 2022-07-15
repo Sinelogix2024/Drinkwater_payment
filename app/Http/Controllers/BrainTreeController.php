@@ -27,35 +27,35 @@ class BrainTreeController extends Controller
         // $result = $gateway->customer()->delete('a_customer_id');
 
         // ========================================================================
-            // $updateResult = $gateway->customer()->update(
-            //     '470930138',
-            //     [
-            //     'firstName' => 'New First',
-            //     'lastName' => 'New Last',
-            //     'company' => 'New Company',
-            //     'email' => 'new.email@example.com',
-            //     'phone' => 'new phone',
-            //     'fax' => 'new fax',
-            //     'website' => 'http://new.example.com'
-            //     ]
-            // );
-            // return $updateResult->success;
-        
-        // ========================================================================
-        
+        // $updateResult = $gateway->customer()->update(
+        //     '470930138',
+        //     [
+        //     'firstName' => 'New First',
+        //     'lastName' => 'New Last',
+        //     'company' => 'New Company',
+        //     'email' => 'new.email@example.com',
+        //     'phone' => 'new phone',
+        //     'fax' => 'new fax',
+        //     'website' => 'http://new.example.com'
+        //     ]
+        // );
+        // return $updateResult->success;
 
         // ========================================================================
-            // $result = $gateway->customer()->create([
-            //     'firstName' => 'gaurav',
-            //     'lastName' => 'marvaha',
-            //     'company' => 'Jones Co.',
-            //     'email' => 'mike.jones@example.com',
-            //     'phone' => '281.330.8004',
-            //     'fax' => '419.555.1235',
-            //     'website' => 'http://example.com'
-            // ]);
 
-            // return $result->customer->id;
+
+        // ========================================================================
+        // $result = $gateway->customer()->create([
+        //     'firstName' => 'gaurav',
+        //     'lastName' => 'marvaha',
+        //     'company' => 'Jones Co.',
+        //     'email' => 'mike.jones@example.com',
+        //     'phone' => '281.330.8004',
+        //     'fax' => '419.555.1235',
+        //     'website' => 'http://example.com'
+        // ]);
+
+        // return $result->customer->id;
         // ========================================================================
 
 
@@ -64,7 +64,7 @@ class BrainTreeController extends Controller
 
         return view('braintree/index', ['client_token' => $clientToken]);
     }
-    
+
     public function call(Request $request)
     {
         return $request->all();
@@ -83,9 +83,9 @@ class BrainTreeController extends Controller
             'customerId' => '470930138',
             'paymentMethodNonce' => $request->payment_method_nonce,
             'options' => [
-              'verifyCard' => true,
-              'verificationMerchantAccountId' => env('BRAINTREE_MERCHANT_ID'),
-              'verificationAmount' => '2.00',
+                'verifyCard' => true,
+                'verificationMerchantAccountId' => env('BRAINTREE_MERCHANT_ID'),
+                'verificationAmount' => '2.00',
             ]
         ]);
 
@@ -107,7 +107,7 @@ class BrainTreeController extends Controller
             'amount' => '10.00',
             'paymentMethodNonce' => $request->payment_method_nonce,
             'deviceData' => "deviceDataFromTheClient",
-            'options' => [ 'submitForSettlement' => True ]
+            'options' => ['submitForSettlement' => True]
         ]);
 
         if ($result->success) {
@@ -117,9 +117,31 @@ class BrainTreeController extends Controller
             print_r("\n  code: " . $result->transaction->processorResponseCode);
             print_r("\n  text: " . $result->transaction->processorResponseText);
         } else {
-            foreach($result->errors->deepAll() AS $error) {
-              print_r($error->code . ": " . $error->message . "\n");
+            foreach ($result->errors->deepAll() as $error) {
+                print_r($error->code . ": " . $error->message . "\n");
             }
         }
+    }
+
+
+    public function venomResponse(Request $request, $payerID = "", $deviceData = "", $amount = 0)
+    {
+        $gateway = new Gateway([
+            'environment' => env('BRAINTREE_ENV'),
+            'merchantId' => env('BRAINTREE_MERCHANT_ID'),
+            'publicKey' => env('BRAINTREE_PUBLIC_KEY'),
+            'privateKey' => env('BRAINTREE_PRIVATE_KEY'),
+            'acceptGzipEncoding' => false,
+        ]);
+
+
+        $result = $gateway->transaction()->sale([
+            'amount' => $amount,
+            'paymentMethodNonce' => $payerID,
+            'options' => [
+                'submitForSettlement' => true
+            ],
+            'deviceData' => $deviceData
+        ]);
     }
 }

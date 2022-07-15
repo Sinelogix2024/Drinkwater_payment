@@ -89,12 +89,7 @@
 
       <form id="basic-form" method="POST">
 
-        <button type="button" id="venmo-button" style="background:white;border-bottom: none;">
-          <img style="border-radius: 20px;" 
-            src="https://s2.r29static.com/bin/entry/1f8/0,0,2000,1050/x,80/1986150/image.jpg" 
-            height="50px" 
-            width="100px">
-        </button>
+     
         
         @csrf
         <input type="hidden" class="current_tab" value="step1_form">
@@ -105,11 +100,7 @@
               <figure class="logo"><img src="{{asset('images/logowater.png')}}" alt="Logo" /></figure>
               <span class="brand_txt">+ {{$advocateData->adv_first_name}} {{$advocateData->adv_last_name}}</span>
             </div>
-            <div class="tagline_wrap">
-              <div class="tagline">
-                <span>Drink Watr</span>
-                <span> Stay Strong.</span>
-              </div>
+            <div class="tagline_wrap">             
               <p>Your Path to daily hydration + wellness</p>
             </div>
           </div>
@@ -651,6 +642,15 @@
 
                 <div class="bt-drop-in-wrapper">
                   <div id="bt-dropin"></div>
+
+                  <div id="bt-dropin_venmo">
+                  <button type="button" id="venmo-button" style="background:white;border-bottom: none;">
+                    <img style="border-radius: 20px;" 
+                      src="https://s2.r29static.com/bin/entry/1f8/0,0,2000,1050/x,80/1986150/image.jpg" 
+                      height="50px" 
+                      width="100px">
+                  </button>
+                </div>
                 </div>
 
                 <!-- <div class="flex_row">
