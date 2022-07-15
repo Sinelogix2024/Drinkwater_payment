@@ -3,7 +3,8 @@ var client_token = $('.client_token').val();
 
 // Create a client.
 braintree.client.create({
-    authorization: client_token
+    authorization: 'sandbox_7b22h9qq_9wcqdbyrsh4jphn6',
+    selector: '#bt-dropin_venmo',
 }, function(clientErr, clientInstance) {
     // Stop if there was a problem creating the client.
     // This could happen if there is a network error or if the authorization
@@ -51,19 +52,19 @@ braintree.client.create({
     });
 
 
-    // braintree.dataCollector.create({
-    //     client: clientInstance,
-    //     paypal: true
-    // }, function(dataCollectorErr, dataCollectorInstance) {
-    //     if (dataCollectorErr) {
-    //         // Handle error in creation of data collector.
-    //         console.log(dataCollectorErr);
-    //         return;
-    //     }
+     braintree.dataCollector.create({
+         client: clientInstance,
+         paypal: true
+     }, function(dataCollectorErr, dataCollectorInstance) {
+         if (dataCollectorErr) {
+             // Handle error in creation of data collector.
+             console.log(dataCollectorErr);
+             return;
+         }
 
-    //     console.log('dataCollectorInstance:', dataCollectorInstance);
-    //     console.log('Got device data:', dataCollectorInstance.deviceData);
-    // });
+         console.log('dataCollectorInstance:', dataCollectorInstance);
+         console.log('Got device data:', dataCollectorInstance.deviceData);
+     });
 
 
     function displayVenmoButton(venmoInstance) {

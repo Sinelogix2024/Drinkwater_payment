@@ -129,6 +129,22 @@ $(document).ready(function() {
 
     $(document).on("change", "#payment_method", function() {
         let selected = $(this).children("option:selected").val();
+
+        if(selected == 3){ // hide card form and show venom
+            $("#bt-dropin").hide();
+            $("#bt-dropin_venmo").show();
+            $("#bt-dropin_applepay").hide();
+        }else if(selected == 4){ // hide card form and show apple
+            $("#bt-dropin").hide();
+            $("#bt-dropin_venmo").hide();
+            $("#bt-dropin_applepay").show();
+        }else{
+            $("#bt-dropin").show();
+            $("#bt-dropin_venmo").hide();
+            $("#bt-dropin_applepay").hide();
+        }
+        
+        //return false;
         localStorage.setItem("payment_method", selected);
         setDropDownvalue();
     });
@@ -287,6 +303,7 @@ $(document).ready(function() {
             if (current_tab == "step3_form") {
                 showLoader();
                 if ($("#basic-form").valid()) {
+                  
                     $(".step1_form").hide(true);
                     $(".step2_form").hide(true);
                     $(".step2_form").hide();
@@ -295,6 +312,7 @@ $(document).ready(function() {
                     $(".step5_form").hide(true);
                     $(".current_tab").val("step4_form");
                     setDropDownvalue();
+                    $("#payment_method").trigger("change");
                 }
                 hideLoader();
             }
