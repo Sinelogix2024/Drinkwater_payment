@@ -261,7 +261,7 @@ $(document).ready(function() {
             },
 
             package: {
-                required: "Package is required",
+                required: "Solution is required",
             },
 
             delivery_frequency: {
