@@ -67,6 +67,28 @@ $(document).ready(function() {
         setDropDownvalue();
     });
 
+    // alakline change set price change
+    $(document).on("change", "#alakline_pure", function() {
+        console.log('Test :: 1 ::');
+        console.log();
+
+        if($(this).val() == 1){
+            console.log('Test :: aplkine ::');
+            console.log();
+            $('.select_alka').removeClass('d-none');
+            $('.select_pure').addClass('d-none');
+            //return false;
+        }else if($(this).val() == 2){
+            //var option = "1 MONTH OF HYDRATION $250 ( 10 KITS )";
+           // var new_option = "1 MONTH OF HYDRATION $111 ( 10 KITS )";
+           // $("#package1").find('option:contains(' + option + ')').text();
+           $('.select_alka').addClass('d-none');
+            $('.select_pure').removeClass('d-none');
+            console.log('Test :: pure ::');
+        }
+        //return false;
+    });
+
     $(document).on("change", "#package4", function() {
         console.log("package4 change");
         let selected = $(this).children("option:selected").val();
