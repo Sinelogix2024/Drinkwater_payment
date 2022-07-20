@@ -152,14 +152,37 @@ apple-pay-button {
 
             <div class="flex_row">
 
+              <div class="flex_col_sm_12">
+                <div class="form_field">
+                  <div class="text-field">
+                    <select class="selectpicker placeholder" name="alakline_pure" id="alakline_pure" required data-dropup-auto="false" title="{{config('constants.package.default_drop_down_alakline_text')}}"> 
+                      <option data-hidden="true">{{config('constants.package.default_drop_down_alakline_text')}}</option>
+                      <option value="1">ALAKLINE</option>
+                      <option value="2">PURE</option>                      
+                    </select>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex_row">
+
               <div class="flex_col_sm_6">
                 <div class="form_field">
                   <div class="text-field">
-                    <select class="selectpicker placeholder" name="package" id="package1" required data-dropup-auto="false" title="{{config('constants.package.default_drop_down_text')}}"> 
+                    <select class="selectpicker placeholder select_alka" name="package" id="package1" required data-dropup-auto="false" title="{{config('constants.package.default_drop_down_text')}}"> 
                       <option data-hidden="true">{{config('constants.package.default_drop_down_text')}}</option>
                       <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
                       <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
                       <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
+                    </select>
+
+                    <select class="selectpicker placeholder select_pure d-none" name="package" id="package1" required data-dropup-auto="false" title="{{config('constants.package.default_drop_down_text')}}"> 
+                      <option data-hidden="true">{{config('constants.package.default_drop_down_text')}}</option>
+                      <option value="1">1 MONTH OF HYDRATION $220 ( 10 KITS )</option>
+                      <option value="2">2 MONTH OF HYDRATION $440 ( 20 KITS )</option>
+                      <option value="3">3 MONTH OF HYDRATION $660 ( 30 KITS )</option>
                     </select>
 
                   </div>

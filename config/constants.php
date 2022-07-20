@@ -15,5 +15,6 @@ return [
     'package' => [
         'default_drop_down_text' => "SELECT WELLNESS SOLUTION",
         'delivery_freq_text' => 'SELECT DELIVERY FREQUENCY',
+        'default_drop_down_alakline_text' => 'SELECT ALAKLINE OR PURE',
     ]
 ];
