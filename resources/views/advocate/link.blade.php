@@ -75,7 +75,7 @@ apple-pay-button {
     </div>
   </main>
 
-  
+
 
   <main class="app_wrapper waterbg welcome" style="display: none;">
     <div class="custom_container">
@@ -96,8 +96,8 @@ apple-pay-button {
 
       <form id="basic-form" method="POST">
 
-     
-        
+
+
         @csrf
         <input type="hidden" class="current_tab" value="step1_form">
 
@@ -107,7 +107,7 @@ apple-pay-button {
               <figure class="logo"><img src="{{asset('images/logowater.png')}}" alt="Logo" /></figure>
               <span class="brand_txt">+ {{$advocateData->adv_first_name}} {{$advocateData->adv_last_name}}</span>
             </div>
-            <div class="tagline_wrap">             
+            <div class="tagline_wrap">
               <p>Your Path to daily hydration + wellness</p>
             </div>
           </div>
@@ -155,10 +155,10 @@ apple-pay-button {
               <div class="flex_col_sm_12">
                 <div class="form_field">
                   <div class="text-field">
-                    <select class="selectpicker placeholder" name="alakline_pure" id="alakline_pure" required data-dropup-auto="false" title="{{config('constants.package.default_drop_down_alakline_text')}}"> 
+                    <select class="selectpicker placeholder" name="alakline_pure" id="alakline_pure" required data-dropup-auto="false" title="{{config('constants.package.default_drop_down_alakline_text')}}">
                       <option data-hidden="true">{{config('constants.package.default_drop_down_alakline_text')}}</option>
                       <option value="1">ALAKLINE</option>
-                      <option value="2">PURE</option>                      
+                      <option value="2">PURE</option>
                     </select>
 
                   </div>
@@ -171,14 +171,14 @@ apple-pay-button {
               <div class="flex_col_sm_6">
                 <div class="form_field">
                   <div class="text-field">
-                    <select class="selectpicker placeholder select_alka" name="package" id="package1" required data-dropup-auto="false" title="{{config('constants.package.default_drop_down_text')}}"> 
+                    <select class="selectpicker placeholder select_alka" name="package" id="package1" required data-dropup-auto="false" title="{{config('constants.package.default_drop_down_text')}}">
                       <option data-hidden="true">{{config('constants.package.default_drop_down_text')}}</option>
                       <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
                       <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
                       <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
                     </select>
 
-                    <select class="selectpicker placeholder select_pure d-none" name="package" id="package1" required data-dropup-auto="false" title="{{config('constants.package.default_drop_down_text')}}"> 
+                    <select class="selectpicker placeholder select_pure d-none" name="package" id="package1" required data-dropup-auto="false" title="{{config('constants.package.default_drop_down_text')}}">
                       <option data-hidden="true">{{config('constants.package.default_drop_down_text')}}</option>
                       <option value="1">1 MONTH OF HYDRATION $220 ( 10 KITS )</option>
                       <option value="2">2 MONTH OF HYDRATION $440 ( 20 KITS )</option>
@@ -233,48 +233,48 @@ apple-pay-button {
               </div>
 
               <div class="form_wrapper">
-                
+
                 <div class="row">
 
 
-  <div class="col-sm-6">
-      
-       <div class="form-group">    
-            <input type="text" value="" name="billing_address" id="billing_address" placeholder="DELIVERY ADDRESS1">  
+   <div class="col-sm-6" id="BillData">
+
+       <div class="form-group">
+            <input type="text" value="" name="billing_address" id="billing_address" placeholder="DELIVERY ADDRESS1">
         </div>
-          <div class="form-group">    
-         <input type="text" value="" name="billing_address2" id="billing_address2" placeholder="DELIVERY ADDRESS2"> 
+          <div class="form-group">
+         <input type="text" value="" name="billing_address2" id="billing_address2" placeholder="DELIVERY ADDRESS2">
         </div>
 
-        <div class="form-group">   
+        <div class="form-group">
          <input type="text" value="" name="b_city_state_zip" id="b_city_state_zip" placeholder="CITY/STATE/ZIP">
          </div>
-           <div class="form-group billing_radio_btn_up">  
-           <input type="radio" name="same_billing_address" class="hide same_billing_address same_billing_address_up" id="billing" />
+           <div class="form-group billing_radio_btn_up">
+           <input type="radio" name="same_billing_address" class="same_billing_address same_billing_address_up" id="billing" />
                     <label class="" for="billing">(SAME AS DELIVERY ADDRESS)</label>
               </div>
 
   </div>
-  <div class="col-sm-6">
-      
-      <div class="form-group">    
-                   <input type="text" name="shipping_address" id="shipping_address" placeholder="SHIPPING ADDRESS1">
+  <div class="col-sm-6" id="shippingData">
+
+      <div class="form-group">
+                   <input type="text" name="shipping_address" id="shipping_address" placeholder="BILLING ADDRESS1">
         </div>
-          <div class="form-group">    
-          <input type="text" name="shipping_address2" id="shipping_address2" placeholder="SHIPPING ADDRESS2">
+          <div class="form-group">
+          <input type="text" name="shipping_address2" id="shipping_address2" placeholder="BILLING ADDRESS2">
         </div>
 
-        <div class="form-group">   
+        <div class="form-group">
            <input type="text" name="s_city_state_zip" id="s_city_state_zip" placeholder="CITY/STATE/ZIP">
          </div>
-         <div class="form-group billing_radio_btn_down">  
+         <div class="form-group billing_radio_btn_down">
            <input type="radio" name="same_billing_address" class="hide same_billing_address same_billing_address_down" id="billing" />
                     <label class="" for="billing">(SAME AS DELIVERY ADDRESS)</label>
               </div>
 
   </div>
 
-                </div>                                
+                </div>
 
                 <div class="flex_row m_t_50">
 
@@ -315,7 +315,7 @@ apple-pay-button {
                 <div class="dots_wrapper">
                   <button type="button" class="outline_btn m_r_20 show_step1_form">Back</button>
                   <button type="submit" class="primary_btn">Next</button>
-                  
+
                   <!-- <button type="submit" class="primary_btn show_step3_form">Next</button> -->
 
                 </div>
@@ -480,7 +480,7 @@ apple-pay-button {
                           <option value="" selected data-hidden="true">DELIVERY ADDRESS</option>
                         </select>
 
-                        <input type="text" class="shipping_address_final_page" placeholder="SHIPPING ADDRESS" disabled>
+                        <input type="text" class="shipping_address_final_page" placeholder="BILLING ADDRESS" disabled>
                         <button type="button" class="edit btn_effect edit_address_final_page">EDIT</button>
                       </div>
                     </div>
@@ -489,7 +489,7 @@ apple-pay-button {
                       <div class="flex_row">
                         <div class="flex_col_sm_6">
                           <div class="text-field">
-                            <input type="text" class="shipping_address1_final_page" placeholder="SHIPPING ADDRESS 1" disabled>
+                            <input type="text" class="shipping_address1_final_page" placeholder="BILLING ADDRESS 1" disabled>
                           </div>
                         </div>
                         <div class="flex_col_sm_6">
@@ -662,9 +662,9 @@ apple-pay-button {
 
                   <div id="bt-dropin_venmo">
                   <button type="button" id="venmo-button" class="btn btn-outline-success" >
-                    <img style="border-radius: 20px;" 
-                      src="{{asset('images/venmo.png')}}" 
-                      height="35px" 
+                    <img style="border-radius: 20px;"
+                      src="{{asset('images/venmo.png')}}"
+                      height="35px"
                       width="35px">
                       <b>PayNow</b>
                   </button>
@@ -718,7 +718,7 @@ apple-pay-button {
                   </div>
                 </div>
 
-                
+
 
                 <div class="dots_wrapper">
                   <ul>
@@ -741,7 +741,7 @@ apple-pay-button {
       </form>
 
     </div>
-    
+
   </main>
 
   <div class="final_form" style="display: none;">
@@ -846,7 +846,7 @@ apple-pay-button {
 
     <main class="app_wrapper waterbg">
       <div class="custom_container">
-          <div class="head_section"> 
+          <div class="head_section">
             <div class="brand">
               <figure class="logo"><img src="{{asset('images/logowater.png')}}" alt="Logo" /></figure>
               <span class="brand_txt">+ {{$advocateData->adv_first_name}} {{$advocateData->adv_last_name}}</span>
@@ -863,8 +863,8 @@ apple-pay-button {
 
 
           <div class="form_wrapper edit_form_wrapper">
-              
-            
+
+
               <p class="support_note">
                   A RECEIPT FOR YOUR PURCHASE HAS BEEN TEXTED AND EMAILED TO THE CREDENTIALS YOU PROVIDED. FOR ANY SUPPORT, PLEASE EMAIL CLARITY@DRINKWATR.COM
               </p>

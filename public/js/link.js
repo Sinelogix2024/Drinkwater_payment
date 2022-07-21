@@ -42,7 +42,7 @@ $(document).ready(function() {
     $('.citi_state_zip_final_page').show().text($('.s_city_state_zip_final_page').val())
     $('.final_page_package_label').next(".dropdown-toggle").prop('disabled', true);
     $('.payment_method_final_page').text($('.payment_method_finl_page_class').children("option:selected").text());
-    // showLoader();     
+    // showLoader();
 
     $(document).on("change", "#package1", function() {
         console.log("package1 change");
@@ -165,7 +165,7 @@ $(document).ready(function() {
             $("#bt-dropin_venmo").hide();
             $("#bt-dropin_applepay").hide();
         }
-        
+
         //return false;
         localStorage.setItem("payment_method", selected);
         setDropDownvalue();
@@ -325,7 +325,7 @@ $(document).ready(function() {
             if (current_tab == "step3_form") {
                 showLoader();
                 if ($("#basic-form").valid()) {
-                  
+
                     $(".step1_form").hide(true);
                     $(".step2_form").hide(true);
                     $(".step2_form").hide();
@@ -417,10 +417,14 @@ $(document).ready(function() {
     }
 
 
-    $(".same_billing_address").click(function() {        
+    $(".same_billing_address").click(function() {
         $("#shipping_address").val($("#billing_address").val());
         $("#shipping_address2").val($("#billing_address2").val());
+        $("#shippingData").hide();
+        // $('#BillData').removeClass('col-md-')
+        $('#BillData').addClass('col-md-12');
         $("#s_city_state_zip").val($("#b_city_state_zip").val());
+
     });
 
     $('.edit_package').on('click', function() {
