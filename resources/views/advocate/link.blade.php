@@ -45,6 +45,16 @@ apple-pay-button {
   --apple-pay-button-padding: 5px 0px;
 }
 
+.bootstrap-select>.dropdown-toggle.bs-placeholder, .bootstrap-select>.dropdown-toggle.bs-placeholder:active, .bootstrap-select>.dropdown-toggle.bs-placeholder:focus, .bootstrap-select>.dropdown-toggle.bs-placeholder:hover{
+  color: #000 !important;
+  background: #fff !important;
+  border: #fff !important;
+}
+
+.dropdown-menu{
+  background: #000 !important;
+}
+
   </style>
 </head>
 
@@ -63,13 +73,13 @@ apple-pay-button {
     <div class="custom_container">
       <div class="welcome_wrapper text-center">
         <div class="tagline_wrap" data-aos="zoom-in-up" data-aos-duration="1500">
-          <div class="tagline">
+          {{-- <div class="tagline">
             <span>Drink Watr</span>
             <span> Stay Strong.</span>
-          </div>
+          </div> --}}
           <figure class="logo"><img src="{{asset('images/logowater.png')}}" alt="Logo" /></figure>
         </div>
-        <a type="button" class="splash_link">Enter</a>
+        <a type="button" class="splash_link" style="text-decoration: underline;">EXPERIENCE</a>
       </div>
 
     </div>
@@ -82,9 +92,9 @@ apple-pay-button {
 
       <div class="welcome_wrapper text-center">
 
-        <p class="welcome_note" data-aos="fade-up" data-aos-duration="3000"> WELCOME TO YOUR PATH TO DAILY HYDRATION + WELLNESS</p>
+        {{-- <p class="welcome_note" data-aos="fade-up" data-aos-duration="3000"> WELCOME TO YOUR PATH TO DAILY HYDRATION + WELLNESS</p>
 
-        <h1  data-aos="fade-up" data-aos-duration="3000">STAY STRONG.</h1>
+        <h1  data-aos="fade-up" data-aos-duration="3000">STAY STRONG.</h1> --}}
 
         <a type="button" class="welcome_link" data-aos="fade-up" data-aos-duration="3000">Enter</a>
       </div>
