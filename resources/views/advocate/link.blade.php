@@ -926,8 +926,8 @@ apple-pay-button {
 <script src="{{asset('js/venmo.js')}}"></script>
 
 
-<script src="https://js.braintreegateway.com/web/3.85.3/js/client.min.js"></script>
-<script src="https://js.braintreegateway.com/web/3.85.3/js/apple-pay.min.js"></script>
+<script src="https://js.braintreegateway.com/web/3.4.0/js/client.min.js"></script>
+<script src="https://js.braintreegateway.com/web/3.4.0/js/apple-pay.min.js"></script>
 
 <script src="{{asset('js/applepay.js')}}"></script>
 
