@@ -2,6 +2,8 @@
 
 if (window.ApplePaySession && ApplePaySession.supportsVersion(3) && ApplePaySession.canMakePayments()) {
     // This device supports version 3 of Apple Pay.
+    console.log('Test :: 1 ::');    
+    //return false;
     braintree.client.create({
         authorization: 'sandbox_7b22h9qq_9wcqdbyrsh4jphn6',
         selector: '#bt-dropin_applepay',
