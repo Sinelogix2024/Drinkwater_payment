@@ -11,15 +11,15 @@
     <script src="{{asset('js/constants.js')}}"></script>
 </head>
 
-<body>
+<body>  
 
     <main class="app_wrapper waterbg">
         <div class="custom_container">
 
            <div class="welcome_wrapper text-center">
-
+              
                <p class="welcome_note" data-aos="fade-up"
-               data-aos-duration="3000"> WELCOME TO  YOUR PATH TO DAILY  HYDRATION + WELLNESS</p>
+               data-aos-duration="3000"> WELCOME TO  YOUR PATH TO DAILY  HYDRATION + WELLNESS</p> 
 
                 <h1 data-aos="fade-up"
                data-aos-duration="3000">STAY STRONG.</h1>
@@ -29,7 +29,7 @@
            </div>
         </div>
     </main>
-
+    
 </body>
 </html>
 
