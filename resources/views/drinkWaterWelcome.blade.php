@@ -25,7 +25,8 @@
                data-aos-duration="3000">STAY STRONG.</h1>
 
                 <a href="{{URL('watr/2fFWTYWHodZF6UDt8FaSK5YMVrqhKpJ9J6kmcyRx5Cay78BViJ')}}" class="link" data-aos="fade-up"
-                data-aos-duration="3000">Enter</a> 
+                data-aos-duration="3000">Enter</a>
+
            </div>
         </div>
     </main>
