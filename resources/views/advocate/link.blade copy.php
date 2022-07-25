@@ -369,28 +369,22 @@ apple-pay-button {
               </div>
 
               <div class="form_wrapper">
-                <div class="row"></div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="flex_row m_t_50">
-                            <div class="flex_col_sm_4"></div>
-                            <div class="flex_col_sm_5">
-                              <div class="form_field">
-                                <div class="text-field custom_select">
-                                  <select class="selectpicker payment_method" name="payment_method" id="payment_method" data-dropup-auto="false" title="SELECT PAYMENT METHOD">
-                                    <option selected disabled data-hidden="true">SELECT PAYMENT METHOD</option>
-                                    <option value="1">CREDIT CARD</option>
-                                    <option value="2">DEBIT CARD</option>
-                                    <option value="3">VENMO </option>
-                                    <option value="4">APPLY PAY </option>
-                                  </select>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                <div class="flex_row">
+                  <div class="flex_col_sm_4"></div>
+                  <div class="flex_col_sm_5">
+                    <div class="form_field">
+                      <div class="text-field custom_select">
+                        <select class="selectpicker payment_method" name="payment_method" id="payment_method" data-dropup-auto="false" title="SELECT PAYMENT METHOD">
+                          <option selected disabled data-hidden="true">SELECT PAYMENT METHOD</option>
+                          <option value="1">CREDIT CARD</option>
+                          <option value="2">DEBIT CARD</option>
+                          <option value="3">VENMO </option>
+                          <option value="4">APPLY PAY </option>
+                        </select>
+                      </div>
                     </div>
+                  </div>
                 </div>
-
                 <div class="flex_row m_t_50">
                   <div class="flex_col_sm_6">
                     <div class="form_field">
