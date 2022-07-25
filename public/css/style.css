@@ -600,4 +600,10 @@ body {
   .droplet_logowrap img {
     width: 210px; }
 
+
+    footer.text-center {
+        margin-bottom: -75px;
+
+    }
+
 /*# sourceMappingURL=style.css.map */
