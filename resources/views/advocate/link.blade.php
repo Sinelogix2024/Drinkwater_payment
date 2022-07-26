@@ -119,8 +119,20 @@
         <form id="basic-form" method="POST">
 
 
-            @csrf
-            <input type="hidden" class="current_tab" value="step1_form">
+        @csrf
+        <input type="hidden" class="current_tab" value="step1_form">
+
+        <div class="step1_form">
+          <div class="head_section">
+            <div class="brand">
+              <figure class="logo"><img src="{{asset('images/logowater.png')}}" alt="Logo" /></figure>
+              <span class="brand_txt">+ {{$advocateData->adv_first_name}} {{$advocateData->adv_last_name}}</span>
+            </div>
+            <div class="tagline_wrap">
+              <p>Your Path to daily hydration + wellness</p>
+            </div>
+          </div>
+
 
             <div class="step1_form">
                 <main class="app_wrapper waterbg">
@@ -265,6 +277,21 @@
 
                 </main>
             </div>
+            <footer class="text-center">
+                <div class="custom_container">
+                  ALL RIGHT RESERVED 2022 &copy WATR, LLC. | PRIVACY + LEGAL
+                </div>
+              </footer>
+          </div>
+        </div>
+
+
+
+
+        <!-- Address -->
+        <div class="step2_form" style="display: none;">
+          <main class="app_wrapper waterbg">
+            <div class="custom_container">
 
             <!-- Address -->
             <div class="step2_form" style="display: none;">
@@ -397,89 +424,104 @@
                 </main>
             </div>
 
-            <!-- Payment Type Selection -->
-            <div class="step3_form" style="display: none;">
+            <footer class="text-center">
+              <div class="custom_container">
+                ALL RIGHT RESERVED 2022 &copy WATR, LLC. | PRIVACY + LEGAL
+              </div>
+            </footer>
 
-                <main class="app_wrapper waterbg">
+          </main>
+        </div>
 
-                    <div class="custom_container">
-                        <div class="head_section">
+        <!-- Payment Type Selection -->
+        <div class="step3_form" style="display: none;">
 
-                            <div class="brand">
-                                <figure class="logo"><img src="{{asset('images/logowater.png')}}" alt="Logo"/></figure>
-                                <span
-                                    class="brand_txt">+ {{$advocateData->adv_first_name}} {{$advocateData->adv_last_name}}</span>
-                            </div>
+          <main class="app_wrapper waterbg">
 
-                            <div class="tagline_wrap">
-                                <p>Your Path to daily hydration + wellness</p>
-                            </div>
-                        </div>
+            <div class="custom_container">
+              <div class="head_section">
 
-                        <div class="form_wrapper">
-                            <div class="flex_row m_t_50">
-                                <div class="flex_col_sm_4"></div>
-                                <div class="flex_col_sm_5">
-                                    <div class="form_field">
-                                        <div class="text-field custom_select">
-                                            <select class="selectpicker payment_method" name="payment_method"
-                                                    id="payment_method" data-dropup-auto="false"
-                                                    title="SELECT PAYMENT METHOD">
-                                                <option selected disabled data-hidden="true">SELECT PAYMENT METHOD
-                                                </option>
-                                                <option value="1">CREDIT CARD</option>
-                                                <option value="2">DEBIT CARD</option>
-                                                <option value="3">VENMO</option>
-                                                <option value="4">APPLY PAY</option>
-                                            </select>
-                                        </div>
-                                    </div>
+                <div class="brand">
+                  <figure class="logo"><img src="{{asset('images/logowater.png')}}" alt="Logo" /></figure>
+                  <span class="brand_txt">+ {{$advocateData->adv_first_name}} {{$advocateData->adv_last_name}}</span>
+                </div>
+
+                <div class="tagline_wrap">
+                  <p>Your Path to daily hydration + wellness</p>
+                </div>
+              </div>
+
+              <div class="form_wrapper">
+                <div class="row"></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="flex_row m_t_50">
+                            <div class="flex_col_sm_4"></div>
+                            <div class="flex_col_sm_5">
+                              <div class="form_field">
+                                <div class="text-field custom_select">
+                                  <select class="selectpicker payment_method" name="payment_method" id="payment_method" data-dropup-auto="false" title="SELECT PAYMENT METHOD">
+                                    <option selected disabled data-hidden="true">SELECT PAYMENT METHOD</option>
+                                    <option value="1">CREDIT CARD</option>
+                                    <option value="2">DEBIT CARD</option>
+                                    <option value="3">VENMO </option>
+                                    <option value="4">APPLY PAY </option>
+                                  </select>
                                 </div>
+                              </div>
                             </div>
-                            <div class="flex_row m_t_50">
-                                <div class="flex_col_sm_6">
-                                    <div class="form_field">
-                                        <div class="text-field">
-                                            <select class="selectpicker custom_select" name="package" id="package4"
-                                                    required data-dropup-auto="false"
-                                                    title="{{config('constants.package.default_drop_down_text')}}">
-                                                <option selected disabled
-                                                        data-hidden="true">{{config('constants.package.default_drop_down_text')}}</option>
-                                                <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
-                                                <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
-                                                <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex_col_sm_6">
-                                    <div class="form_field">
-                                        <div class="text-field custom_select">
-                                            <select class="selectpicker" name="delivery_frequency"
-                                                    id="delivery_frequency4" required data-dropup-auto="false"
-                                                    title="{{config('constants.package.delivery_freq_text')}}">
-                                                <option value=""
-                                                        data-hidden="true">{{config('constants.package.delivery_freq_text')}}</option>
-                                                <option value="1" selected>EVERY SUNDAY</option>
-                                                <option value="2">EVERY MONDAY</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="dots_wrapper">
-                                <ul>
-                                    <li></li>
-                                    <li></li>
-                                    <li class="active"></li>
-                                    <li></li>
-                                </ul>
-                            </div>
-                            <div class="dots_wrapper">
-                                <button type="button" class="outline_btn m_r_20 show_step2_form">Back</button>
-                                {{-- <button type="submit" class="primary_btn show_step4_form">Next</button> --}}
-                                <button type="submit" class="primary_btn">Next</button>
-                            </div>
+                          </div>
+                    </div>
+                </div>
+
+                <div class="flex_row m_t_50">
+                  <div class="flex_col_sm_6">
+                    <div class="form_field">
+                      <div class="text-field">
+                        <select class="selectpicker custom_select" name="package" id="package4" required data-dropup-auto="false" title="{{config('constants.package.default_drop_down_text')}}">
+                          <option selected disabled data-hidden="true">{{config('constants.package.default_drop_down_text')}}</option>
+                          <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
+                          <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
+                          <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex_col_sm_6">
+                    <div class="form_field">
+                      <div class="text-field custom_select">
+                        <select class="selectpicker" name="delivery_frequency" id="delivery_frequency4" required data-dropup-auto="false" title="{{config('constants.package.delivery_freq_text')}}">
+                          <option value="" data-hidden="true">{{config('constants.package.delivery_freq_text')}}</option>
+                          <option value="1" selected>EVERY SUNDAY</option>
+                          <option value="2">EVERY MONDAY</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="dots_wrapper">
+                  <ul>
+                    <li></li>
+                    <li></li>
+                    <li class="active"></li>
+                    <li></li>
+                  </ul>
+                </div>
+                <div class="dots_wrapper">
+                  <button type="button" class="outline_btn m_r_20 show_step2_form">Back</button>
+                  {{-- <button type="submit" class="primary_btn show_step4_form">Next</button> --}}
+                  <button type="submit" class="primary_btn">Next</button>
+                </div>
+              </div>
+            </div>
+
+            <footer class="text-center">
+              <div class="custom_container">
+                ALL RIGHT RESERVED 2022 &copy WATR, LLC. | PRIVACY + LEGAL
+              </div>
+            </footer>
+          </main>
+        </div>
 
                         </div>
 
@@ -698,6 +740,29 @@
                     </footer>
                 </main>
             </div>
+            <footer class="text-center">
+              <div class="custom_container">
+                ALL RIGHT RESERVED 2022 &copy WATR, LLC. | PRIVACY + LEGAL
+              </div>
+            </footer>
+          </main>
+        </div>
+
+        <!-- Card Detail Filling -->
+        <div class="step4_form" style="display: none;">
+          <main class="app_wrapper waterbg">
+            <div class="custom_container">
+
+
+              <div class="head_section">
+                <div class="brand">
+                  <figure class="logo"><img src="{{asset('images/logowater.png')}}" alt="Logo" /></figure>
+                  <span class="brand_txt">+ {{$advocateData->adv_first_name}} {{$advocateData->adv_last_name}}</span>
+                </div>
+                <div class="tagline_wrap">
+                  <p>Your Path to daily hydration + wellness</p>
+                </div>
+              </div>
 
             <!-- Card Detail Filling -->
             <div class="step4_form" style="display: none;">
@@ -850,15 +915,16 @@
                     </footer>
                 </main>
             </div>
+          </main>
+        </div>
 
         </form>
 
     </div>
 
+  </main>
 
-</main>
-
-<div class="final_form" style="display: none;">
+  <div class="final_form" style="display: none;">
 
     {{-- <main class="app_wrapper waterbg">
       <div class="custom_container">
@@ -1007,7 +1073,6 @@
 
 </html>
 
-</footer>
 <script src="{{asset('js/jquery.js')}}"></script>
 <script src="{{asset('js/constants.js')}}"></script>
 <script src="{{asset('js/jquery_validation.js')}}"></script>
