@@ -66,13 +66,19 @@ $(document).ready(function() {
         localStorage.setItem("package", selected);
         setDropDownvalue();
     });
+    $('.select_pure').addClass('d-none');
+    $('.select_alka').addClass('d-none');
+    $('.delivery_frequency1').addClass('d-none');
 
     // alakline change set price change
     $(document).on("change", "#alakline_pure", function() {
+
         console.log('Test :: 1 ::');
         console.log();
 
+
         if($(this).val() == 1){
+
             console.log('Test :: aplkine ::');
             console.log();
             $('.select_alka').removeClass('d-none');
@@ -87,6 +93,9 @@ $(document).ready(function() {
             console.log('Test :: pure ::');
         }
         //return false;
+    });
+    $(document).on("change", "#package1", function() {
+        $('.delivery_frequency1').removeClass('d-none');
     });
 
     $(document).on("change", "#package4", function() {
