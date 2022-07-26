@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="{{url('css/bootstrap-select.min.css')}}" />
     <input type="hidden" value="{{url('/')}}" class="base_url">
 </head>
-<body>
+<body>  
 
     <main class="app_wrapper waterbg">
         <div class="custom_container">
 
-
-            <div class="head_section">
+      
+            <div class="head_section"> 
                 <div class="brand">
                     <figure class="logo"><img src="{{url('images/logowater.png')}}" alt="Logo" /></figure>
                     {{-- <figure class="logo"><img src="{{asset('images/logowater.png')}}" alt="Logo" /></figure> --}}
@@ -29,7 +29,7 @@
                 </div>
             </div>
 
-
+ 
             <div class="form_wrapper edit_form_wrapper">
                     <div class="flex_row">
                         <div class="flex_col_sm_12">
@@ -46,7 +46,7 @@
                                 </div>
                                 <span class="delivery_note_final_page">{{config('constants.delivery_freq')[$orderDetail->odr_delivery_frequency_id ?? '']  ?? ''}}</span>
                                 <span class="text-note">(1st DELIVERY 4 KITS, THEN 2 KITS THEREAFTER). </span>
-                             </div>
+                             </div> 
 
 
                              <div class="form_field">
@@ -96,15 +96,15 @@
 
                              <div class="form_field">
                                 <p class="support_note sm_12">
-                                    CONTRATUALATIONS ON SECURING YOUR PATH TO WELLNESS. FOR ANY SUPPORT RELATED INQUIRIES, PLEASE EMAIL  US AT CLARITY@DRINKWATR.COM.
-                                </p>
+                                    CONTRATUALATIONS ON SECURING YOUR PATH TO WELLNESS. FOR ANY SUPPORT RELATED INQUIRIES, PLEASE EMAIL  US AT CLARITY@DRINKWATR.COM. 
+                                </p> 
                             </div>
 
                             <figure class="droplet_logowrap text-center">
                                 <span>ALL PRODUCTS ARE DELIVERED BY</span>
                                 <img src="{{url('images/droplet.png')}}">
                             </figure>
-
+                             
 
                         </div>
                     </div>
@@ -117,7 +117,7 @@
         </div>
         <footer class="text-center">
             <div class="custom_container">
-                {{date('Y')}} &copy ALL RIGHT RESERVED | WATR, LLC <br> PRIVACY + LEGAL
+                ALL RIGHT RESERVED {{date('Y')}} &copy WATR, LLC. | PRIVACY + LEGAL
             </div>
         </footer>
     </main>
@@ -126,6 +126,6 @@
     <script src="{{url('js/popper.min.js')}}"></script>
     <script src="{{url('js/bootstrap.min.js')}}"></script>
     <script src="{{url('js/bootstrap-select.js')}}"></script>
-    <script src="{{url('js/custom.js')}}"></script>
+    <script src="{{url('js/custom.js')}}"></script> 
 </body>
 </html>
