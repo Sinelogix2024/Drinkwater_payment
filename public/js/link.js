@@ -13,15 +13,14 @@ braintree.dropin.create({
         return;
     }
     form.addEventListener('submit', function(event) {
-        event.preventDefault();
-
+        event.preventDefault();        
         instance.requestPaymentMethod(function(err, payload) {
             if (err) {
                 console.log('Request Payment Method Error', err);
                 localStorage.setItem('braintree_error', true);
                 return;
             }
-
+            
             // Add the nonce to the form and submit
             document.querySelector('#nonce').value = payload.nonce;
             localStorage.setItem('braintree_error', false);
@@ -364,7 +363,9 @@ $(document).ready(function() {
                 $('.shipping_address1_final_page').val($('#shipping_address2').val());
                 $('.s_city_state_zip_final_page').val($('#s_city_state_zip').val());
 
-                $('.last_4_digit_card').text($("#basic-form").serializeArray()[23].value.substr($("#basic-form").serializeArray()[23].value.length - 4));
+           //     $('.last_4_digit_card').text($("#basic-form").serializeArray()[23].value.substr($("#basic-form").serializeArray()[23].value.length - 4));
+
+                $('.last_4_digit_card').text("****");
 
 
                 $(".step1_form").hide(true);
@@ -400,8 +401,9 @@ $(document).ready(function() {
                     $(".step5_form").hide(true);
                     $(".final_form").show(true);
                     $(".current_tab").val("final_form");
-                }
+                }                
                 setDropDownvalue();
+                $("#payment_method").trigger("change");
                 form.submit();
             }
         },

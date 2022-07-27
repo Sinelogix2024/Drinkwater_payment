@@ -5,11 +5,12 @@ function setDropDownvalue() {
 
     // console.log("package", package);
     // console.log("delivery_frequency", delivery_frequency);
-    // console.log("payment_method", payment_method);
+ console.log("payment_method", payment_method);
 
     $("select[name=package]").val(package);
     $("select[name=delivery_frequency]").val(delivery_frequency);
     $("select[name=payment_method]").val(payment_method);
+    $("#payment_method_hidden").val(payment_method);
     $(".selectpicker").selectpicker("refresh");
 }
 
