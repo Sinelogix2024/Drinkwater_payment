@@ -59,7 +59,7 @@
             --apple-pay-button-border-radius: 5px;
             --apple-pay-button-padding: 5px 0px;
         }
-
+        
         .bootstrap-select > .dropdown-toggle.bs-placeholder, .bootstrap-select > .dropdown-toggle.bs-placeholder:active, .bootstrap-select > .dropdown-toggle.bs-placeholder:focus, .bootstrap-select > .dropdown-toggle.bs-placeholder:hover {
             color: #000 !important;
             background: #fff !important;
@@ -122,18 +122,7 @@
         @csrf
         <input type="hidden" class="current_tab" value="step1_form">
 
-        <div class="step1_form">
-          <div class="head_section">
-            <div class="brand">
-              <figure class="logo"><img src="{{asset('images/logowater.png')}}" alt="Logo" /></figure>
-              <span class="brand_txt">+ {{$advocateData->adv_first_name}} {{$advocateData->adv_last_name}}</span>
-            </div>
-            <div class="tagline_wrap">
-              <p>Your Path to daily hydration + wellness</p>
-            </div>
-          </div>
-
-
+  
             <div class="step1_form">
                 <main class="app_wrapper waterbg">
                     <div class="head_section">
@@ -194,7 +183,7 @@
                             <div class="flex_col_sm_12">
                                 <div class="form_field">
                                     <div class="text-field">
-                                        <select class="selectpicker form-select placeholder" name="alakline_pure" id="alakline_pure"
+                                        <select class="selectpicker form-control" name="alakline_pure" id="alakline_pure"
                                                 required data-dropup-auto="false"
                                                 title="{{config('constants.package.default_drop_down_alakline_text')}}">
                                             <span class="caret"></span>
@@ -276,12 +265,7 @@
                     </footer>
 
                 </main>
-            </div>
-            <footer class="text-center">
-                <div class="custom_container">
-                  ALL RIGHT RESERVED 2022 &copy WATR, LLC. | PRIVACY + LEGAL
-                </div>
-              </footer>
+            </div>         
           </div>
         </div>
 
@@ -524,12 +508,6 @@
         </div>
 
                         </div>
-
-                        <footer class="text-center">
-                            <div class="custom_container">
-                                {{date('Y')}} &copy ALL RIGHT RESERVED | WATR, LLC <br> PRIVACY + LEGAL
-                            </div>
-                        </footer>
                 </main>
             </div>
 
@@ -740,11 +718,6 @@
                     </footer>
                 </main>
             </div>
-            <footer class="text-center">
-              <div class="custom_container">
-                ALL RIGHT RESERVED 2022 &copy WATR, LLC. | PRIVACY + LEGAL
-              </div>
-            </footer>
           </main>
         </div>
 
@@ -1102,7 +1075,7 @@
 
 <script src="{{asset('js/applepay.js')}}"></script>
 
-
+    
 <style>
     label.error {
         color: red;
