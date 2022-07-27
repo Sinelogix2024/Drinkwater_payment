@@ -59,7 +59,7 @@
             --apple-pay-button-border-radius: 5px;
             --apple-pay-button-padding: 5px 0px;
         }
-        
+
         .bootstrap-select > .dropdown-toggle.bs-placeholder, .bootstrap-select > .dropdown-toggle.bs-placeholder:active, .bootstrap-select > .dropdown-toggle.bs-placeholder:focus, .bootstrap-select > .dropdown-toggle.bs-placeholder:hover {
             color: #000 !important;
             background: #fff !important;
@@ -122,7 +122,7 @@
         @csrf
         <input type="hidden" class="current_tab" value="step1_form">
 
-  
+
             <div class="step1_form">
                 <main class="app_wrapper waterbg">
                     <div class="head_section">
@@ -265,7 +265,7 @@
                     </footer>
 
                 </main>
-            </div>         
+            </div>
           </div>
         </div>
 
@@ -273,11 +273,7 @@
 
 
         <!-- Address -->
-        <div class="step2_form" style="display: none;">
-          <main class="app_wrapper waterbg">
-            <div class="custom_container">
 
-            <!-- Address -->
             <div class="step2_form" style="display: none;">
                 <main class="app_wrapper waterbg">
                     <div class="custom_container">
@@ -408,14 +404,8 @@
                 </main>
             </div>
 
-            <footer class="text-center">
-              <div class="custom_container">
-                ALL RIGHT RESERVED 2022 &copy WATR, LLC. | PRIVACY + LEGAL
-              </div>
-            </footer>
 
-          </main>
-        </div>
+
 
         <!-- Payment Type Selection -->
         <div class="step3_form" style="display: none;">
@@ -501,13 +491,164 @@
 
             <footer class="text-center">
               <div class="custom_container">
-                ALL RIGHT RESERVED 2022 &copy WATR, LLC. | PRIVACY + LEGAL
+                {{date('Y')}} &copy ALL RIGHT RESERVED | WATR, LLC <br> PRIVACY + LEGAL
               </div>
             </footer>
           </main>
         </div>
 
+
+
+
+            <!-- Card Detail Filling -->
+            <div class="step4_form" style="display: none;">
+                <main class="app_wrapper waterbg">
+                    <div class="custom_container">
+
+
+                        <div class="head_section">
+                            <div class="brand">
+                                <figure class="logo"><img src="{{asset('images/logowater.png')}}" alt="Logo"/></figure>
+                                <span
+                                    class="brand_txt">+ {{$advocateData->adv_first_name}} {{$advocateData->adv_last_name}}</span>
+                            </div>
+                            <div class="tagline_wrap">
+                                <p>Your Path to daily hydration + wellness</p>
+                            </div>
                         </div>
+
+                        <input type="hidden" class="client_token" value="{{$client_token}}">
+                        <input id="nonce" name="payment_method_nonce" type="hidden"/>
+
+                        <div class="form_wrapper">
+                            <div class="flex_row">
+                                <div class="flex_col_sm_4"></div>
+                                <div class="flex_col_sm_5">
+                                    <div class="form_field">
+                                        <div class="text-field custom_select">
+                                            <select class="selectpicker payment_method" name="payment_method"
+                                                    id="payment_method" data-dropup-auto="false"
+                                                    title="SELECT PAYMENT METHOD">
+                                                <option data-hidden="true">SELECT PAYMENT METHOD</option>
+                                                <option value="1">CREDIT CARD</option>
+                                                <option value="2">DEBIT CARD</option>
+                                                <option value="3">VENMO</option>
+                                                <option value="4">APPLY PAY</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- <div class="flex_row">
+                              <div class="flex_col_sm_12">
+                                <div class="form_field">
+                                  <div class="text-field">
+                                    <input type="text" name="name_on_card" id="name_on_card" placeholder="NAME ON CARD">
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="flex_row">
+                              <div class="flex_col_sm_12">
+                                <div class="form_field">
+                                  <div class="text-field">
+                                    <input type="text" name="card_number" id="card_number" placeholder="CARD NUMBER">
+                                  </div>
+                                </div>
+                              </div>
+                            </div> -->
+
+                            <div class="bt-drop-in-wrapper">
+                                <div id="bt-dropin"></div>
+
+                                <div id="bt-dropin_venmo">
+                                    <button type="button" id="venmo-button" class="btn btn-outline-success">
+                                        <img style="border-radius: 20px;"
+                                             src="{{asset('images/venmo.png')}}"
+                                             height="35px"
+                                             width="35px">
+                                        <b>PayNow</b>
+                                    </button>
+                                </div>
+
+                                <div id="bt-dropin_applepay">
+                                    <apple-pay-button buttonstyle="black" type="buy" locale="el-GR"
+                                                      style="display: block;"></apple-pay-button>
+                                </div>
+                            </div>
+
+                            <!-- <div class="flex_row">
+                              <div class="flex_col_sm_6">
+                                <div class="form_field">
+                                  <div class="text-field">
+                                    <input type="text" name="card_cvv" id="card_cvv" placeholder="CVV">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="flex_col_sm_6">
+                                <div class="form_field">
+                                  <div class="text-field">
+                                    <input type="text" name="card_expiry" id="card_expiry" placeholder="EXPIRATION">
+                                  </div>
+                                </div>
+                              </div> -->
+
+                            <div class="flex_row m_t_50">
+
+                                <div class="flex_col_sm_6">
+                                    <div class="form_field">
+                                        <div class="text-field">
+                                            <select class="selectpicker custom_select" name="package" id="package3"
+                                                    required data-dropup-auto="false"
+                                                    title="{{config('constants.package.default_drop_down_text')}}">
+                                                <option value=""
+                                                        data-hidden="true">{{config('constants.package.default_drop_down_text')}}</option>
+                                                <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
+                                                <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
+                                                <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex_col_sm_6">
+                                    <div class="form_field">
+                                        <div class="text-field custom_select">
+                                            <select class="selectpicker" name="delivery_frequency"
+                                                    id="delivery_frequency3" required data-dropup-auto="false"
+                                                    title="{{config('constants.package.delivery_freq_text')}}">
+                                                <option value=""
+                                                        data-hidden="true">{{config('constants.package.delivery_freq_text')}}</option>
+                                                <option value="1">EVERY SUNDAY</option>
+                                                <option value="2">EVERY MONDAY</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="dots_wrapper">
+                                <ul>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li class="active"></li>
+                                </ul>
+                            </div>
+
+                            <div class="dots_wrapper">
+                                <button type="button" class="outline_btn m_r_20 show_step3_form">Back</button>
+                                <button type="submit" class="primary_btn show_step5_form">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="text-center">
+                        <div class="custom_container">
+                            {{date('Y')}} &copy ALL RIGHT RESERVED | WATR, LLC <br> PRIVACY + LEGAL
+                        </div>
+                    </footer>
                 </main>
             </div>
 
@@ -718,176 +859,9 @@
                     </footer>
                 </main>
             </div>
-          </main>
-        </div>
-
-        <!-- Card Detail Filling -->
-        <div class="step4_form" style="display: none;">
-          <main class="app_wrapper waterbg">
-            <div class="custom_container">
 
 
-              <div class="head_section">
-                <div class="brand">
-                  <figure class="logo"><img src="{{asset('images/logowater.png')}}" alt="Logo" /></figure>
-                  <span class="brand_txt">+ {{$advocateData->adv_first_name}} {{$advocateData->adv_last_name}}</span>
-                </div>
-                <div class="tagline_wrap">
-                  <p>Your Path to daily hydration + wellness</p>
-                </div>
-              </div>
 
-            <!-- Card Detail Filling -->
-            <div class="step4_form" style="display: none;">
-                <main class="app_wrapper waterbg">
-                    <div class="custom_container">
-
-
-                        <div class="head_section">
-                            <div class="brand">
-                                <figure class="logo"><img src="{{asset('images/logowater.png')}}" alt="Logo"/></figure>
-                                <span
-                                    class="brand_txt">+ {{$advocateData->adv_first_name}} {{$advocateData->adv_last_name}}</span>
-                            </div>
-                            <div class="tagline_wrap">
-                                <p>Your Path to daily hydration + wellness</p>
-                            </div>
-                        </div>
-
-                        <input type="hidden" class="client_token" value="{{$client_token}}">
-                        <input id="nonce" name="payment_method_nonce" type="hidden"/>
-
-                        <div class="form_wrapper">
-                            <div class="flex_row">
-                                <div class="flex_col_sm_4"></div>
-                                <div class="flex_col_sm_5">
-                                    <div class="form_field">
-                                        <div class="text-field custom_select">
-                                            <select class="selectpicker payment_method" name="payment_method"
-                                                    id="payment_method" data-dropup-auto="false"
-                                                    title="SELECT PAYMENT METHOD">
-                                                <option data-hidden="true">SELECT PAYMENT METHOD</option>
-                                                <option value="1">CREDIT CARD</option>
-                                                <option value="2">DEBIT CARD</option>
-                                                <option value="3">VENMO</option>
-                                                <option value="4">APPLY PAY</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- <div class="flex_row">
-                              <div class="flex_col_sm_12">
-                                <div class="form_field">
-                                  <div class="text-field">
-                                    <input type="text" name="name_on_card" id="name_on_card" placeholder="NAME ON CARD">
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="flex_row">
-                              <div class="flex_col_sm_12">
-                                <div class="form_field">
-                                  <div class="text-field">
-                                    <input type="text" name="card_number" id="card_number" placeholder="CARD NUMBER">
-                                  </div>
-                                </div>
-                              </div>
-                            </div> -->
-
-                            <div class="bt-drop-in-wrapper">
-                                <div id="bt-dropin"></div>
-
-                                <div id="bt-dropin_venmo">
-                                    <button type="button" id="venmo-button" class="btn btn-outline-success">
-                                        <img style="border-radius: 20px;"
-                                             src="{{asset('images/venmo.png')}}"
-                                             height="35px"
-                                             width="35px">
-                                        <b>PayNow</b>
-                                    </button>
-                                </div>
-
-                                <div id="bt-dropin_applepay">
-                                    <apple-pay-button buttonstyle="black" type="buy" locale="el-GR"
-                                                      style="display: block;"></apple-pay-button>
-                                </div>
-                            </div>
-
-                            <!-- <div class="flex_row">
-                              <div class="flex_col_sm_6">
-                                <div class="form_field">
-                                  <div class="text-field">
-                                    <input type="text" name="card_cvv" id="card_cvv" placeholder="CVV">
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="flex_col_sm_6">
-                                <div class="form_field">
-                                  <div class="text-field">
-                                    <input type="text" name="card_expiry" id="card_expiry" placeholder="EXPIRATION">
-                                  </div>
-                                </div>
-                              </div> -->
-
-                            <div class="flex_row m_t_50">
-
-                                <div class="flex_col_sm_6">
-                                    <div class="form_field">
-                                        <div class="text-field">
-                                            <select class="selectpicker custom_select" name="package" id="package3"
-                                                    required data-dropup-auto="false"
-                                                    title="{{config('constants.package.default_drop_down_text')}}">
-                                                <option value=""
-                                                        data-hidden="true">{{config('constants.package.default_drop_down_text')}}</option>
-                                                <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
-                                                <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
-                                                <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex_col_sm_6">
-                                    <div class="form_field">
-                                        <div class="text-field custom_select">
-                                            <select class="selectpicker" name="delivery_frequency"
-                                                    id="delivery_frequency3" required data-dropup-auto="false"
-                                                    title="{{config('constants.package.delivery_freq_text')}}">
-                                                <option value=""
-                                                        data-hidden="true">{{config('constants.package.delivery_freq_text')}}</option>
-                                                <option value="1">EVERY SUNDAY</option>
-                                                <option value="2">EVERY MONDAY</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="dots_wrapper">
-                                <ul>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li class="active"></li>
-                                </ul>
-                            </div>
-
-                            <div class="dots_wrapper">
-                                <button type="button" class="outline_btn m_r_20 show_step3_form">Back</button>
-                                <button type="submit" class="primary_btn show_step5_form">Next</button>
-                            </div>
-                        </div>
-                    </div>
-                    <footer class="text-center">
-                        <div class="custom_container">
-                            {{date('Y')}} &copy ALL RIGHT RESERVED | WATR, LLC <br> PRIVACY + LEGAL
-                        </div>
-                    </footer>
-                </main>
-            </div>
           </main>
         </div>
 
@@ -1075,7 +1049,7 @@
 
 <script src="{{asset('js/applepay.js')}}"></script>
 
-    
+
 <style>
     label.error {
         color: red;
