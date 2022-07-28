@@ -58,6 +58,25 @@ $(document).ready(function() {
         console.log(localStorage.getItem('braintree_error'));
         console.log(`$("#basic-form").valid()`, $("#basic-form").valid());
 
+        // var ex=$('#expire').val();
+        // var cardnum=$('#cardnum').val();
+        // var cardname=$('#cardname').val();
+        // var cardcvv=$('#cardcvv').val();
+        // alert(ex);
+        // alert(cardnum);
+        // alert(cardname);
+        // alert(cardcvv);
+        // document.getElementById("credit-card-number").value=4111111111111111;
+
+                
+        // $('.number').val(cardnum);
+        // $('#expiration').val(ex);
+        // $('#cardholder-name-autofill-field').val(cardname);
+        // $('#expiration-month-autofill-field').val('12');
+        // $('#expiration-year-autofill-field').val('26');
+
+        //$('#expiration').val(ex);
+
         // showLoader();
 
         if ($("#basic-form").valid() && (localStorage.getItem('braintree_error') == 'false' || localStorage.getItem('braintree_error') == false)) {
