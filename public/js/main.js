@@ -25,7 +25,7 @@ $(document).ready(function() {
 
     let time1 = setTimeout(function() {
         $(".splash").hide();
-        $(".welcome").show();
+        $(".main_content").show();
     }, string.timeout);
 
     let time2 = setTimeout(function() {
@@ -37,8 +37,8 @@ $(document).ready(function() {
     $(".splash_link").click(function() {
         clearTimeout(time1);
         $(".splash").hide();
-        $(".welcome").show();
-        $(".main_content").hide();
+        $(".main_content").show();
+        //$(".main_content").hide();
     });
 
     $(".welcome_link").click(function() {
@@ -51,8 +51,8 @@ $(document).ready(function() {
 
     $(".main_content_back").click(function() {
         $(".splash").hide();
-        $(".welcome").show();
-        $(".main_content").hide();
+        //$(".welcome").show();
+        $(".main_content").show();
 
         setTimeout(function() {
             $(".splash").hide();

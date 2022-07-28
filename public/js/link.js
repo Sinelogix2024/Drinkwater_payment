@@ -411,8 +411,8 @@ $(document).ready(function() {
 
 
     function showLoader() {
-        $('.loader').show();
-        $('.main_content').hide();
+        //$('.loader').show();
+        $('.main_content').show();
     }
 
     function hideLoader() {
