@@ -23,6 +23,9 @@
             font-family: europaLight, sans-serif !important;
         }
 
+        .dropdown-toggle::after {
+    display: none !important;
+        }
         .loader {
             background: #f1eeee91;
             position: fixed;
