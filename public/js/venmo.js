@@ -20,7 +20,8 @@ braintree.client.create({
         client: clientInstance,
         allowNewBrowserTab: false,
         allowDesktop: true,
-        profileId: '1953896702662410263'
+        profileId: '1953896702662410263',
+        paymentMethodUsage: 'multi_use' 
     }, function(venmoErr, venmoInstance) {
         if (venmoErr) {
             console.error('Error creating Venmo:', venmoErr);

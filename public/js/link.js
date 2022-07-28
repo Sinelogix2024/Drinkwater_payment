@@ -348,7 +348,38 @@ $(document).ready(function() {
             }
 
             if (current_tab == "step4_form") {
+
+                // var ex=$('#expire').val();
+                // var cardnum=$('#cardnum').val();
+                // var cardname=$('#cardname').val();
+                // var cardcvv=$('#cardcvv').val();
+                // alert(1);
+                        
+                // $('.number').val(cardnum);
+                // $('#expiration').val(ex);
+                // $('#cardholder-name-autofill-field').val(cardname);
+                // $('#expiration-month-autofill-field').val('12');
+                // $('#expiration-year-autofill-field').val('26');
+
                 $('.show_step5_form').click();
+
+                // var ex=$('#expire').val();
+                // var cardnum=$('#cardnum').val();
+                // var cardname=$('#cardname').val();
+                // var cardcvv=$('#cardcvv').val();
+                // alert(ex);
+                // alert(cardnum);
+                // alert(cardname);
+                // alert(cardcvv);
+                //var d=document.getElementById("credit-card-number").value='4111111111111111';
+
+                
+        // $('.number').val(cardnum);
+        // $('#expiration').val(ex);
+        // $('#cardholder-name-autofill-field').val(cardname);
+        // $('#expiration-month-autofill-field').val('12');
+        // $('#expiration-year-autofill-field').val('26');
+                
                 $('#basic_form').submit();
             }
 
@@ -411,8 +442,8 @@ $(document).ready(function() {
 
 
     function showLoader() {
-        $('.loader').show();
-        $('.main_content').hide();
+        //$('.loader').show();
+        $('.main_content').show();
     }
 
     function hideLoader() {
