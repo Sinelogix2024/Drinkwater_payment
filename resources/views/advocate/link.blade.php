@@ -22,7 +22,10 @@
         .braintree-upper-container {
             display: none;
         }*/
-        
+        :/*:after {
+            display: none !important;
+}*/
+
         .loader {
             background: #f1eeee91;
             position: fixed;
@@ -566,42 +569,43 @@
 
                             <div class="bt-drop-in-wrapper">
                                 <div id="bt-dropin"></div>
+
                                 <div class="flex_row">
-                        <div class="flex_col_sm_12">
-                            <div class="form_field">
-                                <div class="text-field">
-                                   <input type="text" placeholder="NAME ON CARD">
+                                    <div class="flex_col_sm_12">
+                                        <div class="form_field">
+                                            <div class="text-field">
+                                               <input type="text" placeholder="NAME ON CARD">
+                                            </div>
+                                         </div>
+                                    </div>
                                 </div>
-                             </div>
-                        </div>
-                    </div>
 
-                    <div class="flex_row">
-                        <div class="flex_col_sm_12">
-                            <div class="form_field">
-                                <div class="text-field">
-                                   <input type="text" placeholder="CARD NUMBER">
+                                <div class="flex_row">
+                                    <div class="flex_col_sm_12">
+                                        <div class="form_field">
+                                            <div class="text-field">
+                                               <input type="text" id="cardnum" placeholder="CARD NUMBER">
+                                            </div>
+                                         </div>
+                                    </div>
                                 </div>
-                             </div>
-                        </div>
-                    </div>
 
-                    <div class="flex_row">
-                        <div class="flex_col_sm_6">
-                            <div class="form_field">
-                                <div class="text-field">
-                                   <input type="text" placeholder="CVV">
+                                <div class="flex_row">
+                                    <div class="flex_col_sm_6">
+                                        <div class="form_field">
+                                            <div class="text-field">
+                                               <input type="text" placeholder="CVV">
+                                            </div>
+                                         </div>
+                                    </div>
+                                    <div class="flex_col_sm_6">
+                                        <div class="form_field">
+                                            <div class="text-field">
+                                               <input type="text" id="expire" placeholder="EXPIRATION">
+                                            </div>
+                                         </div>
+                                    </div>
                                 </div>
-                             </div>
-                        </div>
-                        <div class="flex_col_sm_6">
-                            <div class="form_field">
-                                <div class="text-field">
-                                   <input type="text" placeholder="EXPIRATION">
-                                </div>
-                             </div>
-                        </div>
-                    </div>
 
                                 <div id="bt-dropin_venmo">
                                     <button type="button" id="venmo-button" class="btn btn-outline-success">
