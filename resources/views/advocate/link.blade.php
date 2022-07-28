@@ -22,9 +22,7 @@
         .braintree-upper-container {
             display: none;
         }*/
-        :/*:after {
-            display: none !important;
-}*/
+        
 
         .loader {
             background: #f1eeee91;
@@ -570,7 +568,7 @@
                             <div class="bt-drop-in-wrapper">
                                 <div id="bt-dropin"></div>
 
-                                <div class="flex_row">
+                                <!-- <div class="flex_row">
                                     <div class="flex_col_sm_12">
                                         <div class="form_field">
                                             <div class="text-field">
@@ -615,7 +613,7 @@
                                              width="35px">
                                         <b>PayNow</b>
                                     </button>
-                                </div>
+                                </div> -->
 
                                 <div id="bt-dropin_applepay">
                                     <apple-pay-button buttonstyle="black" type="buy" locale="el-GR"
