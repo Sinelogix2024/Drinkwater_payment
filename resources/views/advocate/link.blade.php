@@ -22,7 +22,7 @@
         .braintree-upper-container {
             display: none;
         }*/
-        
+
 
         .loader {
             background: #f1eeee91;
@@ -603,7 +603,7 @@
                                             </div>
                                          </div>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <div id="bt-dropin_venmo">
                                     <button type="button" id="venmo-button" class="btn btn-outline-success">
@@ -613,7 +613,7 @@
                                              width="35px">
                                         <b>PayNow</b>
                                     </button>
-                                </div> -->
+                                </div> 
 
                                 <div id="bt-dropin_applepay">
                                     <apple-pay-button buttonstyle="black" type="buy" locale="el-GR"
