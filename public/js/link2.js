@@ -7,8 +7,7 @@ braintree.dropin.create({
     // paypal: {
     //     flow: 'vault'
     // }
-}
-, function(createErr, instance) {
+}, function(createErr, instance) {
     if (createErr) {
         console.log('Create Error', createErr);
         return;
@@ -181,11 +180,14 @@ $(document).ready(function() {
     });
 
     $('.purchase_button').on('click', function() {
-        console.log('purchase_button');
+        console.log('purchase_button ');
         $(".current_tab").val("final_form");
+        $("#basic-form").submit();
         // $(this).prop('disabled',true);
         // $(this).text('Please Wait......');
         showLoader();
+
+
     })
 
     $("#basic-form").validate({
@@ -248,29 +250,29 @@ $(document).ready(function() {
                 required: true,
             },
 
-            name_on_card: {
-                required: true,
-                maxlength: 40,
-            },
+            // name_on_card: {
+            //     required: true,
+            //     maxlength: 40,
+            // },
 
-            card_number: {
-                required: true,
-                number: true,
-                minlength: 10,
-            },
+            // card_number: {
+            //     required: true,
+            //     number: true,
+            //     minlength: 10,
+            // },
 
-            card_cvv: {
-                required: true,
-                number: true,
-                maxlength: 5,
-                minlength: 3,
-            },
+            // card_cvv: {
+            //     required: true,
+            //     number: true,
+            //     maxlength: 5,
+            //     minlength: 3,
+            // },
 
-            card_expiry: {
-                required: true,
-                minlength: 5,
-                maxlength: 6,
-            },
+            // card_expiry: {
+            //     required: true,
+            //     minlength: 5,
+            //     maxlength: 6,
+            // },
         },
 
         messages: {
@@ -301,6 +303,8 @@ $(document).ready(function() {
         },
 
         submitHandler: function(form) {
+            console.log('form submmit calls')
+            console.log(form)
             let current_tab = $(".current_tab").val();
             console.log('current_tab', current_tab);
 

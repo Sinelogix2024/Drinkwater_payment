@@ -75,6 +75,36 @@
             background: #000 !important;
         }
 
+
+        .toast {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 9999;
+}
+
+.bootstrap-basic {
+  background: white;
+}
+
+/* Braintree Hosted Fields styling classes*/
+.braintree-hosted-fields-focused {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* .braintree-hosted-fields-focused.is-invalid {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+} */
+
+input:focus, textarea:focus, select:focus{
+        outline: none !important;
+    }
+
     </style>
 </head>
 
@@ -506,7 +536,7 @@
 
 
             <!-- Card Detail Filling -->
-            <div class="step4_form" style="display: show;">
+            <div class="step4_form" style="display: none;">
                 <main class="app_wrapper waterbg">
                     <div class="custom_container">
 
@@ -523,10 +553,10 @@
                         </div>
 
                         <input type="hidden" class="client_token" value="{{$client_token}}">
-                        <input id="nonce" name="payment_method_nonce" type="hidden"/>
+                        <input id="payment_method_nonce" name="payment_method_nonce" type="hidden"/>
 
                         <div class="form_wrapper">
-                            <div class="flex_row">
+                            <div class="flex_row" >
                                 <div class="flex_col_sm_4"></div>
                                 <div class="flex_col_sm_5">
                                     <div class="form_field">
@@ -566,9 +596,77 @@
                             </div> -->
 
                             <div class="bt-drop-in-wrapper">
-                                <div id="bt-dropin"></div>
+                                {{-- <div id="bt-dropin"></div> --}}
+                                <!-- Bootstrap inspired Braintree Hosted Fields example -->
+<div class="bootstrap-basic">
+    <form class="needs-validation" novalidate="">
 
-                                 <div class="flex_row">
+
+      <div class="row">
+        <div class="col-sm-12 mb-6">
+
+          <div class="form-control" id="cc-name" ></div>
+          <div class="invalid-feedback">
+            Name on card is required
+          </div>
+        </div>
+
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="col-sm-12 mb-6">
+
+          <div class="form-control text-field" id="cc-number" ></div>
+          <span id="card-brand"></span>
+
+          <div class="invalid-feedback">
+            Credit card number is required
+          </div>
+        </div>
+
+      </div>
+<br>
+
+      <div class="row">
+        <div class="col-sm-6 mb-6">
+
+            <div class="form-control" id="cc-cvv"></div>
+            <div class="invalid-feedback">
+              Security code required
+            </div>
+          </div>
+        <div class="col-sm-6 mb-6">
+
+          <div class="form-control" id="cc-expiration"></div>
+          <div class="invalid-feedback">
+            Expiration date required
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="text-center">
+      {{-- <button class="btn btn-primary btn-lg" type="submit">Pay with <span id="card-brand">Card</span></button> --}}
+      </div>
+
+  </div>
+  {{-- <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
+  <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
+    <div class="toast-header">
+      <strong class="mr-auto">Success!</strong>
+      <small>Just now</small>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="toast-body">
+      Next, submit the payment method nonce to your server.
+    </div>
+  </div>
+  </div> --}}
+                                <!-- <div class="flex_row">
                                     <div class="flex_col_sm_12">
                                         <div class="form_field">
                                             <div class="text-field">
@@ -582,7 +680,7 @@
                                     <div class="flex_col_sm_12">
                                         <div class="form_field">
                                             <div class="text-field">
-                                               <input type="text" id="cardnum"  placeholder="CARD NUMBER">
+                                               <input type="text" id="cardnum" placeholder="CARD NUMBER">
                                             </div>
                                          </div>
                                     </div>
@@ -603,7 +701,7 @@
                                             </div>
                                          </div>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <div id="bt-dropin_venmo">
                                     <button type="button" id="venmo-button" class="btn btn-outline-success">
@@ -682,7 +780,9 @@
 
                             <div class="dots_wrapper">
                                 <button type="button" class="outline_btn m_r_20 show_step3_form">Back</button>
-                                <button type="submit" class="primary_btn show_step5_form">Next</button>
+                                {{-- <button type="submit" class="primary_btn show_step5_form">Next</button> --}}
+                                <button class="primary_btn show_step5_form" type="submit">Next</button>
+                            </form>
                             </div>
                         </div>
                     </div>
@@ -717,6 +817,7 @@
                                 <div class="flex_col_sm_12">
                                     <div class="form_field">
                                         <div class="text-field">
+
                                             <select class="selectpicker custom_select final_page_package_label"
                                                     data-dropup-auto="false" title="YOUR WELLNESS SOLUTION">
                                                 <option value="" selected data-hidden="true">YOUR WELLNESS SOLUTION
@@ -1061,7 +1162,7 @@
 </body>
 
 </html>
-
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 <script src="{{asset('js/jquery.js')}}"></script>
 <script src="{{asset('js/constants.js')}}"></script>
 <script src="{{asset('js/jquery_validation.js')}}"></script>
@@ -1072,28 +1173,31 @@
 <script src="{{asset('js/custom.js')}}"></script>
 <script src="https://js.braintreegateway.com/web/dropin/1.33.2/js/dropin.min.js"></script>
 <script src="{{asset('js/main.js')}}"></script>
-<script src="{{asset('js/link.js')}}"></script>
-<script src="{{asset('js/show.js')}}"></script>
+<script src="{{asset('js/link2.js')}}"></script>
+<script src="{{asset('js/show2.js')}}"></script>
+{{-- <script src="{{asset('js/link2.js')}}"></script>
+<script src="{{asset('js/show2.js')}}"></script> --}}
 <script src="{{asset('js/aos.js')}}"></script>
 <script src="{{asset('js/custom.js')}}"></script>
 {{-- <script src="https://js.braintreegateway.com/web/3.85.3/js/client.min.js"></script> --}}
 {{-- <script src="https://js.braintreegateway.com/web/3.85.3/js/venmo.min.js"></script> --}}
 {{-- <script src="https://js.braintreegateway.com/web/3.85.3/js/data-collector.min.js"></script> --}}
 <script src="https://applepay.cdn-apple.com/jsapi/v1/apple-pay-sdk.js"></script>
-<script src="https://js.braintreegateway.com/web/3.77.0/js/client.min.js"></script>
+{{-- <script src="https://js.braintreegateway.com/web/3.77.0/js/client.min.js"></script> --}}
 <script src="https://js.braintreegateway.com/web/3.77.0/js/venmo.min.js"></script>
 <script src="https://js.braintreegateway.com/web/3.77.0/js/data-collector.min.js"></script>
 <script src="{{asset('js/venmo.js')}}"></script>
 
 
-<script src="https://js.braintreegateway.com/web/3.85.3/js/client.min.js"></script>
+<script src="https://js.braintreegateway.com/web/3.85.5/js/client.min.js"></script>
 <script src="https://js.braintreegateway.com/web/3.85.3/js/apple-pay.min.js"></script>
 
 <script src="{{asset('js/applepay.js')}}"></script>
-<script>
 
 
-</script>
+
+<script src='https://js.braintreegateway.com/web/3.85.5/js/hosted-fields.min.js'></script>
+<script src="{{asset('js/hosted-custom.js')}}"></script>
 
 <style>
     label.error {
@@ -1107,5 +1211,11 @@
         /* border: 1px dashed red;   */
         font-weight: 300;
         /* color: red;   */
+    }
+
+    .form-control{
+        border:none !important;
+        border-radius: 0px !important;
+        border-bottom: 1px solid #000 !important;
     }
 </style>
