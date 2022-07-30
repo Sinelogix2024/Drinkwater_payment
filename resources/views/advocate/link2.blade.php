@@ -912,7 +912,7 @@
 
                             <div class="text-center">
                                 <div class="form_field">
-                                    <button type="button" class="outline_btn m_r_20 show_step4_form">BACK</button>
+                                    {{-- <button type="button" class="outline_btn m_r_20 show_step4_form">BACK</button> --}}
                                     <button type="submit" class="primary_btn btn_effect btn_black purchase_button">
                                         PURHASE
                                     </button>
