@@ -506,7 +506,7 @@
 
 
             <!-- Card Detail Filling -->
-            <div class="step4_form" style="display: none;">
+            <div class="step4_form" style="display: show;">
                 <main class="app_wrapper waterbg">
                     <div class="custom_container">
 
@@ -568,7 +568,7 @@
                             <div class="bt-drop-in-wrapper">
                                 <div id="bt-dropin"></div>
 
-                                <!-- <div class="flex_row">
+                                 <div class="flex_row">
                                     <div class="flex_col_sm_12">
                                         <div class="form_field">
                                             <div class="text-field">
@@ -582,7 +582,7 @@
                                     <div class="flex_col_sm_12">
                                         <div class="form_field">
                                             <div class="text-field">
-                                               <input type="text" id="cardnum" placeholder="CARD NUMBER">
+                                               <input type="text" id="cardnum"  placeholder="CARD NUMBER">
                                             </div>
                                          </div>
                                     </div>
@@ -603,7 +603,7 @@
                                             </div>
                                          </div>
                                     </div>
-                                </div> -->
+                                </div>
 
                                 <div id="bt-dropin_venmo">
                                     <button type="button" id="venmo-button" class="btn btn-outline-success">
@@ -613,7 +613,7 @@
                                              width="35px">
                                         <b>PayNow</b>
                                     </button>
-                                </div> 
+                                </div>
 
                                 <div id="bt-dropin_applepay">
                                     <apple-pay-button buttonstyle="black" type="buy" locale="el-GR"
@@ -1090,7 +1090,10 @@
 <script src="https://js.braintreegateway.com/web/3.85.3/js/apple-pay.min.js"></script>
 
 <script src="{{asset('js/applepay.js')}}"></script>
+<script>
 
+
+</script>
 
 <style>
     label.error {
