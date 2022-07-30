@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 //     $orderDetail = Order::find(1);
 
-//     // return 
+//     // return
 //     $advocateData = Advocate::where('adv_detail_access_token', '7p4MQhdEhl92jG9ZwpOOQBTJayd7qz1HonEjJKt0kFZ9hiCWqJ')->first();
 
 
@@ -47,7 +47,7 @@ use Illuminate\Support\Facades\Route;
 //     return response()->json($generated_pdf_link);
 
 //     return $pdf->download('pdfview.pdf');
-    
+
 //     return view('emails.order_placed_new');
 // })->name('splash');
 
@@ -64,6 +64,9 @@ Route::match(['get'],'/braintree', 'App\Http\Controllers\BrainTreeController@vie
 Route::match(['post'],'/braintree', 'App\Http\Controllers\BrainTreeController@call');
 Route::match(['get'],'/watr/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
 Route::match(['post'],'/watr/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
+
+Route::match(['get'],'/watr-test/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getwatrDetail');
+Route::match(['post'],'/watr-test/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
 
 Route::match(['get'],'/orderDetail/{order_id}', 'App\Http\Controllers\Advocate\AdvocateController@orderDetail');
 

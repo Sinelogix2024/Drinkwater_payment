@@ -18,10 +18,10 @@ braintree.client.create({
 
     braintree.venmo.create({
         client: clientInstance,
-        allowNewBrowserTab: false,
+        allowNewBrowserTab: true,
         allowDesktop: true,
         profileId: '1953896702662410263',
-        paymentMethodUsage: 'multi_use' 
+        paymentMethodUsage: 'multi_use', 
     }, function(venmoErr, venmoInstance) {
         if (venmoErr) {
             console.error('Error creating Venmo:', venmoErr);
@@ -78,7 +78,7 @@ braintree.client.create({
 
             console.log('displayVenmoButton clicked');
 
-            venmoButton.disabled = true;
+            venmoButton.disabled = false;
 
             venmoInstance.tokenize(function(tokenizeErr, payload) {
 
