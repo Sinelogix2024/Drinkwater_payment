@@ -48,7 +48,6 @@ class AdvocateController extends Controller
 
         if( $request->method() == 'POST')
         {
-           // dd('order place',$request->all());
             $amount = $request->total_amount ?? 10.00;
             $result = $gateway->transaction()->sale([
                 'amount' => $amount,
@@ -56,19 +55,7 @@ class AdvocateController extends Controller
                 'deviceData' => "deviceDataFromTheClient",
                 'options' => [ 'submitForSettlement' => True ]
             ]);
-
-            // $result_venmo = $gateway->transaction()->sale([
-            //     'amount' => $amount,
-            //     'paymentMethodNonce' => $request->payment_method_nonce,
-            //     'options' => [
-            //         'submitForSettlement' => true,
-            //         'venmo' => [
-            //           'profileId' => '1953896702662410263'
-            //         ]
-            //     ],
-            //     'deviceData' => "deviceDataFromTheClient",
-            // ]);
-
+            
             $orderId = Order::insertGetId([
                 'odr_id' => 'ordr_dw_' . time() . '_' . date('Y_m_d'),
                 'odr_first_name' => $request->first_name,
@@ -89,7 +76,7 @@ class AdvocateController extends Controller
                 'odr_adv_detail_access_token' => $request->adv_detail_access_token,
                 'odr_tax_amount' => $request->tax_amount,
             ]);
-
+            
             // return
             $orderDetail = Order::find($orderId);
             $advocateData = Advocate::where('adv_detail_access_token', $request->adv_detail_access_token)->first();

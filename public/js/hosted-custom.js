@@ -196,7 +196,7 @@ braintree.client.create({
         console.log(payload)
         // This is where you would submit payload.nonce to your server
         $('.toast').toast('show');
-
+        localStorage.setItem("payload", payload);
         // you can either send the form values with the payment
         // method nonce via an ajax request to your server,
         // or add the payment method nonce to a hidden inpiut
