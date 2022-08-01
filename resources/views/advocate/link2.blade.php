@@ -122,7 +122,7 @@
 
 <body class="body">
     {{-- main container 1 start --}}
-    <main class="app_wrapper waterbg splash">
+    <main class="app_wrapper waterbg" style="display: none">
         <div class="custom_container">
             <div class="welcome_wrapper text-center">
                 <div class="tagline_wrap" data-aos="zoom-in-up" data-aos-duration="1500">
@@ -136,7 +136,7 @@
     {{-- main container 1 end --}}
 
     {{-- main container 2 start --}}
-    <main class="app_wrapper waterbg welcome" style="display: none;">
+    <main class="app_wrapper waterbg " style="display:none">
         <div class="custom_container">
 
             <div class="welcome_wrapper text-center">
@@ -590,7 +590,7 @@
                                 {{-- <div id="bt-dropin"></div> --}}
                                 <!-- Bootstrap inspired Braintree Hosted Fields example -->
                                 <div class="bootstrap-basic" id="bt-dropin">
-                                    <form class="needs-validation" novalidate="">
+                                    <form class="needs-validation" novalidate>
 
 
                                         <div class="row">
@@ -608,7 +608,7 @@
                                         <div class="row">
                                             <div class="col-sm-12 mb-6">
 
-                                                <div class="form-control text-field" id="cc-number"></div>
+                                                <div class="form-control text-field " id="cc-number"></div>
                                                 <span id="card-brand"></span>
 
                                                 <div class="invalid-feedback">
@@ -705,7 +705,7 @@
                             <div class="dots_wrapper">
                                 <button type="button" class="outline_btn m_r_20 show_step3_form">Back</button>
                                 {{-- <button type="submit" class="primary_btn show_step5_form">Next</button> --}}
-                                <button class="primary_btn show_step5_form" type="submit">Next</button>
+                                <button class="primary_btn show_step5_form"  type="submit">Next</button>
 
                                 <footer class="text-center">
                                     <div class="custom_container">
@@ -1047,6 +1047,8 @@ $(document).ready(function () {
         border: none !important;
         border-radius: 0px !important;
         border-bottom: 1px solid #000 !important;
+        font-family: europaLight, sans-serif !important;
+    font-size: 14px !important;
     }
 
     .caret-symbol {
