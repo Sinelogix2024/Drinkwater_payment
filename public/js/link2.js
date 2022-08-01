@@ -204,9 +204,9 @@ $(document).ready(function() {
             },
             mobile: {
                 required: true,
-                minlength: 7,
-                maxlength: 15,
-                number: true,
+                minlength: 12,
+                maxlength: 12,
+                //number: true,
             },
             email: {
                 required: true,
@@ -289,8 +289,8 @@ $(document).ready(function() {
                 email: "Enter a valid email",
             },
             mobile: {
-                minlength: "Mobile must be at least 7 characters long",
-                maxlength: "Mobile must be at least 15 characters long",
+                minlength: "Mobile must be at least 10 digits long",
+                maxlength: "Mobile must be at least 10 digits long",
             },
 
             package: {
