@@ -480,7 +480,7 @@
                                                         <option value="1">CREDIT CARD</option>
                                                         <option value="2">DEBIT CARD</option>
                                                         <option value="3">VENMO </option>
-                                                        <option value="4">APPLY PAY </option>
+                                                        {{-- <option value="4">APPLY PAY </option> --}}
                                                     </select>
                                                 </div>
                                             </div>
@@ -578,7 +578,7 @@
                                                 <option value="1">CREDIT CARD</option>
                                                 <option value="2">DEBIT CARD</option>
                                                 <option value="3">VENMO</option>
-                                                <option value="4">APPLY PAY</option>
+                                                {{-- <option value="4">APPLY PAY</option> --}}
                                             </select>
                                         </div>
                                     </div>
@@ -862,7 +862,7 @@
                                                 <option value="1">CREDIT CARD</option>
                                                 <option value="2">DEBIT CARD</option>
                                                 <option value="3">VENMO</option>
-                                                <option value="4">APPLY PAY</option>
+                                                {{-- <option value="4">APPLY PAY</option> --}}
                                             </select>
 
                                             <button type="button"
