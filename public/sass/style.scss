@@ -189,6 +189,14 @@ body{
     background-color: #000 !important;
     color: #fff !important;
 }
+.dropdown-toggle::before{
+    background-image: url('../images/line-angle-down.svg');
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+    border: none !important;
+    background-position: center;
+}
 .dropdown-toggle::after{
     background-image: url('../images/line-angle-down.svg');
     width: 15px;
@@ -209,7 +217,7 @@ body{
 .dropdown-menu li a span.text{
     position: relative;
 
-    
+
 }
 .dropdown-menu li a span.text:before{
     position: absolute;
@@ -226,7 +234,7 @@ body{
     background-color: #000 !important;
 }
 .dropdown-item:focus li a span.text:before, .dropdown-item:hover li a span.text:before {
-   background-color: #fff !important; 
+   background-color: #fff !important;
 }
 
 .bootstrap-select .dropdown-menu li a:hover span.text:before{

@@ -196,8 +196,10 @@
                                 <div class="flex_col_sm_6">
                                     <div class="form_field">
                                         <div class="text-field">
-                                            <input type="text" value="" name="mobile" id="mobile" number
-                                                placeholder="Mobile #">
+                                            {{-- <input type="text" value="" name="mobile" id="mobile" number
+                                                placeholder="Mobile #"> --}}
+
+                                                <input type="text" name="mobile" id="mobile" pattern="?\d{3}[- ]?\d{3}[- ]?\d{4}" maxlength="12" title="US based Phone Number in the format of: 123-456-7890" placeholder="Mobile" required />
                                         </div>
                                     </div>
                                 </div>
@@ -218,9 +220,9 @@
                                         <div class="text-field">
                                             <select class="selectpicker form-control" name="alakline_pure"
                                                 id="alakline_pure" required data-dropup-auto="false"
-                                                title="{{ config('constants.package.default_drop_down_alakline_text') }}">
-                                                <span class="caret"></span>
-                                                <option data-hidden="true">
+                                                title="{{ config('constants.package.default_drop_down_alakline_text') }} ">
+
+                                                <option data-hidden="true"  selected="selected">
                                                     {{ config('constants.package.default_drop_down_alakline_text') }}
                                                 </option>
                                                 <option value="1">ALAKLINE + ELECTOLYTE</option>
@@ -238,21 +240,21 @@
                                     <div class="form_field">
                                         <div class="text-field">
 
-                                            <select class="selectpicker placeholder select_alka" name="package"
+                                            <select class="selectpicker placeholder form-control select_alka" name="package"
                                                 id="package1" required data-dropup-auto="false"
                                                 title="{{ config('constants.package.default_drop_down_text') }}">
 
-                                                <option data-hidden="true">
+                                                <option data-hidden="true" selected>
                                                     {{ config('constants.package.default_drop_down_text') }}</option>
                                                 <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
                                                 <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
                                                 <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
                                             </select>
 
-                                            <select class="selectpicker placeholder select_pure d-none" name="package"
+                                            <select class="selectpicker placeholder form-control select_pure d-none" name="package"
                                                 id="package1" required data-dropup-auto="false"
                                                 title="{{ config('constants.package.default_drop_down_text') }}">
-                                                <option data-hidden="true">
+                                                <option data-hidden="true" selected>
                                                     {{ config('constants.package.default_drop_down_text') }}</option>
                                                 <option value="1">1 MONTH OF HYDRATION $220 ( 10 KITS )</option>
                                                 <option value="2">2 MONTH OF HYDRATION $440 ( 20 KITS )</option>
@@ -265,16 +267,17 @@
                                 <div class="flex_col_sm_6">
                                     <div class="form_field">
                                         <div class="text-field">
-                                            <select class="selectpicker delivery_frequency1" name="delivery_frequency"
+                                            <select class="selectpicker form-control delivery_frequency1" name="delivery_frequency"
                                                 id="delivery_frequency1" required data-dropup-auto="false"
                                                 title="{{ config('constants.package.delivery_freq_text') }}">
-                                                <option selected disabled data-hidden="true">
+                                                <option data-hidden="true" selected="selected">
                                                     {{ config('constants.package.delivery_freq_text') }}</option>
                                                 <option value="1">EVERY SUNDAY</option>
                                                 <option value="2">EVERY MONDAY</option>
                                             </select>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
 
@@ -471,7 +474,7 @@
                                                     <select class="selectpicker payment_method" name="payment_method"
                                                         id="payment_method" data-dropup-auto="false"
                                                         title="SELECT PAYMENT METHOD">
-                                                        <option selected disabled data-hidden="true">SELECT PAYMENT
+                                                        <option  data-hidden="true" selected="selected">SELECT PAYMENT
                                                             METHOD
                                                         </option>
                                                         <option value="1">CREDIT CARD</option>
@@ -1014,6 +1017,17 @@
 <script src="{{ asset('js/applepay.js') }}"></script>
 <script src='https://js.braintreegateway.com/web/3.85.5/js/hosted-fields.min.js'></script>
 <script src="{{ asset('js/hosted-custom.js') }}"></script>
+<script src="{{ asset('js/jquery-input-mask-phone-number.js') }}"></script>
+
+<script>
+$(document).ready(function () {
+                // $('#yourphone').usPhoneFormat({
+                //     format: '(xxx) xxx-xxxx',
+                // });
+
+                $('#mobile').usPhoneFormat();
+            });
+</script>
 
 <style>
     label.error {
@@ -1034,4 +1048,14 @@
         border-radius: 0px !important;
         border-bottom: 1px solid #000 !important;
     }
+
+    .caret-symbol {
+
+    background-image: url(https://cdn1.iconfinder.com/data/icons/arrows-vol-1-5/24/dropdown_arrow2-512.png);
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+    border: none !important;
+    background-position: center;
+}
 </style>
