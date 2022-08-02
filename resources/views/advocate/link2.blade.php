@@ -21,6 +21,10 @@
             line-height: 1.5;
         }
 
+        .head_section .brand .brand_txt {
+            font-size: 2rem;
+        }
+
         /*
         .braintree-upper-container {
             display: none;
@@ -145,6 +149,17 @@
         .primary_btn {
             color: #fff;
             padding: 10px;
+            border-width: 2px 2px 2px 2px !important;
+            border-radius: 50px 50px 50px 50px;
+            padding: 5px 30px 5px 30px;
+            border: 1px solid black;
+        }
+
+        .outline_btn {
+            border-width: 2px 2px 2px 2px !important;
+            border-radius: 50px 50px 50px 50px;
+            padding: 5px 30px 5px 30px;
+            border: 1px solid black;
         }
 
         .billing_radio_btn_up {
@@ -319,10 +334,10 @@
                                 <div class="flex_col_sm_4" id="delf_div">
                                     <div class="form_field">
                                         <div class="text-field">
-                                            <select class="selectpicker form-control " name="delivery_frequency" id="delivery_frequency1" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
+                                            <select class="selectpicker placeholder form-control" name="delivery_frequency" id="delivery_frequency1" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
                                                 <option data-hidden="true" selected="selected">
                                                     {{ config('constants.package.delivery_freq_text') }}</option>
-                                                <option value="1">EVERY SUNDAY</option>
+                                                <option value="1">EVERY SUNDAY 1</option>
                                                 <option value="2">EVERY MONDAY</option>
                                             </select>
                                         </div>
@@ -438,8 +453,8 @@
                                 </div>
                                 <div class="flex_col_sm_6">
                                     <div class="form_field">
-                                        <div class="text-field custom_select">
-                                            <select class="selectpicker" name="delivery_frequency" id="delivery_frequency2" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
+                                        <div class="text-field">
+                                            <select class="selectpicker custom_select" name="delivery_frequency" id="delivery_frequency2" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
                                                 <option selected disabled data-hidden="true">
                                                     {{ config('constants.package.delivery_freq_text') }}</option>
                                                 <option value="1">EVERY SUNDAY</option>
@@ -500,6 +515,9 @@
                             </div>
                         </div>
 
+                        <input type="hidden" class="client_token" value="{{ $client_token }}">
+                        <input id="payment_method_nonce" name="payment_method_nonce" type="hidden" />
+
                         <div class="form_wrapper">
                             <div class="col-md-12">
                                 <div class="form_field text-center">
@@ -544,14 +562,14 @@
                                         <br>
 
                                         <div class="row">
-                                            <div class="col-sm-6 mb-6">
+                                            <div class="col-6 mb-6">
 
                                                 <div class="form-control" id="cc-cvv"></div>
                                                 <div class="invalid-feedback">
                                                     Security code required
                                                 </div>
                                             </div>
-                                            <div class="col-sm-6 mb-6">
+                                            <div class="col-6 mb-6">
 
                                                 <div class="form-control" id="cc-expiration"></div>
                                                 <div class="invalid-feedback">
@@ -647,9 +665,6 @@
                                 <p>Your Path to daily hydration + wellness</p>
                             </div>
                         </div>
-
-                        <input type="hidden" class="client_token" value="{{ $client_token }}">
-                        <input id="payment_method_nonce" name="payment_method_nonce" type="hidden" />
 
                         <div class="form_wrapper">
                             <div class="flex_row" style="display: none">
@@ -905,7 +920,7 @@
                             <div class="text-center">
                                 <div class="form_field">
                                     {{-- <button type="button" class="outline_btn m_r_20 show_step4_form">BACK</button> --}}
-                                    <button type="submit" class="primary_btn btn_effect btn_black purchase_button">
+                                    <button type="submit" class="primary_btn btn_effect btn_black purchase_button" style="width: auto;">
                                         PURHASE
                                     </button>
                                 </div>
@@ -1017,6 +1032,14 @@
         $('#mobile').usPhoneFormat();
 
         $("#delf_div").hide();
+
+        $('.selectpicker').change(function() {
+            setTimeout(function() {
+                $('button').removeClass('bs-placeholder');
+            }, 500);
+        });
+
+
     });
 
 </script>
@@ -1043,7 +1066,7 @@
         /* font-size: 14px !important; */
     }
 
-    div.form-control {
+    div.dropdown {
         border-bottom: 0px solid #000 !important;
     }
 
