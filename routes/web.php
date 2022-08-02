@@ -62,18 +62,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('advocate/experience');
 });
-Route::get('/experience', function () {
-    return view('advocate/drink');
+
+Route::get('/home/{detail_access_token}', function ($detail_access_token) {
+    return view('advocate/experience')->with('detail_access_token', $detail_access_token);
+});
+Route::get('/experience/{detail_access_token}', function ($detail_access_token) {
+    return view('advocate/drink')->with('detail_access_token', $detail_access_token);
 })->name('experience');
-Route::match(['get'],'/braintree', 'App\Http\Controllers\BrainTreeController@view');
-Route::match(['post'],'/braintree', 'App\Http\Controllers\BrainTreeController@call');
-Route::match(['get'],'/watr/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
-Route::match(['post'],'/watr/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
 
-Route::match(['get'],'/watr-test/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getwatrDetail');
-Route::match(['post'],'/watr-test/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
+Route::match(['get'], '/braintree', 'App\Http\Controllers\BrainTreeController@view');
+Route::match(['post'], '/braintree', 'App\Http\Controllers\BrainTreeController@call');
+Route::match(['get'], '/watr/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
+Route::match(['post'], '/watr/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
 
-Route::match(['get'],'/orderDetail/{order_id}', 'App\Http\Controllers\Advocate\AdvocateController@orderDetail');
+Route::match(['get'], '/watr-test/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getwatrDetail');
+Route::match(['post'], '/watr-test/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
+
+Route::match(['get'], '/orderDetail/{order_id}', 'App\Http\Controllers\Advocate\AdvocateController@orderDetail');
 
 // venom payment gateway response
-Route::match(['get'],'/venmo_server/{payerID}/{deviceData}/{amount}', 'App\Http\Controllers\BrainTreeController@venomResponse');
+Route::match(['get'], '/venmo_server/{payerID}/{deviceData}/{amount}', 'App\Http\Controllers\BrainTreeController@venomResponse');

@@ -347,8 +347,10 @@ $(document).ready(function() {
                     $(".step2_form").hide(true);
                     $(".step2_form").hide();
                     $(".step3_form").hide(true);
-                    $(".step4_form").show(true);
-                    $(".step5_form").hide(true);
+                    $(".step4_form").hide(true);
+                    // $(".step4_form").show(true);
+                    // $(".step5_form").hide(true);
+                    $(".step5_form").show(true);
                     $(".current_tab").val("step4_form");
                     setDropDownvalue();
                     $("#payment_method").trigger("change");
@@ -446,6 +448,10 @@ $(document).ready(function() {
                 $("#payment_method").trigger("change");
                 form.submit();
             }
+
+            setTimeout(function() {
+                $('button').removeClass('bs-placeholder');
+            }, 500);
         },
     });
 
