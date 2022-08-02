@@ -28,6 +28,7 @@
     font-weight: 300;
     letter-spacing: 0.1rem;
 } */
+
     </style>
 </head>
 
@@ -50,13 +51,13 @@
 
 
 
-                <a  href="#" type="button" class="splash_link" style="margin-top:100px;color:#000">DISCOVER <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="#" type="button" class="splash_link" style="margin-top:100px;color:#000">DISCOVER <i class="fas fa-arrow-circle-right"></i></a>
 
             </div>
 
 
             <div class="welcome_wrapper text-center ">
-                <a  href="{{ url('/watr-test/1234') }}" type="button" class="splash_link" style="margin-top:100px;color:#000">DRINK <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ url('/watr-test/kny12raph') }}" type="button" class="splash_link" style="margin-top:100px;color:#000">DRINK <i class="fas fa-arrow-circle-right"></i></a>
 
             </div>
         </div>
@@ -82,5 +83,3 @@
 <script src="{{ asset('js/show2.js') }}"></script>
 <script src="{{ asset('js/aos.js') }}"></script>
 <script src="{{ asset('js/custom.js') }}"></script>
-
-

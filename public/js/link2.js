@@ -76,18 +76,18 @@ $(document).ready(function() {
         console.log();
 
 
-        if($(this).val() == 1){
+        if ($(this).val() == 1) {
 
             console.log('Test :: aplkine ::');
             console.log();
             $('.select_alka').removeClass('d-none');
             $('.select_pure').addClass('d-none');
             //return false;
-        }else if($(this).val() == 2){
+        } else if ($(this).val() == 2) {
             //var option = "1 MONTH OF HYDRATION $250 ( 10 KITS )";
-           // var new_option = "1 MONTH OF HYDRATION $111 ( 10 KITS )";
-           // $("#package1").find('option:contains(' + option + ')').text();
-           $('.select_alka').addClass('d-none');
+            // var new_option = "1 MONTH OF HYDRATION $111 ( 10 KITS )";
+            // $("#package1").find('option:contains(' + option + ')').text();
+            $('.select_alka').addClass('d-none');
             $('.select_pure').removeClass('d-none');
             console.log('Test :: pure ::');
         }
@@ -97,7 +97,7 @@ $(document).ready(function() {
 
         $('#delivery_frequency1').removeClass('d-none');
         $('#delf_div').show();
-        $('#delf_div').css('display','block');
+        $('#delf_div').css('display', 'block');
 
     });
 
@@ -164,15 +164,15 @@ $(document).ready(function() {
     $(document).on("change", "#payment_method", function() {
         let selected = $(this).children("option:selected").val();
 
-        if(selected == 3){ // hide card form and show venom
+        if (selected == 3) { // hide card form and show venom
             $("#bt-dropin").hide();
             $("#bt-dropin_venmo").show();
             $("#bt-dropin_applepay").hide();
-        }else if(selected == 4){ // hide card form and show apple
+        } else if (selected == 4) { // hide card form and show apple
             $("#bt-dropin").hide();
             $("#bt-dropin_venmo").hide();
             $("#bt-dropin_applepay").show();
-        }else{
+        } else {
             $("#bt-dropin").show();
             $("#bt-dropin_venmo").hide();
             $("#bt-dropin_applepay").hide();
@@ -383,11 +383,11 @@ $(document).ready(function() {
                 //var d=document.getElementById("credit-card-number").value='4111111111111111';
 
 
-        // $('.number').val(cardnum);
-        // $('#expiration').val(ex);
-        // $('#cardholder-name-autofill-field').val(cardname);
-        // $('#expiration-month-autofill-field').val('12');
-        // $('#expiration-year-autofill-field').val('26');
+                // $('.number').val(cardnum);
+                // $('#expiration').val(ex);
+                // $('#cardholder-name-autofill-field').val(cardname);
+                // $('#expiration-month-autofill-field').val('12');
+                // $('#expiration-year-autofill-field').val('26');
 
                 $('#basic_form').submit();
             }
@@ -403,7 +403,7 @@ $(document).ready(function() {
                 $('.shipping_address1_final_page').val($('#shipping_address2').val());
                 $('.s_city_state_zip_final_page').val($('#s_city_state_zip').val());
 
-           //     $('.last_4_digit_card').text($("#basic-form").serializeArray()[23].value.substr($("#basic-form").serializeArray()[23].value.length - 4));
+                //     $('.last_4_digit_card').text($("#basic-form").serializeArray()[23].value.substr($("#basic-form").serializeArray()[23].value.length - 4));
 
                 $('.last_4_digit_card').text("****");
 
@@ -468,13 +468,23 @@ $(document).ready(function() {
     }
 
 
-    $(".same_billing_address").click(function() {
-        $("#shipping_address").val($("#billing_address").val());
-        $("#shipping_address2").val($("#billing_address2").val());
-        $("#shippingData").hide();
-        // $('#BillData').removeClass('col-md-')
-        $('#BillData').addClass('col-md-12');
-        $("#s_city_state_zip").val($("#b_city_state_zip").val());
+    $('.same_billing_address').change(function() {
+        $('.same_billing_address_down')[0].checked = this.checked;
+        $('.same_billing_address_up')[0].checked = this.checked;
+
+        // let isCheckedUp = $('.same_billing_address_up')[0].checked
+        // let isCheckedDown = $('.same_billing_address_down')[0].checked
+
+        if (this.checked) {
+            $("#shipping_address").val($("#billing_address").val());
+            $("#shipping_address2").val($("#billing_address2").val());
+            $("#s_city_state_zip").val($("#b_city_state_zip").val());
+            $('#BillData').addClass('col-md-12');
+            $("#shippingData").hide();
+        } else {
+            $('#BillData').removeClass('col-md-12');
+            $("#shippingData").show();
+        }
 
     });
 
