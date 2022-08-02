@@ -55,13 +55,13 @@ class AdvocateController extends Controller
                 'deviceData' => "deviceDataFromTheClient",
                 'options' => [ 'submitForSettlement' => True ]
             ]);
-            
+
             $orderId = Order::insertGetId([
                 'odr_id' => 'ordr_dw_' . time() . '_' . date('Y_m_d'),
                 'odr_first_name' => $request->first_name,
                 'odr_last_name' => $request->last_name,
                 'odr_email' => $request->email,
-                'odr_mobile' => $request->mobile,
+                'odr_mobile' => str_replace("-", "", $request->mobile),
                 'odr_package_id' => $request->package,
                 'odr_delivery_frequency_id' => $request->delivery_frequency,
                 'billing_address' => $request->billing_address,
@@ -76,7 +76,7 @@ class AdvocateController extends Controller
                 'odr_adv_detail_access_token' => $request->adv_detail_access_token,
                 'odr_tax_amount' => $request->tax_amount,
             ]);
-            
+
             // return
             $orderDetail = Order::find($orderId);
             $advocateData = Advocate::where('adv_detail_access_token', $request->adv_detail_access_token)->first();
@@ -94,7 +94,7 @@ class AdvocateController extends Controller
             try
             {
                 $client->messages->create(
-                    // '+91 '. $request->mobile,
+                    // '+1'.str_replace("-", "", $request->mobile),
                     getenv('TWILIO_TO_SEND_NUMBER'),
                     array(
                         'from' => getenv("TWILIO_NUMBER"),
