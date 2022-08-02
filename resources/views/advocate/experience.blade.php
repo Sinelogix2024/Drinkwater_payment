@@ -112,6 +112,7 @@
         select:focus {
             outline: none !important;
         }
+
     </style>
 </head>
 
@@ -128,7 +129,8 @@
                 <div class="tagline_wrap" data-aos="zoom-in-up" data-aos-duration="1500">
                     <figure class="logo"><img src="{{ asset('images/logowater.png') }}" alt="Logo" /></figure>
                 </div>
-                <a href="{{ url('/experience') }}" type="button" class="splash_link" style="text-decoration: underline;">EXPERIENCE</a>
+                <a href="{{ url('/experience',$detail_access_token) }}" type="button" class="splash_link" style="text-decoration: underline;">EXPERIENCE</a>
+
             </div>
 
         </div>
@@ -154,7 +156,3 @@
 <script src="{{ asset('js/show2.js') }}"></script>
 <script src="{{ asset('js/aos.js') }}"></script>
 <script src="{{ asset('js/custom.js') }}"></script>
-
-
-
-

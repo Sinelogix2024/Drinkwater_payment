@@ -21,6 +21,10 @@
             line-height: 1.5;
         }
 
+        .head_section .brand .brand_txt {
+            font-size: 2rem;
+        }
+
         /*
         .braintree-upper-container {
             display: none;
@@ -145,6 +149,17 @@
         .primary_btn {
             color: #fff;
             padding: 10px;
+            border-width: 2px 2px 2px 2px !important;
+            border-radius: 50px 50px 50px 50px;
+            padding: 5px 30px 5px 30px;
+            border: 1px solid black;
+        }
+
+        .outline_btn {
+            border-width: 2px 2px 2px 2px !important;
+            border-radius: 50px 50px 50px 50px;
+            padding: 5px 30px 5px 30px;
+            border: 1px solid black;
         }
 
         .billing_radio_btn_up {
@@ -319,10 +334,10 @@
                                 <div class="flex_col_sm_4" id="delf_div">
                                     <div class="form_field">
                                         <div class="text-field">
-                                            <select class="selectpicker form-control " name="delivery_frequency" id="delivery_frequency1" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
+                                            <select class="selectpicker placeholder form-control" name="delivery_frequency" id="delivery_frequency1" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
                                                 <option data-hidden="true" selected="selected">
                                                     {{ config('constants.package.delivery_freq_text') }}</option>
-                                                <option value="1">EVERY SUNDAY</option>
+                                                <option value="1">EVERY SUNDAY 1</option>
                                                 <option value="2">EVERY MONDAY</option>
                                             </select>
                                         </div>
@@ -438,8 +453,8 @@
                                 </div>
                                 <div class="flex_col_sm_6">
                                     <div class="form_field">
-                                        <div class="text-field custom_select">
-                                            <select class="selectpicker" name="delivery_frequency" id="delivery_frequency2" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
+                                        <div class="text-field">
+                                            <select class="selectpicker custom_select" name="delivery_frequency" id="delivery_frequency2" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
                                                 <option selected disabled data-hidden="true">
                                                     {{ config('constants.package.delivery_freq_text') }}</option>
                                                 <option value="1">EVERY SUNDAY</option>
@@ -500,28 +515,86 @@
                             </div>
                         </div>
 
+                        <input type="hidden" class="client_token" value="{{ $client_token }}">
+                        <input id="payment_method_nonce" name="payment_method_nonce" type="hidden" />
+
                         <div class="form_wrapper">
-                            <div class="row"></div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="flex_row m_t_50">
-                                        <div class="flex_col_sm_4"></div>
-                                        <div class="flex_col_sm_5">
-                                            <div class="form_field">
-                                                <div class="text-field custom_select">
-                                                    <select class="selectpicker payment_method" name="payment_method" id="payment_method" data-dropup-auto="false" title="SELECT PAYMENT METHOD">
-                                                        <option data-hidden="true" selected="selected">SELECT PAYMENT
-                                                            METHOD
-                                                        </option>
-                                                        <option value="1">CREDIT CARD</option>
-                                                        <option value="2">DEBIT CARD</option>
-                                                        <option value="3">VENMO </option>
-                                                        {{-- <option value="4">APPLY PAY </option> --}}
-                                                    </select>
+                            <div class="col-md-12">
+                                <div class="form_field text-center">
+                                    <div class="text-field custom_select">
+                                        <select class="selectpicker payment_method" name="payment_method" id="payment_method" data-dropup-auto="false" title="SELECT PAYMENT METHOD">
+                                            <option data-hidden="true" selected="selected">SELECT PAYMENT METHOD</option>
+                                            <option value="1">CREDIT CARD</option>
+                                            <option value="2">DEBIT CARD</option>
+                                            <option value="3">VENMO </option>
+                                            {{-- <option value="4">APPLY PAY </option> --}}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bt-drop-in-wrapper text-center">
+                                <div class="bootstrap-basic" id="bt-dropin" style="display: none;">
+                                    <form class="needs-validation" novalidate>
+                                        <div class="row">
+                                            <div class="col-sm-12 mb-6">
+                                                <div class="form-control" id="cc-name"></div>
+                                                <div class="invalid-feedback">
+                                                    Name on card is required
                                                 </div>
                                             </div>
+
                                         </div>
-                                    </div>
+                                        <br>
+
+                                        <div class="row">
+                                            <div class="col-sm-12 mb-6">
+
+                                                <div class="form-control text-field " id="cc-number"></div>
+                                                <span id="card-brand"></span>
+
+                                                <div class="invalid-feedback">
+                                                    Credit card number is required
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <br>
+
+                                        <div class="row">
+                                            <div class="col-6 mb-6">
+
+                                                <div class="form-control" id="cc-cvv"></div>
+                                                <div class="invalid-feedback">
+                                                    Security code required
+                                                </div>
+                                            </div>
+                                            <div class="col-6 mb-6">
+
+                                                <div class="form-control" id="cc-expiration"></div>
+                                                <div class="invalid-feedback">
+                                                    Expiration date required
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="text-center">
+                                            {{-- <button class="btn btn-primary btn-lg" type="submit">Pay with <span id="card-brand">Card</span></button> --}}
+                                        </div>
+
+                                </div>
+
+                                <div id="bt-dropin_venmo" style="display: none;">
+                                    <button type="button" id="venmo-button" class="btn btn-outline-success">
+                                        <img style="border-radius: 20px;" src="{{ asset('images/venmo.png') }}" height="35px" width="35px">
+                                        <b>PayNow</b>
+                                    </button>
+                                </div>
+
+                                <div id="bt-dropin_applepay" style="display: none;">
+                                    <apple-pay-button buttonstyle="black" type="buy" locale="el-GR" style="display: block;"></apple-pay-button>
                                 </div>
                             </div>
 
@@ -593,9 +666,6 @@
                             </div>
                         </div>
 
-                        <input type="hidden" class="client_token" value="{{ $client_token }}">
-                        <input id="payment_method_nonce" name="payment_method_nonce" type="hidden" />
-
                         <div class="form_wrapper">
                             <div class="flex_row" style="display: none">
                                 <div class="flex_col_sm_4"></div>
@@ -607,84 +677,12 @@
                                                 <option value="1">CREDIT CARD</option>
                                                 <option value="2">DEBIT CARD</option>
                                                 <option value="3">VENMO</option>
-                                                {{-- <option value="4">APPLY PAY</option> --}}
+                                                <option value="4">APPLY PAY</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-
-                            <div class="bt-drop-in-wrapper text-center">
-                                {{-- <div id="bt-dropin"></div> --}}
-                                <!-- Bootstrap inspired Braintree Hosted Fields example -->
-                                <div class="bootstrap-basic" id="bt-dropin">
-                                    <form class="needs-validation" novalidate>
-
-
-                                        <div class="row">
-                                            <div class="col-sm-12 mb-6">
-
-                                                <div class="form-control" id="cc-name"></div>
-                                                <div class="invalid-feedback">
-                                                    Name on card is required
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <br>
-
-                                        <div class="row">
-                                            <div class="col-sm-12 mb-6">
-
-                                                <div class="form-control text-field " id="cc-number"></div>
-                                                <span id="card-brand"></span>
-
-                                                <div class="invalid-feedback">
-                                                    Credit card number is required
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <br>
-
-                                        <div class="row">
-                                            <div class="col-sm-6 mb-6">
-
-                                                <div class="form-control" id="cc-cvv"></div>
-                                                <div class="invalid-feedback">
-                                                    Security code required
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6 mb-6">
-
-                                                <div class="form-control" id="cc-expiration"></div>
-                                                <div class="invalid-feedback">
-                                                    Expiration date required
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-
-                                        <div class="text-center">
-                                            {{-- <button class="btn btn-primary btn-lg" type="submit">Pay with <span id="card-brand">Card</span></button> --}}
-                                        </div>
-
-                                </div>
-
-                                <div id="bt-dropin_venmo">
-                                    <button type="button" id="venmo-button" class="btn btn-outline-success">
-                                        <img style="border-radius: 20px;" src="{{ asset('images/venmo.png') }}" height="35px" width="35px">
-                                        <b>PayNow</b>
-                                    </button>
-                                </div>
-
-                                <div id="bt-dropin_applepay">
-                                    <apple-pay-button buttonstyle="black" type="buy" locale="el-GR" style="display: block;"></apple-pay-button>
-                                </div>
-                            </div>
-
 
                             <div class="flex_row m_t_50" style="display: none">
 
@@ -922,7 +920,7 @@
                             <div class="text-center">
                                 <div class="form_field">
                                     {{-- <button type="button" class="outline_btn m_r_20 show_step4_form">BACK</button> --}}
-                                    <button type="submit" class="primary_btn btn_effect btn_black purchase_button">
+                                    <button type="submit" class="primary_btn btn_effect btn_black purchase_button" style="width: auto;">
                                         PURHASE
                                     </button>
                                 </div>
@@ -1034,6 +1032,14 @@
         $('#mobile').usPhoneFormat();
 
         $("#delf_div").hide();
+
+        $('.selectpicker').change(function() {
+            setTimeout(function() {
+                $('button').removeClass('bs-placeholder');
+            }, 500);
+        });
+
+
     });
 
 </script>
@@ -1060,7 +1066,7 @@
         /* font-size: 14px !important; */
     }
 
-    div.form-control {
+    div.dropdown {
         border-bottom: 0px solid #000 !important;
     }
 
