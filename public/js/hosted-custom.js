@@ -97,29 +97,13 @@ braintree.client.create({
       return true;
     }
 
-    function validateEmail () {
-      var baseValidity = validateInput(email);
-
-      if (!baseValidity) {
-        return false;
-      }
-
-      if (email.val().indexOf('@') === -1) {
-        setValidityClasses(email, false);
-        return false;
-      }
-
-      setValidityClasses(email, true);
-      return true;
-    }
 
     var ccName = $('#cc-name');
-    var email = $('#email');
 
     ccName.on('change', function () {
       validateInput(ccName);
     });
-    email.on('change', validateEmail);
+
 
 
             hostedFieldsInstance.on('validityChange', function(event) {
@@ -166,19 +150,22 @@ braintree.client.create({
 
       // perform validations on the non-Hosted Fields
       // inputs
-      if (!validateEmail()) {
-        formIsInvalid = true;
-      }
 
       // Loop through the Hosted Fields and check
       // for validity, apply the is-invalid class
       // to the field container if invalid
+      if(ccName.val()!='')
+      {
+
+
       Object.keys(state.fields).forEach(function(field) {
         if (!state.fields[field].isValid) {
           $(state.fields[field].container).addClass('is-invalid');
           formIsInvalid = true;
         }
       });
+    }
+
 
       if (formIsInvalid) {
         // skip tokenization request if any fields are invalid
@@ -205,6 +192,8 @@ braintree.client.create({
         // form.submit()
       });
     });
+
+
   });
 });
 

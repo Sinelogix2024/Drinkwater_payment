@@ -16,7 +16,9 @@
 
     <style>
         body {
-            font-family: europaLight, sans-serif !important;
+            /* font-family: europaLight, sans-serif !important; */
+            font-family: Europa-regular, sans-serif !important;
+            line-height: 1.5;
         }
 
         /*
@@ -68,6 +70,10 @@
             --apple-pay-button-padding: 5px 0px;
         }
 
+        .bootstrap-select>.dropdown-toggle {
+            width: auto;
+        }
+
         .bootstrap-select>.dropdown-toggle.bs-placeholder,
         .bootstrap-select>.dropdown-toggle.bs-placeholder:active,
         .bootstrap-select>.dropdown-toggle.bs-placeholder:focus,
@@ -112,6 +118,61 @@
         select:focus {
             outline: none !important;
         }
+
+        .btn-light {
+            background-color: #fff;
+            border-color: #fff;
+            border-bottom: 0;
+        }
+
+        .btn-light:hover {
+            background-color: #fff;
+            border-color: #fff;
+        }
+
+        .btn-light:focus {
+            background-color: #fff;
+            border-color: #fff;
+        }
+
+        .btn-light:not(:disabled):not(.disabled).active,
+        .btn-light:not(:disabled):not(.disabled):active,
+        .show>.btn-light.dropdown-toggle {
+            background-color: #fff;
+            border-color: #fff;
+        }
+
+        .primary_btn {
+            color: #fff;
+            padding: 10px;
+        }
+
+        .billing_radio_btn_up {
+            margin-top: 3rem;
+            margin-bottom: 0;
+        }
+
+        .input-assumpte+label:before {
+            background-color: #fff;
+            border: 2px solid #000;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+            display: inline-block;
+            transition-duration: 0.3s;
+            width: 15px;
+            height: 15px;
+            content: '';
+            margin-right: 10px;
+        }
+
+        .input-assumpte:checked+label:before {
+            border: 1px solid rgb(144, 144, 145);
+            background-color: #000;
+        }
+
+        input[type=checkbox].input-assumpte {
+            display: none;
+        }
+
     </style>
 </head>
 
@@ -122,7 +183,7 @@
 
 <body class="body">
     {{-- main container 1 start --}}
-    <main class="app_wrapper waterbg splash">
+    <main class="app_wrapper waterbg" style="display: none">
         <div class="custom_container">
             <div class="welcome_wrapper text-center">
                 <div class="tagline_wrap" data-aos="zoom-in-up" data-aos-duration="1500">
@@ -136,7 +197,7 @@
     {{-- main container 1 end --}}
 
     {{-- main container 2 start --}}
-    <main class="app_wrapper waterbg welcome" style="display: none;">
+    <main class="app_wrapper waterbg " style="display:none">
         <div class="custom_container">
 
             <div class="welcome_wrapper text-center">
@@ -169,24 +230,21 @@
                         </div>
 
 
-                        <input type="hidden" value="{{ Request::segment(2) }}" name="adv_detail_access_token"
-                            class="adv_detail_access_token">
+                        <input type="hidden" value="{{ Request::segment(2) }}" name="adv_detail_access_token" class="adv_detail_access_token">
 
                         <div class="form_wrapper">
                             <div class="flex_row">
                                 <div class="flex_col_sm_6">
                                     <div class="form_field">
                                         <div class="text-field">
-                                            <input type="text" value="" name="first_name" id="first_name"
-                                                placeholder="First Name">
+                                            <input type="text" value="" name="first_name" id="first_name" placeholder="First Name">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="flex_col_sm_6">
                                     <div class="form_field">
                                         <div class="text-field">
-                                            <input type="text" value="" name="last_name" id="last_name"
-                                                placeholder="Last Name">
+                                            <input type="text" value="" name="last_name" id="last_name" placeholder="Last Name">
                                         </div>
                                     </div>
                                 </div>
@@ -199,15 +257,14 @@
                                             {{-- <input type="text" value="" name="mobile" id="mobile" number
                                                 placeholder="Mobile #"> --}}
 
-                                                <input type="text" name="mobile" id="mobile" pattern="?\d{3}[- ]?\d{3}[- ]?\d{4}" maxlength="12" title="US based Phone Number in the format of: 123-456-7890" placeholder="Mobile" required />
+                                            <input type="text" name="mobile" id="mobile" pattern="?\d{3}[- ]?\d{3}[- ]?\d{4}" maxlength="12" title="US based Phone Number in the format of: 123-456-7890" placeholder="Mobile" required />
                                         </div>
                                     </div>
                                 </div>
                                 <div class="flex_col_sm_6">
                                     <div class="form_field">
                                         <div class="text-field">
-                                            <input type="text" value="" name="email" id="email"
-                                                placeholder="Email">
+                                            <input type="text" value="" name="email" id="email" placeholder="Email">
                                         </div>
                                     </div>
                                 </div>
@@ -218,11 +275,9 @@
                                 <div class="flex_col_sm_12">
                                     <div class="form_field">
                                         <div class="text-field">
-                                            <select class="selectpicker form-control" name="alakline_pure"
-                                                id="alakline_pure" required data-dropup-auto="false"
-                                                title="{{ config('constants.package.default_drop_down_alakline_text') }} ">
+                                            <select class="selectpicker form-control" name="alakline_pure" id="alakline_pure" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_alakline_text') }} ">
 
-                                                <option data-hidden="true"  selected="selected">
+                                                <option data-hidden="true" selected="selected">
                                                     {{ config('constants.package.default_drop_down_alakline_text') }}
                                                 </option>
                                                 <option value="1">ALAKLINE + ELECTOLYTE</option>
@@ -236,13 +291,11 @@
 
                             <div class="flex_row">
 
-                                <div class="flex_col_sm_6">
+                                <div class="flex_col_sm_7">
                                     <div class="form_field">
                                         <div class="text-field">
 
-                                            <select class="selectpicker placeholder form-control select_alka" name="package"
-                                                id="package1" required data-dropup-auto="false"
-                                                title="{{ config('constants.package.default_drop_down_text') }}">
+                                            <select class="selectpicker placeholder form-control select_alka" name="package" id="package1" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
 
                                                 <option data-hidden="true" selected>
                                                     {{ config('constants.package.default_drop_down_text') }}</option>
@@ -251,9 +304,7 @@
                                                 <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
                                             </select>
 
-                                            <select class="selectpicker placeholder form-control select_pure d-none" name="package"
-                                                id="package1" required data-dropup-auto="false"
-                                                title="{{ config('constants.package.default_drop_down_text') }}">
+                                            <select class="selectpicker placeholder form-control select_pure d-none" name="package" id="package1" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
                                                 <option data-hidden="true" selected>
                                                     {{ config('constants.package.default_drop_down_text') }}</option>
                                                 <option value="1">1 MONTH OF HYDRATION $220 ( 10 KITS )</option>
@@ -264,12 +315,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="flex_col_sm_6">
+
+                                <div class="flex_col_sm_4" id="delf_div">
                                     <div class="form_field">
                                         <div class="text-field">
-                                            <select class="selectpicker form-control delivery_frequency1" name="delivery_frequency"
-                                                id="delivery_frequency1" required data-dropup-auto="false"
-                                                title="{{ config('constants.package.delivery_freq_text') }}">
+                                            <select class="selectpicker form-control " name="delivery_frequency" id="delivery_frequency1" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
                                                 <option data-hidden="true" selected="selected">
                                                     {{ config('constants.package.delivery_freq_text') }}</option>
                                                 <option value="1">EVERY SUNDAY</option>
@@ -280,6 +330,7 @@
 
                                 </div>
                             </div>
+
 
                             <div class="dots_wrapper">
                                 <ul>
@@ -314,8 +365,7 @@
 
                         <div class="head_section">
                             <div class="brand">
-                                <figure class="logo"><img src="{{ asset('images/logowater.png') }}"
-                                        alt="Logo" />
+                                <figure class="logo"><img src="{{ asset('images/logowater.png') }}" alt="Logo" />
                                 </figure>
                                 <span class="brand_txt">+ {{ $advocateData->adv_first_name }}
                                     {{ $advocateData->adv_last_name }}</span>
@@ -333,59 +383,50 @@
                                 <div class="col-sm-6" id="BillData">
 
                                     <div class="form-group">
-                                        <input type="text" value="" name="billing_address"
-                                            id="billing_address" placeholder="DELIVERY ADDRESS1">
+                                        <input type="text" value="" name="billing_address" id="billing_address" placeholder="DELIVERY ADDRESS1">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" value="" name="billing_address2"
-                                            id="billing_address2" placeholder="DELIVERY ADDRESS2">
+                                        <input type="text" value="" name="billing_address2" id="billing_address2" placeholder="DELIVERY ADDRESS2">
                                     </div>
 
                                     <div class="form-group">
-                                        <input type="text" value="" name="b_city_state_zip"
-                                            id="b_city_state_zip" placeholder="CITY/STATE/ZIP">
+                                        <input type="text" value="" name="b_city_state_zip" id="b_city_state_zip" placeholder="CITY/STATE/ZIP">
                                     </div>
                                     <div class="form-group billing_radio_btn_up">
-                                        <input type="radio" name="same_billing_address"
-                                            class="same_billing_address same_billing_address_up" id="billing" />
+                                        <input type="checkbox" name="same_billing_address" class="input-assumpte same_billing_address same_billing_address_up" id="billing" />
+
                                         <label class="" for="billing">(SAME AS DELIVERY ADDRESS)</label>
                                     </div>
 
                                 </div>
-                                <div class="col-sm-6" id="shippingData">
+                                <div class="col-sm-6">
+                                    <div id="shippingData">
+                                        <div class="form-group">
+                                            <input type="text" name="shipping_address" id="shipping_address" placeholder="BILLING ADDRESS1">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="shipping_address2" id="shipping_address2" placeholder="BILLING ADDRESS2">
+                                        </div>
 
-                                    <div class="form-group">
-                                        <input type="text" name="shipping_address" id="shipping_address"
-                                            placeholder="BILLING ADDRESS1">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name="shipping_address2" id="shipping_address2"
-                                            placeholder="BILLING ADDRESS2">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <input type="text" name="s_city_state_zip" id="s_city_state_zip"
-                                            placeholder="CITY/STATE/ZIP">
+                                        <div class="form-group">
+                                            <input type="text" name="s_city_state_zip" id="s_city_state_zip" placeholder="CITY/STATE/ZIP">
+                                        </div>
                                     </div>
                                     <div class="form-group billing_radio_btn_down">
-                                        <input type="radio" name="same_billing_address"
-                                            class="hide same_billing_address same_billing_address_down"
-                                            id="billing" />
+                                        <input type="checkbox" name="same_billing_address" class="hide input-assumpte same_billing_address same_billing_address_down" id="billing" />
+
                                         <label class="" for="billing">(SAME AS DELIVERY ADDRESS)</label>
                                     </div>
-
                                 </div>
 
                             </div>
 
-                            <div class="flex_row m_t_50">
+                            <div class="flex_row m_t_50" style="display: none">
 
                                 <div class="flex_col_sm_6">
                                     <div class="form_field">
                                         <div class="text-field">
-                                            <select class="selectpicker custom_select" name="package" id="package2"
-                                                required data-dropup-auto="false"
-                                                title="{{ config('constants.package.default_drop_down_text') }}">
+                                            <select class="selectpicker custom_select" name="package" id="package2" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
                                                 <option selected disabled data-hidden="true">
                                                     {{ config('constants.package.default_drop_down_text') }}</option>
                                                 <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
@@ -398,9 +439,7 @@
                                 <div class="flex_col_sm_6">
                                     <div class="form_field">
                                         <div class="text-field custom_select">
-                                            <select class="selectpicker" name="delivery_frequency"
-                                                id="delivery_frequency2" required data-dropup-auto="false"
-                                                title="{{ config('constants.package.delivery_freq_text') }}">
+                                            <select class="selectpicker" name="delivery_frequency" id="delivery_frequency2" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
                                                 <option selected disabled data-hidden="true">
                                                     {{ config('constants.package.delivery_freq_text') }}</option>
                                                 <option value="1">EVERY SUNDAY</option>
@@ -450,8 +489,7 @@
                         <div class="head_section">
 
                             <div class="brand">
-                                <figure class="logo"><img src="{{ asset('images/logowater.png') }}"
-                                        alt="Logo" />
+                                <figure class="logo"><img src="{{ asset('images/logowater.png') }}" alt="Logo" />
                                 </figure>
                                 <span class="brand_txt">+ {{ $advocateData->adv_first_name }}
                                     {{ $advocateData->adv_last_name }}</span>
@@ -471,16 +509,14 @@
                                         <div class="flex_col_sm_5">
                                             <div class="form_field">
                                                 <div class="text-field custom_select">
-                                                    <select class="selectpicker payment_method" name="payment_method"
-                                                        id="payment_method" data-dropup-auto="false"
-                                                        title="SELECT PAYMENT METHOD">
-                                                        <option  data-hidden="true" selected="selected">SELECT PAYMENT
+                                                    <select class="selectpicker payment_method" name="payment_method" id="payment_method" data-dropup-auto="false" title="SELECT PAYMENT METHOD">
+                                                        <option data-hidden="true" selected="selected">SELECT PAYMENT
                                                             METHOD
                                                         </option>
                                                         <option value="1">CREDIT CARD</option>
                                                         <option value="2">DEBIT CARD</option>
                                                         <option value="3">VENMO </option>
-                                                        <option value="4">APPLY PAY </option>
+                                                        {{-- <option value="4">APPLY PAY </option> --}}
                                                     </select>
                                                 </div>
                                             </div>
@@ -489,13 +525,11 @@
                                 </div>
                             </div>
 
-                            <div class="flex_row m_t_50">
+                            <div class="flex_row m_t_50" style="display: none">
                                 <div class="flex_col_sm_6">
                                     <div class="form_field">
                                         <div class="text-field">
-                                            <select class="selectpicker custom_select" name="package" id="package4"
-                                                required data-dropup-auto="false"
-                                                title="{{ config('constants.package.default_drop_down_text') }}">
+                                            <select class="selectpicker custom_select" name="package" id="package4" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
                                                 <option selected disabled data-hidden="true">
                                                     {{ config('constants.package.default_drop_down_text') }}</option>
                                                 <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
@@ -508,9 +542,7 @@
                                 <div class="flex_col_sm_6">
                                     <div class="form_field">
                                         <div class="text-field custom_select">
-                                            <select class="selectpicker" name="delivery_frequency"
-                                                id="delivery_frequency4" required data-dropup-auto="false"
-                                                title="{{ config('constants.package.delivery_freq_text') }}">
+                                            <select class="selectpicker" name="delivery_frequency" id="delivery_frequency4" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
                                                 <option value="" data-hidden="true">
                                                     {{ config('constants.package.delivery_freq_text') }}</option>
                                                 <option value="1" selected>EVERY SUNDAY</option>
@@ -551,8 +583,7 @@
                     <div class="custom_container">
                         <div class="head_section">
                             <div class="brand">
-                                <figure class="logo"><img src="{{ asset('images/logowater.png') }}"
-                                        alt="Logo" />
+                                <figure class="logo"><img src="{{ asset('images/logowater.png') }}" alt="Logo" />
                                 </figure>
                                 <span class="brand_txt">+ {{ $advocateData->adv_first_name }}
                                     {{ $advocateData->adv_last_name }}</span>
@@ -566,19 +597,17 @@
                         <input id="payment_method_nonce" name="payment_method_nonce" type="hidden" />
 
                         <div class="form_wrapper">
-                            <div class="flex_row">
+                            <div class="flex_row" style="display: none">
                                 <div class="flex_col_sm_4"></div>
                                 <div class="flex_col_sm_5">
                                     <div class="form_field">
                                         <div class="text-field custom_select">
-                                            <select class="selectpicker payment_method" name="payment_method"
-                                                id="payment_method" data-dropup-auto="false"
-                                                title="SELECT PAYMENT METHOD">
+                                            <select class="selectpicker payment_method" name="payment_method" id="payment_method" data-dropup-auto="false" title="SELECT PAYMENT METHOD">
                                                 <option data-hidden="true">SELECT PAYMENT METHOD</option>
                                                 <option value="1">CREDIT CARD</option>
                                                 <option value="2">DEBIT CARD</option>
                                                 <option value="3">VENMO</option>
-                                                <option value="4">APPLY PAY</option>
+                                                {{-- <option value="4">APPLY PAY</option> --}}
                                             </select>
                                         </div>
                                     </div>
@@ -590,7 +619,7 @@
                                 {{-- <div id="bt-dropin"></div> --}}
                                 <!-- Bootstrap inspired Braintree Hosted Fields example -->
                                 <div class="bootstrap-basic" id="bt-dropin">
-                                    <form class="needs-validation" novalidate="">
+                                    <form class="needs-validation" novalidate>
 
 
                                         <div class="row">
@@ -608,7 +637,7 @@
                                         <div class="row">
                                             <div class="col-sm-12 mb-6">
 
-                                                <div class="form-control text-field" id="cc-number"></div>
+                                                <div class="form-control text-field " id="cc-number"></div>
                                                 <span id="card-brand"></span>
 
                                                 <div class="invalid-feedback">
@@ -646,27 +675,23 @@
 
                                 <div id="bt-dropin_venmo">
                                     <button type="button" id="venmo-button" class="btn btn-outline-success">
-                                        <img style="border-radius: 20px;" src="{{ asset('images/venmo.png') }}"
-                                            height="35px" width="35px">
+                                        <img style="border-radius: 20px;" src="{{ asset('images/venmo.png') }}" height="35px" width="35px">
                                         <b>PayNow</b>
                                     </button>
                                 </div>
 
                                 <div id="bt-dropin_applepay">
-                                    <apple-pay-button buttonstyle="black" type="buy" locale="el-GR"
-                                        style="display: block;"></apple-pay-button>
+                                    <apple-pay-button buttonstyle="black" type="buy" locale="el-GR" style="display: block;"></apple-pay-button>
                                 </div>
                             </div>
 
 
-                            <div class="flex_row m_t_50">
+                            <div class="flex_row m_t_50" style="display: none">
 
                                 <div class="flex_col_sm_6">
                                     <div class="form_field">
                                         <div class="text-field">
-                                            <select class="selectpicker custom_select" name="package" id="package3"
-                                                required data-dropup-auto="false"
-                                                title="{{ config('constants.package.default_drop_down_text') }}">
+                                            <select class="selectpicker custom_select" name="package" id="package3" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
                                                 <option value="" data-hidden="true">
                                                     {{ config('constants.package.default_drop_down_text') }}</option>
                                                 <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
@@ -679,9 +704,7 @@
                                 <div class="flex_col_sm_6">
                                     <div class="form_field">
                                         <div class="text-field custom_select">
-                                            <select class="selectpicker" name="delivery_frequency"
-                                                id="delivery_frequency3" required data-dropup-auto="false"
-                                                title="{{ config('constants.package.delivery_freq_text') }}">
+                                            <select class="selectpicker" name="delivery_frequency" id="delivery_frequency3" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
                                                 <option value="" data-hidden="true">
                                                     {{ config('constants.package.delivery_freq_text') }}</option>
                                                 <option value="1">EVERY SUNDAY</option>
@@ -726,8 +749,7 @@
 
                         <div class="head_section">
                             <div class="brand">
-                                <figure class="logo"><img src="{{ asset('images/logowater.png') }}"
-                                        alt="Logo" />
+                                <figure class="logo"><img src="{{ asset('images/logowater.png') }}" alt="Logo" />
                                 </figure>
                                 <span class="brand_txt">+ {{ $advocateData->adv_first_name }}
                                     {{ $advocateData->adv_last_name }}</span>
@@ -744,15 +766,13 @@
                                     <div class="form_field">
                                         <div class="text-field">
 
-                                            <select class="selectpicker custom_select final_page_package_label"
-                                                data-dropup-auto="false" title="YOUR WELLNESS SOLUTION">
+                                            <select class="selectpicker custom_select final_page_package_label" data-dropup-auto="false" title="YOUR WELLNESS SOLUTION">
                                                 <option value="" selected data-hidden="true">YOUR WELLNESS
                                                     SOLUTION
                                                 </option>
                                             </select>
 
-                                            <select class="selectpicker custom_select" name="package" id="package5"
-                                                required data-dropup-auto="false" title="YOUR WELLNESS SOLUTION">
+                                            <select class="selectpicker custom_select" name="package" id="package5" required data-dropup-auto="false" title="YOUR WELLNESS SOLUTION">
                                                 <option value="" data-hidden="true">YOUR WELLNESS SOLUTION
                                                 </option>
                                                 <option value="1" selected>1 MONTH OF HYDRATION $250 ( 10 KITS )
@@ -771,17 +791,13 @@
                                     <div class="form_field">
                                         <div class="text-field">
 
-                                            <select class="selectpicker custom_select final_page_delivery_freq_label"
-                                                data-dropup-auto="false" title="DELIVERY FREQUENCY">
+                                            <select class="selectpicker custom_select final_page_delivery_freq_label" data-dropup-auto="false" title="DELIVERY FREQUENCY">
                                                 <option value="" selected data-hidden="true">DELIVERY FREQUENCY
                                                 </option>
                                             </select>
 
-                                            <select class="selectpicker custom_select" title="DELIVERY FREQUENCY"
-                                                name="delivery_frequency" id="delivery_frequency5" required
-                                                data-dropup-auto="false">
-                                                <option value="" data-hidden="true"
-                                                    title="{{ config('constants.package.delivery_freq_text') }}">
+                                            <select class="selectpicker custom_select" title="DELIVERY FREQUENCY" name="delivery_frequency" id="delivery_frequency5" required data-dropup-auto="false">
+                                                <option value="" data-hidden="true" title="{{ config('constants.package.delivery_freq_text') }}">
                                                     {{ config('constants.package.delivery_freq_text') }}</option>
                                                 <option value="1" selected>EVERY SUNDAY</option>
                                                 <option value="2">EVERY MONDAY</option>
@@ -797,16 +813,13 @@
 
                                     <div class="form_field">
                                         <div class="text-field">
-                                            <select class="selectpicker custom_select final_page_edit_address_label"
-                                                data-dropup-auto="false" title="DELIVERY ADDRESS">
+                                            <select class="selectpicker custom_select final_page_edit_address_label" data-dropup-auto="false" title="DELIVERY ADDRESS">
                                                 <option value="" selected data-hidden="true">DELIVERY ADDRESS
                                                 </option>
                                             </select>
 
-                                            <input type="text" class="shipping_address_final_page"
-                                                placeholder="BILLING ADDRESS" disabled>
-                                            <button type="button"
-                                                class="edit btn_effect edit_address_final_page">EDIT
+                                            <input type="text" class="shipping_address_final_page" placeholder="BILLING ADDRESS" disabled>
+                                            <button type="button" class="edit btn_effect edit_address_final_page">EDIT
                                             </button>
                                         </div>
                                     </div>
@@ -815,8 +828,7 @@
                                         <div class="flex_row">
                                             <div class="flex_col_sm_6">
                                                 <div class="text-field">
-                                                    <input type="text" class="shipping_address1_final_page"
-                                                        placeholder="BILLING ADDRESS 1" disabled>
+                                                    <input type="text" class="shipping_address1_final_page" placeholder="BILLING ADDRESS 1" disabled>
                                                 </div>
                                             </div>
                                             <div class="flex_col_sm_6">
@@ -831,8 +843,7 @@
                                         <div class="flex_row">
                                             <div class="flex_col_sm_6">
                                                 <div class="text-field">
-                                                    <input type="text" class="s_city_state_zip_final_page"
-                                                        placeholder="CITY  / STATE  /  ZIP" disabled>
+                                                    <input type="text" class="s_city_state_zip_final_page" placeholder="CITY  / STATE  /  ZIP" disabled>
                                                 </div>
                                             </div>
                                             <div class="flex_col_sm_6">
@@ -848,25 +859,20 @@
                                     <div class="form_field">
                                         <div class="text-field">
 
-                                            <select class="selectpicker custom_select final_page_payment_source_label"
-                                                data-dropup-auto="false" title="PAYMENT SOURCE">
+                                            <select class="selectpicker custom_select final_page_payment_source_label" data-dropup-auto="false" title="PAYMENT SOURCE">
                                                 <option value="" selected data-hidden="true">PAYMENT SOURCE
                                                 </option>
                                             </select>
 
-                                            <select
-                                                class="selectpicker custom_select payment_method payment_method_finl_page_class"
-                                                name="payment_method" id="payment_method" data-dropup-auto="false"
-                                                title="SELECT PAYMENT METHOD">
+                                            <select class="selectpicker custom_select payment_method payment_method_finl_page_class" name="payment_method" id="payment_method" data-dropup-auto="false" title="SELECT PAYMENT METHOD">
                                                 <option data-hidden="true">SELECT PAYMENT METHOD</option>
                                                 <option value="1">CREDIT CARD</option>
                                                 <option value="2">DEBIT CARD</option>
                                                 <option value="3">VENMO</option>
-                                                <option value="4">APPLY PAY</option>
+                                                {{-- <option value="4">APPLY PAY</option> --}}
                                             </select>
 
-                                            <button type="button"
-                                                class="edit btn_effect edit_payment_method_final_page">Edit
+                                            <button type="button" class="edit btn_effect edit_payment_method_final_page">Edit
                                             </button>
                                         </div>
                                         {{-- <span class="text-note">CARD ENDING IN <b><span class="last_4_digit_card"></span></b></span> --}}
@@ -1020,13 +1026,16 @@
 <script src="{{ asset('js/jquery-input-mask-phone-number.js') }}"></script>
 
 <script>
-$(document).ready(function () {
-                // $('#yourphone').usPhoneFormat({
-                //     format: '(xxx) xxx-xxxx',
-                // });
+    $(document).ready(function() {
+        // $('#yourphone').usPhoneFormat({
+        //     format: '(xxx) xxx-xxxx',
+        // });
 
-                $('#mobile').usPhoneFormat();
-            });
+        $('#mobile').usPhoneFormat();
+
+        $("#delf_div").hide();
+    });
+
 </script>
 
 <style>
@@ -1047,15 +1056,21 @@ $(document).ready(function () {
         border: none !important;
         border-radius: 0px !important;
         border-bottom: 1px solid #000 !important;
+        /* font-family: europaLight, sans-serif !important; */
+        /* font-size: 14px !important; */
+    }
+
+    div.form-control {
+        border-bottom: 0px solid #000 !important;
     }
 
     .caret-symbol {
+        background-image: url(https://cdn1.iconfinder.com/data/icons/arrows-vol-1-5/24/dropdown_arrow2-512.png);
+        width: 15px;
+        height: 15px;
+        background-repeat: no-repeat;
+        border: none !important;
+        background-position: center;
+    }
 
-    background-image: url(https://cdn1.iconfinder.com/data/icons/arrows-vol-1-5/24/dropdown_arrow2-512.png);
-    width: 15px;
-    height: 15px;
-    background-repeat: no-repeat;
-    border: none !important;
-    background-position: center;
-}
 </style>

@@ -59,7 +59,12 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/link', function () {
 //     return view('advocate/link');
 // })->name('link');
-
+Route::get('/', function () {
+    return view('advocate/experience');
+});
+Route::get('/experience', function () {
+    return view('advocate/drink');
+})->name('experience');
 Route::match(['get'],'/braintree', 'App\Http\Controllers\BrainTreeController@view');
 Route::match(['post'],'/braintree', 'App\Http\Controllers\BrainTreeController@call');
 Route::match(['get'],'/watr/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
