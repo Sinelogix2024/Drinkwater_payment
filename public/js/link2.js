@@ -94,7 +94,11 @@ $(document).ready(function() {
         //return false;
     });
     $(document).on("change", "#package1", function() {
-        $('.delivery_frequency1').removeClass('d-none');
+
+        $('#delivery_frequency1').removeClass('d-none');
+        $('#delf_div').show();
+        $('#delf_div').css('display','block');
+
     });
 
     $(document).on("change", "#package4", function() {

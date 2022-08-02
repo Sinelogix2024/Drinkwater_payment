@@ -122,7 +122,7 @@
 
 <body class="body">
     {{-- main container 1 start --}}
-    <main class="app_wrapper waterbg splash">
+    <main class="app_wrapper waterbg" style="display: none">
         <div class="custom_container">
             <div class="welcome_wrapper text-center">
                 <div class="tagline_wrap" data-aos="zoom-in-up" data-aos-duration="1500">
@@ -136,7 +136,7 @@
     {{-- main container 1 end --}}
 
     {{-- main container 2 start --}}
-    <main class="app_wrapper waterbg welcome" style="display: none;">
+    <main class="app_wrapper waterbg " style="display:none">
         <div class="custom_container">
 
             <div class="welcome_wrapper text-center">
@@ -264,10 +264,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="flex_col_sm_6">
-                                    <div class="form_field">
+
+                                <div class="flex_col_sm_6" id="delf_div" >
+                                    <div class="form_field" >
                                         <div class="text-field">
-                                            <select class="selectpicker form-control delivery_frequency1" name="delivery_frequency"
+                                            <select class="selectpicker form-control "  name="delivery_frequency"
                                                 id="delivery_frequency1" required data-dropup-auto="false"
                                                 title="{{ config('constants.package.delivery_freq_text') }}">
                                                 <option data-hidden="true" selected="selected">
@@ -280,6 +281,7 @@
 
                                 </div>
                             </div>
+
 
                             <div class="dots_wrapper">
                                 <ul>
@@ -378,7 +380,7 @@
 
                             </div>
 
-                            <div class="flex_row m_t_50">
+                            <div class="flex_row m_t_50" style="display: none">
 
                                 <div class="flex_col_sm_6">
                                     <div class="form_field">
@@ -480,7 +482,7 @@
                                                         <option value="1">CREDIT CARD</option>
                                                         <option value="2">DEBIT CARD</option>
                                                         <option value="3">VENMO </option>
-                                                        <option value="4">APPLY PAY </option>
+                                                        {{-- <option value="4">APPLY PAY </option> --}}
                                                     </select>
                                                 </div>
                                             </div>
@@ -489,7 +491,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex_row m_t_50">
+                            <div class="flex_row m_t_50" style="display: none">
                                 <div class="flex_col_sm_6">
                                     <div class="form_field">
                                         <div class="text-field">
@@ -566,7 +568,7 @@
                         <input id="payment_method_nonce" name="payment_method_nonce" type="hidden" />
 
                         <div class="form_wrapper">
-                            <div class="flex_row">
+                            <div class="flex_row" style="display: none">
                                 <div class="flex_col_sm_4"></div>
                                 <div class="flex_col_sm_5">
                                     <div class="form_field">
@@ -578,7 +580,7 @@
                                                 <option value="1">CREDIT CARD</option>
                                                 <option value="2">DEBIT CARD</option>
                                                 <option value="3">VENMO</option>
-                                                <option value="4">APPLY PAY</option>
+                                                {{-- <option value="4">APPLY PAY</option> --}}
                                             </select>
                                         </div>
                                     </div>
@@ -590,7 +592,7 @@
                                 {{-- <div id="bt-dropin"></div> --}}
                                 <!-- Bootstrap inspired Braintree Hosted Fields example -->
                                 <div class="bootstrap-basic" id="bt-dropin">
-                                    <form class="needs-validation" novalidate="">
+                                    <form class="needs-validation" novalidate>
 
 
                                         <div class="row">
@@ -608,7 +610,7 @@
                                         <div class="row">
                                             <div class="col-sm-12 mb-6">
 
-                                                <div class="form-control text-field" id="cc-number"></div>
+                                                <div class="form-control text-field " id="cc-number"></div>
                                                 <span id="card-brand"></span>
 
                                                 <div class="invalid-feedback">
@@ -659,7 +661,7 @@
                             </div>
 
 
-                            <div class="flex_row m_t_50">
+                            <div class="flex_row m_t_50" style="display: none">
 
                                 <div class="flex_col_sm_6">
                                     <div class="form_field">
@@ -705,7 +707,7 @@
                             <div class="dots_wrapper">
                                 <button type="button" class="outline_btn m_r_20 show_step3_form">Back</button>
                                 {{-- <button type="submit" class="primary_btn show_step5_form">Next</button> --}}
-                                <button class="primary_btn show_step5_form" type="submit">Next</button>
+                                <button class="primary_btn show_step5_form"  type="submit">Next</button>
 
                                 <footer class="text-center">
                                     <div class="custom_container">
@@ -862,7 +864,7 @@
                                                 <option value="1">CREDIT CARD</option>
                                                 <option value="2">DEBIT CARD</option>
                                                 <option value="3">VENMO</option>
-                                                <option value="4">APPLY PAY</option>
+                                                {{-- <option value="4">APPLY PAY</option> --}}
                                             </select>
 
                                             <button type="button"
@@ -1026,7 +1028,11 @@ $(document).ready(function () {
                 // });
 
                 $('#mobile').usPhoneFormat();
+
+                $("#delf_div").hide();
             });
+
+
 </script>
 
 <style>
@@ -1047,6 +1053,8 @@ $(document).ready(function () {
         border: none !important;
         border-radius: 0px !important;
         border-bottom: 1px solid #000 !important;
+        font-family: europaLight, sans-serif !important;
+    font-size: 14px !important;
     }
 
     .caret-symbol {
