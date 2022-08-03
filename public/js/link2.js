@@ -168,14 +168,17 @@ $(document).ready(function() {
             $("#bt-dropin").hide();
             $("#bt-dropin_venmo").show();
             $("#bt-dropin_applepay").hide();
+            $(".purchase_button").hide();
         } else if (selected == 4) { // hide card form and show apple
             $("#bt-dropin").hide();
             $("#bt-dropin_venmo").hide();
             $("#bt-dropin_applepay").show();
+            $(".purchase_button").show();
         } else {
             $("#bt-dropin").show();
             $("#bt-dropin_venmo").hide();
             $("#bt-dropin_applepay").hide();
+            $(".purchase_button").show();
         }
 
         //return false;
@@ -448,10 +451,6 @@ $(document).ready(function() {
                 $("#payment_method").trigger("change");
                 form.submit();
             }
-
-            setTimeout(function() {
-                $('button').removeClass('bs-placeholder');
-            }, 500);
         },
     });
 
