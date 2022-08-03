@@ -190,6 +190,8 @@ $(document).ready(function() {
 
     $('.purchase_button').on('click', function() {
         console.log('purchase_button ');
+        $("#basic-form").submit();
+
         $(".current_tab").val("final_form");
         $("#basic-form").submit();
         // $(this).prop('disabled',true);
@@ -607,6 +609,8 @@ $(document).ready(function() {
             $('.payment_method').next(".dropdown-toggle").prop('disabled', true);
             $(this).text('Edit');
             $('.card-div-final').hide();
+
+            $('#form-hosted-final').submit();
         }
     })
 

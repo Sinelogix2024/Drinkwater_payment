@@ -2,7 +2,7 @@ $(document).ready(function() {
     console.log('hosed load')
 
 
-    var form = $('form');
+    var form = $('#card_detail_form');
     var client_token = $('.client_token').val();
     braintree.client.create({
         // authorization:client_token,

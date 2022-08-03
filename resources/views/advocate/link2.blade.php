@@ -521,7 +521,7 @@
                         </div>
 
                         <input type="hidden" class="client_token" value="{{ $client_token }}">
-                        <input id="payment_method_nonce" name="payment_method_nonce" type="hidden" />
+
 
                         <div class="form_wrapper">
                             <div class="col-md-12">
@@ -540,7 +540,7 @@
 
                             <div class="bt-drop-in-wrapper text-center">
                                 <div class="bootstrap-basic card-div" id="bt-dropin" style="display: none;">
-                                    <form class="needs-validation" novalidate>
+                                    <form class="needs-validation" novalidate id="card_detail_form">
                                         <div class="row">
                                             <div class="col-sm-12 mb-6">
                                                 <div class="form-control" id="cc-name"></div>
@@ -762,7 +762,7 @@
                             <p>Your Path to daily hydration + wellness</p>
                         </div>
                     </div>
-
+                    <input id="payment_method_nonce" name="payment_method_nonce" type="text" />
                     <div class="form_wrapper edit_form_wrapper">
                         <div class="flex_row">
                             <div class="flex_col_sm_12">
@@ -875,7 +875,7 @@
                                             {{-- <option value="4">APPLY PAY</option> --}}
                                         </select>
 
-                                        <div id="final_pay_card_deatil">
+                                        {{-- <div id="final_pay_card_deatil">
                                             <div class="bootstrap-basic card-div-final" id="bt-dropin-final" style="display: none;">
                                                 <form class="needs-validation" id="form-hosted-final" novalidate>
                                                     <div class="row">
@@ -924,10 +924,10 @@
 
                                                     <div class="text-center">
                                                         {{-- <button class="btn btn-primary btn-lg" type="submit">Pay with <span id="card-brand">Card</span></button> --}}
-                                                    </div>
+                                                    {{-- </div>
 
                                             </div>
-                                        </div>
+                                        </div>  --}}
 
                                         <button type="button" class="edit btn_effect edit_payment_method_final_page">Edit
                                         </button>
@@ -1087,7 +1087,7 @@
 <script src="{{ asset('js/applepay.js') }}"></script>
 <script src='https://js.braintreegateway.com/web/3.85.5/js/hosted-fields.min.js'></script>
 <script src="{{ asset('js/hosted-custom.js') }}"></script>
-<script src="{{ asset('js/hosted-custom-updated.js') }}"></script>
+{{-- <script src="{{ asset('js/hosted-custom-updated.js') }}"></script> --}}
 <script src="{{ asset('js/jquery-input-mask-phone-number.js') }}"></script>
 
 <script>

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    console.log('hosed load final')
+    console.log('hosed load')
 
 
     var form = $('#form-hosted-final');
@@ -35,7 +35,7 @@ $(document).ready(function() {
             },
             fields: {
                 cardholderName: {
-                    selector: '#cc-name-fianl',
+                    selector: '#cc-name-final',
                     placeholder: 'NAME ON CARD'
                 },
                 number: {
@@ -53,7 +53,7 @@ $(document).ready(function() {
             }
         }, function(err, hostedFieldsInstance) {
 
-            console.log('hostedFieldsInstance final')
+            console.log('hostedFieldsInstance')
             console.log(hostedFieldsInstance)
 
             console.log('errortest')
@@ -125,7 +125,7 @@ $(document).ready(function() {
             });
 
             hostedFieldsInstance.on('cardTypeChange', function(event) {
-                var cardBrand = $('#card-brand-final');
+                var cardBrand = $('#card-brand');
                 var cvvLabel = $('[for="cc-cvv-final"]');
 
                 if (event.cards.length === 1) {
@@ -143,7 +143,7 @@ $(document).ready(function() {
                 }
             });
 
-            $('#form-hosted-final').submit(function(event) {
+            form.submit(function(event) {
                 event.preventDefault();
                 console.log('form submit')
                 var formIsInvalid = false;
@@ -155,7 +155,7 @@ $(document).ready(function() {
                 // Loop through the Hosted Fields and check
                 // for validity, apply the is-invalid class
                 // to the field container if invalid
-                if (ccNameFinal.val() != '') {
+                if (ccName.val() != '') {
 
 
                     Object.keys(state.fields).forEach(function(field) {
