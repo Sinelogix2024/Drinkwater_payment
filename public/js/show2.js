@@ -68,31 +68,40 @@ $(document).ready(function() {
         // hideLoader();
 
        // $(".current_tab").val("step5_form");
-        $('.payment_method').show();
-        $('.payment_method').next(".dropdown-toggle").prop('disabled', false);
+       $('.payment_method').show();
+       $('.payment_method').next(".dropdown-toggle").prop('disabled', false);
+
+       $('.final_page_package_label').next(".dropdown-toggle").prop('disabled', true);
+       $('.final_page_delivery_freq_label').next(".dropdown-toggle").prop('disabled', true);
+       $('.final_page_edit_address_label').next(".dropdown-toggle").prop('disabled', true);
+       $('.final_page_payment_source_label').next(".dropdown-toggle").prop('disabled', true);
+
+       $('.package_note_final_page').text($('#package5').children("option:selected").text());
+
+               $('.payment_method').next(".dropdown-toggle").hide();
 
         $('.shipping_address_final_page').val($('#shipping_address').val());
                 $('.shipping_address1_final_page').val($('#shipping_address2').val());
                 $('.s_city_state_zip_final_page').val($('#s_city_state_zip').val());
 
-                $('.edit_address_final_page').click();
-                $('.edit_delivery_freq').click();
-                alert('gffhghjj');
+               $('.edit_address_final_page').click();
+               $('.edit_delivery_freq').click();
+               $('.edit_payment_method_final_page').click();
             //$('.final_page_edit_address_label').show();
 
 
 
-        $('.final_page_package_label').next(".dropdown-toggle").prop('disabled', true);
-        $('.final_page_delivery_freq_label').next(".dropdown-toggle").prop('disabled', true);
-        $('.final_page_edit_address_label').next(".dropdown-toggle").prop('disabled', true);
+        // $('.final_page_package_label').next(".dropdown-toggle").prop('disabled', true);
+        // $('.final_page_delivery_freq_label').next(".dropdown-toggle").prop('disabled', true);
+        // $('.final_page_edit_address_label').next(".dropdown-toggle").prop('disabled', true);
 
-        $('.package_note_final_page').text($('#package5').children("option:selected").text());
+        // $('.package_note_final_page').text($('#package5').children("option:selected").text());
 
-                $('.payment_method').next(".dropdown-toggle").hide();
+        //         $('.payment_method').next(".dropdown-toggle").hide();
 
 
                // $(".current_tab").val("final_form");
-                setDropDownvalue();
+               // setDropDownvalue();
 
 
     });

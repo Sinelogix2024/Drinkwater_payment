@@ -169,6 +169,7 @@ $(document).ready(function() {
             $("#bt-dropin_venmo").show();
             $("#bt-dropin_applepay").hide();
             $(".purchase_button").hide();
+            $('.card-div-final').hide();
         } else if (selected == 4) { // hide card form and show apple
             $("#bt-dropin").hide();
             $("#bt-dropin_venmo").hide();
@@ -179,6 +180,7 @@ $(document).ready(function() {
             $("#bt-dropin_venmo").hide();
             $("#bt-dropin_applepay").hide();
             $(".purchase_button").show();
+            $('.card-div-final').show();
         }
 
         //return false;
@@ -344,20 +346,43 @@ $(document).ready(function() {
 
             if (current_tab == "step3_form") {
                 showLoader();
-                if ($("#basic-form").valid()) {
+                var payment_method_check = localStorage.getItem("payment_method");
 
-                    $(".step1_form").hide(true);
-                    $(".step2_form").hide(true);
-                    $(".step2_form").hide();
-                    $(".step3_form").hide(true);
-                    $(".step4_form").hide(true);
-                    // $(".step4_form").show(true);
-                    // $(".step5_form").hide(true);
-                    $(".step5_form").show(true);
-                    $(".current_tab").val("step4_form");
-                    setDropDownvalue();
-                    $("#payment_method").trigger("change");
+                // if ($("#basic-form").valid()) {
+
+                //     $(".step1_form").hide(true);
+                //     $(".step2_form").hide(true);
+                //     $(".step2_form").hide();
+                //     $(".step3_form").hide(true);
+                //     $(".step4_form").show(true);
+                //     $(".step5_form").hide(true);
+                //     $(".current_tab").val("step4_form");
+                //     setDropDownvalue();
+                //     $("#payment_method").trigger("change");
+                // }
+
+                if(payment_method_check==3)
+                {
+                    $('.show_step5_form').click();
+                    $('#basic_form').submit();
+
+                }else{
+                    if ($("#basic-form").valid()) {
+
+                        $(".step1_form").hide(true);
+                        $(".step2_form").hide(true);
+                        $(".step2_form").hide();
+                        $(".step3_form").hide(true);
+                        $(".step4_form").show(true);
+                        $(".step5_form").hide(true);
+                        $(".current_tab").val("step4_form");
+                        setDropDownvalue();
+                        $("#payment_method").trigger("change");
+
+
+                    }
                 }
+
                 hideLoader();
             }
 
@@ -571,11 +596,17 @@ $(document).ready(function() {
             $('.payment_method').next(".dropdown-toggle").show();
             $('.payment_method').next(".dropdown-toggle").prop('disabled', false);
             $(this).text('Save');
+
+            //$('.card-div-final').show();
+            // var someVar = $(".card-div").html();
+            // $(".card-div").empty();
+            // $(someVar).appendTo("#final_pay_card_deatil");
         } else {
             $('.final_page_payment_source_label').show();
             $('.payment_method').next(".dropdown-toggle").hide();
             $('.payment_method').next(".dropdown-toggle").prop('disabled', true);
             $(this).text('Edit');
+            $('.card-div-final').hide();
         }
     })
 

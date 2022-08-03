@@ -539,7 +539,7 @@
                             </div>
 
                             <div class="bt-drop-in-wrapper text-center">
-                                <div class="bootstrap-basic" id="bt-dropin" style="display: none;">
+                                <div class="bootstrap-basic card-div" id="bt-dropin" style="display: none;">
                                     <form class="needs-validation" novalidate>
                                         <div class="row">
                                             <div class="col-sm-12 mb-6">
@@ -875,6 +875,60 @@
                                             {{-- <option value="4">APPLY PAY</option> --}}
                                         </select>
 
+                                        <div id="final_pay_card_deatil">
+                                            <div class="bootstrap-basic card-div-final" id="bt-dropin-final" style="display: none;">
+                                                <form class="needs-validation" id="form-hosted-final" novalidate>
+                                                    <div class="row">
+                                                        <div class="col-sm-12 mb-6">
+                                                            <div class="form-control" id="cc-name-final"></div>
+                                                            <div class="invalid-feedback">
+                                                                Name on card is required
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <br>
+
+                                                    <div class="row">
+                                                        <div class="col-sm-12 mb-6">
+
+                                                            <div class="form-control text-field " id="cc-number-final"></div>
+                                                            <span id="card-brand"></span>
+
+                                                            <div class="invalid-feedback">
+                                                                Credit card number is required
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <br>
+
+                                                    <div class="row">
+                                                        <div class="col-6 mb-6">
+
+                                                            <div class="form-control" id="cc-cvv-final"></div>
+                                                            <div class="invalid-feedback">
+                                                                Security code required
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6 mb-6">
+
+                                                            <div class="form-control" id="cc-expiration-final"></div>
+                                                            <div class="invalid-feedback">
+                                                                Expiration date required
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+
+                                                    <div class="text-center">
+                                                        {{-- <button class="btn btn-primary btn-lg" type="submit">Pay with <span id="card-brand">Card</span></button> --}}
+                                                    </div>
+
+                                            </div>
+                                        </div>
+
                                         <button type="button" class="edit btn_effect edit_payment_method_final_page">Edit
                                         </button>
                                     </div>
@@ -1033,6 +1087,7 @@
 <script src="{{ asset('js/applepay.js') }}"></script>
 <script src='https://js.braintreegateway.com/web/3.85.5/js/hosted-fields.min.js'></script>
 <script src="{{ asset('js/hosted-custom.js') }}"></script>
+<script src="{{ asset('js/hosted-custom-updated.js') }}"></script>
 <script src="{{ asset('js/jquery-input-mask-phone-number.js') }}"></script>
 
 <script>
