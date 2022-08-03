@@ -76,6 +76,7 @@
 
         .bootstrap-select>.dropdown-toggle {
             width: auto;
+            border-bottom: 0px !important;
         }
 
         .bootstrap-select>.dropdown-toggle.bs-placeholder,
@@ -199,6 +200,10 @@
             outline: 0 dotted #333 !important;
             outline-offset: 0;
             box-shadow: 0 0 0 0.2rem rgb(255 255 255 / 25%);
+        }
+
+        .payment_method_finl_page_class {
+            border-bottom: 0px;
         }
 
     </style>
@@ -1052,7 +1057,7 @@
 
         $("#delf_div").hide();
 
-        $('.selectpicker').change(function() {
+        $('#package1').change(function() {
             setTimeout(function() {
                 $('button').removeClass('bs-placeholder');
             }, 500);
