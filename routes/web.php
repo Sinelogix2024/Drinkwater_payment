@@ -63,8 +63,8 @@ Route::get('/', function () {
     return view('advocate/experience');
 });
 
-Route::get('/discover', function () {
-    return view('advocate/discover');
+Route::get('/discover/{detail_access_token}', function ($detail_access_token) {
+    return view('advocate/discover')->with('detail_access_token', $detail_access_token);
 });
 
 Route::get('/home/{detail_access_token}', function ($detail_access_token) {

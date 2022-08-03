@@ -163,7 +163,7 @@
         }
 
         .billing_radio_btn_up {
-            margin-top: 3rem;
+            margin-top: 4rem;
             margin-bottom: 0;
         }
 
@@ -192,6 +192,13 @@
 
         input[type=checkbox].input-assumpte {
             display: none;
+        }
+
+        .bootstrap-select .dropdown-toggle:focus,
+        .bootstrap-select>select.mobile-device:focus+.dropdown-toggle {
+            outline: 0 dotted #333 !important;
+            outline-offset: 0;
+            box-shadow: 0 0 0 0.2rem rgb(255 255 255 / 25%);
         }
 
     </style>
