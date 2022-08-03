@@ -167,16 +167,22 @@
             margin-bottom: 0;
         }
 
+        .input-assumpte+label {
+            position: relative;
+        }
+
         .input-assumpte+label:before {
             background-color: #fff;
             border: 2px solid #000;
+            border-radius: 15px;
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
             display: inline-block;
             transition-duration: 0.3s;
             width: 15px;
             height: 15px;
             content: '';
-            margin-right: 10px;
+            margin-top: 4px;
+            position: absolute;
         }
 
         .input-assumpte:checked+label:before {
@@ -337,7 +343,7 @@
                                             <select class="selectpicker placeholder form-control" name="delivery_frequency" id="delivery_frequency1" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
                                                 <option data-hidden="true" selected="selected">
                                                     {{ config('constants.package.delivery_freq_text') }}</option>
-                                                <option value="1">EVERY SUNDAY 1</option>
+                                                <option value="1">EVERY SUNDAY</option>
                                                 <option value="2">EVERY MONDAY</option>
                                             </select>
                                         </div>
@@ -409,28 +415,27 @@
                                     </div>
                                     <div class="form-group billing_radio_btn_up">
                                         <input type="checkbox" name="same_billing_address" class="input-assumpte same_billing_address same_billing_address_up" id="billing" />
-
-                                        <label class="" for="billing">(SAME AS DELIVERY ADDRESS)</label>
+                                        <label class="" for="billing"><span style="margin-left: 20px;">(SAME AS DELIVERY ADDRESS)</span></label>
                                     </div>
 
                                 </div>
                                 <div class="col-sm-6">
                                     <div id="shippingData">
                                         <div class="form-group">
-                                            <input type="text" name="shipping_address" id="shipping_address" placeholder="BILLING ADDRESS1">
+                                            <input type="text" name="shipping_address" id="shipping_address" placeholder="SHIPPING ADDRESS1">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="shipping_address2" id="shipping_address2" placeholder="BILLING ADDRESS2">
+                                            <input type="text" name="shipping_address2" id="shipping_address2" placeholder="SHIPPING ADDRESS2">
                                         </div>
 
                                         <div class="form-group">
                                             <input type="text" name="s_city_state_zip" id="s_city_state_zip" placeholder="CITY/STATE/ZIP">
                                         </div>
                                     </div>
+
                                     <div class="form-group billing_radio_btn_down">
                                         <input type="checkbox" name="same_billing_address" class="hide input-assumpte same_billing_address same_billing_address_down" id="billing" />
-
-                                        <label class="" for="billing">(SAME AS DELIVERY ADDRESS)</label>
+                                        <label class="" for="billing"><span style="margin-left: 20px;">(SAME AS DELIVERY ADDRESS)</span></label>
                                     </div>
                                 </div>
 
@@ -586,361 +591,368 @@
 
                                 </div>
 
-                                <div id="bt-dropin_venmo" style="display: none;">
+                                {{-- <div id="bt-dropin_venmo" style="display: none;">
                                     <button type="button" id="venmo-button" class="btn btn-outline-success">
+                                        <img style="border-radius: 20px;" src="{{ asset('images/venmo.png') }}" height="35px" width="35px">
+                                <b>PayNow</b>
+                                </button>
+                            </div> --}}
+
+                            <div id="bt-dropin_applepay" style="display: none;">
+                                <apple-pay-button buttonstyle="black" type="buy" locale="el-GR" style="display: block;"></apple-pay-button>
+                            </div>
+                        </div>
+
+                        <div class="flex_row m_t_50" style="display: none">
+                            <div class="flex_col_sm_6">
+                                <div class="form_field">
+                                    <div class="text-field">
+                                        <select class="selectpicker custom_select" name="package" id="package4" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
+                                            <option selected disabled data-hidden="true">
+                                                {{ config('constants.package.default_drop_down_text') }}</option>
+                                            <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
+                                            <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
+                                            <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex_col_sm_6">
+                                <div class="form_field">
+                                    <div class="text-field custom_select">
+                                        <select class="selectpicker" name="delivery_frequency" id="delivery_frequency4" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
+                                            <option value="" data-hidden="true">
+                                                {{ config('constants.package.delivery_freq_text') }}</option>
+                                            <option value="1" selected>EVERY SUNDAY</option>
+                                            <option value="2">EVERY MONDAY</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dots_wrapper">
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li class="active"></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="dots_wrapper">
+                            <button type="button" class="outline_btn m_r_20 show_step2_form">Back</button>
+                            {{-- <button type="submit" class="primary_btn show_step4_form">Next</button> --}}
+                            <button type="submit" class="primary_btn">Next</button>
+                        </div>
+                    </div>
+            </div>
+
+            <footer class="text-center">
+                <div class="custom_container">
+                    {{ date('Y') }} &copy ALL RIGHT RESERVED | WATR, LLC <br> PRIVACY + LEGAL
+                </div>
+            </footer>
+        </main>
+        </div>
+        <!-- step 3 ends Payment Type Selection -->
+
+        <!-- step 4 start Card Detail Filling -->
+        <div class="step4_form" style="display: none;">
+            <main class="app_wrapper waterbg">
+                <div class="custom_container">
+                    <div class="head_section">
+                        <div class="brand">
+                            <figure class="logo"><img src="{{ asset('images/logowater.png') }}" alt="Logo" />
+                            </figure>
+                            <span class="brand_txt">+ {{ $advocateData->adv_first_name }}
+                                {{ $advocateData->adv_last_name }}</span>
+                        </div>
+                        <div class="tagline_wrap">
+                            <p>Your Path to daily hydration + wellness</p>
+                        </div>
+                    </div>
+
+                    <div class="form_wrapper">
+                        <div class="flex_row" style="display: none">
+                            <div class="flex_col_sm_4"></div>
+                            <div class="flex_col_sm_5">
+                                <div class="form_field">
+                                    <div class="text-field custom_select">
+                                        <select class="selectpicker payment_method" name="payment_method" id="payment_method" data-dropup-auto="false" title="SELECT PAYMENT METHOD">
+                                            <option data-hidden="true">SELECT PAYMENT METHOD</option>
+                                            <option value="1">CREDIT CARD</option>
+                                            <option value="2">DEBIT CARD</option>
+                                            <option value="3">VENMO</option>
+                                            <option value="4">APPLY PAY</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex_row m_t_50" style="display: none">
+
+                            <div class="flex_col_sm_6">
+                                <div class="form_field">
+                                    <div class="text-field">
+                                        <select class="selectpicker custom_select" name="package" id="package3" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
+                                            <option value="" data-hidden="true">
+                                                {{ config('constants.package.default_drop_down_text') }}</option>
+                                            <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
+                                            <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
+                                            <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex_col_sm_6">
+                                <div class="form_field">
+                                    <div class="text-field custom_select">
+                                        <select class="selectpicker" name="delivery_frequency" id="delivery_frequency3" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
+                                            <option value="" data-hidden="true">
+                                                {{ config('constants.package.delivery_freq_text') }}</option>
+                                            <option value="1">EVERY SUNDAY</option>
+                                            <option value="2">EVERY MONDAY</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="dots_wrapper">
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li class="active"></li>
+                            </ul>
+                        </div>
+
+                        <div class="dots_wrapper">
+                            <button type="button" class="outline_btn m_r_20 show_step3_form">Back</button>
+                            {{-- <button type="submit" class="primary_btn show_step5_form">Next</button> --}}
+                            <button class="primary_btn show_step5_form" type="submit">Next</button>
+
+                            <footer class="text-center">
+                                <div class="custom_container">
+                                    {{ date('Y') }} &copy ALL RIGHT RESERVED | WATR, LLC <br> PRIVACY + LEGAL
+                                </div>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <!-- step 4 ends Card Detail Filling -->
+
+        <!-- Step 5 starts -->
+        <div class="step5_form" style="display: none;">
+            <main class="app_wrapper waterbg">
+                <div class="custom_container">
+
+                    <div class="head_section">
+                        <div class="brand">
+                            <figure class="logo"><img src="{{ asset('images/logowater.png') }}" alt="Logo" />
+                            </figure>
+                            <span class="brand_txt">+ {{ $advocateData->adv_first_name }}
+                                {{ $advocateData->adv_last_name }}</span>
+                        </div>
+
+                        <div class="tagline_wrap">
+                            <p>Your Path to daily hydration + wellness</p>
+                        </div>
+                    </div>
+
+                    <div class="form_wrapper edit_form_wrapper">
+                        <div class="flex_row">
+                            <div class="flex_col_sm_12">
+                                <div class="form_field">
+                                    <div class="text-field">
+
+                                        <select class="selectpicker custom_select final_page_package_label" data-dropup-auto="false" title="YOUR WELLNESS SOLUTION">
+                                            <option value="" selected data-hidden="true">YOUR WELLNESS
+                                                SOLUTION
+                                            </option>
+                                        </select>
+
+                                        <select class="selectpicker custom_select" name="package" id="package5" required data-dropup-auto="false" title="YOUR WELLNESS SOLUTION">
+                                            <option value="" data-hidden="true">YOUR WELLNESS SOLUTION
+                                            </option>
+                                            <option value="1" selected>1 MONTH OF HYDRATION $250 ( 10 KITS )
+                                            </option>
+                                            <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
+                                            <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
+                                        </select>
+
+                                        <button type="button" class="edit btn_effect edit_package">Edit</button>
+                                    </div>
+                                    <span class="text-note package_note_final_page">EVERY SUNDAY FOR 1 MONTH
+                                    </span>
+                                    <span class="text-note">(1st DELIVERY 4 KITS, THEN 2 KITS THEREAFTER). </span>
+                                </div>
+
+                                <div class="form_field">
+                                    <div class="text-field">
+
+                                        <select class="selectpicker custom_select final_page_delivery_freq_label" data-dropup-auto="false" title="DELIVERY FREQUENCY">
+                                            <option value="" selected data-hidden="true">DELIVERY FREQUENCY
+                                            </option>
+                                        </select>
+
+                                        <select class="selectpicker custom_select" title="DELIVERY FREQUENCY" name="delivery_frequency" id="delivery_frequency5" required data-dropup-auto="false">
+                                            <option value="" data-hidden="true" title="{{ config('constants.package.delivery_freq_text') }}">
+                                                {{ config('constants.package.delivery_freq_text') }}</option>
+                                            <option value="1" selected>EVERY SUNDAY</option>
+                                            <option value="2">EVERY MONDAY</option>
+                                        </select>
+                                        <button type="button" class="edit btn_effect edit_delivery_freq">Edit
+                                        </button>
+                                    </div>
+                                    <span class="text-note delivery_note_final_page">EVERY SUNDAY FOR 1 MONTH
+                                    </span>
+                                    <span class="text-note">(1st DELIVERY 4 KITS, THEN 2 KITS THEREAFTER). </span>
+                                </div>
+
+
+                                <div class="form_field">
+                                    <div class="text-field">
+                                        <select class="selectpicker custom_select final_page_edit_address_label" data-dropup-auto="false" title="DELIVERY ADDRESS">
+                                            <option value="" selected data-hidden="true">DELIVERY ADDRESS
+                                            </option>
+                                        </select>
+
+                                        <input type="text" class="shipping_address_final_page" placeholder="SHIPPING ADDRESS" disabled>
+                                        <button type="button" class="edit btn_effect edit_address_final_page">EDIT
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="form_field">
+                                    <div class="flex_row">
+                                        <div class="flex_col_sm_6">
+                                            <div class="text-field">
+                                                <input type="text" class="shipping_address1_final_page" placeholder="SHIPPING ADDRESS 1" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="flex_col_sm_6">
+                                            <!-- <div class="text-field">
+                                                  <input type="text" placeholder="">
+                                                </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form_field">
+                                    <div class="flex_row">
+                                        <div class="flex_col_sm_6">
+                                            <div class="text-field">
+                                                <input type="text" class="s_city_state_zip_final_page" placeholder="CITY  / STATE  /  ZIP" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="flex_col_sm_6">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form_field">
+                                    <span class="text-note shipping_add_final_page"></span>
+                                    <span class="text-note citi_state_zip_final_page"></span>
+                                </div>
+
+                                <div class="form_field">
+                                    <div class="text-field">
+
+                                        <select class="selectpicker custom_select final_page_payment_source_label" data-dropup-auto="false" title="PAYMENT SOURCE">
+                                            <option value="" selected data-hidden="true">PAYMENT SOURCE
+                                            </option>
+                                        </select>
+
+                                        <select class="selectpicker custom_select payment_method payment_method_finl_page_class" name="payment_method" id="payment_method" data-dropup-auto="false" title="SELECT PAYMENT METHOD">
+                                            <option data-hidden="true">SELECT PAYMENT METHOD</option>
+                                            <option value="1">CREDIT CARD</option>
+                                            <option value="2">DEBIT CARD</option>
+                                            <option value="3">VENMO</option>
+                                            {{-- <option value="4">APPLY PAY</option> --}}
+                                        </select>
+
+                                        <button type="button" class="edit btn_effect edit_payment_method_final_page">Edit
+                                        </button>
+                                    </div>
+                                    {{-- <span class="text-note">CARD ENDING IN <b><span class="last_4_digit_card"></span></b></span> --}}
+                                    {{-- <span class="text-note payment_method_final_page"></span> --}}
+                                </div>
+
+                                <div class="form_field">
+                                    <div class="flex_row">
+                                        <div class="flex_col_sm_6 text-left">
+                                            <label class="form_label">TAX</label>
+                                        </div>
+                                        <div class="flex_col_sm_6 text-right">
+                                            <input type="hidden" name="tax_amount" class="tax_amount">
+                                            <p class="show_label tax_amount">1.00</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex_row">
+                                        <div class="flex_col_sm_6 text-left">
+                                            <label class="form_label">SERVICE FEE</label>
+                                        </div>
+                                        <div class="flex_col_sm_6 text-right">
+                                            <p class="show_label service_fees">5.00</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex_row">
+                                        <div class="flex_col_sm_6 text-left">
+                                            <label class="form_label">DELIVERY FEE</label>
+                                        </div>
+                                        <div class="flex_col_sm_6 text-right">
+                                            <p class="show_label delivery_fees">5.00</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex_row">
+                                        <div class="flex_col_sm_6 text-left">
+                                            <label class="form_label">TOTAL</label>
+                                        </div>
+                                        <div class="flex_col_sm_6 text-right">
+                                            <input type="hidden" name="total_amount" class="total_amount">
+                                            <p class="show_label total_amount">$266</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="form_field">
+                                {{-- <button type="button" class="outline_btn m_r_20 show_step4_form">BACK</button> --}}
+                                <button type="submit" class="primary_btn btn_effect btn_black purchase_button" style="width: auto;">
+                                    PURHASE
+                                </button>
+
+                                <div id="bt-dropin_venmo" style="display: none;">
+                                    <button type="button" id="venmo-button" class="primary_btn btn_effect btn_black" style="width: auto;">
                                         <img style="border-radius: 20px;" src="{{ asset('images/venmo.png') }}" height="35px" width="35px">
                                         <b>PayNow</b>
                                     </button>
                                 </div>
-
-                                <div id="bt-dropin_applepay" style="display: none;">
-                                    <apple-pay-button buttonstyle="black" type="buy" locale="el-GR" style="display: block;"></apple-pay-button>
-                                </div>
-                            </div>
-
-                            <div class="flex_row m_t_50" style="display: none">
-                                <div class="flex_col_sm_6">
-                                    <div class="form_field">
-                                        <div class="text-field">
-                                            <select class="selectpicker custom_select" name="package" id="package4" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
-                                                <option selected disabled data-hidden="true">
-                                                    {{ config('constants.package.default_drop_down_text') }}</option>
-                                                <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
-                                                <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
-                                                <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex_col_sm_6">
-                                    <div class="form_field">
-                                        <div class="text-field custom_select">
-                                            <select class="selectpicker" name="delivery_frequency" id="delivery_frequency4" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
-                                                <option value="" data-hidden="true">
-                                                    {{ config('constants.package.delivery_freq_text') }}</option>
-                                                <option value="1" selected>EVERY SUNDAY</option>
-                                                <option value="2">EVERY MONDAY</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="dots_wrapper">
-                                <ul>
-                                    <li></li>
-                                    <li></li>
-                                    <li class="active"></li>
-                                    <li></li>
-                                </ul>
-                            </div>
-                            <div class="dots_wrapper">
-                                <button type="button" class="outline_btn m_r_20 show_step2_form">Back</button>
-                                {{-- <button type="submit" class="primary_btn show_step4_form">Next</button> --}}
-                                <button type="submit" class="primary_btn">Next</button>
                             </div>
                         </div>
+
+                        <div class="text-center recipt_note">
+                            UPON PURCHASE YOU WILL RECEIVE A RECEIPT VIA TEXT & EMAIL
+                        </div>
+
                     </div>
 
-                    <footer class="text-center">
-                        <div class="custom_container">
-                            {{ date('Y') }} &copy ALL RIGHT RESERVED | WATR, LLC <br> PRIVACY + LEGAL
-                        </div>
-                    </footer>
-                </main>
-            </div>
-            <!-- step 3 ends Payment Type Selection -->
-
-            <!-- step 4 start Card Detail Filling -->
-            <div class="step4_form" style="display: none;">
-                <main class="app_wrapper waterbg">
+                </div>
+                <footer class="text-center">
                     <div class="custom_container">
-                        <div class="head_section">
-                            <div class="brand">
-                                <figure class="logo"><img src="{{ asset('images/logowater.png') }}" alt="Logo" />
-                                </figure>
-                                <span class="brand_txt">+ {{ $advocateData->adv_first_name }}
-                                    {{ $advocateData->adv_last_name }}</span>
-                            </div>
-                            <div class="tagline_wrap">
-                                <p>Your Path to daily hydration + wellness</p>
-                            </div>
-                        </div>
-
-                        <div class="form_wrapper">
-                            <div class="flex_row" style="display: none">
-                                <div class="flex_col_sm_4"></div>
-                                <div class="flex_col_sm_5">
-                                    <div class="form_field">
-                                        <div class="text-field custom_select">
-                                            <select class="selectpicker payment_method" name="payment_method" id="payment_method" data-dropup-auto="false" title="SELECT PAYMENT METHOD">
-                                                <option data-hidden="true">SELECT PAYMENT METHOD</option>
-                                                <option value="1">CREDIT CARD</option>
-                                                <option value="2">DEBIT CARD</option>
-                                                <option value="3">VENMO</option>
-                                                <option value="4">APPLY PAY</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex_row m_t_50" style="display: none">
-
-                                <div class="flex_col_sm_6">
-                                    <div class="form_field">
-                                        <div class="text-field">
-                                            <select class="selectpicker custom_select" name="package" id="package3" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
-                                                <option value="" data-hidden="true">
-                                                    {{ config('constants.package.default_drop_down_text') }}</option>
-                                                <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
-                                                <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
-                                                <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex_col_sm_6">
-                                    <div class="form_field">
-                                        <div class="text-field custom_select">
-                                            <select class="selectpicker" name="delivery_frequency" id="delivery_frequency3" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
-                                                <option value="" data-hidden="true">
-                                                    {{ config('constants.package.delivery_freq_text') }}</option>
-                                                <option value="1">EVERY SUNDAY</option>
-                                                <option value="2">EVERY MONDAY</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="dots_wrapper">
-                                <ul>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li class="active"></li>
-                                </ul>
-                            </div>
-
-                            <div class="dots_wrapper">
-                                <button type="button" class="outline_btn m_r_20 show_step3_form">Back</button>
-                                {{-- <button type="submit" class="primary_btn show_step5_form">Next</button> --}}
-                                <button class="primary_btn show_step5_form" type="submit">Next</button>
-
-                                <footer class="text-center">
-                                    <div class="custom_container">
-                                        {{ date('Y') }} &copy ALL RIGHT RESERVED | WATR, LLC <br> PRIVACY + LEGAL
-                                    </div>
-                                </footer>
-                            </div>
-                        </div>
+                        {{ date('Y') }} &copy ALL RIGHT RESERVED | WATR, LLC <br> PRIVACY + LEGAL
                     </div>
-                </main>
-            </div>
-            <!-- step 4 ends Card Detail Filling -->
-
-            <!-- Step 5 starts -->
-            <div class="step5_form" style="display: none;">
-                <main class="app_wrapper waterbg">
-                    <div class="custom_container">
-
-                        <div class="head_section">
-                            <div class="brand">
-                                <figure class="logo"><img src="{{ asset('images/logowater.png') }}" alt="Logo" />
-                                </figure>
-                                <span class="brand_txt">+ {{ $advocateData->adv_first_name }}
-                                    {{ $advocateData->adv_last_name }}</span>
-                            </div>
-
-                            <div class="tagline_wrap">
-                                <p>Your Path to daily hydration + wellness</p>
-                            </div>
-                        </div>
-
-                        <div class="form_wrapper edit_form_wrapper">
-                            <div class="flex_row">
-                                <div class="flex_col_sm_12">
-                                    <div class="form_field">
-                                        <div class="text-field">
-
-                                            <select class="selectpicker custom_select final_page_package_label" data-dropup-auto="false" title="YOUR WELLNESS SOLUTION">
-                                                <option value="" selected data-hidden="true">YOUR WELLNESS
-                                                    SOLUTION
-                                                </option>
-                                            </select>
-
-                                            <select class="selectpicker custom_select" name="package" id="package5" required data-dropup-auto="false" title="YOUR WELLNESS SOLUTION">
-                                                <option value="" data-hidden="true">YOUR WELLNESS SOLUTION
-                                                </option>
-                                                <option value="1" selected>1 MONTH OF HYDRATION $250 ( 10 KITS )
-                                                </option>
-                                                <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
-                                                <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
-                                            </select>
-
-                                            <button type="button" class="edit btn_effect edit_package">Edit</button>
-                                        </div>
-                                        <span class="text-note package_note_final_page">EVERY SUNDAY FOR 1 MONTH
-                                        </span>
-                                        <span class="text-note">(1st DELIVERY 4 KITS, THEN 2 KITS THEREAFTER). </span>
-                                    </div>
-
-                                    <div class="form_field">
-                                        <div class="text-field">
-
-                                            <select class="selectpicker custom_select final_page_delivery_freq_label" data-dropup-auto="false" title="DELIVERY FREQUENCY">
-                                                <option value="" selected data-hidden="true">DELIVERY FREQUENCY
-                                                </option>
-                                            </select>
-
-                                            <select class="selectpicker custom_select" title="DELIVERY FREQUENCY" name="delivery_frequency" id="delivery_frequency5" required data-dropup-auto="false">
-                                                <option value="" data-hidden="true" title="{{ config('constants.package.delivery_freq_text') }}">
-                                                    {{ config('constants.package.delivery_freq_text') }}</option>
-                                                <option value="1" selected>EVERY SUNDAY</option>
-                                                <option value="2">EVERY MONDAY</option>
-                                            </select>
-                                            <button type="button" class="edit btn_effect edit_delivery_freq">Edit
-                                            </button>
-                                        </div>
-                                        <span class="text-note delivery_note_final_page">EVERY SUNDAY FOR 1 MONTH
-                                        </span>
-                                        <span class="text-note">(1st DELIVERY 4 KITS, THEN 2 KITS THEREAFTER). </span>
-                                    </div>
-
-
-                                    <div class="form_field">
-                                        <div class="text-field">
-                                            <select class="selectpicker custom_select final_page_edit_address_label" data-dropup-auto="false" title="DELIVERY ADDRESS">
-                                                <option value="" selected data-hidden="true">DELIVERY ADDRESS
-                                                </option>
-                                            </select>
-
-                                            <input type="text" class="shipping_address_final_page" placeholder="BILLING ADDRESS" disabled>
-                                            <button type="button" class="edit btn_effect edit_address_final_page">EDIT
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <div class="form_field">
-                                        <div class="flex_row">
-                                            <div class="flex_col_sm_6">
-                                                <div class="text-field">
-                                                    <input type="text" class="shipping_address1_final_page" placeholder="BILLING ADDRESS 1" disabled>
-                                                </div>
-                                            </div>
-                                            <div class="flex_col_sm_6">
-                                                <!-- <div class="text-field">
-                                                  <input type="text" placeholder="">
-                                                </div> -->
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form_field">
-                                        <div class="flex_row">
-                                            <div class="flex_col_sm_6">
-                                                <div class="text-field">
-                                                    <input type="text" class="s_city_state_zip_final_page" placeholder="CITY  / STATE  /  ZIP" disabled>
-                                                </div>
-                                            </div>
-                                            <div class="flex_col_sm_6">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="form_field">
-                                        <span class="text-note shipping_add_final_page"></span>
-                                        <span class="text-note citi_state_zip_final_page"></span>
-                                    </div>
-
-                                    <div class="form_field">
-                                        <div class="text-field">
-
-                                            <select class="selectpicker custom_select final_page_payment_source_label" data-dropup-auto="false" title="PAYMENT SOURCE">
-                                                <option value="" selected data-hidden="true">PAYMENT SOURCE
-                                                </option>
-                                            </select>
-
-                                            <select class="selectpicker custom_select payment_method payment_method_finl_page_class" name="payment_method" id="payment_method" data-dropup-auto="false" title="SELECT PAYMENT METHOD">
-                                                <option data-hidden="true">SELECT PAYMENT METHOD</option>
-                                                <option value="1">CREDIT CARD</option>
-                                                <option value="2">DEBIT CARD</option>
-                                                <option value="3">VENMO</option>
-                                                {{-- <option value="4">APPLY PAY</option> --}}
-                                            </select>
-
-                                            <button type="button" class="edit btn_effect edit_payment_method_final_page">Edit
-                                            </button>
-                                        </div>
-                                        {{-- <span class="text-note">CARD ENDING IN <b><span class="last_4_digit_card"></span></b></span> --}}
-                                        {{-- <span class="text-note payment_method_final_page"></span> --}}
-                                    </div>
-
-                                    <div class="form_field">
-                                        <div class="flex_row">
-                                            <div class="flex_col_sm_6 text-left">
-                                                <label class="form_label">TAX</label>
-                                            </div>
-                                            <div class="flex_col_sm_6 text-right">
-                                                <input type="hidden" name="tax_amount" class="tax_amount">
-                                                <p class="show_label tax_amount">1.00</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex_row">
-                                            <div class="flex_col_sm_6 text-left">
-                                                <label class="form_label">SERVICE FEE</label>
-                                            </div>
-                                            <div class="flex_col_sm_6 text-right">
-                                                <p class="show_label service_fees">5.00</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex_row">
-                                            <div class="flex_col_sm_6 text-left">
-                                                <label class="form_label">DELIVERY FEE</label>
-                                            </div>
-                                            <div class="flex_col_sm_6 text-right">
-                                                <p class="show_label delivery_fees">5.00</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex_row">
-                                            <div class="flex_col_sm_6 text-left">
-                                                <label class="form_label">TOTAL</label>
-                                            </div>
-                                            <div class="flex_col_sm_6 text-right">
-                                                <input type="hidden" name="total_amount" class="total_amount">
-                                                <p class="show_label total_amount">$266</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="text-center">
-                                <div class="form_field">
-                                    {{-- <button type="button" class="outline_btn m_r_20 show_step4_form">BACK</button> --}}
-                                    <button type="submit" class="primary_btn btn_effect btn_black purchase_button" style="width: auto;">
-                                        PURHASE
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="text-center recipt_note">
-                                UPON PURCHASE YOU WILL RECEIVE A RECEIPT VIA TEXT & EMAIL
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <footer class="text-center">
-                        <div class="custom_container">
-                            {{ date('Y') }} &copy ALL RIGHT RESERVED | WATR, LLC <br> PRIVACY + LEGAL
-                        </div>
-                    </footer>
-                </main>
-            </div>
-            <!-- Step 5 ends -->
+                </footer>
+            </main>
+        </div>
+        <!-- Step 5 ends -->
 
         </main>
     </form>
