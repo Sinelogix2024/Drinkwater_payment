@@ -17,7 +17,8 @@
     <style>
         body {
             /* font-family: europaLight, sans-serif !important; */
-            font-family: Europa-regular, sans-serif !important;
+            /* font-family: Europa-regular, sans-serif !important; */
+            font-family: Europa-light, sans-serif !important;
             line-height: 1.5;
         }
 
