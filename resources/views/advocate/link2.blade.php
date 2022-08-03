@@ -163,7 +163,7 @@
         }
 
         .billing_radio_btn_up {
-            margin-top: 3rem;
+            margin-top: 4rem;
             margin-bottom: 0;
         }
 
@@ -192,6 +192,13 @@
 
         input[type=checkbox].input-assumpte {
             display: none;
+        }
+
+        .bootstrap-select .dropdown-toggle:focus,
+        .bootstrap-select>select.mobile-device:focus+.dropdown-toggle {
+            outline: 0 dotted #333 !important;
+            outline-offset: 0;
+            box-shadow: 0 0 0 0.2rem rgb(255 255 255 / 25%);
         }
 
     </style>
@@ -829,12 +836,12 @@
 
                                 <div class="form_field">
                                     <div class="flex_row">
-                                        <div class="flex_col_sm_6">
+                                        <div class="flex_col_sm_12">
                                             <div class="text-field">
                                                 <input type="text" class="shipping_address1_final_page" placeholder="SHIPPING ADDRESS 1" disabled>
                                             </div>
                                         </div>
-                                        <div class="flex_col_sm_6">
+                                        <div class="flex_col_sm_12">
                                             <!-- <div class="text-field">
                                                   <input type="text" placeholder="">
                                                 </div> -->
@@ -844,12 +851,12 @@
 
                                 <div class="form_field">
                                     <div class="flex_row">
-                                        <div class="flex_col_sm_6">
+                                        <div class="flex_col_sm_12">
                                             <div class="text-field">
                                                 <input type="text" class="s_city_state_zip_final_page" placeholder="CITY  / STATE  /  ZIP" disabled>
                                             </div>
                                         </div>
-                                        <div class="flex_col_sm_6">
+                                        <div class="flex_col_sm_12">
                                         </div>
                                     </div>
                                 </div>
@@ -926,13 +933,13 @@
                             <div class="form_field">
                                 {{-- <button type="button" class="outline_btn m_r_20 show_step4_form">BACK</button> --}}
                                 <button type="submit" class="primary_btn btn_effect btn_black purchase_button" style="width: auto;">
-                                    PURHASE
+                                    PURCHASE
                                 </button>
 
                                 <div id="bt-dropin_venmo" style="display: none;">
                                     <button type="button" id="venmo-button" class="primary_btn btn_effect btn_black" style="width: auto;">
                                         <img style="border-radius: 20px;" src="{{ asset('images/venmo.png') }}" height="35px" width="35px">
-                                        <b>PayNow</b>
+                                        <b>PURCHASE</b>
                                     </button>
                                 </div>
                             </div>
