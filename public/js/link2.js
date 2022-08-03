@@ -340,6 +340,9 @@ $(document).ready(function() {
                     setDropDownvalue();
                 }
                 hideLoader();
+                setTimeout(function() {
+                    $('button').removeClass('bs-placeholder');
+                }, 500);
             }
 
             if (current_tab == "step3_form") {

@@ -343,7 +343,7 @@
                                             <select class="selectpicker placeholder form-control" name="delivery_frequency" id="delivery_frequency1" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
                                                 <option data-hidden="true" selected="selected">
                                                     {{ config('constants.package.delivery_freq_text') }}</option>
-                                                <option value="1">EVERY SUNDAY 1</option>
+                                                <option value="1">EVERY SUNDAY</option>
                                                 <option value="2">EVERY MONDAY</option>
                                             </select>
                                         </div>
@@ -422,10 +422,10 @@
                                 <div class="col-sm-6">
                                     <div id="shippingData">
                                         <div class="form-group">
-                                            <input type="text" name="shipping_address" id="shipping_address" placeholder="BILLING ADDRESS1">
+                                            <input type="text" name="shipping_address" id="shipping_address" placeholder="SHIPPING ADDRESS1">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="shipping_address2" id="shipping_address2" placeholder="BILLING ADDRESS2">
+                                            <input type="text" name="shipping_address2" id="shipping_address2" placeholder="SHIPPING ADDRESS2">
                                         </div>
 
                                         <div class="form-group">
@@ -821,7 +821,7 @@
                                             </option>
                                         </select>
 
-                                        <input type="text" class="shipping_address_final_page" placeholder="BILLING ADDRESS" disabled>
+                                        <input type="text" class="shipping_address_final_page" placeholder="SHIPPING ADDRESS" disabled>
                                         <button type="button" class="edit btn_effect edit_address_final_page">EDIT
                                         </button>
                                     </div>
@@ -831,7 +831,7 @@
                                     <div class="flex_row">
                                         <div class="flex_col_sm_6">
                                             <div class="text-field">
-                                                <input type="text" class="shipping_address1_final_page" placeholder="BILLING ADDRESS 1" disabled>
+                                                <input type="text" class="shipping_address1_final_page" placeholder="SHIPPING ADDRESS 1" disabled>
                                             </div>
                                         </div>
                                         <div class="flex_col_sm_6">
