@@ -829,12 +829,12 @@
 
                                 <div class="form_field">
                                     <div class="flex_row">
-                                        <div class="flex_col_sm_6">
+                                        <div class="flex_col_sm_12">
                                             <div class="text-field">
                                                 <input type="text" class="shipping_address1_final_page" placeholder="SHIPPING ADDRESS 1" disabled>
                                             </div>
                                         </div>
-                                        <div class="flex_col_sm_6">
+                                        <div class="flex_col_sm_12">
                                             <!-- <div class="text-field">
                                                   <input type="text" placeholder="">
                                                 </div> -->
@@ -844,12 +844,12 @@
 
                                 <div class="form_field">
                                     <div class="flex_row">
-                                        <div class="flex_col_sm_6">
+                                        <div class="flex_col_sm_12">
                                             <div class="text-field">
                                                 <input type="text" class="s_city_state_zip_final_page" placeholder="CITY  / STATE  /  ZIP" disabled>
                                             </div>
                                         </div>
-                                        <div class="flex_col_sm_6">
+                                        <div class="flex_col_sm_12">
                                         </div>
                                     </div>
                                 </div>
@@ -926,13 +926,13 @@
                             <div class="form_field">
                                 {{-- <button type="button" class="outline_btn m_r_20 show_step4_form">BACK</button> --}}
                                 <button type="submit" class="primary_btn btn_effect btn_black purchase_button" style="width: auto;">
-                                    PURHASE
+                                    PURCHASE
                                 </button>
 
                                 <div id="bt-dropin_venmo" style="display: none;">
                                     <button type="button" id="venmo-button" class="primary_btn btn_effect btn_black" style="width: auto;">
                                         <img style="border-radius: 20px;" src="{{ asset('images/venmo.png') }}" height="35px" width="35px">
-                                        <b>PayNow</b>
+                                        <b>PURCHASE</b>
                                     </button>
                                 </div>
                             </div>
