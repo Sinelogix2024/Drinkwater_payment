@@ -51,13 +51,13 @@
 
 
 
-                <a href="#" type="button" class="splash_link" style="margin-top:100px;color:#000">DISCOVER <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ url('/discover') }}" type="button" class="splash_link" style="margin-top:100px;color:#000">DISCOVER <i class="fas fa-arrow-circle-right"></i></a>
 
             </div>
 
 
             <div class="welcome_wrapper text-center ">
-                <a href="{{ url('/watr-test',$detail_access_token) }}" type="button" class="splash_link" style="margin-top:100px;color:#000">DRINK <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ url('/watr-test/1234') }}" type="button" class="splash_link" style="margin-top:100px;color:#000">DRINK <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
     </main>
