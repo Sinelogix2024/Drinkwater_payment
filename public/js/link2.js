@@ -363,6 +363,7 @@ $(document).ready(function() {
 
             if (current_tab == "step2_form") {
                 showLoader();
+                $('.payment_method').next(".dropdown-toggle").show();
                 $('.payment_method').next(".dropdown-toggle").prop('disabled', false);
                 if ($("#basic-form").valid()) {
                     $(".step1_form").hide(true);
@@ -509,17 +510,15 @@ $(document).ready(function() {
                 }
                 setDropDownvalue();
                 $("#payment_method").trigger("change");
+                // form.submit();
 
-                if (!(localStorage.getItem('final_page_payment_submit_btn') == 'true')) {
+                setTimeout(function() {
+                    //do something special
                     form.submit();
-                }
+                }, 5000);
             }
         },
     });
-
-    function final_page_payment_submit_btn($data) {
-        localStorage.setItem('final_page_payment_submit_btn', $data);
-    }
 
     function showLoader() {
         //$('.loader').show();
