@@ -5,11 +5,12 @@ function setDropDownvalue() {
 
     // console.log("package", package);
     // console.log("delivery_frequency", delivery_frequency);
-    // console.log("payment_method", payment_method);
+ console.log("payment_method", payment_method);
 
     $("select[name=package]").val(package);
     $("select[name=delivery_frequency]").val(delivery_frequency);
     $("select[name=payment_method]").val(payment_method);
+    $("#payment_method_hidden").val(payment_method);
     $(".selectpicker").selectpicker("refresh");
 }
 
@@ -24,7 +25,7 @@ $(document).ready(function() {
 
     let time1 = setTimeout(function() {
         $(".splash").hide();
-        $(".welcome").show();
+        $(".main_content").show();
     }, string.timeout);
 
     let time2 = setTimeout(function() {
@@ -36,8 +37,8 @@ $(document).ready(function() {
     $(".splash_link").click(function() {
         clearTimeout(time1);
         $(".splash").hide();
-        $(".welcome").show();
-        $(".main_content").hide();
+        $(".main_content").show();
+        //$(".main_content").hide();
     });
 
     $(".welcome_link").click(function() {
@@ -50,8 +51,8 @@ $(document).ready(function() {
 
     $(".main_content_back").click(function() {
         $(".splash").hide();
-        $(".welcome").show();
-        $(".main_content").hide();
+        //$(".welcome").show();
+        $(".main_content").show();
 
         setTimeout(function() {
             $(".splash").hide();

@@ -55,8 +55,61 @@ $(document).ready(function() {
 
     $(document).on("click", ".show_step5_form", function(event) {
         console.log("show_step5_form");
+       // $('.payment_method').next(".dropdown-toggle").prop('disabled', true);
+        // showLoader();
+        $(".step1_form").hide(true);
+        $(".step2_form").hide(true);
+        $(".step2_form").hide();
+        $(".step3_form").hide(true);
+        $(".step4_form").hide(true);
+        $(".step5_form").show(true);
+        $(".current_tab").val("step5_form");
+       // setDropDownvalue();
+        // hideLoader();
+
+       // $(".current_tab").val("step5_form");
+       $('.payment_method').show();
+       $('.payment_method').next(".dropdown-toggle").prop('disabled', false);
+
+       $('.final_page_package_label').next(".dropdown-toggle").prop('disabled', true);
+       $('.final_page_delivery_freq_label').next(".dropdown-toggle").prop('disabled', true);
+       $('.final_page_edit_address_label').next(".dropdown-toggle").prop('disabled', true);
+       $('.final_page_payment_source_label').next(".dropdown-toggle").prop('disabled', true);
+
+       $('.package_note_final_page').text($('#package5').children("option:selected").text());
+
+               $('.payment_method').next(".dropdown-toggle").hide();
+
+        $('.shipping_address_final_page').val($('#shipping_address').val());
+                $('.shipping_address1_final_page').val($('#shipping_address2').val());
+                $('.s_city_state_zip_final_page').val($('#s_city_state_zip').val());
+
+               $('.edit_address_final_page').click();
+               $('.edit_delivery_freq').click();
+               $('.edit_payment_method_final_page').click();
+            //$('.final_page_edit_address_label').show();
+
+
+
+        // $('.final_page_package_label').next(".dropdown-toggle").prop('disabled', true);
+        // $('.final_page_delivery_freq_label').next(".dropdown-toggle").prop('disabled', true);
+        // $('.final_page_edit_address_label').next(".dropdown-toggle").prop('disabled', true);
+
+        // $('.package_note_final_page').text($('#package5').children("option:selected").text());
+
+        //         $('.payment_method').next(".dropdown-toggle").hide();
+
+
+               // $(".current_tab").val("final_form");
+               // setDropDownvalue();
+
+
+    });
+
+    $(document).on("click", ".show_step55_form", function(event) {
+        console.log("show_step5_form");
         console.log(localStorage.getItem('braintree_error'));
-       // console.log(`$("#basic-form").valid()`, $("#basic-form").valid());
+        console.log(`$("#basic-form").valid()`, $("#basic-form").valid());
 
         // var ex=$('#expire').val();
         // var cardnum=$('#cardnum').val();

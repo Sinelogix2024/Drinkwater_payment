@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 //     $orderDetail = Order::find(1);
 
-//     // return 
+//     // return
 //     $advocateData = Advocate::where('adv_detail_access_token', '7p4MQhdEhl92jG9ZwpOOQBTJayd7qz1HonEjJKt0kFZ9hiCWqJ')->first();
 
 
@@ -47,7 +47,7 @@ use Illuminate\Support\Facades\Route;
 //     return response()->json($generated_pdf_link);
 
 //     return $pdf->download('pdfview.pdf');
-    
+
 //     return view('emails.order_placed_new');
 // })->name('splash');
 
@@ -59,13 +59,30 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/link', function () {
 //     return view('advocate/link');
 // })->name('link');
+Route::get('/', function () {
+    return view('advocate/experience');
+});
 
-Route::match(['get'],'/braintree', 'App\Http\Controllers\BrainTreeController@view');
-Route::match(['post'],'/braintree', 'App\Http\Controllers\BrainTreeController@call');
-Route::match(['get'],'/wateradvocate/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
-Route::match(['post'],'/wateradvocate/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
+Route::get('/discover/{detail_access_token}', function ($detail_access_token) {
+    return view('advocate/discover')->with('detail_access_token', $detail_access_token);
+});
 
-Route::match(['get'],'/orderDetail/{order_id}', 'App\Http\Controllers\Advocate\AdvocateController@orderDetail');
+Route::get('/home/{detail_access_token}', function ($detail_access_token) {
+    return view('advocate/experience')->with('detail_access_token', $detail_access_token);
+});
+Route::get('/experience/{detail_access_token}', function ($detail_access_token) {
+    return view('advocate/drink')->with('detail_access_token', $detail_access_token);
+})->name('experience');
+
+Route::match(['get'], '/braintree', 'App\Http\Controllers\BrainTreeController@view');
+Route::match(['post'], '/braintree', 'App\Http\Controllers\BrainTreeController@call');
+Route::match(['get'], '/watr/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
+Route::match(['post'], '/watr/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
+
+Route::match(['get'], '/watr-test/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getwatrDetail');
+Route::match(['post'], '/watr-test/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
+
+Route::match(['get'], '/orderDetail/{order_id}', 'App\Http\Controllers\Advocate\AdvocateController@orderDetail');
 
 // venom payment gateway response
-Route::match(['get'],'/venmo_server/{payerID}/{deviceData}/{amount}', 'App\Http\Controllers\BrainTreeController@venomResponse');
+Route::match(['get'], '/venmo_server/{payerID}/{deviceData}/{amount}', 'App\Http\Controllers\BrainTreeController@venomResponse');

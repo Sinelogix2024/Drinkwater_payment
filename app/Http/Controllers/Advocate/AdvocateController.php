@@ -19,6 +19,98 @@ class AdvocateController extends Controller
      */
     public function getDetail(Request $request)
     {
+        try {
+            $gateway = new Gateway([
+                'environment' => env('BRAINTREE_ENV'),
+                'merchantId' => env('BRAINTREE_MERCHANT_ID'),
+                'publicKey' => env('BRAINTREE_PUBLIC_KEY'),
+                'privateKey' => env('BRAINTREE_PRIVATE_KEY'),
+                'acceptGzipEncoding' => false,
+            ]);
+
+            if ($request->method() == 'GET') {
+                $clientToken = $gateway->clientToken()->generate();
+
+                $data = Advocate::where([
+                    ['adv_detail_access_token', $request->detail_access_token]
+                ])->first();
+
+                if ($data) {
+                    return view('advocate/link', [
+                        'advocateData' => $data,
+                        'client_token' => $clientToken
+                    ]);
+                } else {
+                    return view('others/no_data_found');
+                }
+            }
+
+            if ($request->method() == 'POST') {
+                $amount = $request->total_amount ?? 10.00;
+                $result = $gateway->transaction()->sale([
+                    'amount' => $amount,
+                    'paymentMethodNonce' => $request->payment_method_nonce,
+                    'deviceData' => "deviceDataFromTheClient",
+                    'options' => ['submitForSettlement' => True]
+                ]);
+
+                $orderId = Order::insertGetId([
+                    'odr_id' => 'ordr_dw_' . time() . '_' . date('Y_m_d'),
+                    'odr_first_name' => $request->first_name,
+                    'odr_last_name' => $request->last_name,
+                    'odr_email' => $request->email,
+                    'odr_mobile' => str_replace("-", "", $request->mobile),
+                    'odr_package_id' => $request->package,
+                    'odr_delivery_frequency_id' => $request->delivery_frequency,
+                    'billing_address' => $request->billing_address,
+                    'shipping_address' => $request->shipping_address,
+                    'billing_address2' => $request->billing_address2,
+                    'shipping_address2' => $request->shipping_address2,
+                    'b_city_state_zip' => $request->b_city_state_zip,
+                    's_city_state_zip' => $request->s_city_state_zip,
+                    'payment_method' => (int) $request->payment_method_hidden,
+                    'odr_transaction_id' => $result->transaction->id,
+                    'odr_transaction_amount' => $amount,
+                    'odr_adv_detail_access_token' => $request->adv_detail_access_token,
+                    'odr_tax_amount' => $request->tax_amount,
+                ]);
+
+                // return
+                $orderDetail = Order::find($orderId);
+                $advocateData = Advocate::where('adv_detail_access_token', $request->adv_detail_access_token)->first();
+
+                Mail::to($request->email)->send(new OrderPlaced($advocateData, $orderDetail));
+
+                $accountSid = getenv("TWILIO_ACCOUNT_SID");
+                $authToken = getenv("TWILIO_AUTH_TOKEN");
+                $client = new Client($accountSid, $authToken);
+
+                $body = 'Hey ' . $orderDetail->odr_first_name . ' ' . $orderDetail->odr_last_name . '! Order Placed.' .
+                    'Thanks For Shopping! Click on link to view Receipt.
+            ' . '<a href="' . url('orderDetail/' . $orderDetail->odr_id) . '"> TRACK </a>';
+
+                try {
+                    $client->messages->create(
+                        // '+1'.str_replace("-", "", $request->mobile),
+                        getenv('TWILIO_TO_SEND_NUMBER'),
+                        array(
+                            'from' => getenv("TWILIO_NUMBER"),
+                            'body' => $body
+                        )
+                    );
+                    request()->session()->put('response_success_msg', 'You will receive a receipt via text and email.');
+                } catch (Exception $e) {
+                    request()->session()->put('response_error_msg', $e->getMessage());
+                }
+            }
+        } catch (Exception $e) {
+            request()->session()->put('response_error_msg', $e->getMessage());
+        }
+        return redirect()->back();
+    }
+
+    public function getWatrDetail(Request $request)
+    {
         $gateway = new Gateway([
             'environment' => env('BRAINTREE_ENV'),
             'merchantId' => env('BRAINTREE_MERCHANT_ID'),
@@ -27,36 +119,31 @@ class AdvocateController extends Controller
             'acceptGzipEncoding' => false,
         ]);
 
-        if( $request->method() == 'GET')
-        {
+        if ($request->method() == 'GET') {
             $clientToken = $gateway->clientToken()->generate();
 
             $data = Advocate::where([
-                ['adv_detail_access_token',$request->detail_access_token]
+                ['adv_detail_access_token', $request->detail_access_token]
             ])->first();
-    
-            if( $data ){
-        
-                return view('advocate/link', [ 
+
+            if ($data) {
+                return view('advocate/link2', [
                     'advocateData' => $data,
-                    'client_token' => $clientToken 
+                    'client_token' => $clientToken
                 ]);
-                
-            }else{
+            } else {
                 return view('others/no_data_found');
             }
         }
 
-        if( $request->method() == 'POST')
-        {
-            // return $request->all();
+        if ($request->method() == 'POST') {
 
             $amount = $request->total_amount ?? 10.00;
             $result = $gateway->transaction()->sale([
                 'amount' => $amount,
                 'paymentMethodNonce' => $request->payment_method_nonce,
                 'deviceData' => "deviceDataFromTheClient",
-                'options' => [ 'submitForSettlement' => True ]
+                'options' => ['submitForSettlement' => True]
             ]);
 
             // $result_venmo = $gateway->transaction()->sale([
@@ -85,14 +172,14 @@ class AdvocateController extends Controller
                 'shipping_address2' => $request->shipping_address2,
                 'b_city_state_zip' => $request->b_city_state_zip,
                 's_city_state_zip' => $request->s_city_state_zip,
-                'payment_method' => $request->payment_method,
+                'payment_method' => (int) $request->payment_method_hidden,
                 'odr_transaction_id' => $result->transaction->id,
                 'odr_transaction_amount' => $amount,
                 'odr_adv_detail_access_token' => $request->adv_detail_access_token,
                 'odr_tax_amount' => $request->tax_amount,
             ]);
 
-            // return 
+            // return
             $orderDetail = Order::find($orderId);
             $advocateData = Advocate::where('adv_detail_access_token', $request->adv_detail_access_token)->first();
 
@@ -102,23 +189,22 @@ class AdvocateController extends Controller
             $authToken = getenv("TWILIO_AUTH_TOKEN");
             $client = new Client($accountSid, $authToken);
 
-            $body = 'Hey ' .$orderDetail->odr_first_name .' '. $orderDetail->odr_last_name. '! Order Placed.'. 
-            'Thanks For Shopping! Click on link to view Receipt. 
-            ' . '<a href="'.url('orderDetail/'. $orderDetail->odr_id).'"> TRACK </a>';
+            $body = 'Hey ' . $orderDetail->odr_first_name . ' ' . $orderDetail->odr_last_name . '! Order Placed.' .
+                'Thanks For Shopping! Click on link to view Receipt.
+            ' . '<a href="' . url('orderDetail/' . $orderDetail->odr_id) . '"> TRACK </a>';
 
-            try
-            {
+            try {
                 $client->messages->create(
                     // '+91 '. $request->mobile,
-                    '+91 89808 98451',
+                    getenv('TWILIO_TO_SEND_NUMBER'),
                     array(
                         'from' => getenv("TWILIO_NUMBER"),
                         'body' => $body
                     )
                 );
-            }catch (Exception $e){
-                dd( "Error: " . $e->getMessage() );
-            } 
+            } catch (Exception $e) {
+                dd("Error: " . $e->getMessage());
+            }
 
             return redirect()->back();
         }
@@ -126,7 +212,7 @@ class AdvocateController extends Controller
 
     public function orderDetail(Request $request)
     {
-return $request->all();
+        return $request->all();
         $orderDetail = Order::where('odr_id', $request->order_id)->first();
 
         $advocateData = Advocate::where('adv_detail_access_token', $orderDetail->odr_adv_detail_access_token)->first();

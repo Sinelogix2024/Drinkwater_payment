@@ -53,18 +53,11 @@ body{
         font-size: 32px;
         font-weight: 300;
         margin-bottom: 20px;
-        @media(max-width:640px){
-            font-size: 20px;
-            line-height: 1.8;
-        }
     }
     h1{
         font-size: 42px;
         margin: 30px 0 0;
         font-weight:500;
-        @media(max-width:640px){
-          font-size: 22px;
-        }
     }
 }
 
@@ -73,34 +66,19 @@ body{
     text-align: center;
     padding: 46px 0;
     text-transform: uppercase;
-    @media(max-width:640px){
-        padding: 26px 0 0;
-    }
     .brand {
         display: flex;
         align-items: center;
         justify-content: center;
-        @media(max-width:640px){
-            img{
-                width: 45px;
-            }
-        }
         .brand_txt{
             font-size: 55px;
             margin-left: 10px;
-            @media(max-width:640px){
-                font-size: 22px;
-            }
         }
     }
 }
 .tagline_wrap{
-    @media(max-width:640px){
-        width: 69%;
-        margin: 0 auto;
-    }
     .tagline {
-        max-width: 540px;
+        width: 540px;
         margin: 0 auto;
         font-size: 40px;
         display: flex;
@@ -109,9 +87,6 @@ body{
         font-weight: 300;
         margin-bottom: 20px;
         text-transform: uppercase;
-        @media(max-width:640px){
-            font-size: 18px;
-        }
     }
 
     p{
@@ -214,6 +189,14 @@ body{
     background-color: #000 !important;
     color: #fff !important;
 }
+.dropdown-toggle::before{
+    background-image: url('../images/line-angle-down.svg');
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+    border: none !important;
+    background-position: center;
+}
 .dropdown-toggle::after{
     background-image: url('../images/line-angle-down.svg');
     width: 15px;
@@ -234,7 +217,7 @@ body{
 .dropdown-menu li a span.text{
     position: relative;
 
-    
+
 }
 .dropdown-menu li a span.text:before{
     position: absolute;
@@ -251,7 +234,7 @@ body{
     background-color: #000 !important;
 }
 .dropdown-item:focus li a span.text:before, .dropdown-item:hover li a span.text:before {
-   background-color: #fff !important; 
+   background-color: #fff !important;
 }
 
 .bootstrap-select .dropdown-menu li a:hover span.text:before{

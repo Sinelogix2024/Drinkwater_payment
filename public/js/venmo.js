@@ -18,9 +18,10 @@ braintree.client.create({
 
     braintree.venmo.create({
         client: clientInstance,
-        allowNewBrowserTab: false,
+        allowNewBrowserTab: true,
         allowDesktop: true,
-        profileId: '1953896702662410263'
+        profileId: '1953896702662410263',
+        paymentMethodUsage: 'multi_use', 
     }, function(venmoErr, venmoInstance) {
         if (venmoErr) {
             console.error('Error creating Venmo:', venmoErr);
@@ -44,6 +45,7 @@ braintree.client.create({
                 if (err) {
                     handleVenmoError(tokenizeErr);
                 } else {
+                    console.log('venmo else 123')
                     handleVenmoSuccess(payload);
                 }
             });
@@ -70,13 +72,13 @@ braintree.client.create({
     function displayVenmoButton(venmoInstance) {
         console.log('displayVenmoButton');
         // Assumes that venmoButton is initially display: none.
-        venmoButton.style.display = 'block';
+        //venmoButton.style.display = 'block';
 
         venmoButton.addEventListener('click', function() {
 
             console.log('displayVenmoButton clicked');
 
-            venmoButton.disabled = true;
+            venmoButton.disabled = false;
 
             venmoInstance.tokenize(function(tokenizeErr, payload) {
 
@@ -89,6 +91,7 @@ braintree.client.create({
                 if (tokenizeErr) {
                     handleVenmoError(tokenizeErr);
                 } else {
+                    console.log('venmo else')
                     handleVenmoSuccess(payload);
                 }
             });
@@ -126,6 +129,7 @@ function handleVenmoSuccess(payload) {
     var payerID = payload_nonce; //payload.nonce;
     var deviceDataToken = '{"correlation_id":"bc850bc0840ab2d9e1d34842d0e3ffa5"}';
     var deviceData = encodeURI(deviceDataToken);
-
-    window.location = "/Directory_name/venmo_server.php/?payerID=" + payerID + "&deviceData=" + deviceData + "&amount=" + amount;
+    var venmo_server_url = '{{url("venmo_server")}}';
+    // window.location = "/Directory_name/venmo_server.php/?payerID=" + payerID + "&deviceData=" + deviceData + "&amount=" + amount;
+    window.location = venmo_server_url+"/?payerID=" + payerID + "&deviceData=" + deviceData + "&amount=" + amount;
 }

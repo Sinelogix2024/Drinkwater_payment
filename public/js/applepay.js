@@ -2,6 +2,7 @@
 
 if (window.ApplePaySession && ApplePaySession.supportsVersion(3) && ApplePaySession.canMakePayments()) {
     // This device supports version 3 of Apple Pay.
+    console.log('This device supports version 3 of Apple Pay.');        
     braintree.client.create({
         authorization: 'sandbox_7b22h9qq_9wcqdbyrsh4jphn6',
         selector: '#bt-dropin_applepay',
@@ -31,12 +32,18 @@ if (window.ApplePaySession && ApplePaySession.supportsVersion(3) && ApplePaySess
             // all Apple Pay transactions as a best practice.
             requiredBillingContactFields: ["postalAddress"]
           });
+
+          console.log('Test :: 1 ::');                    
           console.log(paymentRequest.countryCode);
           console.log(paymentRequest.currencyCode);
           console.log(paymentRequest.merchantCapabilities);
           console.log(paymentRequest.supportedNetworks);
           
           var session = new window.ApplePaySession(3, paymentRequest);
+          initializeCallbacks(session);
+          session.begin();
+          console.log('Test :: session start ::');                    
+          console.log(session);                    
           
           //return false;
           // Set up your Apple Pay button here
