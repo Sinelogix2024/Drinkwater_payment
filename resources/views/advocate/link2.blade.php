@@ -1174,6 +1174,9 @@ request()->session()->forget('response_error_msg');
 @if (!empty(session('response_success_msg',null)))
 <script>
     $(".final_form").show();
+    setTimeout(function() {
+        $(".final_form").hide();
+    }, 3000);
 
 </script>
 @php
