@@ -35,19 +35,19 @@ $(document).ready(function() {
             },
             fields: {
                 cardholderName: {
-                    selector: '#cc-name',
+                    selector: '#cc-name-final',
                     placeholder: 'NAME ON CARD'
                 },
                 number: {
-                    selector: '#cc-number',
+                    selector: '#cc-number-final',
                     placeholder: 'CARD NUMBER'
                 },
                 cvv: {
-                    selector: '#cc-cvv',
+                    selector: '#cc-cvv-final',
                     placeholder: 'CVV'
                 },
                 expirationDate: {
-                    selector: '#cc-expiration',
+                    selector: '#cc-expiration-final',
                     placeholder: 'EXPIRATION'
                 }
             }
@@ -99,7 +99,7 @@ $(document).ready(function() {
             }
 
 
-            var ccName = $('#cc-name');
+            var ccName = $('#cc-name-final');
 
             ccName.on('change', function() {
                 validateInput(ccName);
@@ -125,8 +125,8 @@ $(document).ready(function() {
             });
 
             hostedFieldsInstance.on('cardTypeChange', function(event) {
-                var cardBrand = $('#card-brand');
-                var cvvLabel = $('[for="cc-cvv"]');
+                var cardBrand = $('#card-brand-final');
+                var cvvLabel = $('[for="cc-cvv-final"]');
 
                 if (event.cards.length === 1) {
                     var card = event.cards[0];
@@ -188,12 +188,10 @@ $(document).ready(function() {
                     // method nonce via an ajax request to your server,
                     // or add the payment method nonce to a hidden inpiut
                     // on your form and submit the form programatically
-                    if($('#payment_method_nonce_update').val()=='')
-                    {
-
-
                     $('#payment_method_nonce').val(payload.nonce);
-                    }
+                    $('#payment_method_nonce_update').val(payload.nonce);
+
+
                     // form.submit()
                 });
             });

@@ -71,28 +71,30 @@ $(document).ready(function() {
 
     // alakline change set price change
     $(document).on("change", "#alakline_pure", function() {
-
         console.log('Test :: 1 ::');
         console.log();
 
+        $('#product5').val($(this).val());
+        $('#product5').change();
+
+        $('#package5').change();
 
         if ($(this).val() == 1) {
-
             console.log('Test :: aplkine ::');
             console.log();
             $('.select_alka').removeClass('d-none');
             $('.select_pure').addClass('d-none');
-            //return false;
+            $('div.select_alka').addClass('selected-package');
+            $('div.select_pure').removeClass('selected-package');
         } else if ($(this).val() == 2) {
-            //var option = "1 MONTH OF HYDRATION $250 ( 10 KITS )";
-            // var new_option = "1 MONTH OF HYDRATION $111 ( 10 KITS )";
-            // $("#package1").find('option:contains(' + option + ')').text();
-            $('.select_alka').addClass('d-none');
             $('.select_pure').removeClass('d-none');
+            $('.select_alka').addClass('d-none');
+            $('div.select_pure').addClass('selected-package');
+            $('div.select_alka').removeClass('selected-package');
             console.log('Test :: pure ::');
         }
-        //return false;
     });
+
     $(document).on("change", "#package1", function() {
 
         $('#delivery_frequency1').removeClass('d-none');
@@ -106,6 +108,35 @@ $(document).ready(function() {
         let selected = $(this).children("option:selected").val();
         localStorage.setItem("package", selected);
         setDropDownvalue();
+    });
+
+    $(document).on("change", "#product5", function() {
+        console.log("product5 change");
+        let selected = $(this).children("option:selected").val();
+        localStorage.setItem("product", selected);
+        setDropDownvalue();
+
+        $('.product_note_final_page').text($('#product5').children("option:selected").text());
+
+        console.log('Test :: 1 ::');
+        console.log();
+
+        $('.final_page_package_select').removeClass('selected-package');
+        if ($(this).val() == 1) {
+            console.log('Test :: aplkine ::');
+            console.log();
+            $('.select_alka').removeClass('d-none');
+            $('.select_pure').addClass('d-none');
+            $('.select_alka').removeClass('selected-package');
+            $('.select_pure').addClass('selected-package');
+        } else if ($(this).val() == 2) {
+            $('.select_pure').removeClass('d-none');
+            $('.select_alka').addClass('d-none');
+            $('.select_pure').removeClass('selected-package');
+            $('.select_alka').addClass('selected-package');
+            console.log('Test :: pure ::');
+        }
+        $('.final_page_package_select').addClass('d-none');
     });
 
     $(document).on("change", "#package5", function() {
@@ -169,6 +200,7 @@ $(document).ready(function() {
             $("#bt-dropin_venmo").show();
             $("#bt-dropin_applepay").hide();
             $(".purchase_button").hide();
+            $('.card-div-final').hide();
         } else if (selected == 4) { // hide card form and show apple
             $("#bt-dropin").hide();
             $("#bt-dropin_venmo").hide();
@@ -179,6 +211,7 @@ $(document).ready(function() {
             $("#bt-dropin_venmo").hide();
             $("#bt-dropin_applepay").hide();
             $(".purchase_button").show();
+            $('.card-div-final').show();
         }
 
         //return false;
@@ -188,8 +221,11 @@ $(document).ready(function() {
 
     $('.purchase_button').on('click', function() {
         console.log('purchase_button ');
+
+
         $(".current_tab").val("final_form");
-        $("#basic-form").submit();
+
+        //$("#basic-form").submit();
         // $(this).prop('disabled',true);
         // $(this).text('Please Wait......');
         showLoader();
@@ -330,6 +366,7 @@ $(document).ready(function() {
 
             if (current_tab == "step2_form") {
                 showLoader();
+                $('.payment_method').next(".dropdown-toggle").show();
                 $('.payment_method').next(".dropdown-toggle").prop('disabled', false);
                 if ($("#basic-form").valid()) {
                     $(".step1_form").hide(true);
@@ -347,20 +384,43 @@ $(document).ready(function() {
 
             if (current_tab == "step3_form") {
                 showLoader();
-                if ($("#basic-form").valid()) {
+                var payment_method_check = localStorage.getItem("payment_method");
+                $('.show_step5_form').click();
+                // if ($("#basic-form").valid()) {
 
-                    $(".step1_form").hide(true);
-                    $(".step2_form").hide(true);
-                    $(".step2_form").hide();
-                    $(".step3_form").hide(true);
-                    $(".step4_form").hide(true);
-                    // $(".step4_form").show(true);
-                    // $(".step5_form").hide(true);
-                    $(".step5_form").show(true);
-                    $(".current_tab").val("step4_form");
-                    setDropDownvalue();
-                    $("#payment_method").trigger("change");
-                }
+                //     $(".step1_form").hide(true);
+                //     $(".step2_form").hide(true);
+                //     $(".step2_form").hide();
+                //     $(".step3_form").hide(true);
+                //     $(".step4_form").show(true);
+                //     $(".step5_form").hide(true);
+                //     $(".current_tab").val("step4_form");
+                //     setDropDownvalue();
+                //     $("#payment_method").trigger("change");
+                // }
+
+                // if(payment_method_check==3)
+                // {
+                //     $('.show_step5_form').click();
+                //    // $('#basic_form').submit();
+
+                // }else{
+                //     if ($("#basic-form").valid()) {
+
+                //         $(".step1_form").hide(true);
+                //         $(".step2_form").hide(true);
+                //         $(".step2_form").hide();
+                //         $(".step3_form").hide(true);
+                //         $(".step4_form").show(true);
+                //         $(".step5_form").hide(true);
+                //         $(".current_tab").val("step4_form");
+                //         setDropDownvalue();
+                //         $("#payment_method").trigger("change");
+
+
+                //     }
+                // }
+
                 hideLoader();
             }
 
@@ -397,7 +457,7 @@ $(document).ready(function() {
                 // $('#expiration-month-autofill-field').val('12');
                 // $('#expiration-year-autofill-field').val('26');
 
-                $('#basic_form').submit();
+                // $('#basic_form').submit();
             }
 
             if (current_tab == 'step5_form') {
@@ -441,22 +501,39 @@ $(document).ready(function() {
             }
 
             if (current_tab == 'final_form') {
+
                 if ($("#basic-form").valid()) {
-                    $(".step1_form").hide(true);
-                    $(".step2_form").hide(true);
-                    $(".step3_form").hide(true);
-                    $(".step4_form").hide(true);
-                    $(".step5_form").hide(true);
-                    $(".final_form").show(true);
+                    // $(".step1_form").hide(true);
+                    // $(".step2_form").hide(true);
+                    // $(".step3_form").hide(true);
+                    // $(".step4_form").hide(true);
+                    // $(".step5_form").hide(true);
+                    // $(".final_form").hide(true);
                     $(".current_tab").val("final_form");
                 }
                 setDropDownvalue();
                 $("#payment_method").trigger("change");
-                form.submit();
+                // form.submit();
+
+                setTimeout(function() {
+                    let package_value = localStorage.getItem('package');
+                    let service_fees = string.service_fees.toFixed(2);
+                    let delivery_fees = string.delivery_fees.toFixed(2);
+                    let tax = ((string.package[package_value] * string.tax) / 100).toFixed(2);
+                    let package_amount = string.package[package_value];
+                    let total_amount = (parseFloat(package_amount) + parseFloat(service_fees) + parseFloat(delivery_fees) + parseFloat(tax)).toFixed(2);
+                    $('.service_fees').text('$' + service_fees);
+                    $('.delivery_fees').text('$' + delivery_fees);
+                    $('.tax_amount').text('$' + tax);
+                    $('.tax_amount').val(tax);
+                    $('.total_amount').text('$' + total_amount);
+                    $('.total_amount').val(total_amount);
+
+                    form.submit();
+                }, 3000);
             }
         },
     });
-
 
     function showLoader() {
         //$('.loader').show();
@@ -496,18 +573,41 @@ $(document).ready(function() {
 
     });
 
+    $('.edit_product').on('click', function() {
+        $('.product_note_final_page').text($('#product5').children("option:selected").text());
+        $('.final_page_product_label').next(".dropdown-toggle").prop('disabled', true);
+
+        if ($(this).text() == 'Edit') {
+            $('.final_page_product_label').hide();
+            $('#product5').next(".dropdown-toggle").show();
+            $('#product5').next(".dropdown-toggle").prop('disabled', false);
+            $(this).text('Save');
+        } else {
+            $('#product5').next(".dropdown-toggle").hide();
+            $('#product5').next(".dropdown-toggle").prop('disabled', true);
+            $('.final_page_product_label').show();
+            $(this).text('Edit');
+        }
+    })
+
+    $('#product5').next(".dropdown-toggle").hide();
+    $('#package5').next(".dropdown-toggle").hide();
+
     $('.edit_package').on('click', function() {
-        $('.package_note_final_page').text($('#package5').children("option:selected").text());
+        $('.package_note_final_page').text($('.final_page_package_select.selected-package').children("option:selected").text());
         $('.final_page_package_label').next(".dropdown-toggle").prop('disabled', true);
 
         if ($(this).text() == 'Edit') {
             $('.final_page_package_label').hide();
+            $('.final_page_package_select.selected-package').removeClass('d-none');
+            $('.final_page_package_select.selected-package').show();
             $('#package5').next(".dropdown-toggle").show();
             $('#package5').next(".dropdown-toggle").prop('disabled', false);
             $(this).text('Save');
         } else {
             $('#package5').next(".dropdown-toggle").hide();
             $('#package5').next(".dropdown-toggle").prop('disabled', true);
+            $('.final_page_package_select').hide();
             $('.final_page_package_label').show();
             $(this).text('Edit');
         }
@@ -531,18 +631,21 @@ $(document).ready(function() {
         }
     })
 
+    $('.final_page_address_field').hide();
     $('.edit_address_final_page').on('click', function() {
         $('.shipping_add_final_page').text($('.shipping_address_final_page').val() + ' ' + $('.shipping_address1_final_page').val())
         $('.citi_state_zip_final_page').text($('.s_city_state_zip_final_page').val())
         $('.final_page_edit_address_label').next(".dropdown-toggle").prop('disabled', true);
 
         if ($(this).text() == 'Edit') {
+            $('.final_page_address_field').show();
             $('.final_page_edit_address_label').hide();
             $('.shipping_address_final_page').prop('disabled', false).show();
             $('.shipping_address1_final_page').prop('disabled', false).show();
             $('.s_city_state_zip_final_page').prop('disabled', false).show();
             $(this).text('Save');
         } else {
+            $('.final_page_address_field').hide();
             $('.final_page_edit_address_label').show();
             $('.shipping_address_final_page').prop('disabled', true).hide();
             $('.shipping_address1_final_page').prop('disabled', true).hide();
@@ -563,6 +666,9 @@ $(document).ready(function() {
         $("#b_city_state_zip").val($(this).val());
     })
 
+    // $('.payment_method').next(".dropdown-toggle").hide();
+    $('.payment_method_finl_page_class').next(".dropdown-toggle").hide();
+
     $('.edit_payment_method_final_page').on('click', function() {
         console.log('edit_payment_method_final_page');
         console.log($(this).text());
@@ -570,16 +676,40 @@ $(document).ready(function() {
         $('.final_page_payment_source_label').next(".dropdown-toggle").prop('disabled', true);
 
         if ($(this).text() == 'Edit') {
+            $('.final_pay_card_deatil').show();
             $('.final_page_payment_source_label').hide();
-            $('.payment_method').next(".dropdown-toggle").show();
-            $('.payment_method').next(".dropdown-toggle").prop('disabled', false);
-            $(this).text('Save');
+            $('.payment_method_finl_page_class').next(".dropdown-toggle").show();
+            $('.payment_method_finl_page_class').next(".dropdown-toggle").prop('disabled', false);
+
+            // $(this).text('Save');
+            $('.edit_payment_method_final_page').hide();
+            $('.save_payment_method_final_page').show();
+
+            //$('.card-div-final').show();
+            // var someVar = $(".card-div").html();
+            // $(".card-div").empty();
+            // $(someVar).appendTo("#final_pay_card_deatil");
         } else {
             $('.final_page_payment_source_label').show();
-            $('.payment_method').next(".dropdown-toggle").hide();
-            $('.payment_method').next(".dropdown-toggle").prop('disabled', true);
+            $('.payment_method_finl_page_class').next(".dropdown-toggle").hide();
+            $('.payment_method_finl_page_class').next(".dropdown-toggle").prop('disabled', true);
             $(this).text('Edit');
+            $('.card-div-final').hide();
+            $('#form-hosted-final').submit();
         }
+    })
+
+    $('.save_payment_method_final_page').on('click', function() {
+        $('.final_page_payment_source_label').show();
+        $('.payment_method').next(".dropdown-toggle").hide();
+        $('.payment_method').next(".dropdown-toggle").prop('disabled', true);
+        // $(this).text('Edit');
+        $('.edit_payment_method_final_page').show();
+        $('.save_payment_method_final_page').hide();
+
+        $('.card-div-final').hide();
+
+        $('#form-hosted-final').submit();
     })
 
 });

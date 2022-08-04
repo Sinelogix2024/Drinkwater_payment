@@ -1,3 +1,14 @@
+@if (!empty(session('response_error_msg',null)))
+<script>
+    alert("{{ session('response_error_msg') }}");
+
+</script>
+
+@php
+request()->session()->forget('response_error_msg');
+@endphp
+@endif
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +28,8 @@
     <style>
         body {
             /* font-family: europaLight, sans-serif !important; */
-            font-family: Europa-regular, sans-serif !important;
+            /* font-family: Europa-regular, sans-serif !important; */
+            font-family: Europa-light, sans-serif !important;
             line-height: 1.5;
         }
 
@@ -76,6 +88,7 @@
 
         .bootstrap-select>.dropdown-toggle {
             width: auto;
+            border-bottom: 0px !important;
         }
 
         .bootstrap-select>.dropdown-toggle.bs-placeholder,
@@ -201,6 +214,18 @@
             box-shadow: 0 0 0 0.2rem rgb(255 255 255 / 25%);
         }
 
+        .payment_method_finl_page_class {
+            border-bottom: 0px;
+        }
+
+        .purchase_page_custom_css {
+            margin: 0;
+        }
+
+        .purchase_page_main_field_custom_css {
+            margin-bottom: 1.5rem;
+        }
+
     </style>
 </head>
 
@@ -300,7 +325,7 @@
 
                             <div class="flex_row">
 
-                                <div class="flex_col_sm_12">
+                                <div class="flex_col_sm_12 p-0">
                                     <div class="form_field">
                                         <div class="text-field">
                                             <select class="selectpicker form-control" name="alakline_pure" id="alakline_pure" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_alakline_text') }} ">
@@ -308,8 +333,8 @@
                                                 <option data-hidden="true" selected="selected">
                                                     {{ config('constants.package.default_drop_down_alakline_text') }}
                                                 </option>
-                                                <option value="1">ALAKLINE + ELECTOLYTE</option>
-                                                <option value="2">PURE + ELECTOLYTE</option>
+                                                <option value="1">ALAKLINE + ELECTROLYTE</option>
+                                                <option value="2">PURE + ELECTROLYTE</option>
                                             </select>
 
                                         </div>
@@ -318,8 +343,7 @@
                             </div>
 
                             <div class="flex_row">
-
-                                <div class="flex_col_sm_7">
+                                <div class="flex_col_sm_7 p-0">
                                     <div class="form_field">
                                         <div class="text-field">
 
@@ -344,7 +368,7 @@
                                     </div>
                                 </div>
 
-                                <div class="flex_col_sm_4" id="delf_div">
+                                <div class="flex_col_sm_4 p-0" id="delf_div">
                                     <div class="form_field">
                                         <div class="text-field">
                                             <select class="selectpicker placeholder form-control" name="delivery_frequency" id="delivery_frequency1" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
@@ -411,10 +435,10 @@
                                 <div class="col-sm-6" id="BillData">
 
                                     <div class="form-group">
-                                        <input type="text" value="" name="billing_address" id="billing_address" placeholder="DELIVERY ADDRESS1">
+                                        <input type="text" value="" name="billing_address" id="billing_address" placeholder="DELIVERY ADDRESS 1">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" value="" name="billing_address2" id="billing_address2" placeholder="DELIVERY ADDRESS2">
+                                        <input type="text" value="" name="billing_address2" id="billing_address2" placeholder="DELIVERY ADDRESS 2">
                                     </div>
 
                                     <div class="form-group">
@@ -429,10 +453,10 @@
                                 <div class="col-sm-6">
                                     <div id="shippingData">
                                         <div class="form-group">
-                                            <input type="text" name="shipping_address" id="shipping_address" placeholder="SHIPPING ADDRESS1">
+                                            <input type="text" name="shipping_address" id="shipping_address" placeholder="BILLING ADDRESS 1">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="shipping_address2" id="shipping_address2" placeholder="SHIPPING ADDRESS2">
+                                            <input type="text" name="shipping_address2" id="shipping_address2" placeholder="BILLING ADDRESS 2">
                                         </div>
 
                                         <div class="form-group">
@@ -528,7 +552,7 @@
                         </div>
 
                         <input type="hidden" class="client_token" value="{{ $client_token }}">
-                        <input id="payment_method_nonce" name="payment_method_nonce" type="hidden" />
+
 
                         <div class="form_wrapper">
                             <div class="col-md-12">
@@ -546,8 +570,8 @@
                             </div>
 
                             <div class="bt-drop-in-wrapper text-center">
-                                <div class="bootstrap-basic" id="bt-dropin" style="display: none;">
-                                    <form class="needs-validation" novalidate>
+                                <div class="bootstrap-basic card-div" id="bt-dropin" style="display: none;">
+                                    <form class="needs-validation" novalidate id="card_detail_form">
                                         <div class="row">
                                             <div class="col-sm-12 mb-6">
                                                 <div class="form-control" id="cc-name"></div>
@@ -689,7 +713,7 @@
                                             <option value="1">CREDIT CARD</option>
                                             <option value="2">DEBIT CARD</option>
                                             <option value="3">VENMO</option>
-                                            <option value="4">APPLY PAY</option>
+                                            {{-- <option value="4">APPLY PAY</option> --}}
                                         </select>
                                     </div>
                                 </div>
@@ -769,27 +793,42 @@
                             <p>Your Path to daily hydration + wellness</p>
                         </div>
                     </div>
-
+                    <input type="hidden" name="payment_method_hidden" id="payment_method_hidden">
+                    <input id="payment_method_nonce" name="payment_method_nonce" type="hidden" />
+                    <input id="payment_method_nonce_update" name="payment_method_nonce_update" type="hidden" />
                     <div class="form_wrapper edit_form_wrapper">
                         <div class="flex_row">
                             <div class="flex_col_sm_12">
-                                <div class="form_field">
-                                    <div class="text-field">
-
-                                        <select class="selectpicker custom_select final_page_package_label" data-dropup-auto="false" title="YOUR WELLNESS SOLUTION">
-                                            <option value="" selected data-hidden="true">YOUR WELLNESS
-                                                SOLUTION
-                                            </option>
+                                <div class="form_field purchase_page_main_field_custom_css">
+                                    <div class="text-field flex_row purchase_page_custom_css">
+                                        <div class="final_page_product_label">{{ config('constants.package.default_drop_down_alakline_text') }}</div>
+                                        <select class="selectpicker custom_select" name="product" id="product5" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_alakline_text') }}">
+                                            <option value="" data-hidden="true">{{ config('constants.package.default_drop_down_alakline_text') }}</option>
+                                            <option value="1">ALAKLINE + ELECTROLYTE</option>
+                                            <option value="2">PURE + ELECTROLYTE</option>
                                         </select>
+                                        <button type="button" class="edit btn_effect edit_product">Edit</button>
+                                    </div>
+                                    <span class="text-note product_note_final_page">{{ config('constants.package.default_drop_down_alakline_text') }}</span>
+                                </div>
 
-                                        <select class="selectpicker custom_select" name="package" id="package5" required data-dropup-auto="false" title="YOUR WELLNESS SOLUTION">
-                                            <option value="" data-hidden="true">YOUR WELLNESS SOLUTION
-                                            </option>
-                                            <option value="1" selected>1 MONTH OF HYDRATION $250 ( 10 KITS )
-                                            </option>
+                                <div class="form_field purchase_page_main_field_custom_css">
+                                    <div class="text-field flex_row purchase_page_custom_css">
+                                        <div class="final_page_package_label">YOUR WELLNESS SOLUTION</div>
+                                        <select class="selectpicker custom_select final_page_package_select select_alka" name="package" id="package5" required data-dropup-auto="false" title="YOUR WELLNESS SOLUTION">
+                                            <option data-hidden="true" selected>YOUR WELLNESS SOLUTION</option>
+                                            <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
                                             <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
                                             <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
                                         </select>
+
+                                        <select class="selectpicker custom_select final_page_package_select select_pure d-none" name="package" id="package5" required data-dropup-auto="false" title="YOUR WELLNESS SOLUTION">
+                                            <option data-hidden="true" selected>YOUR WELLNESS SOLUTION</option>
+                                            <option value="1">1 MONTH OF HYDRATION $220 ( 10 KITS )</option>
+                                            <option value="2">2 MONTH OF HYDRATION $440 ( 20 KITS )</option>
+                                            <option value="3">3 MONTH OF HYDRATION $660 ( 30 KITS )</option>
+                                        </select>
+
 
                                         <button type="button" class="edit btn_effect edit_package">Edit</button>
                                     </div>
@@ -798,14 +837,9 @@
                                     <span class="text-note">(1st DELIVERY 4 KITS, THEN 2 KITS THEREAFTER). </span>
                                 </div>
 
-                                <div class="form_field">
-                                    <div class="text-field">
-
-                                        <select class="selectpicker custom_select final_page_delivery_freq_label" data-dropup-auto="false" title="DELIVERY FREQUENCY">
-                                            <option value="" selected data-hidden="true">DELIVERY FREQUENCY
-                                            </option>
-                                        </select>
-
+                                <div class="form_field purchase_page_main_field_custom_css">
+                                    <div class="text-field flex_row purchase_page_custom_css">
+                                        <div class="final_page_delivery_freq_label">DELIVERY FREQUENCY</div>
                                         <select class="selectpicker custom_select" title="DELIVERY FREQUENCY" name="delivery_frequency" id="delivery_frequency5" required data-dropup-auto="false">
                                             <option value="" data-hidden="true" title="{{ config('constants.package.delivery_freq_text') }}">
                                                 {{ config('constants.package.delivery_freq_text') }}</option>
@@ -821,59 +855,32 @@
                                 </div>
 
 
-                                <div class="form_field">
-                                    <div class="text-field">
-                                        <select class="selectpicker custom_select final_page_edit_address_label" data-dropup-auto="false" title="DELIVERY ADDRESS">
-                                            <option value="" selected data-hidden="true">DELIVERY ADDRESS
-                                            </option>
-                                        </select>
+                                <div class="form_field purchase_page_main_field_custom_css">
+                                    <div class="text-field purchase_page_custom_css">
+                                        <div class="final_page_edit_address_label">DELIVERY ADDRESS</div>
 
-                                        <input type="text" class="shipping_address_final_page" placeholder="SHIPPING ADDRESS" disabled>
-                                        <button type="button" class="edit btn_effect edit_address_final_page">EDIT
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <div class="form_field">
-                                    <div class="flex_row">
-                                        <div class="flex_col_sm_12">
+                                        <div class="final_page_address_field">
                                             <div class="text-field">
-                                                <input type="text" class="shipping_address1_final_page" placeholder="SHIPPING ADDRESS 1" disabled>
+                                                <input type="text" class="shipping_address_final_page" placeholder="DELIVERY ADDRESS 1" disabled>
                                             </div>
-                                        </div>
-                                        <div class="flex_col_sm_12">
-                                            <!-- <div class="text-field">
-                                                  <input type="text" placeholder="">
-                                                </div> -->
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="form_field">
-                                    <div class="flex_row">
-                                        <div class="flex_col_sm_12">
+                                            <div class="text-field">
+                                                <input type="text" class="shipping_address1_final_page" placeholder="DELIVERY ADDRESS 2" disabled>
+                                            </div>
+
                                             <div class="text-field">
                                                 <input type="text" class="s_city_state_zip_final_page" placeholder="CITY  / STATE  /  ZIP" disabled>
                                             </div>
                                         </div>
-                                        <div class="flex_col_sm_12">
-                                        </div>
+                                        <button type="button" class="edit btn_effect edit_address_final_page">EDIT</button>
                                     </div>
-                                </div>
-
-                                <div class="form_field">
                                     <span class="text-note shipping_add_final_page"></span>
                                     <span class="text-note citi_state_zip_final_page"></span>
                                 </div>
 
-                                <div class="form_field">
-                                    <div class="text-field">
-
-                                        <select class="selectpicker custom_select final_page_payment_source_label" data-dropup-auto="false" title="PAYMENT SOURCE">
-                                            <option value="" selected data-hidden="true">PAYMENT SOURCE
-                                            </option>
-                                        </select>
-
+                                <div class="form_field purchase_page_main_field_custom_css">
+                                    <div class="text-field flex_row purchase_page_custom_css">
+                                        <div class="final_page_payment_source_label">PAYMENT SOURCE</div>
                                         <select class="selectpicker custom_select payment_method payment_method_finl_page_class" name="payment_method" id="payment_method" data-dropup-auto="false" title="SELECT PAYMENT METHOD">
                                             <option data-hidden="true">SELECT PAYMENT METHOD</option>
                                             <option value="1">CREDIT CARD</option>
@@ -882,44 +889,101 @@
                                             {{-- <option value="4">APPLY PAY</option> --}}
                                         </select>
 
-                                        <button type="button" class="edit btn_effect edit_payment_method_final_page">Edit
+                                        <div id="final_pay_card_deatil">
+                                            <div class="bootstrap-basic card-div-final" id="bt-dropin-final" style="display: none;">
+                                                <form class="needs-validation" id="form-hosted-final" novalidate>
+                                                    <div class="row">
+                                                        <div class="col-sm-12 mb-6">
+                                                            <div class="form-control" id="cc-name-final"></div>
+                                                            <div class="invalid-feedback">
+                                                                Name on card is required
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <br>
+
+                                                    <div class="row">
+                                                        <div class="col-sm-12 mb-6">
+
+                                                            <div class="form-control text-field " id="cc-number-final"></div>
+                                                            <span id="card-brand-final"></span>
+
+                                                            <div class="invalid-feedback">
+                                                                Credit card number is required
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <br>
+
+                                                    <div class="row">
+                                                        <div class="col-6 mb-6">
+
+                                                            <div class="form-control" id="cc-cvv-final"></div>
+                                                            <div class="invalid-feedback">
+                                                                Security code required
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6 mb-6">
+
+                                                            <div class="form-control" id="cc-expiration-final"></div>
+                                                            <div class="invalid-feedback">
+                                                                Expiration date required
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+
+                                                    <div class="text-center">
+                                                        {{-- <button class="btn btn-primary btn-lg" type="submit">Pay with <span id="card-brand">Card</span></button> --}}
+                                                    </div>
+
+                                            </div>
+                                        </div>
+
+                                        <button type="button" class="edit btn_effect edit_pay_final_btn edit_payment_method_final_page">Edit
+                                        </button>
+
+                                        <button type="button" class="edit btn_effect save_payment_method_final_page" style="display: none">Save
                                         </button>
                                     </div>
                                     {{-- <span class="text-note">CARD ENDING IN <b><span class="last_4_digit_card"></span></b></span> --}}
                                     {{-- <span class="text-note payment_method_final_page"></span> --}}
                                 </div>
 
-                                <div class="form_field">
+                                <div class="form_field purchase_page_main_field_custom_css">
                                     <div class="flex_row">
-                                        <div class="flex_col_sm_6 text-left">
+                                        <div class="col-6 text-left">
                                             <label class="form_label">TAX</label>
                                         </div>
-                                        <div class="flex_col_sm_6 text-right">
+                                        <div class="col-6 text-right">
                                             <input type="hidden" name="tax_amount" class="tax_amount">
                                             <p class="show_label tax_amount">1.00</p>
                                         </div>
                                     </div>
                                     <div class="flex_row">
-                                        <div class="flex_col_sm_6 text-left">
+                                        <div class="col-6 text-left">
                                             <label class="form_label">SERVICE FEE</label>
                                         </div>
-                                        <div class="flex_col_sm_6 text-right">
+                                        <div class="col-6 text-right">
                                             <p class="show_label service_fees">5.00</p>
                                         </div>
                                     </div>
                                     <div class="flex_row">
-                                        <div class="flex_col_sm_6 text-left">
+                                        <div class="col-6 text-left">
                                             <label class="form_label">DELIVERY FEE</label>
                                         </div>
-                                        <div class="flex_col_sm_6 text-right">
+                                        <div class="col-6 text-right">
                                             <p class="show_label delivery_fees">5.00</p>
                                         </div>
                                     </div>
                                     <div class="flex_row">
-                                        <div class="flex_col_sm_6 text-left">
+                                        <div class="col-6 text-left">
                                             <label class="form_label">TOTAL</label>
                                         </div>
-                                        <div class="flex_col_sm_6 text-right">
+                                        <div class="col-6 text-right">
                                             <input type="hidden" name="total_amount" class="total_amount">
                                             <p class="show_label total_amount">$266</p>
                                         </div>
@@ -1040,6 +1104,7 @@
 <script src="{{ asset('js/applepay.js') }}"></script>
 <script src='https://js.braintreegateway.com/web/3.85.5/js/hosted-fields.min.js'></script>
 <script src="{{ asset('js/hosted-custom.js') }}"></script>
+<script src="{{ asset('js/hosted-custom-updated.js') }}"></script>
 <script src="{{ asset('js/jquery-input-mask-phone-number.js') }}"></script>
 
 <script>
@@ -1052,7 +1117,13 @@
 
         $("#delf_div").hide();
 
-        $('.selectpicker').change(function() {
+        $('#alakline_pure').change(function() {
+            setTimeout(function() {
+                $('button').removeClass('bs-placeholder');
+            }, 500);
+        });
+
+        $('#package1').change(function() {
             setTimeout(function() {
                 $('button').removeClass('bs-placeholder');
             }, 500);
@@ -1099,3 +1170,16 @@
     }
 
 </style>
+
+@if (!empty(session('response_success_msg',null)))
+<script>
+    $(".final_form").show();
+    setTimeout(function() {
+        $(".final_form").hide();
+    }, 3000);
+
+</script>
+@php
+request()->session()->forget('response_success_msg');
+@endphp
+@endif
