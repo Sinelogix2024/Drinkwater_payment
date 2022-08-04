@@ -975,7 +975,7 @@
                                         <button type="button" class="edit btn_effect edit_pay_final_btn edit_payment_method_final_page">Edit
                                         </button>
 
-                                        <button type=" button" class="edit btn_effect save_payment_method_final_page" style="display: none">Save
+                                        <button type="button" class="edit btn_effect save_payment_method_final_page" style="display: none">Save
                                         </button>
                                     </div>
                                     {{-- <span class="text-note">CARD ENDING IN <b><span class="last_4_digit_card"></span></b></span> --}}
