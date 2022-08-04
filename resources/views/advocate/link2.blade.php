@@ -207,6 +207,10 @@
             border-bottom: 0px;
         }
 
+        .purchase_page_custom_css {
+            margin: 0;
+        }
+
     </style>
 </head>
 
@@ -780,22 +784,46 @@
                         <div class="flex_row">
                             <div class="flex_col_sm_12">
                                 <div class="form_field">
-                                    <div class="text-field">
-
-                                        <select class="selectpicker custom_select final_page_package_label" data-dropup-auto="false" title="YOUR WELLNESS SOLUTION">
-                                            <option value="" selected data-hidden="true">YOUR WELLNESS
-                                                SOLUTION
-                                            </option>
+                                    <div class="text-field flex_row purchase_page_custom_css">
+                                        <div class="final_page_product_label">{{ config('constants.package.default_drop_down_alakline_text') }}</div>
+                                        <select class="selectpicker custom_select" name="product" id="product5" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_alakline_text') }}">
+                                            <option value="" data-hidden="true">{{ config('constants.package.default_drop_down_alakline_text') }}</option>
+                                            <option value="1">ALAKLINE + ELECTOLYTE</option>
+                                            <option value="2">PURE + ELECTOLYTE</option>
                                         </select>
+                                        <button type="button" class="edit btn_effect edit_product">Edit</button>
+                                    </div>
+                                    <span class="text-note product_note_final_page">{{ config('constants.package.default_drop_down_alakline_text') }}</span>
+                                </div>
+                            </div>
 
-                                        <select class="selectpicker custom_select" name="package" id="package5" required data-dropup-auto="false" title="YOUR WELLNESS SOLUTION">
+                            <div class="flex_col_sm_12">
+                                <div class="form_field">
+                                    <div class="text-field flex_row purchase_page_custom_css">
+                                        <div class="final_page_package_label">YOUR WELLNESS SOLUTION</div>
+                                        {{-- <select class="selectpicker custom_select" name="package" id="package5" required data-dropup-auto="false" title="YOUR WELLNESS SOLUTION">
                                             <option value="" data-hidden="true">YOUR WELLNESS SOLUTION
                                             </option>
                                             <option value="1" selected>1 MONTH OF HYDRATION $250 ( 10 KITS )
                                             </option>
                                             <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
                                             <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
+                                        </select> --}}
+
+                                        <select class="selectpicker custom_select final_page_package_select select_alka" name="package" id="package5" required data-dropup-auto="false" title="YOUR WELLNESS SOLUTION">
+                                            <option data-hidden="true" selected>YOUR WELLNESS SOLUTION</option>
+                                            <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
+                                            <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
+                                            <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
                                         </select>
+
+                                        <select class="selectpicker custom_select final_page_package_select select_pure d-none" name="package" id="package5" required data-dropup-auto="false" title="YOUR WELLNESS SOLUTION">
+                                            <option data-hidden="true" selected>YOUR WELLNESS SOLUTION</option>
+                                            <option value="1">1 MONTH OF HYDRATION $220 ( 10 KITS )</option>
+                                            <option value="2">2 MONTH OF HYDRATION $440 ( 20 KITS )</option>
+                                            <option value="3">3 MONTH OF HYDRATION $660 ( 30 KITS )</option>
+                                        </select>
+
 
                                         <button type="button" class="edit btn_effect edit_package">Edit</button>
                                     </div>
@@ -805,7 +833,7 @@
                                 </div>
 
                                 <div class="form_field">
-                                    <div class="text-field">
+                                    <div class="text-field flex_row purchase_page_custom_css">
 
                                         <select class="selectpicker custom_select final_page_delivery_freq_label" data-dropup-auto="false" title="DELIVERY FREQUENCY">
                                             <option value="" selected data-hidden="true">DELIVERY FREQUENCY
@@ -828,7 +856,7 @@
 
 
                                 <div class="form_field">
-                                    <div class="text-field">
+                                    <div class="text-field flex_row purchase_page_custom_css">
                                         <select class="selectpicker custom_select final_page_edit_address_label" data-dropup-auto="false" title="DELIVERY ADDRESS">
                                             <option value="" selected data-hidden="true">DELIVERY ADDRESS
                                             </option>

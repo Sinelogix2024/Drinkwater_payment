@@ -71,28 +71,28 @@ $(document).ready(function() {
 
     // alakline change set price change
     $(document).on("change", "#alakline_pure", function() {
-
         console.log('Test :: 1 ::');
         console.log();
 
+        $('#product5').val($(this).val());
+        $('#product5').change();
 
         if ($(this).val() == 1) {
-
             console.log('Test :: aplkine ::');
             console.log();
             $('.select_alka').removeClass('d-none');
             $('.select_pure').addClass('d-none');
-            //return false;
+            $('div.select_alka').removeClass('selected-package');
+            $('div.select_pure').addClass('selected-package');
         } else if ($(this).val() == 2) {
-            //var option = "1 MONTH OF HYDRATION $250 ( 10 KITS )";
-            // var new_option = "1 MONTH OF HYDRATION $111 ( 10 KITS )";
-            // $("#package1").find('option:contains(' + option + ')').text();
-            $('.select_alka').addClass('d-none');
             $('.select_pure').removeClass('d-none');
+            $('.select_alka').addClass('d-none');
+            $('div.select_pure').removeClass('selected-package');
+            $('div.select_alka').addClass('selected-package');
             console.log('Test :: pure ::');
         }
-        //return false;
     });
+
     $(document).on("change", "#package1", function() {
 
         $('#delivery_frequency1').removeClass('d-none');
@@ -106,6 +106,34 @@ $(document).ready(function() {
         let selected = $(this).children("option:selected").val();
         localStorage.setItem("package", selected);
         setDropDownvalue();
+    });
+
+    $(document).on("change", "#product5", function() {
+        console.log("product5 change");
+        let selected = $(this).children("option:selected").val();
+        localStorage.setItem("product", selected);
+        setDropDownvalue();
+
+        $('.product_note_final_page').text($('#product5').children("option:selected").text());
+
+        console.log('Test :: 1 ::');
+        console.log();
+
+        if ($(this).val() == 1) {
+            console.log('Test :: aplkine ::');
+            console.log();
+            $('.select_alka').removeClass('d-none');
+            $('.select_pure').addClass('d-none');
+            $('div.select_alka').removeClass('selected-package');
+            $('div.select_pure').addClass('selected-package');
+        } else if ($(this).val() == 2) {
+            $('.select_pure').removeClass('d-none');
+            $('.select_alka').addClass('d-none');
+            $('div.select_pure').removeClass('selected-package');
+            $('div.select_alka').addClass('selected-package');
+            console.log('Test :: pure ::');
+        }
+        $('.final_page_package_select').addClass('d-none');
     });
 
     $(document).on("change", "#package5", function() {
@@ -496,12 +524,33 @@ $(document).ready(function() {
 
     });
 
+    $('.edit_product').on('click', function() {
+        $('.product_note_final_page').text($('#product5').children("option:selected").text());
+        $('.final_page_product_label').next(".dropdown-toggle").prop('disabled', true);
+
+        if ($(this).text() == 'Edit') {
+            $('.final_page_product_label').hide();
+            $('#product5').next(".dropdown-toggle").show();
+            $('#product5').next(".dropdown-toggle").prop('disabled', false);
+            $(this).text('Save');
+        } else {
+            $('#product5').next(".dropdown-toggle").hide();
+            $('#product5').next(".dropdown-toggle").prop('disabled', true);
+            $('.final_page_product_label').show();
+            $(this).text('Edit');
+        }
+    })
+
+    $('#product5').next(".dropdown-toggle").hide();
+    $('#package5').next(".dropdown-toggle").hide();
+
     $('.edit_package').on('click', function() {
-        $('.package_note_final_page').text($('#package5').children("option:selected").text());
+        $('.package_note_final_page').text($('.final_page_package_select.selected-package').children("option:selected").text());
         $('.final_page_package_label').next(".dropdown-toggle").prop('disabled', true);
 
         if ($(this).text() == 'Edit') {
             $('.final_page_package_label').hide();
+            $('.final_page_package_select.selected-package').removeClass('d-none');
             $('#package5').next(".dropdown-toggle").show();
             $('#package5').next(".dropdown-toggle").prop('disabled', false);
             $(this).text('Save');
