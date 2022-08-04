@@ -2,7 +2,7 @@ $(document).ready(function() {
     console.log('hosed load')
 
 
-    var form = $('#form-hosted-final');
+    var form = $('form');
     var client_token = $('.client_token').val();
     braintree.client.create({
         // authorization:client_token,
@@ -125,7 +125,7 @@ $(document).ready(function() {
             });
 
             hostedFieldsInstance.on('cardTypeChange', function(event) {
-                var cardBrand = $('#card-brand');
+                var cardBrand = $('#card-brand-final');
                 var cvvLabel = $('[for="cc-cvv-final"]');
 
                 if (event.cards.length === 1) {
