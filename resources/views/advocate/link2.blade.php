@@ -17,7 +17,8 @@
     <style>
         body {
             /* font-family: europaLight, sans-serif !important; */
-            font-family: Europa-regular, sans-serif !important;
+            /* font-family: Europa-regular, sans-serif !important; */
+            font-family: Europa-light, sans-serif !important;
             line-height: 1.5;
         }
 
@@ -76,6 +77,7 @@
 
         .bootstrap-select>.dropdown-toggle {
             width: auto;
+            border-bottom: 0px !important;
         }
 
         .bootstrap-select>.dropdown-toggle.bs-placeholder,
@@ -163,7 +165,7 @@
         }
 
         .billing_radio_btn_up {
-            margin-top: 3rem;
+            margin-top: 4rem;
             margin-bottom: 0;
         }
 
@@ -192,6 +194,21 @@
 
         input[type=checkbox].input-assumpte {
             display: none;
+        }
+
+        .bootstrap-select .dropdown-toggle:focus,
+        .bootstrap-select>select.mobile-device:focus+.dropdown-toggle {
+            outline: 0 dotted #333 !important;
+            outline-offset: 0;
+            box-shadow: 0 0 0 0.2rem rgb(255 255 255 / 25%);
+        }
+
+        .payment_method_finl_page_class {
+            border-bottom: 0px;
+        }
+
+        .purchase_page_custom_css {
+            margin: 0;
         }
 
     </style>
@@ -343,7 +360,7 @@
                                             <select class="selectpicker placeholder form-control" name="delivery_frequency" id="delivery_frequency1" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
                                                 <option data-hidden="true" selected="selected">
                                                     {{ config('constants.package.delivery_freq_text') }}</option>
-                                                <option value="1">EVERY SUNDAY 1</option>
+                                                <option value="1">EVERY SUNDAY</option>
                                                 <option value="2">EVERY MONDAY</option>
                                             </select>
                                         </div>
@@ -422,10 +439,10 @@
                                 <div class="col-sm-6">
                                     <div id="shippingData">
                                         <div class="form-group">
-                                            <input type="text" name="shipping_address" id="shipping_address" placeholder="BILLING ADDRESS1">
+                                            <input type="text" name="shipping_address" id="shipping_address" placeholder="SHIPPING ADDRESS1">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="shipping_address2" id="shipping_address2" placeholder="BILLING ADDRESS2">
+                                            <input type="text" name="shipping_address2" id="shipping_address2" placeholder="SHIPPING ADDRESS2">
                                         </div>
 
                                         <div class="form-group">
@@ -769,22 +786,46 @@
                         <div class="flex_row">
                             <div class="flex_col_sm_12">
                                 <div class="form_field">
-                                    <div class="text-field">
-
-                                        <select class="selectpicker custom_select final_page_package_label" data-dropup-auto="false" title="YOUR WELLNESS SOLUTION">
-                                            <option value="" selected data-hidden="true">YOUR WELLNESS
-                                                SOLUTION
-                                            </option>
+                                    <div class="text-field flex_row purchase_page_custom_css">
+                                        <div class="final_page_product_label">{{ config('constants.package.default_drop_down_alakline_text') }}</div>
+                                        <select class="selectpicker custom_select" name="product" id="product5" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_alakline_text') }}">
+                                            <option value="" data-hidden="true">{{ config('constants.package.default_drop_down_alakline_text') }}</option>
+                                            <option value="1">ALAKLINE + ELECTOLYTE</option>
+                                            <option value="2">PURE + ELECTOLYTE</option>
                                         </select>
+                                        <button type="button" class="edit btn_effect edit_product">Edit</button>
+                                    </div>
+                                    <span class="text-note product_note_final_page">{{ config('constants.package.default_drop_down_alakline_text') }}</span>
+                                </div>
+                            </div>
 
-                                        <select class="selectpicker custom_select" name="package" id="package5" required data-dropup-auto="false" title="YOUR WELLNESS SOLUTION">
+                            <div class="flex_col_sm_12">
+                                <div class="form_field">
+                                    <div class="text-field flex_row purchase_page_custom_css">
+                                        <div class="final_page_package_label">YOUR WELLNESS SOLUTION</div>
+                                        {{-- <select class="selectpicker custom_select" name="package" id="package5" required data-dropup-auto="false" title="YOUR WELLNESS SOLUTION">
                                             <option value="" data-hidden="true">YOUR WELLNESS SOLUTION
                                             </option>
                                             <option value="1" selected>1 MONTH OF HYDRATION $250 ( 10 KITS )
                                             </option>
                                             <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
                                             <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
+                                        </select> --}}
+
+                                        <select class="selectpicker custom_select final_page_package_select select_alka" name="package" id="package5" required data-dropup-auto="false" title="YOUR WELLNESS SOLUTION">
+                                            <option data-hidden="true" selected>YOUR WELLNESS SOLUTION</option>
+                                            <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
+                                            <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
+                                            <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
                                         </select>
+
+                                        <select class="selectpicker custom_select final_page_package_select select_pure d-none" name="package" id="package5" required data-dropup-auto="false" title="YOUR WELLNESS SOLUTION">
+                                            <option data-hidden="true" selected>YOUR WELLNESS SOLUTION</option>
+                                            <option value="1">1 MONTH OF HYDRATION $220 ( 10 KITS )</option>
+                                            <option value="2">2 MONTH OF HYDRATION $440 ( 20 KITS )</option>
+                                            <option value="3">3 MONTH OF HYDRATION $660 ( 30 KITS )</option>
+                                        </select>
+
 
                                         <button type="button" class="edit btn_effect edit_package">Edit</button>
                                     </div>
@@ -794,7 +835,7 @@
                                 </div>
 
                                 <div class="form_field">
-                                    <div class="text-field">
+                                    <div class="text-field flex_row purchase_page_custom_css">
 
                                         <select class="selectpicker custom_select final_page_delivery_freq_label" data-dropup-auto="false" title="DELIVERY FREQUENCY">
                                             <option value="" selected data-hidden="true">DELIVERY FREQUENCY
@@ -817,13 +858,13 @@
 
 
                                 <div class="form_field">
-                                    <div class="text-field">
+                                    <div class="text-field flex_row purchase_page_custom_css">
                                         <select class="selectpicker custom_select final_page_edit_address_label" data-dropup-auto="false" title="DELIVERY ADDRESS">
                                             <option value="" selected data-hidden="true">DELIVERY ADDRESS
                                             </option>
                                         </select>
 
-                                        <input type="text" class="shipping_address_final_page" placeholder="BILLING ADDRESS" disabled>
+                                        <input type="text" class="shipping_address_final_page" placeholder="SHIPPING ADDRESS" disabled>
                                         <button type="button" class="edit btn_effect edit_address_final_page">EDIT
                                         </button>
                                     </div>
@@ -831,12 +872,12 @@
 
                                 <div class="form_field">
                                     <div class="flex_row">
-                                        <div class="flex_col_sm_6">
+                                        <div class="flex_col_sm_12">
                                             <div class="text-field">
-                                                <input type="text" class="shipping_address1_final_page" placeholder="BILLING ADDRESS 1" disabled>
+                                                <input type="text" class="shipping_address1_final_page" placeholder="SHIPPING ADDRESS 1" disabled>
                                             </div>
                                         </div>
-                                        <div class="flex_col_sm_6">
+                                        <div class="flex_col_sm_12">
                                             <!-- <div class="text-field">
                                                   <input type="text" placeholder="">
                                                 </div> -->
@@ -846,12 +887,12 @@
 
                                 <div class="form_field">
                                     <div class="flex_row">
-                                        <div class="flex_col_sm_6">
+                                        <div class="flex_col_sm_12">
                                             <div class="text-field">
                                                 <input type="text" class="s_city_state_zip_final_page" placeholder="CITY  / STATE  /  ZIP" disabled>
                                             </div>
                                         </div>
-                                        <div class="flex_col_sm_6">
+                                        <div class="flex_col_sm_12">
                                         </div>
                                     </div>
                                 </div>
@@ -985,13 +1026,13 @@
                             <div class="form_field">
                                 {{-- <button type="button" class="outline_btn m_r_20 show_step4_form">BACK</button> --}}
                                 <button type="submit" class="primary_btn btn_effect btn_black purchase_button" style="width: auto;">
-                                    PURHASE
+                                    PURCHASE
                                 </button>
 
                                 <div id="bt-dropin_venmo" style="display: none;">
                                     <button type="button" id="venmo-button" class="primary_btn btn_effect btn_black" style="width: auto;">
                                         <img style="border-radius: 20px;" src="{{ asset('images/venmo.png') }}" height="35px" width="35px">
-                                        <b>PayNow</b>
+                                        <b>PURCHASE</b>
                                     </button>
                                 </div>
                             </div>
@@ -1105,7 +1146,7 @@
 
         $("#delf_div").hide();
 
-        $('.selectpicker').change(function() {
+        $('#package1').change(function() {
             setTimeout(function() {
                 $('button').removeClass('bs-placeholder');
             }, 500);
