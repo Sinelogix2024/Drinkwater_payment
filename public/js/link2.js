@@ -614,18 +614,21 @@ $(document).ready(function() {
         }
     })
 
+    $('.final_page_address_field').hide();
     $('.edit_address_final_page').on('click', function() {
         $('.shipping_add_final_page').text($('.shipping_address_final_page').val() + ' ' + $('.shipping_address1_final_page').val())
         $('.citi_state_zip_final_page').text($('.s_city_state_zip_final_page').val())
         $('.final_page_edit_address_label').next(".dropdown-toggle").prop('disabled', true);
 
         if ($(this).text() == 'Edit') {
+            $('.final_page_address_field').show();
             $('.final_page_edit_address_label').hide();
             $('.shipping_address_final_page').prop('disabled', false).show();
             $('.shipping_address1_final_page').prop('disabled', false).show();
             $('.s_city_state_zip_final_page').prop('disabled', false).show();
             $(this).text('Save');
         } else {
+            $('.final_page_address_field').hide();
             $('.final_page_edit_address_label').show();
             $('.shipping_address_final_page').prop('disabled', true).hide();
             $('.shipping_address1_final_page').prop('disabled', true).hide();
@@ -646,7 +649,8 @@ $(document).ready(function() {
         $("#b_city_state_zip").val($(this).val());
     })
 
-    $('.payment_method').next(".dropdown-toggle").hide();
+    // $('.payment_method').next(".dropdown-toggle").hide();
+    $('.payment_method_finl_page_class').next(".dropdown-toggle").hide();
 
     $('.edit_payment_method_final_page').on('click', function() {
         console.log('edit_payment_method_final_page');
@@ -657,8 +661,8 @@ $(document).ready(function() {
         if ($(this).text() == 'Edit') {
             $('.final_pay_card_deatil').show();
             $('.final_page_payment_source_label').hide();
-            $('.payment_method').next(".dropdown-toggle").show();
-            $('.payment_method').next(".dropdown-toggle").prop('disabled', false);
+            $('.payment_method_finl_page_class').next(".dropdown-toggle").show();
+            $('.payment_method_finl_page_class').next(".dropdown-toggle").prop('disabled', false);
 
             // $(this).text('Save');
             $('.edit_payment_method_final_page').hide();
@@ -670,8 +674,8 @@ $(document).ready(function() {
             // $(someVar).appendTo("#final_pay_card_deatil");
         } else {
             $('.final_page_payment_source_label').show();
-            $('.payment_method').next(".dropdown-toggle").hide();
-            $('.payment_method').next(".dropdown-toggle").prop('disabled', true);
+            $('.payment_method_finl_page_class').next(".dropdown-toggle").hide();
+            $('.payment_method_finl_page_class').next(".dropdown-toggle").prop('disabled', true);
             $(this).text('Edit');
             $('.card-div-final').hide();
             $('#form-hosted-final').submit();
