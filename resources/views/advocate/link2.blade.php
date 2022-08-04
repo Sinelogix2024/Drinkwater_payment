@@ -1,3 +1,14 @@
+@if (!empty(session('response_error_msg',null)))
+<script>
+    alert("{{ session('response_error_msg') }}");
+
+</script>
+
+@php
+request()->session()->forget('response_error_msg');
+@endphp
+@endif
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -1159,3 +1170,13 @@
     }
 
 </style>
+
+@if (!empty(session('response_success_msg',null)))
+<script>
+    $(".final_form").show();
+
+</script>
+@php
+request()->session()->forget('response_success_msg');
+@endphp
+@endif

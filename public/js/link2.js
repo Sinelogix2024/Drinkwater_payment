@@ -77,18 +77,20 @@ $(document).ready(function() {
         $('#product5').val($(this).val());
         $('#product5').change();
 
+        $('#package5').change();
+
         if ($(this).val() == 1) {
             console.log('Test :: aplkine ::');
             console.log();
             $('.select_alka').removeClass('d-none');
             $('.select_pure').addClass('d-none');
-            $('div.select_alka').removeClass('selected-package');
-            $('div.select_pure').addClass('selected-package');
+            $('div.select_alka').addClass('selected-package');
+            $('div.select_pure').removeClass('selected-package');
         } else if ($(this).val() == 2) {
             $('.select_pure').removeClass('d-none');
             $('.select_alka').addClass('d-none');
-            $('div.select_pure').removeClass('selected-package');
-            $('div.select_alka').addClass('selected-package');
+            $('div.select_pure').addClass('selected-package');
+            $('div.select_alka').removeClass('selected-package');
             console.log('Test :: pure ::');
         }
     });
@@ -119,18 +121,19 @@ $(document).ready(function() {
         console.log('Test :: 1 ::');
         console.log();
 
+        $('.final_page_package_select').removeClass('selected-package');
         if ($(this).val() == 1) {
             console.log('Test :: aplkine ::');
             console.log();
             $('.select_alka').removeClass('d-none');
             $('.select_pure').addClass('d-none');
-            $('div.select_alka').removeClass('selected-package');
-            $('div.select_pure').addClass('selected-package');
+            $('.select_alka').removeClass('selected-package');
+            $('.select_pure').addClass('selected-package');
         } else if ($(this).val() == 2) {
             $('.select_pure').removeClass('d-none');
             $('.select_alka').addClass('d-none');
-            $('div.select_pure').removeClass('selected-package');
-            $('div.select_alka').addClass('selected-package');
+            $('.select_pure').removeClass('selected-package');
+            $('.select_alka').addClass('selected-package');
             console.log('Test :: pure ::');
         }
         $('.final_page_package_select').addClass('d-none');
@@ -500,12 +503,12 @@ $(document).ready(function() {
             if (current_tab == 'final_form') {
 
                 if ($("#basic-form").valid()) {
-                    $(".step1_form").hide(true);
-                    $(".step2_form").hide(true);
-                    $(".step3_form").hide(true);
-                    $(".step4_form").hide(true);
-                    $(".step5_form").hide(true);
-                    $(".final_form").show(true);
+                    // $(".step1_form").hide(true);
+                    // $(".step2_form").hide(true);
+                    // $(".step3_form").hide(true);
+                    // $(".step4_form").hide(true);
+                    // $(".step5_form").hide(true);
+                    // $(".final_form").hide(true);
                     $(".current_tab").val("final_form");
                 }
                 setDropDownvalue();
@@ -513,9 +516,21 @@ $(document).ready(function() {
                 // form.submit();
 
                 setTimeout(function() {
-                    //do something special
+                    let package_value = localStorage.getItem('package');
+                    let service_fees = string.service_fees.toFixed(2);
+                    let delivery_fees = string.delivery_fees.toFixed(2);
+                    let tax = ((string.package[package_value] * string.tax) / 100).toFixed(2);
+                    let package_amount = string.package[package_value];
+                    let total_amount = (parseFloat(package_amount) + parseFloat(service_fees) + parseFloat(delivery_fees) + parseFloat(tax)).toFixed(2);
+                    $('.service_fees').text('$' + service_fees);
+                    $('.delivery_fees').text('$' + delivery_fees);
+                    $('.tax_amount').text('$' + tax);
+                    $('.tax_amount').val(tax);
+                    $('.total_amount').text('$' + total_amount);
+                    $('.total_amount').val(total_amount);
+
                     form.submit();
-                }, 5000);
+                }, 3000);
             }
         },
     });
@@ -585,12 +600,14 @@ $(document).ready(function() {
         if ($(this).text() == 'Edit') {
             $('.final_page_package_label').hide();
             $('.final_page_package_select.selected-package').removeClass('d-none');
+            $('.final_page_package_select.selected-package').show();
             $('#package5').next(".dropdown-toggle").show();
             $('#package5').next(".dropdown-toggle").prop('disabled', false);
             $(this).text('Save');
         } else {
             $('#package5').next(".dropdown-toggle").hide();
             $('#package5').next(".dropdown-toggle").prop('disabled', true);
+            $('.final_page_package_select').hide();
             $('.final_page_package_label').show();
             $(this).text('Edit');
         }
