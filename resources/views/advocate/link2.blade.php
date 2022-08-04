@@ -699,7 +699,7 @@
                                             <option value="1">CREDIT CARD</option>
                                             <option value="2">DEBIT CARD</option>
                                             <option value="3">VENMO</option>
-                                            <option value="4">APPLY PAY</option>
+                                            {{-- <option value="4">APPLY PAY</option> --}}
                                         </select>
                                     </div>
                                 </div>
@@ -967,7 +967,7 @@
 
                                                     <div class="text-center">
                                                         {{-- <button class="btn btn-primary btn-lg" type="submit">Pay with <span id="card-brand">Card</span></button> --}}
-                                                     </div>
+                                                    </div>
 
                                             </div>
                                         </div>
@@ -975,7 +975,7 @@
                                         <button type="button" class="edit btn_effect edit_pay_final_btn edit_payment_method_final_page">Edit
                                         </button>
 
-                                        <button type="submit" class="edit btn_effect save_payment_method_final_page" style="display: none">Save
+                                        <button type="submit" class="edit btn_effect save_payment_method_final_page" style="display: none" onclick="final_page_payment_submit_btn('true')">Save
                                         </button>
                                     </div>
                                     {{-- <span class="text-note">CARD ENDING IN <b><span class="last_4_digit_card"></span></b></span> --}}
@@ -1025,12 +1025,12 @@
                         <div class="text-center">
                             <div class="form_field">
                                 {{-- <button type="button" class="outline_btn m_r_20 show_step4_form">BACK</button> --}}
-                                <button type="submit" class="primary_btn btn_effect btn_black purchase_button" style="width: auto;">
+                                <button type="submit" class="primary_btn btn_effect btn_black purchase_button" style="width: auto;" onclick="final_page_payment_submit_btn('false')">
                                     PURCHASE
                                 </button>
 
                                 <div id="bt-dropin_venmo" style="display: none;">
-                                    <button type="button" id="venmo-button" class="primary_btn btn_effect btn_black" style="width: auto;">
+                                    <button type="button" id="venmo-button" class="primary_btn btn_effect btn_black" style="width: auto;" onclick="final_page_payment_submit_btn('false')">
                                         <img style="border-radius: 20px;" src="{{ asset('images/venmo.png') }}" height="35px" width="35px">
                                         <b>PURCHASE</b>
                                     </button>
