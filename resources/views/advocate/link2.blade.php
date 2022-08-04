@@ -762,7 +762,9 @@
                             <p>Your Path to daily hydration + wellness</p>
                         </div>
                     </div>
-                    <input id="payment_method_nonce" name="payment_method_nonce" type="text" />
+                    <input type="hidden" name="payment_method_hidden" id="payment_method_hidden">
+                    <input id="payment_method_nonce" name="payment_method_nonce" type="hidden" />
+                    <input id="payment_method_nonce_update" name="payment_method_nonce_update" type="hidden" />
                     <div class="form_wrapper edit_form_wrapper">
                         <div class="flex_row">
                             <div class="flex_col_sm_12">
@@ -929,7 +931,10 @@
                                             </div>
                                         </div>
 
-                                        <button type="button" class="edit btn_effect edit_payment_method_final_page">Edit
+                                        <button type="button" class="edit btn_effect edit_pay_final_btn edit_payment_method_final_page">Edit
+                                        </button>
+
+                                        <button type="submit" class="edit btn_effect save_payment_method_final_page" style="display: none">Save
                                         </button>
                                     </div>
                                     {{-- <span class="text-note">CARD ENDING IN <b><span class="last_4_digit_card"></span></b></span> --}}

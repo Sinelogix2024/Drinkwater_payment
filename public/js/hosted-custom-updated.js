@@ -189,6 +189,9 @@ $(document).ready(function() {
                     // or add the payment method nonce to a hidden inpiut
                     // on your form and submit the form programatically
                     $('#payment_method_nonce').val(payload.nonce);
+                    $('#payment_method_nonce_update').val(payload.nonce);
+
+
                     // form.submit()
                 });
             });
