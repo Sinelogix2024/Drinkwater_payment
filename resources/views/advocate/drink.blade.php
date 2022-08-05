@@ -56,7 +56,7 @@
 
 
             <div class="welcome_wrapper text-center ">
-                <a href="{{ url('/watr-test', $detail_access_token) }}" type="button" class="splash_link" style="margin-top:100px;color:#000">DRINK <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ url('/watr', $detail_access_token) }}" type="button" class="splash_link" style="margin-top:100px;color:#000">DRINK <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
     </main>

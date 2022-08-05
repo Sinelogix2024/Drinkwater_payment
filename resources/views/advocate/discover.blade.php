@@ -34,6 +34,19 @@
             letter-spacing: 0.1rem;
         }
 
+        .primary_btn {
+            font-weight: 500;
+            color: #fff !important;
+            border-width: 2px 2px 2px 2px !important;
+            border-radius: 50px 50px 50px 50px;
+            padding: 5px 30px 5px 30px;
+            border: 1px solid black;
+        }
+
+        .primary_btn:hover {
+            font-weight: 550 !important;
+        }
+
     </style>
 </head>
 
@@ -99,12 +112,13 @@ position: relative;"><a href="{{ url('/experience', $detail_access_token) }}" st
 
         <div class="dots_wrapper">
             <ul>
-
                 <li class="active slide1_show" id=""></li>
                 <li class="slide2_show"></li>
                 <li class="slide3_show"></li>
             </ul>
         </div>
+
+        <div class="dots_wrapper"><a class="primary_btn btn_effect" href="{{ url('/watr', $detail_access_token) }}">DRINK</a></div>
 
         <footer class="text-center">
             <div class="custom_container">
@@ -164,6 +178,9 @@ position: relative;"><a href="{{ url('/experience', $detail_access_token) }}" st
 
             </ul>
         </div>
+
+        <div class="dots_wrapper"><a class="primary_btn btn_effect" href="{{ url('/watr', $detail_access_token) }}">DRINK</a></div>
+
         <footer class="text-center">
             <div class="custom_container">
                 {{ date('Y') }} &copy ALL RIGHT RESERVED | WATR, LLC <br> PRIVACY + LEGAL
@@ -196,6 +213,8 @@ position: relative;"><a href="{{ url('/experience', $detail_access_token) }}" st
             </ul>
         </div>
 
+        <div class="dots_wrapper"><a class="primary_btn btn_effect" href="{{ url('/watr', $detail_access_token) }}">DRINK</a></div>
+
         <footer class="text-center">
             <div class="custom_container">
                 {{ date('Y') }} &copy ALL RIGHT RESERVED | WATR, LLC <br> PRIVACY + LEGAL
@@ -203,9 +222,6 @@ position: relative;"><a href="{{ url('/experience', $detail_access_token) }}" st
         </footer>
     </div>
     <!-- SLIDE 3 END -->
-
-
-
 </body>
 
 </html>
