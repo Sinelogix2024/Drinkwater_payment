@@ -84,13 +84,13 @@ $(document).ready(function() {
             console.log();
             $('.select_alka').removeClass('d-none');
             $('.select_pure').addClass('d-none');
-            $('div.select_alka').addClass('selected-package');
-            $('div.select_pure').removeClass('selected-package');
+            $('.select_alka').addClass('selected-package');
+            $('.select_pure').removeClass('selected-package');
         } else if ($(this).val() == 2) {
             $('.select_pure').removeClass('d-none');
             $('.select_alka').addClass('d-none');
-            $('div.select_pure').addClass('selected-package');
-            $('div.select_alka').removeClass('selected-package');
+            $('.select_pure').addClass('selected-package');
+            $('.select_alka').removeClass('selected-package');
             console.log('Test :: pure ::');
         }
     });
