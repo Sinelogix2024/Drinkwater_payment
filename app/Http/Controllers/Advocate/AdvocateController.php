@@ -222,4 +222,26 @@ class AdvocateController extends Controller
             'orderDetail' => $orderDetail
         ]);
     }
+
+    public function getAddress(Request $request)
+    {
+        try {
+            $searchTxt = $request->search_text;
+            if (empty($searchTxt)) {
+                return [];
+            }
+            $addressDetails = Order::DISTINCT()->select('billing_address', 'billing_address2', 'b_city_state_zip', 'shipping_address', 'shipping_address2', 's_city_state_zip')
+                ->where('billing_address', 'like', '%' . $searchTxt . '%')
+                ->where('billing_address2', 'like', '%' . $searchTxt . '%')
+                ->where('b_city_state_zip', 'like', '%' . $searchTxt . '%')
+                ->where('shipping_address', 'like', '%' . $searchTxt . '%')
+                ->where('shipping_address2', 'like', '%' . $searchTxt . '%')
+                ->where('s_city_state_zip', 'like', '%' . $searchTxt . '%')
+                ->get();
+
+            return $addressDetails;
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
 }

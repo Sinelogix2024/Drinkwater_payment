@@ -74,6 +74,8 @@ Route::get('/experience/{detail_access_token}', function ($detail_access_token) 
     return view('advocate/drink')->with('detail_access_token', $detail_access_token);
 })->name('experience');
 
+Route::get('/search-address', 'App\Http\Controllers\Advocate\AdvocateController@getAddress');
+
 Route::match(['get'], '/braintree', 'App\Http\Controllers\BrainTreeController@view');
 Route::match(['post'], '/braintree', 'App\Http\Controllers\BrainTreeController@call');
 // Route::match(['get'], '/watr/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
