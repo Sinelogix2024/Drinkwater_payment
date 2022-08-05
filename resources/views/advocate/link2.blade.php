@@ -950,7 +950,7 @@ request()->session()->forget('response_error_msg');
                                         </button>
                                     </div>
                                     {{-- <span class="text-note">CARD ENDING IN <b><span class="last_4_digit_card"></span></b></span> --}}
-                                    {{-- <span class="text-note payment_method_final_page"></span> --}}
+                                    <span class="text-note payment_method_final_page">Payment Method</span>
                                 </div>
 
                                 <div class="form_field purchase_page_main_field_custom_css">
