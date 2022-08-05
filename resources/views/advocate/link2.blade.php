@@ -27,10 +27,8 @@ request()->session()->forget('response_error_msg');
 
     <style>
         body {
-            /* font-family: europaLight, sans-serif !important; */
-            /* font-family: Europa-regular, sans-serif !important; */
-            font-family: Europa-light, sans-serif !important;
-            line-height: 1.5;
+            /* font-family: Europa-light, sans-serif !important; */
+            /* line-height: 1.5; */
         }
 
         .head_section .brand .brand_txt {
@@ -224,6 +222,16 @@ request()->session()->forget('response_error_msg');
 
         .purchase_page_main_field_custom_css {
             margin-bottom: 1.5rem;
+        }
+
+        body {
+            font-size: 14px !important;
+            font-family: Europa-regular, sans-serif !important;
+            /* font-family: Europa-light, sans-serif !important; */
+        }
+
+        figure img {
+            height: 150px;
         }
 
     </style>
@@ -996,7 +1004,7 @@ request()->session()->forget('response_error_msg');
                         <div class="text-center">
                             <div class="form_field">
                                 {{-- <button type="button" class="outline_btn m_r_20 show_step4_form">BACK</button> --}}
-                                <button type="submit" class="primary_btn btn_effect btn_black purchase_button" style="width: auto;">
+                                <button type="submit" class="primary_btn btn_effect btn_black purchase_button" style="width: auto;" data-disable-with="Purchasing...">
                                     PURCHASE
                                 </button>
 

@@ -113,6 +113,10 @@
             outline: none !important;
         }
 
+        figure img {
+            height: 150px;
+        }
+
     </style>
 </head>
 

@@ -18,16 +18,12 @@
 
     <style>
         body {
-            font-family: europaLight, sans-serif !important;
+            font-family: Europa-light, sans-serif !important;
         }
 
-        /* a, a:hover, a:visited, a:active, a:focus {
-    text-decoration: none;
-    color: black;
-    text-transform: uppercase;
-    font-weight: 300;
-    letter-spacing: 0.1rem;
-} */
+        figure img {
+            height: 150px;
+        }
 
     </style>
 </head>
