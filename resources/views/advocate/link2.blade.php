@@ -1115,6 +1115,67 @@ request()->session()->forget('response_error_msg');
 <script src="{{ asset('js/hosted-custom-updated.js') }}"></script>
 <script src="{{ asset('js/jquery-input-mask-phone-number.js') }}"></script>
 
+<script type="module">
+    let autocomplete;
+    let address1Field;
+    let address2Field;
+    let postalField;
+
+    function initAutocomplete() {
+        address1Field = document.querySelector("#billing_address");
+        address2Field = document.querySelector("#billing_address2");
+        postalField = document.querySelector("#b_city_state_zip");
+        autocomplete = new google.maps.places.Autocomplete(address1Field);
+        address1Field.focus();
+        autocomplete.addListener("place_changed", fillInAddress);
+    }
+
+    function fillInAddress() {
+        const place = autocomplete.getPlace();
+        let street_number="";
+        let route="";
+        let locality="";
+        let administrative_area_level_1="";
+        let postal_code="";
+        let postal_code_suffix="";
+
+        for (const component of place.address_components) {
+            const componentType = component.types[0];
+            switch (componentType) {
+                case "street_number": {
+                street_number = component.long_name;
+                    break;
+                }
+                case "route": {
+                    route = component.long_name;
+                    break;
+                }
+                case "locality":{
+                    locality = component.long_name;
+                    break;
+                }
+                case "administrative_area_level_1": {
+                administrative_area_level_1 =component.long_name;
+                    break;
+                }
+                case "postal_code": {
+                postal_code = component.long_name;
+                    break;
+                }
+                case "postal_code_suffix": {
+                postal_code_suffix = component.long_name;
+                    break;
+                }
+            }
+        }
+        address1Field.value = `${street_number}, ${route}`;
+        postalField.value = `${locality}/${administrative_area_level_1}/${postal_code}${postal_code_suffix}`;
+        address2Field.focus();
+    }
+    window.initAutocomplete = initAutocomplete;
+    export {};
+</script>
+
 <script>
     $(document).ready(function() {
         // $('#yourphone').usPhoneFormat({
@@ -1136,8 +1197,6 @@ request()->session()->forget('response_error_msg');
                 $('button').removeClass('bs-placeholder');
             }, 500);
         });
-
-
     });
 
 </script>
@@ -1179,6 +1238,8 @@ request()->session()->forget('response_error_msg');
 
 </style>
 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJdJoIH2Y7AbOZDZtbLKcciEtp8h3CwCA&callback=initAutocomplete&libraries=places&v=weekly" defer></script>
+
 @if (!empty(session('response_success_msg',null)))
 <script>
     $(".final_form").show();
@@ -1187,6 +1248,7 @@ request()->session()->forget('response_error_msg');
     }, 3000);
 
 </script>
+
 @php
 request()->session()->forget('response_success_msg');
 @endphp
