@@ -42,6 +42,7 @@
 
         .splash_link {
             font-family: europaLight, sans-serif !important;
+            font-size: 18px;
         }
 
     </style>
