@@ -321,8 +321,8 @@
     <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc0db0.php?rsd" />
     <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wp-includes/wlwmanifest.xml" />
     <meta name="generator" content="WordPress 6.0.1" />
-    <link rel="canonical" href="index.html" />
-    <link rel='shortlink' href='index.html' />
+    <link rel="canonical" href="#" />
+    <link rel='shortlink' href='#' />
     <link rel="icon" href="../wp-content/uploads/2022/07/favicon-2-150x150.png" sizes="32x32" />
     <link rel="icon" href="../wp-content/uploads/2022/07/favicon-2.png" sizes="192x192" />
     <link rel="apple-touch-icon" href="../wp-content/uploads/2022/07/favicon-2.png" />
@@ -461,7 +461,7 @@
                                             <div class="content-sec">
 
                                                 <img src="../wp-content/uploads/2022/07/droplet.png" class="stk-img1">
-                                                <a href="index.html">
+                                                <a href="#">
                                                     <img src="../wp-content/uploads/2022/07/logo-latest.png" class="stk-img2">
                                                 </a>
                                                 <a href="{{ url('/experience', $detail_access_token) }}" class="updated-button-set">experience</a>
@@ -477,67 +477,7 @@
             </section>
         </div>
         <footer id="colophon" class="site-footer">
-
-            <!-- Footer Container -->
-            <div class="footer-container">
-
-                <div class="footer-logo">
-                    <img id="footerDroplet" src="../wp-content/uploads/2022/07/logo-latest.png">
-                    <!--         <img id="footerDroplet" src="../wp-content/uploads/2021/04/top-droplet.png"> -->
-                </div>
-
-
-                <div class="footer-links column-one">
-                    <ul>
-                        <li class="footer-links-headers">Private Members</li>
-                        <li><a href="#">Details</a></li>
-                        <li><a href="#">Access</a></li>
-                        <li><a href="#">Support</a></li>
-                    </ul>
-
-                </div>
-
-                <div class="footer-links column-two">
-                    <ul>
-                        <li class="footer-links-headers">Drink</li>
-                        <li><a href="#">Order</a></li>
-                        <li><a href="#">Cities</a></li>
-                        <li><a href="#">Support</a></li>
-                    </ul>
-                </div>
-
-
-                <div class="footer-links column-three">
-                    <ul>
-                        <li class="footer-links-headers">Discover</li>
-                        <li><a href="#">Intention</a></li>
-                        <li><a href="#">Daily Benefits</a></li>
-                        <li><a href="#">WATR Guide&trade;</a></li>
-                        <li><a href="#">Purity</a></li>
-                        <li><a href="#">Sustainability</a></li>
-                    </ul>
-                </div>
-
-
-                <div class="footer-links column-four">
-                    <ul>
-                        <li class="footer-links-headers">Collaborations</li>
-                        <li><a href="mailto:partnerships@drinkwatr.com">For brands</a></li>
-                        <li><a href="mailto:retailers@drinkwatr.com">For retailers</a></li>
-                    </ul>
-                </div>
-
-
-                <div class="footer-subscribe">
-                    <img src="#" style="max-width: 250px; margin-bottom: 1rem;">
-                    <input id="footerJoin" type="tel" placeholder="Mobile Phone Number"><button>Join Us</button>
-                </div>
-
-            </div>
-            <!-- Footer Container -->
-
             <div class="footer-legal">
-
                 <div class="footer-copyright" style="text-transform: uppercase;">
                     <p>2022 &copy; All Rights Reserved | WATR, LLC</p>
                 </div>
@@ -547,17 +487,12 @@
                 </div>
 
                 <div class="footer-policy">
-                    <a href="#" style="text-decoration: underline; margin-right: 0.25rem!important;">Privacy</a> <span style="margin-right: 0.25rem;">+</span> <a href="#" style="text-decoration: underline;">Legal</a>
+                    <a href="{{ url('privacy') }}" style="text-decoration: underline; margin-right: 0.25rem!important;">Privacy</a> <span style="margin-right: 0.25rem;">+</span> <a href="{{ url('legal') }}" style="text-decoration: underline;">Legal</a>
                 </div>
 
             </div>
-
-    </div>
-
-
-
-    </footer>
-    <!-- #colophon -->
+        </footer>
+        <!-- #colophon -->
     </div>
     <!-- #page -->
 

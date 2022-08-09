@@ -78,9 +78,9 @@
                     <a href="https://instagram.com/watr.world/"><i class="fab fa-instagram"></i></a>
                 </div>
                 <div class="footer-policy">
-                    <a href="#" style="text-decoration: underline; margin-right: 0.25rem!important;">Privacy</a> <span style="margin-right: 0.25rem;">+</span> <a href="#" style="text-decoration: underline;">Legal</a>
-                </div>
-            </div>
+                    <a href="{{ url('privacy') }}" style="text-decoration: underline; margin-right: 0.25rem!important;">Privacy</a> <span style="margin-right: 0.25rem;">+</span> <a href="{{ url('legal') }}" style="text-decoration: underline;">Legal</a>
+        </div>
+        </div>
         </footer> --}}
 
     </main>
