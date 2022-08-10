@@ -1,0 +1,152 @@
+/* Start custom CSS for html, class: .elementor-element-b16a8a7 */a.updated-button-set {
+    text-decoration: underline;
+}
+
+
+
+.page h1.entry-title,
+.entry-header,
+header.site-header,
+#top-bar,
+#newDrink,
+#newMenu,
+.footer-container {
+    display: none;
+}
+/*.entry-header,*/
+/*header.site-header,*/
+/*#top-bar,*/
+/*.site-footer */
+/*{*/
+/*    display: none;*/
+/*}*/
+.sec-one-main {
+    max-width: 1000px;
+    margin: 0 auto;
+    min-height: 75vh;
+}
+.sec-one-inner .content-sec {
+    position: relative;
+    margin-bottom: 0;
+    
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: center;*/
+    /*height: 55vh;*/
+}
+
+.sec-one-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* text-align: center;*/
+    width: 100%;
+    height: 85vh;
+    /*height: auto;*/
+    /*height: 95vh;*/
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+}
+.stk-img1 {
+    position: absolute;
+    /*top: 15%;*/
+    /*margin-top: -45px;*/
+    /*left: 25%;*/
+    /*max-height: 140px;*/
+    max-height: 175px;
+    right: 0;
+    max-width: 160px !important;
+    top: -5rem;
+}
+.stk-img2 {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    /*z-index: 2;*/
+    position: relative;
+    max-width: 70px !important;
+    margin-top: -50px;
+    margin-bottom: 70px;
+    
+    
+}
+.stk-img3 {
+    display: block;
+    position: relative;
+    /*margin: 0 auto;*/
+    text-align: left;
+    max-width: 101px;
+    top: 45%;
+}
+.stk-img4 {
+    position: absolute;
+    /* top: 15%; */
+    margin-top: -20px;
+    right: 15%;
+    bottom: 12rem;
+    max-height: 140px;
+}
+.updated-button-set {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    width: 140px;
+}
+.updated-button-set:hover {
+    text-decoration: underline;
+}
+@media (min-width: 767px) and (max-width: 991px) {
+    .content-sec .stk-img3 {
+        margin-top: 1rem;
+    }
+    .content-sec .stk-img4 {
+        right: 5%;
+    }
+    .sec-one-main .sec-one-inner {
+        margin-top: 6rem;
+    } 
+}
+@media screen and (max-width: 767px) {
+    .content-sec .stk-img1 {
+        margin-top: 0;
+        top: -35px;
+        display: none;
+    }  
+    .content-sec .stk-img4 {
+        right: 0%;
+        display: none;
+    }
+    .sec-one-inner .content-sec {
+        margin-bottom: 0px;
+    }
+    .sec-one-main {
+        min-height: 75vh;
+    }
+    .sec-one-main .sec-one-inner {
+        height: 60vh;
+    }
+    .stk-img3 {
+        position: absolute;
+        top: 45%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .sec-one-main .sec-one-inner {
+        margin-top: 4rem;
+    }   
+}
+@media screen and (max-width: 500px) {
+    .content-sec .stk-img2 {
+        max-width: 220px;
+    }
+    .sec-one-inner {
+        margin-top: 4rem;
+    }
+}
+@media screen and (max-width: 390px) {    
+    .content-sec .stk-img1 {
+        left: 0;
+        top: 20px;
+        max-width: 65px;
+    } 
+}/* End custom CSS */

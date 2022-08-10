@@ -25,6 +25,26 @@
             height: 150px;
         }
 
+        a {
+            letter-spacing: 0.1rem;
+        }
+
+        .expage-img3 {
+            height: auto;
+            max-width: 100%;
+            border: none;
+            border-radius: 0;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            position: absolute;
+            top: 65%;
+        }
+
+        .splash_link {
+            font-family: europaLight, sans-serif !important;
+            font-size: 18px;
+        }
+
     </style>
 </head>
 
@@ -35,7 +55,7 @@
 
 <body class="body">
     {{-- main container 1 start --}}
-    <main class="app_wrapper waterbg " style="">
+    <main class="app_wrapper" style="">
         <div class="custom_container">
 
 
@@ -43,18 +63,27 @@
                 <div class="tagline_wrap" data-aos="zoom-in-up" data-aos-duration="1500">
                     <figure class="logo"><img src="{{ asset('images/logowater.png') }}" alt="Logo" /></figure>
                 </div>
-
-
-
-
                 <a href="{{ url('/discover',$detail_access_token) }}" type="button" class="splash_link" style="margin-top:100px;color:#000">DISCOVER <i class="fas fa-arrow-circle-right"></i></a>
             </div>
-
-
             <div class="welcome_wrapper text-center ">
                 <a href="{{ url('/watr', $detail_access_token) }}" type="button" class="splash_link" style="margin-top:100px;color:#000">DRINK <i class="fas fa-arrow-circle-right"></i></a>
             </div>
+            <img src="https://watrbar.io/wp-content/uploads/2022/07/droplet.png" class="expage-img3" style="max-width: 100px;">
         </div>
+        {{-- <footer id="colophon" class="site-footer">
+            <div class="footer-legal">
+                <div class="footer-copyright" style="text-transform: uppercase;">
+                    <p>2022 © All Rights Reserved | WATR, LLC</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://instagram.com/watr.world/"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="footer-policy">
+                    <a href="{{ url('privacy') }}" style="text-decoration: underline; margin-right: 0.25rem!important;">Privacy</a> <span style="margin-right: 0.25rem;">+</span> <a href="{{ url('legal') }}" style="text-decoration: underline;">Legal</a>
+        </div>
+        </div>
+        </footer> --}}
+
     </main>
     {{-- main container 1 end --}}
 

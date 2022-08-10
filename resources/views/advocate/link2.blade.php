@@ -1121,13 +1121,27 @@ request()->session()->forget('response_error_msg');
     let address2Field;
     let postalField;
 
+    let autocomplete2;
+    let address1Field2;
+    let address2Field2;
+    let postalField2;
+
     function initAutocomplete() {
         address1Field = document.querySelector("#billing_address");
         address2Field = document.querySelector("#billing_address2");
         postalField = document.querySelector("#b_city_state_zip");
+        
+        address1Field2 = document.querySelector("#shipping_address");
+        address2Field2 = document.querySelector("#shipping_address2");
+        postalField2 = document.querySelector("#s_city_state_zip");
+
         autocomplete = new google.maps.places.Autocomplete(address1Field);
         address1Field.focus();
         autocomplete.addListener("place_changed", fillInAddress);
+        
+        autocomplete2 = new google.maps.places.Autocomplete(address1Field2);
+        address1Field2.focus();
+        autocomplete2.addListener("place_changed", fillInAddress2);
     }
 
     function fillInAddress() {
@@ -1171,6 +1185,50 @@ request()->session()->forget('response_error_msg');
         address1Field.value = `${street_number}, ${route}`;
         postalField.value = `${locality}/${administrative_area_level_1}/${postal_code}${postal_code_suffix}`;
         address2Field.focus();
+    }
+    
+    function fillInAddress2() {
+        const place = autocomplete2.getPlace();
+        let street_number="";
+        let route="";
+        let locality="";
+        let administrative_area_level_1="";
+        let postal_code="";
+        let postal_code_suffix="";
+
+        for (const component of place.address_components) {
+            const componentType = component.types[0];
+            switch (componentType) {
+                case "street_number": {
+                street_number = component.long_name;
+                    break;
+                }
+                case "route": {
+                    route = component.long_name;
+                    break;
+                }
+                case "locality":{
+                    locality = component.long_name;
+                    break;
+                }
+                case "administrative_area_level_1": {
+                administrative_area_level_1 =component.long_name;
+                    break;
+                }
+                case "postal_code": {
+                postal_code = component.long_name;
+                    break;
+                }
+                case "postal_code_suffix": {
+                postal_code_suffix = component.long_name;
+                    break;
+                }
+            }
+        }
+        
+        address1Field2.value = `${street_number}, ${route}`;
+        postalField2.value = `${locality}/${administrative_area_level_1}/${postal_code}${postal_code_suffix}`;
+        address2Field2.focus();
     }
     window.initAutocomplete = initAutocomplete;
     export {};
