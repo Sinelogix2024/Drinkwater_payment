@@ -21,8 +21,12 @@
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" media='all' />
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" media='all' />
     <link rel='stylesheet' id='e-animations-css' href='/css/animations.min.css?ver=3.6.4' media='all' />
-    <title> ALKALINE + ELECTROLYTES | STAY STRONG™</title>
-    <title>ALKALINE + ELECTROLYTES &#8211; STAY STRONG™</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-select.min.css') }}" />
+
+
+    <title>DRINK WATR</title>
     <meta name='robots' content='max-image-preview:large' />
     <link rel='dns-prefetch' href='//s.w.org' />
     <link rel="alternate" type="application/rss+xml" title="STAY STRONG™ &raquo; Feed" href="https://drinkwatr.com/feed/" />
@@ -106,6 +110,68 @@
         .flickity-prev-next-button {
             top: auto !important;
             transform: none !important;
+        }
+
+        .close-button {
+            top: auto !important;
+            right: auto !important;
+            bottom: 50px !important;
+            width: 100% !important;
+            text-align: center !important;
+        }
+
+        .flickity-button {
+            display: none !important;
+        }
+
+        div.dropdown {
+            border-bottom: 0px solid #000 !important;
+        }
+
+        .btn-light {
+            background-color: #fff;
+            border-color: #fff;
+            border-bottom: 0;
+        }
+
+        .btn-light:hover {
+            background-color: #fff;
+            border-color: #fff;
+        }
+
+        .btn-light:focus {
+            background-color: #fff;
+            border-color: #fff;
+        }
+
+        .btn-light:not(:disabled):not(.disabled).active,
+        .btn-light:not(:disabled):not(.disabled):active,
+        .show>.btn-light.dropdown-toggle {
+            background-color: #fff;
+            border-color: #fff;
+        }
+
+        .bootstrap-select>.dropdown-toggle {
+            width: auto;
+            border-bottom: 0px !important;
+        }
+
+        .bootstrap-select>.dropdown-toggle.bs-placeholder,
+        .bootstrap-select>.dropdown-toggle.bs-placeholder:active,
+        .bootstrap-select>.dropdown-toggle.bs-placeholder:focus,
+        .bootstrap-select>.dropdown-toggle.bs-placeholder:hover {
+            color: #000 !important;
+            background: #fff !important;
+            border: #fff !important;
+        }
+
+        .dropdown-menu {
+            background: #000 !important;
+        }
+
+        .carousel-title {
+            text-transform: uppercase;
+            font-weight: bold;
         }
 
     </style>
@@ -374,6 +440,10 @@
             font-size: var(--wp--preset--font-size--x-large) !important;
         }
 
+        td {
+            padding: 10px !important;
+        }
+
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link rel='stylesheet' id='wp-block-library-css' href='/css/style.min.css?ver=6.0.1' media='all' />
@@ -578,8 +648,8 @@
 
                                                                 <div class="hydration-carousel">
                                                                     <div class="carousel-cell">
-                                                                        <p style="text-transform: uppercase;">Solution Guide</p>
-                                                                        <table style="text-align:center; margin-top: 30px;" border="1px" width="100%">
+                                                                        <h3 class="carousel-title">Solution Guide</h3>
+                                                                        <table style="text-align:center; margin-top: 50px;" border="1px" width="100%">
                                                                             <tbody>
                                                                                 <tr>
                                                                                     <td></td>
@@ -610,38 +680,63 @@
                                                                     </div>
 
                                                                     <div class="carousel-cell">
-                                                                        <p style="text-transform: uppercase;">Delivery Frequency Guide</p>
+                                                                        <h3 class="carousel-title">Delivery Frequency Guide</h3>
+                                                                        <div class="" style="margin-top: 50px;">
+                                                                            <div class="flex_col_sm_7 p-0">
+                                                                                <div class="form_field">
+                                                                                    <div class="text-field">
+                                                                                        <select class="selectpicker form-control" name="alakline_pure" id="alakline_pure" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_alakline_text') }} ">
+
+                                                                                            <option data-hidden="true" selected="selected">
+                                                                                                {{ config('constants.package.default_drop_down_alakline_text') }}
+                                                                                            </option>
+                                                                                            <option value="1">ALAKLINE + ELECTROLYTE</option>
+                                                                                            <option value="2">PURE + ELECTROLYTE</option>
+                                                                                        </select>
+
+                                                                                    </div>
+                                                                                </div>
+
+
+                                                                                <div class="form_field">
+                                                                                    <div class="text-field">
+                                                                                        <select class="selectpicker placeholder form-control select_alka" name="package" id="package1" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
+                                                                                            <option data-hidden="true" selected>
+                                                                                                {{ config('constants.package.default_drop_down_text') }}</option>
+                                                                                            <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
+                                                                                            <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
+                                                                                            <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div class="form_field">
+                                                                                    <div class="text-field">
+                                                                                        <select class="selectpicker placeholder form-control" name="delivery_frequency" id="delivery_frequency1" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
+                                                                                            <option data-hidden="true" selected="selected">
+                                                                                                {{ config('constants.package.delivery_freq_text') }}</option>
+                                                                                            <option value="1">EVERY SUNDAY</option>
+                                                                                            <option value="2">EVERY MONDAY</option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
 
 
                                                             <script>
-                                                                function openEssentials() {
-                                                                    document.getElementById("desktopEssentials").style.display = "block";
-                                                                    document.getElementById("cartOverlay").style.display = "block";
-                                                                    document.getElementById("cartOverlay").setAttribute("onclick", "closeEssentials()");
-                                                                }
-
-                                                                function closeEssentials() {
-                                                                    document.getElementById("desktopEssentials").style.display = "none";
-                                                                    document.getElementById("cartOverlay").style.display = "none";
-                                                                }
-
-
                                                                 function hydrationOn() {
                                                                     document.getElementById("hydrationPopup").style.opacity = "1";
-
                                                                     document.getElementById("hydrationPopup").style.zIndex = "9999999999999";
-
-                                                                    document.querySelector(".elementor-swiper-button-next").style.display = "none";
                                                                 }
 
                                                                 function hydrationOff() {
                                                                     document.getElementById("hydrationPopup").style.opacity = "0";
                                                                     document.getElementById("hydrationPopup").style.zIndex = "-100";
-
-                                                                    document.querySelector(".elementor-swiper-button-next").style.display = "block";
                                                                 }
 
                                                             </script>
@@ -724,115 +819,6 @@
                                                             <link rel='stylesheet' id='e-animations-css' href='/css/animations.min.css?ver=3.6.4' media='all' />
                                                             <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
                                                             <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-
-                                                            <div class="new-popup-style" id="popup1">
-
-                                                                <a href="javascript:void(0)" class="close-button" onclick="closeTwo()"><img src="https://drinkwatr.com/wp-content/uploads/2022/02/close.png" style="max-width: 20px;"></a>
-
-
-                                                                <div class="carousel-one">
-
-                                                                    <div class="carousel-cell" onclick="closeOne()">
-                                                                        <img src="https://drinkwatr.com/wp-content/uploads/2021/11/droplet1.jpg" style="max-width: 50px;">
-                                                                        <p>ALKALINE + ELECTROLYTES</p>
-                                                                        <p>DESIGNED AND DEVELOPED BY WATR&trade;</p>
-                                                                        <br />
-                                                                        <p>INGREDIENTS:</p>
-                                                                        <p>5x PURIFIED ALKALINE WATER,<br />ELECTROLYTES (POTASSIUM + MAGNESIUM)<br />TO SUPPORT BETTER HEALTH AND TASTE.</p>
-                                                                        <br />
-                                                                        <p>THIS IS THE START OF SOMETHIING REVOLUTIONARY.</p>
-                                                                        <p>AS WE DEVELOP THE FUTURE,<br />DRINK THIS, IT'S BETTER FOR YOU<br />(FOR NOW).</p>
-                                                                    </div>
-
-                                                                    <div class="carousel-cell">
-                                                                        <p style="font-size: 1.5rem; margin: 0;">ELEMENTS</p>
-                                                                        <img src="https://drinkwatr.com/wp-content/uploads/2021/11/elements1-scaled.jpg" style="max-width: 75%;">
-                                                                        <img src="https://drinkwatr.com/wp-content/uploads/2021/11/stay-strong-scaled.jpg" style="max-width: 75%;">
-                                                                    </div>
-
-
-
-                                                                </div>
-
-
-                                                            </div>
-
-
-                                                            <div class="new-popup-style" id="popup2">
-
-                                                                <a href="#" class="close-button" onclick="closeOne()"><img src="https://drinkwatr.com/wp-content/uploads/2022/02/close.png" style="max-width: 20px;"></a>
-
-                                                                <div class="carousel-two">
-
-                                                                    <div class="carousel-cell" onclick="closeTwo()">
-                                                                        <img src="https://drinkwatr.com/wp-content/uploads/2021/12/blue-1.jpg" style="max-width: 50px;">
-                                                                        <p>PURE + ELECTROLYTES</p>
-                                                                        <p>DESIGNED AND DEVELOPED BY WATR&trade;</p>
-                                                                        <br />
-                                                                        <p>INGREDIENTS:</p>
-                                                                        <p>5x PURIFIED ALKALINE WATER,<br />ELECTROLYTES (POTASSIUM + MAGNESIUM)<br />TO SUPPORT BETTER HEALTH AND TASTE.</p>
-                                                                        <br />
-                                                                        <p>THIS IS THE START OF SOMETHIING REVOLUTIONARY.</p>
-                                                                        <p>AS WE DEVELOP THE FUTURE,<br />DRINK THIS, IT'S BETTER FOR YOU<br />(FOR NOW).</p>
-                                                                    </div>
-
-                                                                    <div class="carousel-cell" onclick="closeTwo()">
-                                                                        <p style="font-size: 1.5rem; margin: 0;">ELEMENTS</p>
-                                                                        <img src="https://drinkwatr.com/wp-content/uploads/2022/01/elements1-scaled-1.jpg" style="max-width: 75%;">
-                                                                    </div>
-
-
-
-                                                                </div>
-
-
-                                                            </div>
-
-
-                                                            <script>
-                                                                function openEssentials() {
-                                                                    document.getElementById("desktopEssentials").style.display = "block";
-                                                                    document.getElementById("cartOverlay").style.display = "block";
-                                                                    document.getElementById("cartOverlay").setAttribute("onclick", "closeEssentials()");
-                                                                }
-
-                                                                function closeEssentials() {
-                                                                    document.getElementById("desktopEssentials").style.display = "none";
-                                                                    document.getElementById("cartOverlay").style.display = "none";
-                                                                }
-
-                                                                function popupTwo() {
-                                                                    document.getElementById("popup2").style.opacity = "1";
-
-                                                                    document.getElementById("popup2").style.zIndex = "9999999999999";
-
-                                                                    document.querySelector(".elementor-swiper-button-next").style.display = "none";
-                                                                }
-
-                                                                function closeTwo() {
-                                                                    document.getElementById("popup2").style.opacity = "0";
-                                                                    document.getElementById("popup2").style.zIndex = "-100";
-
-                                                                    document.querySelector(".elementor-swiper-button-next").style.display = "block";
-                                                                }
-
-
-                                                                function popupOne() {
-                                                                    document.getElementById("popup1").style.opacity = "1";
-
-                                                                    document.getElementById("popup1").style.zIndex = "9999999999999";
-
-                                                                    document.querySelector(".elementor-swiper-button-next").style.display = "none";
-                                                                }
-
-                                                                function closeOne() {
-                                                                    document.getElementById("popup1").style.opacity = "0";
-                                                                    document.getElementById("popup1").style.zIndex = "-100";
-
-                                                                    document.querySelector(".elementor-swiper-button-next").style.display = "block";
-                                                                }
-
-                                                            </script>
 
                                                             <script>
                                                                 var elem = document.querySelector('.carousel-one');
@@ -1314,6 +1300,9 @@
     </script>
     <script src='https://drinkwatr.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.6.4' id='elementor-frontend-js'></script>
     <script src='https://drinkwatr.com/wp-content/plugins/elementor/assets/js/preloaded-modules.min.js?ver=3.6.4' id='preloaded-modules-js'></script>
+    <script src="{{ asset('js/popper.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-select.js') }}"></script>
 
 </body>
 </html>
