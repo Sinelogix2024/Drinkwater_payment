@@ -1,0 +1,963 @@
+.elementor-2046 .elementor-element.elementor-element-301b455{margin-top:7em;margin-bottom:7em;}.elementor-2046 .elementor-element.elementor-element-d2629df{column-gap:0px;}@media(max-width:767px){.elementor-2046 .elementor-element.elementor-element-301b455{margin-top:30px;margin-bottom:0px;}}/* Start custom CSS for html, class: .elementor-element-5cecbd8 */.main-container
+{
+	width: 1170px;
+	margin: 0 auto;
+	/*float: left;*/
+}
+.content
+{
+	width:90%;
+	margin: 0 auto;
+	display:flex;
+}
+.boxes
+{
+	flex:1;
+}
+.box-one
+{
+	text-align:right;
+	position:relative;
+}
+.box-one .img-1
+{
+	height: 82px;
+	position: absolute;
+	top: 28%;
+	right: 12%;
+}
+.box-one .img-2
+{
+	height: 1px;
+	width: 80px;
+	position: absolute;
+	top: 37%;
+	right: -10%;
+}
+.box-one .img-3
+{
+	height: 135px;
+	position: absolute;
+	top: 32%;
+	right: -28%;
+}
+.box-two
+{
+    text-align: center;
+}
+.box-two img
+{
+	/*width:100%;*/
+	height: 500px
+}
+.box-three
+{
+	position:relative;
+	text-align:left;
+}
+.box-three .img-4
+{
+	height: 135px;
+    position: absolute;
+    bottom: 22%;
+    left: -27%;
+}
+.box-three .img-5
+{
+	height: 1px;
+    width: 80px;
+    position: absolute;
+    bottom: 41%;
+    left: -15%;
+}
+.box-three .img-6
+{
+	height: 65px;
+    position: absolute;
+    bottom: 38%;
+    left: 9%;
+}
+
+.box-text
+{
+	text-align: center;
+	position: absolute;
+	right: -30%;
+	width: 80%;
+	top: 10%;
+}
+.box-text h3
+{
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+.first-text
+{
+    margin-top: 0px;
+}
+.box-text p
+{
+	font-size:12px;
+}
+.box-text1
+{
+	position: absolute;
+	bottom: 12%;
+    left: 9%;
+}
+.box-text1 h4
+{
+    margin: 0;
+    font-size: 12px;
+    text-decoration: underline;
+    margin-left: 20px;
+}
+.box-text1 table
+{
+    width: 165px;
+}
+.box-text1 table tr td
+{
+    font-size: 11px;
+    width: 50px;
+}
+.element-contant
+{
+	width:80%;
+	margin:0 auto;
+}
+.element-box
+{
+	text-align: center;
+}
+.element-box ul
+{
+	padding:0;
+	margin: 0;
+}
+.element-box ul li
+{
+	list-style:none;
+	display:inline-block;
+	margin: 0px 20px;
+}
+.element-box ul li:nth-child(2) img
+{
+    height: 70px;
+}
+.element-box ul li img
+{
+	height:80px;
+}
+
+@media (max-width:767px)
+{
+    .entry-header {
+        display: none;
+    }
+    .main-container
+    {
+        width: 100%;
+    }
+    .element-contant, .content
+    {
+        width: 100%;
+    }
+    .content
+    {
+        margin-top: 50%;
+        /*display: grid;*/
+        /*grid-templa-columns: 0.8fr 1.2fr 1fr;*/
+    }
+    .element-box ul li img
+    {
+        height: 50px;
+    }
+    .element-box ul li:nth-child(2) img
+    {
+        height: 40px;
+    }
+    .box-one .img-1
+    {
+        height: 72px;
+        /*top: 32%;*/
+        /*right: 64%;*/
+        right: 40%;
+        top: unset;
+        bottom: 15%;
+    }
+    .box-one .img-2
+    {
+       /* width: 45px; */
+        width: 40px;
+        /* top: 41%; */
+        right: 28%;
+        top: unset;
+        bottom: 29%;
+        transform: rotate(-50deg);
+    }
+    .box-one .img-3
+    {
+        height: 100px;
+        /*right: -10%;*/
+        /*top: 30%;*/
+        right: -5%;
+        top: unset;
+        bottom: 15%;
+    }
+    
+    .box-three .img-4
+    {
+        height: 89px;
+        left: 10%;
+        top: 20%;
+        /*bottom: 28%;*/
+    }
+    .box-three .img-5
+    {
+        width: 44px;
+        bottom: 41%;
+        /*left: 32%;*/
+        left: 25%;
+        /*top: 25%;*/
+        top: 25%;
+    }
+    .box-three .img-6
+    {
+        height: 46px;
+        bottom: 40%;
+        left: 66%;
+        /*top: 20%;*/
+        top: 20%;
+    }
+    .box-text
+    {
+        right: 15%;
+        width: 320px;
+        top: -38%;
+        margin-top: 0%;
+        /*margin-top: -25%;*/
+    }
+    .box-text1
+    {
+        /*bottom: 1%;*/
+        bottom: 35%;
+        left: 15%;
+        /*top: 40%;*/
+    }
+    .box-text1 h4
+    {
+        font-size: 10px;
+    }
+    .box-text1 table 
+    {
+        width: 110px;
+    }
+    .box-text1 table tr td 
+    {
+        font-size: 8px;
+        width: 33px;
+    }
+}
+
+@media (min-width:768px) and (max-width:1200px)
+{
+    .main-container
+    {
+        width: 90%;
+    }
+    .box-text
+    {
+        right: -20%;
+        width: 90%;
+    }
+}
+@media (min-width:1201px) and (max-width:1400px)
+{
+    .box-text
+    {
+        right: -10%;
+    }
+}/* End custom CSS */
+/* Start custom CSS for html, class: .elementor-element-5022c6c0 */.desktop-hide {
+    display: none;
+}
+
+.pdp-container {
+    height: auto;
+    padding: 6rem;
+    padding-top: 1rem!important;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 3rem!important;
+    margin-top: 50px;
+    background-image: url('../images/divider.jpg');
+    background-position: center top;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.pdp-container div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.pdp-image img {
+    max-width: 150px;
+}
+
+.pdp-info {
+    padding-bottom: 1.7rem!important;
+}
+
+.pdp-info h3,
+.pdp-info h5,
+.pdp-info p {
+    margin: 0;
+    padding: 0;
+}
+
+.pdp-info h3 {
+    font-size: 2.5rem;
+    letter-spacing: 0.085rem;
+}
+
+.pdp-info h5 {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.pdp-info h5:nth-child(3) {
+    margin-bottom: 2rem;
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.pdp-info p {
+    text-align: justify;
+    margin-bottom: 2rem;
+    letter-spacing: 0.07rem;
+    font-size: 0.9rem;
+    width: 92.5%;
+}
+
+.title-price {
+    flex-direction: row!important;
+    justify-content: space-between!important;
+    width: 100%;
+    align-items: center!important;
+    margin-bottom: 1.5rem!important;
+    width: 90%
+}
+
+.title-price img {
+    max-height: 45px;
+}
+
+.pdp-icons {
+    justify-content: flex-end!important;
+    align-items: center!important;
+    padding-bottom: 1.7rem;
+    padding-left: 1rem;
+}
+
+.pdp-icons img {
+    max-width: 45px;
+}
+
+.pdp-icons img:nth-child(4) {
+    max-width: 52px;
+}
+
+.pdp-icons h5 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.085rem;
+    font-family: europaLight, sans-serif;
+    font-weight: 300;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.pdp-icons-header-five img {
+    max-width: 87px;
+    margin-left: 0.3rem;
+}
+
+.pdp-icons p {
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.085rem;
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+.pdp-benefits-row h3 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.085rem;
+}
+
+.pdp-benefits-row {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.elementor-section.elementor-section-boxed > .elementor-container {
+    max-width: 100%!important;
+}
+
+.flickity-button {
+    background: none!important;
+    opacity: 1!important;
+}
+
+.why-grid {
+    grid-template-columns: 1fr 1fr;
+}
+
+.hydr {
+    padding-left: 15rem;
+}
+
+.elec {
+    padding-right: 15rem;
+}
+
+/* Large Screen Smartphones (portrait) ----------- */
+@media only screen and (min-width : 400px) and (max-width : 450px) {
+    
+    .peod {
+        transform: scale(0.8);
+    }
+
+.hydr {
+    padding-left: 0;
+}
+
+.elec {
+    padding-right: 0;
+}
+    
+    .flickity-prev-next-button.next {
+    right: auto!important;
+}
+
+.flickity-prev-next-button.previous {
+    left: auto!important;
+}
+    
+.new-popup-style {
+    max-width: 100%!important;
+}
+    
+.pdp-container {
+    padding: 0;
+    padding-top: 0!important;
+    grid-template-columns: 1fr;
+    padding-bottom: 0!important;
+    margin-top: 0;
+    row-gap: 5rem;
+}
+
+.entry-header {
+    display: none;
+}
+
+.pdp-container div {
+    align-items: center;
+}
+
+.brand-pdp-info img {
+    width: 100%!important;
+}
+
+}
+
+/* Medium Screen Smartphones (portrait) ----------- */
+@media only screen and (min-width : 360px) and (max-width : 390px) {
+    
+    .peod {
+        transform: scale(0.7);
+    }
+
+.hydr {
+    padding-left: 0;
+}
+
+.elec {
+    padding-right: 0;
+}
+    
+    .flickity-prev-next-button.next {
+    right: auto!important;
+}
+
+.flickity-prev-next-button.previous {
+    left: auto!important;
+}
+    
+    .new-popup-style {
+max-width: 100%!important;
+}
+    
+    .pdp-container {
+padding: 0;
+padding-top: 0!important;
+grid-template-columns: 1fr;
+padding-bottom: 0!important;
+margin-top: 0;
+row-gap: 5rem;
+}
+
+.entry-header {
+display: none;
+}
+
+.pdp-container div {
+    align-items: center;
+}
+
+.brand-pdp-info img {
+width: 100%!important;
+}
+
+}
+
+/* Small Screen Smartphones (portrait) ----------- */
+@media only screen and (min-width : 300px) and (max-width : 350px) {
+    
+    .peod {
+        transform: scale(0.5);
+    }
+
+.hydr {
+    padding-left: 0;
+}
+
+.elec {
+    padding-right: 0;
+}
+    
+    .flickity-prev-next-button.next {
+    right: auto!important;
+}
+
+.flickity-prev-next-button.previous {
+    left: auto!important;
+}
+    
+    .new-popup-style {
+max-width: 100%!important;
+}
+    
+    .pdp-container {
+padding: 0;
+padding-top: 0!important;
+grid-template-columns: 1fr;
+padding-bottom: 0!important;
+margin-top: 0;
+row-gap: 5rem;
+}
+
+.entry-header {
+display: none;
+}
+
+.pdp-container div {
+    align-items: center;
+}
+
+.brand-pdp-info img {
+width: 100%!important;
+}
+
+}/* End custom CSS */
+/* Start custom CSS for html, class: .elementor-element-7729f37d */.icon-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 2rem;
+    column-gap: 10rem;
+    text-align: center;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.icon-grid img {
+    max-width: 75px;
+}
+
+@media screen and (max-width: 350px) {
+
+    .icon-grid {
+        row-gap: 2rem;
+        column-gap: 0;
+        font-size: 0.65rem;
+    }
+
+    .icon-grid img {
+        max-width: 30px;
+    }
+
+    .icon-grid div {
+        width: 80px;
+        }
+
+        .new-popup-style {
+            width: 95vw;
+            max-width: 95vw;
+        }
+
+
+}
+
+@media screen and (min-width: 351px; and max-width: 359px) {
+
+
+    .icon-grid img {
+        max-width: 50px;
+    }
+
+    .icon-grid div {
+        width: 100px;
+        }
+
+}
+
+@media screen and (min-width: 400px; and max-width: 600px) {
+
+    .icon-grid {
+        row-gap: 2rem;
+        column-gap: 0.5rem;
+        text-align: center;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+    }
+
+    .icon-grid img {
+        max-width: 45px;
+    }
+
+    .close-button {
+        font-size: 1.5rem;
+    }
+
+    .icon-grid div {
+        width: 100px;
+    }
+
+    .new-popup-style {
+        width: 80vw;
+        max-width: 90vw;
+    }
+
+}
+
+.new-popup-style {
+        background-color: white;
+        border: 2px solid black;
+        border-radius: 50px;
+        width: 60vw;
+        max-width: 80vw;
+        height: 80vh;
+        max-height: 90vh;
+        position: fixed!important;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .new-popup-style p {
+        color: black!important;
+    }
+
+    .close-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 2rem;
+        margin-top: 1rem;
+        font-size: 2rem;
+        color: black;
+        text-decoration: none;
+    }
+
+
+.carousel-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-cell img {
+    max-width: 250px;
+}
+
+.main-carousel,
+.hydration-carousel {
+width: 100%;
+height: 75%;
+}
+
+.flickity-viewport {
+    height: 100%!important;
+}
+
+.new-popup-style h5 {
+text-align: center;
+text-transform: uppercase;
+font-family: sans-serif;
+font-weight: 300;
+margin: 0;
+margin-top: 4.5rem;
+}
+
+#vitaminCPopup
+{
+    opacity: 0;
+    z-index: -100;
+}
+
+#hydrationPopup
+{
+    opacity: 0;
+    z-index: -100;
+}
+
+.selected {
+background-color: #DF5509!important;
+border-radius: 50px!important;
+}
+
+.flickity-page-dots {
+    margin-bottom: 1rem!important;
+}
+
+
+    @media screen and (max-width: 600px) {
+ .close-button {
+            font-size: 1.5rem;
+        }
+
+        .new-popup-style {
+            width: 80vw;
+        }
+
+        .carousel-cell img {
+max-width: 100px;
+}
+
+    }/* End custom CSS */
+/* Start custom CSS for html, class: .elementor-element-2c21d9c0 */.icon-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 2rem;
+    column-gap: 10rem;
+    text-align: center;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.icon-grid img {
+    max-width: 75px;
+}
+
+@media screen and (max-width: 350px) {
+
+    .icon-grid {
+        row-gap: 2rem;
+        column-gap: 0;
+        font-size: 0.65rem;
+    }
+
+    .icon-grid img {
+        max-width: 30px;
+    }
+
+    .icon-grid div {
+        width: 80px;
+        }
+
+        .new-popup-style {
+            width: 95vw;
+            max-width: 95vw;
+        }
+
+
+}
+
+@media screen and (min-width: 351px; and max-width: 359px) {
+
+
+    .icon-grid img {
+        max-width: 50px;
+    }
+
+    .icon-grid div {
+        width: 100px;
+        }
+
+}
+
+@media screen and (min-width: 400px; and max-width: 600px) {
+
+    .icon-grid {
+        row-gap: 2rem;
+        column-gap: 0.5rem;
+        text-align: center;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+    }
+
+    .icon-grid img {
+        max-width: 45px;
+    }
+
+    .close-button {
+        font-size: 1.5rem;
+    }
+
+    .icon-grid div {
+        width: 100px;
+    }
+
+    .new-popup-style {
+        width: 80vw;
+        max-width: 90vw;
+    }
+
+}
+
+.new-popup-style {
+        background-color: white;
+        border: 2px solid black;
+        border-radius: 50px;
+        width: 40vw;
+        max-width: 60vw;
+        height: 90vh;
+        max-height: 95vh;
+        position: fixed!important;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .new-popup-style p {
+        color: black!important;
+        text-align: center;
+    }
+
+    .close-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 2rem;
+        margin-top: 1rem;
+        font-size: 2rem;
+        color: black;
+        text-decoration: none;
+    }
+
+
+.carousel-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-cell img {
+    max-width: 250px;
+}
+
+.carousel-one,
+.carousel-two {
+width: 100%;
+height: 95%;
+}
+
+.flickity-viewport {
+    height: 100%!important;
+}
+
+.new-popup-style h5 {
+text-align: center;
+text-transform: uppercase;
+font-family: sans-serif;
+font-weight: 300;
+margin: 0;
+margin-top: 4.5rem;
+}
+
+#popup1
+{
+    opacity: 0;
+    z-index: -100;
+}
+
+#popup2
+{
+    opacity: 0;
+    z-index: -100;
+}
+
+#popup1 .flickity-button {
+margin-top: 18rem;
+background: none!important;
+transform: scale(0.5);
+z-index: 99999999999999;
+}
+
+#popup2 .flickity-button {
+margin-top: 18rem;
+background: none!important;
+transform: scale(0.5);
+z-index: 99999999999999;
+}
+
+.flickity-prev-next-button.next {
+    right: 0!important;
+}
+
+.flickity-prev-next-button.previous {
+    left: 0!important;
+}
+
+.selected {
+background-color: #DF5509!important;
+border-radius: 50px!important;
+}
+
+.flickity-page-dots {
+    margin-bottom: 1rem!important;
+}
+
+
+    @media screen and (max-width: 600px) {
+ .close-button {
+            font-size: 1.5rem;
+        }
+
+        .new-popup-style {
+            width: 95vw;
+            height: 100vh;
+        }
+
+        .carousel-cell img {
+max-width: 100px;
+}
+
+    }/* End custom CSS */
