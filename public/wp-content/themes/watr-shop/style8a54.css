@@ -403,8 +403,7 @@ select,
 optgroup,
 textarea {
 	color: #404040;
- 	font-family: Europa-regular, sans-serif; 
- /*	font-family: europaLight, sans-serif; */
+	font-family: europaLight, sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
 }
@@ -415,7 +414,6 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: Europa-bold, sans-serif;
 	clear: both;
 }
 
@@ -1171,8 +1169,7 @@ box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.075);
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-	padding:0.2rem 1rem;
-/*     padding: 1rem; */
+    padding: 1rem;
     color: white;
     background-color: black;
     font-size: 0.75rem;
@@ -1370,7 +1367,7 @@ display: none!important;
 
 button {
 	border-radius: 50px!important;
-/* 	width: 150px!important; */
+	width: 150px!important;
 }
 
 
@@ -2059,22 +2056,13 @@ border-radius: 0!important;
 
 @font-face {
     font-family: europaLight;
-/* 	src: url('https://watrbar.io/wp-content/themes/watr-shop/assets/Europa-Light.ttf'); */
-    src: url('../../../assets/Europa-Light.ttf'); 
+    src: url('https://drinkwatr.com/assets/Europa-Light.ttf');
   }
-@font-face {
-    font-family: Europa-bold;
-    src: url('../../../assets/europa-bold.ttf'); 
-  }
-@font-face {
-    font-family: Europa-regular;
-    src: url('../../../assets/europa-regular.ttf'); 
-  }
-/* @font-face {
-    font-family: Europa-Light;
-    src: url('https://watrbar.io/assets/Europa-Light.ttf'); 
-  } */
 
+@font-face {
+    font-family: Europa-Light;
+    src: url('https://drinkwatr.com/assets/Europa-Light.ttf');
+  }
 .updated-button {
     /* color: black!important; */
     color: #fff;
@@ -2084,7 +2072,7 @@ border-radius: 0!important;
     font-size: 1rem;
     text-decoration: none;
 /*     padding: 0.5rem!important; */
-	padding: 0.3rem;
+	padding: 0.5rem;
     border-radius: 50px;
     background-color: #000;
     /* background-color: white!important; */
@@ -2102,16 +2090,4 @@ a.updated-button:hover,
 }
 article.page {
 	margin-bottom: 0;
-}
-
-.footer-legal {
-    background-color: transparent;
-    color: #000;
-}
-.footer-legal i,
-.footer-legal a {
-    color: #000;
-}
-.elementor-widget-slides .elementor-slide-description {
-	font-family: europaLight, sans-serif !important;
 }
