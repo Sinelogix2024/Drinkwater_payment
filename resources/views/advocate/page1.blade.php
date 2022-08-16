@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
@@ -100,6 +101,10 @@
 
         .footer-legal a {
             color: black !important;
+        }
+
+        footer {
+            position: static !important;
         }
 
         .carousel-cell {
@@ -556,12 +561,235 @@
             display: none !important;
         }
 
+        .head_section .brand .brand_txt {
+            font-size: 2rem !important;
+        }
+
+        /*
+       .braintree-upper-container {
+       display: none !important;
+       }*/
+
+
+        .loader {
+            background: #f1eeee91 !important;
+            position: fixed !important;
+            left: 0 !important;
+            top: 0 !important;
+            z-index: 999 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+
+        .loader img {
+            width: 100px !important;
+            animation: mover 1s infinite alternate !important;
+        }
+
+        @-webkit-keyframes mover {
+            0% {
+                transform: translateY(0) !important;
+            }
+
+            100% {
+                transform: translateY(-10px) !important;
+            }
+        }
+
+        @keyframes mover {
+            0% {
+                transform: translateY(0) !important;
+            }
+
+            100% {
+                transform: translateY(-10px) !important;
+            }
+        }
+
+        apple-pay-button {
+            --apple-pay-button-width: 140px !important;
+            --apple-pay-button-height: 30px !important;
+            --apple-pay-button-border-radius: 5px !important;
+            --apple-pay-button-padding: 5px 0px !important;
+        }
+
+        .bootstrap-select>.dropdown-toggle {
+            width: auto !important;
+            border-bottom: 0px !important;
+        }
+
+        .bootstrap-select>.dropdown-toggle.bs-placeholder,
+        .bootstrap-select>.dropdown-toggle.bs-placeholder:active,
+        .bootstrap-select>.dropdown-toggle.bs-placeholder:focus,
+        .bootstrap-select>.dropdown-toggle.bs-placeholder:hover {
+            color: #000 !important;
+            background: #fff !important;
+            border: #fff !important;
+        }
+
+        .dropdown-menu {
+            background: #000 !important;
+        }
+
+
+        .toast {
+            position: fixed !important;
+            top: 15px !important;
+            right: 15px !important;
+            z-index: 9999 !important;
+        }
+
+        .bootstrap-basic {
+            background: white !important;
+        }
+
+        /* Braintree Hosted Fields styling classes*/
+        .braintree-hosted-fields-focused {
+            color: #495057 !important;
+            background-color: #fff !important;
+            border-color: #80bdff !important;
+            outline: 0 !important;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25) !important;
+        }
+
+        /* .braintree-hosted-fields-focused.is-invalid {
+       border-color: #dc3545 !important;
+       box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+       } */
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none !important;
+        }
+
+        .btn-light {
+            background-color: #fff !important;
+            border-color: #fff !important;
+            border-bottom: 0 !important;
+        }
+
+        .btn-light:hover {
+            background-color: #fff !important;
+            border-color: #fff !important;
+        }
+
+        .btn-light:focus {
+            background-color: #fff !important;
+            border-color: #fff !important;
+        }
+
+        .btn-light:not(:disabled):not(.disabled).active,
+        .btn-light:not(:disabled):not(.disabled):active,
+        .show>.btn-light.dropdown-toggle {
+            background-color: #fff !important;
+            border-color: #fff !important;
+        }
+
+        .primary_btn {
+            color: #fff !important;
+            padding: 10px !important;
+            border-width: 2px 2px 2px 2px !important;
+            border-radius: 50px 50px 50px 50px !important;
+            padding: 5px 30px 5px 30px !important;
+            border: 1px solid black !important;
+        }
+
+        .outline_btn {
+            border-width: 2px 2px 2px 2px !important;
+            border-radius: 50px 50px 50px 50px !important;
+            padding: 5px 30px 5px 30px !important;
+            border: 1px solid black !important;
+        }
+
+        .billing_radio_btn_up {
+            margin-top: 4rem !important;
+            margin-bottom: 0 !important;
+        }
+
+        .input-assumpte+label {
+            position: relative !important;
+        }
+
+        .input-assumpte+label:before {
+            background-color: #fff !important;
+            border: 2px solid #000 !important;
+            border-radius: 15px !important;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05) !important;
+            display: inline-block !important;
+            transition-duration: 0.3s !important;
+            width: 15px !important;
+            height: 15px !important;
+            content: '' !important;
+            margin-top: 4px !important;
+            position: absolute !important;
+        }
+
+        .input-assumpte:checked+label:before {
+            border: 1px solid rgb(144, 144, 145) !important;
+            background-color: #000 !important;
+        }
+
+        input[type=checkbox].input-assumpte {
+            display: none !important;
+        }
+
+        .bootstrap-select .dropdown-toggle:focus,
+        .bootstrap-select>select.mobile-device:focus+.dropdown-toggle {
+            outline: 0 dotted #333 !important;
+            outline-offset: 0 !important;
+            box-shadow: 0 0 0 0.2rem rgb(255 255 255 / 25%) !important;
+        }
+
+        .payment_method_finl_page_class {
+            border-bottom: 0px !important;
+        }
+
+        .purchase_page_custom_css {
+            margin: 0 !important;
+        }
+
+        .purchase_page_main_field_custom_css {
+            margin-bottom: 1.5rem !important;
+        }
+
+        body {
+            font-size: 14px !important;
+            font-family: Europa-regular, sans-serif !important;
+            /* font-family: Europa-light, sans-serif !important; */
+        }
+
+        .head_section .brand {
+            margin: 10px 0 !important;
+        }
+
+        .head_section {
+            /* padding: 46px 0 0 0 !important; */
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+        }
+
+        figure img {
+            height: 150px !important;
+        }
+
     </style>
 </head>
 
-<body class="page-template-default page page-id-2046 page-child parent-pageid-5706 wp-custom-logo theme-watr-shop woocommerce-no-js woocommerce-active elementor-default elementor-kit-24 elementor-page elementor-page-2046">
-
+<body class="body">
     <main id="primary" class="site-main">
+        <div class="head_section">
+            <div class="brand">
+                <figure class="logo"><img src="http://127.0.0.1:8001/images/logowater.png" alt="Logo">
+                </figure>
+                <span class="brand_txt">+ Jaydeep
+                    Khokhar</span>
+            </div>
+            <div class="tagline_wrap">
+                <p>Your Path to daily hydration + wellness</p>
+            </div>
+        </div>
 
 
         <article id="post-2046" class="post-2046 page type-page status-publish hentry">
@@ -577,10 +805,73 @@
                                                 <div class="elementor-widget-wrap">
                                                     <div class="elementor-element elementor-element-5022c6c0 elementor-widget elementor-widget-html" data-id="5022c6c0" data-element_type="widget" data-widget_type="html.default">
                                                         <div class="elementor-widget-container">
-                                                            <div style="text-align: center;margin-top: 1rem;padding-bottom: 1rem;">
-                                                                <a onclick="hydrationOn()" href="javascript:void(0)" style="width: 100%;/*display: block;*/    display: initial;text-align: center;color: black; margin-top: 1rem; padding-bottom: 1rem; font-size: 1rem;">Understand <i class="fas fa-arrow-circle-right"></i></a>
+                                                            <div style="text-align: center;margin: 20px auto;padding-bottom: 1rem;">
+                                                                <a onclick="hydrationOn()" href="javascript:void(0)" style="width: 100%;/*display: block;*/    display: initial;text-align: center;color: black; margin-top: 1rem; padding-bottom: 1rem; font-size: 1rem;">UNDERSTAND <i class="fas fa-arrow-circle-right"></i></a>
                                                             </div>
+                                                            <div class="" style="margin-top: 0; margin-bottom: 50px;">
+                                                                <div class="flex_row">
+                                                                    <div class="flex_col_sm_12 p-0">
+                                                                        <div class="form_field">
+                                                                            <div class="text-field">
+                                                                                <select class="selectpicker form-control" name="alakline_pure" id="alakline_pure" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_alakline_text') }} ">
 
+                                                                                    <option value='0' data-hidden="true" selected>
+                                                                                        {{ config('constants.package.default_drop_down_alakline_text') }}
+                                                                                    </option>
+                                                                                    <option value="1">ALKALINE + ELECTROLYTE</option>
+                                                                                    <option value="2">PURE + ELECTROLYTE</option>
+                                                                                </select>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="flex_row">
+                                                                    <div class="flex_col_sm_7 p-0">
+                                                                        <div class="form_field">
+                                                                            <div class="text-field">
+
+                                                                                <select class="selectpicker placeholder form-control select_alka" name="alkaline_package" id="alkaline_package1" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
+
+                                                                                    <option value='0' data-hidden="true" selected>
+                                                                                        {{ config('constants.package.default_drop_down_text') }}</option>
+                                                                                    <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
+                                                                                    <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
+                                                                                    <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
+                                                                                </select>
+
+                                                                                <select class="selectpicker placeholder form-control select_pure d-none" name="pure_package" id="pure_package1" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
+
+                                                                                    <option value='0' data-hidden="true" selected>
+                                                                                        {{ config('constants.package.default_drop_down_text') }}</option>
+                                                                                    <option value="1">1 MONTH OF HYDRATION $220 ( 10 KITS )</option>
+                                                                                    <option value="2">2 MONTH OF HYDRATION $440 ( 20 KITS )</option>
+                                                                                    <option value="3">3 MONTH OF HYDRATION $660 ( 30 KITS )</option>
+                                                                                </select>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="flex_col_sm_4 p-0">
+                                                                        <div class="form_field">
+                                                                            <div class="text-field">
+                                                                                <select class="selectpicker placeholder form-control" name="delivery_frequency" id="delivery_frequency1" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
+                                                                                    <option value='0' data-hidden="true" selected="selected">
+                                                                                        {{ config('constants.package.delivery_freq_text') }}</option>
+                                                                                    <option value="1">EVERY SUNDAY</option>
+                                                                                    <option value="2">EVERY MONDAY</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="dots_wrapper">
+                                                                <button class="primary_btn btn_effect" onclick="submit_product_data()">Next</button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="elementor-element elementor-element-7729f37d elementor-widget elementor-widget-html" data-id="7729f37d" data-element_type="widget" data-widget_type="html.default">
@@ -604,9 +895,9 @@
                                                             <link rel='stylesheet' id='e-animations-css' href='/css/animations.min.css?ver=3.6.4' media='all' />
                                                             <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
                                                             <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+                                                            {{-- <script src="{{ asset('js/link2.js') }}"></script> --}}
 
                                                             <div class="new-popup-style" id="vitaminCPopup">
-
                                                                 <a href="javascript:void(0)" class="close-button" onclick="noVitamin()"><img src="https://drinkwatr.com/wp-content/uploads/2022/02/close.png" style="max-width: 20px;"></a>
 
                                                                 <h5>Benefits of Daily Electrolytes</h5>
@@ -648,30 +939,28 @@
 
                                                                 <div class="hydration-carousel">
                                                                     <div class="carousel-cell">
-                                                                        <h3 class="carousel-title">Solution Guide</h3>
-                                                                        <table style="text-align:center; margin-top: 50px;" border="1px" width="100%">
+                                                                        <h3 class="carousel-title">Wellness Solution Guide</h3>
+                                                                        <div style="text-align:center; margin-top: 50px;">1 KIT = 12 B</div>
+                                                                        <table style="text-align:center; margin-top: 0px;" border="1px" width="100%">
                                                                             <tbody>
-                                                                                <tr>
-                                                                                    <td></td>
-                                                                                    <td>1 KIT</td>
-                                                                                    <td>12 B</td>
-                                                                                </tr>
-
                                                                                 <tr>
                                                                                     <td>1 Month</td>
                                                                                     <td>10 KIT</td>
+                                                                                    <td>=</td>
                                                                                     <td>120 B</td>
                                                                                 </tr>
 
                                                                                 <tr>
                                                                                     <td>2 Month</td>
                                                                                     <td>20 KIT</td>
+                                                                                    <td>=</td>
                                                                                     <td>240 B</td>
                                                                                 </tr>
 
                                                                                 <tr>
                                                                                     <td>3 Month</td>
                                                                                     <td>30 KIT</td>
+                                                                                    <td>=</td>
                                                                                     <td>360 B</td>
                                                                                 </tr>
 
@@ -685,12 +974,12 @@
                                                                             <div class="flex_col_sm_7 p-0">
                                                                                 <div class="form_field">
                                                                                     <div class="text-field">
-                                                                                        <select class="selectpicker form-control" name="alakline_pure" id="alakline_pure" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_alakline_text') }} ">
+                                                                                        <select class="selectpicker form-control" name="demo_alakline_pure" id="demo_alakline_pure" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_alakline_text') }} ">
 
-                                                                                            <option data-hidden="true" selected="selected">
+                                                                                            <option value='0' data-hidden="true" selected="selected">
                                                                                                 {{ config('constants.package.default_drop_down_alakline_text') }}
                                                                                             </option>
-                                                                                            <option value="1">ALAKLINE + ELECTROLYTE</option>
+                                                                                            <option value="1">ALKALINE + ELECTROLYTE</option>
                                                                                             <option value="2">PURE + ELECTROLYTE</option>
                                                                                         </select>
 
@@ -700,8 +989,8 @@
 
                                                                                 <div class="form_field">
                                                                                     <div class="text-field">
-                                                                                        <select class="selectpicker placeholder form-control select_alka" name="package" id="package1" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
-                                                                                            <option data-hidden="true" selected>
+                                                                                        <select class="selectpicker placeholder form-control select_alka" name="demo_package" id="demo_package1" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
+                                                                                            <option value='0' data-hidden="true" selected>
                                                                                                 {{ config('constants.package.default_drop_down_text') }}</option>
                                                                                             <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
                                                                                             <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
@@ -712,8 +1001,8 @@
 
                                                                                 <div class="form_field">
                                                                                     <div class="text-field">
-                                                                                        <select class="selectpicker placeholder form-control" name="delivery_frequency" id="delivery_frequency1" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
-                                                                                            <option data-hidden="true" selected="selected">
+                                                                                        <select class="selectpicker placeholder form-control" name="demo_delivery_frequency" id="demo_delivery_frequency1" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
+                                                                                            <option value='0' data-hidden="true" selected="selected">
                                                                                                 {{ config('constants.package.delivery_freq_text') }}</option>
                                                                                             <option value="1">EVERY SUNDAY</option>
                                                                                             <option value="2">EVERY MONDAY</option>
@@ -759,14 +1048,6 @@
 
                                                                 var carouselStatus = document.querySelector('.carousel-status');
 
-                                                                function updateStatus() {
-                                                                    var slideNumber = flkty.selectedIndex + 1;
-                                                                    carouselStatus.textContent = slideNumber + '/' + flkty.slides.length;
-                                                                }
-                                                                updateStatus();
-
-                                                                flkty.on('select', updateStatus);
-
                                                             </script>
 
                                                             <script>
@@ -786,14 +1067,6 @@
                                                                 });
 
                                                                 var carouselStatuz = document.querySelector('.hydration-status');
-
-                                                                function updateTheStatus() {
-                                                                    var slideNumbers = flokty.selectedIndex + 1;
-                                                                    carouselStatuz.textContent = slideNumbers + '/' + flokty.slides.length;
-                                                                }
-                                                                updateTheStatus();
-
-                                                                flokty.on('select', updateTheStatus);
 
                                                             </script>
                                                         </div>
@@ -819,62 +1092,6 @@
                                                             <link rel='stylesheet' id='e-animations-css' href='/css/animations.min.css?ver=3.6.4' media='all' />
                                                             <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
                                                             <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-
-                                                            <script>
-                                                                var elem = document.querySelector('.carousel-one');
-                                                                var flkty = new Flickity(elem, {
-                                                                    // options
-                                                                    contain: true
-                                                                    , wrapAround: true
-                                                                    , cellAlign: 'center'
-                                                                    , imagesLoaded: true
-                                                                });
-
-                                                                // element argument can be a selector string
-                                                                //   for an individual element
-                                                                var flkty = new Flickity('.carousel-one', {
-                                                                    // options
-                                                                });
-
-                                                                var carouselStatus = document.querySelector('.carousel-status');
-
-                                                                function updateStatus() {
-                                                                    var slideNumber = flkty.selectedIndex + 1;
-                                                                    carouselStatus.textContent = slideNumber + '/' + flkty.slides.length;
-                                                                }
-                                                                updateStatus();
-
-                                                                flkty.on('select', updateStatus);
-
-                                                            </script>
-
-                                                            <script>
-                                                                var element = document.querySelector('.carousel-two');
-                                                                var flokty = new Flickity(element, {
-                                                                    // options
-                                                                    contain: true
-                                                                    , wrapAround: true
-                                                                    , cellAlign: 'center'
-                                                                    , imagesLoaded: true
-                                                                });
-
-                                                                // element argument can be a selector string
-                                                                //   for an individual element
-                                                                var flokty = new Flickity('.carousel-two', {
-                                                                    // options
-                                                                });
-
-                                                                var carouselStatuz = document.querySelector('.hydration-status');
-
-                                                                function updateTheStatus() {
-                                                                    var slideNumbers = flokty.selectedIndex + 1;
-                                                                    carouselStatuz.textContent = slideNumbers + '/' + flokty.slides.length;
-                                                                }
-                                                                updateTheStatus();
-
-                                                                flokty.on('select', updateTheStatus);
-
-                                                            </script>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -892,28 +1109,7 @@
 
     </main><!-- #main -->
 
-    <footer id="colophon" class="site-footer">
-        <div class="footer-legal">
-
-            <div class="footer-copyright" style="text-transform: uppercase;">
-                <p>2022 &copy; All Rights Reserved | WATR, LLC</p>
-            </div>
-
-            <div class="footer-social">
-                <a href="https://instagram.com/watr.world/"><i class="fab fa-instagram"></i></a>
-            </div>
-
-            <div class="footer-policy">
-                <a href="{{ url('privacy') }}" style="text-decoration: underline; margin-right: 0.25rem!important;">Privacy</a> <span style="margin-right: 0.25rem;">+</span> <a href="{{ url('legal') }}" style="text-decoration: underline;">Legal</a>
-            </div>
-
-        </div>
-
-        </div>
-
-
-
-    </footer><!-- #colophon -->
+    @include('footer')
     </div><!-- #page -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -963,12 +1159,6 @@
                 event.target.value = `(${areaCode}`;
             }
         };
-
-        const inputElement = document.getElementById('footerJoin');
-        inputElement.addEventListener('keydown', enforceFormat);
-        inputElement.addEventListener('keyup', formatToPhone);
-
-
 
         //
         //jQuery( document ).ready(function() {
@@ -1295,6 +1485,66 @@
             }
         };
 
+        $(document).on("change", "#alakline_pure", function() {
+            console.log('Test :: 1 ::');
+            console.log();
+
+            $('#product5').val($(this).val());
+            $('#product5').change();
+
+            $('#package5').change();
+
+            if ($(this).val() == 1) {
+                console.log('Test :: aplkine ::');
+                console.log();
+                $('.select_alka').removeClass('d-none');
+                $('.select_pure').addClass('d-none');
+                $('.select_alka').addClass('selected-package');
+                $('.select_pure').removeClass('selected-package');
+            } else if ($(this).val() == 2) {
+                $('.select_pure').removeClass('d-none');
+                $('.select_alka').addClass('d-none');
+                $('.select_pure').addClass('selected-package');
+                $('.select_alka').removeClass('selected-package');
+                console.log('Test :: pure ::');
+            }
+        });
+
+        function submit_product_data() {
+            var alakline_pure = $("#alakline_pure").val();
+            var alkaline_package = $("#alkaline_package1").val();
+            var pure_package = $("#pure_package1").val();
+            var delivery_frequency = $("#delivery_frequency1").val();
+
+            console.log('alakline_pure', alakline_pure);
+            console.log('alkaline_package', alkaline_package);
+            console.log('pure_package', pure_package);
+            console.log('delivery_frequency', delivery_frequency);
+
+            if (alakline_pure == '0') {
+                alert('Please select product');
+                return;
+            }
+            if (alakline_pure == '1' && alkaline_package == '0') {
+                alert('Please select wellness for alkaline');
+                return;
+            }
+            if (alakline_pure == '2' && pure_package == '0') {
+                alert('Please select wellness for pure');
+                return;
+            }
+            if (delivery_frequency == '0') {
+                alert('Please select delivery frequency');
+                return;
+            }
+
+            localStorage.setItem("alakline_pure", alakline_pure);
+            localStorage.setItem("alkaline_package", alkaline_package);
+            localStorage.setItem("pure_package", pure_package);
+            localStorage.setItem("delivery_frequency", delivery_frequency);
+
+            location.replace("{{ request()->fullUrlWithQuery(['page' => '2']) }}");
+        }
         hydrationOn(); //remove after
 
     </script>

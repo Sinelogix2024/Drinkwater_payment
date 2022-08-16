@@ -341,7 +341,7 @@ request()->session()->forget('response_error_msg');
                                                 <option data-hidden="true" selected="selected">
                                                     {{ config('constants.package.default_drop_down_alakline_text') }}
                                                 </option>
-                                                <option value="1">ALAKLINE + ELECTROLYTE</option>
+                                                <option value="1">ALKALINE + ELECTROLYTE</option>
                                                 <option value="2">PURE + ELECTROLYTE</option>
                                             </select>
 
@@ -812,7 +812,7 @@ request()->session()->forget('response_error_msg');
                                         <div class="final_page_product_label">{{ config('constants.package.default_drop_down_alakline_text') }}</div>
                                         <select class="selectpicker custom_select" name="product" id="product5" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_alakline_text') }}">
                                             <option value="" data-hidden="true">{{ config('constants.package.default_drop_down_alakline_text') }}</option>
-                                            <option value="1">ALAKLINE + ELECTROLYTE</option>
+                                            <option value="1">ALKALINE + ELECTROLYTE</option>
                                             <option value="2">PURE + ELECTROLYTE</option>
                                         </select>
                                         <button type="button" class="edit btn_effect edit_product">Edit</button>
