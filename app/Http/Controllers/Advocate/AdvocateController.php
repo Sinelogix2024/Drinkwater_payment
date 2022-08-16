@@ -127,6 +127,13 @@ class AdvocateController extends Controller
             ])->first();
 
             if ($data) {
+                $page = (int)$request->page;
+                if ($page == 1) {
+                    return view('advocate/page1', [
+                        'advocateData' => $data,
+                        'client_token' => $clientToken
+                    ]);
+                }
                 return view('advocate/link2', [
                     'advocateData' => $data,
                     'client_token' => $clientToken
