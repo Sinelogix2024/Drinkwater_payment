@@ -234,6 +234,11 @@ $(document).ready(function() {
 
     })
 
+    if (localStorage.getItem("alakline_pure")) { $("#alakline_pure").val(localStorage.getItem("alakline_pure")) };
+    if (localStorage.getItem("alkaline_package")) { $("#alkaline_package1").val(localStorage.getItem("alkaline_package")) };
+    if (localStorage.getItem("pure_package")) { $("#pure_package1").val(localStorage.getItem("pure_package")) };
+    if (localStorage.getItem("delivery_frequency")) { $("#delivery_frequency1").val(localStorage.getItem("delivery_frequency")) };
+
     $("#basic-form").validate({
         rules: {
             first_name: {

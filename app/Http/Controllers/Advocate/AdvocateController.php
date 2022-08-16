@@ -120,6 +120,7 @@ class AdvocateController extends Controller
         ]);
 
         if ($request->method() == 'GET') {
+            $detail_access_token = $request->detail_access_token;
             $clientToken = $gateway->clientToken()->generate();
 
             $data = Advocate::where([
@@ -130,11 +131,13 @@ class AdvocateController extends Controller
                 $page = (int)$request->page;
                 if ($page == 1) {
                     return view('advocate/page1', [
+                        'detail_access_token' => $detail_access_token,
                         'advocateData' => $data,
                         'client_token' => $clientToken
                     ]);
                 }
                 return view('advocate/link2', [
+                    'detail_access_token' => $detail_access_token,
                     'advocateData' => $data,
                     'client_token' => $clientToken
                 ]);
