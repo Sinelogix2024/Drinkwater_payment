@@ -1485,6 +1485,8 @@
             }
         };
 
+        localStorage.clear();
+
         $(document).on("change", "#alakline_pure", function() {
             console.log('Test :: 1 ::');
             console.log();

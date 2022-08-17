@@ -239,7 +239,7 @@ request()->session()->forget('response_error_msg');
 
 
 <div class="loader" style="width:100%;height:100%; display:none">
-    <img src="{{ asset('images\drop.png') }}" />
+    <img src="{{ asset('images/logowater.png') }}" />
 </div>
 
 <body class="body">
@@ -331,7 +331,7 @@ request()->session()->forget('response_error_msg');
                                 </div>
                             </div>
 
-                            <div class="flex_row">
+                            <div class="flex_row d-none">
 
                                 <div class="flex_col_sm_12 p-0">
                                     <div class="form_field">
@@ -350,7 +350,7 @@ request()->session()->forget('response_error_msg');
                                 </div>
                             </div>
 
-                            <div class="flex_row">
+                            <div class="flex_row d-none">
                                 <div class="flex_col_sm_7 p-0">
                                     <div class="form_field">
                                         <div class="text-field">
@@ -1050,10 +1050,6 @@ request()->session()->forget('response_error_msg');
                     </div>
 
                     <div class="tagline_wrap">
-                        <div class="tagline">
-                            <span>Drink Wter</span>
-                            <span> Stay Strong.</span>
-                        </div>
                         <p>Your Path to daily hydration + wellness</p>
                     </div>
                 </div>
@@ -1298,16 +1294,18 @@ request()->session()->forget('response_error_msg');
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJdJoIH2Y7AbOZDZtbLKcciEtp8h3CwCA&callback=initAutocomplete&libraries=places&v=weekly" defer></script>
 
+{{-- @if (!empty(session('response_success_msg',null))) --}}
 @if (!empty(session('response_success_msg',null)))
 <script>
     $(".final_form").show();
-    setTimeout(function() {
-        $(".final_form").hide();
-    }, 3000);
 
 </script>
-
 @php
 request()->session()->forget('response_success_msg');
 @endphp
+@else
+<script>
+    $(".main_content").show();
+
+</script>
 @endif
