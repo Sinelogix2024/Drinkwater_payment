@@ -27,10 +27,8 @@ request()->session()->forget('response_error_msg');
 
     <style>
         body {
-            /* font-family: europaLight, sans-serif !important; */
-            /* font-family: Europa-regular, sans-serif !important; */
-            font-family: Europa-light, sans-serif !important;
-            line-height: 1.5;
+            /* font-family: Europa-light, sans-serif !important; */
+            /* line-height: 1.5; */
         }
 
         .head_section .brand .brand_txt {
@@ -226,12 +224,22 @@ request()->session()->forget('response_error_msg');
             margin-bottom: 1.5rem;
         }
 
+        body {
+            font-size: 14px !important;
+            font-family: Europa-regular, sans-serif !important;
+            /* font-family: Europa-light, sans-serif !important; */
+        }
+
+        figure img {
+            height: 150px;
+        }
+
     </style>
 </head>
 
 
 <div class="loader" style="width:100%;height:100%; display:none">
-    <img src="{{ asset('images\drop.png') }}" />
+    <img src="{{ asset('images/logowater.png') }}" />
 </div>
 
 <body class="body">
@@ -323,7 +331,7 @@ request()->session()->forget('response_error_msg');
                                 </div>
                             </div>
 
-                            <div class="flex_row">
+                            <div class="flex_row d-none">
 
                                 <div class="flex_col_sm_12 p-0">
                                     <div class="form_field">
@@ -333,7 +341,7 @@ request()->session()->forget('response_error_msg');
                                                 <option data-hidden="true" selected="selected">
                                                     {{ config('constants.package.default_drop_down_alakline_text') }}
                                                 </option>
-                                                <option value="1">ALAKLINE + ELECTROLYTE</option>
+                                                <option value="1">ALKALINE + ELECTROLYTE</option>
                                                 <option value="2">PURE + ELECTROLYTE</option>
                                             </select>
 
@@ -342,7 +350,7 @@ request()->session()->forget('response_error_msg');
                                 </div>
                             </div>
 
-                            <div class="flex_row">
+                            <div class="flex_row d-none">
                                 <div class="flex_col_sm_7 p-0">
                                     <div class="form_field">
                                         <div class="text-field">
@@ -804,7 +812,7 @@ request()->session()->forget('response_error_msg');
                                         <div class="final_page_product_label">{{ config('constants.package.default_drop_down_alakline_text') }}</div>
                                         <select class="selectpicker custom_select" name="product" id="product5" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_alakline_text') }}">
                                             <option value="" data-hidden="true">{{ config('constants.package.default_drop_down_alakline_text') }}</option>
-                                            <option value="1">ALAKLINE + ELECTROLYTE</option>
+                                            <option value="1">ALKALINE + ELECTROLYTE</option>
                                             <option value="2">PURE + ELECTROLYTE</option>
                                         </select>
                                         <button type="button" class="edit btn_effect edit_product">Edit</button>
@@ -950,7 +958,7 @@ request()->session()->forget('response_error_msg');
                                         </button>
                                     </div>
                                     {{-- <span class="text-note">CARD ENDING IN <b><span class="last_4_digit_card"></span></b></span> --}}
-                                    {{-- <span class="text-note payment_method_final_page"></span> --}}
+                                    <span class="text-note payment_method_final_page">Payment Method</span>
                                 </div>
 
                                 <div class="form_field purchase_page_main_field_custom_css">
@@ -996,7 +1004,7 @@ request()->session()->forget('response_error_msg');
                         <div class="text-center">
                             <div class="form_field">
                                 {{-- <button type="button" class="outline_btn m_r_20 show_step4_form">BACK</button> --}}
-                                <button type="submit" class="primary_btn btn_effect btn_black purchase_button" style="width: auto;">
+                                <button type="submit" class="primary_btn btn_effect btn_black purchase_button" style="width: auto;" data-disable-with="Purchasing...">
                                     PURCHASE
                                 </button>
 
@@ -1042,10 +1050,6 @@ request()->session()->forget('response_error_msg');
                     </div>
 
                     <div class="tagline_wrap">
-                        <div class="tagline">
-                            <span>Drink Wter</span>
-                            <span> Stay Strong.</span>
-                        </div>
                         <p>Your Path to daily hydration + wellness</p>
                     </div>
                 </div>
@@ -1107,6 +1111,125 @@ request()->session()->forget('response_error_msg');
 <script src="{{ asset('js/hosted-custom-updated.js') }}"></script>
 <script src="{{ asset('js/jquery-input-mask-phone-number.js') }}"></script>
 
+<script type="module">
+    let autocomplete;
+    let address1Field;
+    let address2Field;
+    let postalField;
+
+    let autocomplete2;
+    let address1Field2;
+    let address2Field2;
+    let postalField2;
+
+    function initAutocomplete() {
+        address1Field = document.querySelector("#billing_address");
+        address2Field = document.querySelector("#billing_address2");
+        postalField = document.querySelector("#b_city_state_zip");
+        
+        address1Field2 = document.querySelector("#shipping_address");
+        address2Field2 = document.querySelector("#shipping_address2");
+        postalField2 = document.querySelector("#s_city_state_zip");
+
+        autocomplete = new google.maps.places.Autocomplete(address1Field);
+        address1Field.focus();
+        autocomplete.addListener("place_changed", fillInAddress);
+        
+        autocomplete2 = new google.maps.places.Autocomplete(address1Field2);
+        address1Field2.focus();
+        autocomplete2.addListener("place_changed", fillInAddress2);
+    }
+
+    function fillInAddress() {
+        const place = autocomplete.getPlace();
+        let street_number="";
+        let route="";
+        let locality="";
+        let administrative_area_level_1="";
+        let postal_code="";
+        let postal_code_suffix="";
+
+        for (const component of place.address_components) {
+            const componentType = component.types[0];
+            switch (componentType) {
+                case "street_number": {
+                street_number = component.long_name;
+                    break;
+                }
+                case "route": {
+                    route = component.long_name;
+                    break;
+                }
+                case "locality":{
+                    locality = component.long_name;
+                    break;
+                }
+                case "administrative_area_level_1": {
+                administrative_area_level_1 =component.long_name;
+                    break;
+                }
+                case "postal_code": {
+                postal_code = component.long_name;
+                    break;
+                }
+                case "postal_code_suffix": {
+                postal_code_suffix = component.long_name;
+                    break;
+                }
+            }
+        }
+        address1Field.value = `${street_number}, ${route}`;
+        postalField.value = `${locality}/${administrative_area_level_1}/${postal_code}${postal_code_suffix}`;
+        address2Field.focus();
+    }
+    
+    function fillInAddress2() {
+        const place = autocomplete2.getPlace();
+        let street_number="";
+        let route="";
+        let locality="";
+        let administrative_area_level_1="";
+        let postal_code="";
+        let postal_code_suffix="";
+
+        for (const component of place.address_components) {
+            const componentType = component.types[0];
+            switch (componentType) {
+                case "street_number": {
+                street_number = component.long_name;
+                    break;
+                }
+                case "route": {
+                    route = component.long_name;
+                    break;
+                }
+                case "locality":{
+                    locality = component.long_name;
+                    break;
+                }
+                case "administrative_area_level_1": {
+                administrative_area_level_1 =component.long_name;
+                    break;
+                }
+                case "postal_code": {
+                postal_code = component.long_name;
+                    break;
+                }
+                case "postal_code_suffix": {
+                postal_code_suffix = component.long_name;
+                    break;
+                }
+            }
+        }
+        
+        address1Field2.value = `${street_number}, ${route}`;
+        postalField2.value = `${locality}/${administrative_area_level_1}/${postal_code}${postal_code_suffix}`;
+        address2Field2.focus();
+    }
+    window.initAutocomplete = initAutocomplete;
+    export {};
+</script>
+
 <script>
     $(document).ready(function() {
         // $('#yourphone').usPhoneFormat({
@@ -1128,8 +1251,6 @@ request()->session()->forget('response_error_msg');
                 $('button').removeClass('bs-placeholder');
             }, 500);
         });
-
-
     });
 
 </script>
@@ -1171,15 +1292,20 @@ request()->session()->forget('response_error_msg');
 
 </style>
 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJdJoIH2Y7AbOZDZtbLKcciEtp8h3CwCA&callback=initAutocomplete&libraries=places&v=weekly" defer></script>
+
+{{-- @if (!empty(session('response_success_msg',null))) --}}
 @if (!empty(session('response_success_msg',null)))
 <script>
     $(".final_form").show();
-    setTimeout(function() {
-        $(".final_form").hide();
-    }, 3000);
 
 </script>
 @php
 request()->session()->forget('response_success_msg');
 @endphp
+@else
+<script>
+    $(".main_content").show();
+
+</script>
 @endif

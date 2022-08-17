@@ -84,23 +84,23 @@ $(document).ready(function() {
             console.log();
             $('.select_alka').removeClass('d-none');
             $('.select_pure').addClass('d-none');
-            $('div.select_alka').addClass('selected-package');
-            $('div.select_pure').removeClass('selected-package');
+            $('.select_alka').addClass('selected-package');
+            $('.select_pure').removeClass('selected-package');
         } else if ($(this).val() == 2) {
             $('.select_pure').removeClass('d-none');
             $('.select_alka').addClass('d-none');
-            $('div.select_pure').addClass('selected-package');
-            $('div.select_alka').removeClass('selected-package');
+            $('.select_pure').addClass('selected-package');
+            $('.select_alka').removeClass('selected-package');
             console.log('Test :: pure ::');
         }
     });
 
     $(document).on("change", "#package1", function() {
-
         $('#delivery_frequency1').removeClass('d-none');
         $('#delf_div').show();
         $('#delf_div').css('display', 'block');
 
+        $('#package5').change();
     });
 
     $(document).on("change", "#package4", function() {
@@ -214,6 +214,7 @@ $(document).ready(function() {
             $('.card-div-final').show();
         }
 
+        $('.payment_method_final_page').text($(this).children("option:selected").text());
         //return false;
         localStorage.setItem("payment_method", selected);
         setDropDownvalue();
@@ -430,7 +431,6 @@ $(document).ready(function() {
                 // var cardnum=$('#cardnum').val();
                 // var cardname=$('#cardname').val();
                 // var cardcvv=$('#cardcvv').val();
-                // alert(1);
 
                 // $('.number').val(cardnum);
                 // $('#expiration').val(ex);
@@ -461,6 +461,7 @@ $(document).ready(function() {
             }
 
             if (current_tab == 'step5_form') {
+                showLoader();
                 // return;
                 // form.submit();
                 $('.package_note_final_page').text($('#package5').children("option:selected").text());
@@ -498,6 +499,7 @@ $(document).ready(function() {
                 $('.total_amount').text('$' + total_amount);
                 $('.total_amount').val(total_amount);
 
+                hideLoader();
             }
 
             if (current_tab == 'final_form') {
@@ -509,10 +511,12 @@ $(document).ready(function() {
                     // $(".step4_form").hide(true);
                     // $(".step5_form").hide(true);
                     // $(".final_form").hide(true);
+                    showLoader();
+                    alert('final_step');
                     $(".current_tab").val("final_form");
                 }
                 setDropDownvalue();
-                $("#payment_method").trigger("change");
+                // $("#payment_method").trigger("change");
                 // form.submit();
 
                 setTimeout(function() {
@@ -530,26 +534,29 @@ $(document).ready(function() {
                     $('.total_amount').val(total_amount);
 
                     form.submit();
+                    // hideLoader();
                 }, 3000);
             }
         },
     });
 
     function showLoader() {
-        //$('.loader').show();
-        $('.main_content').show();
+        alert('in loader on');
+        $('.loader').show();
+        // $('.main_content').show();
     }
 
     function hideLoader() {
 
-        // $('.loader').hide();
+        alert('in loader off');
+        $('.loader').hide();
         // $('.main_content').show();
         // return;
 
-        setTimeout(function() {
-            $('.loader').hide();
-            $('.main_content').show();
-        }, 1000);
+        // setTimeout(function() {
+        //     $('.loader').hide();
+        //     $('.main_content').show();
+        // }, 1000);
     }
 
 
@@ -677,6 +684,7 @@ $(document).ready(function() {
 
         if ($(this).text() == 'Edit') {
             $('.final_pay_card_deatil').show();
+            $("#payment_method").trigger("change");
             $('.final_page_payment_source_label').hide();
             $('.payment_method_finl_page_class').next(".dropdown-toggle").show();
             $('.payment_method_finl_page_class').next(".dropdown-toggle").prop('disabled', false);
@@ -712,4 +720,30 @@ $(document).ready(function() {
         $('#form-hosted-final').submit();
     })
 
+    if (localStorage.getItem("alakline_pure") && localStorage.getItem("alakline_pure") != '0') {
+        $("#alakline_pure").val(localStorage.getItem("alakline_pure"));
+        $("#alakline_pure").change();
+    }
+    if (localStorage.getItem("alkaline_package") && localStorage.getItem("alkaline_package") != '0') {
+        $("#alkaline_package1").val(localStorage.getItem("alkaline_package"));
+        $("#alkaline_package1").change();
+
+        $("#package5").val(localStorage.getItem("alkaline_package"));
+        $("#package5").change();
+
+        // $("#package1").change();
+    }
+    if (localStorage.getItem("pure_package") && localStorage.getItem("pure_package") != '0') {
+        $("#pure_package1").val(localStorage.getItem("pure_package"));
+        $("#pure_package1").change();
+
+        $("#package5").val(localStorage.getItem("pure_package"));
+        $("#package5").change();
+
+        // $("#package1").change();
+    }
+    if (localStorage.getItem("delivery_frequency") && localStorage.getItem("delivery_frequency") != '0') {
+        $("#delivery_frequency1").val(localStorage.getItem("delivery_frequency"));
+        $("#delivery_frequency1").change();
+    }
 });

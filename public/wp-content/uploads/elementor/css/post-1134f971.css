@@ -1,0 +1,229 @@
+/* Start custom CSS for html, class: .elementor-element-b16a8a7 */.page h1.entry-title,
+.entry-header,
+header.site-header,
+#top-bar,
+#newDrink,
+#newMenu,
+.footer-container {
+    display: none;
+}
+/*.entry-header,*/
+/*header.site-header,*/
+/*#top-bar,*/
+/*.site-footer */
+/*{*/
+/*    display: none;*/
+/*}*/
+.sec-hydration-main {
+    max-width: 1000px;
+    margin: 0 auto;
+    min-height: 75vh;
+}
+.sec-hydration-inner .content-sec {
+    position: relative;
+    margin-bottom: 0;
+}
+.sec-hydration-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* text-align: center;*/
+    width: 100%;
+    height: auto;
+    /*height: 95vh;*/
+    /*margin-top: 5rem;*/
+    margin-bottom: 1rem;
+}
+.hydration-img1 {
+    position: absolute;
+    /*top: 15%;*/
+    /*margin-top: -45px;*/
+    /*left: 25%;*/
+    /*max-height: 140px;*/
+    max-height: 175px;
+    right: 0;
+    max-width: 160px !important;
+    top: -5rem;
+}
+.hydration-img2 {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    /*z-index: 2;*/
+    position: relative;
+    max-width: 70px !important;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.hydration-img3 {
+    display: block;
+    position: relative;
+    /*margin: 0 auto;*/
+    text-align: left;
+    max-width: 101px;
+    
+}
+.hydration-img4 {
+    position: absolute;
+    /* top: 15%; */
+    margin-top: -20px;
+    right: 15%;
+    bottom: 12rem;
+    max-height: 140px;
+}
+.updated-button-set {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    width: 140px;
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+    .content-sec .hydration-img3 {
+        margin-top: 1rem;
+    }
+    .content-sec .hydration-img4 {
+        right: 5%;
+    }
+    .sec-hydration-main .sec-hydration-inner {
+        /*margin-top: 6rem;*/
+    } 
+}
+@media screen and (max-width: 767px) {
+    .content-sec .hydration-img1 {
+        margin-top: 0;
+        top: -35px;
+        display: none;
+    }  
+    .content-sec .hydration-img4 {
+        right: 0%;
+        display: none;
+    }
+    .sec-hydration-inner .content-sec {
+        margin-bottom: 0px;
+    }
+    .sec-hydration-main {
+        min-height: 75vh;
+    }
+}
+@media screen and (max-width: 600px) {
+    .sec-hydration-main .sec-hydration-inner {
+        margin-top: 2rem;
+    }   
+}
+@media screen and (max-width: 500px) {
+    .content-sec .hydration-img2 {
+        max-width: 220px;
+    }
+    .sec-hydration-inner {
+        margin-top: 4rem;
+    }
+}
+@media screen and (max-width: 390px) {    
+    .content-sec .hydration-img1 {
+        left: 0;
+        top: 20px;
+        max-width: 65px;
+    } 
+}
+.form_wrapper {
+    max-width: 600px;
+    margin: 20px auto;
+}
+.flex_row {
+    display: flex;
+    margin: 0 -10px;
+    flex-flow: wrap;
+}
+.flex_col_sm_6 {
+    width: 50%;
+}
+.form_field {
+    margin: 10px;
+    margin-bottom: 15px;
+}
+.text-field {
+    position: relative;
+}
+input[type="text"], 
+input[type="email"], 
+textarea {
+    border: 0;
+    background: transparent;
+    padding: 12px 5px;
+    font-size: 14px;
+    border-radius: 0;
+    width: 100%;
+    /*-webkit-appearance: none;*/
+    border-bottom: 1px solid #000;
+    color: #666;
+}
+.dropdown select {
+    border: 0;
+    /*background: transparent;*/
+    padding: 12px 20px 12px 5px;
+    font-size: 14px;
+    border-radius: 0;
+    /*width: 100%;*/
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    /*border-bottom: 0px solid #000;*/
+    color: #666;
+    
+    float: left;
+    background-image: url('../../../../../cdn1.iconfinder.com/data/icons/arrows-vol-1-5/24/5678831.png');
+    background-repeat: no-repeat;
+    /*background-position: calc(100% - 50%);*/
+    /*background-size: 10px;*/
+    
+    background-size: 16px;
+    background-position: calc(100% + 0px) 14px;
+    background-repeat: no-repeat;
+    
+}
+
+
+
+
+.dots_wrapper {
+    text-align: center;
+    margin: 50px 0 20px;
+}
+.dots_wrapper ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dots_wrapper ul li.active {
+    background-color: #000;
+}
+.dots_wrapper ul li {
+    width: 8px;
+    height: 8px;
+    margin: 0 2px;
+    border-radius: 50%;
+    border: 1px solid #0000003b;
+}
+.dots_wrapper ol, 
+.dots_wrapper ul, 
+.dots_wrapper li {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+.primary_btn {
+    padding: 8px;
+    font-size: 14px;
+    color: #fff;
+    background: #000;
+    border-radius: 25px;
+    width: 100px;
+    padding: 15px;
+    cursor: pointer;
+}
+.btn_effect {
+    position: relative;
+    overflow: hidden;
+}
+/*select tag*//* End custom CSS */

@@ -9,33 +9,45 @@
     <input type="hidden" value="{{url('/')}}" class="base_url">
     <script src="{{asset('js/jquery.js')}}"></script>
     <script src="{{asset('js/constants.js')}}"></script>
+
+    <style>
+        body {
+            font-family: Europa-light, sans-serif !important;
+        }
+
+        figure img {
+            height: 150px;
+        }
+
+    </style>
 </head>
-<body>  
+<body>
 
     <main class="app_wrapper waterbg">
         <div class="custom_container">
 
-           <div class="welcome_wrapper text-center">
-            <div class="tagline_wrap" data-aos="zoom-in-up" data-aos-duration="1500">
-                <div class="tagline">
-                    <span>Drink Water</span>
-                    <span> Stay Strong.</span>
+            <div class="welcome_wrapper text-center">
+                <div class="tagline_wrap" data-aos="zoom-in-up" data-aos-duration="1500">
+                    <div class="tagline">
+                        <span>Drink Water</span>
+                        <span> Stay Strong.</span>
+                    </div>
+                    <figure class="logo"><img src="{{asset('images/logowater.png')}}" alt="Logo" /></figure>
                 </div>
-                <figure class="logo"><img src="{{asset('images/logowater.png')}}"  alt="Logo"/></figure>
-            </div>  
                 <a href="{{route('welcome')}}" class="link">Enter</a>
-           </div>
+            </div>
 
         </div>
     </main>
-    
+
 </body>
 </html>
 
 <script>
-    $(document).ready(function(){
-        setTimeout(function(){
+    $(document).ready(function() {
+        setTimeout(function() {
             window.location.replace(string.base_url + '/welcome');
-        },2000);
+        }, 2000);
     });
+
 </script>

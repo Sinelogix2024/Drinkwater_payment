@@ -74,13 +74,24 @@ Route::get('/experience/{detail_access_token}', function ($detail_access_token) 
     return view('advocate/drink')->with('detail_access_token', $detail_access_token);
 })->name('experience');
 
+Route::get('/search-address', 'App\Http\Controllers\Advocate\AdvocateController@getAddress');
+
+Route::get('/privacy', function () {
+    return view('advocate.privacy');
+});
+
+Route::get('/legal', function () {
+    return view('advocate.legal');
+});
+
 Route::match(['get'], '/braintree', 'App\Http\Controllers\BrainTreeController@view');
 Route::match(['post'], '/braintree', 'App\Http\Controllers\BrainTreeController@call');
-Route::match(['get'], '/watr/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
-Route::match(['post'], '/watr/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
+// Route::match(['get'], '/watr/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
+// Route::match(['post'], '/watr/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
 
-Route::match(['get'], '/watr-test/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getwatrDetail');
-Route::match(['post'], '/watr-test/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
+Route::match(['get'], '/watr/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getwatrDetail');
+// Route::match(['put'], '/watr/{detail_access_token}/{page}', 'App\Http\Controllers\Advocate\AdvocateController@getwatrDetail');
+Route::match(['post'], '/watr/{detail_access_token}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
 
 Route::match(['get'], '/orderDetail/{order_id}', 'App\Http\Controllers\Advocate\AdvocateController@orderDetail');
 

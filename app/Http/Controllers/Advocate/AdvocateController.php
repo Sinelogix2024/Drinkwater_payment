@@ -120,6 +120,7 @@ class AdvocateController extends Controller
         ]);
 
         if ($request->method() == 'GET') {
+            $detail_access_token = $request->detail_access_token;
             $clientToken = $gateway->clientToken()->generate();
 
             $data = Advocate::where([
@@ -127,7 +128,16 @@ class AdvocateController extends Controller
             ])->first();
 
             if ($data) {
-                return view('advocate/link2', [
+                $page = (int)$request->page;
+                if ($page == 2) {
+                    return view('advocate/link2', [
+                        'detail_access_token' => $detail_access_token,
+                        'advocateData' => $data,
+                        'client_token' => $clientToken
+                    ]);
+                }
+                return view('advocate/page1', [
+                    'detail_access_token' => $detail_access_token,
                     'advocateData' => $data,
                     'client_token' => $clientToken
                 ]);
@@ -221,5 +231,27 @@ class AdvocateController extends Controller
             'advocateData' => $advocateData,
             'orderDetail' => $orderDetail
         ]);
+    }
+
+    public function getAddress(Request $request)
+    {
+        try {
+            $searchTxt = $request->search_text;
+            if (empty($searchTxt)) {
+                return [];
+            }
+            $addressDetails = Order::DISTINCT()->select('billing_address', 'billing_address2', 'b_city_state_zip', 'shipping_address', 'shipping_address2', 's_city_state_zip')
+                ->where('billing_address', 'like', '%' . $searchTxt . '%')
+                ->where('billing_address2', 'like', '%' . $searchTxt . '%')
+                ->where('b_city_state_zip', 'like', '%' . $searchTxt . '%')
+                ->where('shipping_address', 'like', '%' . $searchTxt . '%')
+                ->where('shipping_address2', 'like', '%' . $searchTxt . '%')
+                ->where('s_city_state_zip', 'like', '%' . $searchTxt . '%')
+                ->get();
+
+            return $addressDetails;
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
     }
 }
