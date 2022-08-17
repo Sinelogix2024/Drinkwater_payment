@@ -129,14 +129,14 @@ class AdvocateController extends Controller
 
             if ($data) {
                 $page = (int)$request->page;
-                if ($page == 1) {
-                    return view('advocate/page1', [
+                if ($page == 2) {
+                    return view('advocate/link2', [
                         'detail_access_token' => $detail_access_token,
                         'advocateData' => $data,
                         'client_token' => $clientToken
                     ]);
                 }
-                return view('advocate/link2', [
+                return view('advocate/page1', [
                     'detail_access_token' => $detail_access_token,
                     'advocateData' => $data,
                     'client_token' => $clientToken
