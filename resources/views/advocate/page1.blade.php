@@ -781,7 +781,7 @@
     <main id="primary" class="site-main">
         <div class="head_section">
             <div class="brand">
-                <figure class="logo"><img src="http://127.0.0.1:8001/images/logowater.png" alt="Logo">
+                <figure class="logo"><img src="/images/logowater.png" alt="Logo">
                 </figure>
                 <span class="brand_txt">+ Jaydeep
                     Khokhar</span>
