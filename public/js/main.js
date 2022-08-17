@@ -5,7 +5,7 @@ function setDropDownvalue() {
 
     // console.log("package", package);
     // console.log("delivery_frequency", delivery_frequency);
- console.log("payment_method", payment_method);
+    console.log("payment_method", payment_method);
 
     $("select[name=package]").val(package);
     $("select[name=delivery_frequency]").val(delivery_frequency);
@@ -21,18 +21,18 @@ $(document).ready(function() {
     $('#package5').next(".dropdown-toggle").prop('disabled', true);
     $('#delivery_frequency5').next(".dropdown-toggle").prop('disabled', true);
 
-    localStorage.clear();
+    // localStorage.clear();
 
-    let time1 = setTimeout(function() {
-        $(".splash").hide();
-        $(".main_content").show();
-    }, string.timeout);
+    // let time1 = setTimeout(function() {
+    //     $(".splash").hide();
+    //     $(".main_content").show();
+    // }, string.timeout);
 
-    let time2 = setTimeout(function() {
-        $(".splash").hide();
-        $(".welcome").hide();
-        $(".main_content").show();
-    }, string.timeout1);
+    // let time2 = setTimeout(function() {
+    //     $(".splash").hide();
+    //     $(".welcome").hide();
+    //     $(".main_content").show();
+    // }, string.timeout1);
 
     $(".splash_link").click(function() {
         clearTimeout(time1);
