@@ -512,7 +512,6 @@ $(document).ready(function() {
                     // $(".step5_form").hide(true);
                     // $(".final_form").hide(true);
                     showLoader();
-                    alert('final_step');
                     $(".current_tab").val("final_form");
                 }
                 setDropDownvalue();
@@ -541,14 +540,12 @@ $(document).ready(function() {
     });
 
     function showLoader() {
-        alert('in loader on');
         $('.loader').show();
         // $('.main_content').show();
     }
 
     function hideLoader() {
 
-        alert('in loader off');
         $('.loader').hide();
         // $('.main_content').show();
         // return;
