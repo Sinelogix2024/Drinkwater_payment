@@ -119,7 +119,8 @@ class AdvocateController extends Controller
             'acceptGzipEncoding' => false,
         ]);
 
-        if ($request->method() == 'GET') {
+        // return $request->method();
+        if ($request->method() == 'GET' || $request->method() == 'PUT') {
             $detail_access_token = $request->detail_access_token;
             $clientToken = $gateway->clientToken()->generate();
 
@@ -127,13 +128,17 @@ class AdvocateController extends Controller
                 ['adv_detail_access_token', $request->detail_access_token]
             ])->first();
 
+            $page = (int)$request->page;
+            if ($request->method() == 'GET' && $page != 1) {
+                return redirect(url('/watr', ['detail_access_token' => $detail_access_token, 'page' => 1]));
+            }
             if ($data) {
-                $page = (int)$request->page;
-                if ($page == 2) {
+                if ($request->method() == 'PUT' && $page == 2) {
                     return view('advocate/link2', [
                         'detail_access_token' => $detail_access_token,
                         'advocateData' => $data,
                         'client_token' => $clientToken
+                        // 'client_token' => $clientToken
                     ]);
                 }
                 return view('advocate/page1', [
