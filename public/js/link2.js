@@ -275,11 +275,11 @@ $(document).ready(function() {
             },
 
             billing_address2: {
-                required: true,
+                required: false,
             },
 
             shipping_address2: {
-                required: true,
+                required: false,
             },
 
             b_city_state_zip: {

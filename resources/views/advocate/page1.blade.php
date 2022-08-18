@@ -839,18 +839,18 @@
 
                                                                                             <option value='0' data-hidden="true" selected>
                                                                                                 {{ config('constants.package.default_drop_down_text') }}</option>
-                                                                                            <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
-                                                                                            <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
-                                                                                            <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
+                                                                                            <option value="1">1 WEEK OF HYDRATION $78 ( 3 KITS )</option>
+                                                                                            <option value="2">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
+                                                                                            <option value="3">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
                                                                                         </select>
 
                                                                                         <select class="selectpicker placeholder form-control select_pure d-none" name="pure_package" id="pure_package1" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
 
                                                                                             <option value='0' data-hidden="true" selected>
                                                                                                 {{ config('constants.package.default_drop_down_text') }}</option>
-                                                                                            <option value="1">1 MONTH OF HYDRATION $220 ( 10 KITS )</option>
-                                                                                            <option value="2">2 MONTH OF HYDRATION $440 ( 20 KITS )</option>
-                                                                                            <option value="3">3 MONTH OF HYDRATION $660 ( 30 KITS )</option>
+                                                                                            <option value="1">1 WEEK OF HYDRATION $66 ( 3 KITS )</option>
+                                                                                            <option value="2">1 MONTH OF HYDRATION $220 ( 10 KITS )</option>
+                                                                                            <option value="3">2 MONTH OF HYDRATION $440 ( 20 KITS )</option>
                                                                                         </select>
 
                                                                                     </div>
@@ -872,6 +872,16 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
+                                                                    <div class="dots_wrapper">
+                                                                        <ul>
+                                                                            <li class="active"></li>
+                                                                            <li></li>
+                                                                            <li></li>
+                                                                            <li></li>
+                                                                            <li></li>
+                                                                        </ul>
+                                                                    </div>
+
                                                                     <div class="dots_wrapper">
                                                                         <button class="primary_btn btn_effect">Next</button>
                                                                     </div>
@@ -942,42 +952,15 @@
                                                                                 <div class="flex_col_sm_7 p-0">
                                                                                     <div class="form_field">
                                                                                         <div class="text-field">
-                                                                                            <select class="selectpicker form-control" name="demo_alakline_pure" id="demo_alakline_pure" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_alakline_text') }} ">
-
-                                                                                                <option value='0' data-hidden="true" selected="selected">
-                                                                                                    {{ config('constants.package.default_drop_down_alakline_text') }}
-                                                                                                </option>
-                                                                                                <option value="1">ALKALINE + ELECTROLYTE</option>
-                                                                                                <option value="2">PURE + ELECTROLYTE</option>
-                                                                                            </select>
-
-                                                                                        </div>
-                                                                                    </div>
-
-
-                                                                                    <div class="form_field">
-                                                                                        <div class="text-field">
                                                                                             <select class="selectpicker placeholder form-control select_alka" name="demo_package" id="demo_package1" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
                                                                                                 <option value='0' data-hidden="true" selected>
                                                                                                     {{ config('constants.package.default_drop_down_text') }}</option>
-                                                                                                <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
-                                                                                                <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
-                                                                                                <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
+                                                                                                <option value="1">1 WEEK OF HYDRATION $78 ( 3 KITS )</option>
+                                                                                                <option value="2">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
+                                                                                                <option value="3">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
                                                                                             </select>
                                                                                         </div>
                                                                                     </div>
-
-                                                                                    <div class="form_field">
-                                                                                        <div class="text-field">
-                                                                                            <select class="selectpicker placeholder form-control" name="demo_delivery_frequency" id="demo_delivery_frequency1" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
-                                                                                                <option value='0' data-hidden="true" selected="selected">
-                                                                                                    {{ config('constants.package.delivery_freq_text') }}</option>
-                                                                                                <option value="1">EVERY SUNDAY</option>
-                                                                                                <option value="2">EVERY MONDAY</option>
-                                                                                            </select>
-                                                                                        </div>
-                                                                                    </div>
-
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -1061,7 +1044,7 @@
 
                 <figure class="droplet_logowrap text-center">
                     <span>DELIVERY PERFORMED BY</span>
-                    <img src="{{ asset('images/droplet.png') }}" />
+                    <img style="height: 80px !important;" src="{{ asset('images/droplet.png') }}" />
                 </figure>
 
                 <p class="support_note">
