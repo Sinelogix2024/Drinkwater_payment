@@ -792,7 +792,7 @@
         </div>
 
         <div class="container">
-            <article id="post-2046" class="post-2046 page type-page status-publish hentry main_content" style="display: none;">
+            <article id="post-2046" class="post-2046 page type-page status-publish hentry">
                 <div class="entry-content">
                     <div data-elementor-type="wp-page" data-elementor-id="2046" class="elementor elementor-2046">
                         <div class="elementor-inner">
@@ -802,7 +802,7 @@
                                         <div class="elementor-row">
                                             <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-11783564" data-id="11783564" data-element_type="column">
                                                 <div class="elementor-column-wrap elementor-element-populated">
-                                                    <div class="elementor-widget-wrap">
+                                                    <div class="elementor-widget-wrap main_content" style="display: block;">
                                                         <div class="elementor-element elementor-element-5022c6c0 elementor-widget elementor-widget-html" data-id="5022c6c0" data-element_type="widget" data-widget_type="html.default">
                                                             <div class="elementor-widget-container">
                                                                 <div style="text-align: center;margin: 20px auto;padding-bottom: 1rem;">
@@ -995,26 +995,6 @@
                                                                         document.getElementById("hydrationPopup").style.opacity = "0";
                                                                         document.getElementById("hydrationPopup").style.zIndex = "-100";
                                                                     }
-
-                                                                </script>
-
-                                                                <script>
-                                                                    var elem = document.querySelector('.main-carousel');
-                                                                    var flkty = new Flickity(elem, {
-                                                                        // options
-                                                                        contain: true
-                                                                        , wrapAround: true
-                                                                        , cellAlign: 'center'
-                                                                        , imagesLoaded: true
-                                                                    });
-
-                                                                    // element argument can be a selector string
-                                                                    //   for an individual element
-                                                                    var flkty = new Flickity('.main-carousel', {
-                                                                        // options
-                                                                    });
-
-                                                                    var carouselStatus = document.querySelector('.carousel-status');
 
                                                                 </script>
 
@@ -1507,19 +1487,19 @@
             console.log('delivery_frequency', delivery_frequency);
 
             if (alakline_pure == '0') {
-                alert('Please select product');
+                // alert('Please select product');
                 return;
             }
             if (alakline_pure == '1' && alkaline_package == '0') {
-                alert('Please select wellness for alkaline');
+                // alert('Please select wellness for alkaline');
                 return;
             }
             if (alakline_pure == '2' && pure_package == '0') {
-                alert('Please select wellness for pure');
+                // alert('Please select wellness for pure');
                 return;
             }
             if (delivery_frequency == '0') {
-                alert('Please select delivery frequency');
+                // alert('Please select delivery frequency');
                 return;
             }
 
@@ -1542,6 +1522,7 @@
 
     @if (!empty(session('response_success_msg',null)))
     <script>
+        $(".main_content").hide();
         $(".final_form").show();
 
     </script>
@@ -1551,6 +1532,7 @@
     @else
     <script>
         $(".main_content").show();
+        $(".final_form").hide();
 
     </script>
     @endif

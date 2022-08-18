@@ -1,3 +1,20 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+<style>
+    .footer-legal {
+        background-color: white !important;
+        color: black !important;
+    }
+
+    .footer-legal a {
+        color: black !important;
+    }
+
+    footer {
+        position: static !important;
+    }
+
+</style>
 <footer id="colophon" class="site-footer">
     <div class="footer-legal">
         <div class="footer-copyright" style="text-transform: uppercase;">

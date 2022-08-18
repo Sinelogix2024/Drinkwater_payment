@@ -1,6 +1,6 @@
 @if (!empty(session('response_error_msg',null)))
 <script>
-    alert("{{ session('response_error_msg') }}");
+    // alert("{{ session('response_error_msg') }}");
 
 </script>
 
