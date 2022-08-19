@@ -219,6 +219,12 @@ $(document).ready(function() {
         setDropDownvalue();
     });
 
+    $('.payment_method').on('show.bs.dropdown', function() {
+        setTimeout(function() {
+            $('.payment_method div.dropdown-menu').css('transform', 'translate3d(0px, 36px, 0px)');
+        }, 100);
+    });
+
     $('.purchase_button').on('click', function() {
         console.log('purchase_button ');
 
