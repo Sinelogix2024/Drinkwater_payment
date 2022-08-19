@@ -837,16 +837,16 @@ request()->session()->forget('response_error_msg');
                                         <div class="final_page_package_label">YOUR WELLNESS SOLUTION</div>
                                         <select class="selectpicker custom_select final_page_package_select select_alka" name="package" id="package5" required data-dropup-auto="false" title="YOUR WELLNESS SOLUTION">
                                             <option data-hidden="true" selected>YOUR WELLNESS SOLUTION</option>
-                                            <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
-                                            <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
-                                            <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
+                                            <option value="1">1 WEEK OF HYDRATION $78 ( 3 KITS )</option>
+                                            <option value="2">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
+                                            <option value="3">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
                                         </select>
 
                                         <select class="selectpicker custom_select final_page_package_select select_pure d-none" name="package" id="package5" required data-dropup-auto="false" title="YOUR WELLNESS SOLUTION">
                                             <option data-hidden="true" selected>YOUR WELLNESS SOLUTION</option>
-                                            <option value="1">1 MONTH OF HYDRATION $220 ( 10 KITS )</option>
-                                            <option value="2">2 MONTH OF HYDRATION $440 ( 20 KITS )</option>
-                                            <option value="3">3 MONTH OF HYDRATION $660 ( 30 KITS )</option>
+                                            <option value="1">1 WEEK OF HYDRATION $66 ( 3 KITS )</option>
+                                            <option value="2">1 MONTH OF HYDRATION $220 ( 10 KITS )</option>
+                                            <option value="3">2 MONTH OF HYDRATION $440 ( 20 KITS )</option>
                                         </select>
 
 
@@ -966,7 +966,7 @@ request()->session()->forget('response_error_msg');
                                         <button type="button" class="edit btn_effect edit_pay_final_btn edit_payment_method_final_page">Edit
                                         </button>
 
-                                        <button type="button" class="edit btn_effect save_payment_method_final_page" style="display: none">Save
+                                        <button type="button" class="edit btn_effect save_payment_method_final_page" style="display: none; top:9%;">Save
                                         </button>
                                     </div>
                                     {{-- <span class="text-note">CARD ENDING IN <b><span class="last_4_digit_card"></span></b></span> --}}

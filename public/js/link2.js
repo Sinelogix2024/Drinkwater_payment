@@ -32,7 +32,6 @@ braintree.dropin.create({
 
 
 $(document).ready(function() {
-
     $('.shipping_address_final_page').prop('disabled', true).hide();
     $('.shipping_address1_final_page').prop('disabled', true).hide();
     $('.s_city_state_zip_final_page').prop('disabled', true).hide();
@@ -218,6 +217,12 @@ $(document).ready(function() {
         //return false;
         localStorage.setItem("payment_method", selected);
         setDropDownvalue();
+    });
+
+    $('.payment_method').on('show.bs.dropdown', function() {
+        setTimeout(function() {
+            $('.payment_method div.dropdown-menu').css('transform', 'translate3d(0px, 36px, 0px)');
+        }, 100);
     });
 
     $('.purchase_button').on('click', function() {
@@ -642,6 +647,7 @@ $(document).ready(function() {
         $('.final_page_edit_address_label').next(".dropdown-toggle").prop('disabled', true);
 
         if ($(this).text() == 'Edit') {
+            $('.edit_address_final_page').css('top', '15%');
             $('.final_page_address_field').show();
             $('.final_page_edit_address_label').hide();
             $('.shipping_address_final_page').prop('disabled', false).show();
@@ -649,6 +655,7 @@ $(document).ready(function() {
             $('.s_city_state_zip_final_page').prop('disabled', false).show();
             $(this).text('Save');
         } else {
+            $('.edit_address_final_page').css('top', '50%');
             $('.final_page_address_field').hide();
             $('.final_page_edit_address_label').show();
             $('.shipping_address_final_page').prop('disabled', true).hide();
@@ -715,7 +722,7 @@ $(document).ready(function() {
         $('.card-div-final').hide();
 
         $('#form-hosted-final').submit();
-    })
+    });
 
     if (localStorage.getItem("alakline_pure") && localStorage.getItem("alakline_pure") != '0') {
         $("#alakline_pure").val(localStorage.getItem("alakline_pure"));
@@ -742,5 +749,10 @@ $(document).ready(function() {
     if (localStorage.getItem("delivery_frequency") && localStorage.getItem("delivery_frequency") != '0') {
         $("#delivery_frequency1").val(localStorage.getItem("delivery_frequency"));
         $("#delivery_frequency1").change();
+        $("#delivery_frequency5").change();
     }
+
+    $('.select_pure').addClass('d-none');
+    $('.select_alka').addClass('d-none');
+    $('.delivery_frequency1').addClass('d-none');
 });
