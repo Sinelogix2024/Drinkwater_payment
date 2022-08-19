@@ -455,8 +455,16 @@ request()->session()->forget('response_error_msg');
                                     <input type="text" value="" name="billing_address2" id="billing_address2" placeholder="UNIT # | SUITE # | APT">
                                 </div>
 
-                                <div class="form-group">
-                                    <input type="text" value="" name="b_city_state_zip" id="b_city_state_zip" placeholder="CITY/STATE/ZIP">
+                                <div class="row">
+                                    <div class="form-group col">
+                                        <input type="text" value="" name="b_city" id="b_city" placeholder="CITY">
+                                    </div>
+                                    <div class="form-group col">
+                                        <input type="text" value="" name="b_state" id="b_state" placeholder="STATE">
+                                    </div>
+                                    <div class="form-group col">
+                                        <input type="text" value="" name="b_zip" id="b_zip" placeholder="ZIP">
+                                    </div>
                                 </div>
                                 <div class="form-group billing_radio_btn_up">
                                     <input type="checkbox" name="same_billing_address" class="input-assumpte same_billing_address same_billing_address_up" id="billing" />
@@ -473,8 +481,16 @@ request()->session()->forget('response_error_msg');
                                         <input type="text" name="shipping_address2" id="shipping_address2" placeholder="UNIT # | SUITE # | APT">
                                     </div>
 
-                                    <div class="form-group">
-                                        <input type="text" name="s_city_state_zip" id="s_city_state_zip" placeholder="CITY/STATE/ZIP">
+                                    <div class="row">
+                                        <div class="form-group col">
+                                            <input type="text" name="s_city" id="s_city" placeholder="CITY">
+                                        </div>
+                                        <div class="form-group col">
+                                            <input type="text" name="s_state" id="s_state" placeholder="STATE">
+                                        </div>
+                                        <div class="form-group col">
+                                            <input type="text" name="s_zip" id="s_zip" placeholder="ZIP">
+                                        </div>
                                     </div>
                                 </div>
 
@@ -888,9 +904,18 @@ request()->session()->forget('response_error_msg');
                                                 <input type="text" class="shipping_address1_final_page" placeholder="UNIT # | SUITE # | APT" disabled>
                                             </div>
 
-                                            <div class="text-field">
-                                                <input type="text" class="s_city_state_zip_final_page" placeholder="CITY  / STATE  /  ZIP" disabled>
+                                            <div class="row">
+                                                <div class="text-field col">
+                                                    <input type="text" class="s_city_final_page" placeholder="CITY" disabled>
+                                                </div>
+                                                <div class="form-group col">
+                                                    <input type="text" class="s_state_final_page" placeholder="STATE">
+                                                </div>
+                                                <div class="form-group col">
+                                                    <input type="text" class="s_zip_final_page" placeholder="ZIP">
+                                                </div>
                                             </div>
+
                                         </div>
                                         <button type="button" class="edit btn_effect edit_address_final_page">EDIT</button>
                                     </div>
@@ -1013,6 +1038,9 @@ request()->session()->forget('response_error_msg');
                             </div>
                         </div>
 
+                        <input type="hidden" name="b_city_state_zip" class="b_city_state_zip" />
+                        <input type="hidden" name="s_city_state_zip" class="s_city_state_zip" />
+
                         <div class="text-center">
                             <div class="form_field">
                                 {{-- <button type="button" class="outline_btn m_r_20 show_step4_form">BACK</button> --}}
@@ -1129,21 +1157,29 @@ request()->session()->forget('response_error_msg');
     let autocomplete;
     let address1Field;
     let address2Field;
-    let postalField;
+    let city;
+    let state;
+    let zip;
 
     let autocomplete2;
     let address1Field2;
     let address2Field2;
-    let postalField2;
+    let city2;
+    let state2;
+    let zip2;
 
     function initAutocomplete() {
         address1Field = document.querySelector("#billing_address");
         address2Field = document.querySelector("#billing_address2");
-        postalField = document.querySelector("#b_city_state_zip");
+        city = document.querySelector("#b_city");
+        state = document.querySelector("#b_state");
+        zip = document.querySelector("#b_zip");
         
         address1Field2 = document.querySelector("#shipping_address");
         address2Field2 = document.querySelector("#shipping_address2");
-        postalField2 = document.querySelector("#s_city_state_zip");
+        city2 = document.querySelector("#s_city");
+        state2 = document.querySelector("#s_state");
+        zip2 = document.querySelector("#s_zip");
 
         autocomplete = new google.maps.places.Autocomplete(address1Field);
         address1Field.focus();
@@ -1193,7 +1229,9 @@ request()->session()->forget('response_error_msg');
             }
         }
         address1Field.value = `${street_number}, ${route}`;
-        postalField.value = `${locality}/${administrative_area_level_1}/${postal_code}${postal_code_suffix}`;
+        city.value = locality;
+        state.value = administrative_area_level_1;
+        zip.value = `${postal_code}${postal_code_suffix}`;
         address2Field.focus();
     }
     
@@ -1237,7 +1275,9 @@ request()->session()->forget('response_error_msg');
         }
         
         address1Field2.value = `${street_number}, ${route}`;
-        postalField2.value = `${locality}/${administrative_area_level_1}/${postal_code}${postal_code_suffix}`;
+        city2.value = locality;
+        state2.value = administrative_area_level_1;
+        zip2.value = `${postal_code}${postal_code_suffix}`;
         address2Field2.focus();
     }
     window.initAutocomplete = initAutocomplete;
@@ -1329,11 +1369,10 @@ request()->session()->forget('response_success_msg');
 @endif
 
 <script>
-    // $(".step1_form").hide(true);
-    // $(".step2_form").hide(true);
-    // $(".step3_form").hide(true);
-    // $(".step4_form").hide(true);
-    // $(".step5_form").show(true);
-    // $(".current_tab").val("final_form");
+    // $(".step1_form").hide();
+    // $(".step2_form").show();
+    // $(".step3_form").hide();
+    // $(".step4_form").hide();
+    // $(".step5_form").hide();
 
 </script>

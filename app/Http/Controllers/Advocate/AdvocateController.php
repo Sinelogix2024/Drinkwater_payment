@@ -10,6 +10,7 @@ use App\Models\Order;
 use App\Mail\OrderPlaced;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class AdvocateController extends Controller
@@ -46,6 +47,9 @@ class AdvocateController extends Controller
             }
 
             if ($request->method() == 'POST') {
+                // Log::info('$request->b_city_state_zip', [$request->b_city_state_zip]);
+                // Log::info('$request->s_city_state_zip', [$request->s_city_state_zip]);
+
                 $amount = $request->total_amount ?? 10.00;
                 $result = $gateway->transaction()->sale([
                     'amount' => $amount,
