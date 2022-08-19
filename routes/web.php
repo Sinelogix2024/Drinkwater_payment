@@ -94,8 +94,9 @@ Route::match(['get'], '/watr/{detail_access_token}/{page?}', 'App\Http\Controlle
 Route::match(['put'], '/watr/{detail_access_token}/{page}', 'App\Http\Controllers\Advocate\AdvocateController@getwatrDetail');
 Route::match(['post'], '/watr/{detail_access_token}/{page?}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
 
-Route::match(['get'], '/watr/receipt/{detail_access_token}/receipt/{orderid}', function () {
-    return view('advocate.receipt');
+Route::match(['get'], '/watr/receipt/{detail_access_token}/receipt/{orderid}', function ($detail_access_token, $orderid) {
+    // dd($detail_access_token, $orderid);
+    return view('advocate.receipt')->with($detail_access_token, $orderid);
 })->name('receipt');
 Route::match(['get'], '/orderDetail/{order_id}', 'App\Http\Controllers\Advocate\AdvocateController@orderDetail');
 

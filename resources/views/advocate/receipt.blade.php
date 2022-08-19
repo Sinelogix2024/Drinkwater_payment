@@ -700,7 +700,7 @@
     @endphp
     @else
     @php
-    echo redirect(url('/watr', ['detail_access_token' => $detail_access_token, 'page' => 1]));
+    echo redirect(url('/watr', ['detail_access_token' => request()->detail_access_token, 'page' => 1]));
     @endphp
     <script>
         $(".main_content").show();
