@@ -839,18 +839,18 @@
 
                                                                                             <option value='0' data-hidden="true" selected>
                                                                                                 {{ config('constants.package.default_drop_down_text') }}</option>
-                                                                                            <option value="1">1 WEEK OF HYDRATION $78 ( 3 KITS )</option>
-                                                                                            <option value="2">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
-                                                                                            <option value="3">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
+                                                                                            <option value="1">1 WEEK WELLNESS $78 ( 3 KITS )</option>
+                                                                                            <option value="2">1 MONTH WELLNESS $250 ( 10 KITS )</option>
+                                                                                            <option value="3">2 MONTH WELLNESS $500 ( 20 KITS )</option>
                                                                                         </select>
 
                                                                                         <select class="selectpicker placeholder form-control select_pure d-none" name="pure_package" id="pure_package1" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
 
                                                                                             <option value='0' data-hidden="true" selected>
                                                                                                 {{ config('constants.package.default_drop_down_text') }}</option>
-                                                                                            <option value="1">1 WEEK OF HYDRATION $66 ( 3 KITS )</option>
-                                                                                            <option value="2">1 MONTH OF HYDRATION $220 ( 10 KITS )</option>
-                                                                                            <option value="3">2 MONTH OF HYDRATION $440 ( 20 KITS )</option>
+                                                                                            <option value="1">1 WEEK WELLNESS $66 ( 3 KITS )</option>
+                                                                                            <option value="2">1 MONTH WELLNESS $220 ( 10 KITS )</option>
+                                                                                            <option value="3">2 MONTH WELLNESS $440 ( 20 KITS )</option>
                                                                                         </select>
 
                                                                                     </div>
@@ -955,9 +955,9 @@
                                                                                             <select class="selectpicker placeholder form-control select_alka" name="demo_package" id="demo_package1" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
                                                                                                 <option value='0' data-hidden="true" selected>
                                                                                                     {{ config('constants.package.default_drop_down_text') }}</option>
-                                                                                                <option value="1">1 WEEK OF HYDRATION $78 ( 3 KITS )</option>
-                                                                                                <option value="2">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
-                                                                                                <option value="3">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
+                                                                                                <option value="1">1 WEEK WELLNESS $78 ( 3 KITS )</option>
+                                                                                                <option value="2">1 MONTH WELLNESS $250 ( 10 KITS )</option>
+                                                                                                <option value="3">2 MONTH WELLNESS $500 ( 20 KITS )</option>
                                                                                             </select>
                                                                                         </div>
                                                                                     </div>
