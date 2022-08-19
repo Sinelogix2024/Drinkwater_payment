@@ -10,6 +10,7 @@ use App\Models\Order;
 use App\Mail\OrderPlaced;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class AdvocateController extends Controller
@@ -46,6 +47,9 @@ class AdvocateController extends Controller
             }
 
             if ($request->method() == 'POST') {
+                // Log::info('$request->b_city_state_zip', [$request->b_city_state_zip]);
+                // Log::info('$request->s_city_state_zip', [$request->s_city_state_zip]);
+
                 $amount = $request->total_amount ?? 10.00;
                 $result = $gateway->transaction()->sale([
                     'amount' => $amount,
@@ -87,7 +91,7 @@ class AdvocateController extends Controller
 
                 $body = 'Hey ' . $orderDetail->odr_first_name . ' ' . $orderDetail->odr_last_name . '! Order Placed.' .
                     'Thanks For Shopping! Click on link to view Receipt.
-            ' . '<a href="' . url('orderDetail/' . $orderDetail->odr_id) . '"> TRACK </a>';
+                    ' . '<a href="' . url('orderDetail/' . $orderDetail->odr_id) . '"> TRACK </a>';
 
                 try {
                     $client->messages->create(
@@ -99,6 +103,7 @@ class AdvocateController extends Controller
                         )
                     );
                     request()->session()->put('response_success_msg', 'You will receive a receipt via text and email.');
+                    return redirect(route('receipt', ['detail_access_token' => $request->detail_access_token, 'orderid' => $orderId]));
                 } catch (Exception $e) {
                     request()->session()->put('response_error_msg', $e->getMessage());
                 }

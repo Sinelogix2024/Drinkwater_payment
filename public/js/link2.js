@@ -34,10 +34,12 @@ braintree.dropin.create({
 $(document).ready(function() {
     $('.shipping_address_final_page').prop('disabled', true).hide();
     $('.shipping_address1_final_page').prop('disabled', true).hide();
-    $('.s_city_state_zip_final_page').prop('disabled', true).hide();
+    $('.s_city_final_page').prop('disabled', true).hide();
+    $('.s_state_final_page').prop('disabled', true).hide();
+    $('.s_zip_final_page').prop('disabled', true).hide();
 
     $('.shipping_add_final_page').show().text($('.shipping_address_final_page').val() + ' ' + $('.shipping_address1_final_page').val())
-    $('.citi_state_zip_final_page').show().text($('.s_city_state_zip_final_page').val())
+    $('.citi_state_zip_final_page').show().text($('.s_city_final_page').val() + '/' + $('.s_state_final_page').val() + '/' + $('.s_zip_final_page').val());
     $('.final_page_package_label').next(".dropdown-toggle").prop('disabled', true);
     $('.payment_method_final_page').text($('.payment_method_finl_page_class').children("option:selected").text());
     // showLoader();
@@ -287,11 +289,23 @@ $(document).ready(function() {
                 required: false,
             },
 
-            b_city_state_zip: {
+            b_city: {
+                required: true,
+            },
+            b_state: {
+                required: true,
+            },
+            b_zip: {
                 required: true,
             },
 
-            s_city_state_zip: {
+            s_city: {
+                required: true,
+            },
+            s_state: {
+                required: true,
+            },
+            s_zip: {
                 required: true,
             },
 
@@ -385,6 +399,9 @@ $(document).ready(function() {
                 hideLoader();
                 setTimeout(function() {
                     $('button').removeClass('bs-placeholder');
+                    $('.s_city_final_page').val($('#s_city').val());
+                    $('.s_state_final_page').val($('#s_state').val());
+                    $('.s_zip_final_page').val($('#s_zip').val());
                 }, 500);
             }
 
@@ -467,15 +484,16 @@ $(document).ready(function() {
 
             if (current_tab == 'step5_form') {
                 showLoader();
+                alert(3);
                 // return;
                 // form.submit();
                 $('.package_note_final_page').text($('#package5').children("option:selected").text());
-
                 $('.payment_method').next(".dropdown-toggle").hide();
-
                 $('.shipping_address_final_page').val($('#shipping_address').val());
                 $('.shipping_address1_final_page').val($('#shipping_address2').val());
-                $('.s_city_state_zip_final_page').val($('#s_city_state_zip').val());
+                $('.s_city_final_page').val($('#s_city').val());
+                $('.s_state_final_page').val($('#s_state').val());
+                $('.s_zip_final_page').val($('#s_zip').val());
 
                 //     $('.last_4_digit_card').text($("#basic-form").serializeArray()[23].value.substr($("#basic-form").serializeArray()[23].value.length - 4));
 
@@ -508,6 +526,9 @@ $(document).ready(function() {
             }
 
             if (current_tab == 'final_form') {
+
+                $('.b_city_state_zip').val($('.b_city_final_page').val() + '/' + $('.b_state_final_page').val() + '/' + $('.b_zip_final_page').val());
+                $('.s_city_state_zip').val($('.b_city_final_page').val() + '/' + $('.b_state_final_page').val() + '/' + $('.b_zip_final_page').val());
 
                 if ($("#basic-form").valid()) {
                     // $(".step1_form").hide(true);
@@ -572,7 +593,9 @@ $(document).ready(function() {
         if (this.checked) {
             $("#shipping_address").val($("#billing_address").val());
             $("#shipping_address2").val($("#billing_address2").val());
-            $("#s_city_state_zip").val($("#b_city_state_zip").val());
+            $("#s_city").val($("#b_city").val());
+            $("#s_state").val($("#b_state").val());
+            $("#s_zip").val($("#b_zip").val());
             $('#BillData').addClass('col-md-12');
             $("#shippingData").hide();
         } else {
@@ -642,8 +665,8 @@ $(document).ready(function() {
 
     $('.final_page_address_field').hide();
     $('.edit_address_final_page').on('click', function() {
-        $('.shipping_add_final_page').text($('.shipping_address_final_page').val() + ' ' + $('.shipping_address1_final_page').val())
-        $('.citi_state_zip_final_page').text($('.s_city_state_zip_final_page').val())
+        $('.shipping_add_final_page').text($('.shipping_address_final_page').val() + ' ' + $('.shipping_address1_final_page').val());
+        $('.citi_state_zip_final_page').text($('.s_city_final_page').val() + '/' + $('.s_state_final_page').val() + '/' + $('.s_zip_final_page').val());
         $('.final_page_edit_address_label').next(".dropdown-toggle").prop('disabled', true);
 
         if ($(this).text() == 'Edit') {
@@ -652,7 +675,9 @@ $(document).ready(function() {
             $('.final_page_edit_address_label').hide();
             $('.shipping_address_final_page').prop('disabled', false).show();
             $('.shipping_address1_final_page').prop('disabled', false).show();
-            $('.s_city_state_zip_final_page').prop('disabled', false).show();
+            $('.s_city_final_page').prop('disabled', false).show();
+            $('.s_state_final_page').prop('disabled', false).show();
+            $('.s_zip_final_page').prop('disabled', false).show();
             $(this).text('Save');
         } else {
             $('.edit_address_final_page').css('top', '50%');
@@ -660,7 +685,9 @@ $(document).ready(function() {
             $('.final_page_edit_address_label').show();
             $('.shipping_address_final_page').prop('disabled', true).hide();
             $('.shipping_address1_final_page').prop('disabled', true).hide();
-            $('.s_city_state_zip_final_page').prop('disabled', true).hide();
+            $('.s_city_final_page').prop('disabled', true).hide();
+            $('.s_state_final_page').prop('disabled', true).hide();
+            $('.s_zip_final_page').prop('disabled', true).hide();
             $(this).text('Edit');
         }
     })
@@ -673,8 +700,14 @@ $(document).ready(function() {
         $("#billing_address2").val($(this).val());
     })
 
-    $('.s_city_state_zip_final_page').on('change', function() {
-        $("#b_city_state_zip").val($(this).val());
+    $('.s_city_final_page').on('change', function() {
+        $("#b_city").val($(this).val());
+    })
+    $('.s_state_final_page').on('change', function() {
+        $("#b_state").val($(this).val());
+    })
+    $('.s_zip_final_page').on('change', function() {
+        $("#b_zip").val($(this).val());
     })
 
     // $('.payment_method').next(".dropdown-toggle").hide();

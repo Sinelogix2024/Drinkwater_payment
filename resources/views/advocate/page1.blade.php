@@ -860,7 +860,7 @@
                                                                             <div class="flex_col_sm_4 p-0">
                                                                                 <div class="form_field">
                                                                                     <div class="text-field">
-                                                                                        <select class="selectpicker placeholder form-control" name="delivery_frequency" id="delivery_frequency1" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
+                                                                                        <select class="selectpicker placeholder form-control delivery_frequency1" name="delivery_frequency" id="delivery_frequency1" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
                                                                                             <option value='0' data-hidden="true" selected="selected">
                                                                                                 {{ config('constants.package.delivery_freq_text') }}</option>
                                                                                             <option value="1">EVERY SUNDAY</option>
@@ -1432,6 +1432,17 @@
         };
 
         localStorage.clear();
+
+        $('.select_pure').addClass('d-none');
+        $('.select_alka').addClass('d-none');
+        $('.delivery_frequency1').addClass('d-none');
+
+        $(document).on("change", ".select_pure", function() {
+            $('.delivery_frequency1').removeClass('d-none');
+        });
+        $(document).on("change", ".select_alka", function() {
+            $('.delivery_frequency1').removeClass('d-none');
+        });
 
         $(document).on("change", "#alakline_pure", function() {
             console.log('Test :: 1 ::');

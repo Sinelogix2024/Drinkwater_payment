@@ -31,8 +31,8 @@ class OrderPlaced extends Mailable
      */
     public function build()
     {
-        return $this->from('example@example.com', 'DrinkWater.com')
-            ->view('emails.order_placed_new',[
+        return $this->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME', 'DrinkWater.com'))
+            ->view('emails.order_placed_new', [
                 'advocateData' => $this->advocateData,
                 'orderDetail' => $this->orderData,
             ]);
