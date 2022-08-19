@@ -482,7 +482,10 @@
     <main id="primary" class="site-main">
         <div class="head_section">
             <div class="brand">
-                <figure class="logo"><img src="/images/logowater.png" alt="Logo">
+                <figure class="logo">
+                    <a href="{{ url('/home', ['detail_access_token' => request()->detail_access_token]) }}">
+                        <img src="/images/logowater.png" alt="Logo">
+                    </a>
                 </figure>
                 <span class="brand_txt">+ Jaydeep
                     Khokhar</span>
@@ -493,7 +496,7 @@
         </div>
 
         <div class="container">
-            <div class="form_wrapper edit_form_wrapper final_form" style="display: none; margin-bottom: 40px;">
+            <div class="form_wrapper edit_form_wrapper final_form" style="display: block; margin-bottom: 40px;">
 
                 <p class="support_note">CONGRATULATIONS YOUR PATH TO WELLNESS IS CONFIRMED !</p>
 
@@ -689,7 +692,7 @@
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap-select.js') }}"></script>
 
-    @if (!empty(session('response_success_msg',null)))
+    {{-- @if (!empty(session('response_success_msg',null)))
     <script>
         $(".main_content").hide();
         $(".final_form").show();
@@ -707,6 +710,6 @@
         $(".final_form").hide();
 
     </script>
-    @endif
+    @endif --}}
 </body>
 </html>
