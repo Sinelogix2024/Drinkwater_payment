@@ -10,6 +10,7 @@ use App\Models\Order;
 use App\Mail\OrderPlaced;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class AdvocateController extends Controller
@@ -46,6 +47,9 @@ class AdvocateController extends Controller
             }
 
             if ($request->method() == 'POST') {
+                // Log::info('$request->b_city_state_zip', [$request->b_city_state_zip]);
+                // Log::info('$request->s_city_state_zip', [$request->s_city_state_zip]);
+
                 $amount = $request->total_amount ?? 10.00;
                 $result = $gateway->transaction()->sale([
                     'amount' => $amount,
@@ -87,7 +91,7 @@ class AdvocateController extends Controller
 
                 $body = 'Hey ' . $orderDetail->odr_first_name . ' ' . $orderDetail->odr_last_name . '! Order Placed.' .
                     'Thanks For Shopping! Click on link to view Receipt.
-            ' . '<a href="' . url('orderDetail/' . $orderDetail->odr_id) . '"> TRACK </a>';
+                    ' . '<a href="' . url('orderDetail/' . $orderDetail->odr_id) . '"> TRACK </a>';
 
                 try {
                     $client->messages->create(
@@ -99,6 +103,7 @@ class AdvocateController extends Controller
                         )
                     );
                     request()->session()->put('response_success_msg', 'You will receive a receipt via text and email.');
+                    return redirect(route('receipt', ['detail_access_token' => $request->detail_access_token, 'orderid' => $orderId]));
                 } catch (Exception $e) {
                     request()->session()->put('response_error_msg', $e->getMessage());
                 }
@@ -119,7 +124,8 @@ class AdvocateController extends Controller
             'acceptGzipEncoding' => false,
         ]);
 
-        if ($request->method() == 'GET') {
+        // return $request->method();
+        if ($request->method() == 'GET' || $request->method() == 'PUT') {
             $detail_access_token = $request->detail_access_token;
             $clientToken = $gateway->clientToken()->generate();
 
@@ -127,13 +133,17 @@ class AdvocateController extends Controller
                 ['adv_detail_access_token', $request->detail_access_token]
             ])->first();
 
+            $page = (int)$request->page;
+            if ($request->method() == 'GET' && $page != 1) {
+                return redirect(url('/watr', ['detail_access_token' => $detail_access_token, 'page' => 1]));
+            }
             if ($data) {
-                $page = (int)$request->page;
-                if ($page == 2) {
+                if ($request->method() == 'PUT' && $page == 2) {
                     return view('advocate/link2', [
                         'detail_access_token' => $detail_access_token,
                         'advocateData' => $data,
                         'client_token' => $clientToken
+                        // 'client_token' => $clientToken
                     ]);
                 }
                 return view('advocate/page1', [

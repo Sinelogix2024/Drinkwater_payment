@@ -781,7 +781,7 @@
     <main id="primary" class="site-main">
         <div class="head_section">
             <div class="brand">
-                <figure class="logo"><img src="http://127.0.0.1:8001/images/logowater.png" alt="Logo">
+                <figure class="logo"><img src="/images/logowater.png" alt="Logo">
                 </figure>
                 <span class="brand_txt">+ Jaydeep
                     Khokhar</span>
@@ -791,192 +791,34 @@
             </div>
         </div>
 
-
-        <article id="post-2046" class="post-2046 page type-page status-publish hentry">
-            <div class="entry-content">
-                <div data-elementor-type="wp-page" data-elementor-id="2046" class="elementor elementor-2046">
-                    <div class="elementor-inner">
-                        <div class="elementor-section-wrap">
-                            <section class="elementor-section elementor-top-section elementor-element elementor-element-9e5d9f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="9e5d9f" data-element_type="section">
-                                <div class="elementor-container elementor-column-gap-default">
-                                    <div class="elementor-row">
-                                        <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-11783564" data-id="11783564" data-element_type="column">
-                                            <div class="elementor-column-wrap elementor-element-populated">
-                                                <div class="elementor-widget-wrap">
-                                                    <div class="elementor-element elementor-element-5022c6c0 elementor-widget elementor-widget-html" data-id="5022c6c0" data-element_type="widget" data-widget_type="html.default">
-                                                        <div class="elementor-widget-container">
-                                                            <div style="text-align: center;margin: 20px auto;padding-bottom: 1rem;">
-                                                                <a onclick="hydrationOn()" href="javascript:void(0)" style="width: 100%;/*display: block;*/    display: initial;text-align: center;color: black; margin-top: 1rem; padding-bottom: 1rem; font-size: 1rem;">UNDERSTAND <i class="fas fa-arrow-circle-right"></i></a>
-                                                            </div>
-                                                            <div class="" style="margin-top: 0; margin-bottom: 50px;">
-                                                                <div class="flex_row">
-                                                                    <div class="flex_col_sm_12 p-0">
-                                                                        <div class="form_field">
-                                                                            <div class="text-field">
-                                                                                <select class="selectpicker form-control" name="alakline_pure" id="alakline_pure" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_alakline_text') }} ">
-
-                                                                                    <option value='0' data-hidden="true" selected>
-                                                                                        {{ config('constants.package.default_drop_down_alakline_text') }}
-                                                                                    </option>
-                                                                                    <option value="1">ALKALINE + ELECTROLYTE</option>
-                                                                                    <option value="2">PURE + ELECTROLYTE</option>
-                                                                                </select>
-
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
+        <div class="container">
+            <article id="post-2046" class="post-2046 page type-page status-publish hentry">
+                <div class="entry-content">
+                    <div data-elementor-type="wp-page" data-elementor-id="2046" class="elementor elementor-2046">
+                        <div class="elementor-inner">
+                            <div class="elementor-section-wrap">
+                                <section class="elementor-section elementor-top-section elementor-element elementor-element-9e5d9f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="9e5d9f" data-element_type="section">
+                                    <div class="elementor-container elementor-column-gap-default">
+                                        <div class="elementor-row">
+                                            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-11783564" data-id="11783564" data-element_type="column">
+                                                <div class="elementor-column-wrap elementor-element-populated">
+                                                    <div class="elementor-widget-wrap main_content" style="display: block;">
+                                                        <div class="elementor-element elementor-element-5022c6c0 elementor-widget elementor-widget-html" data-id="5022c6c0" data-element_type="widget" data-widget_type="html.default">
+                                                            <div class="elementor-widget-container">
+                                                                <div style="text-align: center;margin: 20px auto;padding-bottom: 1rem;">
+                                                                    <a onclick="hydrationOn()" href="javascript:void(0)" style="width: 100%;/*display: block;*/    display: initial;text-align: center;color: black; margin-top: 1rem; padding-bottom: 1rem; font-size: 1rem;">UNDERSTAND <i class="fas fa-arrow-circle-right"></i></a>
                                                                 </div>
-
-                                                                <div class="flex_row">
-                                                                    <div class="flex_col_sm_7 p-0">
-                                                                        <div class="form_field">
-                                                                            <div class="text-field">
-
-                                                                                <select class="selectpicker placeholder form-control select_alka" name="alkaline_package" id="alkaline_package1" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
-
-                                                                                    <option value='0' data-hidden="true" selected>
-                                                                                        {{ config('constants.package.default_drop_down_text') }}</option>
-                                                                                    <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
-                                                                                    <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
-                                                                                    <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
-                                                                                </select>
-
-                                                                                <select class="selectpicker placeholder form-control select_pure d-none" name="pure_package" id="pure_package1" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
-
-                                                                                    <option value='0' data-hidden="true" selected>
-                                                                                        {{ config('constants.package.default_drop_down_text') }}</option>
-                                                                                    <option value="1">1 MONTH OF HYDRATION $220 ( 10 KITS )</option>
-                                                                                    <option value="2">2 MONTH OF HYDRATION $440 ( 20 KITS )</option>
-                                                                                    <option value="3">3 MONTH OF HYDRATION $660 ( 30 KITS )</option>
-                                                                                </select>
-
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="flex_col_sm_4 p-0">
-                                                                        <div class="form_field">
-                                                                            <div class="text-field">
-                                                                                <select class="selectpicker placeholder form-control" name="delivery_frequency" id="delivery_frequency1" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
-                                                                                    <option value='0' data-hidden="true" selected="selected">
-                                                                                        {{ config('constants.package.delivery_freq_text') }}</option>
-                                                                                    <option value="1">EVERY SUNDAY</option>
-                                                                                    <option value="2">EVERY MONDAY</option>
-                                                                                </select>
-                                                                            </div>
-                                                                        </div>
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="dots_wrapper">
-                                                                <button class="primary_btn btn_effect" onclick="submit_product_data()">Next</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="elementor-element elementor-element-7729f37d elementor-widget elementor-widget-html" data-id="7729f37d" data-element_type="widget" data-widget_type="html.default">
-                                                        <div class="elementor-widget-container">
-                                                            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-                                                            <link rel='stylesheet' id='wp-block-library-css' href='/css/style.min.css?ver=6.0.1' media='all' />
-                                                            <link rel='stylesheet' id='wc-block-vendors-style-css' href='/css/vendors-style.css?ver=4.4.3' media='all' />
-                                                            <link rel='stylesheet' id='wc-block-style-css' href='/css/style.css?ver=4.4.3' media='all' />
-                                                            <link rel='stylesheet' id='contact-form-7-css' href='/css/styles.css?ver=5.4' media='all' />
-                                                            <link rel='stylesheet' id='watr-shop-style-css' href='/css/style.css?ver=1.0.0' media='all' />
-                                                            <link rel='stylesheet' id='watr-shop-woocommerce-style-css' href='/css/woocommerce.css?ver=1.0.0' media='all' />
-                                                            <link rel='stylesheet' id='elementor-icons-css' href='/css/elementor-icons.min.css?ver=5.15.0' media='all' />
-                                                            <link rel='stylesheet' id='elementor-frontend-legacy-css' href='/css/frontend-legacy.min.css?ver=3.6.4' media='all' />
-                                                            <link rel='stylesheet' id='elementor-frontend-css' href='/css/frontend.min.css?ver=3.6.4' media='all' />
-                                                            <link rel='stylesheet' id='elementor-post-24-css' href='/css/post-24.css?ver=1649974449' media='all' />
-                                                            <link rel='stylesheet' id='elementor-pro-css' href='/css/frontend.min.css?ver=3.0.5' media='all' />
-                                                            <link rel='stylesheet' id='elementor-global-css' href='/css/global.css?ver=1649974450' media='all' />
-                                                            <link rel='stylesheet' id='elementor-post-2046-css' href='/css/post-2046.css?ver=1656658355' media='all' />
-                                                            <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" media='all' />
-                                                            <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" media='all' />
-                                                            <link rel='stylesheet' id='e-animations-css' href='/css/animations.min.css?ver=3.6.4' media='all' />
-                                                            <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-                                                            <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-                                                            {{-- <script src="{{ asset('js/link2.js') }}"></script> --}}
-
-                                                            <div class="new-popup-style" id="vitaminCPopup">
-                                                                <a href="javascript:void(0)" class="close-button" onclick="noVitamin()"><img src="https://drinkwatr.com/wp-content/uploads/2022/02/close.png" style="max-width: 20px;"></a>
-
-                                                                <h5>Benefits of Daily Electrolytes</h5>
-
-                                                                <div class="main-carousel">
-
-                                                                    <div class="carousel-cell">
-                                                                        <img src="https://drinkwatr.com/wp-content/uploads/2021/04/HEALTHIER-DIGESTION-01.png">
-                                                                        <p>HEALTHIER DIGESTION</p>
-                                                                    </div>
-
-                                                                    <div class="carousel-cell">
-                                                                        <img src="https://drinkwatr.com/wp-content/uploads/2021/04/mental-clarity.png">
-                                                                        <p>MENTAL CLARITY</p>
-                                                                    </div>
-
-                                                                    <div class="carousel-cell">
-                                                                        <img src="https://drinkwatr.com/wp-content/uploads/2021/04/CARDIOVASCULAR-HEALTH-01.png">
-                                                                        <p>CARDIOVASCULAR HEALTH</p>
-                                                                    </div>
-
-                                                                    <div class="carousel-cell">
-                                                                        <img src="https://drinkwatr.com/wp-content/uploads/2021/03/inflammation.png">
-                                                                        <p>REDUCES INFLAMMATION</p>
-                                                                    </div>
-
-
-
-                                                                </div>
-
-
-
-                                                            </div>
-
-
-                                                            <div class="new-popup-style" id="hydrationPopup">
-
-                                                                <a href="#" class="close-button" onclick="hydrationOff()"><img src="https://drinkwatr.com/wp-content/uploads/2022/02/close.png" style="max-width: 20px;"></a>
-
-                                                                <div class="hydration-carousel">
-                                                                    <div class="carousel-cell">
-                                                                        <h3 class="carousel-title">Wellness Solution Guide</h3>
-                                                                        <div style="text-align:center; margin-top: 50px;">1 KIT = 12 B</div>
-                                                                        <table style="text-align:center; margin-top: 0px;" border="1px" width="100%">
-                                                                            <tbody>
-                                                                                <tr>
-                                                                                    <td>1 Month</td>
-                                                                                    <td>10 KIT</td>
-                                                                                    <td>=</td>
-                                                                                    <td>120 B</td>
-                                                                                </tr>
-
-                                                                                <tr>
-                                                                                    <td>2 Month</td>
-                                                                                    <td>20 KIT</td>
-                                                                                    <td>=</td>
-                                                                                    <td>240 B</td>
-                                                                                </tr>
-
-                                                                                <tr>
-                                                                                    <td>3 Month</td>
-                                                                                    <td>30 KIT</td>
-                                                                                    <td>=</td>
-                                                                                    <td>360 B</td>
-                                                                                </tr>
-
-                                                                            </tbody>
-                                                                        </table>
-                                                                    </div>
-
-                                                                    <div class="carousel-cell">
-                                                                        <h3 class="carousel-title">Delivery Frequency Guide</h3>
-                                                                        <div class="" style="margin-top: 50px;">
-                                                                            <div class="flex_col_sm_7 p-0">
+                                                                <form action="{{ url('/watr', ['detail_access_token'=>$detail_access_token,'page'=>2]) }}" method="POST" onsubmit="submit_product_data(this); return false;">
+                                                                    @csrf
+                                                                    @method('PUT')
+                                                                    <div class="" style="margin-top: 0; margin-bottom: 50px;">
+                                                                        <div class="flex_row">
+                                                                            <div class="flex_col_sm_12 p-0">
                                                                                 <div class="form_field">
                                                                                     <div class="text-field">
-                                                                                        <select class="selectpicker form-control" name="demo_alakline_pure" id="demo_alakline_pure" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_alakline_text') }} ">
+                                                                                        <select class="selectpicker form-control" name="alakline_pure" id="alakline_pure" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_alakline_text') }} ">
 
-                                                                                            <option value='0' data-hidden="true" selected="selected">
+                                                                                            <option value='0' data-hidden="true" selected>
                                                                                                 {{ config('constants.package.default_drop_down_alakline_text') }}
                                                                                             </option>
                                                                                             <option value="1">ALKALINE + ELECTROLYTE</option>
@@ -985,23 +827,40 @@
 
                                                                                     </div>
                                                                                 </div>
+                                                                            </div>
+                                                                        </div>
 
-
+                                                                        <div class="flex_row">
+                                                                            <div class="flex_col_sm_7 p-0">
                                                                                 <div class="form_field">
                                                                                     <div class="text-field">
-                                                                                        <select class="selectpicker placeholder form-control select_alka" name="demo_package" id="demo_package1" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
+
+                                                                                        <select class="selectpicker placeholder form-control select_alka" name="alkaline_package" id="alkaline_package1" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
+
                                                                                             <option value='0' data-hidden="true" selected>
                                                                                                 {{ config('constants.package.default_drop_down_text') }}</option>
-                                                                                            <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
-                                                                                            <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
-                                                                                            <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
+                                                                                            <option value="1">1 WEEK OF HYDRATION $78 ( 3 KITS )</option>
+                                                                                            <option value="2">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
+                                                                                            <option value="3">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
                                                                                         </select>
+
+                                                                                        <select class="selectpicker placeholder form-control select_pure d-none" name="pure_package" id="pure_package1" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
+
+                                                                                            <option value='0' data-hidden="true" selected>
+                                                                                                {{ config('constants.package.default_drop_down_text') }}</option>
+                                                                                            <option value="1">1 WEEK OF HYDRATION $66 ( 3 KITS )</option>
+                                                                                            <option value="2">1 MONTH OF HYDRATION $220 ( 10 KITS )</option>
+                                                                                            <option value="3">2 MONTH OF HYDRATION $440 ( 20 KITS )</option>
+                                                                                        </select>
+
                                                                                     </div>
                                                                                 </div>
+                                                                            </div>
 
+                                                                            <div class="flex_col_sm_4 p-0">
                                                                                 <div class="form_field">
                                                                                     <div class="text-field">
-                                                                                        <select class="selectpicker placeholder form-control" name="demo_delivery_frequency" id="demo_delivery_frequency1" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
+                                                                                        <select class="selectpicker placeholder form-control delivery_frequency1" name="delivery_frequency" id="delivery_frequency1" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
                                                                                             <option value='0' data-hidden="true" selected="selected">
                                                                                                 {{ config('constants.package.delivery_freq_text') }}</option>
                                                                                             <option value="1">EVERY SUNDAY</option>
@@ -1013,100 +872,187 @@
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                </div>
+                                                                    <div class="dots_wrapper">
+                                                                        <ul>
+                                                                            <li class="active"></li>
+                                                                            <li></li>
+                                                                            <li></li>
+                                                                            <li></li>
+                                                                            <li></li>
+                                                                        </ul>
+                                                                    </div>
+
+                                                                    <div class="dots_wrapper">
+                                                                        <button class="primary_btn btn_effect">Next</button>
+                                                                    </div>
+                                                                </form>
                                                             </div>
-
-
-                                                            <script>
-                                                                function hydrationOn() {
-                                                                    document.getElementById("hydrationPopup").style.opacity = "1";
-                                                                    document.getElementById("hydrationPopup").style.zIndex = "9999999999999";
-                                                                }
-
-                                                                function hydrationOff() {
-                                                                    document.getElementById("hydrationPopup").style.opacity = "0";
-                                                                    document.getElementById("hydrationPopup").style.zIndex = "-100";
-                                                                }
-
-                                                            </script>
-
-                                                            <script>
-                                                                var elem = document.querySelector('.main-carousel');
-                                                                var flkty = new Flickity(elem, {
-                                                                    // options
-                                                                    contain: true
-                                                                    , wrapAround: true
-                                                                    , cellAlign: 'center'
-                                                                    , imagesLoaded: true
-                                                                });
-
-                                                                // element argument can be a selector string
-                                                                //   for an individual element
-                                                                var flkty = new Flickity('.main-carousel', {
-                                                                    // options
-                                                                });
-
-                                                                var carouselStatus = document.querySelector('.carousel-status');
-
-                                                            </script>
-
-                                                            <script>
-                                                                var element = document.querySelector('.hydration-carousel');
-                                                                var flokty = new Flickity(element, {
-                                                                    // options
-                                                                    contain: true
-                                                                    , wrapAround: true
-                                                                    , cellAlign: 'center'
-                                                                    , imagesLoaded: true
-                                                                });
-
-                                                                // element argument can be a selector string
-                                                                //   for an individual element
-                                                                var flokty = new Flickity('.hydration-carousel', {
-                                                                    // options
-                                                                });
-
-                                                                var carouselStatuz = document.querySelector('.hydration-status');
-
-                                                            </script>
                                                         </div>
-                                                    </div>
-                                                    <div class="elementor-element elementor-element-2c21d9c0 elementor-widget elementor-widget-html" data-id="2c21d9c0" data-element_type="widget" data-widget_type="html.default">
-                                                        <div class="elementor-widget-container">
-                                                            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-                                                            <link rel='stylesheet' id='wp-block-library-css' href='/css/style.min.css?ver=6.0.1' media='all' />
-                                                            <link rel='stylesheet' id='wc-block-vendors-style-css' href='/css/vendors-style.css?ver=4.4.3' media='all' />
-                                                            <link rel='stylesheet' id='wc-block-style-css' href='/css/style.css?ver=4.4.3' media='all' />
-                                                            <link rel='stylesheet' id='contact-form-7-css' href='/css/styles.css?ver=5.4' media='all' />
-                                                            <link rel='stylesheet' id='watr-shop-style-css' href='/css/style.css?ver=1.0.0' media='all' />
-                                                            <link rel='stylesheet' id='watr-shop-woocommerce-style-css' href='/css/woocommerce.css?ver=1.0.0' media='all' />
-                                                            <link rel='stylesheet' id='elementor-icons-css' href='/css/elementor-icons.min.css?ver=5.15.0' media='all' />
-                                                            <link rel='stylesheet' id='elementor-frontend-legacy-css' href='/css/frontend-legacy.min.css?ver=3.6.4' media='all' />
-                                                            <link rel='stylesheet' id='elementor-frontend-css' href='/css/frontend.min.css?ver=3.6.4' media='all' />
-                                                            <link rel='stylesheet' id='elementor-post-24-css' href='/css/post-24.css?ver=1649974449' media='all' />
-                                                            <link rel='stylesheet' id='elementor-pro-css' href='/css/frontend.min.css?ver=3.0.5' media='all' />
-                                                            <link rel='stylesheet' id='elementor-global-css' href='/css/global.css?ver=1649974450' media='all' />
-                                                            <link rel='stylesheet' id='elementor-post-2046-css' href='/css/post-2046.css?ver=1656658355' media='all' />
-                                                            <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" media='all' />
-                                                            <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" media='all' />
-                                                            <link rel='stylesheet' id='e-animations-css' href='/css/animations.min.css?ver=3.6.4' media='all' />
-                                                            <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-                                                            <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+                                                        <div class="elementor-element elementor-element-7729f37d elementor-widget elementor-widget-html" data-id="7729f37d" data-element_type="widget" data-widget_type="html.default">
+                                                            <div class="elementor-widget-container">
+                                                                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+                                                                <link rel='stylesheet' id='wp-block-library-css' href='/css/style.min.css?ver=6.0.1' media='all' />
+                                                                <link rel='stylesheet' id='wc-block-vendors-style-css' href='/css/vendors-style.css?ver=4.4.3' media='all' />
+                                                                <link rel='stylesheet' id='wc-block-style-css' href='/css/style.css?ver=4.4.3' media='all' />
+                                                                <link rel='stylesheet' id='contact-form-7-css' href='/css/styles.css?ver=5.4' media='all' />
+                                                                <link rel='stylesheet' id='watr-shop-style-css' href='/css/style.css?ver=1.0.0' media='all' />
+                                                                <link rel='stylesheet' id='watr-shop-woocommerce-style-css' href='/css/woocommerce.css?ver=1.0.0' media='all' />
+                                                                <link rel='stylesheet' id='elementor-icons-css' href='/css/elementor-icons.min.css?ver=5.15.0' media='all' />
+                                                                <link rel='stylesheet' id='elementor-frontend-legacy-css' href='/css/frontend-legacy.min.css?ver=3.6.4' media='all' />
+                                                                <link rel='stylesheet' id='elementor-frontend-css' href='/css/frontend.min.css?ver=3.6.4' media='all' />
+                                                                <link rel='stylesheet' id='elementor-post-24-css' href='/css/post-24.css?ver=1649974449' media='all' />
+                                                                <link rel='stylesheet' id='elementor-pro-css' href='/css/frontend.min.css?ver=3.0.5' media='all' />
+                                                                <link rel='stylesheet' id='elementor-global-css' href='/css/global.css?ver=1649974450' media='all' />
+                                                                <link rel='stylesheet' id='elementor-post-2046-css' href='/css/post-2046.css?ver=1656658355' media='all' />
+                                                                <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" media='all' />
+                                                                <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" media='all' />
+                                                                <link rel='stylesheet' id='e-animations-css' href='/css/animations.min.css?ver=3.6.4' media='all' />
+                                                                <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+                                                                <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+                                                                {{-- <script src="{{ asset('js/link2.js') }}"></script> --}}
+
+                                                                <div class="new-popup-style" id="hydrationPopup">
+
+                                                                    <a href="#" class="close-button" onclick="hydrationOff()"><img src="https://drinkwatr.com/wp-content/uploads/2022/02/close.png" style="max-width: 20px;"></a>
+
+                                                                    <div class="hydration-carousel">
+                                                                        <div class="carousel-cell">
+                                                                            <h3 class="carousel-title">Wellness Solution Guide</h3>
+                                                                            <div style="text-align:center; margin-top: 50px;">1 KIT = 12 B</div>
+                                                                            <table style="text-align:center; margin-top: 0px;" border="1px" width="100%">
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td>1 Month</td>
+                                                                                        <td>10 KIT</td>
+                                                                                        <td>=</td>
+                                                                                        <td>120 B</td>
+                                                                                    </tr>
+
+                                                                                    <tr>
+                                                                                        <td>2 Month</td>
+                                                                                        <td>20 KIT</td>
+                                                                                        <td>=</td>
+                                                                                        <td>240 B</td>
+                                                                                    </tr>
+
+                                                                                    <tr>
+                                                                                        <td>3 Month</td>
+                                                                                        <td>30 KIT</td>
+                                                                                        <td>=</td>
+                                                                                        <td>360 B</td>
+                                                                                    </tr>
+
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </div>
+
+                                                                        <div class="carousel-cell">
+                                                                            <h3 class="carousel-title">Delivery Frequency Guide</h3>
+                                                                            <div class="" style="margin-top: 50px;">
+                                                                                <div class="flex_col_sm_7 p-0">
+                                                                                    <div class="form_field">
+                                                                                        <div class="text-field">
+                                                                                            <select class="selectpicker placeholder form-control select_alka" name="demo_package" id="demo_package1" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
+                                                                                                <option value='0' data-hidden="true" selected>
+                                                                                                    {{ config('constants.package.default_drop_down_text') }}</option>
+                                                                                                <option value="1">1 WEEK OF HYDRATION $78 ( 3 KITS )</option>
+                                                                                                <option value="2">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
+                                                                                                <option value="3">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
+                                                                                            </select>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <script>
+                                                                    function hydrationOn() {
+                                                                        document.getElementById("hydrationPopup").style.opacity = "1";
+                                                                        document.getElementById("hydrationPopup").style.zIndex = "9999999999999";
+                                                                    }
+
+                                                                    function hydrationOff() {
+                                                                        document.getElementById("hydrationPopup").style.opacity = "0";
+                                                                        document.getElementById("hydrationPopup").style.zIndex = "-100";
+                                                                    }
+
+                                                                </script>
+
+                                                                <script>
+                                                                    var element = document.querySelector('.hydration-carousel');
+                                                                    var flokty = new Flickity(element, {
+                                                                        // options
+                                                                        contain: true
+                                                                        , wrapAround: true
+                                                                        , cellAlign: 'center'
+                                                                        , imagesLoaded: true
+                                                                    });
+
+                                                                    // element argument can be a selector string
+                                                                    //   for an individual element
+                                                                    var flokty = new Flickity('.hydration-carousel', {
+                                                                        // options
+                                                                    });
+
+                                                                    var carouselStatuz = document.querySelector('.hydration-status');
+
+                                                                </script>
+                                                            </div>
+                                                        </div>
+                                                        <div class="elementor-element elementor-element-2c21d9c0 elementor-widget elementor-widget-html" data-id="2c21d9c0" data-element_type="widget" data-widget_type="html.default">
+                                                            <div class="elementor-widget-container">
+                                                                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+                                                                <link rel='stylesheet' id='wp-block-library-css' href='/css/style.min.css?ver=6.0.1' media='all' />
+                                                                <link rel='stylesheet' id='wc-block-vendors-style-css' href='/css/vendors-style.css?ver=4.4.3' media='all' />
+                                                                <link rel='stylesheet' id='wc-block-style-css' href='/css/style.css?ver=4.4.3' media='all' />
+                                                                <link rel='stylesheet' id='contact-form-7-css' href='/css/styles.css?ver=5.4' media='all' />
+                                                                <link rel='stylesheet' id='watr-shop-style-css' href='/css/style.css?ver=1.0.0' media='all' />
+                                                                <link rel='stylesheet' id='watr-shop-woocommerce-style-css' href='/css/woocommerce.css?ver=1.0.0' media='all' />
+                                                                <link rel='stylesheet' id='elementor-icons-css' href='/css/elementor-icons.min.css?ver=5.15.0' media='all' />
+                                                                <link rel='stylesheet' id='elementor-frontend-legacy-css' href='/css/frontend-legacy.min.css?ver=3.6.4' media='all' />
+                                                                <link rel='stylesheet' id='elementor-frontend-css' href='/css/frontend.min.css?ver=3.6.4' media='all' />
+                                                                <link rel='stylesheet' id='elementor-post-24-css' href='/css/post-24.css?ver=1649974449' media='all' />
+                                                                <link rel='stylesheet' id='elementor-pro-css' href='/css/frontend.min.css?ver=3.0.5' media='all' />
+                                                                <link rel='stylesheet' id='elementor-global-css' href='/css/global.css?ver=1649974450' media='all' />
+                                                                <link rel='stylesheet' id='elementor-post-2046-css' href='/css/post-2046.css?ver=1656658355' media='all' />
+                                                                <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" media='all' />
+                                                                <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" media='all' />
+                                                                <link rel='stylesheet' id='e-animations-css' href='/css/animations.min.css?ver=3.6.4' media='all' />
+                                                                <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+                                                                <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </section>
+                                </section>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div><!-- .entry-content -->
+                </div><!-- .entry-content -->
 
-        </article><!-- #post-2046 -->
+            </article><!-- #post-2046 -->
 
+            <div class="form_wrapper edit_form_wrapper final_form" style="display: none; margin-bottom: 40px;">
+
+                <p class="support_note">CONGRATULATIONS YOUR PATH TO WELLNESS IS CONFIRMED !</p>
+
+                <figure class="droplet_logowrap text-center">
+                    <span>DELIVERY PERFORMED BY</span>
+                    <img style="height: 80px !important;" src="{{ asset('images/droplet.png') }}" />
+                </figure>
+
+                <p class="support_note">
+                    A RECEIPT FOR YOUR PURCHASE HAS BEEN TEXTED AND EMAILED TO THE CREDENTIALS YOU PROVIDED. FOR ANY
+                    SUPPORT, PLEASE EMAIL <a href="mailto:clarity@drinkwatr.com" target="_blank">CLARITY@DRINKWATR.COM</a>
+                </p>
+            </div>
+        </div>
     </main><!-- #main -->
 
     @include('footer')
@@ -1487,6 +1433,17 @@
 
         localStorage.clear();
 
+        $('.select_pure').addClass('d-none');
+        $('.select_alka').addClass('d-none');
+        $('.delivery_frequency1').addClass('d-none');
+
+        $(document).on("change", ".select_pure", function() {
+            $('.delivery_frequency1').removeClass('d-none');
+        });
+        $(document).on("change", ".select_alka", function() {
+            $('.delivery_frequency1').removeClass('d-none');
+        });
+
         $(document).on("change", "#alakline_pure", function() {
             console.log('Test :: 1 ::');
             console.log();
@@ -1512,7 +1469,7 @@
             }
         });
 
-        function submit_product_data() {
+        function submit_product_data(event) {
             var alakline_pure = $("#alakline_pure").val();
             var alkaline_package = $("#alkaline_package1").val();
             var pure_package = $("#pure_package1").val();
@@ -1524,19 +1481,19 @@
             console.log('delivery_frequency', delivery_frequency);
 
             if (alakline_pure == '0') {
-                alert('Please select product');
+                // alert('Please select product');
                 return;
             }
             if (alakline_pure == '1' && alkaline_package == '0') {
-                alert('Please select wellness for alkaline');
+                // alert('Please select wellness for alkaline');
                 return;
             }
             if (alakline_pure == '2' && pure_package == '0') {
-                alert('Please select wellness for pure');
+                // alert('Please select wellness for pure');
                 return;
             }
             if (delivery_frequency == '0') {
-                alert('Please select delivery frequency');
+                // alert('Please select delivery frequency');
                 return;
             }
 
@@ -1545,9 +1502,10 @@
             localStorage.setItem("pure_package", pure_package);
             localStorage.setItem("delivery_frequency", delivery_frequency);
 
-            location.replace("{{ request()->fullUrlWithQuery(['page' => '2']) }}");
+            event.submit();
+            // location.replace("{{ request()->fullUrlWithQuery(['page' => '2']) }}");
         }
-        hydrationOn(); //remove after
+        // hydrationOn(); //remove after
 
     </script>
     <script src='https://drinkwatr.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.6.4' id='elementor-frontend-js'></script>
@@ -1556,7 +1514,21 @@
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap-select.js') }}"></script>
 
+    @if (!empty(session('response_success_msg',null)))
+    <script>
+        $(".main_content").hide();
+        $(".final_form").show();
+
+    </script>
+    @php
+    request()->session()->forget('response_success_msg');
+    @endphp
+    @else
+    <script>
+        $(".main_content").show();
+        $(".final_form").hide();
+
+    </script>
+    @endif
 </body>
 </html>
-
-<!-- Page supported by LiteSpeed Cache 3.6.4 on 2022-08-11 11:12:16 -->
