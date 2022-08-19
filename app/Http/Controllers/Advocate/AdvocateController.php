@@ -87,7 +87,7 @@ class AdvocateController extends Controller
 
                 $body = 'Hey ' . $orderDetail->odr_first_name . ' ' . $orderDetail->odr_last_name . '! Order Placed.' .
                     'Thanks For Shopping! Click on link to view Receipt.
-            ' . '<a href="' . url('orderDetail/' . $orderDetail->odr_id) . '"> TRACK </a>';
+                    ' . '<a href="' . url('orderDetail/' . $orderDetail->odr_id) . '"> TRACK </a>';
 
                 try {
                     $client->messages->create(
@@ -99,6 +99,7 @@ class AdvocateController extends Controller
                         )
                     );
                     request()->session()->put('response_success_msg', 'You will receive a receipt via text and email.');
+                    return redirect(route('receipt', ['detail_access_token' => $request->detail_access_token, 'orderid' => $orderId]));
                 } catch (Exception $e) {
                     request()->session()->put('response_error_msg', $e->getMessage());
                 }

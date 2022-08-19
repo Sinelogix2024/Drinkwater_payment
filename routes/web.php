@@ -4,6 +4,7 @@ use App\Models\Order;
 use App\Models\Advocate;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -93,6 +94,9 @@ Route::match(['get'], '/watr/{detail_access_token}/{page?}', 'App\Http\Controlle
 Route::match(['put'], '/watr/{detail_access_token}/{page}', 'App\Http\Controllers\Advocate\AdvocateController@getwatrDetail');
 Route::match(['post'], '/watr/{detail_access_token}/{page?}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
 
+Route::match(['get'], '/watr/receipt/{detail_access_token}/receipt/{orderid}', function () {
+    return view('advocate.receipt');
+})->name('receipt');
 Route::match(['get'], '/orderDetail/{order_id}', 'App\Http\Controllers\Advocate\AdvocateController@orderDetail');
 
 // venom payment gateway response
