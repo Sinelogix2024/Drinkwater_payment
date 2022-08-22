@@ -915,6 +915,8 @@
 
                                                                     <a href="#" class="close-button" onclick="hydrationOff()"><img src="https://drinkwatr.com/wp-content/uploads/2022/02/close.png" style="max-width: 20px;"></a>
 
+                                                                    <div style="position: absolute;margin-bottom: 215px;bottom: 0;padding: 0 15px;">**This is not an auto-renewable subscription or a subscription at all. It is a one time purchase. So, come back and purchase when you are ready for additional wellness support.**</div>
+
                                                                     <div class="hydration-carousel">
                                                                         <div class="carousel-cell">
                                                                             <h3 class="carousel-title">Wellness Solution Guide</h3>
@@ -948,25 +950,57 @@
 
                                                                         <div class="carousel-cell">
                                                                             <h3 class="carousel-title">Delivery Frequency Guide</h3>
-                                                                            <div class="" style="margin-top: 50px;">
+                                                                            <div class="" style="text-align: center;margin-top: 50px;">
                                                                                 <div class="flex_col_sm_7 p-0">
                                                                                     <div class="form_field">
                                                                                         <div class="text-field">
-                                                                                            <select class="selectpicker placeholder form-control select_alka" name="demo_package" id="demo_package1" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
-                                                                                                <option value='0' data-hidden="true" selected>
-                                                                                                    {{ config('constants.package.default_drop_down_text') }}</option>
-                                                                                                <option value="1">1 WEEK WELLNESS $78 ( 3 KITS )</option>
-                                                                                                <option value="2">1 MONTH WELLNESS $250 ( 10 KITS )</option>
-                                                                                                <option value="3">2 MONTH WELLNESS $500 ( 20 KITS )</option>
+                                                                                            <select class="selectpicker placeholder form-control" name="demo_package" id="demo_package" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
+                                                                                                <option value='0' data-hidden="true" selected>{{ config('constants.package.default_drop_down_text') }}</option>
+                                                                                                <option value="1">1 WEEK WELLNESS</option>
+                                                                                                <option value="2">1 MONTH WELLNESS</option>
+                                                                                                <option value="3">2 MONTH WELLNESS</option>
                                                                                             </select>
                                                                                         </div>
                                                                                     </div>
+                                                                                </div>
+                                                                                <div style="position: absolute;width: 100%;left: 0;padding: 0 15px">
+                                                                                    <table width="100%">
+                                                                                        <tr class="demo_week-default demo_week_1">
+                                                                                            <td class="text-left">WEEK 1</td>
+                                                                                            <td class="text-right">
+                                                                                                <div class="text-center" style="display: inline-block;">3 KITS<br>Delivers on day of choose</div>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr class="demo_week-default demo_week_1-2">
+                                                                                            <td class="text-left">WEEK 1+2</td>
+                                                                                            <td class="text-right">
+                                                                                                <div class="text-center" style="display: inline-block;">3 KITS<br>Delivers on day of choose</div>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr class="demo_week-default demo_week_3-4">
+                                                                                            <td class="text-left">WEEK 3+4</td>
+                                                                                            <td class="text-right">
+                                                                                                <div class="text-center" style="display: inline-block;">2 KITS<br>Delivers on day of choose</div>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr class="demo_week-default demo_week_5-6">
+                                                                                            <td class="text-left">WEEK 5+6</td>
+                                                                                            <td class="text-right">
+                                                                                                <div class="text-center" style="display: inline-block;">3 KITS<br>Delivers on day of choose</div>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr class="demo_week-default demo_week_7-8">
+                                                                                            <td class="text-left">WEEK 7+8</td>
+                                                                                            <td class="text-right">
+                                                                                                <div class="text-center" style="display: inline-block;">2 KITS<br>Delivers on day of choose</div>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </table>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-
 
                                                                 <script>
                                                                     function hydrationOn() {
@@ -978,6 +1012,25 @@
                                                                         document.getElementById("hydrationPopup").style.opacity = "0";
                                                                         document.getElementById("hydrationPopup").style.zIndex = "-100";
                                                                     }
+
+                                                                    $('.demo_week-default').hide();
+                                                                    $('#demo_package').on('change', function() {
+                                                                        var value = (this.value);
+                                                                        $('.demo_week-default').hide();
+                                                                        if (value == 1) {
+                                                                            $('.demo_week_1').show();
+                                                                        }
+                                                                        if (value == 2) {
+                                                                            $('.demo_week_1-2').show();
+                                                                            $('.demo_week_3-4').show();
+                                                                        }
+                                                                        if (value == 3) {
+                                                                            $('.demo_week_1-2').show();
+                                                                            $('.demo_week_3-4').show();
+                                                                            $('.demo_week_5-6').show();
+                                                                            $('.demo_week_7-8').show();
+                                                                        }
+                                                                    });
 
                                                                 </script>
 
@@ -1505,7 +1558,7 @@
             event.submit();
             // location.replace("{{ request()->fullUrlWithQuery(['page' => '2']) }}");
         }
-        // hydrationOn(); //remove after
+        hydrationOn(); //remove after
 
     </script>
     <script src='https://drinkwatr.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.6.4' id='elementor-frontend-js'></script>
