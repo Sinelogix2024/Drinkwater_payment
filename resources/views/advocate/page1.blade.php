@@ -187,6 +187,8 @@
             text-transform: uppercase;
             font-weight: bold;
             font-family: europaRegular;
+            font-size: 17px;
+            margin-top: 50px;
         }
 
     </style>
@@ -925,7 +927,7 @@
 
                                                                     <a href="#" class="close-button" onclick="hydrationOff()"><img src="https://drinkwatr.com/wp-content/uploads/2022/02/close.png" style="max-width: 20px;"></a>
 
-                                                                    <div style="position: absolute;margin-bottom: 215px;bottom: 0;padding: 0 15px;">**This is not an auto-renewable subscription or a subscription at all. It is a one time purchase. So, come back and purchase when you are ready for additional wellness support.**</div>
+                                                                    <div style="position: absolute; margin-bottom: 215px; bottom: 0;padding: 0 15px; text-align: center;">**This is not an auto-renewable subscription or a subscription at all. It is a one time purchase. So, come back and purchase when you are ready for additional wellness support.**</div>
 
                                                                     <div class="hydration-carousel">
                                                                         <div class="carousel-cell">
@@ -976,33 +978,32 @@
                                                                                 <div style="position: absolute;width: 100%;left: 0;padding: 0 15px">
                                                                                     <table width="100%">
                                                                                         <tr class="demo_week-default demo_week_1">
-                                                                                            <td class="text-left">WEEK 1</td>
-                                                                                            <td class="text-right">
-                                                                                                <div class="text-center" style="display: inline-block;">3 KITS<br>Delivers on day of choose</div>
+                                                                                            <td class="text-center">
+                                                                                                <div class="" style="text-transform: uppercase;">3 KITS<br>delivered on the day of your choice</div>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr class="demo_week-default demo_week_1-2">
                                                                                             <td class="text-left">WEEK 1+2</td>
                                                                                             <td class="text-right">
-                                                                                                <div class="text-center" style="display: inline-block;">3 KITS<br>Delivers on day of choose</div>
+                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">3 KITS<br>delivered on the day of your choice</div>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr class="demo_week-default demo_week_3-4">
                                                                                             <td class="text-left">WEEK 3+4</td>
                                                                                             <td class="text-right">
-                                                                                                <div class="text-center" style="display: inline-block;">2 KITS<br>Delivers on day of choose</div>
+                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">2 KITS<br>delivered on the day of your choice</div>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr class="demo_week-default demo_week_5-6">
                                                                                             <td class="text-left">WEEK 5+6</td>
                                                                                             <td class="text-right">
-                                                                                                <div class="text-center" style="display: inline-block;">3 KITS<br>Delivers on day of choose</div>
+                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">3 KITS<br>delivered on the day of your choice</div>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr class="demo_week-default demo_week_7-8">
                                                                                             <td class="text-left">WEEK 7+8</td>
                                                                                             <td class="text-right">
-                                                                                                <div class="text-center" style="display: inline-block;">2 KITS<br>Delivers on day of choose</div>
+                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">2 KITS<br>delivered on the day of your choice</div>
                                                                                             </td>
                                                                                         </tr>
                                                                                     </table>
