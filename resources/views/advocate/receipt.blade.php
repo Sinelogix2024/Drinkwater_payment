@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap-select.min.css') }}" />
 
 
-    <title>DRINK WATR</title>
+    <title>STAY STRONG</title>
     <meta name='robots' content='max-image-preview:large' />
     <link rel='dns-prefetch' href='//s.w.org' />
     <link rel="alternate" type="application/rss+xml" title="STAY STRONG™ &raquo; Feed" href="https://drinkwatr.com/feed/" />
