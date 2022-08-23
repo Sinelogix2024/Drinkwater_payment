@@ -103,7 +103,7 @@
             padding: 0 !important;
         }
 
-        .footer-legal {
+        /* .footer-legal {
             background-color: white !important;
             color: black !important;
         }
@@ -114,6 +114,10 @@
 
         footer {
             position: static !important;
+        } */
+
+        footer {
+            position: fixed !important;
         }
 
         .carousel-cell {
@@ -189,6 +193,10 @@
             font-family: europaRegular;
             font-size: 17px;
             margin-top: 50px;
+        }
+
+        .flickity-page-dots {
+            bottom: -70px !important;
         }
 
     </style>

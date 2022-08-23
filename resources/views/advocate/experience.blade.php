@@ -492,6 +492,12 @@
 
     </div>
     </footer> --}}
+    <style>
+        .footer-social {
+            display: flex !important;
+        }
+
+    </style>
     @include('footer')
     <!-- #colophon -->
     </div>
