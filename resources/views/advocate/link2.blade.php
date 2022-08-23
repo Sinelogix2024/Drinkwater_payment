@@ -27,7 +27,7 @@ request()->session()->forget('response_error_msg');
 
     <style>
         body {
-            /* font-family: Europa-light, sans-serif !important; */
+            /* font-family: europaLight, sans-serif !important; */
             /* line-height: 1.5; */
         }
 
@@ -226,8 +226,8 @@ request()->session()->forget('response_error_msg');
 
         body {
             font-size: 14px !important;
-            font-family: Europa-regular, sans-serif !important;
-            /* font-family: Europa-light, sans-serif !important; */
+            font-family: europaLight, sans-serif !important;
+            /* font-family: europaLight, sans-serif !important; */
         }
 
         figure img {

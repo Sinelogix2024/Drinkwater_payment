@@ -81,6 +81,15 @@
 
     </script>
     <style>
+        @font-face {
+            font-family: europaLight;
+            src: url(/fonts/Europa-Light.ttf);
+        }
+
+        body {
+            font-family: europaLight !important;
+        }
+
         img.wp-smiley,
         img.emoji {
             display: inline !important;
@@ -177,6 +186,7 @@
         .carousel-title {
             text-transform: uppercase;
             font-weight: bold;
+            font-family: europaRegular;
         }
 
     </style>
@@ -756,8 +766,8 @@
 
         body {
             font-size: 14px !important;
-            font-family: Europa-regular, sans-serif !important;
-            /* font-family: Europa-light, sans-serif !important; */
+            font-family: europaLight, sans-serif !important;
+            /* font-family: europaLight, sans-serif !important; */
         }
 
         .head_section .brand {

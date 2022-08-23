@@ -12,7 +12,7 @@
 
     <style>
         body {
-            font-family: Europa-light, sans-serif !important;
+            font-family: europaLight, sans-serif !important;
         }
 
         figure img {

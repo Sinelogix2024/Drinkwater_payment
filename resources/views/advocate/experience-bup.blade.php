@@ -16,7 +16,7 @@
 
     <style>
         body {
-            font-family: Europa-regular, sans-serif !important;
+            font-family: europaLight, sans-serif !important;
             /* letter-spacing: 0.1rem !important; */
         }
 

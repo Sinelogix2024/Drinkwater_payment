@@ -432,7 +432,12 @@ button {
 
 @font-face {
     font-family: europaLight;
-    src: url(../fonts/Europa-Light.woff);
+    src: url(/fonts/Europa-Light.ttf);
+}
+
+@font-face {
+    font-family: europaRegular;
+    src: url(/fonts/Europa-Regular.ttf);
 }
 
 html {
