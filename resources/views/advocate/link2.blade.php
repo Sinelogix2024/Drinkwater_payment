@@ -1369,10 +1369,5 @@ request()->session()->forget('response_success_msg');
 @endif
 
 <script>
-    // $(".step1_form").hide();
-    // $(".step2_form").show();
-    // $(".step3_form").hide();
-    // $(".step4_form").hide();
-    // $(".step5_form").hide();
 
 </script>

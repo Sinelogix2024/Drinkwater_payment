@@ -1510,11 +1510,37 @@
         $('.delivery_frequency1').addClass('d-none');
 
         $(document).on("change", ".select_pure", function() {
+            if (this.value == '1') {
+                setDeliveryFrequency();
+            } else if (this.value == '2' || this.value == '3') {
+                resetDeliveryFrequency();
+            }
             $('.delivery_frequency1').removeClass('d-none');
         });
         $(document).on("change", ".select_alka", function() {
+            if (this.value == '1') {
+                setDeliveryFrequency();
+            } else if (this.value == '2' || this.value == '3') {
+                resetDeliveryFrequency();
+            }
             $('.delivery_frequency1').removeClass('d-none');
         });
+
+        function setDeliveryFrequency() {
+            $("#delivery_frequency1 option[value='1']").remove();
+            $("#delivery_frequency1 option[value='2']").remove();
+            $('#delivery_frequency1').append($("<option></option>").attr("value", '1').text('UPCOMING SUNDAY'));
+            $('#delivery_frequency1').append($("<option></option>").attr("value", '2').text('UPCOMING MONDAY'));
+            $('#delivery_frequency1').selectpicker('refresh');
+        }
+
+        function resetDeliveryFrequency() {
+            $("#delivery_frequency1 option[value='1']").remove();
+            $("#delivery_frequency1 option[value='2']").remove();
+            $('#delivery_frequency1').append($("<option></option>").attr("value", '1').text('EVERY SUNDAY'));
+            $('#delivery_frequency1').append($("<option></option>").attr("value", '2').text('EVERY MONDAY'));
+            $('#delivery_frequency1').selectpicker('refresh');
+        }
 
         $(document).on("change", "#alakline_pure", function() {
             console.log('Test :: 1 ::');
@@ -1577,7 +1603,7 @@
             event.submit();
             // location.replace("{{ request()->fullUrlWithQuery(['page' => '2']) }}");
         }
-        hydrationOn(); //remove after
+        // hydrationOn(); //remove after
 
     </script>
     <script src='https://drinkwatr.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.6.4' id='elementor-frontend-js'></script>
