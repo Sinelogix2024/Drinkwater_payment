@@ -650,8 +650,8 @@ body {
 .dropdown-menu li a span.text:before {
     position: absolute;
     content: "";
-    width: 12px;
-    height: 13px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     border: 1px solid #fff;
     left: -15px;
