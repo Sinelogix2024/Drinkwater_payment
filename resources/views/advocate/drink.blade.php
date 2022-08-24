@@ -45,6 +45,10 @@
             font-size: 18px;
         }
 
+        .welcome_wrapper {
+            top: 39% !important;
+        }
+
     </style>
 </head>
 
@@ -54,7 +58,6 @@
 </div>
 
 <body class="body">
-    {{-- main container 1 start --}}
     <main class="app_wrapper" style="">
         <div class="custom_container">
 
@@ -70,24 +73,7 @@
             </div>
             <img src="https://watrbar.io/wp-content/uploads/2022/07/droplet.png" class="expage-img3" style="max-width: 100px;">
         </div>
-        {{-- <footer id="colophon" class="site-footer">
-            <div class="footer-legal">
-                <div class="footer-copyright" style="text-transform: uppercase;">
-                    <p>2022 © All Rights Reserved | WATR, LLC</p>
-                </div>
-                <div class="footer-social">
-                    <a href="https://instagram.com/watr.world/"><i class="fab fa-instagram"></i></a>
-                </div>
-                <div class="footer-policy">
-                    <a href="{{ url('privacy') }}" style="text-decoration: underline; margin-right: 0.25rem!important;">Privacy</a> <span style="margin-right: 0.25rem;">+</span> <a href="{{ url('legal') }}" style="text-decoration: underline;">Legal</a>
-        </div>
-        </div>
-        </footer> --}}
-
     </main>
-    {{-- main container 1 end --}}
-
-
 </body>
 
 </html>
