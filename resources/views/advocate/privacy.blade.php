@@ -430,6 +430,15 @@ position: relative;"><a href="javascript:history.back()" style="font-size: 14px;
                     <h1 class="entry-title">PRIVACY POLICY</h1>
                 </header><!-- .entry-header -->
 
+                {{-- <div class="sec-one-inner">
+
+                    <div class="content-sec">
+                        <a href="#">
+                            <img src="../wp-content/uploads/2022/07/logo-latest.png" class="stk-img2" style="width: 100px;">
+                        </a>
+                    </div>
+                </div> --}}
+
 
                 <div class="entry-content">
                     <div data-elementor-type="wp-page" data-elementor-id="3" class="elementor elementor-3">
