@@ -16,7 +16,7 @@ request()->session()->forget('response_error_msg');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DRINK WATR</title>
+    <title>STAY STRONG</title>
 
     <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -27,7 +27,7 @@ request()->session()->forget('response_error_msg');
 
     <style>
         body {
-            /* font-family: Europa-light, sans-serif !important; */
+            /* font-family: europaLight, sans-serif !important; */
             /* line-height: 1.5; */
         }
 
@@ -226,8 +226,8 @@ request()->session()->forget('response_error_msg');
 
         body {
             font-size: 14px !important;
-            font-family: Europa-regular, sans-serif !important;
-            /* font-family: Europa-light, sans-serif !important; */
+            font-family: europaLight, sans-serif !important;
+            /* font-family: europaLight, sans-serif !important; */
         }
 
         figure img {
@@ -1369,10 +1369,5 @@ request()->session()->forget('response_success_msg');
 @endif
 
 <script>
-    // $(".step1_form").hide();
-    // $(".step2_form").show();
-    // $(".step3_form").hide();
-    // $(".step4_form").hide();
-    // $(".step5_form").hide();
 
 </script>

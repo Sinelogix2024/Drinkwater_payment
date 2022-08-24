@@ -439,7 +439,7 @@ button {
 
 /* @font-face {
   font-family: europaLight;
-  src: url(../fonts/Europa-Light.woff); }
+  src: url(/fonts/Europa-Light.ttf); }
 html {
   scroll-behavior: smooth; }
 
@@ -693,8 +693,8 @@ body {
 .dropdown-menu li a span.text:before {
     position: absolute;
     content: "";
-    width: 12px;
-    height: 13px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     border: 1px solid #fff;
     left: -15px;

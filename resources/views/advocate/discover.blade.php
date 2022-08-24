@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-    <title> DISCOVER | WATRBAR</title>
-    <title>DISCOVER &#8211; WATRBAR</title>
+    <title>STAY STRONG</title>
+    <title>STAY STRONG</title>
     <meta name='robots' content='max-image-preview:large' />
     <link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
     <link rel='dns-prefetch' href='//s.w.org' />
@@ -1204,28 +1204,13 @@
             </section>
         </div>
 
-        <footer id="colophon" class="site-footer">
-            <div class="footer-legal">
+        <style>
+            .footer-social {
+                display: flex !important;
+            }
 
-                <div class="footer-copyright" style="text-transform: uppercase;">
-                    <p>2022 &copy; All Rights Reserved | WATR, LLC</p>
-                </div>
-
-                <div class="footer-social">
-                    <a href="https://instagram.com/watr.world/"><i class="fab fa-instagram"></i></a>
-                </div>
-
-                <div class="footer-policy">
-                    <a href="{{ url('privacy') }}" style="text-decoration: underline; margin-right: 0.25rem!important;">Privacy</a> <span style="margin-right: 0.25rem;">+</span> <a href="{{ url('legal') }}" style="text-decoration: underline;">Legal</a>
-                </div>
-
-            </div>
-
-    </div>
-
-
-
-    </footer><!-- #colophon -->
+        </style>
+        @include('footer')
     </div><!-- #page -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

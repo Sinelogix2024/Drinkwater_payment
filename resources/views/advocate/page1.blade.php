@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap-select.min.css') }}" />
 
 
-    <title>DRINK WATR</title>
+    <title>STAY STRONG</title>
     <meta name='robots' content='max-image-preview:large' />
     <link rel='dns-prefetch' href='//s.w.org' />
     <link rel="alternate" type="application/rss+xml" title="STAY STRONG™ &raquo; Feed" href="https://drinkwatr.com/feed/" />
@@ -81,6 +81,15 @@
 
     </script>
     <style>
+        @font-face {
+            font-family: europaLight;
+            src: url(/fonts/Europa-Light.ttf);
+        }
+
+        body {
+            font-family: europaLight !important;
+        }
+
         img.wp-smiley,
         img.emoji {
             display: inline !important;
@@ -94,7 +103,7 @@
             padding: 0 !important;
         }
 
-        .footer-legal {
+        /* .footer-legal {
             background-color: white !important;
             color: black !important;
         }
@@ -105,6 +114,10 @@
 
         footer {
             position: static !important;
+        } */
+
+        footer {
+            position: fixed !important;
         }
 
         .carousel-cell {
@@ -177,6 +190,13 @@
         .carousel-title {
             text-transform: uppercase;
             font-weight: bold;
+            font-family: europaRegular;
+            font-size: 17px;
+            margin-top: 50px;
+        }
+
+        .flickity-page-dots {
+            bottom: -70px !important;
         }
 
     </style>
@@ -756,8 +776,8 @@
 
         body {
             font-size: 14px !important;
-            font-family: Europa-regular, sans-serif !important;
-            /* font-family: Europa-light, sans-serif !important; */
+            font-family: europaLight, sans-serif !important;
+            /* font-family: europaLight, sans-serif !important; */
         }
 
         .head_section .brand {
@@ -915,7 +935,7 @@
 
                                                                     <a href="#" class="close-button" onclick="hydrationOff()"><img src="https://drinkwatr.com/wp-content/uploads/2022/02/close.png" style="max-width: 20px;"></a>
 
-                                                                    <div style="position: absolute;margin-bottom: 215px;bottom: 0;padding: 0 15px;">**This is not an auto-renewable subscription or a subscription at all. It is a one time purchase. So, come back and purchase when you are ready for additional wellness support.**</div>
+                                                                    <div style="position: absolute; margin-bottom: 215px; bottom: 0;padding: 0 15px; text-align: center;">**This is not an auto-renewable subscription or a subscription at all. It is a one time purchase. So, come back and purchase when you are ready for additional wellness support.**</div>
 
                                                                     <div class="hydration-carousel">
                                                                         <div class="carousel-cell">
@@ -966,33 +986,32 @@
                                                                                 <div style="position: absolute;width: 100%;left: 0;padding: 0 15px">
                                                                                     <table width="100%">
                                                                                         <tr class="demo_week-default demo_week_1">
-                                                                                            <td class="text-left">WEEK 1</td>
-                                                                                            <td class="text-right">
-                                                                                                <div class="text-center" style="display: inline-block;">3 KITS<br>Delivers on day of choose</div>
+                                                                                            <td class="text-center">
+                                                                                                <div class="" style="text-transform: uppercase;">3 KITS<br>delivered on the day of your choice</div>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr class="demo_week-default demo_week_1-2">
                                                                                             <td class="text-left">WEEK 1+2</td>
                                                                                             <td class="text-right">
-                                                                                                <div class="text-center" style="display: inline-block;">3 KITS<br>Delivers on day of choose</div>
+                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">3 KITS<br>delivered on the day of your choice</div>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr class="demo_week-default demo_week_3-4">
                                                                                             <td class="text-left">WEEK 3+4</td>
                                                                                             <td class="text-right">
-                                                                                                <div class="text-center" style="display: inline-block;">2 KITS<br>Delivers on day of choose</div>
+                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">2 KITS<br>delivered on the day of your choice</div>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr class="demo_week-default demo_week_5-6">
                                                                                             <td class="text-left">WEEK 5+6</td>
                                                                                             <td class="text-right">
-                                                                                                <div class="text-center" style="display: inline-block;">3 KITS<br>Delivers on day of choose</div>
+                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">3 KITS<br>delivered on the day of your choice</div>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr class="demo_week-default demo_week_7-8">
                                                                                             <td class="text-left">WEEK 7+8</td>
                                                                                             <td class="text-right">
-                                                                                                <div class="text-center" style="display: inline-block;">2 KITS<br>Delivers on day of choose</div>
+                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">2 KITS<br>delivered on the day of your choice</div>
                                                                                             </td>
                                                                                         </tr>
                                                                                     </table>
@@ -1491,11 +1510,37 @@
         $('.delivery_frequency1').addClass('d-none');
 
         $(document).on("change", ".select_pure", function() {
+            if (this.value == '1') {
+                setDeliveryFrequency();
+            } else if (this.value == '2' || this.value == '3') {
+                resetDeliveryFrequency();
+            }
             $('.delivery_frequency1').removeClass('d-none');
         });
         $(document).on("change", ".select_alka", function() {
+            if (this.value == '1') {
+                setDeliveryFrequency();
+            } else if (this.value == '2' || this.value == '3') {
+                resetDeliveryFrequency();
+            }
             $('.delivery_frequency1').removeClass('d-none');
         });
+
+        function setDeliveryFrequency() {
+            $("#delivery_frequency1 option[value='1']").remove();
+            $("#delivery_frequency1 option[value='2']").remove();
+            $('#delivery_frequency1').append($("<option></option>").attr("value", '1').text('UPCOMING SUNDAY'));
+            $('#delivery_frequency1').append($("<option></option>").attr("value", '2').text('UPCOMING MONDAY'));
+            $('#delivery_frequency1').selectpicker('refresh');
+        }
+
+        function resetDeliveryFrequency() {
+            $("#delivery_frequency1 option[value='1']").remove();
+            $("#delivery_frequency1 option[value='2']").remove();
+            $('#delivery_frequency1').append($("<option></option>").attr("value", '1').text('EVERY SUNDAY'));
+            $('#delivery_frequency1').append($("<option></option>").attr("value", '2').text('EVERY MONDAY'));
+            $('#delivery_frequency1').selectpicker('refresh');
+        }
 
         $(document).on("change", "#alakline_pure", function() {
             console.log('Test :: 1 ::');
@@ -1558,7 +1603,7 @@
             event.submit();
             // location.replace("{{ request()->fullUrlWithQuery(['page' => '2']) }}");
         }
-        hydrationOn(); //remove after
+        // hydrationOn(); //remove after
 
     </script>
     <script src='https://drinkwatr.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.6.4' id='elementor-frontend-js'></script>

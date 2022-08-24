@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>WATRBAR</title>
+    <title>STAY STRONG</title>
 
     <meta name='robots' content='max-image-preview:large' />
     <script>
@@ -492,6 +492,12 @@
 
     </div>
     </footer> --}}
+    <style>
+        .footer-social {
+            display: flex !important;
+        }
+
+    </style>
     @include('footer')
     <!-- #colophon -->
     </div>

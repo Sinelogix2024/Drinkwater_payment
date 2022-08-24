@@ -161,6 +161,12 @@ $(document).ready(function() {
         $('.tax_amount').val(tax);
         $('.total_amount').text('$' + total_amount);
         $('.total_amount').val(total_amount);
+
+        if (this.value == '1') {
+            setDeliveryFrequency();
+        } else if (this.value == '2' || this.value == '3') {
+            resetDeliveryFrequency();
+        }
     });
 
     $(document).on("change", "#delivery_frequency1", function() {
@@ -192,6 +198,22 @@ $(document).ready(function() {
         setDropDownvalue();
         $('.delivery_note_final_page').text($('#delivery_frequency5').children("option:selected").text());
     });
+
+    function setDeliveryFrequency() {
+        $("#delivery_frequency5 option[value='1']").remove();
+        $("#delivery_frequency5 option[value='2']").remove();
+        $('#delivery_frequency5').append($("<option></option>").attr("value", '1').text('UPCOMING SUNDAY'));
+        $('#delivery_frequency5').append($("<option></option>").attr("value", '2').text('UPCOMING MONDAY'));
+        $('#delivery_frequency5').selectpicker('refresh');
+    }
+
+    function resetDeliveryFrequency() {
+        $("#delivery_frequency5 option[value='1']").remove();
+        $("#delivery_frequency5 option[value='2']").remove();
+        $('#delivery_frequency5').append($("<option></option>").attr("value", '1').text('EVERY SUNDAY'));
+        $('#delivery_frequency5').append($("<option></option>").attr("value", '2').text('EVERY MONDAY'));
+        $('#delivery_frequency5').selectpicker('refresh');
+    }
 
     $(document).on("change", "#payment_method", function() {
         let selected = $(this).children("option:selected").val();
