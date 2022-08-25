@@ -199,6 +199,12 @@
             bottom: -70px !important;
         }
 
+        .bottle-icon {
+            height: 23px !important;
+            padding-bottom: 5px;
+            width: auto !important;
+        }
+
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link rel='stylesheet' id='wp-block-library-css' href='/css/style.min.css?ver=6.0.1' media='all' />
@@ -940,28 +946,29 @@
                                                                     <div class="hydration-carousel">
                                                                         <div class="carousel-cell">
                                                                             <h3 class="carousel-title">Wellness Solution Guide</h3>
-                                                                            <div style="text-align:center; margin-top: 50px;">1 KIT = 12 B</div>
+                                                                            <div style="text-align:center; margin-top: 50px;">1 KIT = 12 <i class="fa-solid fa-bottle-water"></i><img src="{{ url('images/bottle.png') }}" class="bottle-icon" /></div>
+
                                                                             <table style="text-align:center; margin-top: 0px;" border="1px" width="100%">
                                                                                 <tbody>
                                                                                     <tr>
                                                                                         <td>1 Month</td>
                                                                                         <td>10 KIT</td>
                                                                                         <td>=</td>
-                                                                                        <td>120 B</td>
+                                                                                        <td>120 <img src="{{ url('images/bottle.png') }}" class="bottle-icon" /></td>
                                                                                     </tr>
 
                                                                                     <tr>
                                                                                         <td>2 Month</td>
                                                                                         <td>20 KIT</td>
                                                                                         <td>=</td>
-                                                                                        <td>240 B</td>
+                                                                                        <td>240 <img src="{{ url('images/bottle.png') }}" class="bottle-icon" /></td>
                                                                                     </tr>
 
                                                                                     <tr>
                                                                                         <td>3 Month</td>
                                                                                         <td>30 KIT</td>
                                                                                         <td>=</td>
-                                                                                        <td>360 B</td>
+                                                                                        <td>360 <img src="{{ url('images/bottle.png') }}" class="bottle-icon" /></td>
                                                                                     </tr>
 
                                                                                 </tbody>
@@ -1603,7 +1610,7 @@
             event.submit();
             // location.replace("{{ request()->fullUrlWithQuery(['page' => '2']) }}");
         }
-        // hydrationOn(); //remove after
+        hydrationOn(); //remove after
 
     </script>
     <script src='https://drinkwatr.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.6.4' id='elementor-frontend-js'></script>
