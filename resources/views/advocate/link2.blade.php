@@ -1306,39 +1306,39 @@ request()->session()->forget('response_error_msg');
             }, 500);
         });
 
-        // $('select').change(function() {
-        //     var data_array = {
-        //         id: this.id
-        //         , class: this.class
-        //         , name: this.name
-        //         , value: this.value
-        //     };
+        $('select').change(function() {
+            var data_array = {
+                id: this.id
+                , class: this.class
+                , name: this.name
+                , value: this.value
+            };
 
-        //     localStorage.setItem('data-value-' + this.id + '-' + this.name, JSON.stringify(data_array));
-        // });
+            localStorage.setItem('data-value-' + this.id + '-' + this.name, JSON.stringify(data_array));
+        });
 
-        // $('input').change(function() {
-        //     var data_array = {
-        //         id: this.id
-        //         , class: this.class
-        //         , name: this.name
-        //         , value: this.value
-        //     };
+        $('input').change(function() {
+            var data_array = {
+                id: this.id
+                , class: this.class
+                , name: this.name
+                , value: this.value
+            };
 
-        //     console.log('data-value-' + this.id + '-' + this.name, JSON.stringify(data_array));
-        //     localStorage.setItem('data-value-' + this.id + '-' + this.name, JSON.stringify(data_array));
-        // });
+            console.log('data-value-' + this.id + '-' + this.name, JSON.stringify(data_array));
+            localStorage.setItem('data-value-' + this.id + '-' + this.name, JSON.stringify(data_array));
+        });
 
-        // for (var i = 0, len = localStorage.length; i < len; ++i) {
-        //     var local_key = localStorage.key(i);
-        //     var local_value = localStorage.getItem(local_key);
-        //     if (local_key.startsWith('data-value-')) {
-        //         console.log(local_key, JSON.parse(local_value));
-        //         var data = JSON.parse(local_value);
-        //         $('[id="' + data.id + '"][name="' + data.name + '"]').val(data.value);
-        //         $('[id="' + data.id + '"][name="' + data.name + '"]').change();
-        //     }
-        // }
+        for (var i = 0, len = localStorage.length; i < len; ++i) {
+            var local_key = localStorage.key(i);
+            var local_value = localStorage.getItem(local_key);
+            if (local_key.startsWith('data-value-')) {
+                console.log(local_key, JSON.parse(local_value));
+                var data = JSON.parse(local_value);
+                $('[id="' + data.id + '"][name="' + data.name + '"]').val(data.value);
+                $('[id="' + data.id + '"][name="' + data.name + '"]').change();
+            }
+        }
     });
 
 </script>
