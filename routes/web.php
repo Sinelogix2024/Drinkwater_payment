@@ -3,6 +3,7 @@
 use App\Models\Order;
 use App\Models\Advocate;
 use Illuminate\Support\Facades\Route;
+use Twilio\Rest\Client;
 
 
 /*
@@ -104,5 +105,27 @@ Route::match(['get'], '/orderDetail/{order_id}', 'App\Http\Controllers\Advocate\
 Route::match(['get'], '/venmo_server/{payerID}/{deviceData}/{amount}', 'App\Http\Controllers\BrainTreeController@venomResponse');
 
 Route::get('email', function () {
+    // dd(request()->mno);
+    $accountSid = getenv("TWILIO_ACCOUNT_SID");
+    $authToken = getenv("TWILIO_AUTH_TOKEN");
+    $client = new Client($accountSid, $authToken);
+    $body = 'Hey ! Order Placed.';
+    try {
+        $client->messages->create(
+            '+' . request()->mno,
+            array(
+                'from' => getenv("TWILIO_NUMBER"),
+                'body' => $body
+            )
+        );
+
+        return "msg sent";
+        // request()->session()->put('response_success_msg', 'You will receive a receipt via text and email.');
+        // return redirect(route('receipt', ['detail_access_token' => $request->detail_access_token, 'orderid' => $orderId]));
+    } catch (Exception $e) {
+        // request()->session()->put('response_error_msg', $e->getMessage());
+        return $e->getMessage();
+    }
+
     return view('emails.order_placed_new');
 });

@@ -278,7 +278,7 @@ request()->session()->forget('response_error_msg');
         <main class="app_wrapper  main_content" style="display: none;">
             <!-- custom container start -->
             <div class="custom_container">
-                <input type="hidden" class="current_tab" value="step1_form">
+                <input type="hidden" class="current_tab" id="current_tab" name="current_tab" value="step1_form">
                 <!-- step 1 start home -->
                 <div class="step1_form">
                     <main class="app_wrapper waterbg">
@@ -1305,6 +1305,40 @@ request()->session()->forget('response_error_msg');
                 $('button').removeClass('bs-placeholder');
             }, 500);
         });
+
+        // $('select').change(function() {
+        //     var data_array = {
+        //         id: this.id
+        //         , class: this.class
+        //         , name: this.name
+        //         , value: this.value
+        //     };
+
+        //     localStorage.setItem('data-value-' + this.id + '-' + this.name, JSON.stringify(data_array));
+        // });
+
+        // $('input').change(function() {
+        //     var data_array = {
+        //         id: this.id
+        //         , class: this.class
+        //         , name: this.name
+        //         , value: this.value
+        //     };
+
+        //     console.log('data-value-' + this.id + '-' + this.name, JSON.stringify(data_array));
+        //     localStorage.setItem('data-value-' + this.id + '-' + this.name, JSON.stringify(data_array));
+        // });
+
+        // for (var i = 0, len = localStorage.length; i < len; ++i) {
+        //     var local_key = localStorage.key(i);
+        //     var local_value = localStorage.getItem(local_key);
+        //     if (local_key.startsWith('data-value-')) {
+        //         console.log(local_key, JSON.parse(local_value));
+        //         var data = JSON.parse(local_value);
+        //         $('[id="' + data.id + '"][name="' + data.name + '"]').val(data.value);
+        //         $('[id="' + data.id + '"][name="' + data.name + '"]').change();
+        //     }
+        // }
     });
 
 </script>
