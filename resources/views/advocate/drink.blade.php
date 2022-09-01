@@ -64,7 +64,12 @@
 
             <div class="welcome_wrapper text-center ">
                 <div class="tagline_wrap" data-aos="zoom-in-up" data-aos-duration="1500">
-                    <figure class="logo"><img src="{{ asset('images/logowater.png') }}" alt="Logo" /></figure>
+                    <figure class="logo">
+                        <img src="{{ asset('images/logowater.png') }}" alt="Logo" />
+                        <span style="font-size: 35px;">+</span>
+                        <img src="{{ asset('images/bhs-logo-social.png') }}" alt="Logo" />
+
+                    </figure>
                 </div>
                 <a href="{{ url('/discover',$detail_access_token) }}" type="button" class="splash_link" style="margin-top:100px;color:#000">DISCOVER <i class="fas fa-arrow-circle-right"></i></a>
             </div>
