@@ -947,27 +947,27 @@
                                                                     <div class="hydration-carousel">
                                                                         <div class="carousel-cell">
                                                                             <h3 class="carousel-title">Wellness Solution Guide</h3>
-                                                                            <div style="text-align:center; margin-top: 50px;">1 KIT = 12 <i class="fa-solid fa-bottle-water"></i><img src="{{ url('images/bottle.png') }}" class="bottle-icon" /></div>
+                                                                            <div style="text-align:center; margin-top: 50px;">1 KITS = 12 <i class="fa-solid fa-bottle-water"></i><img src="{{ url('images/bottle.png') }}" class="bottle-icon" /></div>
 
                                                                             <table style="text-align:center; margin-top: 0px;" border="1px" width="100%">
                                                                                 <tbody>
                                                                                     <tr>
                                                                                         <td>1 Week</td>
-                                                                                        <td>3 KIT</td>
+                                                                                        <td>3 KITS</td>
                                                                                         <td>=</td>
                                                                                         <td>36 <img src="{{ url('images/bottle.png') }}" class="bottle-icon" /></td>
                                                                                     </tr>
 
                                                                                     <tr>
                                                                                         <td>1 Month</td>
-                                                                                        <td>10 KIT</td>
+                                                                                        <td>10 KITS</td>
                                                                                         <td>=</td>
                                                                                         <td>120 <img src="{{ url('images/bottle.png') }}" class="bottle-icon" /></td>
                                                                                     </tr>
 
                                                                                     <tr>
                                                                                         <td>2 Month</td>
-                                                                                        <td>20 KIT</td>
+                                                                                        <td>20 KITS</td>
                                                                                         <td>=</td>
                                                                                         <td>240 <img src="{{ url('images/bottle.png') }}" class="bottle-icon" /></td>
                                                                                     </tr>
