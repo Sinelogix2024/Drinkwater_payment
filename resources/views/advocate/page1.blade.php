@@ -951,6 +951,13 @@
                                                                             <table style="text-align:center; margin-top: 0px;" border="1px" width="100%">
                                                                                 <tbody>
                                                                                     <tr>
+                                                                                        <td>1 Week</td>
+                                                                                        <td>3 KIT</td>
+                                                                                        <td>=</td>
+                                                                                        <td>36 <img src="{{ url('images/bottle.png') }}" class="bottle-icon" /></td>
+                                                                                    </tr>
+
+                                                                                    <tr>
                                                                                         <td>1 Month</td>
                                                                                         <td>10 KIT</td>
                                                                                         <td>=</td>
@@ -963,14 +970,6 @@
                                                                                         <td>=</td>
                                                                                         <td>240 <img src="{{ url('images/bottle.png') }}" class="bottle-icon" /></td>
                                                                                     </tr>
-
-                                                                                    <tr>
-                                                                                        <td>3 Month</td>
-                                                                                        <td>30 KIT</td>
-                                                                                        <td>=</td>
-                                                                                        <td>360 <img src="{{ url('images/bottle.png') }}" class="bottle-icon" /></td>
-                                                                                    </tr>
-
                                                                                 </tbody>
                                                                             </table>
                                                                         </div>
@@ -1610,7 +1609,7 @@
             event.submit();
             // location.replace("{{ request()->fullUrlWithQuery(['page' => '2']) }}");
         }
-        hydrationOn(); //remove after
+        // hydrationOn(); //remove after
 
     </script>
     <script src='https://drinkwatr.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.6.4' id='elementor-frontend-js'></script>
