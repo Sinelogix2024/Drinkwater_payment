@@ -807,10 +807,11 @@
     <main id="primary" class="site-main">
         <div class="head_section">
             <div class="brand">
-                <figure class="logo"><img src="/images/logowater.png" alt="Logo">
+                <figure class="logo">
+                    <img src="{{ asset('images/logowater.png') }}" alt="Logo" />
+                    <span style="font-size: 35px;">+</span>
+                    <img src="{{ asset('images/bhs-logo-social.png') }}" alt="Logo" />
                 </figure>
-                <span class="brand_txt">+ Jaydeep
-                    Khokhar</span>
             </div>
             <div class="tagline_wrap">
                 <p>Your Path to daily hydration + wellness</p>
