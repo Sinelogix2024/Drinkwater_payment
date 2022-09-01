@@ -807,10 +807,11 @@
     <main id="primary" class="site-main">
         <div class="head_section">
             <div class="brand">
-                <figure class="logo"><img src="/images/logowater.png" alt="Logo">
+                <figure class="logo">
+                    <img src="{{ asset('images/logowater.png') }}" alt="Logo" />
+                    <span style="font-size: 35px;">+</span>
+                    <img src="{{ asset('images/bhs-logo-social.png') }}" alt="Logo" />
                 </figure>
-                <span class="brand_txt">+ Jaydeep
-                    Khokhar</span>
             </div>
             <div class="tagline_wrap">
                 <p>Your Path to daily hydration + wellness</p>
@@ -946,31 +947,30 @@
                                                                     <div class="hydration-carousel">
                                                                         <div class="carousel-cell">
                                                                             <h3 class="carousel-title">Wellness Solution Guide</h3>
-                                                                            <div style="text-align:center; margin-top: 50px;">1 KIT = 12 <i class="fa-solid fa-bottle-water"></i><img src="{{ url('images/bottle.png') }}" class="bottle-icon" /></div>
+                                                                            <div style="text-align:center; margin-top: 50px;">1 KITS = 12 <i class="fa-solid fa-bottle-water"></i><img src="{{ url('images/bottle.png') }}" class="bottle-icon" /></div>
 
                                                                             <table style="text-align:center; margin-top: 0px;" border="1px" width="100%">
                                                                                 <tbody>
                                                                                     <tr>
+                                                                                        <td>1 Week</td>
+                                                                                        <td>3 KITS</td>
+                                                                                        <td>=</td>
+                                                                                        <td>36 <img src="{{ url('images/bottle.png') }}" class="bottle-icon" /></td>
+                                                                                    </tr>
+
+                                                                                    <tr>
                                                                                         <td>1 Month</td>
-                                                                                        <td>10 KIT</td>
+                                                                                        <td>10 KITS</td>
                                                                                         <td>=</td>
                                                                                         <td>120 <img src="{{ url('images/bottle.png') }}" class="bottle-icon" /></td>
                                                                                     </tr>
 
                                                                                     <tr>
                                                                                         <td>2 Month</td>
-                                                                                        <td>20 KIT</td>
+                                                                                        <td>20 KITS</td>
                                                                                         <td>=</td>
                                                                                         <td>240 <img src="{{ url('images/bottle.png') }}" class="bottle-icon" /></td>
                                                                                     </tr>
-
-                                                                                    <tr>
-                                                                                        <td>3 Month</td>
-                                                                                        <td>30 KIT</td>
-                                                                                        <td>=</td>
-                                                                                        <td>360 <img src="{{ url('images/bottle.png') }}" class="bottle-icon" /></td>
-                                                                                    </tr>
-
                                                                                 </tbody>
                                                                             </table>
                                                                         </div>
@@ -1610,7 +1610,7 @@
             event.submit();
             // location.replace("{{ request()->fullUrlWithQuery(['page' => '2']) }}");
         }
-        hydrationOn(); //remove after
+        // hydrationOn(); //remove after
 
     </script>
     <script src='https://drinkwatr.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.6.4' id='elementor-frontend-js'></script>

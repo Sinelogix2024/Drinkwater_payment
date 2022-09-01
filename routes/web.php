@@ -1,7 +1,9 @@
 <?php
 
+use App\Mail\OrderPlaced;
 use App\Models\Order;
 use App\Models\Advocate;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use Twilio\Rest\Client;
 
@@ -106,26 +108,29 @@ Route::match(['get'], '/venmo_server/{payerID}/{deviceData}/{amount}', 'App\Http
 
 Route::get('email', function () {
     // dd(request()->mno);
-    $accountSid = getenv("TWILIO_ACCOUNT_SID");
-    $authToken = getenv("TWILIO_AUTH_TOKEN");
-    $client = new Client($accountSid, $authToken);
-    $body = 'Hey ! Order Placed.';
-    try {
-        $client->messages->create(
-            '+' . request()->mno,
-            array(
-                'from' => getenv("TWILIO_NUMBER"),
-                'body' => $body
-            )
-        );
+    // $accountSid = getenv("TWILIO_ACCOUNT_SID");
+    // $authToken = getenv("TWILIO_AUTH_TOKEN");
+    // $client = new Client($accountSid, $authToken);
+    // $body = 'Hey ! Order Placed.';
+    // try {
+    //     $client->messages->create(
+    //         '+' . request()->mno,
+    //         array(
+    //             'from' => getenv("TWILIO_NUMBER"),
+    //             'body' => $body
+    //         )
+    //     );
 
-        return "msg sent";
-        // request()->session()->put('response_success_msg', 'You will receive a receipt via text and email.');
-        // return redirect(route('receipt', ['detail_access_token' => $request->detail_access_token, 'orderid' => $orderId]));
-    } catch (Exception $e) {
-        // request()->session()->put('response_error_msg', $e->getMessage());
-        return $e->getMessage();
-    }
+    //     return "msg sent";
+    //     // request()->session()->put('response_success_msg', 'You will receive a receipt via text and email.');
+    //     // return redirect(route('receipt', ['detail_access_token' => $request->detail_access_token, 'orderid' => $orderId]));
+    // } catch (Exception $e) {
+    //     // request()->session()->put('response_error_msg', $e->getMessage());
+    //     return $e->getMessage();
+    // }
 
+    // $orderDetail = Order::find('ordr_dw_1660742759_2022_08_17');
+    // $advocateData = Advocate::where('adv_detail_access_token', 'kny12raph')->first();
+    // Mail::to('jaydeep.khokhar+testemail@techqware.com')->send(new OrderPlaced($advocateData, $orderDetail));
     return view('emails.order_placed_new');
 });
