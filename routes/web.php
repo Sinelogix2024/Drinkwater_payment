@@ -129,8 +129,9 @@ Route::get('email', function () {
     //     return $e->getMessage();
     // }
 
-    // $orderDetail = Order::find('ordr_dw_1660742759_2022_08_17');
-    // $advocateData = Advocate::where('adv_detail_access_token', 'kny12raph')->first();
+    $orderDetail = Order::find(28);
+    $advocateData = Advocate::where('adv_detail_access_token', 'kny12raph')->first();
     // Mail::to('jaydeep.khokhar+testemail@techqware.com')->send(new OrderPlaced($advocateData, $orderDetail));
-    return view('emails.order_placed_new');
+    // return ['advocateData' => $advocateData, 'orderDetail' => $orderDetail];
+    return view('emails.order_placed_new', ['advocateData' => $advocateData, 'orderDetail' => $orderDetail]);
 });

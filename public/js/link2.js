@@ -138,6 +138,7 @@ $(document).ready(function() {
             console.log('Test :: pure ::');
         }
         $('.final_page_package_select').addClass('d-none');
+        $('.package_note_final_page').text($('.final_page_package_select.selected-package').children("option:selected").text());
     });
 
     $(document).on("change", "#package5", function() {

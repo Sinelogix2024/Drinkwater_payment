@@ -565,6 +565,7 @@ body {
 
 .tagline_wrap p {
     font-size: 16px;
+    margin-top: 55px !important;
 }
 
 .form_wrapper {
