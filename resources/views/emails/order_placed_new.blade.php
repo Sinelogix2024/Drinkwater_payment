@@ -170,10 +170,15 @@
 
                         <div class="form_field">
                             <div class="text-field">
+                                <input type="text" value="YOUR PRODUCT" readonly>
+                            </div>
+                            <span class="package_note_final_page"> {{config('constants.product_name')[$orderDetail->odr_product_id ?? '']  ?? ''}}</span>
+                        </div>
+                        <div class="form_field">
+                            <div class="text-field">
                                 <input type="text" value="YOUR WELLNESS SOLUTION" readonly>
                             </div>
-                            <span class="package_note_final_page"> {{config('constants.package_name')[$orderDetail->odr_package_id ?? '']  ?? ''}}</span>
-
+                            <span class="package_note_final_page"> {{config('constants.package_name')[ ($orderDetail->odr_product_id) ?? 0][$orderDetail->odr_package_id ?? '']  ?? ''}}</span>
                         </div>
                         <div class="form_field">
                             <div class="text-field">

@@ -432,10 +432,11 @@ request()->session()->forget('response_error_msg');
 
                     <div class="head_section">
                         <div class="brand">
-                            <figure class="logo"><img src="{{ asset('images/logowater.png') }}" alt="Logo" />
+                            <figure class="logo">
+                                <img src="{{ asset('images/logowater.png') }}" alt="Logo" />
+                                <span style="font-size: 35px;">+</span>
+                                <img src="{{ asset('images/bhs-logo-social.png') }}" alt="Logo" />
                             </figure>
-                            <span class="brand_txt">+ {{ $advocateData->adv_first_name }}
-                                {{ $advocateData->adv_last_name }}</span>
                         </div>
                         <div class="tagline_wrap">
                             <p>Your Path to daily hydration + wellness</p>
@@ -573,10 +574,11 @@ request()->session()->forget('response_error_msg');
                     <div class="head_section">
 
                         <div class="brand">
-                            <figure class="logo"><img src="{{ asset('images/logowater.png') }}" alt="Logo" />
+                            <figure class="logo">
+                                <img src="{{ asset('images/logowater.png') }}" alt="Logo" />
+                                <span style="font-size: 35px;">+</span>
+                                <img src="{{ asset('images/bhs-logo-social.png') }}" alt="Logo" />
                             </figure>
-                            <span class="brand_txt">+ {{ $advocateData->adv_first_name }}
-                                {{ $advocateData->adv_last_name }}</span>
                         </div>
 
                         <div class="tagline_wrap">
@@ -727,10 +729,11 @@ request()->session()->forget('response_error_msg');
                 <div class="custom_container">
                     <div class="head_section">
                         <div class="brand">
-                            <figure class="logo"><img src="{{ asset('images/logowater.png') }}" alt="Logo" />
+                            <figure class="logo">
+                                <img src="{{ asset('images/logowater.png') }}" alt="Logo" />
+                                <span style="font-size: 35px;">+</span>
+                                <img src="{{ asset('images/bhs-logo-social.png') }}" alt="Logo" />
                             </figure>
-                            <span class="brand_txt">+ {{ $advocateData->adv_first_name }}
-                                {{ $advocateData->adv_last_name }}</span>
                         </div>
                         <div class="tagline_wrap">
                             <p>Your Path to daily hydration + wellness</p>
@@ -820,10 +823,11 @@ request()->session()->forget('response_error_msg');
 
                     <div class="head_section">
                         <div class="brand">
-                            <figure class="logo"><img src="{{ asset('images/logowater.png') }}" alt="Logo" />
+                            <figure class="logo">
+                                <img src="{{ asset('images/logowater.png') }}" alt="Logo" />
+                                <span style="font-size: 35px;">+</span>
+                                <img src="{{ asset('images/bhs-logo-social.png') }}" alt="Logo" />
                             </figure>
-                            <span class="brand_txt">+ {{ $advocateData->adv_first_name }}
-                                {{ $advocateData->adv_last_name }}</span>
                         </div>
 
                         <div class="tagline_wrap">
@@ -838,15 +842,15 @@ request()->session()->forget('response_error_msg');
                             <div class="flex_col_sm_12">
                                 <div class="form_field purchase_page_main_field_custom_css">
                                     <div class="text-field flex_row purchase_page_custom_css">
-                                        <div class="final_page_product_label">{{ config('constants.package.default_drop_down_alakline_text') }}</div>
-                                        <select class="selectpicker custom_select" name="product" id="product5" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_alakline_text') }}">
-                                            <option value="" data-hidden="true">{{ config('constants.package.default_drop_down_alakline_text') }}</option>
+                                        <div class="final_page_product_label">YOUR PRODUCT</div>
+                                        <select class="selectpicker custom_select" name="product" id="product5" required data-dropup-auto="false" title="YOUR PRODUCT">
+                                            <option value="" data-hidden="true">YOUR PRODUCT</option>
                                             <option value="1">ALKALINE + ELECTROLYTE</option>
                                             <option value="2">PURE + ELECTROLYTE</option>
                                         </select>
                                         <button type="button" class="edit btn_effect edit_product">Edit</button>
                                     </div>
-                                    <span class="text-note product_note_final_page">{{ config('constants.package.default_drop_down_alakline_text') }}</span>
+                                    <span class="text-note product_note_final_page">YOUR PRODUCT</span>
                                 </div>
 
                                 <div class="form_field purchase_page_main_field_custom_css">
@@ -871,7 +875,7 @@ request()->session()->forget('response_error_msg');
                                     </div>
                                     <span class="text-note package_note_final_page">EVERY SUNDAY FOR 1 MONTH
                                     </span>
-                                    <span class="text-note">(1st DELIVERY 4 KITS, THEN 2 KITS THEREAFTER). </span>
+                                    {{-- <span class="text-note">(1st DELIVERY 4 KITS, THEN 2 KITS THEREAFTER). </span> --}}
                                 </div>
 
                                 <div class="form_field purchase_page_main_field_custom_css">
@@ -888,7 +892,7 @@ request()->session()->forget('response_error_msg');
                                     </div>
                                     <span class="text-note delivery_note_final_page">EVERY SUNDAY FOR 1 MONTH
                                     </span>
-                                    <span class="text-note">(1st DELIVERY 4 KITS, THEN 2 KITS THEREAFTER). </span>
+                                    {{-- <span class="text-note">(1st DELIVERY 4 KITS, THEN 2 KITS THEREAFTER). </span> --}}
                                 </div>
 
 
@@ -996,7 +1000,7 @@ request()->session()->forget('response_error_msg');
                                         </button>
                                     </div>
                                     {{-- <span class="text-note">CARD ENDING IN <b><span class="last_4_digit_card"></span></b></span> --}}
-                                    <span class="text-note payment_method_final_page">Payment Method</span>
+                                    <span class="text-note payment_method_final_page" style="display: none;">Payment Method</span>
                                 </div>
 
                                 <div class="form_field purchase_page_main_field_custom_css">

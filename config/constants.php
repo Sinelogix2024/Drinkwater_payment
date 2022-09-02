@@ -1,10 +1,27 @@
 <?php
 
 return [
+    'product_name' => [
+        1 => "ALKALINE + ELECTROLYTE",
+        2 => "PURE + ELECTROLYTE",
+    ],
+
     'package_name' => [
-        1 => "1 MONTH OF HYDRATION $250 ( 10 KITS )",
-        2 => "2 MONTH OF HYDRATION $500 ( 20 KITS )",
-        3 => "3 MONTH OF HYDRATION $750 ( 30 KITS )",
+        0 => [
+            1 => "1 WEEK WELLNESS $78 ( 3 KITS )",
+            2 => "1 MONTH WELLNESS $250 ( 10 KITS )",
+            3 => "2 MONTH WELLNESS $500 ( 20 KITS )"
+        ],
+        1 => [
+            1 => "1 WEEK WELLNESS $78 ( 3 KITS )",
+            2 => "1 MONTH WELLNESS $250 ( 10 KITS )",
+            3 => "2 MONTH WELLNESS $500 ( 20 KITS )"
+        ],
+        2 => [
+            1 => "1 WEEK WELLNESS $66 ( 3 KITS )",
+            2 => "1 MONTH WELLNESS $220 ( 10 KITS )",
+            3 => "2 MONTH WELLNESS $440 ( 20 KITS )"
+        ]
     ],
 
     'delivery_freq' => [
