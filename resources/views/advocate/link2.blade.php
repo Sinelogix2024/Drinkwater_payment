@@ -238,6 +238,10 @@ request()->session()->forget('response_error_msg');
             padding: 0;
         }
 
+        .text-note {
+            font-size: 11px !important;
+        }
+
     </style>
 </head>
 

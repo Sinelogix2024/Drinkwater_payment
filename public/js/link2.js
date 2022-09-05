@@ -112,37 +112,44 @@ $(document).ready(function() {
     });
 
     $(document).on("change", "#product5", function() {
-        console.log("product5 change");
         let selected = $(this).children("option:selected").val();
         localStorage.setItem("product", selected);
         setDropDownvalue();
 
         $('.product_note_final_page').text($('#product5').children("option:selected").text());
 
-        console.log('Test :: 1 ::');
-        console.log();
-
         $('.final_page_package_select').removeClass('selected-package');
+        // alert($(this).val());
         if ($(this).val() == 1) {
-            console.log('Test :: aplkine ::');
-            console.log();
             $('.select_alka').removeClass('d-none');
             $('.select_pure').addClass('d-none');
-            $('.select_alka').removeClass('selected-package');
-            $('.select_pure').addClass('selected-package');
+            $('.select_alka').addClass('selected-package');
+            $('.select_pure').removeClass('selected-package');
         } else if ($(this).val() == 2) {
             $('.select_pure').removeClass('d-none');
             $('.select_alka').addClass('d-none');
-            $('.select_pure').removeClass('selected-package');
-            $('.select_alka').addClass('selected-package');
-            console.log('Test :: pure ::');
+            $('.select_pure').addClass('selected-package');
+            $('.select_alka').removeClass('selected-package');
         }
         $('.final_page_package_select').addClass('d-none');
         $('.package_note_final_page').text($('.final_page_package_select.selected-package').children("option:selected").text());
+
+        let package_value = localStorage.getItem('package');
+        let service_fees = string.service_fees.toFixed(2);
+        let delivery_fees = string.delivery_fees.toFixed(2);
+        let tax = ((string.package[localStorage.getItem('product')][package_value] * string.tax) / 100).toFixed(2);
+        let package_amount = string.package[localStorage.getItem('product')][package_value];
+        let total_amount = (parseFloat(package_amount) + parseFloat(service_fees) + parseFloat(delivery_fees) + parseFloat(tax)).toFixed(2);
+
+        $('.service_fees').text('$' + service_fees);
+        $('.delivery_fees').text('$' + delivery_fees);
+        $('.tax_amount').text('$' + tax);
+        $('.tax_amount').val(tax);
+        $('.total_amount').text('$' + total_amount);
+        $('.total_amount').val(total_amount);
     });
 
     $(document).on("change", "#package5", function() {
-        console.log("package5 change");
         let selected = $(this).children("option:selected").val();
         localStorage.setItem("package", selected);
         setDropDownvalue();
@@ -152,8 +159,8 @@ $(document).ready(function() {
         let package_value = localStorage.getItem('package');
         let service_fees = string.service_fees.toFixed(2);
         let delivery_fees = string.delivery_fees.toFixed(2);
-        let tax = ((string.package[package_value] * string.tax) / 100).toFixed(2);
-        let package_amount = string.package[package_value];
+        let tax = ((string.package[localStorage.getItem('product')][package_value] * string.tax) / 100).toFixed(2);
+        let package_amount = string.package[localStorage.getItem('product')][package_value];
         let total_amount = (parseFloat(package_amount) + parseFloat(service_fees) + parseFloat(delivery_fees) + parseFloat(tax)).toFixed(2);
 
         $('.service_fees').text('$' + service_fees);
@@ -534,8 +541,8 @@ $(document).ready(function() {
                 let package_value = localStorage.getItem('package');
                 let service_fees = string.service_fees.toFixed(2);
                 let delivery_fees = string.delivery_fees.toFixed(2);
-                let tax = ((string.package[package_value] * string.tax) / 100).toFixed(2);
-                let package_amount = string.package[package_value];
+                let tax = ((string.package[localStorage.getItem('product')][package_value] * string.tax) / 100).toFixed(2);
+                let package_amount = string.package[localStorage.getItem('product')][package_value];
                 let total_amount = (parseFloat(package_amount) + parseFloat(service_fees) + parseFloat(delivery_fees) + parseFloat(tax)).toFixed(2);
 
                 $('.service_fees').text('$' + service_fees);
@@ -571,8 +578,8 @@ $(document).ready(function() {
                     let package_value = localStorage.getItem('package');
                     let service_fees = string.service_fees.toFixed(2);
                     let delivery_fees = string.delivery_fees.toFixed(2);
-                    let tax = ((string.package[package_value] * string.tax) / 100).toFixed(2);
-                    let package_amount = string.package[package_value];
+                    let tax = ((string.package[localStorage.getItem('product')][package_value] * string.tax) / 100).toFixed(2);
+                    let package_amount = string.package[localStorage.getItem('product')][package_value];
                     let total_amount = (parseFloat(package_amount) + parseFloat(service_fees) + parseFloat(delivery_fees) + parseFloat(tax)).toFixed(2);
                     $('.service_fees').text('$' + service_fees);
                     $('.delivery_fees').text('$' + delivery_fees);
