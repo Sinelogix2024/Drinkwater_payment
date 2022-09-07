@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DRINK WATR</title>
+    <title>STAY STRONG</title>
 
     <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -18,7 +18,7 @@
 
     <style>
         body {
-            font-family: Europa-light, sans-serif !important;
+            font-family: europaLight, sans-serif !important;
         }
 
         figure img {
@@ -43,6 +43,12 @@
         .splash_link {
             font-family: europaLight, sans-serif !important;
             font-size: 18px;
+            margin-top: 50px !important;
+            color: #000 !important;
+        }
+
+        .welcome_wrapper {
+            top: 40% !important;
         }
 
     </style>
@@ -54,40 +60,28 @@
 </div>
 
 <body class="body">
-    {{-- main container 1 start --}}
     <main class="app_wrapper" style="">
         <div class="custom_container">
-
-
-            <div class="welcome_wrapper text-center ">
+            {{-- <div class="welcome_wrapper text-center ">
                 <div class="tagline_wrap" data-aos="zoom-in-up" data-aos-duration="1500">
-                    <figure class="logo"><img src="{{ asset('images/logowater.png') }}" alt="Logo" /></figure>
                 </div>
-                <a href="{{ url('/discover',$detail_access_token) }}" type="button" class="splash_link" style="margin-top:100px;color:#000">DISCOVER <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-            <div class="welcome_wrapper text-center ">
-                <a href="{{ url('/watr', $detail_access_token) }}" type="button" class="splash_link" style="margin-top:100px;color:#000">DRINK <i class="fas fa-arrow-circle-right"></i></a>
+            </div> --}}
+            <div class="welcome_wrapper text-center">
+                <figure class="logo">
+                    <img src="{{ asset('images/logowater.png') }}" alt="Logo" />
+                    <span style="font-size: 35px;">+</span>
+                    <img src="{{ asset('images/bhs-logo-social.png') }}" alt="Logo" />
+                </figure>
+                <div>
+                    <a href="{{ url('/watr', $detail_access_token) }}" type="button" class="splash_link" style="margin-top: 80px !important;">DRINK <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+                <div>
+                    <a href="{{ url('/discover',$detail_access_token) }}" type="button" class="splash_link">DISCOVER <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
             </div>
             <img src="https://watrbar.io/wp-content/uploads/2022/07/droplet.png" class="expage-img3" style="max-width: 100px;">
         </div>
-        {{-- <footer id="colophon" class="site-footer">
-            <div class="footer-legal">
-                <div class="footer-copyright" style="text-transform: uppercase;">
-                    <p>2022 © All Rights Reserved | WATR, LLC</p>
-                </div>
-                <div class="footer-social">
-                    <a href="https://instagram.com/watr.world/"><i class="fab fa-instagram"></i></a>
-                </div>
-                <div class="footer-policy">
-                    <a href="{{ url('privacy') }}" style="text-decoration: underline; margin-right: 0.25rem!important;">Privacy</a> <span style="margin-right: 0.25rem;">+</span> <a href="{{ url('legal') }}" style="text-decoration: underline;">Legal</a>
-        </div>
-        </div>
-        </footer> --}}
-
     </main>
-    {{-- main container 1 end --}}
-
-
 </body>
 
 </html>

@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-    <title> DISCOVER | WATRBAR</title>
-    <title>DISCOVER &#8211; WATRBAR</title>
+    <title>STAY STRONG</title>
+    <title>STAY STRONG</title>
     <meta name='robots' content='max-image-preview:large' />
     <link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
     <link rel='dns-prefetch' href='//s.w.org' />
@@ -72,6 +72,15 @@
             vertical-align: -0.1em !important;
             background: none !important;
             padding: 0 !important;
+        }
+
+        @font-face {
+            font-family: europaRegular;
+            src: url(/fonts/Europa-Regular.ttf);
+        }
+
+        .elementor-slide-heading {
+            font-family: europaRegular, sans-serif !important;
         }
 
     </style>
@@ -365,562 +374,19 @@
     </style>
 </head>
 
+<style>
+    @font-face {
+        font-family: europaLight;
+        src: url(/fonts/Europa-Light.ttf);
+    }
+
+    body {
+        font-family: europaLight;
+    }
+
+</style>
 <body class="page-template page-template-elementor_header_footer page page-id-1351 elementor-default elementor-template-full-width elementor-kit-11 elementor-page elementor-page-1351">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
-        <defs>
-            <filter id="wp-duotone-dark-grayscale">
-                <feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
-                <feComponentTransfer color-interpolation-filters="sRGB">
-                    <feFuncR type="table" tableValues="0 0.49803921568627" />
-                    <feFuncG type="table" tableValues="0 0.49803921568627" />
-                    <feFuncB type="table" tableValues="0 0.49803921568627" />
-                    <feFuncA type="table" tableValues="1 1" />
-                </feComponentTransfer>
-                <feComposite in2="SourceGraphic" operator="in" />
-            </filter>
-        </defs>
-    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
-        <defs>
-            <filter id="wp-duotone-grayscale">
-                <feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
-                <feComponentTransfer color-interpolation-filters="sRGB">
-                    <feFuncR type="table" tableValues="0 1" />
-                    <feFuncG type="table" tableValues="0 1" />
-                    <feFuncB type="table" tableValues="0 1" />
-                    <feFuncA type="table" tableValues="1 1" />
-                </feComponentTransfer>
-                <feComposite in2="SourceGraphic" operator="in" />
-            </filter>
-        </defs>
-    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
-        <defs>
-            <filter id="wp-duotone-purple-yellow">
-                <feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
-                <feComponentTransfer color-interpolation-filters="sRGB">
-                    <feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" />
-                    <feFuncG type="table" tableValues="0 1" />
-                    <feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" />
-                    <feFuncA type="table" tableValues="1 1" />
-                </feComponentTransfer>
-                <feComposite in2="SourceGraphic" operator="in" />
-            </filter>
-        </defs>
-    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
-        <defs>
-            <filter id="wp-duotone-blue-red">
-                <feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
-                <feComponentTransfer color-interpolation-filters="sRGB">
-                    <feFuncR type="table" tableValues="0 1" />
-                    <feFuncG type="table" tableValues="0 0.27843137254902" />
-                    <feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" />
-                    <feFuncA type="table" tableValues="1 1" />
-                </feComponentTransfer>
-                <feComposite in2="SourceGraphic" operator="in" />
-            </filter>
-        </defs>
-    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
-        <defs>
-            <filter id="wp-duotone-midnight">
-                <feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
-                <feComponentTransfer color-interpolation-filters="sRGB">
-                    <feFuncR type="table" tableValues="0 0" />
-                    <feFuncG type="table" tableValues="0 0.64705882352941" />
-                    <feFuncB type="table" tableValues="0 1" />
-                    <feFuncA type="table" tableValues="1 1" />
-                </feComponentTransfer>
-                <feComposite in2="SourceGraphic" operator="in" />
-            </filter>
-        </defs>
-    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
-        <defs>
-            <filter id="wp-duotone-magenta-yellow">
-                <feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
-                <feComponentTransfer color-interpolation-filters="sRGB">
-                    <feFuncR type="table" tableValues="0.78039215686275 1" />
-                    <feFuncG type="table" tableValues="0 0.94901960784314" />
-                    <feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" />
-                    <feFuncA type="table" tableValues="1 1" />
-                </feComponentTransfer>
-                <feComposite in2="SourceGraphic" operator="in" />
-            </filter>
-        </defs>
-    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
-        <defs>
-            <filter id="wp-duotone-purple-green">
-                <feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
-                <feComponentTransfer color-interpolation-filters="sRGB">
-                    <feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" />
-                    <feFuncG type="table" tableValues="0 1" />
-                    <feFuncB type="table" tableValues="0.44705882352941 0.4" />
-                    <feFuncA type="table" tableValues="1 1" />
-                </feComponentTransfer>
-                <feComposite in2="SourceGraphic" operator="in" />
-            </filter>
-        </defs>
-    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
-        <defs>
-            <filter id="wp-duotone-blue-orange">
-                <feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
-                <feComponentTransfer color-interpolation-filters="sRGB">
-                    <feFuncR type="table" tableValues="0.098039215686275 1" />
-                    <feFuncG type="table" tableValues="0 0.66274509803922" />
-                    <feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" />
-                    <feFuncA type="table" tableValues="1 1" />
-                </feComponentTransfer>
-                <feComposite in2="SourceGraphic" operator="in" />
-            </filter>
-        </defs>
-    </svg>
     <div id="page" class="site">
-
-        <header id="masthead" class="site-header">
-            <div class="header-contain mobile-hide">
-
-
-                <div class="nav-one">
-                    <a href="#" onmouseover="openNewDrink()" onmouseout="closeNewDrink()" id="drinkUnderline" style="color: black!important; text-align: right;">Drink</a>
-                </div>
-
-                <div class="nav-logo">
-                    <a href="/">
-                        <img src="https://drinkwatr.com/wp-content/uploads/2022/06/logo-latest.png" id="logoDroplet" style="max-width: 40px;">
-                        <!-- 			<img src="https://drinkwatr.com/wp-content/uploads/2021/03/cropped-droplet-with-trademark.png" id="logoDroplet" style="max-width: 50px;"> -->
-                    </a>
-                </div>
-
-                <div class="nav-two">
-                    <a href="#" onmouseover="openNewMenu()" onmouseout="closeNewMenu()" id="discoverUnderline" style="color: black!important; text-align: left;">Discover</a>
-                </div>
-
-                <div class="nav-bag xoo-wsc-basket">
-
-                </div>
-
-                <div>
-
-                </div>
-
-
-            </div>
-
-            <div class="mobile-header desktop-hide" id="mobileHeader">
-
-
-                <div>
-
-                </div>
-
-
-
-                <div class="mobile-logo-container">
-                    <a href="https://drinkwatr.com/">
-                        <img src="https://drinkwatr.com/wp-content/uploads/2022/06/logo-latest.png">
-                    </a>
-                </div>
-
-                <div class="hamburger-icon" onclick="openMenu()">
-
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 118 46" class="mobile-svg" style="opacity: 100!important;">
-                        <defs>
-                            <style>
-                                .cls-1,
-                                .cls-3 {
-                                    fill: none;
-                                }
-
-                                .cls-2 {
-                                    clip-path: url(#clip-path);
-                                }
-
-                                .cls-3 {
-                                    stroke: #231f20;
-                                    stroke-linecap: round;
-                                    stroke-width: 6px;
-                                }
-
-                            </style>
-                            <clipPath id="clip-path">
-                                <rect class="cls-1" width="118" height="46" />
-                            </clipPath>
-                        </defs>
-                        <g id="Layer_2" data-name="Layer 2">
-                            <g id="Layer_1-2" data-name="Layer 1">
-                                <g class="cls-2">
-                                    <line class="cls-3" x1="112" y1="3" x2="16" y2="3" />
-                                    <line class="cls-3" x1="99" y1="23" x2="3" y2="23" />
-                                    <line class="cls-3" x1="115" y1="43" x2="19" y2="43" />
-                                </g>
-                            </g>
-                        </g>
-                    </svg>
-                </div>
-
-
-
-
-
-            </div>
-        </header><!-- #masthead -->
-
-
-        <div class="navigation-new" id="newDrink" onmouseover="openNewDrink()" onmouseout="closeDrink()">
-
-            <div>
-
-                <ul>
-                    <li>
-                        <h5>+ ELECTROLYTES</h5>
-                    </li>
-                    <li><a href="https://drinkwatr.com/electrolytes/alkaline/">Alkaline</a></li>
-                    <li><a href="https://drinkwatr.com/electrolytes/pure/">Pure</a></li>
-                </ul>
-
-            </div>
-
-            <div>
-
-                <ul>
-                    <li>
-                        <h5>+ IMMUNITY</h5>
-                    </li>
-                    <li><a href="https://drinkwatr.com/immunity/cwatr/">Coming Soon</a></li>
-                </ul>
-
-            </div>
-
-            <div>
-
-                <ul>
-                    <li>
-                        <h5>+ Anti-Aging</h5>
-                    </li>
-                    <li><a href=" https://drinkwatr.com/anti-aging/bloom/">Coming Soon</a></li>
-                </ul>
-
-            </div>
-
-
-            <div>
-            </div>
-
-
-            <div>
-            </div>
-
-
-        </div>
-
-        <div class="new-navigation" id="newMenu" onmouseover="openNewMenu()" onmouseout="closeNow()">
-
-
-            <div>
-
-
-                <ul>
-                    <li>
-                        <h5>Why Drink WATR&trade;</h5>
-                    </li>
-                    <li><a href="https://drinkwatr.com/benefits/">Daily Benefits</a></li>
-                    <li><a href="https://drinkwatr.com/watr-guide/">WATR Guide&trade;</li>
-                    <li><a href="https://drinkwatr.com/our-5x-purity-process/">Purity</a></li>
-                    <li><a href="https://drinkwatr.com/design/">Design</a></li>
-
-                </ul>
-
-
-            </div>
-
-            <div>
-
-
-                <ul>
-                    <li>
-                        <h5>The Brand</h5>
-                    </li>
-                    <li><a href="https://drinkwatr.com/intention/">Intention</a></li>
-                    <li><a href="https://drinkwatr.com/sustainability">Sustainability</a></li>
-                    <li><a href="https://drinkwatr.com/cities">Cities</a></li>
-                    <li><a href="https://drinkwatr.com/brand-support/">Support</a></li>
-                </ul>
-
-
-            </div>
-
-
-            <div>
-
-
-                <ul>
-                    <li>
-                        <h5>Private Members</h5>
-                    </li>
-                    <li><a href="https://drinkwatr.com/details">Details</a></li>
-                    <li><a href="https://drinkwatr.com/my-account">Access</a></li>
-                    <li><a href="https://drinkwatr.com/support">Support</a></li>
-                </ul>
-
-
-            </div>
-
-
-        </div>
-
-        <div class="mobile-hamburger-menu" id="hamburger">
-
-
-
-            <div class="mobile-menu-header">
-
-                <a href="#" class="selected" id="drinkHeader" onclick="openMobileDrink()">Drink</a>
-
-
-                <a href="#" id="discoverHeader" onclick="openMobileDiscover()">Discover</a>
-
-            </div>
-
-            <div class="mobile-menu__drink open" id="mobileDrink">
-
-                <ul>
-                    <li>
-                        <a href="#" onclick="openMobileElectrolytes()">+ Electrolytes <span><i class="fas fa-arrow-circle-right"></i></span></a>
-                    </li>
-                    <li>
-                        <a href="https://drinkwatr.com/immunity/cwatr">+ Immunity <span><i class="fas fa-arrow-circle-right"></i></span></a>
-                    </li>
-                    <li>
-                        <a href="https://drinkwatr.com/anti-aging/bloom">+ Anti-Aging <span><i class="fas fa-arrow-circle-right"></i></span></a>
-                    </li>
-                </ul>
-
-            </div>
-
-            <div class="mobile-menu__discover" id="mobileDiscover">
-
-                <ul>
-                    <li>
-                        <a href="#" onclick="openMobileWhy()">Why Drink WATR&trade; <span><i class="fas fa-arrow-circle-right"></i></span></a>
-                    </li>
-                    <li>
-                        <a href="#" onclick="openMobileBrand()">The Brand <span><i class="fas fa-arrow-circle-right"></i></span></a>
-                    </li>
-                    <li>
-                        <a href="#" onclick="openMobilePrivate()">Private Members <span><i class="fas fa-arrow-circle-right"></i></span></a>
-                    </li>
-                </ul>
-
-            </div>
-
-            <div class="mobile-menu__sub" id="mobileElectrolytes">
-                <a href="#" onclick="openMobileDrink()" style="position: absolute; bottom: 25%; left: 46%; font-size: 1.5rem;"><i class="fas fa-arrow-circle-left"></i></a>
-                <ul>
-                    <li style="font-size: 2rem; text-align: center; text-transform: uppercase;">+Electrolytes</li>
-                    <li style="text-align: center;"><a href="https://drinkwatr.com/electrolytes/alkaline/" style="text-align: center; justify-content: center;">Alkaline <span> </span></a></li>
-                    <li style="text-align: center;"><a href="https://drinkwatr.com/electrolytes/pure/" style="text-align: center; justify-content: center;">Pure <span> </span></a></li>
-                </ul>
-            </div>
-
-            <div class="mobile-menu__sub" id="mobileWhy">
-                <a href="#" onclick="openMobileDiscover()" style="position: absolute; bottom: 25%; left: 46%; font-size: 1.5rem;"><i class="fas fa-arrow-circle-left"></i></a>
-                <ul>
-                    <li style="font-size: 2rem; text-align: center; text-transform: uppercase;">Why Drink WATR&trade;</li>
-                    <li style="text-align: center;"><a href="https://drinkwatr.com/benefits/" style="text-align: center; justify-content: center;">Daily Benefits <span> </span></a></li>
-                    <li style="text-align: center;"><a href="https://drinkwatr.com/watr-guide/" style="text-align: center; justify-content: center;">WATR Guide&trade; <span> </span></a></li>
-                    <li style="text-align: center;"><a href="https://drinkwatr.com/our-5x-purity-process/" style="text-align: center; justify-content: center;">Purity <span> </span></a></li>
-                    <li style="text-align: center;"><a href="https://drinkwatr.com/design" style="text-align: center; justify-content: center;">Design <span> </span></a></li>
-                </ul>
-            </div>
-
-            <div class="mobile-menu__sub" id="mobileBrand">
-                <a href="#" onclick="openMobileDiscover()" style="position: absolute; top: 5%; font-size: 1.5rem;"><i class="fas fa-arrow-circle-left"></i></a>
-                <ul>
-                    <li style="font-size: 2rem; text-align: center; text-transform: uppercase;">The Brand</li>
-                    <li style="text-align: center;"><a href="https://drinkwatr.com/intention/" style="text-align: center; justify-content: center;">Intention <span> </span></a></li>
-                    <li style="text-align: center;"><a href="https://drinkwatr.com/sustainability" style="text-align: center; justify-content: center;">Sustainability <span> </span></a></li>
-                    <li style="text-align: center;"><a href="https://drinkwatr.com/cities" style="text-align: center; justify-content: center;">Cities <span> </span></a></li>
-                    <li style="text-align: center;"><a href="https://drinkwatr.com/brand-support/" style="text-align: center; justify-content: center;">Support <span> </span></a></li>
-                </ul>
-            </div>
-
-            <div class="mobile-menu__sub" id="mobilePrivate">
-                <a href="#" onclick="openMobileDiscover()" style="position: absolute; top: 5%; font-size: 1.5rem;"><i class="fas fa-arrow-circle-left"></i></a>
-                <ul>
-                    <li style="font-size: 2rem; text-align: center; text-transform: uppercase;">Private Members</li>
-                    <li style="text-align: center;"><a href="https://drinkwatr.com/details" style="text-align: center; justify-content: center;">Details <span> </span></a></li>
-                    <li style="text-align: center;"><a href="https://drinkwatr.com/my-account" style="text-align: center; justify-content: center;">Access <span> </span></a></li>
-                    <li style="text-align: center;"><a href="https://drinkwatr.com/support" style="text-align: center; justify-content: center;">Support <span> </span></a></li>
-                </ul>
-            </div>
-            <a href="#" class="mobile-menu-close" onclick="closeMenu()"><img src="https://drinkwatr.com/wp-content/uploads/2022/02/close.png" style="max-width: 20px;"></a>
-
-
-        </div>
-
-        <script>
-            function openNewMenu() {
-                document.getElementById("newMenu").style.top = "115px";
-                document.getElementById("discoverUnderline").style.borderBottom = "2px solid black";
-                document.getElementById("newDrink").style.top = "-35vh";
-                document.getElementById("drinkUnderline").style.borderBottom = "none";
-            }
-
-            function closeNewMenu() {
-                setTimeout(function() {
-                    document.getElementById("newMenu").style.top = "-35vh";
-                    document.getElementById("discoverUnderline").style.borderBottom = "none";
-                }, 10000);
-            }
-
-            function closeNow() {
-                document.getElementById("newMenu").style.top = "-35vh";
-                document.getElementById("discoverUnderline").style.borderBottom = "none";
-            }
-
-        </script>
-
-        <script>
-            function openNewDrink() {
-                document.getElementById("newDrink").style.top = "115px";
-                document.getElementById("drinkUnderline").style.borderBottom = "2px solid black";
-                document.getElementById("newMenu").style.top = "-35vh";
-                document.getElementById("discoverUnderline").style.borderBottom = "none";
-            }
-
-            function closeNewDrink() {
-                setTimeout(function() {
-                    document.getElementById("newDrink").style.top = "-35vh";
-                    document.getElementById("drinkUnderline").style.borderBottom = "none";
-                }, 10000);
-            }
-
-            function closeDrink() {
-                document.getElementById("newDrink").style.top = "-35vh";
-                document.getElementById("drinkUnderline").style.borderBottom = "none";
-            }
-
-            function openMenu() {
-                document.getElementById("hamburger").style.right = "0";
-            }
-
-            function closeMenu() {
-                document.getElementById("hamburger").style.right = "-200vw";
-            }
-
-            function oneOpen() {
-                document.getElementById("additionalOne").style.height = "auto";
-                document.getElementById("mobileMenuProducts").setAttribute("onClick", "oneClose()");
-            }
-
-            function oneClose() {
-                document.getElementById("additionalOne").style.height = "0";
-                document.getElementById("mobileMenuProducts").setAttribute("onClick", "oneOpen()");
-            }
-
-            function twoOpen() {
-                document.getElementById("additionalTwo").style.height = "auto";
-                document.getElementById("mobileMenuDiscover").setAttribute("onClick", "twoClose()");
-            }
-
-            function twoClose() {
-                document.getElementById("additionalTwo").style.height = "0";
-                document.getElementById("mobileMenuDiscover").setAttribute("onClick", "twoOpen()");
-            }
-
-            function threeOpen() {
-                document.getElementById("additionalThree").style.height = "auto";
-                document.getElementById("mobileMenuAccount").setAttribute("onClick", "threeClose()");
-            }
-
-            function threeClose() {
-                document.getElementById("additionalThree").style.height = "0";
-                document.getElementById("mobileMenuAccount").setAttribute("onClick", "threeOpen()");
-            }
-
-            function fourOpen() {
-                document.getElementById("additionalFour").style.height = "auto";
-                document.getElementById("mobileMenuBrand").setAttribute("onClick", "fourClose()");
-            }
-
-            function fourClose() {
-                document.getElementById("additionalFour").style.height = "0";
-                document.getElementById("mobileMenuBrand").setAttribute("onClick", "fourOpen()");
-            }
-
-        </script>
-
-        <script>
-            function openMobileDrink() {
-                document.getElementById("mobileDiscover").classList.remove("open");
-                document.getElementById("mobileElectrolytes").classList.remove("open");
-                document.getElementById("mobileWhy").classList.remove("open");
-                document.getElementById("mobileBrand").classList.remove("open");
-                document.getElementById("mobilePrivate").classList.remove("open");
-                document.getElementById("mobileDrink").classList.add("open");
-                document.getElementById("discoverHeader").style.display = "block";
-                document.getElementById("drinkHeader").style.display = "block";
-                document.getElementById("discoverHeader").classList.remove("selected");
-                document.getElementById("drinkHeader").classList.add("selected");
-            }
-
-            function openMobileDiscover() {
-                document.getElementById("mobileDiscover").classList.add("open");
-                document.getElementById("mobileDrink").classList.remove("open");
-                document.getElementById("mobileElectrolytes").classList.remove("open");
-                document.getElementById("mobileWhy").classList.remove("open");
-                document.getElementById("mobileBrand").classList.remove("open");
-                document.getElementById("mobilePrivate").classList.remove("open");
-                document.getElementById("discoverHeader").style.display = "block";
-                document.getElementById("drinkHeader").style.display = "block";
-                document.getElementById("discoverHeader").classList.add("selected");
-                document.getElementById("drinkHeader").classList.remove("selected");
-            }
-
-            function openMobileElectrolytes() {
-                document.getElementById("mobileDiscover").classList.remove("open");
-                document.getElementById("mobileDrink").classList.remove("open");
-                document.getElementById("mobileElectrolytes").classList.add("open");
-                document.getElementById("mobileWhy").classList.remove("open");
-                document.getElementById("mobileBrand").classList.remove("open");
-                document.getElementById("mobilePrivate").classList.remove("open");
-                document.getElementById("discoverHeader").classList.remove("selected");
-                document.getElementById("drinkHeader").classList.add("selected");
-                document.getElementById("discoverHeader").style.display = "none";
-                document.getElementById("drinkHeader").style.display = "none";
-            }
-
-            function openMobileWhy() {
-                document.getElementById("mobileDiscover").classList.remove("open");
-                document.getElementById("mobileDrink").classList.remove("open");
-                document.getElementById("mobileElectrolytes").classList.remove("open");
-                document.getElementById("mobileWhy").classList.add("open");
-                document.getElementById("mobileBrand").classList.remove("open");
-                document.getElementById("mobilePrivate").classList.remove("open");
-                document.getElementById("discoverHeader").style.display = "none";
-                document.getElementById("drinkHeader").style.display = "none";
-            }
-
-            function openMobileBrand() {
-                document.getElementById("mobileDiscover").classList.remove("open");
-                document.getElementById("mobileDrink").classList.remove("open");
-                document.getElementById("mobileElectrolytes").classList.remove("open");
-                document.getElementById("mobileWhy").classList.remove("open");
-                document.getElementById("mobileBrand").classList.add("open");
-                document.getElementById("mobilePrivate").classList.remove("open");
-                document.getElementById("discoverHeader").style.display = "none";
-                document.getElementById("drinkHeader").style.display = "none";
-            }
-
-            function openMobilePrivate() {
-                document.getElementById("mobileDiscover").classList.remove("open");
-                document.getElementById("mobileDrink").classList.remove("open");
-                document.getElementById("mobileElectrolytes").classList.remove("open");
-                document.getElementById("mobileWhy").classList.remove("open");
-                document.getElementById("mobileBrand").classList.remove("open");
-                document.getElementById("mobilePrivate").classList.add("open");
-                document.getElementById("discoverHeader").style.display = "none";
-                document.getElementById("drinkHeader").style.display = "none";
-            }
-
-        </script>
         <div data-elementor-type="wp-page" data-elementor-id="1351" class="elementor elementor-1351">
             <section class="elementor-section elementor-top-section elementor-element elementor-element-53178ac elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="53178ac" data-element_type="section">
                 <div class="elementor-container elementor-column-gap-default">
@@ -957,73 +423,17 @@
                                                                             <img class="img-1" src="https://drinkwatr.com/wp-content/uploads/2021/11/ph-balance2.png">
                                                                             <img class="img-2" src="https://drinkwatr.com/wp-content/uploads/2021/11/line (2).png">
                                                                             <img class="img-3" src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png">
-                                                                            <!-- <div class="box-two-images-com">
-        <img class="img-4" src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png">
-        <img class="img-5" src="https://drinkwatr.com/wp-content/uploads/2021/11/line (2).png">
-        <img class="img-6" src="https://drinkwatr.com/wp-content/uploads/2021/11/electrolytes2.png">-->
                                                                         </div>
                                                                         <div class="box-two boxes">
                                                                             <img class="bottlemain" src="https://drinkwatr.com/wp-content/uploads/2022/06/imgpsh_fullsize_anim_1.png">
-
-                                                                            <!---  <div class="box-text1">
-            <h4>+ ELECTROLYTES</h4>
-            <table>
-              <tr>
-                <td>CALCIUM</td>
-                <td>2 MG/L</td>
-              </tr>
-              <tr>
-                <td>MAGNESIUM</td>
-                <td>33 MG/L</td>
-              </tr>
-              <tr>
-                <td>POTASSIUM</td>
-                <td>57 MG/L</td>
-              </tr>
-              <tr>
-                <td>SODIUM</td>
-                <td>8 MG/L</td>
-              </tr>
-            </table>
-          </div>-->
                                                                         </div>
                                                                         <div class="box-three boxes">
-                                                                            <!--   <img class="img-4" src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png">
-        <img class="img-5" src="https://drinkwatr.com/wp-content/uploads/2021/11/line (2).png">
-        <img class="img-6" src="https://drinkwatr.com/wp-content/uploads/2021/11/electrolytes2.png">-->
-
-                                                                            <!-- <div class="box-text">
-          <h3>Alkaline + Electrolytes</h3>
-          <p class="first-text">(Each bottle is 20oz)</p>
-          <p>EACH ALKALINE + ELECTROLYTES KIT CONTAINS 12 BOTTLES, AND IS DESIGNED FOR DAILY HYDRATION + DAILY ELECTROLYTE SUPPORT.</p>
-          <p style="display: none;">EACH BOTTLE IS ELECTROLYTE ENHANCED AND CONTAINS POTASSIUM + MAGNESIUM + CALCIUM + SODIUM.</p>
-        </div> -->
                                                                         </div>
                                                                     </div>
-                                                                    <!--<div class="element-contant">-->
-                                                                    <!--  <div class="element-box">-->
-                                                                    <!--    <h3>ELEMENTS</h3>-->
-                                                                    <!--    <ul>-->
-                                                                    <!--      <li><img src="https://drinkwatr.com/wp-content/uploads/2022/06/ph-balance_1.png">-->
-                                                                    <!--      <p style="margin: 0;"><span style="text-transform: none!important;">p</span>H Balance</p>-->
-                                                                    <!--      </li>-->
-                                                                    <!--      <li><img src="https://drinkwatr.com/wp-content/uploads/2022/06/electrolytes_1.png">-->
-                                                                    <!--          <p style="margin: 0;">Electrolytes</p>-->
-                                                                    <!--      </li>-->
-                                                                    <!--      <li><img src="https://drinkwatr.com/wp-content/uploads/2022/06/purification_1.png">-->
-                                                                    <!--          <p style="margin: 0;">5<span style="text-transform: lowercase;">x</span> Pure Water</p>-->
-                                                                    <!--      </li>-->
-                                                                    <!--    </ul>-->
-                                                                    <!--  </div>-->
-                                                                    <!--</div>-->
                                                                     <div class="slide-bottom-sec">
-                                                                        <img class="img-4" src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png" style="
-    height: 110px;
-">
+                                                                        <img class="img-4" src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png" style="height: 110px;">
                                                                         <img class="img-5" src="https://drinkwatr.com/wp-content/uploads/2021/11/line (2).png">
-                                                                        <img class="img-6" src="https://drinkwatr.com/wp-content/uploads/2021/11/electrolytes2.png" style="
-    height: 65px;
-">
+                                                                        <img class="img-6" src="https://drinkwatr.com/wp-content/uploads/2021/11/electrolytes2.png" style="height: 65px;">
                                                                         <div class="box-text1">
                                                                             <h4>+ ELECTROLYTES</h4>
                                                                             <table>
@@ -1164,7 +574,7 @@
                                                     <div class="swiper-slide-bg"></div>
                                                     <div class="swiper-slide-inner">
                                                         <div class="swiper-slide-contents">
-                                                            <div class="elementor-slide-heading">Watr Guide</div>
+                                                            {{-- <div class="elementor-slide-heading">Watr Guide</div> --}}
                                                             <div class="elementor-slide-description">
                                                                 <div class="watrguide-sec">
                                                                     <div class="layer-one">
@@ -1204,28 +614,13 @@
             </section>
         </div>
 
-        <footer id="colophon" class="site-footer">
-            <div class="footer-legal">
+        <style>
+            .footer-social {
+                display: flex !important;
+            }
 
-                <div class="footer-copyright" style="text-transform: uppercase;">
-                    <p>2022 &copy; All Rights Reserved | WATR, LLC</p>
-                </div>
-
-                <div class="footer-social">
-                    <a href="https://instagram.com/watr.world/"><i class="fab fa-instagram"></i></a>
-                </div>
-
-                <div class="footer-policy">
-                    <a href="{{ url('privacy') }}" style="text-decoration: underline; margin-right: 0.25rem!important;">Privacy</a> <span style="margin-right: 0.25rem;">+</span> <a href="{{ url('legal') }}" style="text-decoration: underline;">Legal</a>
-                </div>
-
-            </div>
-
-    </div>
-
-
-
-    </footer><!-- #colophon -->
+        </style>
+        @include('footer')
     </div><!-- #page -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

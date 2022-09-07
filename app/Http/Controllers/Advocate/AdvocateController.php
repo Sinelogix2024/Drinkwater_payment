@@ -50,6 +50,7 @@ class AdvocateController extends Controller
                 // Log::info('$request->b_city_state_zip', [$request->b_city_state_zip]);
                 // Log::info('$request->s_city_state_zip', [$request->s_city_state_zip]);
 
+                // return $request->all();
                 $amount = $request->total_amount ?? 10.00;
                 $result = $gateway->transaction()->sale([
                     'amount' => $amount,
@@ -64,6 +65,7 @@ class AdvocateController extends Controller
                     'odr_last_name' => $request->last_name,
                     'odr_email' => $request->email,
                     'odr_mobile' => str_replace("-", "", $request->mobile),
+                    'odr_product_id' => $request->product,
                     'odr_package_id' => $request->package,
                     'odr_delivery_frequency_id' => $request->delivery_frequency,
                     'billing_address' => $request->billing_address,
@@ -95,8 +97,8 @@ class AdvocateController extends Controller
 
                 try {
                     $client->messages->create(
-                        // '+1'.str_replace("-", "", $request->mobile),
-                        getenv('TWILIO_TO_SEND_NUMBER'),
+                        '+1' . str_replace("-", "", $request->mobile),
+                        // getenv('TWILIO_TO_SEND_NUMBER'),
                         array(
                             'from' => getenv("TWILIO_NUMBER"),
                             'body' => $body

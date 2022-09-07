@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap-select.min.css') }}" />
 
 
-    <title>DRINK WATR</title>
+    <title>STAY STRONG</title>
     <meta name='robots' content='max-image-preview:large' />
     <link rel='dns-prefetch' href='//s.w.org' />
     <link rel="alternate" type="application/rss+xml" title="STAY STRONG™ &raquo; Feed" href="https://drinkwatr.com/feed/" />
@@ -130,6 +130,7 @@
         .carousel-title {
             text-transform: uppercase;
             font-weight: bold;
+            font-family: europaRegular;
         }
 
     </style>
@@ -457,8 +458,8 @@
 
         body {
             font-size: 14px !important;
-            font-family: Europa-regular, sans-serif !important;
-            /* font-family: Europa-light, sans-serif !important; */
+            font-family: europaLight, sans-serif !important;
+            /* font-family: europaLight, sans-serif !important; */
         }
 
         .head_section .brand {
@@ -498,7 +499,7 @@
         <div class="container">
             <div class="form_wrapper edit_form_wrapper final_form" style="display: block; margin-bottom: 40px;">
 
-                <p class="support_note">CONGRATULATIONS YOUR PATH TO WELLNESS IS CONFIRMED !</p>
+                <p class="support_note">CONGRATULATIONS, YOUR PATH TO WELLNESS IS CONFIRMED !</p>
 
                 <figure class="droplet_logowrap text-center">
                     <span>DELIVERY PERFORMED BY</span>

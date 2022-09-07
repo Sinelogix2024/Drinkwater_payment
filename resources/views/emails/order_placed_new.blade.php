@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DRINK WATR</title>
+    <title>STAY STRONG</title>
     <link rel="shortcut icon" href="{{url('images/favicon.ico')}}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
@@ -145,28 +145,40 @@
         <div class="custom_container">
 
 
-            <div class="head_section">
-                <div class="brand">
-                    <figure class="logo"><img src="{{url('images/logowater.png')}}" alt="Logo" style="height: 150px;" /></figure>
-                    {{-- <figure class="logo"><img src="{{asset('images/logowater.png')}}" alt="Logo" /></figure> --}}
-                    <span class="brand_txt">+ {{$advocateData->adv_first_name ?? ''}} {{$advocateData->adv_last_name ?? ''}}</span>
-                </div>
-
-                <div class="tagline_wrap">
-                    <p>YOUR PATH TO DAILY HYDRATION + WELLNESS</p>
-                </div>
-            </div>
 
 
             <div class="form_wrapper edit_form_wrapper">
                 <div class="flex_row">
+                    <div class="head_section">
+                        <div class="brand">
+                            <figure class="logo">
+                                {{-- <img src="{{url('images/logowater.png')}}" alt="Logo" style="height: 150px;" /> --}}
+                                <img src="{{ url('images/logowater.png') }}" alt="Logo" style="height: 150px;" />
+                                <span style="font-size: 35px;">+</span>
+                                <img src="{{ url('images/bhs-logo-social.png') }}" alt="Logo" style="height: 150px;" />
+                            </figure>
+                            {{-- <figure class="logo"><img src="{{asset('images/logowater.png')}}" alt="Logo" /></figure> --}}
+                            {{-- <span class="brand_txt">+ {{$advocateData->adv_first_name ?? ''}} {{$advocateData->adv_last_name ?? ''}}</span> --}}
+                        </div>
+
+                        <div class="tagline_wrap">
+                            <p>YOUR PATH TO DAILY HYDRATION + WELLNESS</p>
+                        </div>
+                    </div>
                     <div class="flex_col_sm_12">
+                        <p class="text-center">PURCHASE RECEIPT | TRANSACTION ID: {{$orderDetail->odr_transaction_id ?? ''}}</p>
+
+                        <div class="form_field">
+                            <div class="text-field">
+                                <input type="text" value="YOUR PRODUCT" readonly>
+                            </div>
+                            <span class="package_note_final_page"> {{config('constants.product_name')[$orderDetail->odr_product_id ?? '']  ?? ''}}</span>
+                        </div>
                         <div class="form_field">
                             <div class="text-field">
                                 <input type="text" value="YOUR WELLNESS SOLUTION" readonly>
                             </div>
-                            <span class="package_note_final_page"> {{config('constants.package_name')[$orderDetail->odr_package_id ?? '']  ?? ''}}</span>
-
+                            <span class="package_note_final_page"> {{config('constants.package_name')[ ($orderDetail->odr_product_id) ?? 0][$orderDetail->odr_package_id ?? '']  ?? ''}}</span>
                         </div>
                         <div class="form_field">
                             <div class="text-field">
@@ -175,8 +187,6 @@
                             <span class="delivery_note_final_page">{{config('constants.delivery_freq')[$orderDetail->odr_delivery_frequency_id ?? '']  ?? ''}}</span>
                             <span class="text-note">(1st DELIVERY 4 KITS, THEN 2 KITS THEREAFTER). </span>
                         </div>
-
-
                         <div class="form_field">
                             <div class="text-field">
                                 <input type="text" value="DELIVERY ADDRESS" readonly>
@@ -185,46 +195,24 @@
                             <span class="text-note">{{$orderDetail->s_city_state_zip ?? ''}}</span>
                         </div>
 
-
-                        <div class="form_field">
-                            <div class="flex_row row">
-                                <div class="flex_col_sm_6 text-left">
-                                    <label class="form_label">TAX</label>
-                                </div>
-                                <div class="col"></div>
-                                <div class="flex_col_sm_6 text-right">
-                                    <p class="show_label">${{$orderDetail->odr_tax_amount ?? ''}}</p>
-                                </div>
-                            </div>
-                            <div class="flex_row row">
-                                <div class="flex_col_sm_6 text-left">
-                                    <label class="form_label">SERVICE FEE</label>
-                                </div>
-                                <div class="col"></div>
-                                <div class="flex_col_sm_6 text-right">
-                                    <p class="show_label">$5.00</p>
-                                </div>
-                            </div>
-                            <div class="flex_row row">
-                                <div class="flex_col_sm_6 text-left">
-                                    <label class="form_label">DELIVERY FEE</label>
-                                </div>
-                                <div class="col"></div>
-                                <div class="flex_col_sm_6 text-right">
-                                    <p class="show_label">$5.00</p>
-                                </div>
-                            </div>
-                            <div class="flex_row row">
-                                <div class="flex_col_sm_6 text-left">
-                                    <label class="form_label">TOTAL</label>
-                                </div>
-                                <div class="col"></div>
-                                <div class="flex_col_sm_6 text-right">
-                                    <p class="show_label">${{$orderDetail->odr_transaction_amount ?? ''}}</p>
-                                </div>
-                            </div>
-                            <p class="text-center">PURCHASE RECEIPT | TRANSACTION ID: {{$orderDetail->odr_transaction_id ?? ''}}</p>
-                        </div>
+                        <table class="" width="100%">
+                            <tr class="">
+                                <td style="text-align:left !important">TAX</td>
+                                <td style="text-align:right !important">${{$orderDetail->odr_tax_amount ?? ''}}</td>
+                            </tr>
+                            <tr class="">
+                                <td style="text-align:left !important">SERVICE FEE</td>
+                                <td style="text-align:right !important">$5.00</td>
+                            </tr>
+                            <tr class="">
+                                <td style="text-align:left !important">DELIVERY FEE</td>
+                                <td style="text-align:right !important">$5.00</td>
+                            </tr>
+                            <tr class="">
+                                <td style="text-align:left !important">TOTAL</td>
+                                <td style="text-align:right !important">${{$orderDetail->odr_transaction_amount ?? ''}}</td>
+                            </tr>
+                        </table>
 
                         <div class="form_field">
                             <p class="support_note sm_12">
