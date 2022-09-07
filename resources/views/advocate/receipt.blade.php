@@ -499,7 +499,7 @@
         <div class="container">
             <div class="form_wrapper edit_form_wrapper final_form" style="display: block; margin-bottom: 40px;">
 
-                <p class="support_note">CONGRATULATIONS YOUR PATH TO WELLNESS IS CONFIRMED !</p>
+                <p class="support_note">CONGRATULATIONS, YOUR PATH TO WELLNESS IS CONFIRMED !</p>
 
                 <figure class="droplet_logowrap text-center">
                     <span>DELIVERY PERFORMED BY</span>
