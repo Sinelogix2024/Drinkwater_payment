@@ -74,6 +74,15 @@
             padding: 0 !important;
         }
 
+        @font-face {
+            font-family: europaRegular;
+            src: url(/fonts/Europa-Regular.ttf);
+        }
+
+        .elementor-slide-heading {
+            font-family: europaRegular, sans-serif !important;
+        }
+
     </style>
     <link rel='stylesheet' id='wp-block-library-css' href='https://watrbar.io/wp-includes/css/dist/block-library/style.min.css?ver=6.0.1' media='all' />
     <style id='global-styles-inline-css'>
@@ -414,73 +423,17 @@
                                                                             <img class="img-1" src="https://drinkwatr.com/wp-content/uploads/2021/11/ph-balance2.png">
                                                                             <img class="img-2" src="https://drinkwatr.com/wp-content/uploads/2021/11/line (2).png">
                                                                             <img class="img-3" src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png">
-                                                                            <!-- <div class="box-two-images-com">
-        <img class="img-4" src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png">
-        <img class="img-5" src="https://drinkwatr.com/wp-content/uploads/2021/11/line (2).png">
-        <img class="img-6" src="https://drinkwatr.com/wp-content/uploads/2021/11/electrolytes2.png">-->
                                                                         </div>
                                                                         <div class="box-two boxes">
                                                                             <img class="bottlemain" src="https://drinkwatr.com/wp-content/uploads/2022/06/imgpsh_fullsize_anim_1.png">
-
-                                                                            <!---  <div class="box-text1">
-            <h4>+ ELECTROLYTES</h4>
-            <table>
-              <tr>
-                <td>CALCIUM</td>
-                <td>2 MG/L</td>
-              </tr>
-              <tr>
-                <td>MAGNESIUM</td>
-                <td>33 MG/L</td>
-              </tr>
-              <tr>
-                <td>POTASSIUM</td>
-                <td>57 MG/L</td>
-              </tr>
-              <tr>
-                <td>SODIUM</td>
-                <td>8 MG/L</td>
-              </tr>
-            </table>
-          </div>-->
                                                                         </div>
                                                                         <div class="box-three boxes">
-                                                                            <!--   <img class="img-4" src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png">
-        <img class="img-5" src="https://drinkwatr.com/wp-content/uploads/2021/11/line (2).png">
-        <img class="img-6" src="https://drinkwatr.com/wp-content/uploads/2021/11/electrolytes2.png">-->
-
-                                                                            <!-- <div class="box-text">
-          <h3>Alkaline + Electrolytes</h3>
-          <p class="first-text">(Each bottle is 20oz)</p>
-          <p>EACH ALKALINE + ELECTROLYTES KIT CONTAINS 12 BOTTLES, AND IS DESIGNED FOR DAILY HYDRATION + DAILY ELECTROLYTE SUPPORT.</p>
-          <p style="display: none;">EACH BOTTLE IS ELECTROLYTE ENHANCED AND CONTAINS POTASSIUM + MAGNESIUM + CALCIUM + SODIUM.</p>
-        </div> -->
                                                                         </div>
                                                                     </div>
-                                                                    <!--<div class="element-contant">-->
-                                                                    <!--  <div class="element-box">-->
-                                                                    <!--    <h3>ELEMENTS</h3>-->
-                                                                    <!--    <ul>-->
-                                                                    <!--      <li><img src="https://drinkwatr.com/wp-content/uploads/2022/06/ph-balance_1.png">-->
-                                                                    <!--      <p style="margin: 0;"><span style="text-transform: none!important;">p</span>H Balance</p>-->
-                                                                    <!--      </li>-->
-                                                                    <!--      <li><img src="https://drinkwatr.com/wp-content/uploads/2022/06/electrolytes_1.png">-->
-                                                                    <!--          <p style="margin: 0;">Electrolytes</p>-->
-                                                                    <!--      </li>-->
-                                                                    <!--      <li><img src="https://drinkwatr.com/wp-content/uploads/2022/06/purification_1.png">-->
-                                                                    <!--          <p style="margin: 0;">5<span style="text-transform: lowercase;">x</span> Pure Water</p>-->
-                                                                    <!--      </li>-->
-                                                                    <!--    </ul>-->
-                                                                    <!--  </div>-->
-                                                                    <!--</div>-->
                                                                     <div class="slide-bottom-sec">
-                                                                        <img class="img-4" src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png" style="
-    height: 110px;
-">
+                                                                        <img class="img-4" src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png" style="height: 110px;">
                                                                         <img class="img-5" src="https://drinkwatr.com/wp-content/uploads/2021/11/line (2).png">
-                                                                        <img class="img-6" src="https://drinkwatr.com/wp-content/uploads/2021/11/electrolytes2.png" style="
-    height: 65px;
-">
+                                                                        <img class="img-6" src="https://drinkwatr.com/wp-content/uploads/2021/11/electrolytes2.png" style="height: 65px;">
                                                                         <div class="box-text1">
                                                                             <h4>+ ELECTROLYTES</h4>
                                                                             <table>
@@ -621,7 +574,7 @@
                                                     <div class="swiper-slide-bg"></div>
                                                     <div class="swiper-slide-inner">
                                                         <div class="swiper-slide-contents">
-                                                            <div class="elementor-slide-heading">Watr Guide</div>
+                                                            {{-- <div class="elementor-slide-heading">Watr Guide</div> --}}
                                                             <div class="elementor-slide-description">
                                                                 <div class="watrguide-sec">
                                                                     <div class="layer-one">

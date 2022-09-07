@@ -43,10 +43,12 @@
         .splash_link {
             font-family: europaLight, sans-serif !important;
             font-size: 18px;
+            margin-top: 50px !important;
+            color: #000 !important;
         }
 
         .welcome_wrapper {
-            top: 39% !important;
+            top: 40% !important;
         }
 
     </style>
@@ -60,21 +62,22 @@
 <body class="body">
     <main class="app_wrapper" style="">
         <div class="custom_container">
-
-
-            <div class="welcome_wrapper text-center ">
+            {{-- <div class="welcome_wrapper text-center ">
                 <div class="tagline_wrap" data-aos="zoom-in-up" data-aos-duration="1500">
-                    <figure class="logo">
-                        <img src="{{ asset('images/logowater.png') }}" alt="Logo" />
-                        <span style="font-size: 35px;">+</span>
-                        <img src="{{ asset('images/bhs-logo-social.png') }}" alt="Logo" />
-
-                    </figure>
                 </div>
-                <a href="{{ url('/discover',$detail_access_token) }}" type="button" class="splash_link" style="margin-top:100px;color:#000">DISCOVER <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-            <div class="welcome_wrapper text-center ">
-                <a href="{{ url('/watr', $detail_access_token) }}" type="button" class="splash_link" style="margin-top:100px;color:#000">DRINK <i class="fas fa-arrow-circle-right"></i></a>
+            </div> --}}
+            <div class="welcome_wrapper text-center">
+                <figure class="logo">
+                    <img src="{{ asset('images/logowater.png') }}" alt="Logo" />
+                    <span style="font-size: 35px;">+</span>
+                    <img src="{{ asset('images/bhs-logo-social.png') }}" alt="Logo" />
+                </figure>
+                <div>
+                    <a href="{{ url('/watr', $detail_access_token) }}" type="button" class="splash_link" style="margin-top: 80px !important;">DRINK <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+                <div>
+                    <a href="{{ url('/discover',$detail_access_token) }}" type="button" class="splash_link">DISCOVER <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
             </div>
             <img src="https://watrbar.io/wp-content/uploads/2022/07/droplet.png" class="expage-img3" style="max-width: 100px;">
         </div>
