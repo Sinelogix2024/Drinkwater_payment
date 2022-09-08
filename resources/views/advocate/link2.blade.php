@@ -9,6 +9,11 @@ request()->session()->forget('response_error_msg');
 @endphp
 @endif
 
+<script>
+    localStorage.setItem('BRAINTREE_AUTH_KEY', '{{ env("BRAINTREE_AUTH_KEY","sandbox_7b22h9qq_9wcqdbyrsh4jphn6") }}');
+
+</script>
+
 <!DOCTYPE html>
 <html lang="en">
 
