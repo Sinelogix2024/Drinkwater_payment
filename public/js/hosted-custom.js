@@ -6,7 +6,7 @@ $(document).ready(function() {
     var client_token = $('.client_token').val();
     braintree.client.create({
         // authorization:client_token,
-        authorization: 'sandbox_7b22h9qq_9wcqdbyrsh4jphn6',
+        authorization: localStorage.getItem('BRAINTREE_AUTH_KEY'),
     }, function(err, clientInstance) {
         if (err) {
             console.log('error ')
