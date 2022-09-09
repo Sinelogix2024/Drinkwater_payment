@@ -47,10 +47,6 @@ class AdvocateController extends Controller
             }
 
             if ($request->method() == 'POST') {
-                // Log::info('$request->b_city_state_zip', [$request->b_city_state_zip]);
-                // Log::info('$request->s_city_state_zip', [$request->s_city_state_zip]);
-
-                // return $request->all();
                 $amount = $request->total_amount ?? 10.00;
                 $result = $gateway->transaction()->sale([
                     'amount' => $amount,
@@ -81,21 +77,17 @@ class AdvocateController extends Controller
                     'odr_tax_amount' => $request->tax_amount,
                 ]);
 
-                // return
                 $orderDetail = Order::find($orderId);
                 $advocateData = Advocate::where('adv_detail_access_token', $request->adv_detail_access_token)->first();
 
                 Mail::to($request->email)->send(new OrderPlaced($advocateData, $orderDetail));
 
-                $accountSid = getenv("TWILIO_ACCOUNT_SID");
-                $authToken = getenv("TWILIO_AUTH_TOKEN");
-                $client = new Client($accountSid, $authToken);
-
-                $body = 'Hey ' . $orderDetail->odr_first_name . ' ' . $orderDetail->odr_last_name . '! Order Placed.' .
-                    'Thanks For Shopping! Click on link to view Receipt.
-                    ' . '<a href="' . url('orderDetail/' . $orderDetail->odr_id) . '"> TRACK </a>';
-
                 try {
+                    $body = 'Hey ' . $orderDetail->odr_first_name . ' ' . $orderDetail->odr_last_name . '! Order Placed.' . 'Thanks For Shopping! Click on link to view Receipt.' . '<a href="' . url('orderDetail/' . $orderDetail->odr_id) . '"> TRACK </a>';
+
+                    $accountSid = getenv("TWILIO_ACCOUNT_SID");
+                    $authToken = getenv("TWILIO_AUTH_TOKEN");
+                    $client = new Client($accountSid, $authToken);
                     $client->messages->create(
                         '+1' . str_replace("-", "", $request->mobile),
                         // getenv('TWILIO_TO_SEND_NUMBER'),
@@ -104,13 +96,15 @@ class AdvocateController extends Controller
                             'body' => $body
                         )
                     );
-                    request()->session()->put('response_success_msg', 'You will receive a receipt via text and email.');
-                    return redirect(route('receipt', ['detail_access_token' => $request->detail_access_token, 'orderid' => $orderId]));
                 } catch (Exception $e) {
-                    request()->session()->put('response_error_msg', $e->getMessage());
+                    Log::info('Twilio Error', [$e]);
+                    // request()->session()->put('response_error_msg', $e->getMessage());
                 }
+                request()->session()->put('response_success_msg', 'You will receive a receipt via text and email.');
+                return redirect(route('receipt', ['detail_access_token' => $request->detail_access_token, 'orderid' => $orderId]));
             }
         } catch (Exception $e) {
+            Log::info('Server Error', [$e]);
             request()->session()->put('response_error_msg', $e->getMessage());
         }
         return redirect()->back();

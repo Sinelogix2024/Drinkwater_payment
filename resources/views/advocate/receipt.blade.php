@@ -484,12 +484,10 @@
         <div class="head_section">
             <div class="brand">
                 <figure class="logo">
-                    <a href="{{ url('/home', ['detail_access_token' => request()->detail_access_token]) }}">
-                        <img src="/images/logowater.png" alt="Logo">
-                    </a>
+                    <img src="{{ asset('images/logowater.png') }}" alt="Logo" />
+                    <span style="font-size: 35px;">+</span>
+                    <img src="{{ asset('images/bhs-logo-social.png') }}" alt="Logo" />
                 </figure>
-                <span class="brand_txt">+ Jaydeep
-                    Khokhar</span>
             </div>
             <div class="tagline_wrap">
                 <p>Your Path to daily hydration + wellness</p>
