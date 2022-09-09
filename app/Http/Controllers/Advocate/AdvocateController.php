@@ -97,14 +97,14 @@ class AdvocateController extends Controller
                         )
                     );
                 } catch (Exception $e) {
-                    Log::info('Twilio Error', $e);
+                    Log::info('Twilio Error', [$e]);
                     // request()->session()->put('response_error_msg', $e->getMessage());
                 }
                 request()->session()->put('response_success_msg', 'You will receive a receipt via text and email.');
                 return redirect(route('receipt', ['detail_access_token' => $request->detail_access_token, 'orderid' => $orderId]));
             }
         } catch (Exception $e) {
-            Log::info('Server Error', $e);
+            Log::info('Server Error', [$e]);
             request()->session()->put('response_error_msg', $e->getMessage());
         }
         return redirect()->back();
