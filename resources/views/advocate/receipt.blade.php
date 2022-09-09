@@ -484,7 +484,7 @@
         <div class="head_section">
             <div class="brand">
                 <figure class="logo">
-                    <img src="{{ asset('images/logowater.png') }}" alt="Logo" />
+                    <a href="{{ url('/home', ['detail_access_token' => request()->detail_access_token]) }}"><img src="{{ asset('images/logowater.png') }}" alt="Logo" /></a>
                     <span style="font-size: 35px;">+</span>
                     <img src="{{ asset('images/bhs-logo-social.png') }}" alt="Logo" />
                 </figure>
