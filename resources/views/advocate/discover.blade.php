@@ -606,7 +606,7 @@
                             </div>
                             <div class="elementor-element elementor-element-7e6f835 elementor-widget elementor-widget-html" data-id="7e6f835" data-element_type="widget" data-widget_type="html.default">
                                 <div class="elementor-widget-container">
-                                    <a class="updated-button" style="margin-bottom: 1.5rem; margin-top: 2rem;" href="https://watrbar.io/drink/">Drink</a> </div>
+                                    <a class="updated-button" style="margin-bottom: 1.5rem; margin-top: 2rem;" href="{{ url('/watr', $detail_access_token) }}">Drink</a> </div>
                             </div>
                         </div>
                     </div>
