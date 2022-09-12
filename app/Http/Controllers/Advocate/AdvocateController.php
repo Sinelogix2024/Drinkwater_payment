@@ -71,7 +71,7 @@ class AdvocateController extends Controller
                     'b_city_state_zip' => $request->b_city_state_zip,
                     's_city_state_zip' => $request->s_city_state_zip,
                     'payment_method' => (int) $request->payment_method_hidden,
-                    'odr_transaction_id' => $result->transaction->id,
+                    'odr_transaction_id' => strtoupper($result->transaction->id),
                     'odr_transaction_amount' => $amount,
                     'odr_adv_detail_access_token' => $request->adv_detail_access_token,
                     'odr_tax_amount' => $request->tax_amount,
