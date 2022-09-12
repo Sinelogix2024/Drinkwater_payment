@@ -233,7 +233,7 @@ class AdvocateController extends Controller
 
         $advocateData = Advocate::where('adv_detail_access_token', $orderDetail->odr_adv_detail_access_token)->first();
 
-        return view('emails\order_placed_new', [
+        return view('emails.order_placed_new', [
             'advocateData' => $advocateData,
             'orderDetail' => $orderDetail
         ]);
