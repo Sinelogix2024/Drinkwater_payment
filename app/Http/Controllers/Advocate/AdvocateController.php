@@ -260,4 +260,16 @@ class AdvocateController extends Controller
             return $e->getMessage();
         }
     }
+
+    public function getCustomPayment(Request $request)
+    {
+        try {
+            if ($request->method() == 'GET') {
+                return view('advocate.custom-payment');
+            } else if ($request->method() == 'POST') {
+            }
+        } catch (Exception $e) {
+            return $e;
+        }
+    }
 }

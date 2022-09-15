@@ -103,6 +103,9 @@ Route::match(['get'], '/watr/receipt/{detail_access_token}/receipt/{orderid}', f
 })->name('receipt');
 Route::match(['get'], '/orderDetail/{order_id}', 'App\Http\Controllers\Advocate\AdvocateController@orderDetail');
 
+Route::match(['get'], '/get-payment/{amount}', 'App\Http\Controllers\Advocate\AdvocateController@getCustomPayment');
+Route::match(['post'], '/get-payment/{amount}', 'App\Http\Controllers\Advocate\AdvocateController@getCustomPayment');
+
 // venom payment gateway response
 Route::match(['get'], '/venmo_server/{payerID}/{deviceData}/{amount}', 'App\Http\Controllers\BrainTreeController@venomResponse');
 
