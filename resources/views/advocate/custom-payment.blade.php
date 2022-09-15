@@ -21,7 +21,7 @@ request()->session()->forget('response_error_msg');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STAY STRONG</title>
+    <title>STAY STRONG®</title>
 
     <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
