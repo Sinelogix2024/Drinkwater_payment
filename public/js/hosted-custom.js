@@ -113,6 +113,9 @@ $(document).ready(function() {
 
                 if (field.isValid) {
                     $(field.container).addClass('is-valid');
+                } else if (field.isPotentiallyValid) {
+                    // skip adding classes if the field is
+                    // not valid, but is potentially valid
                 } else {
                     $(field.container).addClass('is-invalid');
                 }
@@ -161,6 +164,7 @@ $(document).ready(function() {
                 //         }
                 //     });
                 // }
+
                 formIsInvalid = true;
 
                 if (formIsInvalid) {

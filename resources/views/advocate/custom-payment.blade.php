@@ -260,32 +260,6 @@ request()->session()->forget('response_error_msg');
 </div>
 
 <body class="body">
-    {{-- main container 1 start --}}
-    <main class="app_wrapper waterbg" style="display: none">
-        <div class="custom_container">
-            <div class="welcome_wrapper text-center">
-                <div class="tagline_wrap" data-aos="zoom-in-up" data-aos-duration="1500">
-                    <figure class="logo"><img src="{{ asset('images/logowater.png') }}" alt="Logo" /></figure>
-                </div>
-                <a type="button" class="splash_link" style="text-decoration: underline;">EXPERIENCE</a>
-            </div>
-
-        </div>
-    </main>
-    {{-- main container 1 end --}}
-
-    {{-- main container 2 start --}}
-    <main class="app_wrapper waterbg " style="display:none">
-        <div class="custom_container">
-
-            <div class="welcome_wrapper text-center">
-
-                <a type="button" class="welcome_link" data-aos="fade-up" data-aos-duration="3000">Enter</a>
-            </div>
-        </div>
-    </main>
-    {{-- main container 2 end --}}
-
     <form id="basic-form" method="POST">
         @csrf
         <main class="app_wrapper  main_content" style="display: ;">
@@ -380,7 +354,6 @@ request()->session()->forget('response_error_msg');
                                 </div>
                             </div>
                             <div class="dots_wrapper">
-                                <button type="button" class="outline_btn m_r_20 show_step2_form">Back</button>
                                 <button type="submit" class="primary_btn">Next</button>
                             </div>
                         </div>
@@ -422,139 +395,6 @@ request()->session()->forget('response_error_msg');
 <script src='https://js.braintreegateway.com/web/3.85.5/js/hosted-fields.min.js'></script>
 <script src="{{ asset('js/hosted-custom.js') }}"></script>
 <script src="{{ asset('js/hosted-custom-updated.js') }}"></script>
-<script src="{{ asset('js/jquery-input-mask-phone-number.js') }}"></script>
-
-<script type="module">
-    let autocomplete;
-    let address1Field;
-    let address2Field;
-    let city;
-    let state;
-    let zip;
-
-    let autocomplete2;
-    let address1Field2;
-    let address2Field2;
-    let city2;
-    let state2;
-    let zip2;
-
-    function initAutocomplete() {
-        address1Field = document.querySelector("#billing_address");
-        address2Field = document.querySelector("#billing_address2");
-        city = document.querySelector("#b_city");
-        state = document.querySelector("#b_state");
-        zip = document.querySelector("#b_zip");
-        
-        address1Field2 = document.querySelector("#shipping_address");
-        address2Field2 = document.querySelector("#shipping_address2");
-        city2 = document.querySelector("#s_city");
-        state2 = document.querySelector("#s_state");
-        zip2 = document.querySelector("#s_zip");
-
-        autocomplete = new google.maps.places.Autocomplete(address1Field);
-        address1Field.focus();
-        autocomplete.addListener("place_changed", fillInAddress);
-        
-        autocomplete2 = new google.maps.places.Autocomplete(address1Field2);
-        address1Field2.focus();
-        autocomplete2.addListener("place_changed", fillInAddress2);
-    }
-
-    function fillInAddress() {
-        const place = autocomplete.getPlace();
-        let street_number="";
-        let route="";
-        let locality="";
-        let administrative_area_level_1="";
-        let postal_code="";
-        let postal_code_suffix="";
-
-        for (const component of place.address_components) {
-            const componentType = component.types[0];
-            switch (componentType) {
-                case "street_number": {
-                street_number = component.long_name;
-                    break;
-                }
-                case "route": {
-                    route = component.long_name;
-                    break;
-                }
-                case "locality":{
-                    locality = component.long_name;
-                    break;
-                }
-                case "administrative_area_level_1": {
-                administrative_area_level_1 =component.long_name;
-                    break;
-                }
-                case "postal_code": {
-                postal_code = component.long_name;
-                    break;
-                }
-                case "postal_code_suffix": {
-                postal_code_suffix = component.long_name;
-                    break;
-                }
-            }
-        }
-        address1Field.value = `${street_number}, ${route}`;
-        city.value = locality;
-        state.value = administrative_area_level_1;
-        zip.value = `${postal_code}${postal_code_suffix}`;
-        address2Field.focus();
-    }
-    
-    function fillInAddress2() {
-        const place = autocomplete2.getPlace();
-        let street_number="";
-        let route="";
-        let locality="";
-        let administrative_area_level_1="";
-        let postal_code="";
-        let postal_code_suffix="";
-
-        for (const component of place.address_components) {
-            const componentType = component.types[0];
-            switch (componentType) {
-                case "street_number": {
-                street_number = component.long_name;
-                    break;
-                }
-                case "route": {
-                    route = component.long_name;
-                    break;
-                }
-                case "locality":{
-                    locality = component.long_name;
-                    break;
-                }
-                case "administrative_area_level_1": {
-                administrative_area_level_1 =component.long_name;
-                    break;
-                }
-                case "postal_code": {
-                postal_code = component.long_name;
-                    break;
-                }
-                case "postal_code_suffix": {
-                postal_code_suffix = component.long_name;
-                    break;
-                }
-            }
-        }
-        
-        address1Field2.value = `${street_number}, ${route}`;
-        city2.value = locality;
-        state2.value = administrative_area_level_1;
-        zip2.value = `${postal_code}${postal_code_suffix}`;
-        address2Field2.focus();
-    }
-    window.initAutocomplete = initAutocomplete;
-    export {};
-</script>
-
 <script>
     $(document).ready(function() {});
 
