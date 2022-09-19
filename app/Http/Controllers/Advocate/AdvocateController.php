@@ -83,7 +83,9 @@ class AdvocateController extends Controller
                 Mail::to($request->email)->send(new OrderPlaced($advocateData, $orderDetail));
 
                 try {
-                    $body = 'Hey ' . $orderDetail->odr_first_name . ' ' . $orderDetail->odr_last_name . '! Order Placed.' . 'Thanks For Shopping! Click on link to view Receipt.' . '<a href="' . url('orderDetail/' . $orderDetail->odr_id) . '"> TRACK </a>';
+                    $body = "Congratulations " . $orderDetail->odr_first_name . " on confirming your path to hydration wellness ! We appreciate your interest in our products, and are here to support your goals. Please find your receipt here: " . url('orderDetail/' . $orderDetail->odr_id) . " Remember DRINK WATR™.. STAY STRONG®";
+
+                    // $body = 'Hey ' . $orderDetail->odr_first_name . ' ' . $orderDetail->odr_last_name . '! Order Placed.' . 'Thanks For Shopping! Click on link to view Receipt.' . '<a href="' . url('orderDetail/' . $orderDetail->odr_id) . '"> TRACK </a>';
 
                     $accountSid = getenv("TWILIO_ACCOUNT_SID");
                     $authToken = getenv("TWILIO_AUTH_TOKEN");
@@ -205,9 +207,11 @@ class AdvocateController extends Controller
             $authToken = getenv("TWILIO_AUTH_TOKEN");
             $client = new Client($accountSid, $authToken);
 
-            $body = 'Hey ' . $orderDetail->odr_first_name . ' ' . $orderDetail->odr_last_name . '! Order Placed.' .
-                'Thanks For Shopping! Click on link to view Receipt.
-            ' . '<a href="' . url('orderDetail/' . $orderDetail->odr_id) . '"> TRACK </a>';
+            $body = "Congratulations " . $orderDetail->odr_first_name . " on confirming your path to hydration wellness ! We appreciate your interest in our products, and are here to support your goals. Please find your receipt here: " . url('orderDetail/' . $orderDetail->odr_id) . " Remember DRINK WATR™.. STAY STRONG®";
+
+            // $body = 'Hey ' . $orderDetail->odr_first_name . ' ' . $orderDetail->odr_last_name . '! Order Placed.' .
+            //     'Thanks For Shopping! Click on link to view Receipt.
+            // ' . '<a href="' . url('orderDetail/' . $orderDetail->odr_id) . '"> TRACK </a>';
 
             try {
                 $client->messages->create(
@@ -228,7 +232,7 @@ class AdvocateController extends Controller
 
     public function orderDetail(Request $request)
     {
-        return $request->all();
+        // return $request->all();
         $orderDetail = Order::where('odr_id', $request->order_id)->first();
 
         $advocateData = Advocate::where('adv_detail_access_token', $orderDetail->odr_adv_detail_access_token)->first();
@@ -258,6 +262,18 @@ class AdvocateController extends Controller
             return $addressDetails;
         } catch (Exception $e) {
             return $e->getMessage();
+        }
+    }
+
+    public function getCustomPayment(Request $request)
+    {
+        try {
+            if ($request->method() == 'GET') {
+                return view('advocate.custom-payment');
+            } else if ($request->method() == 'POST') {
+            }
+        } catch (Exception $e) {
+            return $e;
         }
     }
 }

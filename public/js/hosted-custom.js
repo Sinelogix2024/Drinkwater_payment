@@ -1,7 +1,4 @@
 $(document).ready(function() {
-    console.log('hosed load')
-
-
     var form = $('form');
     var client_token = $('.client_token').val();
     braintree.client.create({
@@ -145,9 +142,12 @@ $(document).ready(function() {
 
             form.submit(function(event) {
                 event.preventDefault();
-                console.log('form submit')
                 var formIsInvalid = false;
                 var state = hostedFieldsInstance.getState();
+                var formValid = Object.keys(state.fields).every(function(key) {
+                    return state.fields[key].isValid;
+                });
+                console.log('formValid', formValid);
 
                 // perform validations on the non-Hosted Fields
                 // inputs
@@ -155,20 +155,41 @@ $(document).ready(function() {
                 // Loop through the Hosted Fields and check
                 // for validity, apply the is-invalid class
                 // to the field container if invalid
-                if (ccName.val() != '') {
+                // console.log('ccName', ccName);
+                // if (ccName.val() != '') {
+                //     Object.keys(state.fields).forEach(function(field) {
+                //         if (!state.fields[field].isValid) {
+                //             $(state.fields[field].container).addClass('is-invalid');
+                //             formIsInvalid = true;
+                //         }
+                //     });
+                // }
 
-
-                    Object.keys(state.fields).forEach(function(field) {
-                        if (!state.fields[field].isValid) {
-                            $(state.fields[field].container).addClass('is-invalid');
-                            formIsInvalid = true;
-                        }
-                    });
-                }
-
+                formIsInvalid = true;
 
                 if (formIsInvalid) {
-                    // skip tokenization request if any fields are invalid
+
+                    console.log('state 123', state);
+                    cardFildsArray = {
+                        'cardholderName': $('#cc-name'),
+                        'number': $('#cc-number'),
+                        'cvv': $('#cc-cvv'),
+                        'expirationDate': $('#cc-expiration')
+                    };
+
+                    for (const field in cardFildsArray) {
+                        validateCardFiledFunction(field, cardFildsArray[field]);
+                    }
+
+                    function validateCardFiledFunction(index, value) {
+                        $(value).removeClass('is-valid');
+                        $(value).removeClass('is-invalid');
+                        if (state['fields'][index].isValid) {
+                            $(value).removeClass('is-valid');
+                        } else {
+                            $(value).addClass('is-invalid');
+                        }
+                    }
                     return;
                 }
 
@@ -176,6 +197,7 @@ $(document).ready(function() {
                     if (err) {
                         console.log('token err')
                         console.error(err);
+                        console.error(err.details);
                         return;
                     }
 
