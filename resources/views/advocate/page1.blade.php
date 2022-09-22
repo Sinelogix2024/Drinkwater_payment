@@ -117,7 +117,7 @@
         } */
 
         footer {
-            position: fixed !important;
+            position: static !important;
         }
 
         .carousel-cell {
@@ -838,7 +838,7 @@
                                                                 <form action="{{ url('/watr', ['detail_access_token'=>$detail_access_token,'page'=>2]) }}" method="POST" onsubmit="submit_product_data(this); return false;">
                                                                     @csrf
                                                                     @method('PUT')
-                                                                    <div class="" style="margin-top: 0; margin-bottom: 50px;">
+                                                                    <div class="" style="margin-top: 0; margin-bottom: 50px; min-height: 156px;">
                                                                         <div class="flex_row">
                                                                             <div class="flex_col_sm_12 p-0">
                                                                                 <div class="form_field">
@@ -995,27 +995,27 @@
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr class="demo_week-default demo_week_1-2">
-                                                                                            <td class="text-left">WEEK 1+2</td>
+                                                                                            <td class="text-left">WEEK 1</td>
                                                                                             <td class="text-right">
-                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">3 KITS<br>delivered on the day of your choice</div>
+                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">5 KITS<br>delivered on the day of your choice</div>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr class="demo_week-default demo_week_3-4">
-                                                                                            <td class="text-left">WEEK 3+4</td>
+                                                                                            <td class="text-left">WEEK 3</td>
                                                                                             <td class="text-right">
-                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">2 KITS<br>delivered on the day of your choice</div>
+                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">5 KITS<br>delivered on the day of your choice</div>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr class="demo_week-default demo_week_5-6">
-                                                                                            <td class="text-left">WEEK 5+6</td>
+                                                                                            <td class="text-left">WEEK 5</td>
                                                                                             <td class="text-right">
-                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">3 KITS<br>delivered on the day of your choice</div>
+                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">5 KITS<br>delivered on the day of your choice</div>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr class="demo_week-default demo_week_7-8">
-                                                                                            <td class="text-left">WEEK 7+8</td>
+                                                                                            <td class="text-left">WEEK 7</td>
                                                                                             <td class="text-right">
-                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">2 KITS<br>delivered on the day of your choice</div>
+                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">5 KITS<br>delivered on the day of your choice</div>
                                                                                             </td>
                                                                                         </tr>
                                                                                     </table>

@@ -417,7 +417,8 @@ request()->session()->forget('response_error_msg');
                             </div>
 
                             <div class="dots_wrapper">
-                                {{-- <button type="button" class="outline_btn m_r_20 main_content_back">Back</button> --}}
+                                <a href="{{ url()->previous() }}"><button type="button" class="outline_btn m_r_20 main_content_back">Back</button></a>
+                                {{-- <button type="button" class="outline_btn m_r_20 show_step1_form">Back</button> --}}
                                 <button type="submit" class="primary_btn btn_effect">Next</button>
                             </div>
                         </div>
