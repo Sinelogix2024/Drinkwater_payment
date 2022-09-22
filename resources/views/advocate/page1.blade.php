@@ -995,27 +995,27 @@
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr class="demo_week-default demo_week_1-2">
-                                                                                            <td class="text-left">WEEK 1+2</td>
+                                                                                            <td class="text-left">WEEK 1</td>
                                                                                             <td class="text-right">
-                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">3 KITS<br>delivered on the day of your choice</div>
+                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">5 KITS<br>delivered on the day of your choice</div>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr class="demo_week-default demo_week_3-4">
-                                                                                            <td class="text-left">WEEK 3+4</td>
+                                                                                            <td class="text-left">WEEK 3</td>
                                                                                             <td class="text-right">
-                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">2 KITS<br>delivered on the day of your choice</div>
+                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">5 KITS<br>delivered on the day of your choice</div>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr class="demo_week-default demo_week_5-6">
-                                                                                            <td class="text-left">WEEK 5+6</td>
+                                                                                            <td class="text-left">WEEK 5</td>
                                                                                             <td class="text-right">
-                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">3 KITS<br>delivered on the day of your choice</div>
+                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">5 KITS<br>delivered on the day of your choice</div>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr class="demo_week-default demo_week_7-8">
-                                                                                            <td class="text-left">WEEK 7+8</td>
+                                                                                            <td class="text-left">WEEK 7</td>
                                                                                             <td class="text-right">
-                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">2 KITS<br>delivered on the day of your choice</div>
+                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">5 KITS<br>delivered on the day of your choice</div>
                                                                                             </td>
                                                                                         </tr>
                                                                                     </table>

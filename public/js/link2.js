@@ -44,6 +44,14 @@ $(document).ready(function() {
     $('.payment_method_final_page').text($('.payment_method_finl_page_class').children("option:selected").text());
     // showLoader();
 
+    // $(document).on("change", ".s_city_final_page", function() {
+    //     tmp_city = $('.s_city_final_page').val();
+    //     tmp_city = tmp_city.toLowerCase();
+    //     if (tmp_city != 'miami') {
+    //         alert("We do not deliver in your area");
+    //     }
+    // });
+
     $(document).on("change", "#package1", function() {
         console.log("package1 change");
 
@@ -560,6 +568,14 @@ $(document).ready(function() {
                 $('.b_city_state_zip').val($('.b_city_final_page').val() + '/' + $('.b_state_final_page').val() + '/' + $('.b_zip_final_page').val());
                 $('.s_city_state_zip').val($('.b_city_final_page').val() + '/' + $('.b_state_final_page').val() + '/' + $('.b_zip_final_page').val());
 
+                tmp_city = $('.s_city_final_page').val();
+                tmp_city = tmp_city.toLowerCase();
+                if (tmp_city != 'miami') {
+                    alert("We do not deliver in your area");
+                    hideLoader();
+                    return true;
+                }
+
                 if ($("#basic-form").valid()) {
                     // $(".step1_form").hide(true);
                     // $(".step2_form").hide(true);
@@ -570,6 +586,7 @@ $(document).ready(function() {
                     showLoader();
                     $(".current_tab").val("final_form");
                 }
+
                 setDropDownvalue();
                 // $("#payment_method").trigger("change");
                 // form.submit();
