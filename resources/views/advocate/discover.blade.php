@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" media='all' />
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" media='all' />
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
     <title>STAY STRONG</title>
     <title>STAY STRONG</title>
     <meta name='robots' content='max-image-preview:large' />
@@ -82,6 +86,25 @@
         .elementor-slide-heading {
             font-family: europaRegular, sans-serif !important;
         }
+
+        .flickity-prev-next-button {
+            top: auto !important;
+            transform: none !important;
+            display: none !important;
+        }
+
+        /* .flickity-button {
+            display: none !important;
+        } */
+
+        /* .flickity-page-dots {
+            bottom: -70px !important;
+        } */
+
+        /* .carousel-cell {
+            justify-content: start !important;
+            padding-top: 3rem !important;
+        } */
 
     </style>
     <link rel='stylesheet' id='wp-block-library-css' href='https://watrbar.io/wp-includes/css/dist/block-library/style.min.css?ver=6.0.1' media='all' />
@@ -420,9 +443,9 @@
                                                                     <div class="content">
 
                                                                         <div class="box-one boxes">
-                                                                            <img class="img-1" src="https://drinkwatr.com/wp-content/uploads/2021/11/ph-balance2.png">
+                                                                            {{-- <img class="img-1" src="https://drinkwatr.com/wp-content/uploads/2021/11/ph-balance2.png">
                                                                             <img class="img-2" src="https://drinkwatr.com/wp-content/uploads/2021/11/line (2).png">
-                                                                            <img class="img-3" src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png">
+                                                                            <img class="img-3" src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png"> --}}
                                                                         </div>
                                                                         <div class="box-two boxes">
                                                                             <img class="bottlemain" src="https://drinkwatr.com/wp-content/uploads/2022/06/imgpsh_fullsize_anim_1.png">
@@ -430,7 +453,7 @@
                                                                         <div class="box-three boxes">
                                                                         </div>
                                                                     </div>
-                                                                    <div class="slide-bottom-sec">
+                                                                    {{-- <div class="slide-bottom-sec">
                                                                         <img class="img-4" src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png" style="height: 110px;">
                                                                         <img class="img-5" src="https://drinkwatr.com/wp-content/uploads/2021/11/line (2).png">
                                                                         <img class="img-6" src="https://drinkwatr.com/wp-content/uploads/2021/11/electrolytes2.png" style="height: 65px;">
@@ -457,6 +480,17 @@
                                                                                 </tbody>
                                                                             </table>
                                                                         </div>
+                                                                    </div> --}}
+                                                                    <div class="poplink-sec">
+                                                                        <div style="text-align: center;">
+                                                                            <a onclick="elementpopOn()" href="javascript:void(0)" style="width: 100%;/*display: block;*/    display: initial;text-align: center;color: black; margin-top: 1rem; padding-bottom: 1rem; font-size: 1rem;">Elements <i class="fas fa-arrow-circle-right"></i></a>
+                                                                        </div>
+                                                                        <div style="text-align: center;margin-top: 1rem;padding-bottom: 1rem;">
+                                                                            <a onclick="hydrationOn()" href="javascript:void(0)" style="width: 100%;/*display: block;*/    display: initial;text-align: center;color: black; margin-top: 1rem; padding-bottom: 1rem; font-size: 1rem;">Benefits of Daily Hydration <i class="fas fa-arrow-circle-right"></i></a>
+                                                                        </div>
+                                                                        <div style="text-align: center;">
+                                                                            <a onclick="hydrateMe()" href="javascript:void(0)" style="width: 100%;/*display: block;*/    display: initial;text-align: center;color: black; padding-bottom: 1rem; font-size: 1rem;">Benefits of Daily Electrolytes <i class="fas fa-arrow-circle-right"></i></a>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -473,74 +507,20 @@
 
                                                                     <div class="content">
                                                                         <div class="box-one boxes">
-                                                                            <img class="img-1" src="https://drinkwatr.com/wp-content/uploads/2022/06/pH-7.0-ICON-blue-1.png">
+                                                                            {{-- <img class="img-1" src="https://drinkwatr.com/wp-content/uploads/2022/06/pH-7.0-ICON-blue-1.png">
                                                                             <img class="img-2" src="https://drinkwatr.com/wp-content/uploads/2021/11/line (2).png">
-                                                                            <img class="img-3" src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png">
-                                                                            <!--      <img class="img-4" src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png">
-        <img class="img-5" src="https://drinkwatr.com/wp-content/uploads/2021/11/line (2).png">
-        <img class="img-6" src="https://drinkwatr.com/wp-content/uploads/2021/11/electrolytes2.png">-->
+                                                                            <img class="img-3" src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png"> --}}
                                                                         </div>
                                                                         <div class="box-two boxes">
                                                                             <img src="https://drinkwatr.com/wp-content/uploads/2022/06/front-pure.png">
-                                                                            <!-- <div class="box-text1">
-            <h4>+ ELECTROLYTES</h4>
-            <table>
-              <tr>
-                <td>CALCIUM</td>
-                <td>2 MG/L</td>
-              </tr>
-              <tr>
-                <td>MAGNESIUM</td>
-                <td>33 MG/L</td>
-              </tr>
-              <tr>
-                <td>POTASSIUM</td>
-                <td>57 MG/L</td>
-              </tr>
-              <tr>
-                <td>SODIUM</td>
-                <td>8 MG/L</td>
-              </tr>
-            </table>
-          </div>-->
                                                                         </div>
                                                                         <div class="box-three boxes">
-                                                                            <!--<img class="img-4" src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png">
-        <img class="img-5" src="https://drinkwatr.com/wp-content/uploads/2021/11/line (2).png">
-        <img class="img-6" src="https://drinkwatr.com/wp-content/uploads/2021/11/electrolytes2.png">-->
-
-                                                                            <!--<div class="box-text">-->
-                                                                            <!--  <h3>PURE + Electrolytes</h3>-->
-                                                                            <!--  <p class="first-text">(each bottle is 20oz)</p>-->
-                                                                            <!--  <p>EACH PURE + ELECTROLYTES KIT IS DESIGNED FOR DAILY HYDRATION + DAILY ELECTROLYTE SUPPORT</p>-->
-                                                                            <!--  <p style="display: none;">EACH BOTTLE IS ELECTROLYTE ENHANCED AND CONTAINS POTASSIUM + MAGNESIUM + CHLORIDE + SODIUM.</p>-->
-                                                                            <!--</div>-->
                                                                         </div>
                                                                     </div>
-                                                                    <!--<div class="element-contant">-->
-                                                                    <!--  <div class="element-box">-->
-                                                                    <!--    <h3>ELEMENTS</h3>-->
-                                                                    <!--    <ul>-->
-                                                                    <!--      <li><img src="https://drinkwatr.com/wp-content/uploads/2022/06/pH-7.0-ICON-blue-1.png">-->
-                                                                    <!--          <p style="margin: 0;"><span style="text-transform: none!important;">p</span>H Balance</p>-->
-                                                                    <!--      </li>-->
-                                                                    <!--      <li><img src="https://drinkwatr.com/wp-content/uploads/2022/06/electrolytes_1.png">-->
-                                                                    <!--          <p style="margin: 0;">Electrolytes</p>-->
-                                                                    <!--      </li>-->
-                                                                    <!--      <li><img src="https://drinkwatr.com/wp-content/uploads/2022/06/purification_1.png">-->
-                                                                    <!--          <p style="margin: 0;">5<span style="text-transform: lowercase;">x</span> Pure Water</p>-->
-                                                                    <!--      </li>-->
-                                                                    <!--    </ul>-->
-                                                                    <!--  </div>-->
-                                                                    <!--</div>-->
-                                                                    <div class="slide-bottom-sec">
-                                                                        <img class="img-4" src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png" style="
-    height: 110px;
-">
+                                                                    {{-- <div class="slide-bottom-sec">
+                                                                        <img class="img-4" src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png" style="height: 110px;">
                                                                         <img class="img-5" src="https://drinkwatr.com/wp-content/uploads/2021/11/line (2).png">
-                                                                        <img class="img-6" src="https://drinkwatr.com/wp-content/uploads/2021/11/electrolytes2.png" style="
-    height: 65px;
-">
+                                                                        <img class="img-6" src="https://drinkwatr.com/wp-content/uploads/2021/11/electrolytes2.png" style="height: 65px;">
                                                                         <div class="box-text1">
                                                                             <h4>+ ELECTROLYTES</h4>
                                                                             <table>
@@ -563,6 +543,17 @@
                                                                                     </tr>
                                                                                 </tbody>
                                                                             </table>
+                                                                        </div>
+                                                                    </div> --}}
+                                                                    <div class="poplink-sec">
+                                                                        <div style="text-align: center;">
+                                                                            <a onclick="elementpopOn()" href="javascript:void(0)" style="width: 100%;/*display: block;*/    display: initial;text-align: center;color: black; margin-top: 1rem; padding-bottom: 1rem; font-size: 1rem;">Elements <i class="fas fa-arrow-circle-right"></i></a>
+                                                                        </div>
+                                                                        <div style="text-align: center;margin-top: 1rem;padding-bottom: 1rem;">
+                                                                            <a onclick="hydrationOn()" href="javascript:void(0)" style="width: 100%;/*display: block;*/    display: initial;text-align: center;color: black; margin-top: 1rem; padding-bottom: 1rem; font-size: 1rem;">Benefits of Daily Hydration <i class="fas fa-arrow-circle-right"></i></a>
+                                                                        </div>
+                                                                        <div style="text-align: center;">
+                                                                            <a onclick="hydrateMe()" href="javascript:void(0)" style="width: 100%;/*display: block;*/    display: initial;text-align: center;color: black; padding-bottom: 1rem; font-size: 1rem;">Benefits of Daily Electrolytes <i class="fas fa-arrow-circle-right"></i></a>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -608,6 +599,262 @@
                                 <div class="elementor-widget-container">
                                     <a class="updated-button" style="margin-bottom: 1.5rem; margin-top: 2rem;" href="{{ url('/watr', $detail_access_token) }}">Drink</a> </div>
                             </div>
+
+                            <div class="elementor-element elementor-element-2ae2e64 elementor-widget elementor-widget-html" data-id="2ae2e64" data-element_type="widget" data-widget_type="html.default">
+                                <div class="elementor-widget-container">
+                                    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+                                    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+                                    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+                                    <div class="new-popup-style" id="vitaminCPopup" style="opacity: 0; z-index: -100;">
+                                        <a href="javascript:void(0)" class="close-button" onclick="noVitamin()"><img src="https://drinkwatr.com/wp-content/uploads/2022/02/close.png" style="max-width: 20px;"></a>
+                                        <h5>Benefits of Daily Electrolytes</h5>
+                                        <div class="main-carousel">
+                                            <div class="carousel-cell" style="position: absolute; left: 0px; transform: translateX(400%);" aria-hidden="true">
+                                                <img src="https://drinkwatr.com/wp-content/uploads/2021/04/HEALTHIER-DIGESTION-01.png">
+                                                <p>HEALTHIER DIGESTION</p>
+                                            </div>
+                                            <div class="carousel-cell" style="position: absolute; left: 0px; transform: translateX(100%);" aria-hidden="true">
+                                                <img src="https://drinkwatr.com/wp-content/uploads/2021/04/mental-clarity.png">
+                                                <p>MENTAL CLARITY</p>
+                                            </div>
+                                            <div class="carousel-cell" style="position: absolute; left: 0px; transform: translateX(200%);" aria-hidden="true">
+                                                <img src="https://drinkwatr.com/wp-content/uploads/2021/04/CARDIOVASCULAR-HEALTH-01.png">
+                                                <p>CARDIOVASCULAR HEALTH</p>
+                                            </div>
+                                            <div class="carousel-cell is-selected" style="position: absolute; left: 0px; transform: translateX(300%);">
+                                                <img src="https://drinkwatr.com/wp-content/uploads/2021/03/inflammation.png">
+                                                <p>REDUCES INFLAMMATION</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="new-popup-style" id="hydrationPopup" style="opacity: 0; z-index: -100;">
+                                        <a href="#" class="close-button" onclick="hydrationOff()"><img src="https://drinkwatr.com/wp-content/uploads/2022/02/close.png" style="max-width: 20px;"></a>
+                                        <h5>Benefits of Daily Hydration</h5>
+                                        <div class="hydration-carousel">
+                                            <div class="carousel-cell" style="position: absolute; left: 0px; transform: translateX(0%);" aria-hidden="true">
+                                                <img src="https://drinkwatr.com/wp-content/uploads/2021/04/CARDIOVASCULAR-HEALTH-01.png">
+                                                <p style="text-transform: uppercase;">Cardiovascular Health</p>
+                                            </div>
+                                            <div class="carousel-cell" style="position: absolute; left: 0px; transform: translateX(100%);" aria-hidden="true">
+                                                <img src="https://drinkwatr.com/wp-content/uploads/2021/04/DETOXIFYING-01.png">
+                                                <p style="text-transform: uppercase;">Detoxifying</p>
+                                            </div>
+                                            <div class="carousel-cell" style="position: absolute; left: 0px; transform: translateX(200%);" aria-hidden="true">
+                                                <img src="https://drinkwatr.com/wp-content/uploads/2021/04/ENERGY-01.png">
+                                                <p style="text-transform: uppercase;">More Energy</p>
+                                            </div>
+                                            <div class="carousel-cell" style="position: absolute; left: 0px; transform: translateX(300%);" aria-hidden="true">
+                                                <img src="https://drinkwatr.com/wp-content/uploads/2021/04/HEALTHIER-DIGESTION-01.png">
+                                                <p style="text-transform: uppercase;">Healthier Digestion</p>
+                                            </div>
+                                            <div class="carousel-cell" style="position: absolute; left: 0px; transform: translateX(400%);" aria-hidden="true">
+                                                <img src="https://drinkwatr.com/wp-content/uploads/2021/04/HEALTHY-SKIN-01.png">
+                                                <p style="text-transform: uppercase;">Healthier Skin</p>
+                                            </div>
+                                            <div class="carousel-cell" style="position: absolute; left: 0px; transform: translateX(500%);" aria-hidden="true">
+                                                <img src="https://drinkwatr.com/wp-content/uploads/2021/04/PROMOTES-WEIGHT-LOSS-01.png">
+                                                <p style="text-transform: uppercase; text-align: center;">Promotes<br>Weight Loss</p>
+                                            </div>
+                                            <div class="carousel-cell is-selected" style="position: absolute; left: 0px; transform: translateX(600%);">
+                                                <img src="https://drinkwatr.com/wp-content/uploads/2021/04/mental-clarity.png">
+                                                <p style="text-transform: uppercase;">Mental Clarity</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="new-popup-style" id="elementPopup">
+                                        <a href="#" class="close-button" onclick="elementpopOff()"><img src="https://drinkwatr.com/wp-content/uploads/2022/02/close.png" style="max-width: 20px;"></a>
+                                        <h3><b>ELEMENTS</b></h3>
+                                        <div class="element-carousel">
+                                            <div class="carousel-cell">
+                                                <img class="img-6" src="https://drinkwatr.com/wp-content/uploads/2021/11/electrolytes2.png" style="height: 70px;">
+                                                <p>+ ELECTROLYTES</p>
+                                                <div class="slide-bottom-sec">
+                                                    <img class="img-4" src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png" style="height: 110px;">
+                                                    <div class="box-text1">
+                                                        <h4>+ ELECTROLYTES</h4>
+                                                        <table>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>CALCIUM</td>
+                                                                    <td>2 MG/L</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>MAGNESIUM</td>
+                                                                    <td>33 MG/L</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>POTASSIUM</td>
+                                                                    <td>57 MG/L</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>SODIUM</td>
+                                                                    <td>8 MG/L</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-cell" aria-hidden="true" style="position: absolute; left: 0px; transform: translateX(100%);">
+                                                <div class="slide-bottom-sec">
+                                                    <img class="" src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png" style="height: 100px;">
+                                                    <div class="">
+                                                        <img src="https://drinkwatr.com/wp-content/uploads/2022/06/ph-balance_1.png" style="max-height: 110px;">
+                                                        <p style="margin: 2px;">pH BALANCE</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-cell" aria-hidden="true" style="position: absolute; left: 0px; transform: translateX(200%);">
+                                                <div class="slide-bottom-sec" style="align-items: center;">
+                                                    <img class="" src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png" style="height: 100px;">
+                                                    <div class="">
+                                                        <img src="https://drinkwatr.com/wp-content/uploads/2022/06/purification_1.png" style="max-height: 110px;">
+                                                        <p style="margin: 2px;">5<span style="text-transform: lowercase;">x</span> PURE WATER</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <script>
+                                        function hydrateMe() {
+                                            document.getElementById("vitaminCPopup").style.opacity = "1";
+
+                                            document.getElementById("vitaminCPopup").style.zIndex = "9999999999999";
+
+                                            document.querySelector(".elementor-swiper-button-next").style.display = "none";
+                                        }
+
+                                        function noVitamin() {
+                                            document.getElementById("vitaminCPopup").style.opacity = "0";
+                                            document.getElementById("vitaminCPopup").style.zIndex = "-100";
+
+                                            document.querySelector(".elementor-swiper-button-next").style.display = "block";
+                                        }
+
+
+                                        function hydrationOn() {
+                                            document.getElementById("hydrationPopup").style.opacity = "1";
+
+                                            document.getElementById("hydrationPopup").style.zIndex = "9999999999999";
+
+                                            document.querySelector(".elementor-swiper-button-next").style.display = "none";
+                                        }
+
+                                        function hydrationOff() {
+                                            document.getElementById("hydrationPopup").style.opacity = "0";
+                                            document.getElementById("hydrationPopup").style.zIndex = "-100";
+
+                                            document.querySelector(".elementor-swiper-button-next").style.display = "block";
+                                        }
+
+
+                                        function elementpopOn() {
+                                            document.getElementById("elementPopup").style.opacity = "1";
+
+                                            document.getElementById("elementPopup").style.zIndex = "9999999999999";
+
+                                            document.querySelector(".elementor-swiper-button-next").style.display = "none";
+                                        }
+
+                                        function elementpopOff() {
+                                            document.getElementById("elementPopup").style.opacity = "0";
+                                            document.getElementById("elementPopup").style.zIndex = "-100";
+
+                                            document.querySelector(".elementor-swiper-button-next").style.display = "block";
+                                        }
+
+                                    </script>
+
+                                    <script>
+                                        var elem = document.querySelector('.main-carousel');
+                                        var flkty = new Flickity(elem, {
+                                            // options
+                                            contain: true
+                                            , wrapAround: true
+                                            , cellAlign: 'center'
+                                            , imagesLoaded: true
+                                        });
+
+                                        // element argument can be a selector string
+                                        //   for an individual element
+                                        var flkty = new Flickity('.main-carousel', {
+                                            // options
+                                        });
+
+                                        var carouselStatus = document.querySelector('.carousel-status');
+
+                                        function updateStatus() {
+                                            var slideNumber = flkty.selectedIndex + 1;
+                                            carouselStatus.textContent = slideNumber + '/' + flkty.slides.length;
+                                        }
+                                        updateStatus();
+
+                                        flkty.on('select ', updateStatus);
+
+                                    </script>
+
+                                    <script>
+                                        var element = document.querySelector('.hydration-carousel');
+                                        var flokty = new Flickity(element, {
+                                            // options
+                                            contain: true
+                                            , wrapAround: true
+                                            , cellAlign: 'center'
+                                            , imagesLoaded: true
+                                        });
+
+                                        // element argument can be a selector string
+                                        //   for an individual element
+                                        var flokty = new Flickity('.hydration-carousel', {
+                                            // options
+                                        });
+
+                                        var carouselStatuz = document.querySelector('.hydration-status');
+
+                                        function updateTheStatus() {
+                                            var slideNumbers = flokty.selectedIndex + 1;
+                                            carouselStatuz.textContent = slideNumbers + '/' + flokty.slides.length;
+                                        }
+                                        updateTheStatus();
+
+                                        flokty.on('select', updateTheStatus);
+
+                                    </script>
+
+                                    <script>
+                                        var element = document.querySelector('.element-carousel');
+                                        var flokty = new Flickity(element, {
+                                            // options
+                                            contain: true
+                                            , wrapAround: true
+                                            , cellAlign: 'center'
+                                            , imagesLoaded: true
+                                        });
+
+                                        // element argument can be a selector string
+                                        //   for an individual element
+                                        var flokty = new Flickity('.element-carousel', {
+                                            // options
+                                        });
+
+                                        var carouselStatuz = document.querySelector('.hydration-status');
+
+                                        function updateTheStatus() {
+                                            var slideNumbers = flokty.selectedIndex + 1;
+                                            carouselStatuz.textContent = slideNumbers + '/' + flokty.slides.length;
+                                        }
+                                        updateTheStatus();
+
+                                        flokty.on('select', updateTheStatus);
+
+                                    </script>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -978,6 +1225,65 @@
         };
 
     </script>
+    {{-- <script>
+        function openEssentials() {
+            document.getElementById("desktopEssentials").style.display = "block";
+            document.getElementById("cartOverlay").style.display = "block";
+            document.getElementById("cartOverlay").setAttribute("onclick", "closeEssentials()");
+        }
+
+        function closeEssentials() {
+            document.getElementById("desktopEssentials").style.display = "none";
+            document.getElementById("cartOverlay").style.display = "none";
+        }
+
+        function hydrateMe() {
+            document.getElementById("vitaminCPopup").style.opacity = "1";
+
+            document.getElementById("vitaminCPopup").style.zIndex = "9999999999999";
+
+            document.querySelector(".elementor-swiper-button-next").style.display = "none";
+        }
+
+        function noVitamin() {
+            document.getElementById("vitaminCPopup").style.opacity = "0";
+            document.getElementById("vitaminCPopup").style.zIndex = "-100";
+
+            document.querySelector(".elementor-swiper-button-next").style.display = "block";
+        }
+
+
+        function hydrationOn() {
+            document.getElementById("hydrationPopup").style.opacity = "1";
+
+            document.getElementById("hydrationPopup").style.zIndex = "9999999999999";
+
+            document.querySelector(".elementor-swiper-button-next").style.display = "none";
+        }
+
+        function hydrationOff() {
+            document.getElementById("hydrationPopup").style.opacity = "0";
+            document.getElementById("hydrationPopup").style.zIndex = "-100";
+
+            document.querySelector(".elementor-swiper-button-next").style.display = "block";
+        }
+
+
+        function elementpopOn() {
+            document.getElementById("elementPopup").style.opacity = "1";
+
+            document.getElementById("elementPopup").style.zIndex = "9999999999999";
+
+            document.querySelector(".elementor-swiper-button-next").style.display = "none";
+        }
+
+        function elementpopOff() {
+            document.getElementById("elementPopup").style.opacity = "0";
+            document.getElementById("elementPopup").style.zIndex = "-100";
+
+            document.querySelector(".elementor-swiper-button-next").style.display = "block";
+        }
+    </script> --}}
     <script src='https://watrbar.io/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.6.7' id='elementor-frontend-js'></script>
     <script src='https://watrbar.io/wp-includes/js/underscore.min.js?ver=1.13.3' id='underscore-js'></script>
     <script id='wp-util-js-extra'>
