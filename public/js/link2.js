@@ -571,7 +571,7 @@ $(document).ready(function() {
                 tmp_city = $('.s_city_final_page').val();
                 tmp_city = tmp_city.toLowerCase();
                 if (tmp_city != 'miami') {
-                    alert("We do not deliver in your area");
+                    alert("Thank you for your interest. We want to serve you, but don’t yet deliver to your area. We are here to support you on your wellness journey. So, stay tuned for when we deliver in your area.");
                     hideLoader();
                     return true;
                 }

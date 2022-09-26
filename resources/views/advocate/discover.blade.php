@@ -547,7 +547,7 @@
                                                                     </div> --}}
                                                                     <div class="poplink-sec">
                                                                         <div style="text-align: center;">
-                                                                            <a onclick="elementpopOn()" href="javascript:void(0)" style="width: 100%;/*display: block;*/    display: initial;text-align: center;color: black; margin-top: 1rem; padding-bottom: 1rem; font-size: 1rem;">Elements <i class="fas fa-arrow-circle-right"></i></a>
+                                                                            <a onclick="pureelementpopOn()" href="javascript:void(0)" style="width: 100%;/*display: block;*/    display: initial;text-align: center;color: black; margin-top: 1rem; padding-bottom: 1rem; font-size: 1rem;">Elements <i class="fas fa-arrow-circle-right"></i></a>
                                                                         </div>
                                                                         <div style="text-align: center;margin-top: 1rem;padding-bottom: 1rem;">
                                                                             <a onclick="hydrationOn()" href="javascript:void(0)" style="width: 100%;/*display: block;*/    display: initial;text-align: center;color: black; margin-top: 1rem; padding-bottom: 1rem; font-size: 1rem;">Benefits of Daily Hydration <i class="fas fa-arrow-circle-right"></i></a>
@@ -719,145 +719,228 @@
                                         </div>
                                     </div>
 
-                                    <script>
-                                        function hydrateMe() {
-                                            document.getElementById("vitaminCPopup").style.opacity = "1";
+                                    <div class="new-popup-style elementpop-stye" id="pureelementPopup">
+                                        <a href="#" class="close-button" onclick="pureelementpopOff()"><img src="https://drinkwatr.com/wp-content/uploads/2022/02/close.png" style="max-width: 20px;"></a>
+                                        <h3><b>ELEMENTS</b></h3>
+                                        <div class="pureelement-carousel">
+                                            <div class="carousel-cell">
+                                                <img class="img-6" src="https://drinkwatr.com/wp-content/uploads/2021/11/electrolytes2.png" style="height: 70px;">
+                                                <p>+ ELECTROLYTES</p>
+                                                <div class="slide-bottom-sec">
+                                                    <img class="img-4" src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png" style="height: 110px;">
+                                                    <div class="box-text1">
+                                                        <h4>+ ELECTROLYTES</h4>
+                                                        <table>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>CALCIUM</td>
+                                                                    <td>2 MG/L</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>MAGNESIUM</td>
+                                                                    <td>33 MG/L</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>POTASSIUM</td>
+                                                                    <td>57 MG/L</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>SODIUM</td>
+                                                                    <td>8 MG/L</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-cell">
+                                                <div class="slide-bottom-sec">
+                                                    <img class="" src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png" style="height: 100px;">
+                                                    <div class="">
+                                                        <img class="img-6" src="https://drinkwatr.com/wp-content/uploads/2022/08/pH-7.0-ICON-blue-new.png" style="height: 110px;">
+                                                        <p style="margin: 2px;">pH BALANCE</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-cell">
+                                                <div class="slide-bottom-sec" style="align-items: center;">
+                                                    <img class="" src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png" style="height: 100px;">
+                                                    <div class="">
+                                                        <img src="https://drinkwatr.com/wp-content/uploads/2022/06/purification_1.png" style="max-height: 110px;">
+                                                        <p style="margin: 0;">5<span style="text-transform: lowercase;">x</span> PURE WATER</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                            document.getElementById("vitaminCPopup").style.zIndex = "9999999999999";
+                                        <script>
+                                            function hydrateMe() {
+                                                document.getElementById("vitaminCPopup").style.opacity = "1";
 
-                                            document.querySelector(".elementor-swiper-button-next").style.display = "none";
-                                        }
+                                                document.getElementById("vitaminCPopup").style.zIndex = "9999999999999";
 
-                                        function noVitamin() {
-                                            document.getElementById("vitaminCPopup").style.opacity = "0";
-                                            document.getElementById("vitaminCPopup").style.zIndex = "-100";
+                                                document.querySelector(".elementor-swiper-button-next").style.display = "none";
+                                            }
 
-                                            document.querySelector(".elementor-swiper-button-next").style.display = "block";
-                                        }
+                                            function noVitamin() {
+                                                document.getElementById("vitaminCPopup").style.opacity = "0";
+                                                document.getElementById("vitaminCPopup").style.zIndex = "-100";
 
-
-                                        function hydrationOn() {
-                                            document.getElementById("hydrationPopup").style.opacity = "1";
-
-                                            document.getElementById("hydrationPopup").style.zIndex = "9999999999999";
-
-                                            document.querySelector(".elementor-swiper-button-next").style.display = "none";
-                                        }
-
-                                        function hydrationOff() {
-                                            document.getElementById("hydrationPopup").style.opacity = "0";
-                                            document.getElementById("hydrationPopup").style.zIndex = "-100";
-
-                                            document.querySelector(".elementor-swiper-button-next").style.display = "block";
-                                        }
+                                                document.querySelector(".elementor-swiper-button-next").style.display = "block";
+                                            }
 
 
-                                        function elementpopOn() {
-                                            document.getElementById("elementPopup").style.opacity = "1";
+                                            function hydrationOn() {
+                                                document.getElementById("hydrationPopup").style.opacity = "1";
 
-                                            document.getElementById("elementPopup").style.zIndex = "9999999999999";
+                                                document.getElementById("hydrationPopup").style.zIndex = "9999999999999";
 
-                                            document.querySelector(".elementor-swiper-button-next").style.display = "none";
-                                        }
+                                                document.querySelector(".elementor-swiper-button-next").style.display = "none";
+                                            }
 
-                                        function elementpopOff() {
-                                            document.getElementById("elementPopup").style.opacity = "0";
-                                            document.getElementById("elementPopup").style.zIndex = "-100";
+                                            function hydrationOff() {
+                                                document.getElementById("hydrationPopup").style.opacity = "0";
+                                                document.getElementById("hydrationPopup").style.zIndex = "-100";
 
-                                            document.querySelector(".elementor-swiper-button-next").style.display = "block";
-                                        }
+                                                document.querySelector(".elementor-swiper-button-next").style.display = "block";
+                                            }
 
-                                    </script>
 
-                                    <script>
-                                        var elem = document.querySelector('.main-carousel');
-                                        var flkty = new Flickity(elem, {
-                                            // options
-                                            contain: true
-                                            , wrapAround: true
-                                            , cellAlign: 'center'
-                                            , imagesLoaded: true
-                                        });
+                                            function elementpopOn() {
+                                                document.getElementById("elementPopup").style.opacity = "1";
 
-                                        // element argument can be a selector string
-                                        //   for an individual element
-                                        var flkty = new Flickity('.main-carousel', {
-                                            // options
-                                        });
+                                                document.getElementById("elementPopup").style.zIndex = "9999999999999";
 
-                                        var carouselStatus = document.querySelector('.carousel-status');
+                                                document.querySelector(".elementor-swiper-button-next").style.display = "none";
+                                            }
 
-                                        function updateStatus() {
-                                            var slideNumber = flkty.selectedIndex + 1;
-                                            carouselStatus.textContent = slideNumber + '/' + flkty.slides.length;
-                                        }
-                                        updateStatus();
+                                            function elementpopOff() {
+                                                document.getElementById("elementPopup").style.opacity = "0";
+                                                document.getElementById("elementPopup").style.zIndex = "-100";
 
-                                        flkty.on('select ', updateStatus);
+                                                document.querySelector(".elementor-swiper-button-next").style.display = "block";
+                                            }
 
-                                    </script>
+                                            function pureelementpopOn() {
+                                                document.getElementById("pureelementPopup").style.opacity = "1";
+                                                document.getElementById("pureelementPopup").style.zIndex = "9999999999999";
+                                                document.querySelector(".elementor-swiper-button-next").style.display = "none";
+                                            }
 
-                                    <script>
-                                        var element = document.querySelector('.hydration-carousel');
-                                        var flokty = new Flickity(element, {
-                                            // options
-                                            contain: true
-                                            , wrapAround: true
-                                            , cellAlign: 'center'
-                                            , imagesLoaded: true
-                                        });
+                                            function pureelementpopOff() {
+                                                document.getElementById("pureelementPopup").style.opacity = "0";
+                                                document.getElementById("pureelementPopup").style.zIndex = "-100";
+                                                document.querySelector(".elementor-swiper-button-next").style.display = "block";
+                                            }
 
-                                        // element argument can be a selector string
-                                        //   for an individual element
-                                        var flokty = new Flickity('.hydration-carousel', {
-                                            // options
-                                        });
+                                        </script>
 
-                                        var carouselStatuz = document.querySelector('.hydration-status');
+                                        <script>
+                                            var elem = document.querySelector('.main-carousel');
+                                            var flkty = new Flickity(elem, {
+                                                // options
+                                                contain: true
+                                                , wrapAround: true
+                                                , cellAlign: 'center'
+                                                , imagesLoaded: true
+                                            });
 
-                                        function updateTheStatus() {
-                                            var slideNumbers = flokty.selectedIndex + 1;
-                                            carouselStatuz.textContent = slideNumbers + '/' + flokty.slides.length;
-                                        }
-                                        updateTheStatus();
+                                            // element argument can be a selector string
+                                            //   for an individual element
+                                            var flkty = new Flickity('.main-carousel', {
+                                                // options
+                                            });
 
-                                        flokty.on('select', updateTheStatus);
+                                            var carouselStatus = document.querySelector('.carousel-status');
 
-                                    </script>
+                                            function updateStatus() {
+                                                var slideNumber = flkty.selectedIndex + 1;
+                                                carouselStatus.textContent = slideNumber + '/' + flkty.slides.length;
+                                            }
+                                            updateStatus();
 
-                                    <script>
-                                        var element = document.querySelector('.element-carousel');
-                                        var flokty = new Flickity(element, {
-                                            // options
-                                            contain: true
-                                            , wrapAround: true
-                                            , cellAlign: 'center'
-                                            , imagesLoaded: true
-                                        });
+                                            flkty.on('select ', updateStatus);
 
-                                        // element argument can be a selector string
-                                        //   for an individual element
-                                        var flokty = new Flickity('.element-carousel', {
-                                            // options
-                                        });
+                                        </script>
 
-                                        var carouselStatuz = document.querySelector('.hydration-status');
+                                        <script>
+                                            var element = document.querySelector('.hydration-carousel');
+                                            var flokty = new Flickity(element, {
+                                                // options
+                                                contain: true
+                                                , wrapAround: true
+                                                , cellAlign: 'center'
+                                                , imagesLoaded: true
+                                            });
 
-                                        function updateTheStatus() {
-                                            var slideNumbers = flokty.selectedIndex + 1;
-                                            carouselStatuz.textContent = slideNumbers + '/' + flokty.slides.length;
-                                        }
-                                        updateTheStatus();
+                                            // element argument can be a selector string
+                                            //   for an individual element
+                                            var flokty = new Flickity('.hydration-carousel', {
+                                                // options
+                                            });
 
-                                        flokty.on('select', updateTheStatus);
+                                            var carouselStatuz = document.querySelector('.hydration-status');
 
-                                    </script>
+                                            function updateTheStatus() {
+                                                var slideNumbers = flokty.selectedIndex + 1;
+                                                carouselStatuz.textContent = slideNumbers + '/' + flokty.slides.length;
+                                            }
+                                            updateTheStatus();
+
+                                            flokty.on('select', updateTheStatus);
+
+                                        </script>
+
+                                        <script>
+                                            var element = document.querySelector('.pureelement-carousel');
+                                            var flokty = new Flickity(element, {
+                                                // options
+                                                contain: true
+                                                , wrapAround: true
+                                                , cellAlign: 'center'
+                                                , imagesLoaded: true
+                                            });
+
+                                            // element argument can be a selector string
+                                            // for an individual element
+                                            var flokty = new Flickity('.pureelement-carousel', {
+                                                // options
+                                            });
+                                            // pure popup end
+
+
+                                            var element = document.querySelector('.element-carousel');
+                                            var flokty = new Flickity(element, {
+                                                // options
+                                                contain: true
+                                                , wrapAround: true
+                                                , cellAlign: 'center'
+                                                , imagesLoaded: true
+                                            });
+
+                                            // element argument can be a selector string
+                                            // for an individual element
+                                            var flokty = new Flickity('.element-carousel', {
+                                                // options
+                                            });
+
+                                            var carouselStatuz = document.querySelector('.hydration-status');
+
+                                            function updateTheStatus() {
+                                                var slideNumbers = flokty.selectedIndex + 1;
+                                                carouselStatuz.textContent = slideNumbers + '/' + flokty.slides.length;
+                                            }
+                                            updateTheStatus();
+
+                                            flokty.on('select', updateTheStatus);
+
+                                        </script>
+                                    </div>
                                 </div>
-                            </div>
 
+                            </div>
                         </div>
                     </div>
-                </div>
             </section>
         </div>
 
