@@ -987,7 +987,7 @@
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div style="position: absolute;width: 100%;left: 0;padding: 0 15px">
+                                                                                <div style="position: absolute;width: 100%;left: 0;padding: 0 15px;height: calc(100% - 350px);overflow: auto;">
                                                                                     <table width="100%">
                                                                                         <tr class="demo_week-default demo_week_1">
                                                                                             <td class="text-center">
