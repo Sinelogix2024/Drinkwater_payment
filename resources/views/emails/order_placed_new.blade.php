@@ -148,43 +148,43 @@
                         <div class="brand">
                             <figure class="logo">
                                 <img src="{{ url('images/logowater.png') }}" alt="Logo" style="height: 150px;" />
-                                <span style="font-size: 35px;">+</span>
+                                <span style="font-size: 35px; color: black;">+</span>
                                 <img src="{{ url('images/bhs-logo-social.png') }}" alt="Logo" style="height: 150px;" />
                             </figure>
                         </div>
 
                         <div class="tagline_wrap">
-                            <p>YOUR PATH TO DAILY HYDRATION + WELLNESS</p>
+                            <p style="color: black;">YOUR PATH TO DAILY HYDRATION + WELLNESS</p>
                         </div>
                     </div>
                     <div class="flex_col_sm_12">
-                        <p class="text-center">PURCHASE RECEIPT | TRANSACTION ID: {{$orderDetail->odr_transaction_id ?? ''}}</p>
+                        <p style="color: black;" class="text-center">PURCHASE RECEIPT | TRANSACTION ID: {{$orderDetail->odr_transaction_id ?? ''}}</p>
 
                         <div class="form_field">
                             <div class="text-field">
                                 <input type="text" value="YOUR PRODUCT" readonly>
                             </div>
-                            <span class="package_note_final_page"> {{config('constants.product_name')[$orderDetail->odr_product_id ?? '']  ?? ''}}</span>
+                            <span style="color:black;" class="package_note_final_page"> {{config('constants.product_name')[$orderDetail->odr_product_id ?? '']  ?? ''}}</span>
                         </div>
                         <div class="form_field">
                             <div class="text-field">
                                 <input type="text" value="YOUR WELLNESS SOLUTION" readonly>
                             </div>
-                            <span class="package_note_final_page"> {{config('constants.package_name')[ ($orderDetail->odr_product_id) ?? 0][$orderDetail->odr_package_id ?? '']  ?? ''}}</span>
+                            <span style="color:black;" class="package_note_final_page"> {{config('constants.package_name')[ ($orderDetail->odr_product_id) ?? 0][$orderDetail->odr_package_id ?? '']  ?? ''}}</span>
                         </div>
                         <div class="form_field">
                             <div class="text-field">
                                 <input type="text" value="DELIVERY FREQENCY" readonly>
                             </div>
-                            <span class="delivery_note_final_page">{{config('constants.delivery_freq')[$orderDetail->odr_delivery_frequency_id ?? '']  ?? ''}}</span>
-                            <span class="text-note">(1st DELIVERY 4 KITS, THEN 2 KITS THEREAFTER). </span>
+                            <span style="color:black;" class="delivery_note_final_page">{{config('constants.delivery_freq')[$orderDetail->odr_delivery_frequency_id ?? '']  ?? ''}}</span>
+                            <span style="color:black;" class="text-note">(1st DELIVERY 4 KITS, THEN 2 KITS THEREAFTER). </span>
                         </div>
                         <div class="form_field">
                             <div class="text-field">
                                 <input type="text" value="DELIVERY ADDRESS" readonly>
                             </div>
-                            <span class="text-note">{{$orderDetail->shipping_address ?? '' }} {{$orderDetail->shipping_address2 ?? ''}}</span>
-                            <span class="text-note">{{$orderDetail->s_city_state_zip ?? ''}}</span>
+                            <span style="color:black;" class="text-note">{{$orderDetail->shipping_address ?? '' }} {{$orderDetail->shipping_address2 ?? ''}}</span>
+                            <span style="color:black;" class="text-note">{{$orderDetail->s_city_state_zip ?? ''}}</span>
                         </div>
 
                         <table class="" width="100%">
@@ -207,14 +207,14 @@
                         </table>
 
                         <div class="form_field">
-                            <p class="support_note sm_12">
+                            <p style="color: black;" class="support_note sm_12">
                                 CONTRATUALATIONS ON SECURING YOUR PATH TO WELLNESS. FOR ANY SUPPORT RELATED INQUIRIES, PLEASE EMAIL US AT <a href="mailto:clarity@drinkwatr.com" target="_blank">CLARITY@DRINKWATR.COM</a>.
 
                             </p>
                         </div>
 
                         <figure class="droplet_logowrap text-center">
-                            <span>ALL PRODUCTS ARE DELIVERED BY</span>
+                            <span style="color:black;">ALL PRODUCTS ARE DELIVERED BY</span>
                             <img src="{{url('images/droplet.png')}}">
                         </figure>
 
