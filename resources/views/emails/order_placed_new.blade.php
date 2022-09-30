@@ -140,25 +140,17 @@
     </style>
 </head>
 <body>
-
     <main class="app_wrapper waterbg">
         <div class="custom_container">
-
-
-
-
             <div class="form_wrapper edit_form_wrapper">
                 <div class="flex_row">
                     <div class="head_section">
                         <div class="brand">
                             <figure class="logo">
-                                {{-- <img src="{{url('images/logowater.png')}}" alt="Logo" style="height: 150px;" /> --}}
                                 <img src="{{ url('images/logowater.png') }}" alt="Logo" style="height: 150px;" />
                                 <span style="font-size: 35px;">+</span>
                                 <img src="{{ url('images/bhs-logo-social.png') }}" alt="Logo" style="height: 150px;" />
                             </figure>
-                            {{-- <figure class="logo"><img src="{{asset('images/logowater.png')}}" alt="Logo" /></figure> --}}
-                            {{-- <span class="brand_txt">+ {{$advocateData->adv_first_name ?? ''}} {{$advocateData->adv_last_name ?? ''}}</span> --}}
                         </div>
 
                         <div class="tagline_wrap">
