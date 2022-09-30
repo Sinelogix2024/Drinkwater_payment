@@ -144,10 +144,10 @@ $(document).ready(function() {
                 event.preventDefault();
                 var formIsInvalid = false;
                 var state = hostedFieldsInstance.getState();
-                var formValid = Object.keys(state.fields).every(function(key) {
-                    return state.fields[key].isValid;
-                });
-                console.log('formValid', formValid);
+                // var formValid = Object.keys(state.fields).every(function(key) {
+                //     return state.fields[key].isValid;
+                // });
+                // console.log('formValid', formValid);
 
                 // perform validations on the non-Hosted Fields
                 // inputs
@@ -156,40 +156,42 @@ $(document).ready(function() {
                 // for validity, apply the is-invalid class
                 // to the field container if invalid
                 // console.log('ccName', ccName);
-                // if (ccName.val() != '') {
-                //     Object.keys(state.fields).forEach(function(field) {
-                //         if (!state.fields[field].isValid) {
-                //             $(state.fields[field].container).addClass('is-invalid');
-                //             formIsInvalid = true;
-                //         }
-                //     });
+                if (ccName.val() != '') {
+                    Object.keys(state.fields).forEach(function(field) {
+                        if (!state.fields[field].isValid) {
+                            $(state.fields[field].container).addClass('is-invalid');
+                            formIsInvalid = true;
+                        }
+                    });
+                }
+
+                // formIsInvalid = true;
+
+                // if (formIsInvalid) {
+
+                // console.log('state 123', state);
+                // cardFildsArray = {
+                //     'cardholderName': $('#cc-name'),
+                //     'number': $('#cc-number'),
+                //     'cvv': $('#cc-cvv'),
+                //     'expirationDate': $('#cc-expiration')
+                // };
+
+                // for (const field in cardFildsArray) {
+                //     validateCardFiledFunction(field, cardFildsArray[field]);
                 // }
 
-                formIsInvalid = true;
-
                 if (formIsInvalid) {
-
-                    console.log('state 123', state);
-                    cardFildsArray = {
-                        'cardholderName': $('#cc-name'),
-                        'number': $('#cc-number'),
-                        'cvv': $('#cc-cvv'),
-                        'expirationDate': $('#cc-expiration')
-                    };
-
-                    for (const field in cardFildsArray) {
-                        validateCardFiledFunction(field, cardFildsArray[field]);
-                    }
-
-                    function validateCardFiledFunction(index, value) {
-                        $(value).removeClass('is-valid');
-                        $(value).removeClass('is-invalid');
-                        if (state['fields'][index].isValid) {
-                            $(value).removeClass('is-valid');
-                        } else {
-                            $(value).addClass('is-invalid');
-                        }
-                    }
+                    // skip tokenization request if any fields are invalid
+                    // function validateCardFiledFunction(index, value) {
+                    //     $(value).removeClass('is-valid');
+                    //     $(value).removeClass('is-invalid');
+                    //     if (state['fields'][index].isValid) {
+                    //         $(value).removeClass('is-valid');
+                    //     } else {
+                    //         $(value).addClass('is-invalid');
+                    //     }
+                    // }
                     return;
                 }
 

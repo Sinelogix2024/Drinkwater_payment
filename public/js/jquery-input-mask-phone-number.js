@@ -10,8 +10,8 @@
 //
 // ==================================================
 
-(function ($) {
-    $.fn.usPhoneFormat = function (options) {
+(function($) {
+    $.fn.usPhoneFormat = function(options) {
         var params = $.extend({
             format: 'xxx-xxx-xxxx',
             international: false,
@@ -19,7 +19,7 @@
         }, options);
 
         if (params.format === 'xxx-xxx-xxxx') {
-            $(this).bind('paste', function (e) {
+            $(this).bind('paste', function(e) {
 
                 e.preventDefault();
                 var inputValue = e.originalEvent && e.originalEvent.clipboardData.getData('Text');
@@ -38,7 +38,25 @@
                     $(this).val(inputValue);
                 }
             });
-            $(this).on('keydown touchend', function (e) {
+            $(this).on('change', function(e) {
+                e.preventDefault();
+                var inputValue = this.value;
+                inputValue = inputValue.replace(/\D/g, '');
+                if (!$.isNumeric(inputValue)) {
+                    return false;
+                } else {
+                    if (inputValue.length > 9) {
+                        inputValue = String(inputValue.replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3"));
+                    } else {
+                        inputValue = String(inputValue.replace(/(\d{3})(?=\d)/g, '$1-'));
+                    }
+                    $(this).val(inputValue);
+                    $(this).val('');
+                    inputValue = inputValue.substring(0, 12);
+                    $(this).val(inputValue);
+                }
+            });
+            $(this).on('keydown touchend', function(e) {
 
                 e = e || window.event;
                 var key = e.which || e.keyCode; // keyCode detection
@@ -65,7 +83,31 @@
             });
 
         } else if (params.format === '(xxx) xxx-xxxx') {
-            $(this).on('keydown touchend', function (e) {
+            $(this).on('change', function(e) {
+                e.preventDefault();
+                var inputValue = this.value;
+                inputValue = inputValue.replace(/\D/g, '');
+
+                if (!$.isNumeric(inputValue)) {
+                    return false;
+                } else {
+
+                    if (inputValue.length > 9) {
+                        inputValue = String(inputValue.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3"));
+                    } else if (inputValue.length > 6) {
+                        inputValue = String(inputValue.replace(/(\d{3})(\d{3})(?=\d)/g, '($1) $2-'));
+                    } else if (inputValue.length > 3) {
+                        inputValue = String(inputValue.replace(/(\d{3})(?=\d)/g, '($1) '));
+                    }
+
+                    $(this).val(inputValue);
+                    $(this).val('');
+                    inputValue = inputValue.substring(0, 14);
+                    $(this).val(inputValue);
+                }
+            });
+
+            $(this).on('keydown touchend', function(e) {
 
                 e = e || window.event;
                 var key = e.which || e.keyCode; // keyCode detection
@@ -91,7 +133,7 @@
                 $(this).attr('maxlength', '14');
 
             });
-            $(this).bind('paste', function (e) {
+            $(this).bind('paste', function(e) {
 
                 e.preventDefault();
                 var inputValue = e.originalEvent && e.originalEvent.clipboardData.getData('Text');
