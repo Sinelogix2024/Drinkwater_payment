@@ -396,8 +396,8 @@ request()->session()->forget('response_error_msg');
                                             <select class="selectpicker placeholder form-control" name="delivery_frequency" id="delivery_frequency1" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
                                                 <option data-hidden="true" selected="selected">
                                                     {{ config('constants.package.delivery_freq_text') }}</option>
-                                                <option value="1">EVERY SUNDAY</option>
-                                                <option value="2">EVERY MONDAY</option>
+                                                <option value="1">UPCOMING SUNDAY</option>
+                                                <option value="2">UPCOMING MONDAY</option>
                                             </select>
                                         </div>
                                     </div>
@@ -535,8 +535,8 @@ request()->session()->forget('response_error_msg');
                                         <select class="selectpicker custom_select" name="delivery_frequency" id="delivery_frequency2" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
                                             <option selected disabled data-hidden="true">
                                                 {{ config('constants.package.delivery_freq_text') }}</option>
-                                            <option value="1">EVERY SUNDAY</option>
-                                            <option value="2">EVERY MONDAY</option>
+                                            <option value="1">UPCOMING SUNDAY</option>
+                                            <option value="2">UPCOMING MONDAY</option>
                                         </select>
                                     </div>
                                 </div>
@@ -699,8 +699,8 @@ request()->session()->forget('response_error_msg');
                                     <select class="selectpicker" name="delivery_frequency" id="delivery_frequency4" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
                                         <option value="" data-hidden="true">
                                             {{ config('constants.package.delivery_freq_text') }}</option>
-                                        <option value="1" selected>EVERY SUNDAY</option>
-                                        <option value="2">EVERY MONDAY</option>
+                                        <option value="1" selected>UPCOMING SUNDAY</option>
+                                        <option value="2">UPCOMING MONDAY</option>
                                     </select>
                                 </div>
                             </div>
@@ -789,8 +789,8 @@ request()->session()->forget('response_error_msg');
                                         <select class="selectpicker" name="delivery_frequency" id="delivery_frequency3" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
                                             <option value="" data-hidden="true">
                                                 {{ config('constants.package.delivery_freq_text') }}</option>
-                                            <option value="1">EVERY SUNDAY</option>
-                                            <option value="2">EVERY MONDAY</option>
+                                            <option value="1">UPCOMING SUNDAY</option>
+                                            <option value="2">UPCOMING MONDAY</option>
                                         </select>
                                     </div>
                                 </div>
@@ -894,8 +894,8 @@ request()->session()->forget('response_error_msg');
                                         <select class="selectpicker custom_select" title="DELIVERY FREQUENCY" name="delivery_frequency" id="delivery_frequency5" required data-dropup-auto="false">
                                             <option value="" data-hidden="true" title="{{ config('constants.package.delivery_freq_text') }}">
                                                 {{ config('constants.package.delivery_freq_text') }}</option>
-                                            <option value="1" selected>EVERY SUNDAY</option>
-                                            <option value="2">EVERY MONDAY</option>
+                                            <option value="1" selected>UPCOMING SUNDAY</option>
+                                            <option value="2">UPCOMING MONDAY</option>
                                         </select>
                                         <button type="button" class="edit btn_effect edit_delivery_freq">Edit
                                         </button>

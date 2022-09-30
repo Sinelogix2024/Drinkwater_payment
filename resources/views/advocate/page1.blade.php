@@ -196,7 +196,8 @@
         }
 
         .flickity-page-dots {
-            bottom: -70px !important;
+            /* bottom: -70px !important; */
+            bottom: -100px !important;
         }
 
         .bottle-icon {
@@ -890,8 +891,8 @@
                                                                                         <select class="selectpicker placeholder form-control delivery_frequency1" name="delivery_frequency" id="delivery_frequency1" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
                                                                                             <option value='0' data-hidden="true" selected="selected">
                                                                                                 {{ config('constants.package.delivery_freq_text') }}</option>
-                                                                                            <option value="1">EVERY SUNDAY</option>
-                                                                                            <option value="2">EVERY MONDAY</option>
+                                                                                            <option value="1">UPCOMING SUNDAY</option>
+                                                                                            <option value="2">UPCOMING MONDAY</option>
                                                                                         </select>
                                                                                     </div>
                                                                                 </div>
@@ -942,7 +943,7 @@
 
                                                                     <a href="#" class="close-button" onclick="hydrationOff()"><img src="https://drinkwatr.com/wp-content/uploads/2022/02/close.png" style="max-width: 20px;"></a>
 
-                                                                    <div style="position: absolute; margin-bottom: 215px; bottom: 0;padding: 0 15px; text-align: center;">**This is not an auto-renewable subscription or a subscription at all. It is a one time purchase. So, come back and purchase when you are ready for additional wellness support.**</div>
+                                                                    <div style="position: absolute; margin-bottom: 160px; bottom: 0;padding: 0 15px; text-align: center;">**This is not an auto-renewable subscription or a subscription at all. It is a one time purchase. So, come back and purchase when you are ready for additional wellness support.**</div>
 
                                                                     <div class="hydration-carousel">
                                                                         <div class="carousel-cell">
@@ -987,7 +988,14 @@
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div style="position: absolute;width: 100%;left: 0;padding: 0 15px;height: calc(100% - 350px);overflow: auto;">
+                                                                                <div style="
+                                                                                position: absolute;
+                                                                                width: 100%;
+                                                                                left: 0;
+                                                                                /* padding: 0 15px; */
+                                                                                height: calc(100% - 320px);
+                                                                                overflow: auto;
+                                                                                ">
                                                                                     <table width="100%">
                                                                                         <tr class="demo_week-default demo_week_1">
                                                                                             <td class="text-center">
@@ -1541,8 +1549,8 @@
         function resetDeliveryFrequency() {
             $("#delivery_frequency1 option[value='1']").remove();
             $("#delivery_frequency1 option[value='2']").remove();
-            $('#delivery_frequency1').append($("<option></option>").attr("value", '1').text('EVERY SUNDAY'));
-            $('#delivery_frequency1').append($("<option></option>").attr("value", '2').text('EVERY MONDAY'));
+            $('#delivery_frequency1').append($("<option></option>").attr("value", '1').text('UPCOMING SUNDAY'));
+            $('#delivery_frequency1').append($("<option></option>").attr("value", '2').text('UPCOMING MONDAY'));
             $('#delivery_frequency1').selectpicker('refresh');
         }
 

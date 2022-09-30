@@ -25,8 +25,8 @@ return [
     ],
 
     'delivery_freq' => [
-        1 => 'EVERY SUNDAY',
-        2 => 'EVERY MONDAY',
+        1 => 'UPCOMING SUNDAY',
+        2 => 'UPCOMING MONDAY',
     ],
 
     'package' => [

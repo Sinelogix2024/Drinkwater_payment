@@ -226,8 +226,8 @@ $(document).ready(function() {
     function resetDeliveryFrequency() {
         $("#delivery_frequency5 option[value='1']").remove();
         $("#delivery_frequency5 option[value='2']").remove();
-        $('#delivery_frequency5').append($("<option></option>").attr("value", '1').text('EVERY SUNDAY'));
-        $('#delivery_frequency5').append($("<option></option>").attr("value", '2').text('EVERY MONDAY'));
+        $('#delivery_frequency5').append($("<option></option>").attr("value", '1').text('UPCOMING SUNDAY'));
+        $('#delivery_frequency5').append($("<option></option>").attr("value", '2').text('UPCOMING MONDAY'));
         $('#delivery_frequency5').selectpicker('refresh');
     }
 
