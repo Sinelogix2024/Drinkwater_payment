@@ -276,4 +276,32 @@ class AdvocateController extends Controller
             return $e;
         }
     }
+
+    public function addInvoiceUser(Request $request)
+    {
+        try {
+            $invoiceUser = new Order();
+            $invoiceUser->odr_id = 'ordr_dw_' . time() . '_' . date('Y_m_d');
+            $invoiceUser->odr_first_name = $request->first_name;
+            $invoiceUser->odr_last_name = $request->last_name;
+            $invoiceUser->odr_email = $request->email;
+            $invoiceUser->odr_mobile = $request->mobile;
+            $invoiceUser->odr_package_id = $request->package;
+            $invoiceUser->odr_delivery_frequency_id = $request->delivery_frequency;
+            $invoiceUser->billing_address = $request->billing_address;
+            $invoiceUser->shipping_address = $request->shipping_address;
+            $invoiceUser->billing_address2 = $request->billing_address2;
+            $invoiceUser->shipping_address2 = $request->shipping_address2;
+            $invoiceUser->b_city_state_zip = $request->b_city_state_zip;
+            $invoiceUser->s_city_state_zip = $request->s_city_state_zip;
+            $invoiceUser->payment_method = (int) $request->payment_method_hidden;
+            $invoiceUser->odr_adv_detail_access_token = $request->adv_detail_access_token;
+            $invoiceUser->odr_tax_amount = $request->tax_amount;
+            $invoiceUser->save();
+
+            return "function called";
+        } catch (Exception $e) {
+            return $e;
+        }
+    }
 }

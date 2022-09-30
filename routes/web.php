@@ -134,7 +134,8 @@ Route::get('email', function () {
 
     $orderDetail = Order::find(28);
     $advocateData = Advocate::where('adv_detail_access_token', 'kny12raph')->first();
-    // Mail::to('jaydeep.khokhar+testemail@techqware.com')->send(new OrderPlaced($advocateData, $orderDetail));
+    // Mail::to($request->email)->send(new OrderPlaced($advocateData, $orderDetail));
+    Mail::to('jaydeep.khokhar+testemail@techqware.com')->send(new OrderPlaced($advocateData, $orderDetail));
     // return ['advocateData' => $advocateData, 'orderDetail' => $orderDetail];
     return view('emails.order_placed_new', ['advocateData' => $advocateData, 'orderDetail' => $orderDetail]);
 });

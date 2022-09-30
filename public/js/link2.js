@@ -40,6 +40,9 @@ $(document).ready(function() {
 
     $('.shipping_add_final_page').show().text($('.shipping_address_final_page').val() + ' ' + $('.shipping_address1_final_page').val())
     $('.citi_state_zip_final_page').show().text($('.s_city_final_page').val() + '/' + $('.s_state_final_page').val() + '/' + $('.s_zip_final_page').val());
+    $('.b_city_state_zip').val($('.s_city_final_page').val() + '/' + $('.s_state_final_page').val() + '/' + $('.s_zip_final_page').val());
+    $('.s_city_state_zip').val($('.s_city_final_page').val() + '/' + $('.s_state_final_page').val() + '/' + $('.s_zip_final_page').val());
+
     $('.final_page_package_label').next(".dropdown-toggle").prop('disabled', true);
     $('.payment_method_final_page').text($('.payment_method_finl_page_class').children("option:selected").text());
     // showLoader();
@@ -226,8 +229,8 @@ $(document).ready(function() {
     function resetDeliveryFrequency() {
         $("#delivery_frequency5 option[value='1']").remove();
         $("#delivery_frequency5 option[value='2']").remove();
-        $('#delivery_frequency5').append($("<option></option>").attr("value", '1').text('EVERY SUNDAY'));
-        $('#delivery_frequency5').append($("<option></option>").attr("value", '2').text('EVERY MONDAY'));
+        $('#delivery_frequency5').append($("<option></option>").attr("value", '1').text('UPCOMING SUNDAY'));
+        $('#delivery_frequency5').append($("<option></option>").attr("value", '2').text('UPCOMING MONDAY'));
         $('#delivery_frequency5').selectpicker('refresh');
     }
 
@@ -565,8 +568,8 @@ $(document).ready(function() {
 
             if (current_tab == 'final_form') {
 
-                $('.b_city_state_zip').val($('.b_city_final_page').val() + '/' + $('.b_state_final_page').val() + '/' + $('.b_zip_final_page').val());
-                $('.s_city_state_zip').val($('.b_city_final_page').val() + '/' + $('.b_state_final_page').val() + '/' + $('.b_zip_final_page').val());
+                $('.b_city_state_zip').val($('.s_city_final_page').val() + '/' + $('.s_state_final_page').val() + '/' + $('.s_zip_final_page').val());
+                $('.s_city_state_zip').val($('.s_city_final_page').val() + '/' + $('.s_state_final_page').val() + '/' + $('.s_zip_final_page').val());
 
                 tmp_city = $('.s_city_final_page').val();
                 tmp_city = tmp_city.toLowerCase();
@@ -714,6 +717,8 @@ $(document).ready(function() {
     $('.edit_address_final_page').on('click', function() {
         $('.shipping_add_final_page').text($('.shipping_address_final_page').val() + ' ' + $('.shipping_address1_final_page').val());
         $('.citi_state_zip_final_page').text($('.s_city_final_page').val() + '/' + $('.s_state_final_page').val() + '/' + $('.s_zip_final_page').val());
+        $('.b_city_state_zip').val($('.s_city_final_page').val() + '/' + $('.s_state_final_page').val() + '/' + $('.s_zip_final_page').val());
+        $('.s_city_state_zip').val($('.s_city_final_page').val() + '/' + $('.s_state_final_page').val() + '/' + $('.s_zip_final_page').val());
         $('.final_page_edit_address_label').next(".dropdown-toggle").prop('disabled', true);
 
         if ($(this).text() == 'Edit') {
