@@ -67,11 +67,7 @@
                 </div>
             </div> --}}
             <div class="welcome_wrapper text-center">
-                <figure class="logo">
-                    <img src="{{ asset('images/logowater.png') }}" alt="Logo" />
-                    <span style="font-size: 35px;">+</span>
-                    <img src="{{ asset('images/bhs-logo-social.png') }}" alt="Logo" />
-                </figure>
+                @include('droplet-name')
                 <div>
                     <a href="{{ url('/watr', $detail_access_token) }}" type="button" class="splash_link" style="margin-top: 80px !important;">DRINK <i class="fas fa-arrow-circle-right"></i></a>
                 </div>

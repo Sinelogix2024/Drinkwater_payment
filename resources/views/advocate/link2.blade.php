@@ -293,11 +293,7 @@ request()->session()->forget('response_error_msg');
                     <main class="app_wrapper waterbg">
                         <div class="head_section">
                             <div class="brand">
-                                <figure class="logo">
-                                    <img src="{{ asset('images/logowater.png') }}" alt="Logo" />
-                                    <span style="font-size: 35px;">+</span>
-                                    <img src="{{ asset('images/bhs-logo-social.png') }}" alt="Logo" />
-                                </figure>
+                                @include('droplet-name')
                             </div>
                             <div class="tagline_wrap">
                                 <p>Your Path to daily hydration + wellness</p>
@@ -442,11 +438,7 @@ request()->session()->forget('response_error_msg');
 
                     <div class="head_section">
                         <div class="brand">
-                            <figure class="logo">
-                                <img src="{{ asset('images/logowater.png') }}" alt="Logo" />
-                                <span style="font-size: 35px;">+</span>
-                                <img src="{{ asset('images/bhs-logo-social.png') }}" alt="Logo" />
-                            </figure>
+                            @include('droplet-name')
                         </div>
                         <div class="tagline_wrap">
                             <p>Your Path to daily hydration + wellness</p>
@@ -584,11 +576,7 @@ request()->session()->forget('response_error_msg');
                     <div class="head_section">
 
                         <div class="brand">
-                            <figure class="logo">
-                                <img src="{{ asset('images/logowater.png') }}" alt="Logo" />
-                                <span style="font-size: 35px;">+</span>
-                                <img src="{{ asset('images/bhs-logo-social.png') }}" alt="Logo" />
-                            </figure>
+                            @include('droplet-name')
                         </div>
 
                         <div class="tagline_wrap">
@@ -739,11 +727,7 @@ request()->session()->forget('response_error_msg');
                 <div class="custom_container">
                     <div class="head_section">
                         <div class="brand">
-                            <figure class="logo">
-                                <img src="{{ asset('images/logowater.png') }}" alt="Logo" />
-                                <span style="font-size: 35px;">+</span>
-                                <img src="{{ asset('images/bhs-logo-social.png') }}" alt="Logo" />
-                            </figure>
+                            @include('droplet-name')
                         </div>
                         <div class="tagline_wrap">
                             <p>Your Path to daily hydration + wellness</p>
@@ -833,11 +817,7 @@ request()->session()->forget('response_error_msg');
 
                     <div class="head_section">
                         <div class="brand">
-                            <figure class="logo">
-                                <img src="{{ asset('images/logowater.png') }}" alt="Logo" />
-                                <span style="font-size: 35px;">+</span>
-                                <img src="{{ asset('images/bhs-logo-social.png') }}" alt="Logo" />
-                            </figure>
+                            @include('droplet-name')
                         </div>
 
                         <div class="tagline_wrap">
