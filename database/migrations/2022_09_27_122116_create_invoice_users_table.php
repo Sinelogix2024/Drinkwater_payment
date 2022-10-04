@@ -17,7 +17,10 @@ class CreateInvoiceUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->char('unique-code', 16)->unique();
+            $table->float('amount');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
