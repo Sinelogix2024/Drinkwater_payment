@@ -32,7 +32,7 @@ class OrderPlaced extends Mailable
     public function build()
     {
         return $this->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME', 'DrinkWater.com'))
-            ->subject('YOUR PATH TO WELLNESS IS CONFIRMED')
+            ->subject('YOUR WELLNESS PATH CONFIRMED | DRINK WATR. STAY STRONG®️')
             ->view('emails.order_placed_new', [
                 'advocateData' => $this->advocateData,
                 'orderDetail' => $this->orderData,
