@@ -939,8 +939,13 @@
 
                                                                     <a href="#" class="close-button" onclick="hydrationOff()"><img src="https://drinkwatr.com/wp-content/uploads/2022/02/close.png" style="max-width: 20px;"></a>
 
-                                                                    <div style="position: absolute; margin-bottom: 160px; bottom: 0;padding: 0 15px; text-align: center;">**This is not an auto-renewable subscription or a subscription at all. It is a one time purchase. So, come back and purchase when you are ready for additional wellness support.**</div>
+                                                                    <div style="position: absolute; margin-bottom: 160px; bottom: 0;padding: 0 15px; text-align: center;" class="small-info-txt">**This is not an auto-renewable subscription. It is a one-time purchase. <span onclick="$('.small-info-txt').hide(); $('.full-info-txt').show();">(i)</span>**</div>
+                                                                    <div style="position: absolute; margin-bottom: 160px; bottom: 0;padding: 0 15px; text-align: center; display: none;" class="full-info-txt">**This is not an auto-renewable subscription or a subscription at all. It is a one time purchase. So, come back and purchase when you are ready for additional wellness support.**</div>
 
+                                                                    <script>
+                                                                        $('.full-info-txt').hide();
+
+                                                                    </script>
                                                                     <div class="hydration-carousel">
                                                                         <div class="carousel-cell">
                                                                             <h3 class="carousel-title">Wellness Solution Guide</h3>
