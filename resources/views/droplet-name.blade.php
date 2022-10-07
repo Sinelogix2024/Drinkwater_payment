@@ -16,7 +16,7 @@
     @switch($advocateLinkType)
     @case('droplet-name')
     <span style="font-size: 35px;">+</span>
-    <span class="brand_txt" style="font-size: 2.2rem !important;">{{ $advocateFirstName }} {{ $advocateLastName }}</span>
+    <span class="brand_txt" style="font-size: 8vw !important;">{{ $advocateFirstName }} {{ $advocateLastName }}</span>
     @break
     @case('droplet-logo')
     <span style="font-size: 35px;">+</span>
