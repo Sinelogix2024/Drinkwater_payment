@@ -1,3 +1,10 @@
+<style>
+    figure img {
+        height: 150px;
+    }
+
+</style>
+
 <figure class="logo">
     <a href="{{ url('/home', ['detail_access_token' => request()->detail_access_token]) }}"><img src="{{ asset('images/logowater.png') }}" alt="Logo" /></a>
     @php

@@ -892,22 +892,22 @@ request()->session()->forget('response_error_msg');
 
                                         <div class="final_page_address_field">
                                             <div class="text-field">
-                                                <input type="text" class="shipping_address_final_page" placeholder="DELIVERY ADDRESS 1" disabled>
+                                                <input type="text" class="shipping_address_final_page" id="shipping_address_final_page" placeholder="DELIVERY ADDRESS 1" disabled>
                                             </div>
 
                                             <div class="text-field">
-                                                <input type="text" class="shipping_address1_final_page" placeholder="UNIT # | SUITE # | APT" disabled>
+                                                <input type="text" class="shipping_address1_final_page" id="shipping_address1_final_page" placeholder="UNIT # | SUITE # | APT" disabled>
                                             </div>
 
                                             <div class="row">
                                                 <div class="text-field col">
-                                                    <input type="text" class="s_city_final_page" placeholder="CITY" disabled>
+                                                    <input type="text" class="s_city_final_page" id="s_city_final_page" placeholder="CITY" disabled>
                                                 </div>
                                                 <div class="form-group col">
-                                                    <input type="text" class="s_state_final_page" placeholder="STATE">
+                                                    <input type="text" class="s_state_final_page" id="s_state_final_page" placeholder="STATE">
                                                 </div>
                                                 <div class="form-group col">
-                                                    <input type="text" class="s_zip_final_page" placeholder="ZIP">
+                                                    <input type="text" class="s_zip_final_page" id="s_zip_final_page" placeholder="ZIP">
                                                 </div>
                                             </div>
 
@@ -1162,6 +1162,13 @@ request()->session()->forget('response_error_msg');
     let city2;
     let state2;
     let zip2;
+    
+    let autocomplete3;
+    let address1Field3;
+    let address2Field3;
+    let city3;
+    let state3;
+    let zip3;
 
     function initAutocomplete() {
         address1Field = document.querySelector("#billing_address");
@@ -1175,7 +1182,13 @@ request()->session()->forget('response_error_msg');
         city2 = document.querySelector("#s_city");
         state2 = document.querySelector("#s_state");
         zip2 = document.querySelector("#s_zip");
-
+        
+        address1Field3 = document.querySelector("#shipping_address_final_page");
+        address2Field3 = document.querySelector("#shipping_address1_final_page");
+        city3 = document.querySelector("#s_city_final_page");
+        state3 = document.querySelector("#s_state_final_page");
+        zip3 = document.querySelector("#s_zip_final_page");
+        
         autocomplete = new google.maps.places.Autocomplete(address1Field);
         address1Field.focus();
         autocomplete.addListener("place_changed", fillInAddress);
@@ -1183,9 +1196,14 @@ request()->session()->forget('response_error_msg');
         autocomplete2 = new google.maps.places.Autocomplete(address1Field2);
         address1Field2.focus();
         autocomplete2.addListener("place_changed", fillInAddress2);
+        
+        autocomplete3 = new google.maps.places.Autocomplete(address1Field3);
+        address1Field3.focus();
+        autocomplete3.addListener("place_changed", fillInAddress3);
     }
-
+    
     function fillInAddress() {
+        var changeEvent = new Event('change');
         const place = autocomplete.getPlace();
         let street_number="";
         let route="";
@@ -1193,7 +1211,7 @@ request()->session()->forget('response_error_msg');
         let administrative_area_level_1="";
         let postal_code="";
         let postal_code_suffix="";
-
+        
         for (const component of place.address_components) {
             const componentType = component.types[0];
             switch (componentType) {
@@ -1215,22 +1233,27 @@ request()->session()->forget('response_error_msg');
                 }
                 case "postal_code": {
                 postal_code = component.long_name;
-                    break;
-                }
-                case "postal_code_suffix": {
+                break;
+            }
+            case "postal_code_suffix": {
                 postal_code_suffix = component.long_name;
                     break;
                 }
             }
         }
         address1Field.value = `${street_number}, ${route}`;
+        address1Field.dispatchEvent(changeEvent);
         city.value = locality;
+        city.dispatchEvent(changeEvent);
         state.value = administrative_area_level_1;
+        state.dispatchEvent(changeEvent);
         zip.value = `${postal_code}${postal_code_suffix}`;
+        zip.dispatchEvent(changeEvent);
         address2Field.focus();
     }
     
     function fillInAddress2() {
+        var changeEvent = new Event('change');
         const place = autocomplete2.getPlace();
         let street_number="";
         let route="";
@@ -1270,10 +1293,65 @@ request()->session()->forget('response_error_msg');
         }
         
         address1Field2.value = `${street_number}, ${route}`;
+        address1Field2.dispatchEvent(changeEvent);
         city2.value = locality;
+        city2.dispatchEvent(changeEvent);
         state2.value = administrative_area_level_1;
+        state2.dispatchEvent(changeEvent);
         zip2.value = `${postal_code}${postal_code_suffix}`;
+        zip2.dispatchEvent(changeEvent);
         address2Field2.focus();
+    }
+    
+    function fillInAddress3() {
+        var changeEvent = new Event('change');
+        const place = autocomplete2.getPlace();
+        let street_number="";
+        let route="";
+        let locality="";
+        let administrative_area_level_1="";
+        let postal_code="";
+        let postal_code_suffix="";
+
+        for (const component of place.address_components) {
+            const componentType = component.types[0];
+            switch (componentType) {
+                case "street_number": {
+                street_number = component.long_name;
+                    break;
+                }
+                case "route": {
+                    route = component.long_name;
+                    break;
+                }
+                case "locality":{
+                    locality = component.long_name;
+                    break;
+                }
+                case "administrative_area_level_1": {
+                administrative_area_level_1 =component.long_name;
+                    break;
+                }
+                case "postal_code": {
+                postal_code = component.long_name;
+                    break;
+                }
+                case "postal_code_suffix": {
+                postal_code_suffix = component.long_name;
+                    break;
+                }
+            }
+        }
+        
+        address1Field3.value = `${street_number}, ${route}`;
+        address1Field3.dispatchEvent(changeEvent);
+        city3.value = locality;
+        city3.dispatchEvent(changeEvent);
+        state3.value = administrative_area_level_1;
+        state3.dispatchEvent(changeEvent);
+        zip3.value = `${postal_code}${postal_code_suffix}`;
+        zip3.dispatchEvent(changeEvent);
+        address2Field3.focus();
     }
     window.initAutocomplete = initAutocomplete;
     export {};
