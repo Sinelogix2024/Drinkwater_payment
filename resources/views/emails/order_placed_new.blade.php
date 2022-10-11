@@ -11,6 +11,9 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+
     <input type="hidden" value="{{url('/')}}" class="base_url">
 
     <style>
@@ -137,20 +140,24 @@
             text-align: center !important;
         }
 
+        figure img {
+            height: 150px !important;
+        }
+
     </style>
 </head>
-<body>
+<body style="background-color: #fff">
     <main class="app_wrapper waterbg">
         <div class="custom_container">
             <div class="form_wrapper edit_form_wrapper">
                 <div class="flex_row">
                     <div class="head_section">
                         <div class="brand">
-                            <figure class="logo">
-                                <img src="{{ url('images/logowater.png') }}" alt="Logo" style="height: 150px;" />
-                                <span style="font-size: 35px; color: black;">+</span>
-                                <img src="{{ url('images/bhs-logo-social.png') }}" alt="Logo" style="height: 150px;" />
-                            </figure>
+                            @php
+                            request()->request->add(['detail_access_token'=>$orderDetail->odr_adv_detail_access_token]);
+
+                            @endphp
+                            @include('droplet-name')
                         </div>
 
                         <div class="tagline_wrap">
@@ -177,7 +184,7 @@
                                 <input type="text" value="DELIVERY FREQENCY" readonly>
                             </div>
                             <span style="color:black;" class="delivery_note_final_page">{{config('constants.delivery_freq')[$orderDetail->odr_delivery_frequency_id ?? '']  ?? ''}}</span>
-                            <span style="color:black;" class="text-note">(1st DELIVERY 4 KITS, THEN 2 KITS THEREAFTER). </span>
+                            {{-- <span style="color:black;" class="text-note">(1st DELIVERY 4 KITS, THEN 2 KITS THEREAFTER). </span> --}}
                         </div>
                         <div class="form_field">
                             <div class="text-field">
@@ -207,7 +214,7 @@
                         </table>
 
                         <div class="form_field">
-                            <p style="color: black;" class="support_note sm_12">
+                            <p style="color: black; margin-top: 20px" class="support_note sm_12">
                                 CONTRATUALATIONS ON SECURING YOUR PATH TO WELLNESS. FOR ANY SUPPORT RELATED INQUIRIES, PLEASE EMAIL US AT <a href="mailto:clarity@drinkwatr.com" target="_blank">CLARITY@DRINKWATR.COM</a>.
 
                             </p>

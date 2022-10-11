@@ -39,9 +39,9 @@ $(document).ready(function() {
     $('.s_zip_final_page').prop('disabled', true).hide();
 
     $('.shipping_add_final_page').show().text($('.shipping_address_final_page').val() + ' ' + $('.shipping_address1_final_page').val())
-    $('.citi_state_zip_final_page').show().text($('.s_city_final_page').val() + '/' + $('.s_state_final_page').val() + '/' + $('.s_zip_final_page').val());
-    $('.b_city_state_zip').val($('.s_city_final_page').val() + '/' + $('.s_state_final_page').val() + '/' + $('.s_zip_final_page').val());
-    $('.s_city_state_zip').val($('.s_city_final_page').val() + '/' + $('.s_state_final_page').val() + '/' + $('.s_zip_final_page').val());
+    $('.citi_state_zip_final_page').show().text($('.s_city_final_page').val() + ',' + $('.s_state_final_page').val() + ',' + $('.s_zip_final_page').val());
+    $('.b_city_state_zip').val($('.s_city_final_page').val() + ',' + $('.s_state_final_page').val() + ',' + $('.s_zip_final_page').val());
+    $('.s_city_state_zip').val($('.s_city_final_page').val() + ',' + $('.s_state_final_page').val() + ',' + $('.s_zip_final_page').val());
 
     $('.final_page_package_label').next(".dropdown-toggle").prop('disabled', true);
     $('.payment_method_final_page').text($('.payment_method_finl_page_class').children("option:selected").text());
@@ -568,8 +568,8 @@ $(document).ready(function() {
 
             if (current_tab == 'final_form') {
 
-                $('.b_city_state_zip').val($('.s_city_final_page').val() + '/' + $('.s_state_final_page').val() + '/' + $('.s_zip_final_page').val());
-                $('.s_city_state_zip').val($('.s_city_final_page').val() + '/' + $('.s_state_final_page').val() + '/' + $('.s_zip_final_page').val());
+                $('.b_city_state_zip').val($('.s_city_final_page').val() + ',' + $('.s_state_final_page').val() + ',' + $('.s_zip_final_page').val());
+                $('.s_city_state_zip').val($('.s_city_final_page').val() + ',' + $('.s_state_final_page').val() + ',' + $('.s_zip_final_page').val());
 
                 tmp_city = $('.s_city_final_page').val();
                 tmp_city = tmp_city.toLowerCase();
@@ -646,6 +646,13 @@ $(document).ready(function() {
             $("#s_city").val($("#b_city").val());
             $("#s_state").val($("#b_state").val());
             $("#s_zip").val($("#b_zip").val());
+
+            $("#shipping_address").change();
+            $("#shipping_address2").change();
+            $("#s_city").change();
+            $("#s_state").change();
+            $("#s_zip").change();
+
             $('#BillData').addClass('col-md-12');
             $("#shippingData").hide();
         } else {
@@ -716,9 +723,9 @@ $(document).ready(function() {
     $('.final_page_address_field').hide();
     $('.edit_address_final_page').on('click', function() {
         $('.shipping_add_final_page').text($('.shipping_address_final_page').val() + ' ' + $('.shipping_address1_final_page').val());
-        $('.citi_state_zip_final_page').text($('.s_city_final_page').val() + '/' + $('.s_state_final_page').val() + '/' + $('.s_zip_final_page').val());
-        $('.b_city_state_zip').val($('.s_city_final_page').val() + '/' + $('.s_state_final_page').val() + '/' + $('.s_zip_final_page').val());
-        $('.s_city_state_zip').val($('.s_city_final_page').val() + '/' + $('.s_state_final_page').val() + '/' + $('.s_zip_final_page').val());
+        $('.citi_state_zip_final_page').text($('.s_city_final_page').val() + ',' + $('.s_state_final_page').val() + ',' + $('.s_zip_final_page').val());
+        $('.b_city_state_zip').val($('.s_city_final_page').val() + ',' + $('.s_state_final_page').val() + ',' + $('.s_zip_final_page').val());
+        $('.s_city_state_zip').val($('.s_city_final_page').val() + ',' + $('.s_state_final_page').val() + ',' + $('.s_zip_final_page').val());
         $('.final_page_edit_address_label').next(".dropdown-toggle").prop('disabled', true);
 
         if ($(this).text() == 'Edit') {
