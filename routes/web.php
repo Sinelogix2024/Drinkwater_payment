@@ -98,13 +98,13 @@ Route::match(['put'], '/watr/{detail_access_token}/{page}', 'App\Http\Controller
 Route::match(['post'], '/watr/{detail_access_token}/{page?}', 'App\Http\Controllers\Advocate\AdvocateController@getDetail');
 
 Route::match(['get'], '/watr/receipt/{detail_access_token}/receipt/{orderid}', function ($detail_access_token, $orderid) {
-    // dd($detail_access_token, $orderid);
     return view('advocate.receipt')->with($detail_access_token, $orderid);
 })->name('receipt');
+
 Route::match(['get'], '/orderDetail/{order_id}', 'App\Http\Controllers\Advocate\AdvocateController@orderDetail');
 
-Route::match(['get'], '/get-payment/{amount}', 'App\Http\Controllers\Advocate\AdvocateController@getCustomPayment');
-Route::match(['post'], '/get-payment/{payment-code}', 'App\Http\Controllers\Advocate\AdvocateController@getCustomPayment');
+Route::match(['get'], '/invoice-payment/{paymentID}', 'App\Http\Controllers\Advocate\AdvocateController@getCustomPayment');
+Route::match(['post'], '/invoice-payment/{paymentID}', 'App\Http\Controllers\Advocate\AdvocateController@getCustomPayment');
 
 // venom payment gateway response
 Route::match(['get'], '/venmo_server/{payerID}/{deviceData}/{amount}', 'App\Http\Controllers\BrainTreeController@venomResponse');

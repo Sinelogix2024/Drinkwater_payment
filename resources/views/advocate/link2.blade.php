@@ -1059,13 +1059,8 @@ request()->session()->forget('response_error_msg');
                     </div>
 
                 </div>
-                {{-- <footer class="text-center">
-                    <div class="custom_container">
-                        {{ date('Y') }} &copy ALL RIGHT RESERVED | WATR, LLC <br> PRIVACY + LEGAL
-        </div>
-        </footer> --}}
-        @include('footer')
-        </main>
+                @include('footer')
+            </main>
         </div>
         <!-- Step 5 ends -->
 
