@@ -269,8 +269,9 @@ class AdvocateController extends Controller
     {
         try {
             if ($request->method() == 'GET') {
-                return view('advocate.custom-payment');
+                return view('advocate.payment-review');
             } else if ($request->method() == 'POST') {
+                return view('advocate.custom-payment');
             }
         } catch (Exception $e) {
             return $e;
