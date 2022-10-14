@@ -27,7 +27,7 @@
     @break
     @case('droplet-logo')
     <span style="font-size: 35px;">+</span>
-    <img src="{{ asset('images/bhs-logo-social.png') }}" alt="Logo" />
+    <img src="{{ asset('images/').$advocateData->logo_url }}" alt="Logo" />
     @break
     @default
     @endswitch
