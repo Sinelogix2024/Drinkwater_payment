@@ -1242,7 +1242,7 @@ request()->session()->forget('response_error_msg');
         city.dispatchEvent(changeEvent);
         state.value = administrative_area_level_1;
         state.dispatchEvent(changeEvent);
-        zip.value = `${postal_code}${postal_code_suffix}`;
+        zip.value = (`${postal_code}${postal_code_suffix}`).slice(0,5);
         zip.dispatchEvent(changeEvent);
         address2Field.focus();
     }
@@ -1293,7 +1293,7 @@ request()->session()->forget('response_error_msg');
         city2.dispatchEvent(changeEvent);
         state2.value = administrative_area_level_1;
         state2.dispatchEvent(changeEvent);
-        zip2.value = `${postal_code}${postal_code_suffix}`;
+        zip2.value = (`${postal_code}${postal_code_suffix}`).slice(0,5);
         zip2.dispatchEvent(changeEvent);
         address2Field2.focus();
     }
@@ -1344,7 +1344,7 @@ request()->session()->forget('response_error_msg');
         city3.dispatchEvent(changeEvent);
         state3.value = administrative_area_level_1;
         state3.dispatchEvent(changeEvent);
-        zip3.value = `${postal_code}${postal_code_suffix}`;
+        zip3.value = (`${postal_code}${postal_code_suffix}`).slice(0,5);
         zip3.dispatchEvent(changeEvent);
         address2Field3.focus();
     }
