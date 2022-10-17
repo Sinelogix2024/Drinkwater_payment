@@ -1003,6 +1003,17 @@
                                                                                                 <div class="" style="text-transform: uppercase;">3 KITS<br>delivered on the day of your choice</div>
                                                                                             </td>
                                                                                         </tr>
+                                                                                        <tr class="demo_week-default demo_month_1">
+                                                                                            <td class="text-center">
+                                                                                                <div class="" style="text-transform: uppercase;">5 KITS<br>delivered every other week for 1 Month, on day of your choice.</div>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr class="demo_week-default demo_month_2">
+                                                                                            <td class="text-center">
+                                                                                                <div class="" style="text-transform: uppercase;">5 KITS<br>delivered every other week for 2 months, on day of your choice</div>
+                                                                                            </td>
+                                                                                        </tr>
+
                                                                                         <tr class="demo_week-default demo_week_1-2">
                                                                                             <td class="text-left">WEEK 1</td>
                                                                                             <td class="text-right">
@@ -1053,14 +1064,16 @@
                                                                             $('.demo_week_1').show();
                                                                         }
                                                                         if (value == 2) {
-                                                                            $('.demo_week_1-2').show();
-                                                                            $('.demo_week_3-4').show();
+                                                                            $('.demo_month_1').show();
+                                                                            // $('.demo_week_1-2').show();
+                                                                            // $('.demo_week_3-4').show();
                                                                         }
                                                                         if (value == 3) {
-                                                                            $('.demo_week_1-2').show();
-                                                                            $('.demo_week_3-4').show();
-                                                                            $('.demo_week_5-6').show();
-                                                                            $('.demo_week_7-8').show();
+                                                                            $('.demo_month_2').show();
+                                                                            // $('.demo_week_1-2').show();
+                                                                            // $('.demo_week_3-4').show();
+                                                                            // $('.demo_week_5-6').show();
+                                                                            // $('.demo_week_7-8').show();
                                                                         }
                                                                     });
 
