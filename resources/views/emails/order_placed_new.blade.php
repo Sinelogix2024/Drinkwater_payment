@@ -54,7 +54,7 @@
             margin-right: 0;
         }
 
-        input {
+        .sub-title {
             Background: transparent;
             padding: 12px 4px;
             font-size: 14px;
@@ -169,26 +169,26 @@
 
                         <div class="form_field">
                             <div class="text-field">
-                                <input type="text" value="YOUR PRODUCT" readonly>
+                                <div class="sub-title">YOUR PRODUCT</div>
                             </div>
                             <span style="color:black;" class="package_note_final_page"> {{config('constants.product_name')[$orderDetail->odr_product_id ?? '']  ?? ''}}</span>
                         </div>
                         <div class="form_field">
                             <div class="text-field">
-                                <input type="text" value="YOUR WELLNESS SOLUTION" readonly>
+                                <div class="sub-title">YOUR WELLNESS</div>
                             </div>
                             <span style="color:black;" class="package_note_final_page"> {{config('constants.package_name')[ ($orderDetail->odr_product_id) ?? 0][$orderDetail->odr_package_id ?? '']  ?? ''}}</span>
                         </div>
                         <div class="form_field">
                             <div class="text-field">
-                                <input type="text" value="DELIVERY FREQENCY" readonly>
+                                <div class="sub-title">DELIVERY FREQENCY</div>
                             </div>
                             <span style="color:black;" class="delivery_note_final_page">{{config('constants.delivery_freq')[$orderDetail->odr_delivery_frequency_id ?? '']  ?? ''}}</span>
                             {{-- <span style="color:black;" class="text-note">(1st DELIVERY 4 KITS, THEN 2 KITS THEREAFTER). </span> --}}
                         </div>
                         <div class="form_field">
                             <div class="text-field">
-                                <input type="text" value="DELIVERY ADDRESS" readonly>
+                                <div class="sub-title">DELIVERY ADDRESS</div>
                             </div>
                             <span style="color:black;" class="text-note">{{$orderDetail->shipping_address ?? '' }} {{$orderDetail->shipping_address2 ?? ''}}</span>
                             <span style="color:black;" class="text-note">{{$orderDetail->s_city_state_zip ?? ''}}</span>
