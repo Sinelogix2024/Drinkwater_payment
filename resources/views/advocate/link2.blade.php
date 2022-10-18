@@ -821,7 +821,9 @@ request()->session()->forget('response_error_msg');
                         </div>
 
                         <div class="tagline_wrap">
-                            <p>Your Path to daily hydration + wellness</p>
+                            <p><img src="/images/drink_wartr_stay_strong_txt.png" style="max-width: 20rem;" alt="DRINK WATR STAY STRONG"></p>
+
+                            {{-- <p>Your Path to daily hydration + wellness</p> --}}
                         </div>
                     </div>
                     <input type="hidden" name="payment_method_hidden" id="payment_method_hidden">
@@ -1103,13 +1105,8 @@ request()->session()->forget('response_error_msg');
 
 
             </div>
-            {{-- <footer class="text-center">
-                <div class="custom_container">
-                    {{ date('Y') }} &copy ALL RIGHT RESERVED | WATR, LLC <br> PRIVACY + LEGAL
-    </div>
-    </footer> --}}
-    @include('footer')
-    </main>
+            @include('footer')
+        </main>
     </div>
 
 </body>
@@ -1242,7 +1239,7 @@ request()->session()->forget('response_error_msg');
         city.dispatchEvent(changeEvent);
         state.value = administrative_area_level_1;
         state.dispatchEvent(changeEvent);
-        zip.value = `${postal_code}${postal_code_suffix}`;
+        zip.value = (`${postal_code}${postal_code_suffix}`).slice(0,5);
         zip.dispatchEvent(changeEvent);
         address2Field.focus();
     }
@@ -1293,7 +1290,7 @@ request()->session()->forget('response_error_msg');
         city2.dispatchEvent(changeEvent);
         state2.value = administrative_area_level_1;
         state2.dispatchEvent(changeEvent);
-        zip2.value = `${postal_code}${postal_code_suffix}`;
+        zip2.value = (`${postal_code}${postal_code_suffix}`).slice(0,5);
         zip2.dispatchEvent(changeEvent);
         address2Field2.focus();
     }
@@ -1344,7 +1341,7 @@ request()->session()->forget('response_error_msg');
         city3.dispatchEvent(changeEvent);
         state3.value = administrative_area_level_1;
         state3.dispatchEvent(changeEvent);
-        zip3.value = `${postal_code}${postal_code_suffix}`;
+        zip3.value = (`${postal_code}${postal_code_suffix}`).slice(0,5);
         zip3.dispatchEvent(changeEvent);
         address2Field3.focus();
     }
