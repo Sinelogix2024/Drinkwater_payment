@@ -55,6 +55,7 @@
         }
 
         .sub-title {
+            color: black;
             Background: transparent;
             padding: 12px 4px;
             font-size: 14px;
@@ -152,7 +153,7 @@
             <div class="form_wrapper edit_form_wrapper">
                 <div class="flex_row">
                     <div class="head_section">
-                        <div class="brand">
+                        <div class="tagline_wrap">
                             @php
                             request()->request->add(['detail_access_token'=>$orderDetail->odr_adv_detail_access_token]);
 
@@ -196,20 +197,20 @@
 
                         <table class="" width="100%">
                             <tr class="">
-                                <td style="text-align:left !important">TAX</td>
-                                <td style="text-align:right !important">${{$orderDetail->odr_tax_amount ?? ''}}</td>
+                                <td style="color: black; text-align:left !important">TAX</td>
+                                <td style="color: black; text-align:right !important">${{$orderDetail->odr_tax_amount ?? ''}}</td>
                             </tr>
                             <tr class="">
-                                <td style="text-align:left !important">SERVICE FEE</td>
-                                <td style="text-align:right !important">$5.00</td>
+                                <td style="color: black; text-align:left !important">SERVICE FEE</td>
+                                <td style="color: black; text-align:right !important">$5.00</td>
                             </tr>
                             <tr class="">
-                                <td style="text-align:left !important">DELIVERY FEE</td>
-                                <td style="text-align:right !important">$5.00</td>
+                                <td style="color: black; text-align:left !important">DELIVERY FEE</td>
+                                <td style="color: black; text-align:right !important">$5.00</td>
                             </tr>
                             <tr class="">
-                                <td style="text-align:left !important">TOTAL</td>
-                                <td style="text-align:right !important">${{$orderDetail->odr_transaction_amount ?? ''}}</td>
+                                <td style="color: black; text-align:left !important">TOTAL</td>
+                                <td style="color: black; text-align:right !important">${{$orderDetail->odr_transaction_amount ?? ''}}</td>
                             </tr>
                         </table>
 
@@ -220,9 +221,9 @@
                             </p>
                         </div>
 
-                        <figure class="droplet_logowrap text-center">
-                            <span style="color:black;">ALL PRODUCTS ARE DELIVERED BY</span>
-                            <img src="{{url('images/droplet.png')}}">
+                        <figure class="head_section">
+                            <div><span class="tagline_wrap" style="color:black;">ALL PRODUCTS ARE DELIVERED BY</span></div>
+                            <img class="tagline_wrap" style="width: 200px; height: auto !important;" src="{{url('images/droplet.png')}}">
                         </figure>
 
 
