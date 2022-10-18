@@ -821,7 +821,9 @@ request()->session()->forget('response_error_msg');
                         </div>
 
                         <div class="tagline_wrap">
-                            <p>Your Path to daily hydration + wellness</p>
+                            <p><img src="/images/drink_wartr_stay_strong_txt.png" style="max-width: 20rem;" alt="DRINK WATR STAY STRONG"></p>
+
+                            {{-- <p>Your Path to daily hydration + wellness</p> --}}
                         </div>
                     </div>
                     <input type="hidden" name="payment_method_hidden" id="payment_method_hidden">
@@ -1103,13 +1105,8 @@ request()->session()->forget('response_error_msg');
 
 
             </div>
-            {{-- <footer class="text-center">
-                <div class="custom_container">
-                    {{ date('Y') }} &copy ALL RIGHT RESERVED | WATR, LLC <br> PRIVACY + LEGAL
-    </div>
-    </footer> --}}
-    @include('footer')
-    </main>
+            @include('footer')
+        </main>
     </div>
 
 </body>

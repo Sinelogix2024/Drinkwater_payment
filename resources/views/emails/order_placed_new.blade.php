@@ -162,7 +162,8 @@
                         </div>
 
                         <div class="tagline_wrap">
-                            <p style="color: black;">YOUR PATH TO DAILY HYDRATION + WELLNESS</p>
+                            <p><img src="/images/drink_wartr_stay_strong_txt.png" style="max-width: 20rem;" alt="DRINK WATR STAY STRONG"></p>
+                            {{-- <p style="color: black;">YOUR PATH TO DAILY HYDRATION + WELLNESS</p> --}}
                         </div>
                     </div>
                     <div class="flex_col_sm_12">
