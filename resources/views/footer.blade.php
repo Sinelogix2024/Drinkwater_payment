@@ -48,7 +48,7 @@
             </script>
         </div>
         <div class="footer-policy">
-            <a href="{{ url('privacy') }}" style="text-decoration: underline; margin-right: 0.25rem!important;">Privacy</a> <span style="margin-right: 0.25rem;">+</span> <a href="{{ url('legal') }}" style="text-decoration: underline;">Legal</a>
+            <a href="{{ url('privacy') }}" style="text-decoration: underline; margin-right: 0.25rem!important; color: black !important;">Privacy</a> <span style="margin-right: 0.25rem;">+</span> <a href="{{ url('legal') }}" style="text-decoration: underline; color: black !important;">Legal</a>
         </div>
     </div>
 </footer>
