@@ -103,6 +103,7 @@ Route::match(['get'], '/watr/receipt/{detail_access_token}/receipt/{orderid}', f
 
 Route::match(['get'], '/orderDetail/{order_id}', 'App\Http\Controllers\Advocate\AdvocateController@orderDetail');
 
+Route::match(['post'], '/invoice', 'App\Http\Controllers\Advocate\AdvocateController@addInvoiceUser');
 Route::match(['get'], '/invoice-payment/{paymentID}', 'App\Http\Controllers\Advocate\AdvocateController@getCustomPayment');
 Route::match(['post'], '/invoice-payment/{paymentID}', 'App\Http\Controllers\Advocate\AdvocateController@getCustomPayment');
 
@@ -135,7 +136,7 @@ Route::get('email', function () {
     $orderDetail = Order::find(28);
     $advocateData = Advocate::where('adv_detail_access_token', 'kny12raph')->first();
     // Mail::to($request->email)->send(new OrderPlaced($advocateData, $orderDetail));
-    Mail::to('jaydeep.khokhar+testemail@techqware.com')->send(new OrderPlaced($advocateData, $orderDetail));
+    // Mail::to('jaydeep.khokhar+testemail@techqware.com')->send(new OrderPlaced($advocateData, $orderDetail));
     // return ['advocateData' => $advocateData, 'orderDetail' => $orderDetail];
     return view('emails.order_placed_new', ['advocateData' => $advocateData, 'orderDetail' => $orderDetail]);
 });
