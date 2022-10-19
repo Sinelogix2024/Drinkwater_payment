@@ -821,7 +821,7 @@ request()->session()->forget('response_error_msg');
                         </div>
 
                         <div class="tagline_wrap">
-                            <p><img src="/images/drink_wartr_stay_strong_txt.png" style="max-width: 20rem;" alt="DRINK WATR STAY STRONG"></p>
+                            <p><img src="{{ asset('images/drink_wartr_stay_strong_txt.png') }}" style="max-width: 20rem;" alt="DRINK WATR STAY STRONG"></p>
 
                             {{-- <p>Your Path to daily hydration + wellness</p> --}}
                         </div>

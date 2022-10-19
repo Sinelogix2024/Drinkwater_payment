@@ -33,7 +33,8 @@
 
         body {
             margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
+            font-family: europaLight, sans-serif !important;
             font-size: 1rem;
             font-weight: 400;
             line-height: 1.5;
@@ -162,7 +163,7 @@
                         </div>
 
                         <div class="tagline_wrap">
-                            <p><img src="/images/drink_wartr_stay_strong_txt.png" style="max-width: 20rem;" alt="DRINK WATR STAY STRONG"></p>
+                            <p><img src="{{ asset('images/drink_wartr_stay_strong_txt.png') }}" style="max-width: 20rem;" alt="DRINK WATR STAY STRONG"></p>
                             {{-- <p style="color: black;">YOUR PATH TO DAILY HYDRATION + WELLNESS</p> --}}
                         </div>
                     </div>
