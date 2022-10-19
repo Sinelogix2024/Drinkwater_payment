@@ -281,6 +281,56 @@ class AdvocateController extends Controller
     public function addInvoiceUser(Request $request)
     {
         try {
+
+
+            // array(
+            //     'step_id' => 'order id',
+            //     'k_contact_name' => 'key contect name',
+            //     'k_company_name' => 'ke company name',
+            //     'k_company_mail' => 'key company email',
+            //     'k_company_mobile' => 'key company mobile',
+            //     'product_one_name' => 'product one name',
+            //     'product_one_kits' => 'product one qty',
+            //     'product_one_price' => 'product one price',
+            //     'product_two_name' => 'product two name',
+            //     'product_two_kits' => 'product two qty',
+            //     'product_two_price' => 'product two price',
+            //     'billing_address' => 'billing address',
+            //     'billing_address2' => 'billingaddress line 2',
+            //     'b_city' => 'biling city',
+            //     'b_state' => 'biling state',
+            //     'b_zip' => 'biling zip',
+            //     'delivery_fee' => 'delivery fee type',
+            //     'custom_delivery_fee' => 'custome delivery fee by user add',
+            //     'delivery_date' => 'delivery date',
+            //     'sub_responce' => 'responce code',
+            //     'order_date' => current_time('mysql'),
+            //     'user_id' => 'edited user id',
+            // );
+
+
+            // $odr_id = ;
+            // $odr_first_name = ;
+            // $odr_last_name = ;
+            // $odr_email = ;
+            // $odr_mobile = ;
+            // $odr_package_id = ;
+            // $odr_delivery_frequency_id = ;
+            // $billing_address = ;
+            // $shipping_address = ;
+            // $billing_address2 = ;
+            // $shipping_address2 = ;
+            // $b_city_state_zip = ;
+            // $s_city_state_zip = ;
+            // $payment_method = ;
+            // $odr_transaction_id = ;
+            // $odr_transaction_amount = ;
+            // $odr_tax_amount = ;
+            // $odr_adv_detail_access_token = ;
+            // $created_at = ;
+            // $updated_at = ;
+            // $deleted_at = ;
+
             $invoiceUser = new Order();
             $invoiceUser->odr_id = 'ordr_dw_' . time() . '_' . date('Y_m_d');
             $invoiceUser->odr_first_name = $request->first_name;
