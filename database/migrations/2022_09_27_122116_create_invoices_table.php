@@ -15,28 +15,19 @@ class CreateInvoicsTable extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
-            $table->char('unique-code', 16)->unique();
-            $table->timestamps();
-            $table->softDeletes();
-
             $table->string('odr_id');
-            $table->string('odr_first_name');
-            $table->string('odr_last_name')->nullable();
+            $table->string('odr_contact_name')->nullable();
+            $table->string('odr_company_name')->nullable();
             $table->string('odr_email');
             $table->unsignedBigInteger('odr_mobile')->nullable();
-            $table->unsignedBigInteger('odr_package_id');
-            $table->unsignedBigInteger('odr_delivery_frequency_id');
+            $table->text('odr_product');
             $table->string('billing_address')->nullable(true);
-            $table->string('shipping_address')->nullable(true);
             $table->string('billing_address2')->nullable(true);
-            $table->string('shipping_address2')->nullable(true);
             $table->string('b_city_state_zip')->nullable(true);
-            $table->string('s_city_state_zip')->nullable(true);
-            $table->unsignedInteger('payment_method');
-            $table->string('odr_transaction_id');
-            $table->double('odr_transaction_amount');
-            $table->double('odr_tax_amount');
-            $table->text('odr_adv_detail_access_token');
+            $table->unsignedInteger('payment_method')->nullable();
+            $table->string('odr_transaction_id')->nullable();
+            $table->double('odr_total_amount')->nullable();
+            $table->text('odr_tax_amount')->nullable();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
             $table->timestamp('deleted_at')->nullable();
