@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateInvoicsTable extends Migration
+class CreateInvoicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,6 +13,7 @@ class CreateInvoicsTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('invoices');
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
             $table->string('odr_id');
@@ -26,7 +27,9 @@ class CreateInvoicsTable extends Migration
             $table->string('b_city_state_zip')->nullable(true);
             $table->unsignedInteger('payment_method')->nullable();
             $table->string('odr_transaction_id')->nullable();
-            $table->double('odr_total_amount')->nullable();
+            $table->text('odr_payment_status')->nullable();
+            $table->string('delivery_fee')->nullable();
+            $table->string('odr_total_amount')->nullable();
             $table->text('odr_tax_amount')->nullable();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
@@ -41,6 +44,6 @@ class CreateInvoicsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('invoice_users');
+        Schema::dropIfExists('invoices');
     }
 }

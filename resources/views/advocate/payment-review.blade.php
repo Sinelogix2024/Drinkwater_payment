@@ -291,7 +291,7 @@ request()->session()->forget('response_error_msg');
                                                 <option value="1">ALKALINE + ELECTROLYTE</option>
                                                 <option value="2">PURE + ELECTROLYTE</option>
                                             </select>
-                                            <button type="button" class="edit btn_effect edit_product">Edit</button>
+                                            {{-- <button type="button" class="edit btn_effect edit_product">Edit</button> --}}
                                         </div>
                                         <span class="text-note product_note_final_page">YOUR PRODUCT</span>
                                     </div>
