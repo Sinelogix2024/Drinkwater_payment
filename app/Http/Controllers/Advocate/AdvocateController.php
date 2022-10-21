@@ -282,8 +282,7 @@ class AdvocateController extends Controller
     public function addInvoiceUser(Request $request)
     {
         try {
-            return $request->all();
-            $orderId = Invoice::insertGetId(
+            $invoiceObj = Invoice::insert(
                 [
                     'odr_id' => $request->odr_id,
                     'odr_contact_name' => $request->odr_contact_name,
@@ -296,10 +295,13 @@ class AdvocateController extends Controller
                     'b_city_state_zip' => $request->b_city_state_zip,
                     'payment_method' => $request->payment_method,
                     'odr_transaction_id' => $request->odr_transaction_id,
+                    'delivery_fee' => $request->delivery_fee,
                     'odr_total_amount' => $request->odr_total_amount,
                     'odr_tax_amount' => $request->odr_tax_amount
                 ]
             );
+
+            return true;
         } catch (Exception $e) {
             return $e;
         }
