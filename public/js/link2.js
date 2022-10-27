@@ -443,6 +443,8 @@ $(document).ready(function() {
                     $('.s_city_final_page').val($('#s_city').val());
                     $('.s_state_final_page').val($('#s_state').val());
                     $('.s_zip_final_page').val($('#s_zip').val());
+
+                    $('.same_billing_address').change();
                 }, 500);
             }
 
