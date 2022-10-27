@@ -297,7 +297,7 @@ class AdvocateController extends Controller
                     'odr_contact_name' => $request->odr_contact_name,
                     'odr_company_name' => $request->odr_company_name,
                     'odr_email' => $request->odr_email,
-                    'odr_mobile' => $request->odr_mobile,
+                    'odr_mobile' => str_replace('-', '', $request->odr_mobile),
                     'odr_product' => $request->odr_product,
                     'billing_address' => $request->billing_address,
                     'billing_address2' => $request->billing_address2,
