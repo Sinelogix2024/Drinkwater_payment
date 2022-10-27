@@ -29,6 +29,9 @@ request()->session()->forget('response_error_msg');
     <link rel="stylesheet" href="{{ asset('css/bootstrap-select.min.css') }}" />
     <input type="hidden" value="{{ url('/') }}" class="base_url">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel='stylesheet' id='elementor-post-2046-css' href='/css/post-2046.css' media='all' />
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" media='all' />
+
 
     <style>
         body {
@@ -1109,6 +1112,43 @@ request()->session()->forget('response_error_msg');
         </main>
     </div>
 
+    <style>
+        .close-button {
+            top: auto !important;
+            right: auto !important;
+            bottom: 50px !important;
+            width: 100% !important;
+            text-align: center !important;
+        }
+
+        .new-popup-style {
+            height: 300px;
+            border-color: red !important;
+        }
+
+    </style>
+
+    <div class="new-popup-style" id="addressValidationPopup">
+        <a href="#" class="close-button" onclick="addressValidationOff()"><img src="https://drinkwatr.com/wp-content/uploads/2022/02/close.png" style="max-width: 20px;"></a>
+        <div style="margin: 15px; margin-top: 50px;">
+            Thank you for your interest. We want to serve you, but don’t yet deliver to your area. We are here to support you on your wellness journey. So, stay tuned for when we deliver in your area.
+        </div>
+    </div>
+
+    <script>
+        function addressValidationOn() {
+            document.getElementById("addressValidationPopup").style.opacity = "1";
+            document.getElementById("addressValidationPopup").style.zIndex = "9999999999999";
+        }
+
+        function addressValidationOff() {
+            document.getElementById("addressValidationPopup").style.opacity = "0";
+            document.getElementById("addressValidationPopup").style.zIndex = "-100";
+        }
+
+        addressValidationOff();
+
+    </script>
 </body>
 
 </html>
@@ -1390,7 +1430,7 @@ request()->session()->forget('response_error_msg');
                 , value: this.value
             };
 
-            console.log('data-value-' + this.id + '-' + this.name, JSON.stringify(data_array));
+            // console.log('data-value-' + this.id + '-' + this.name, JSON.stringify(data_array));
             localStorage.setItem('data-value-' + this.id + '-' + this.name, JSON.stringify(data_array));
         });
 
