@@ -10,6 +10,7 @@ use App\Models\Order;
 use App\Mail\OrderPlaced;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Invoice;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
@@ -267,92 +268,50 @@ class AdvocateController extends Controller
 
     public function getCustomPayment(Request $request)
     {
-        try {
-            if ($request->method() == 'GET') {
-                return view('advocate.payment-review');
-            } else if ($request->method() == 'POST') {
-                return view('advocate.custom-payment');
+        $invoiceDataObj = Invoice::where('odr_id', $request->paymentID)->first();
+        if (empty($invoiceDataObj)) {
+            abort(404, "Invoice Data Not Found");
+        }
+        // return $invoiceDataObj;
+        if ($request->method() == 'GET') {
+            $products = null;
+
+            $allProducts = json_decode($invoiceDataObj->odr_product, true);
+            foreach ($allProducts as $key => $value) {
+                $products[] = json_decode($value);
             }
-        } catch (Exception $e) {
-            return $e;
+            $data = [$products];
+            // return $data;
+            return view('advocate.payment-review', compact('invoiceDataObj', 'products'));
+        } else if ($request->method() == 'POST') {
+            return view('advocate.custom-payment');
         }
     }
 
     public function addInvoiceUser(Request $request)
     {
         try {
-
-
-            // array(
-            //     'step_id' => 'order id',
-            //     'k_contact_name' => 'key contect name',
-            //     'k_company_name' => 'ke company name',
-            //     'k_company_mail' => 'key company email',
-            //     'k_company_mobile' => 'key company mobile',
-            //     'product_one_name' => 'product one name',
-            //     'product_one_kits' => 'product one qty',
-            //     'product_one_price' => 'product one price',
-            //     'product_two_name' => 'product two name',
-            //     'product_two_kits' => 'product two qty',
-            //     'product_two_price' => 'product two price',
-            //     'billing_address' => 'billing address',
-            //     'billing_address2' => 'billingaddress line 2',
-            //     'b_city' => 'biling city',
-            //     'b_state' => 'biling state',
-            //     'b_zip' => 'biling zip',
-            //     'delivery_fee' => 'delivery fee type',
-            //     'custom_delivery_fee' => 'custome delivery fee by user add',
-            //     'delivery_date' => 'delivery date',
-            //     'sub_responce' => 'responce code',
-            //     'order_date' => current_time('mysql'),
-            //     'user_id' => 'edited user id',
-            // );
-
-
-            // $odr_id = ;
-            // $odr_first_name = ;
-            // $odr_last_name = ;
-            // $odr_email = ;
-            // $odr_mobile = ;
-            // $odr_package_id = ;
-            // $odr_delivery_frequency_id = ;
-            // $billing_address = ;
-            // $shipping_address = ;
-            // $billing_address2 = ;
-            // $shipping_address2 = ;
-            // $b_city_state_zip = ;
-            // $s_city_state_zip = ;
-            // $payment_method = ;
-            // $odr_transaction_id = ;
-            // $odr_transaction_amount = ;
-            // $odr_tax_amount = ;
-            // $odr_adv_detail_access_token = ;
-            // $created_at = ;
-            // $updated_at = ;
-            // $deleted_at = ;
-
-            $invoiceUser = new Order();
-            $invoiceUser->odr_id = 'ordr_dw_' . time() . '_' . date('Y_m_d');
-            $invoiceUser->odr_first_name = $request->first_name;
-            $invoiceUser->odr_last_name = $request->last_name;
-            $invoiceUser->odr_email = $request->email;
-            $invoiceUser->odr_mobile = $request->mobile;
-            $invoiceUser->odr_package_id = $request->package;
-            $invoiceUser->odr_delivery_frequency_id = $request->delivery_frequency;
-            $invoiceUser->billing_address = $request->billing_address;
-            $invoiceUser->shipping_address = $request->shipping_address;
-            $invoiceUser->billing_address2 = $request->billing_address2;
-            $invoiceUser->shipping_address2 = $request->shipping_address2;
-            $invoiceUser->b_city_state_zip = $request->b_city_state_zip;
-            $invoiceUser->s_city_state_zip = $request->s_city_state_zip;
-            $invoiceUser->payment_method = (int) $request->payment_method_hidden;
-            $invoiceUser->odr_adv_detail_access_token = $request->adv_detail_access_token;
-            $invoiceUser->odr_tax_amount = $request->tax_amount;
-            $invoiceUser->save();
-
-            return "function called";
+            $invoiceObj = Invoice::insert(
+                [
+                    'odr_id' => $request->odr_id,
+                    'odr_contact_name' => $request->odr_contact_name,
+                    'odr_company_name' => $request->odr_company_name,
+                    'odr_email' => $request->odr_email,
+                    'odr_mobile' => str_replace('-', '', $request->odr_mobile),
+                    'odr_product' => $request->odr_product,
+                    'billing_address' => $request->billing_address,
+                    'billing_address2' => $request->billing_address2,
+                    'b_city_state_zip' => $request->b_city_state_zip,
+                    'payment_method' => $request->payment_method,
+                    'odr_transaction_id' => $request->odr_transaction_id,
+                    'delivery_fee' => $request->delivery_fee,
+                    'odr_total_amount' => $request->odr_total_amount,
+                    'odr_tax_amount' => $request->odr_tax_amount
+                ]
+            );
+            return true;
         } catch (Exception $e) {
-            return $e;
+            return $e->getMessage();
         }
     }
 }
