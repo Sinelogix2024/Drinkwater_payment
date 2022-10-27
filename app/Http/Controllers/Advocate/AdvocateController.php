@@ -268,14 +268,23 @@ class AdvocateController extends Controller
 
     public function getCustomPayment(Request $request)
     {
-        try {
-            if ($request->method() == 'GET') {
-                return view('advocate.payment-review');
-            } else if ($request->method() == 'POST') {
-                return view('advocate.custom-payment');
+        $invoiceDataObj = Invoice::where('odr_id', $request->paymentID)->first();
+        if (empty($invoiceDataObj)) {
+            abort(404, "Invoice Data Not Found");
+        }
+        // return $invoiceDataObj;
+        if ($request->method() == 'GET') {
+            $products = null;
+
+            $allProducts = json_decode($invoiceDataObj->odr_product, true);
+            foreach ($allProducts as $key => $value) {
+                $products[] = json_decode($value);
             }
-        } catch (Exception $e) {
-            return $e;
+            $data = [$products];
+            // return $data;
+            return view('advocate.payment-review', compact('invoiceDataObj', 'products'));
+        } else if ($request->method() == 'POST') {
+            return view('advocate.custom-payment');
         }
     }
 
@@ -300,10 +309,9 @@ class AdvocateController extends Controller
                     'odr_tax_amount' => $request->odr_tax_amount
                 ]
             );
-
             return true;
         } catch (Exception $e) {
-            return $e;
+            return $e->getMessage();
         }
     }
 }

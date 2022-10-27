@@ -572,10 +572,11 @@ $(document).ready(function() {
                 $('.s_city_state_zip').val($('.s_city_final_page').val() + ',' + $('.s_state_final_page').val() + ',' + $('.s_zip_final_page').val());
 
                 tmp_city = $('.s_city_final_page').val();
-                tmp_city = tmp_city.toLowerCase();
+                tmp_city = tmp_city.toLowerCase().trim();
                 if (tmp_city != 'miami') {
-                    alert("Thank you for your interest. We want to serve you, but don’t yet deliver to your area. We are here to support you on your wellness journey. So, stay tuned for when we deliver in your area.");
                     hideLoader();
+                    addressValidationOn();
+                    // alert("Thank you for your interest. We want to serve you, but don’t yet deliver to your area. We are here to support you on your wellness journey. So, stay tuned for when we deliver in your area.");
                     return true;
                 }
 
