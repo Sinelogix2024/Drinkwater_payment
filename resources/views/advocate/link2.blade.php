@@ -1273,7 +1273,10 @@ request()->session()->forget('response_error_msg');
                 }
             }
         }
-        address1Field.value = `${street_number}, ${route}`;
+        var address1FieldString =`${street_number}, ${route}`;
+        address1FieldString =address1FieldString.replace(',',' ');
+        address1FieldString =address1FieldString.replace('  ',' ');
+        address1Field.value = address1FieldString;
         address1Field.dispatchEvent(changeEvent);
         city.value = locality;
         city.dispatchEvent(changeEvent);
@@ -1324,7 +1327,10 @@ request()->session()->forget('response_error_msg');
             }
         }
         
-        address1Field2.value = `${street_number}, ${route}`;
+        var address1Field2String =`${street_number}, ${route}`;
+        address1Field2String =address1Field2String.replace(',',' ');
+        address1Field2String =address1Field2String.replace('  ',' ');
+        address1Field2.value = address1Field2String;
         address1Field2.dispatchEvent(changeEvent);
         city2.value = locality;
         city2.dispatchEvent(changeEvent);
@@ -1337,7 +1343,7 @@ request()->session()->forget('response_error_msg');
     
     function fillInAddress3() {
         var changeEvent = new Event('change');
-        const place = autocomplete2.getPlace();
+        const place = autocomplete3.getPlace();
         let street_number="";
         let route="";
         let locality="";
@@ -1375,7 +1381,10 @@ request()->session()->forget('response_error_msg');
             }
         }
         
-        address1Field3.value = `${street_number}, ${route}`;
+        var address1Field3String =`${street_number}, ${route}`;
+        address1Field3String =address1Field3String.replace(',',' ');
+        address1Field3String =address1Field3String.replace('  ',' ');
+        address1Field3.value = address1Field3String;
         address1Field3.dispatchEvent(changeEvent);
         city3.value = locality;
         city3.dispatchEvent(changeEvent);
