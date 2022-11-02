@@ -949,26 +949,27 @@
                                                                     <div class="hydration-carousel">
                                                                         <div class="carousel-cell">
                                                                             <h3 class="carousel-title">Wellness Solution Guide</h3>
-                                                                            <div style="text-align:center; margin-top: 50px;">1 KIT = 12 Bottles</div>
+                                                                            <div style="text-align:center; margin-top: 50px;">1 <span><img style="height: 20px;padding-bottom: 4px;" src="{{ asset('images/kit.png') }}" alt="KIT" /></span> = 12 <span><img style="height: 20px;padding-bottom: 4px;" src="{{ asset('images/bottle.png') }}" alt="Bottles" /></span></div>
+                                                                            {{-- <div style="text-align:center; margin-top: 50px;">1 KIT = 12 Bottles</div> --}}
 
                                                                             <table style="text-align:center; margin-top: 0px;" border="1px" width="100%">
                                                                                 <tbody>
                                                                                     <tr>
                                                                                         <td>1 Week</td>
                                                                                         <td>-></td>
-                                                                                        <td>3 KITS (36 Bottles)</td>
+                                                                                        <td>3 KITS (36 <span><img style="height: 20px;padding-bottom: 4px;" src="{{ asset('images/bottle.png') }}" alt="Bottles" /></span>)</td>
                                                                                     </tr>
 
                                                                                     <tr>
                                                                                         <td>1 Month</td>
                                                                                         <td>-></td>
-                                                                                        <td>10 KITS (120 Bottles)</td>
+                                                                                        <td>10 KITS (120 <span><img style="height: 20px;padding-bottom: 4px;" src="{{ asset('images/bottle.png') }}" alt="Bottles" /></span>)</td>
                                                                                     </tr>
 
                                                                                     <tr>
                                                                                         <td>2 Month</td>
                                                                                         <td>-></td>
-                                                                                        <td>20 KITS (240 Bottles)</td>
+                                                                                        <td>20 KITS (240 <span><img style="height: 20px;padding-bottom: 4px;" src="{{ asset('images/bottle.png') }}" alt="Bottles" /></span>)</td>
                                                                                     </tr>
                                                                                 </tbody>
                                                                             </table>
@@ -1000,42 +1001,42 @@
                                                                                     <table width="100%">
                                                                                         <tr class="demo_week-default demo_week_1">
                                                                                             <td class="text-center">
-                                                                                                <div class="" style="text-transform: uppercase;">3 KITS<br>delivered on the day of your choice</div>
+                                                                                                <div class="" style="text-transform: uppercase;">3 <span><img style="height: 20px;padding-bottom: 4px;" src="{{ asset('images/kit.png') }}" alt="KIT" /></span><br>delivered on the day of your choice</div>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr class="demo_week-default demo_month_1">
                                                                                             <td class="text-center">
-                                                                                                <div class="" style="text-transform: uppercase;">5 KITS<br>delivered every other week for 1 Month, on day of your choice.</div>
+                                                                                                <div class="" style="text-transform: uppercase;">5 <span><img style="height: 20px;padding-bottom: 4px;" src="{{ asset('images/kit.png') }}" alt="KIT" /></span><br>delivered every other week for 1 Month, on day of your choice.</div>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr class="demo_week-default demo_month_2">
                                                                                             <td class="text-center">
-                                                                                                <div class="" style="text-transform: uppercase;">5 KITS<br>delivered every other week for 2 months, on day of your choice</div>
+                                                                                                <div class="" style="text-transform: uppercase;">5 <span><img style="height: 20px;padding-bottom: 4px;" src="{{ asset('images/kit.png') }}" alt="KIT" /></span><br>delivered every other week for 2 months, on day of your choice</div>
                                                                                             </td>
                                                                                         </tr>
 
                                                                                         <tr class="demo_week-default demo_week_1-2">
                                                                                             <td class="text-left">WEEK 1</td>
                                                                                             <td class="text-right">
-                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">5 KITS<br>delivered on the day of your choice</div>
+                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">5 <span><img style="height: 20px;padding-bottom: 4px;" src="{{ asset('images/kit.png') }}" alt="KIT" /></span><br>delivered on the day of your choice</div>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr class="demo_week-default demo_week_3-4">
                                                                                             <td class="text-left">WEEK 3</td>
                                                                                             <td class="text-right">
-                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">5 KITS<br>delivered on the day of your choice</div>
+                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">5 <span><img style="height: 20px;padding-bottom: 4px;" src="{{ asset('images/kit.png') }}" alt="KIT" /></span><br>delivered on the day of your choice</div>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr class="demo_week-default demo_week_5-6">
                                                                                             <td class="text-left">WEEK 5</td>
                                                                                             <td class="text-right">
-                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">5 KITS<br>delivered on the day of your choice</div>
+                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">5 <span><img style="height: 20px;padding-bottom: 4px;" src="{{ asset('images/kit.png') }}" alt="KIT" /></span><br>delivered on the day of your choice</div>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr class="demo_week-default demo_week_7-8">
                                                                                             <td class="text-left">WEEK 7</td>
                                                                                             <td class="text-right">
-                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">5 KITS<br>delivered on the day of your choice</div>
+                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">5 <span><img style="height: 20px;padding-bottom: 4px;" src="{{ asset('images/kit.png') }}" alt="KIT" /></span><br>delivered on the day of your choice</div>
                                                                                             </td>
                                                                                         </tr>
                                                                                     </table>
