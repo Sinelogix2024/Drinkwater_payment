@@ -20,7 +20,8 @@ braintree.client.create({
         client: clientInstance,
         allowNewBrowserTab: true,
         allowDesktop: true,
-        profileId: '1953896702662410263',
+        profileId: localStorage.getItem('VENMO_PROFILE_ID'),
+        // profileId: '1953896702662410263',
         paymentMethodUsage: 'multi_use',
     }, function(venmoErr, venmoInstance) {
         if (venmoErr) {
