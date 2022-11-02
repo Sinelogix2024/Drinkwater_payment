@@ -1,5 +1,6 @@
 <script>
     localStorage.setItem('BRAINTREE_AUTH_KEY', '{{ env("BRAINTREE_AUTH_KEY","sandbox_7b22h9qq_9wcqdbyrsh4jphn6") }}');
+    localStorage.setItem('VENMO_PROFILE_ID', '{{ env("VENMO_PROFILE_ID","1953896702662410263") }}');
 
 </script>
 
