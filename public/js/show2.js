@@ -78,11 +78,10 @@ $(document).ready(function() {
 
        $('.package_note_final_page').text($('#package5').children("option:selected").text());
 
-               $('.payment_method').next(".dropdown-toggle").hide();
-
-        $('.shipping_address_final_page').val($('#shipping_address').val());
-                $('.shipping_address1_final_page').val($('#shipping_address2').val());
-                $('.s_city_state_zip_final_page').val($('#s_city_state_zip').val());
+            $('.payment_method').next(".dropdown-toggle").hide();
+            $('.shipping_address_final_page').val($('#billing_address').val());
+            $('.shipping_address1_final_page').val($('#billing_address2').val());              
+            $('.s_city_state_zip_final_page').val($('#s_city_state_zip').val());
 
                $('.edit_address_final_page').click();
                $('.edit_delivery_freq').click();

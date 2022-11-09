@@ -48,6 +48,7 @@ class AdvocateController extends Controller
             }
 
             if ($request->method() == 'POST') {
+                // return $request->all();
                 $amount = $request->total_amount ?? 10.00;
                 $result = $gateway->transaction()->sale([
                     'amount' => $amount,
@@ -65,10 +66,10 @@ class AdvocateController extends Controller
                     'odr_product_id' => $request->product,
                     'odr_package_id' => $request->package,
                     'odr_delivery_frequency_id' => $request->delivery_frequency,
-                    'billing_address' => $request->billing_address,
-                    'shipping_address' => $request->shipping_address,
-                    'billing_address2' => $request->billing_address2,
-                    'shipping_address2' => $request->shipping_address2,
+                    'billing_address' => $request->shipping_address,
+                    'shipping_address' => $request->billing_address,
+                    'billing_address2' => $request->shipping_address2,
+                    'shipping_address2' => $request->billing_address2,
                     'b_city_state_zip' => $request->b_city_state_zip,
                     's_city_state_zip' => $request->s_city_state_zip,
                     'payment_method' => (int) $request->payment_method_hidden,
