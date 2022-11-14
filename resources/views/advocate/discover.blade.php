@@ -702,7 +702,7 @@
                                                 <div class="slide-bottom-sec">
                                                     <img class="" src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png" style="height: 100px;">
                                                     <div class="">
-                                                        <img src="https://drinkwatr.com/wp-content/uploads/2022/06/ph-balance_1.png" style="max-height: 110px;">
+                                                        <img src="https://watrbar.io/wp-content/uploads/2022/11/ph_balanced-alkaline.jpg" style="max-height: 110px;">
                                                         <p style="margin: 2px;">pH BALANCE</p>
                                                     </div>
                                                 </div>
@@ -757,7 +757,7 @@
                                                 <div class="slide-bottom-sec">
                                                     <img class="" src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png" style="height: 100px;">
                                                     <div class="">
-                                                        <img class="img-6" src="https://drinkwatr.com/wp-content/uploads/2022/08/pH-7.0-ICON-blue-new.png" style="height: 110px;">
+                                                        <img class="img-6" src="https://watrbar.io/wp-content/uploads/2022/11/ph_balanced-pure.jpg" style="height: 110px;">
                                                         <p style="margin: 2px;">pH BALANCE</p>
                                                     </div>
                                                 </div>
