@@ -234,7 +234,6 @@ class AdvocateController extends Controller
 
     public function orderDetail(Request $request)
     {
-        // return $request->all();
         $orderDetail = Order::where('odr_id', $request->order_id)->first();
 
         $advocateData = Advocate::where('adv_detail_access_token', $orderDetail->odr_adv_detail_access_token)->first();
@@ -285,7 +284,7 @@ class AdvocateController extends Controller
             // return $data;
             return view('advocate.payment-review', compact('invoiceDataObj', 'products'));
         } else if ($request->method() == 'POST') {
-            return view('advocate.custom-payment');
+            return view('advocate.custom-payment', compact('invoiceDataObj'));
         }
     }
 

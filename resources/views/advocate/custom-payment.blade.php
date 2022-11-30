@@ -1,18 +1,18 @@
-@if (!empty(session('response_error_msg',null)))
-<script>
-    // alert("{{ session('response_error_msg') }}");
+@if (!empty(session('response_error_msg', null)))
+    <script>
+        // alert("{{ session('response_error_msg') }}");
+    </script>
 
-</script>
-
-@php
-request()->session()->forget('response_error_msg');
-@endphp
+    @php
+        request()
+            ->session()
+            ->forget('response_error_msg');
+    @endphp
 @endif
 
 <script>
-    localStorage.setItem('BRAINTREE_AUTH_KEY', '{{ env("BRAINTREE_AUTH_KEY","sandbox_7b22h9qq_9wcqdbyrsh4jphn6") }}');
-    localStorage.setItem('VENMO_PROFILE_ID', '{{ env("VENMO_PROFILE_ID","1953896702662410263") }}');
-
+    localStorage.setItem('BRAINTREE_AUTH_KEY', '{{ env('BRAINTREE_AUTH_KEY', 'sandbox_7b22h9qq_9wcqdbyrsh4jphn6') }}');
+    localStorage.setItem('VENMO_PROFILE_ID', '{{ env('VENMO_PROFILE_ID', '1953896702662410263') }}');
 </script>
 
 <!DOCTYPE html>
@@ -251,7 +251,6 @@ request()->session()->forget('response_error_msg');
         .form_wrapper {
             min-height: 400px;
         }
-
     </style>
 </head>
 
@@ -260,9 +259,12 @@ request()->session()->forget('response_error_msg');
     <img src="{{ asset('images/logowater.png') }}" />
 </div>
 
+{{-- {{ dd($invoiceDataObj->toArray()) }} --}}
+
 <body class="body">
     <form id="basic-form" method="POST">
         @csrf
+        <input type="hidden" class="current_tab" id="current_tab" value="invocing-payment">
         <main class="app_wrapper  main_content" style="display: ;">
             <!-- step 3 start Payment Type Selection -->
             <div class="step3_form" style="display: ;">
@@ -276,6 +278,7 @@ request()->session()->forget('response_error_msg');
                                 @include('droplet-name')
                             </div>
 
+
                             <div class="tagline_wrap">
                                 <p>Your Path to daily hydration + wellness</p>
                             </div>
@@ -288,8 +291,10 @@ request()->session()->forget('response_error_msg');
                             <div class="col-md-12">
                                 <div class="form_field text-center">
                                     <div class="text-field custom_select">
-                                        <select class="selectpicker payment_method" name="payment_method" id="payment_method" data-dropup-auto="false" title="SELECT PAYMENT METHOD">
-                                            <option data-hidden="true" selected="selected">SELECT PAYMENT METHOD</option>
+                                        <select class="selectpicker payment_method" name="payment_method"
+                                            id="payment_method" data-dropup-auto="false" title="SELECT PAYMENT METHOD">
+                                            <option data-hidden="true" selected="selected">SELECT PAYMENT METHOD
+                                            </option>
                                             <option value="1">CREDIT CARD</option>
                                             <option value="2">DEBIT CARD</option>
                                             <option value="3">VENMO </option>
@@ -347,7 +352,8 @@ request()->session()->forget('response_error_msg');
                                     </form>
                                 </div>
                                 <div id="bt-dropin_applepay" style="display: none;">
-                                    <apple-pay-button buttonstyle="black" type="buy" locale="el-GR" style="display: block;"></apple-pay-button>
+                                    <apple-pay-button buttonstyle="black" type="buy" locale="el-GR"
+                                        style="display: block;"></apple-pay-button>
                                 </div>
                             </div>
                             <div class="dots_wrapper">
@@ -394,7 +400,6 @@ request()->session()->forget('response_error_msg');
 <script src="{{ asset('js/hosted-custom-updated.js') }}"></script>
 <script>
     $(document).ready(function() {});
-
 </script>
 
 <style>
@@ -435,24 +440,21 @@ request()->session()->forget('response_error_msg');
     .edit {
         /* top: 58% !important; */
     }
-
 </style>
 
-@if (!empty(session('response_success_msg',null)))
-<script>
-    $(".final_form").show();
-
-</script>
-@php
-request()->session()->forget('response_success_msg');
-@endphp
+@if (!empty(session('response_success_msg', null)))
+    <script>
+        $(".final_form").show();
+    </script>
+    @php
+        request()
+            ->session()
+            ->forget('response_success_msg');
+    @endphp
 @else
-<script>
-    $(".main_content").show();
-
-</script>
+    <script>
+        $(".main_content").show();
+    </script>
 @endif
 
-<script>
-
-</script>
+<script></script>

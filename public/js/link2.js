@@ -236,7 +236,6 @@ $(document).ready(function() {
 
     $(document).on("change", "#payment_method", function() {
         let selected = $(this).children("option:selected").val();
-
         if (selected == 3) { // hide card form and show venom
             $("#bt-dropin").hide();
             $("#bt-dropin_venmo").show();
@@ -414,6 +413,7 @@ $(document).ready(function() {
 
             console.log($(this));
 
+            // alert(current_tab);
             if (current_tab == "step1_form") {
                 showLoader();
                 if ($("#basic-form").valid()) {
