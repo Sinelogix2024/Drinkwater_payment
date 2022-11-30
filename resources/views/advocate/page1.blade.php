@@ -952,7 +952,63 @@
                                                                             <div style="text-align:center; margin-top: 50px;">1 <span><img style="height: 20px;padding-bottom: 4px;" src="{{ asset('images/kit.png') }}" alt="KIT" /></span> = 12 <span><img style="height: 20px;padding-bottom: 4px;" src="{{ asset('images/bottle.png') }}" alt="Bottles" /></span></div>
                                                                             {{-- <div style="text-align:center; margin-top: 50px;">1 KIT = 12 Bottles</div> --}}
 
-                                                                            <table style="text-align:center; margin-top: 0px;" border="1px" width="100%">
+                                                                                  <div class="" style="text-align: center;margin-top: 70px;">
+                                                                                <div class="flex_col_sm_7 p-0">
+                                                                                    <div class="form_field">
+                                                                                        <div class="text-field">
+                                                                                            <select class="selectpicker placeholder form-control" name="wellness_demo_package" id="wellness_demo_package" required data-dropup-auto="false" title="SELECT YOUR WELLNESS SOLUTION">
+                                                                                                <option value='0' data-hidden="true" selected>SELECT YOUR WELLNESS SOLUTION</option>
+                                                                                                <option value="1">1 WEEK</option>
+                                                                                                <option value="2">1 MONTH</option>
+                                                                                                <option value="3">2 MONTH</option>
+                                                                                            </select>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div style="
+                                                                                position: absolute;
+                                                                                width: 100%;
+                                                                                left: 0;
+                                                                                /* padding: 0 15px; */
+                                                                                height: calc(100% - 320px);
+                                                                                overflow: auto;
+                                                                                ">
+                                                                                    <table width="100%">
+                                                                                        <tr class="wellness_demo_week-default wellness_demo_week_1">
+                                                                                            <td class="text-center">
+                                                                                                <div class="" style="text-transform: uppercase;">
+                                                                                                    <div>YOUR 1 WEEK SOLUTION WILL INCLUDE :</div>
+                                                                                                    <div style="margin-top: 10px;font-size: 30px;">
+                                                                                                        3 <span><img style="height: 33px;padding-bottom: 9px;" src="{{ asset('images/kit.png') }}" alt="KIT" /></span> = 36 <span><img style="height: 33px;padding-bottom: 9px;" src="{{ asset('images/bottle.png') }}" alt="BOTTLE" /></span>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr class="wellness_demo_week-default wellness_demo_month_1">
+                                                                                            <td class="text-center">
+                                                                                                <div class="" style="text-transform: uppercase;">
+                                                                                                    <div>YOUR 1 MONTH SOLUTION WILL INCLUDE :</div>
+                                                                                                    <div style="margin-top: 10px;font-size: 30px;">
+                                                                                                        10 <span><img style="height: 33px;padding-bottom: 9px;" src="{{ asset('images/kit.png') }}" alt="KIT" /></span> = 120 <span><img style="height: 33px;padding-bottom: 9px;" src="{{ asset('images/bottle.png') }}" alt="BOTTLE" /></span>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                        <tr class="wellness_demo_week-default wellness_demo_month_2">
+                                                                                            <td class="text-center">
+                                                                                                <div class="" style="text-transform: uppercase;">
+                                                                                                    <div>YOUR 2 MONTH SOLUTION WILL INCLUDE :</div>
+                                                                                                    <div style="margin-top: 10px;font-size: 30px;">
+                                                                                                        20 <span><img style="height: 33px;padding-bottom: 9px;" src="{{ asset('images/kit.png') }}" alt="KIT" /></span> = 240 <span><img style="height: 33px;padding-bottom: 9px;" src="{{ asset('images/bottle.png') }}" alt="BOTTLE" /></span>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </table>
+                                                                                </div>
+                                                                            </div>
+                                                                      
+                                                                            {{-- <table style="text-align:center; margin-top: 0px;" border="1px" width="100%">
                                                                                 <tbody>
                                                                                     <tr>
                                                                                         <td>1 Week</td>
@@ -972,7 +1028,7 @@
                                                                                         <td>20 KITS (240 <span><img style="height: 20px;padding-bottom: 4px;" src="{{ asset('images/bottle.png') }}" alt="Bottles" /></span>)</td>
                                                                                     </tr>
                                                                                 </tbody>
-                                                                            </table>
+                                                                            </table> --}}
                                                                         </div>
 
                                                                         <div class="carousel-cell">
@@ -1057,6 +1113,21 @@
                                                                         document.getElementById("hydrationPopup").style.zIndex = "-100";
                                                                     }
 
+                                                                    $('.wellness_demo_week-default').hide();
+                                                                    $('#wellness_demo_package').on('change', function() {
+                                                                        var value = (this.value);
+                                                                        $('.wellness_demo_week-default').hide();
+                                                                        if (value == 1) {
+                                                                            $('.wellness_demo_week_1').show();
+                                                                        }
+                                                                        if (value == 2) {
+                                                                            $('.wellness_demo_month_1').show();
+                                                                        }
+                                                                        if (value == 3) {
+                                                                            $('.wellness_demo_month_2').show();
+                                                                        }
+                                                                    });
+                                                                    
                                                                     $('.demo_week-default').hide();
                                                                     $('#demo_package').on('change', function() {
                                                                         var value = (this.value);
@@ -1066,15 +1137,9 @@
                                                                         }
                                                                         if (value == 2) {
                                                                             $('.demo_month_1').show();
-                                                                            // $('.demo_week_1-2').show();
-                                                                            // $('.demo_week_3-4').show();
                                                                         }
                                                                         if (value == 3) {
                                                                             $('.demo_month_2').show();
-                                                                            // $('.demo_week_1-2').show();
-                                                                            // $('.demo_week_3-4').show();
-                                                                            // $('.demo_week_5-6').show();
-                                                                            // $('.demo_week_7-8').show();
                                                                         }
                                                                     });
 
