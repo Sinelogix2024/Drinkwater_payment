@@ -430,6 +430,43 @@
     body {
         font-family: europaLight;
     }
+
+    @media only screen and (min-width: 1024px) {
+        .elementor .pg-d-img-1.img1 {
+            left: 10%
+        }
+
+        .elementor-slide-description .main-container.alignitm {
+            align-items: top;
+        }
+
+        .elementor-slide-description .box-one.boxes .content-data-add {
+            padding-bottom: 100px;
+        }
+
+        .elementor-slide-description .box-one.boxes .new_logo_sec {
+            margin-bottom: 100px;
+        }
+    }
+
+    @media screen and (max-width: 1024px) and (min-width: 767px) {
+        .elementor .pg-d-img-1.img1 {
+            top: 5%;
+            left: 0%
+        }
+
+        .elementor-slide-description .box-one.boxes .content-data-add {
+            padding-bottom: 70px;
+        }
+
+        .elementor-slide-description .box-one.boxes .new_logo_sec {
+            margin-bottom: 60px;
+        }
+
+        .elementor-slide-description .main-container.alignitm {
+            align-items: center;
+        }
+    }
 </style>
 
 <body
@@ -508,20 +545,25 @@
                                                                                     unique products designed to keep you
                                                                                     strong.
                                                                                 </div>
+                                                                                <style>
+                                                                                    figure img {
+                                                                                        height: 150px !important;
+                                                                                    }
+                                                                                </style>
                                                                                 <div class="new_logo_sec"
                                                                                     style="display: flex;flex-direction: row;justify-content: center;margin-top: 41px;align-items: center;column-gap: 15px;">
                                                                                     <a
-                                                                                        href="https://parkgrove.watrbar.io/">
+                                                                                        href="{{ url('/home', ['detail_access_token' => request()->detail_access_token]) }}">
                                                                                         <img decoding="async"
-                                                                                            src="https://watrbar.io/wp-content/uploads/2022/07/logo-latest.png"
+                                                                                            src="{{ asset('images/logowater.png') }}"
                                                                                             class="stk-img2"
                                                                                             style="text-align: center;display: block;margin: 0 auto;position: relative;max-width: 70px !important;margin-right: -5px;"></a>
                                                                                     <span
                                                                                         style="font-size: 30px;line-height: 1;color: #222;margin-top: -15px;font-weight: initial;margin-left: -10px;">+</span>
                                                                                     <img decoding="async"
-                                                                                        src="https://watrbar.io/wp-content/uploads/2022/11/parkgrove.png"
+                                                                                        src="{{ asset('images') . '/park_grove.png' }}"
                                                                                         alt="Logo"
-                                                                                        style="max-width: 100px;">
+                                                                                        style="max-width: 150px;">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
