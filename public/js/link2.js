@@ -616,6 +616,17 @@ $(document).ready(function() {
                     // hideLoader();
                 }, 3000);
             }
+
+            if (current_tab == "invocing-payment") {
+                setTimeout(function () {
+                    if (!$('#payment_method_nonce').val()) {
+                        // alert("Please add valid payment details!");
+                        paymentValidationOn();
+                    } else {
+                        form.submit();
+                    }
+                }, 1000);
+            }
         },
     });
 
