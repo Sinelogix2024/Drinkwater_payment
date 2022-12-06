@@ -29,6 +29,10 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/bootstrap-select.min.css') }}" />
     <input type="hidden" value="{{ url('/') }}" class="base_url">
+
+    <link rel='stylesheet' id='elementor-post-2046-css' href='/css/post-2046.css' media='all' />
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" media='all' />
+
     {{-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> --}}
 
     <style>
@@ -249,7 +253,7 @@
         }
 
         .form_wrapper {
-            min-height: 400px;
+            /* min-height: 400px; */
         }
     </style>
 </head>
@@ -262,7 +266,9 @@
 {{-- {{ dd($invoiceDataObj->toArray()) }} --}}
 
 <body class="body">
-    <form id="basic-form" method="POST">
+    <form id="basic-form" method="POST" action="">
+        @method('PUT')
+        {{-- {{ method_field('PUT') }} --}}
         @csrf
         <input type="hidden" class="current_tab" id="current_tab" value="invocing-payment">
         <main class="app_wrapper  main_content" style="display: ;">
@@ -281,6 +287,11 @@
 
                             <div class="tagline_wrap">
                                 <p>Your Path to daily hydration + wellness</p>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">Order ID : {{ $invoiceDataObj->odr_id }}</div>
+                                <div class="col">Amount : {{ $invoiceDataObj->odr_total_amount }}</div>
                             </div>
                         </div>
 
@@ -356,8 +367,17 @@
                                         style="display: block;"></apple-pay-button>
                                 </div>
                             </div>
+                            <input type="hidden" name="payment_method_nonce_update" id="payment_method_nonce_update"
+                                class="payment_method_nonce_update">
+                            <input type="hidden" name="payment_method_nonce" id="payment_method_nonce"
+                                class="payment_method_nonce">
+                            <input type="hidden" name="invoice_id" value="{{ $invoiceDataObj->id }}">
+                            <input type="hidden" name="odr_id" value="{{ $invoiceDataObj->odr_id }}">
+                            <input type="hidden" name="odr_total_amount"
+                                value="{{ $invoiceDataObj->odr_total_amount }}">
                             <div class="dots_wrapper">
-                                <button type="submit" class="primary_btn">Next</button>
+                                <button type="submit" class="primary_btn"
+                                    onclick="$('#payment_method_nonce').val('')">PAY</button>
                             </div>
                         </div>
                     </div>
@@ -369,6 +389,44 @@
     </form>
 
     </div>
+
+    <style>
+        .close-button {
+            top: auto !important;
+            right: auto !important;
+            bottom: 30px !important;
+            width: 100% !important;
+            text-align: center !important;
+        }
+
+        .new-popup-style {
+            border-radius: 25px;
+            border-width: 1px;
+            background: #f3f3f3;
+            height: 160px;
+            border-color: red !important;
+        }
+    </style>
+
+    <div class="new-popup-style" id="paymentValidationPopup">
+        <a href="#" class="close-button" onclick="paymentValidationOff()"><img
+                src="https://drinkwatr.com/wp-content/uploads/2022/02/close.png" style="max-width: 20px;"></a>
+        <div style="margin: 15px; margin-top: 30px; font-size: 17px;" class="text-center">Please enter valid payment
+            details.</div>
+    </div>
+    <script>
+        function paymentValidationOn() {
+            document.getElementById("paymentValidationPopup").style.opacity = "1";
+            document.getElementById("paymentValidationPopup").style.zIndex = "9999999999999";
+        }
+
+        function paymentValidationOff() {
+            document.getElementById("paymentValidationPopup").style.opacity = "0";
+            document.getElementById("paymentValidationPopup").style.zIndex = "-100";
+        }
+
+        paymentValidationOff();
+    </script>
 </body>
 
 </html>

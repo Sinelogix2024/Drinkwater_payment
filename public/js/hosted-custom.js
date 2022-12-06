@@ -213,8 +213,6 @@ $(document).ready(function() {
                     // or add the payment method nonce to a hidden inpiut
                     // on your form and submit the form programatically
                     if ($('#payment_method_nonce_update').val() == '') {
-
-
                         $('#payment_method_nonce').val(payload.nonce);
                     }
                     // form.submit()
