@@ -69,6 +69,15 @@
             background: none !important;
             padding: 0 !important;
         }
+
+        .content-sec .new_logo {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-bottom: 70px;
+            align-items: center;
+            column-gap: 15px;
+        }
     </style>
     <style id='global-styles-inline-css'>
         body {
@@ -373,16 +382,25 @@
                                         <div class="sec-one-inner">
 
                                             <div class="content-sec">
+                                                <img decoding="async" src="./wp-content/uploads/2022/07/droplet.png"
+                                                    class="stk-img1">
 
-                                                <img src="../wp-content/uploads/2022/07/droplet.png" class="stk-img1">
-                                                <a href="#">
-                                                    <img src="../wp-content/uploads/2022/07/logo-latest.png"
-                                                        class="stk-img2">
-                                                </a>
+                                                <div class="new_logo" style="">
+                                                    <a href="{{ url('/home', $detail_access_token) }}">
+                                                        <img decoding="async"
+                                                            src="../wp-content/uploads/2022/07/logo-latest.png"
+                                                            class="stk-img2" style="margin-top: 0; margin-bottom: 0;">
+                                                    </a>
+                                                    @if ($detail_access_token == 'park-grove')
+                                                        <span
+                                                            style="font-size: 30px;line-height: 1;color: #222;margin-top: -15px;font-weight: initial;margin-left: -10px;">+</span>
+                                                        <img decoding="async"
+                                                            src="{{ asset('images') . '/park_grove.png' }}"
+                                                            alt="Logo" style="max-width: 100px;">
+                                                    @endif
+                                                </div>
                                                 <a href="{{ url('/experience', $detail_access_token) }}"
-                                                    class="updated-button-set">experience</a>
-                                                <img src="../wp-content/uploads/2022/07/droplet.png" class="stk-img3"
-                                                    style="max-width: 100px;position: absolute;">
+                                                    class="updated-button-set">EXPERIENCE</a>
                                                 @if ($detail_access_token == 'park-grove')
                                                     <p style="text-align:center;">WATR BAR AT PARK GROVE RESIDENCES</p>
                                                 @endif
