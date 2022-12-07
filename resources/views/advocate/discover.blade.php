@@ -938,7 +938,7 @@
                                                     <div class="">
                                                         <img src="https://watrbar.io/wp-content/uploads/2022/11/ph_balanced-alkaline.jpg"
                                                             style="max-height: 110px;">
-                                                        <p style="margin: 2px;">pH BALANCE</p>
+                                                        {{-- <p style="margin: 2px;">pH BALANCE</p> --}}
                                                     </div>
                                                 </div>
                                             </div>
@@ -949,11 +949,11 @@
                                                         src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png"
                                                         style="height: 100px;">
                                                     <div class="">
-                                                        <img src="https://drinkwatr.com/wp-content/uploads/2022/06/purification_1.png"
+                                                        <img src="https://watrbar.io/wp-content/uploads/2022/11/purity.jpg"
                                                             style="max-height: 110px;">
-                                                        <p style="margin: 2px;">5<span
+                                                        {{-- <p style="margin: 2px;">5<span
                                                                 style="text-transform: lowercase;">x</span> PURE WATER
-                                                        </p>
+                                                        </p> --}}
                                                     </div>
                                                 </div>
                                             </div>
@@ -1009,7 +1009,7 @@
                                                         <img class="img-6"
                                                             src="https://watrbar.io/wp-content/uploads/2022/11/ph_balanced-pure.jpg"
                                                             style="height: 110px;">
-                                                        <p style="margin: 2px;">pH BALANCE</p>
+                                                        {{-- <p style="margin: 2px;">pH BALANCE</p> --}}
                                                     </div>
                                                 </div>
                                             </div>
@@ -1019,11 +1019,11 @@
                                                         src="https://drinkwatr.com/wp-content/uploads/2021/11/DROP.png"
                                                         style="height: 100px;">
                                                     <div class="">
-                                                        <img src="https://drinkwatr.com/wp-content/uploads/2022/06/purification_1.png"
+                                                        <img src="https://watrbar.io/wp-content/uploads/2022/11/purity.jpg"
                                                             style="max-height: 110px;">
-                                                        <p style="margin: 0;">5<span
+                                                        {{-- <p style="margin: 0;">5<span
                                                                 style="text-transform: lowercase;">x</span> PURE WATER
-                                                        </p>
+                                                        </p> --}}
                                                     </div>
                                                 </div>
                                             </div>
