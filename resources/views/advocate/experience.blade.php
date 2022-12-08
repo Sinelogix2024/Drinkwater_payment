@@ -382,7 +382,7 @@
                                         <div class="sec-one-inner">
 
                                             <div class="content-sec">
-                                                <img decoding="async" src="./wp-content/uploads/2022/07/droplet.png"
+                                                <img decoding="async" src="../wp-content/uploads/2022/07/droplet.png"
                                                     class="stk-img1">
 
                                                 <div class="new_logo" style="">
