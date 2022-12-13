@@ -342,68 +342,85 @@
                                                                         <p style="margin-bottom:0;">DRINK WATR™ </p>
                                                                     </div>
                                                                     <div class="form_field">
-                                                                        <p>Invoice Number:
-                                                                            {{ $invoiceDataObj->odr_id }} </p>
+                                                                        <p style="margin-bottom:0;">Invoice Number:
+                                                                            {{ $invoiceDataObj->odr_id }}</p>
                                                                     </div>
+
+                                                                    @if (!empty($invoiceStatus) && $invoiceStatus == 'paid')
+                                                                        <div class="form_field">
+                                                                            <p>Transaction ID:
+                                                                                {{ $invoiceDataObj->odr_transaction_id ?? '' }}
+                                                                            </p>
+                                                                        </div>
+                                                                    @endif
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                    </div>
 
-                                                        <div class="preview_cart">
-                                                            <table class="p_detail">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th scope="col">PRODUCTS</th>
-                                                                        <th scope="col">QUANTITY</th>
-                                                                        <th scope="col">Total</th>
+                                                    <div class="preview_cart">
+                                                        <table class="p_detail">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col">PRODUCTS</th>
+                                                                    <th scope="col">QUANTITY</th>
+                                                                    <th scope="col">Total</th>
 
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    @foreach ($products as $product)
-                                                                        <tr class="row1">
-                                                                            <td>{{ config('constants.product_name.' . $product->product_name) }}
-                                                                            </td>
-                                                                            <td>{{ $product->kits }}</td>
-                                                                            <td>{{ $product->price }}</td>
-                                                                        </tr>
-                                                                    @endforeach
-                                                                    <tr class="lastrow">
-                                                                        <td>
-                                                                            DELIVERY FEE
-                                                                            @if ($deliveryObj->type == 1)
-                                                                                (COMPLIMENTARY)
-                                                                            @endif
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                @foreach ($products as $product)
+                                                                    <tr class="row1">
+                                                                        <td>{{ config('constants.product_name.' . $product->product_name) }}
                                                                         </td>
-                                                                        <td></td>
-                                                                        <td>{{ $deliveryObj->fee }}</td>
+                                                                        <td>{{ $product->kits }}</td>
+                                                                        <td>{{ $product->price }}</td>
                                                                     </tr>
-                                                                </tbody>
-                                                            </table>
-                                                            <div class="p_sub_tot_div">
-                                                                <div class="p_sub_totl">
-                                                                    <table class="p_total">
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <td>Subtotal</td>
-                                                                                <td class="subtotal">
-                                                                                    ${{ $invoiceDataObj->odr_total_amount }}
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td>Total</td>
-                                                                                <td class="totalprice">
-                                                                                    ${{ $invoiceDataObj->odr_total_amount }}
-                                                                                </td>
-                                                                            </tr>
+                                                                @endforeach
+                                                                <tr class="lastrow">
+                                                                    <td>
+                                                                        DELIVERY FEE
+                                                                        @if ($deliveryObj->type == 1)
+                                                                            (COMPLIMENTARY)
+                                                                        @endif
+                                                                    </td>
+                                                                    <td></td>
+                                                                    <td>{{ $deliveryObj->fee }}</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <div class="p_sub_tot_div">
+                                                            <div class="p_sub_totl">
+                                                                <table class="p_total">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td>Subtotal</td>
+                                                                            <td class="subtotal">
+                                                                                ${{ $invoiceDataObj->odr_total_amount }}
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>Total</td>
+                                                                            <td class="totalprice">
+                                                                                ${{ $invoiceDataObj->odr_total_amount }}
+                                                                            </td>
+                                                                        </tr>
 
-                                                                        </tbody>
-                                                                    </table>
-                                                                </div>
+                                                                    </tbody>
+                                                                </table>
                                                             </div>
                                                         </div>
+                                                    </div>
 
-                                                        <div class="text-center">
+                                                    <div class="text-center">
+                                                        @if (!empty($invoiceStatus) && $invoiceStatus == 'paid')
+                                                            <div class="form_field">
+                                                                <button
+                                                                    class="primary_btn btn_effect btn_black purchase_button"
+                                                                    style="width: auto; width: auto;padding-left: 50px;padding-right: 50px; border-radius: 10px; background: #02771d;"
+                                                                    data-disable-with="Purchasing...">PAID</button>
+                                                            </div>
+                                                        @else
                                                             <form id="basic-form" method="POST">
                                                                 @csrf
                                                                 <div class="form_field">
@@ -413,13 +430,13 @@
                                                                         data-disable-with="Purchasing...">PAY</button>
                                                                 </div>
                                                             </form>
-                                                        </div>
-                                                        <div class="pre_deli_by" style="text-align:center;">
-                                                            <p>DELIVERED BY</p>
-                                                            <div class="drop_img">
-                                                                <img
-                                                                    src="https://invoicing.drinkwatr.com/wp-content/uploads/2022/10/droplet_wellness.png">
-                                                            </div>
+                                                        @endif
+                                                    </div>
+                                                    <div class="pre_deli_by" style="text-align:center;">
+                                                        <p>DELIVERED BY</p>
+                                                        <div class="drop_img">
+                                                            <img
+                                                                src="https://invoicing.drinkwatr.com/wp-content/uploads/2022/10/droplet_wellness.png">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -432,129 +449,7 @@
                     </div>
                 </div>
             </div>
-
-            <form id="basic-form" method="POST" style="display: none;">
-                @csrf
-                <main class="app_wrapper  main_content" style="">
-                    <!-- Step 5 starts -->
-                    <div class="step5_form" style="">
-                        <main class="app_wrapper waterbg">
-                            <div class="custom_container">
-
-                                <div class="head_section">
-                                    <div class="brand">
-                                        @include('droplet-name')
-                                    </div>
-
-                                    <div class="tagline_wrap">
-                                        <p style="margin-top: 0 !important;">Your Path to daily hydration + wellness
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="form_wrapper edit_form_wrapper">
-                                    <div class="flex_row">
-                                        <div class="flex_col_sm_12">
-                                            <div class="form_field purchase_page_main_field_custom_css">
-                                                <div class="text-field flex_row purchase_page_custom_css">
-                                                    <div class="final_page_product_label">YOUR PRODUCT</div>
-                                                </div>
-                                                @foreach ($products as $product)
-                                                    <span
-                                                        class="text-note product_note_final_page">{{ config('constants.product_name.' . $product->product_name) }}</span>
-                                                @endforeach
-                                            </div>
-
-                                            <div class="form_field purchase_page_main_field_custom_css">
-                                                <div class="text-field flex_row purchase_page_custom_css">
-                                                    <div class="final_page_package_label">KITS</div>
-                                                </div>
-                                                @foreach ($products as $product)
-                                                    <span
-                                                        class="text-note product_note_final_page">{{ $product->kits }}
-                                                        ({{ config('constants.product_name.' . $product->product_name) }})
-                                                    </span>
-                                                @endforeach
-                                            </div>
-
-                                            <div class="form_field purchase_page_main_field_custom_css">
-                                                <div class="text-field flex_row purchase_page_custom_css">
-                                                    <div class="final_page_delivery_freq_label">DELIVERY DATE</div>
-                                                </div>
-                                                <span class="text-note delivery_note_final_page">EVERY SUNDAY FOR 1
-                                                    MONTH
-                                                </span>
-                                            </div>
-
-
-                                            <div class="form_field purchase_page_main_field_custom_css">
-                                                <div class="text-field purchase_page_custom_css">
-                                                    <div class="final_page_edit_address_label">DELIVERY ADDRESS</div>
-                                                </div>
-                                                <span
-                                                    class="text-note shipping_add_final_page">{{ $invoiceDataObj->billing_address }}
-                                                    {{ $invoiceDataObj->billing_address2 }}</span>
-                                                <span
-                                                    class="text-note citi_state_zip_final_page">{{ json_decode($invoiceDataObj->b_city_state_zip)->city . ', ' . json_decode($invoiceDataObj->b_city_state_zip)->state . ', ' . json_decode($invoiceDataObj->b_city_state_zip)->zip }}</span>
-                                            </div>
-                                            <div class="form_field purchase_page_main_field_custom_css">
-                                                <div class="flex_row">
-                                                    <div class="col-6 text-left">
-                                                        <label class="form_label">TAX</label>
-                                                    </div>
-                                                    <div class="col-6 text-right">
-                                                        <input type="hidden" name="tax_amount" class="tax_amount">
-                                                        <p class="show_label tax_amount">1.00</p>
-                                                    </div>
-                                                </div>
-                                                <div class="flex_row">
-                                                    <div class="col-6 text-left">
-                                                        <label class="form_label">SERVICE FEE</label>
-                                                    </div>
-                                                    <div class="col-6 text-right">
-                                                        <p class="show_label service_fees">5.00</p>
-                                                    </div>
-                                                </div>
-                                                <div class="flex_row">
-                                                    <div class="col-6 text-left">
-                                                        <label class="form_label">DELIVERY FEE</label>
-                                                    </div>
-                                                    <div class="col-6 text-right">
-                                                        <p class="show_label delivery_fees">5.00</p>
-                                                    </div>
-                                                </div>
-                                                <div class="flex_row">
-                                                    <div class="col-6 text-left">
-                                                        <label class="form_label">TOTAL</label>
-                                                    </div>
-                                                    <div class="col-6 text-right">
-                                                        <input type="hidden" name="total_amount"
-                                                            class="total_amount">
-                                                        <p class="show_label total_amount">$266</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <input type="hidden" name="b_city_state_zip" class="b_city_state_zip" />
-                                    <input type="hidden" name="s_city_state_zip" class="s_city_state_zip" />
-
-                                    <div class="text-center">
-                                        <div class="form_field">
-                                            <button type="submit"
-                                                class="primary_btn btn_effect btn_black purchase_button"
-                                                style="width: auto;" data-disable-with="Purchasing...">PAY</button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            @include('footer')
-                        </main>
-                    </div>
-                </main>
-            </form>
+        </div>
 
         </div>
     </main>
