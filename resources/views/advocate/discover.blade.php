@@ -418,6 +418,49 @@
         .page-id-1475 .new-navigation {
             display: none !important;
         }
+
+        .our-bottle .bottle-icons img {
+            max-width: 180px;
+        }
+
+        .bottle-icons img {
+            max-width: 200px;
+        }
+
+        .elementor img {
+            height: auto;
+            max-width: 100%;
+            border: none;
+            border-radius: 0;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+
+        .elementor *,
+        .elementor :after,
+        .elementor :before {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        img {
+            height: auto;
+            max-width: 100%;
+        }
+
+        .our-bottle .slide5-1 {
+            top: 10%;
+            left: 10%;
+            max-width: 70px;
+            position: absolute;
+        }
+
+        .our-bottle .slide5-2 {
+            bottom: 10%;
+            left: 10%;
+            max-width: 70px;
+            position: absolute;
+        }
     </style>
 </head>
 
@@ -765,6 +808,41 @@
 
                                                                         <img src="https://watrbar.io/wp-content/uploads/2022/07/droplet.png"
                                                                             class="wgi-6">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="elementor-repeater-item-5324918 swiper-slide">
+                                                    <div class="swiper-slide-bg"></div>
+                                                    <div class="swiper-slide-inner">
+                                                        <div class="swiper-slide-contents">
+                                                            <div class="elementor-slide-heading">SUSTAINABILITY</div>
+                                                            <div class="elementor-slide-description">
+                                                                <div class="our-bottle">
+                                                                    <img decoding="async"
+                                                                        src="https://watrbar.io/wp-content/uploads/2022/07/droplet.png"
+                                                                        class="slide5-1">
+                                                                    <img decoding="async"
+                                                                        src="https://watrbar.io/wp-content/uploads/2022/07/droplet.png"
+                                                                        class="slide5-2">
+                                                                    <div class="bottle-icons">
+                                                                        <div>
+                                                                            <img decoding="async"
+                                                                                src="https://drinkwatr.com/wp-content/uploads/2022/11/drinkwatr_icons1024_2-1.jpg">
+                                                                        </div>
+
+                                                                        <div>
+                                                                            <img decoding="async"
+                                                                                src="https://drinkwatr.com/wp-content/uploads/2022/11/drinkwatr_icons1024_1.jpg">
+                                                                        </div>
+
+                                                                        <div>
+                                                                            <img decoding="async"
+                                                                                src="https://drinkwatr.com/wp-content/uploads/2022/11/drinkwatr_icons1024_3-1.jpg">
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>

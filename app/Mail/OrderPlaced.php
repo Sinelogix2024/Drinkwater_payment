@@ -18,10 +18,11 @@ class OrderPlaced extends Mailable
      *
      * @return void
      */
-    public function __construct($advocateData, $orderData)
+    public function __construct($advocateData, $orderData, $isInvoice = false)
     {
         $this->advocateData = $advocateData;
         $this->orderData = $orderData;
+        $this->isInvoice = $isInvoice;
     }
 
     /**
@@ -31,11 +32,24 @@ class OrderPlaced extends Mailable
      */
     public function build()
     {
-        return $this->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME', 'DrinkWater.com'))
-            ->subject('YOUR WELLNESS PATH CONFIRMED | DRINK WATR. STAY STRONG®️')
-            ->view('emails.order_placed_new', [
-                'advocateData' => $this->advocateData,
-                'orderDetail' => $this->orderData,
-            ]);
+        $fromEmail = env('MAIL_FROM_ADDRESS');
+        // $fromEmail = 'receipt@drinkwatr.com';
+        if ($this->isInvoice) {
+            $invoiceDataObj = $this->advocateData;
+            $products = $this->orderData;
+            $invoiceStatus = 'paid';
+
+            return $this->from($fromEmail, env('MAIL_FROM_NAME', 'DrinkWater.com'))
+                ->subject('YOUR WELLNESS PATH CONFIRMED | DRINK WATR. STAY STRONG®️')
+                ->view('emails.payment', compact('invoiceDataObj', 'products', 'invoiceStatus'));
+            // ->view('advocate.payment-review', compact('invoiceDataObj', 'products', 'invoiceStatus'));
+        } else {
+            return $this->from($fromEmail, env('MAIL_FROM_NAME', 'DrinkWater.com'))
+                ->subject('YOUR WELLNESS PATH CONFIRMED | DRINK WATR. STAY STRONG®️')
+                ->view('emails.order_placed_new', [
+                    'advocateData' => $this->advocateData,
+                    'orderDetail' => $this->orderData,
+                ]);
+        }
     }
 }

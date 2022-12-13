@@ -235,7 +235,6 @@ class AdvocateController extends Controller
     public function orderDetail(Request $request)
     {
         $orderDetail = Order::where('odr_id', $request->order_id)->first();
-
         $advocateData = Advocate::where('adv_detail_access_token', $orderDetail->odr_adv_detail_access_token)->first();
 
         return view('emails.order_placed_new', [
@@ -273,15 +272,19 @@ class AdvocateController extends Controller
             abort(404, "Invoice Data Not Found");
         }
         // return $invoiceDataObj;
-        if ($request->method() == 'GET') {
-            $products = null;
+        $products = null;
 
-            $allProducts = json_decode($invoiceDataObj->odr_product, true);
-            foreach ($allProducts as $key => $value) {
-                $products[] = json_decode($value);
-            }
+        $allProducts = json_decode($invoiceDataObj->odr_product, true);
+        foreach ($allProducts as $key => $value) {
+            $products[] = json_decode($value);
+        }
+        // Mail::to($invoiceDataObj->odr_email)->send(new OrderPlaced($invoiceDataObj, $products, true));
+        return new OrderPlaced($invoiceDataObj, $products, true);
+        // return view('emails.payment', compact('invoiceDataObj', 'products'));
+        if ($request->method() == 'GET') {
             $data = [$products];
             // return $data;
+
             return view('advocate.payment-review', compact('invoiceDataObj', 'products'));
         } else if ($request->method() == 'POST') {
             return view('advocate.custom-payment', compact('invoiceDataObj'));
@@ -314,30 +317,27 @@ class AdvocateController extends Controller
                 $invoiceObj->odr_payment_status = $result->transaction->status;
                 $invoiceObj->save();
 
-                // Mail::to($invoiceObj->odr_email)->send(new OrderPlaced($advocateData, $orderDetail));
+                Mail::to($invoiceObj->odr_email)->send(new OrderPlaced($invoiceObj, $products, true));
 
-                // try {
-                //     $body = "Congratulations " . $orderDetail->odr_first_name . " on confirming your path to hydration wellness ! We appreciate your interest in our products, and are here to support your goals. Please find your receipt here: " . url('orderDetail/' . $orderDetail->odr_id) . " Remember DRINK WATR™.. STAY STRONG®";
+                try {
+                    $body = "Congratulations " . $invoiceObj->odr_contact_name . " on confirming your path to hydration wellness ! We appreciate your interest in our products, and are here to support your goals. Remember DRINK WATR™.. STAY STRONG®";
 
-                //     // $body = 'Hey ' . $orderDetail->odr_first_name . ' ' . $orderDetail->odr_last_name . '! Order Placed.' . 'Thanks For Shopping! Click on link to view Receipt.' . '<a href="' . url('orderDetail/' . $orderDetail->odr_id) . '"> TRACK </a>';
-
-                //     $accountSid = getenv("TWILIO_ACCOUNT_SID");
-                //     $authToken = getenv("TWILIO_AUTH_TOKEN");
-                //     $client = new Client($accountSid, $authToken);
-                //     $client->messages->create(
-                //         '+1' . str_replace("-", "", $request->mobile),
-                //         // getenv('TWILIO_TO_SEND_NUMBER'),
-                //         array(
-                //             'from' => getenv("TWILIO_NUMBER"),
-                //             'body' => $body
-                //         )
-                //     );
-                // } catch (Exception $e) {
-                //     Log::info('Twilio Error', [$e]);
-                //     // request()->session()->put('response_error_msg', $e->getMessage());
-                // }
-                // request()->session()->put('response_success_msg', 'You will receive a receipt via text and email.');
-                // return redirect(route('receipt', ['detail_access_token' => $request->detail_access_token, 'orderid' => $orderId]));
+                    $accountSid = getenv("TWILIO_ACCOUNT_SID");
+                    $authToken = getenv("TWILIO_AUTH_TOKEN");
+                    $client = new Client($accountSid, $authToken);
+                    $client->messages->create(
+                        '+1' . str_replace("-", "", $request->mobile),
+                        array(
+                            'from' => getenv("TWILIO_NUMBER"),
+                            'body' => $body
+                        )
+                    );
+                } catch (Exception $e) {
+                    Log::info('Twilio Error', [$e]);
+                    // request()->session()->put('response_error_msg', $e->getMessage());
+                }
+                request()->session()->put('response_success_msg', 'You will receive a receipt via text and email.');
+                return redirect(route('receipt', ['detail_access_token' => $request->detail_access_token, 'orderid' => $orderID]));
             }
 
             return [$invoiceObj, $result, $request->all()];
