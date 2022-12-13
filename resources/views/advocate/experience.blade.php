@@ -402,7 +402,7 @@
                                                 <a href="{{ url('/experience', $detail_access_token) }}"
                                                     class="updated-button-set">EXPERIENCE</a>
                                                 @if ($detail_access_token == 'park-grove')
-                                                    <p style="text-align:center;">WATR BAR AT PARK GROVE RESIDENCES</p>
+                                                    <p style="text-align:center;">DRINK WATR AT PARK GROVE RESIDENCES</p>
                                                 @endif
                                             </div>
                                         </div>
