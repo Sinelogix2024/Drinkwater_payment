@@ -376,8 +376,16 @@
                             <input type="hidden" name="odr_total_amount"
                                 value="{{ $invoiceDataObj->odr_total_amount }}">
                             <div class="dots_wrapper">
-                                <button type="submit" class="primary_btn"
+                                <button type="submit" class="primary_btn purchase_button"
                                     onclick="$('#payment_method_nonce').val('')">PAY</button>
+                                <div id="bt-dropin_venmo" style="display: none;">
+                                    <button type="button" id="venmo-button" class="primary_btn btn_effect btn_black"
+                                        style="width: auto;">
+                                        <img style="height:25px; border-radius: 20px;"
+                                            src="{{ asset('images/venmo.png') }}">
+                                        <span>PAY</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
