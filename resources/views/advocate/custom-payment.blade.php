@@ -1,15 +1,3 @@
-@if (!empty(session('response_error_msg', null)))
-    <script>
-        // alert("{{ session('response_error_msg') }}");
-    </script>
-
-    @php
-        request()
-            ->session()
-            ->forget('response_error_msg');
-    @endphp
-@endif
-
 <script>
     localStorage.setItem('BRAINTREE_AUTH_KEY', '{{ env('BRAINTREE_AUTH_KEY', 'sandbox_7b22h9qq_9wcqdbyrsh4jphn6') }}');
     localStorage.setItem('VENMO_PROFILE_ID', '{{ env('VENMO_PROFILE_ID', '1953896702662410263') }}');
@@ -376,7 +364,7 @@
                             <input type="hidden" name="odr_total_amount"
                                 value="{{ $invoiceDataObj->odr_total_amount }}">
                             <div class="dots_wrapper">
-                                <button type="submit" class="primary_btn purchase_button"
+                                <button type="submit" class="primary_btn"
                                     onclick="$('#payment_method_nonce').val('')">PAY</button>
                                 <div id="bt-dropin_venmo" style="display: none;">
                                     <button type="button" id="venmo-button" class="primary_btn btn_effect btn_black"
@@ -507,6 +495,18 @@
         /* top: 58% !important; */
     }
 </style>
+@if (!empty(session('response_error_msg', null)))
+    <script>
+        paymentValidationOn();
+        alert("{{ session('response_error_msg') }}");
+    </script>
+
+    @php
+        request()
+            ->session()
+            ->forget('response_error_msg');
+    @endphp
+@endif
 
 @if (!empty(session('response_success_msg', null)))
     <script>

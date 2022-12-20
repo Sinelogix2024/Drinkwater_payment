@@ -278,14 +278,16 @@ class AdvocateController extends Controller
         foreach ($allProducts as $key => $value) {
             $products[] = json_decode($value);
         }
-        // Mail::to($invoiceDataObj->odr_email)->send(new OrderPlaced($invoiceDataObj, $products, true));
-        return new OrderPlaced($invoiceDataObj, $products, true);
-        // return view('emails.payment', compact('invoiceDataObj', 'products'));
+
+        $invoiceStatus = null;
+        if (!empty($invoiceDataObj->odr_transaction_id) && $invoiceDataObj->odr_payment_status == 'success') {
+            $invoiceStatus = 'paid';
+        }
+
         if ($request->method() == 'GET') {
             $data = [$products];
-            // return $data;
 
-            return view('advocate.payment-review', compact('invoiceDataObj', 'products'));
+            return view('advocate.payment-review', compact('invoiceDataObj', 'products', 'invoiceStatus'));
         } else if ($request->method() == 'POST') {
             return view('advocate.custom-payment', compact('invoiceDataObj'));
         } else if ($request->method() == 'PUT') {
@@ -314,7 +316,8 @@ class AdvocateController extends Controller
                 $invoiceObj = Invoice::find($invoiceID);
                 $invoiceObj->payment_method = $request->payment_method;
                 $invoiceObj->odr_transaction_id = strtoupper($result->transaction->id);
-                $invoiceObj->odr_payment_status = $result->transaction->status;
+                // $invoiceObj->odr_payment_status = $result->transaction->status;
+                $invoiceObj->odr_payment_status = 'success';
                 $invoiceObj->save();
 
                 Mail::to($invoiceObj->odr_email)->send(new OrderPlaced($invoiceObj, $products, true));
@@ -337,10 +340,12 @@ class AdvocateController extends Controller
                     // request()->session()->put('response_error_msg', $e->getMessage());
                 }
                 request()->session()->put('response_success_msg', 'You will receive a receipt via text and email.');
-                return redirect(route('receipt', ['detail_access_token' => $request->detail_access_token, 'orderid' => $orderID]));
+                return redirect(route('invoice-route', ['paymentID' => $orderID]));
+            } else {
+                request()->session()->put('response_error_msg', 'payment failed');
+                return redirect($request->url());
             }
-
-            return [$invoiceObj, $result, $request->all()];
+            // return redirect()->back();
         }
     }
 

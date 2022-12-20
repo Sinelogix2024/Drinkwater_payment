@@ -33,8 +33,8 @@ class OrderPlaced extends Mailable
     public function build()
     {
         $fromEmail = env('MAIL_FROM_ADDRESS');
-        // $fromEmail = 'receipt@drinkwatr.com';
         if ($this->isInvoice) {
+            $fromEmail = 'receipts@drinkwatr.com';
             $invoiceDataObj = $this->advocateData;
             $products = $this->orderData;
             $invoiceStatus = 'paid';
