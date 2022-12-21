@@ -1,15 +1,3 @@
-@if (!empty(session('response_error_msg', null)))
-    <script>
-        // alert("{{ session('response_error_msg') }}");
-    </script>
-
-    @php
-        request()
-            ->session()
-            ->forget('response_error_msg');
-    @endphp
-@endif
-
 <script>
     localStorage.setItem('BRAINTREE_AUTH_KEY', '{{ env('BRAINTREE_AUTH_KEY', 'sandbox_7b22h9qq_9wcqdbyrsh4jphn6') }}');
     localStorage.setItem('VENMO_PROFILE_ID', '{{ env('VENMO_PROFILE_ID', '1953896702662410263') }}');
@@ -29,6 +17,8 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/bootstrap-select.min.css') }}" />
     <input type="hidden" value="{{ url('/') }}" class="base_url">
+    <link rel='stylesheet' id='elementor-post-2046-css' href='/css/post-2046.css' media='all' />
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" media='all' />
     {{-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> --}}
 </head>
 
@@ -286,7 +276,11 @@
                                                 <div class="col-sm-12 col-md-3">
                                                     <div class="preview_left">
                                                         <div class="form_field">
-                                                            <h3>INVOICE</h3>
+                                                            @if (!empty($invoiceStatus) && $invoiceStatus == 'paid')
+                                                                <h3>PAID INVOICE</h3>
+                                                            @else
+                                                                <h3>INVOICE</h3>
+                                                            @endif
                                                             <p>Delivery Set for<br>
                                                                 <span
                                                                     id="f_delivery_date">{{ $deliveryObj->d_date }}</span>
@@ -413,14 +407,7 @@
                                                     </div>
 
                                                     <div class="text-center">
-                                                        @if (!empty($invoiceStatus) && $invoiceStatus == 'paid')
-                                                            <div class="form_field">
-                                                                <button
-                                                                    class="primary_btn btn_effect btn_black purchase_button"
-                                                                    style="width: auto; width: auto;padding-left: 50px;padding-right: 50px; border-radius: 10px; background: #02771d;"
-                                                                    data-disable-with="Purchasing...">PAID</button>
-                                                            </div>
-                                                        @else
+                                                        @if (!(!empty($invoiceStatus) && $invoiceStatus == 'paid'))
                                                             <form id="basic-form" method="POST">
                                                                 @csrf
                                                                 <div class="form_field">
@@ -430,6 +417,13 @@
                                                                         data-disable-with="Purchasing...">PAY</button>
                                                                 </div>
                                                             </form>
+                                                        @else
+                                                            {{-- <div class="form_field">
+                                                            <button
+                                                                class="primary_btn btn_effect btn_black purchase_button"
+                                                                style="width: auto; width: auto;padding-left: 50px;padding-right: 50px; border-radius: 10px; background: #02771d;"
+                                                                data-disable-with="Purchasing...">PAID</button>
+                                                        </div> --}}
                                                         @endif
                                                     </div>
                                                     <div class="pre_deli_by" style="text-align:center;">
@@ -453,6 +447,46 @@
 
         </div>
     </main>
+    <style>
+        .close-button {
+            top: auto !important;
+            right: auto !important;
+            bottom: 30px !important;
+            width: 100% !important;
+            text-align: center !important;
+        }
+
+        .new-popup-style {
+            border-radius: 25px;
+            border-width: 1px;
+            background: #f3f3f3;
+            height: 160px;
+            border-color: red !important;
+        }
+    </style>
+
+    <div class="new-popup-style" id="paymentValidationPopup">
+        <a href="#" class="close-button" onclick="paymentValidationOff()"><img
+                src="https://drinkwatr.com/wp-content/uploads/2022/02/close.png" style="max-width: 20px;"></a>
+        <div style="margin: 15px; margin-top: 30px; font-size: 17px;" class="text-center">
+            Invoice Payment Failed!
+            <br>
+            Please contact DrinkWatr Support.
+        </div>
+    </div>
+    <script>
+        function paymentValidationOn() {
+            document.getElementById("paymentValidationPopup").style.opacity = "1";
+            document.getElementById("paymentValidationPopup").style.zIndex = "9999999999999";
+        }
+
+        function paymentValidationOff() {
+            document.getElementById("paymentValidationPopup").style.opacity = "0";
+            document.getElementById("paymentValidationPopup").style.zIndex = "-100";
+        }
+
+        paymentValidationOff();
+    </script>
 </body>
 
 <!-- </html> -->
@@ -513,6 +547,18 @@
         /* top: 58% !important; */
     }
 </style>
+
+@if (!empty(session('response_error_msg', null)))
+    <script>
+        paymentValidationOn();
+    </script>
+
+    @php
+        request()
+            ->session()
+            ->forget('response_error_msg');
+    @endphp
+@endif
 
 @if (!empty(session('response_success_msg', null)))
     <script>
