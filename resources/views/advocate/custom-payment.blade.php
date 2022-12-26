@@ -278,8 +278,11 @@
                             </div>
 
                             <div class="row">
-                                <div class="col">Order ID : {{ $invoiceDataObj->odr_id }}</div>
-                                <div class="col">Amount : {{ $invoiceDataObj->odr_total_amount }}</div>
+                                <div class="col"><b style="font-family: 'europa';">INVOICE #</b>:
+                                    {{ $invoiceDataObj->odr_id }}</div>
+                                <div class="col"><b style="font-family: 'europa';">Total Amount Due:</b>
+                                    {{ $invoiceDataObj->odr_total_amount }}$
+                                </div>
                             </div>
                         </div>
 

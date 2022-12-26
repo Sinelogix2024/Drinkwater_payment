@@ -11,6 +11,10 @@
     thead tr th:first-child {
         padding-left: 0;
     }
+
+    h3 {
+        font-size: 1.75rem !important;
+    }
 </style>
 
 <div style="text-align: center;  margin: 0 auto;  margin-top: 10px;width: 100%;max-width: 700px;margin-bottom: 15px;">
@@ -26,7 +30,8 @@
     <div class="col-sm-12 col-md-3" style="/*max-width:25%;width:25%;*/float: left;padding-right: 50px;">
         <div class="preview_left">
             <div class="form_field" style="margin-left: 0;margin: 10px;margin-bottom: 15px;">
-                <h3 style="font-weight: 400;margin-bottom: 60px;color: #000;">Paid INVOICE</h3>
+                <h3 style="font-weight: 400;margin-bottom: 60px;color: #000;font-size: 1.75rem !important;">PAID INVOICE
+                </h3>
                 <p style="margin-top:0;margin-bottom:1rem;color: #000;">
                     Delivery Set for
                     <br>
