@@ -1,11 +1,14 @@
 <!doctype html>
 
 <html lang="en-US">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
     <link rel='stylesheet' id='wp-block-library-css' href='/css/style.min.css?ver=6.0.1' media='all' />
     <link rel='stylesheet' id='wc-block-vendors-style-css' href='/css/vendors-style.css?ver=4.4.3' media='all' />
     <link rel='stylesheet' id='wc-block-style-css' href='/css/style.css?ver=4.4.3' media='all' />
@@ -13,7 +16,8 @@
     <link rel='stylesheet' id='watr-shop-style-css' href='/css/style.css?ver=1.0.0' media='all' />
     <link rel='stylesheet' id='watr-shop-woocommerce-style-css' href='/css/woocommerce.css?ver=1.0.0' media='all' />
     <link rel='stylesheet' id='elementor-icons-css' href='/css/elementor-icons.min.css?ver=5.15.0' media='all' />
-    <link rel='stylesheet' id='elementor-frontend-legacy-css' href='/css/frontend-legacy.min.css?ver=3.6.4' media='all' />
+    <link rel='stylesheet' id='elementor-frontend-legacy-css' href='/css/frontend-legacy.min.css?ver=3.6.4'
+        media='all' />
     <link rel='stylesheet' id='elementor-frontend-css' href='/css/frontend.min.css?ver=3.6.4' media='all' />
     <link rel='stylesheet' id='elementor-post-24-css' href='/css/post-24.css?ver=1649974449' media='all' />
     <link rel='stylesheet' id='elementor-pro-css' href='/css/frontend.min.css?ver=3.0.5' media='all' />
@@ -30,26 +34,28 @@
     <title>STAY STRONG</title>
     <meta name='robots' content='max-image-preview:large' />
     <link rel='dns-prefetch' href='//s.w.org' />
-    <link rel="alternate" type="application/rss+xml" title="STAY STRONG™ &raquo; Feed" href="https://drinkwatr.com/feed/" />
-    <link rel="alternate" type="application/rss+xml" title="STAY STRONG™ &raquo; Comments Feed" href="https://drinkwatr.com/comments/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="STAY STRONG™ &raquo; Feed"
+        href="https://drinkwatr.com/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="STAY STRONG™ &raquo; Comments Feed"
+        href="https://drinkwatr.com/comments/feed/" />
     <script>
         window._wpemojiSettings = {
-            "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/"
-            , "ext": ".png"
-            , "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/"
-            , "svgExt": ".svg"
-            , "source": {
+            "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/",
+            "ext": ".png",
+            "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/",
+            "svgExt": ".svg",
+            "source": {
                 "concatemoji": "https:\/\/drinkwatr.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.0.1"
             }
         };
         /*! This file is auto-generated */
         ! function(e, a, t) {
-            var n, r, o, i = a.createElement("canvas")
-                , p = i.getContext && i.getContext("2d");
+            var n, r, o, i = a.createElement("canvas"),
+                p = i.getContext && i.getContext("2d");
 
             function s(e, t) {
-                var a = String.fromCharCode
-                    , e = (p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, e), 0, 0), i.toDataURL());
+                var a = String.fromCharCode,
+                    e = (p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, e), 0, 0), i.toDataURL());
                 return p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, t), 0, 0), e === i.toDataURL()
             }
 
@@ -58,27 +64,36 @@
                 t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t)
             }
             for (o = Array("flag", "emoji"), t.supports = {
-                    everything: !0
-                    , everythingExceptFlag: !0
+                    everything: !0,
+                    everythingExceptFlag: !0
                 }, r = 0; r < o.length; r++) t.supports[o[r]] = function(e) {
                 if (!p || !p.fillText) return !1;
                 switch (p.textBaseline = "top", p.font = "600 32px Arial", e) {
                     case "flag":
-                        return s([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) ? !1 : !s([55356, 56826, 55356, 56819], [55356, 56826, 8203, 55356, 56819]) && !s([55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447]);
+                        return s([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) ? !1 : !s([
+                            55356, 56826, 55356, 56819
+                        ], [55356, 56826, 8203, 55356, 56819]) && !s([55356, 57332, 56128, 56423, 56128, 56418,
+                            56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447
+                        ], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203,
+                            56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447
+                        ]);
                     case "emoji":
                         return !s([129777, 127995, 8205, 129778, 127999], [129777, 127995, 8203, 129778, 127999])
                 }
                 return !1
-            }(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]);
-            t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t.readyCallback = function() {
-                t.DOMReady = !0
-            }, t.supports.everything || (n = function() {
-                t.readyCallback()
-            }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function() {
-                "complete" === a.readyState && t.readyCallback()
-            })), (e = t.source || {}).concatemoji ? c(e.concatemoji) : e.wpemoji && e.twemoji && (c(e.twemoji), c(e.wpemoji)))
+            }(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t.supports
+                .everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]);
+            t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t
+                .readyCallback = function() {
+                    t.DOMReady = !0
+                }, t.supports.everything || (n = function() {
+                    t.readyCallback()
+                }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !
+                    1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function() {
+                    "complete" === a.readyState && t.readyCallback()
+                })), (e = t.source || {}).concatemoji ? c(e.concatemoji) : e.wpemoji && e.twemoji && (c(e.twemoji), c(e
+                    .wpemoji)))
         }(window, document, window._wpemojiSettings);
-
     </script>
     <style>
         @font-face {
@@ -205,17 +220,20 @@
             padding-bottom: 5px;
             width: auto !important;
         }
-
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
     <link rel='stylesheet' id='wp-block-library-css' href='/css/style.min.css?ver=6.0.1' media='all' />
     <link rel='stylesheet' id='wc-block-vendors-style-css' href='/css/vendors-style.css?ver=4.4.3' media='all' />
     <link rel='stylesheet' id='wc-block-style-css' href='/css/style.css?ver=4.4.3' media='all' />
     <link rel='stylesheet' id='contact-form-7-css' href='/css/styles.css?ver=5.4' media='all' />
     <link rel='stylesheet' id='watr-shop-style-css' href='/css/style.css?ver=1.0.0' media='all' />
-    <link rel='stylesheet' id='watr-shop-woocommerce-style-css' href='/css/woocommerce.css?ver=1.0.0' media='all' />
+    <link rel='stylesheet' id='watr-shop-woocommerce-style-css' href='/css/woocommerce.css?ver=1.0.0'
+        media='all' />
     <link rel='stylesheet' id='elementor-icons-css' href='/css/elementor-icons.min.css?ver=5.15.0' media='all' />
-    <link rel='stylesheet' id='elementor-frontend-legacy-css' href='/css/frontend-legacy.min.css?ver=3.6.4' media='all' />
+    <link rel='stylesheet' id='elementor-frontend-legacy-css' href='/css/frontend-legacy.min.css?ver=3.6.4'
+        media='all' />
     <link rel='stylesheet' id='elementor-frontend-css' href='/css/frontend.min.css?ver=3.6.4' media='all' />
     <link rel='stylesheet' id='elementor-post-24-css' href='/css/post-24.css?ver=1649974449' media='all' />
     <link rel='stylesheet' id='elementor-pro-css' href='/css/frontend.min.css?ver=3.0.5' media='all' />
@@ -475,17 +493,20 @@
         td {
             padding: 10px !important;
         }
-
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
     <link rel='stylesheet' id='wp-block-library-css' href='/css/style.min.css?ver=6.0.1' media='all' />
     <link rel='stylesheet' id='wc-block-vendors-style-css' href='/css/vendors-style.css?ver=4.4.3' media='all' />
     <link rel='stylesheet' id='wc-block-style-css' href='/css/style.css?ver=4.4.3' media='all' />
     <link rel='stylesheet' id='contact-form-7-css' href='/css/styles.css?ver=5.4' media='all' />
     <link rel='stylesheet' id='watr-shop-style-css' href='/css/style.css?ver=1.0.0' media='all' />
-    <link rel='stylesheet' id='watr-shop-woocommerce-style-css' href='/css/woocommerce.css?ver=1.0.0' media='all' />
+    <link rel='stylesheet' id='watr-shop-woocommerce-style-css' href='/css/woocommerce.css?ver=1.0.0'
+        media='all' />
     <link rel='stylesheet' id='elementor-icons-css' href='/css/elementor-icons.min.css?ver=5.15.0' media='all' />
-    <link rel='stylesheet' id='elementor-frontend-legacy-css' href='/css/frontend-legacy.min.css?ver=3.6.4' media='all' />
+    <link rel='stylesheet' id='elementor-frontend-legacy-css' href='/css/frontend-legacy.min.css?ver=3.6.4'
+        media='all' />
     <link rel='stylesheet' id='elementor-frontend-css' href='/css/frontend.min.css?ver=3.6.4' media='all' />
     <link rel='stylesheet' id='elementor-post-24-css' href='/css/post-24.css?ver=1649974449' media='all' />
     <link rel='stylesheet' id='elementor-pro-css' href='/css/frontend.min.css?ver=3.0.5' media='all' />
@@ -498,17 +519,20 @@
         .woocommerce form .form-row .required {
             visibility: visible;
         }
-
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
     <link rel='stylesheet' id='wp-block-library-css' href='/css/style.min.css?ver=6.0.1' media='all' />
     <link rel='stylesheet' id='wc-block-vendors-style-css' href='/css/vendors-style.css?ver=4.4.3' media='all' />
     <link rel='stylesheet' id='wc-block-style-css' href='/css/style.css?ver=4.4.3' media='all' />
     <link rel='stylesheet' id='contact-form-7-css' href='/css/styles.css?ver=5.4' media='all' />
     <link rel='stylesheet' id='watr-shop-style-css' href='/css/style.css?ver=1.0.0' media='all' />
-    <link rel='stylesheet' id='watr-shop-woocommerce-style-css' href='/css/woocommerce.css?ver=1.0.0' media='all' />
+    <link rel='stylesheet' id='watr-shop-woocommerce-style-css' href='/css/woocommerce.css?ver=1.0.0'
+        media='all' />
     <link rel='stylesheet' id='elementor-icons-css' href='/css/elementor-icons.min.css?ver=5.15.0' media='all' />
-    <link rel='stylesheet' id='elementor-frontend-legacy-css' href='/css/frontend-legacy.min.css?ver=3.6.4' media='all' />
+    <link rel='stylesheet' id='elementor-frontend-legacy-css' href='/css/frontend-legacy.min.css?ver=3.6.4'
+        media='all' />
     <link rel='stylesheet' id='elementor-frontend-css' href='/css/frontend.min.css?ver=3.6.4' media='all' />
     <link rel='stylesheet' id='elementor-post-24-css' href='/css/post-24.css?ver=1649974449' media='all' />
     <link rel='stylesheet' id='elementor-pro-css' href='/css/frontend.min.css?ver=3.0.5' media='all' />
@@ -528,17 +552,20 @@
             font-weight: normal;
             font-style: normal;
         }
-
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
     <link rel='stylesheet' id='wp-block-library-css' href='/css/style.min.css?ver=6.0.1' media='all' />
     <link rel='stylesheet' id='wc-block-vendors-style-css' href='/css/vendors-style.css?ver=4.4.3' media='all' />
     <link rel='stylesheet' id='wc-block-style-css' href='/css/style.css?ver=4.4.3' media='all' />
     <link rel='stylesheet' id='contact-form-7-css' href='/css/styles.css?ver=5.4' media='all' />
     <link rel='stylesheet' id='watr-shop-style-css' href='/css/style.css?ver=1.0.0' media='all' />
-    <link rel='stylesheet' id='watr-shop-woocommerce-style-css' href='/css/woocommerce.css?ver=1.0.0' media='all' />
+    <link rel='stylesheet' id='watr-shop-woocommerce-style-css' href='/css/woocommerce.css?ver=1.0.0'
+        media='all' />
     <link rel='stylesheet' id='elementor-icons-css' href='/css/elementor-icons.min.css?ver=5.15.0' media='all' />
-    <link rel='stylesheet' id='elementor-frontend-legacy-css' href='/css/frontend-legacy.min.css?ver=3.6.4' media='all' />
+    <link rel='stylesheet' id='elementor-frontend-legacy-css' href='/css/frontend-legacy.min.css?ver=3.6.4'
+        media='all' />
     <link rel='stylesheet' id='elementor-frontend-css' href='/css/frontend.min.css?ver=3.6.4' media='all' />
     <link rel='stylesheet' id='elementor-post-24-css' href='/css/post-24.css?ver=1649974449' media='all' />
     <link rel='stylesheet' id='elementor-pro-css' href='/css/frontend.min.css?ver=3.0.5' media='all' />
@@ -547,7 +574,9 @@
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" media='all' />
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" media='all' />
     <link rel='stylesheet' id='e-animations-css' href='/css/animations.min.css?ver=3.6.4' media='all' />
-    <link rel='stylesheet' id='google-fonts-1-css' href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=6.0.1' media='all' />
+    <link rel='stylesheet' id='google-fonts-1-css'
+        href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=6.0.1'
+        media='all' />
     <script src='/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
     <script src='/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
     <link rel="https://api.w.org/" href="https://drinkwatr.com/wp-json/" />
@@ -560,7 +589,6 @@
             .woocommerce-product-gallery {
                 opacity: 1 !important;
             }
-
         </style>
     </noscript>
     <style>
@@ -569,7 +597,6 @@
             padding: 0 !important;
             margin: 0 !important;
         }
-
     </style>
     <style type="text/css">
         .site-title,
@@ -577,12 +604,15 @@
             position: absolute;
             clip: rect(1px, 1px, 1px, 1px);
         }
-
     </style>
-    <link rel="icon" href="https://drinkwatr.com/wp-content/uploads/2021/04/cropped-favicon-32x32.gif" sizes="32x32" />
-    <link rel="icon" href="https://drinkwatr.com/wp-content/uploads/2021/04/cropped-favicon-192x192.gif" sizes="192x192" />
-    <link rel="apple-touch-icon" href="https://drinkwatr.com/wp-content/uploads/2021/04/cropped-favicon-180x180.gif" />
-    <meta name="msapplication-TileImage" content="https://drinkwatr.com/wp-content/uploads/2021/04/cropped-favicon-270x270.gif" />
+    <link rel="icon" href="https://drinkwatr.com/wp-content/uploads/2021/04/cropped-favicon-32x32.gif"
+        sizes="32x32" />
+    <link rel="icon" href="https://drinkwatr.com/wp-content/uploads/2021/04/cropped-favicon-192x192.gif"
+        sizes="192x192" />
+    <link rel="apple-touch-icon"
+        href="https://drinkwatr.com/wp-content/uploads/2021/04/cropped-favicon-180x180.gif" />
+    <meta name="msapplication-TileImage"
+        content="https://drinkwatr.com/wp-content/uploads/2021/04/cropped-favicon-270x270.gif" />
     <style id="wp-custom-css">
         #secondary {
             display: none !important;
@@ -800,7 +830,6 @@
         figure img {
             height: 150px !important;
         }
-
     </style>
 </head>
 
@@ -821,32 +850,56 @@
                     <div data-elementor-type="wp-page" data-elementor-id="2046" class="elementor elementor-2046">
                         <div class="elementor-inner">
                             <div class="elementor-section-wrap">
-                                <section class="elementor-section elementor-top-section elementor-element elementor-element-9e5d9f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="9e5d9f" data-element_type="section">
+                                <section
+                                    class="elementor-section elementor-top-section elementor-element elementor-element-9e5d9f elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                                    data-id="9e5d9f" data-element_type="section">
                                     <div class="elementor-container elementor-column-gap-default">
                                         <div class="elementor-row">
-                                            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-11783564" data-id="11783564" data-element_type="column">
+                                            <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-11783564"
+                                                data-id="11783564" data-element_type="column">
                                                 <div class="elementor-column-wrap elementor-element-populated">
-                                                    <div class="elementor-widget-wrap main_content" style="display: block;">
-                                                        <div class="elementor-element elementor-element-5022c6c0 elementor-widget elementor-widget-html" data-id="5022c6c0" data-element_type="widget" data-widget_type="html.default">
+                                                    <div class="elementor-widget-wrap main_content"
+                                                        style="display: block;">
+                                                        <div class="elementor-element elementor-element-5022c6c0 elementor-widget elementor-widget-html"
+                                                            data-id="5022c6c0" data-element_type="widget"
+                                                            data-widget_type="html.default">
                                                             <div class="elementor-widget-container">
-                                                                <div style="text-align: center;margin: 20px auto;padding-bottom: 1rem;">
-                                                                    <a onclick="hydrationOn()" href="javascript:void(0)" style="width: 100%;/*display: block;*/    display: initial;text-align: center;color: black; margin-top: 1rem; padding-bottom: 1rem; font-size: 1rem;">UNDERSTAND <i class="fas fa-arrow-circle-right"></i></a>
+                                                                <div
+                                                                    style="text-align: center;margin: 20px auto;padding-bottom: 1rem;">
+                                                                    <a onclick="hydrationOn()"
+                                                                        href="javascript:void(0)"
+                                                                        style="width: 100%;/*display: block;*/    display: initial;text-align: center;color: black; margin-top: 1rem; padding-bottom: 1rem; font-size: 1rem;">UNDERSTAND
+                                                                        <i class="fas fa-arrow-circle-right"></i></a>
                                                                 </div>
-                                                                <form action="{{ url('/watr', ['detail_access_token'=>$detail_access_token,'page'=>2]) }}" method="POST" onsubmit="submit_product_data(this); return false;">
+                                                                <form
+                                                                    action="{{ url('/watr', ['detail_access_token' => $detail_access_token, 'page' => 2]) }}"
+                                                                    method="POST"
+                                                                    onsubmit="submit_product_data(this); return false;">
                                                                     @csrf
                                                                     @method('PUT')
-                                                                    <div class="" style="margin-top: 0; margin-bottom: 50px; min-height: 156px;">
+                                                                    <div class=""
+                                                                        style="margin-top: 0; margin-bottom: 50px; min-height: 156px;">
                                                                         <div class="flex_row">
                                                                             <div class="flex_col_sm_12 p-0">
                                                                                 <div class="form_field">
                                                                                     <div class="text-field">
-                                                                                        <select class="selectpicker form-control" name="alakline_pure" id="alakline_pure" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_alakline_text') }} ">
+                                                                                        <select
+                                                                                            class="selectpicker form-control"
+                                                                                            name="alakline_pure"
+                                                                                            id="alakline_pure" required
+                                                                                            data-dropup-auto="false"
+                                                                                            title="{{ config('constants.package.default_drop_down_alakline_text') }} ">
 
-                                                                                            <option value='0' data-hidden="true" selected>
+                                                                                            <option value='0'
+                                                                                                data-hidden="true"
+                                                                                                selected>
                                                                                                 {{ config('constants.package.default_drop_down_alakline_text') }}
                                                                                             </option>
-                                                                                            <option value="1">ALKALINE + ELECTROLYTE</option>
-                                                                                            <option value="2">PURE + ELECTROLYTE</option>
+                                                                                            <option value="1">
+                                                                                                ALKALINE + ELECTROLYTE
+                                                                                            </option>
+                                                                                            <option value="2">PURE
+                                                                                                + ELECTROLYTE</option>
                                                                                         </select>
 
                                                                                     </div>
@@ -859,22 +912,51 @@
                                                                                 <div class="form_field">
                                                                                     <div class="text-field">
 
-                                                                                        <select class="selectpicker placeholder form-control select_alka" name="alkaline_package" id="alkaline_package1" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
+                                                                                        <select
+                                                                                            class="selectpicker placeholder form-control select_alka"
+                                                                                            name="alkaline_package"
+                                                                                            id="alkaline_package1"
+                                                                                            required
+                                                                                            data-dropup-auto="false"
+                                                                                            title="{{ config('constants.package.default_drop_down_text') }}">
 
-                                                                                            <option value='0' data-hidden="true" selected>
-                                                                                                {{ config('constants.package.default_drop_down_text') }}</option>
-                                                                                            <option value="1">1 WEEK WELLNESS $78 ( 3 KITS )</option>
-                                                                                            <option value="2">1 MONTH WELLNESS $250 ( 10 KITS )</option>
-                                                                                            <option value="3">2 MONTH WELLNESS $500 ( 20 KITS )</option>
+                                                                                            <option value='0'
+                                                                                                data-hidden="true"
+                                                                                                selected>
+                                                                                                {{ config('constants.package.default_drop_down_text') }}
+                                                                                            </option>
+                                                                                            <option value="1">1
+                                                                                                WEEK WELLNESS $78 ( 3
+                                                                                                KITS )</option>
+                                                                                            <option value="2">1
+                                                                                                MONTH WELLNESS $250 ( 10
+                                                                                                KITS )</option>
+                                                                                            <option value="3">2
+                                                                                                MONTH WELLNESS $500 ( 20
+                                                                                                KITS )</option>
                                                                                         </select>
 
-                                                                                        <select class="selectpicker placeholder form-control select_pure d-none" name="pure_package" id="pure_package1" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
+                                                                                        <select
+                                                                                            class="selectpicker placeholder form-control select_pure d-none"
+                                                                                            name="pure_package"
+                                                                                            id="pure_package1" required
+                                                                                            data-dropup-auto="false"
+                                                                                            title="{{ config('constants.package.default_drop_down_text') }}">
 
-                                                                                            <option value='0' data-hidden="true" selected>
-                                                                                                {{ config('constants.package.default_drop_down_text') }}</option>
-                                                                                            <option value="1">1 WEEK WELLNESS $66 ( 3 KITS )</option>
-                                                                                            <option value="2">1 MONTH WELLNESS $220 ( 10 KITS )</option>
-                                                                                            <option value="3">2 MONTH WELLNESS $440 ( 20 KITS )</option>
+                                                                                            <option value='0'
+                                                                                                data-hidden="true"
+                                                                                                selected>
+                                                                                                {{ config('constants.package.default_drop_down_text') }}
+                                                                                            </option>
+                                                                                            <option value="1">1
+                                                                                                WEEK WELLNESS $66 ( 3
+                                                                                                KITS )</option>
+                                                                                            <option value="2">1
+                                                                                                MONTH WELLNESS $220 ( 10
+                                                                                                KITS )</option>
+                                                                                            <option value="3">2
+                                                                                                MONTH WELLNESS $440 ( 20
+                                                                                                KITS )</option>
                                                                                         </select>
 
                                                                                     </div>
@@ -884,11 +966,33 @@
                                                                             <div class="flex_col_sm_4 p-0">
                                                                                 <div class="form_field">
                                                                                     <div class="text-field">
-                                                                                        <select class="selectpicker placeholder form-control delivery_frequency1" name="delivery_frequency" id="delivery_frequency1" required data-dropup-auto="false" title="{{ config('constants.package.delivery_freq_text') }}">
-                                                                                            <option value='0' data-hidden="true" selected="selected">
-                                                                                                {{ config('constants.package.delivery_freq_text') }}</option>
-                                                                                            <option value="1">UPCOMING SUNDAY</option>
-                                                                                            <option value="2">UPCOMING MONDAY</option>
+                                                                                        <select
+                                                                                            class="selectpicker placeholder form-control delivery_frequency1"
+                                                                                            name="delivery_frequency"
+                                                                                            id="delivery_frequency1"
+                                                                                            required
+                                                                                            data-dropup-auto="false"
+                                                                                            title="{{ config('constants.package.delivery_freq_text') }}">
+                                                                                            <option value='0'
+                                                                                                data-hidden="true"
+                                                                                                selected="selected">
+                                                                                                {{ config('constants.package.delivery_freq_text') }}
+                                                                                            </option>
+                                                                                            @if ($detail_access_token != 'park-grove')
+                                                                                                <option value="1">
+                                                                                                    UPCOMING SUNDAY
+                                                                                                </option>
+                                                                                                <option value="2">
+                                                                                                    UPCOMING MONDAY
+                                                                                                </option>
+                                                                                            @else
+                                                                                                <option value="3">
+                                                                                                    UPCOMING TUESDAY
+                                                                                                </option>
+                                                                                                <option value="4">
+                                                                                                    UPCOMING WEDNESDAY
+                                                                                                </option>
+                                                                                            @endif
                                                                                         </select>
                                                                                     </div>
                                                                                 </div>
@@ -907,65 +1011,141 @@
                                                                     </div>
 
                                                                     <div class="dots_wrapper">
-                                                                        <button class="primary_btn btn_effect">Next</button>
+                                                                        <button
+                                                                            class="primary_btn btn_effect">Next</button>
                                                                     </div>
                                                                 </form>
                                                             </div>
                                                         </div>
-                                                        <div class="elementor-element elementor-element-7729f37d elementor-widget elementor-widget-html" data-id="7729f37d" data-element_type="widget" data-widget_type="html.default">
+                                                        <div class="elementor-element elementor-element-7729f37d elementor-widget elementor-widget-html"
+                                                            data-id="7729f37d" data-element_type="widget"
+                                                            data-widget_type="html.default">
                                                             <div class="elementor-widget-container">
-                                                                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-                                                                <link rel='stylesheet' id='wp-block-library-css' href='/css/style.min.css?ver=6.0.1' media='all' />
-                                                                <link rel='stylesheet' id='wc-block-vendors-style-css' href='/css/vendors-style.css?ver=4.4.3' media='all' />
-                                                                <link rel='stylesheet' id='wc-block-style-css' href='/css/style.css?ver=4.4.3' media='all' />
-                                                                <link rel='stylesheet' id='contact-form-7-css' href='/css/styles.css?ver=5.4' media='all' />
-                                                                <link rel='stylesheet' id='watr-shop-style-css' href='/css/style.css?ver=1.0.0' media='all' />
-                                                                <link rel='stylesheet' id='watr-shop-woocommerce-style-css' href='/css/woocommerce.css?ver=1.0.0' media='all' />
-                                                                <link rel='stylesheet' id='elementor-icons-css' href='/css/elementor-icons.min.css?ver=5.15.0' media='all' />
-                                                                <link rel='stylesheet' id='elementor-frontend-legacy-css' href='/css/frontend-legacy.min.css?ver=3.6.4' media='all' />
-                                                                <link rel='stylesheet' id='elementor-frontend-css' href='/css/frontend.min.css?ver=3.6.4' media='all' />
-                                                                <link rel='stylesheet' id='elementor-post-24-css' href='/css/post-24.css?ver=1649974449' media='all' />
-                                                                <link rel='stylesheet' id='elementor-pro-css' href='/css/frontend.min.css?ver=3.0.5' media='all' />
-                                                                <link rel='stylesheet' id='elementor-global-css' href='/css/global.css?ver=1649974450' media='all' />
-                                                                <link rel='stylesheet' id='elementor-post-2046-css' href='/css/post-2046.css?ver=1656658355' media='all' />
-                                                                <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" media='all' />
-                                                                <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" media='all' />
-                                                                <link rel='stylesheet' id='e-animations-css' href='/css/animations.min.css?ver=3.6.4' media='all' />
-                                                                <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+                                                                <link rel="stylesheet"
+                                                                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+                                                                    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+                                                                    crossorigin="anonymous" />
+                                                                <link rel='stylesheet' id='wp-block-library-css'
+                                                                    href='/css/style.min.css?ver=6.0.1'
+                                                                    media='all' />
+                                                                <link rel='stylesheet' id='wc-block-vendors-style-css'
+                                                                    href='/css/vendors-style.css?ver=4.4.3'
+                                                                    media='all' />
+                                                                <link rel='stylesheet' id='wc-block-style-css'
+                                                                    href='/css/style.css?ver=4.4.3' media='all' />
+                                                                <link rel='stylesheet' id='contact-form-7-css'
+                                                                    href='/css/styles.css?ver=5.4' media='all' />
+                                                                <link rel='stylesheet' id='watr-shop-style-css'
+                                                                    href='/css/style.css?ver=1.0.0' media='all' />
+                                                                <link rel='stylesheet'
+                                                                    id='watr-shop-woocommerce-style-css'
+                                                                    href='/css/woocommerce.css?ver=1.0.0'
+                                                                    media='all' />
+                                                                <link rel='stylesheet' id='elementor-icons-css'
+                                                                    href='/css/elementor-icons.min.css?ver=5.15.0'
+                                                                    media='all' />
+                                                                <link rel='stylesheet'
+                                                                    id='elementor-frontend-legacy-css'
+                                                                    href='/css/frontend-legacy.min.css?ver=3.6.4'
+                                                                    media='all' />
+                                                                <link rel='stylesheet' id='elementor-frontend-css'
+                                                                    href='/css/frontend.min.css?ver=3.6.4'
+                                                                    media='all' />
+                                                                <link rel='stylesheet' id='elementor-post-24-css'
+                                                                    href='/css/post-24.css?ver=1649974449'
+                                                                    media='all' />
+                                                                <link rel='stylesheet' id='elementor-pro-css'
+                                                                    href='/css/frontend.min.css?ver=3.0.5'
+                                                                    media='all' />
+                                                                <link rel='stylesheet' id='elementor-global-css'
+                                                                    href='/css/global.css?ver=1649974450'
+                                                                    media='all' />
+                                                                <link rel='stylesheet' id='elementor-post-2046-css'
+                                                                    href='/css/post-2046.css?ver=1656658355'
+                                                                    media='all' />
+                                                                <link rel="stylesheet"
+                                                                    href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+                                                                    media='all' />
+                                                                <link rel="stylesheet"
+                                                                    href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+                                                                    media='all' />
+                                                                <link rel='stylesheet' id='e-animations-css'
+                                                                    href='/css/animations.min.css?ver=3.6.4'
+                                                                    media='all' />
+                                                                <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+                                                                    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
                                                                 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
                                                                 {{-- <script src="{{ asset('js/link2.js') }}"></script> --}}
 
                                                                 <div class="new-popup-style" id="hydrationPopup">
 
-                                                                    <a href="#" class="close-button" onclick="hydrationOff()"><img src="https://drinkwatr.com/wp-content/uploads/2022/02/close.png" style="max-width: 20px;"></a>
+                                                                    <a href="#" class="close-button"
+                                                                        onclick="hydrationOff()"><img
+                                                                            src="https://drinkwatr.com/wp-content/uploads/2022/02/close.png"
+                                                                            style="max-width: 20px;"></a>
 
-                                                                    <div style="position: absolute; margin-bottom: 160px; bottom: 0;padding: 0 15px; text-align: center;" class="small-info-txt">**This is not an auto-renewable subscription. It is a one-time purchase. <span onclick="$('.small-info-txt').hide(); $('.full-info-txt').show();">(i)</span>**</div>
-                                                                    <div style="position: absolute; margin-bottom: 160px; bottom: 0;padding: 0 15px; text-align: center; display: none;" class="full-info-txt">**This is not an auto-renewable subscription or a subscription at all. It is a one time purchase. So, come back and purchase when you are ready for additional wellness support.**</div>
+                                                                    <div style="position: absolute; margin-bottom: 160px; bottom: 0;padding: 0 15px; text-align: center;"
+                                                                        class="small-info-txt">**This is not an
+                                                                        auto-renewable subscription. It is a one-time
+                                                                        purchase. <span
+                                                                            onclick="$('.small-info-txt').hide(); $('.full-info-txt').show();">(i)</span>**
+                                                                    </div>
+                                                                    <div style="position: absolute; margin-bottom: 160px; bottom: 0;padding: 0 15px; text-align: center; display: none;"
+                                                                        class="full-info-txt">**This is not an
+                                                                        auto-renewable subscription or a subscription at
+                                                                        all. It is a one time purchase. So, come back
+                                                                        and purchase when you are ready for additional
+                                                                        wellness support.**</div>
 
                                                                     <script>
                                                                         $('.full-info-txt').hide();
-
                                                                     </script>
                                                                     <div class="hydration-carousel">
                                                                         <div class="carousel-cell">
-                                                                            <h3 class="carousel-title">Wellness Solution Guide</h3>
-                                                                            <div style="text-align:center; margin-top: 50px;">1 <span><img style="height: 20px;padding-bottom: 4px;" src="{{ asset('images/kit.png') }}" alt="KIT" /></span> = 12 <span><img style="height: 20px;padding-bottom: 4px;" src="{{ asset('images/bottle.png') }}" alt="Bottles" /></span></div>
+                                                                            <h3 class="carousel-title">Wellness
+                                                                                Solution Guide</h3>
+                                                                            <div
+                                                                                style="text-align:center; margin-top: 50px;">
+                                                                                1 <span><img
+                                                                                        style="height: 20px;padding-bottom: 4px;"
+                                                                                        src="{{ asset('images/kit.png') }}"
+                                                                                        alt="KIT" /></span> = 12
+                                                                                <span><img
+                                                                                        style="height: 20px;padding-bottom: 4px;"
+                                                                                        src="{{ asset('images/bottle.png') }}"
+                                                                                        alt="Bottles" /></span>
+                                                                            </div>
                                                                             {{-- <div style="text-align:center; margin-top: 50px;">1 KIT = 12 Bottles</div> --}}
 
-                                                                                  <div class="" style="text-align: center;margin-top: 70px;">
+                                                                            <div class=""
+                                                                                style="text-align: center;margin-top: 70px;">
                                                                                 <div class="flex_col_sm_7 p-0">
                                                                                     <div class="form_field">
                                                                                         <div class="text-field">
-                                                                                            <select class="selectpicker placeholder form-control" name="wellness_demo_package" id="wellness_demo_package" required data-dropup-auto="false" title="SELECT YOUR WELLNESS SOLUTION">
-                                                                                                <option value='0' data-hidden="true" selected>SELECT YOUR WELLNESS SOLUTION</option>
-                                                                                                <option value="1">1 WEEK</option>
-                                                                                                <option value="2">1 MONTH</option>
-                                                                                                <option value="3">2 MONTH</option>
+                                                                                            <select
+                                                                                                class="selectpicker placeholder form-control"
+                                                                                                name="wellness_demo_package"
+                                                                                                id="wellness_demo_package"
+                                                                                                required
+                                                                                                data-dropup-auto="false"
+                                                                                                title="SELECT YOUR WELLNESS SOLUTION">
+                                                                                                <option value='0'
+                                                                                                    data-hidden="true"
+                                                                                                    selected>SELECT YOUR
+                                                                                                    WELLNESS SOLUTION
+                                                                                                </option>
+                                                                                                <option value="1">
+                                                                                                    1 WEEK</option>
+                                                                                                <option value="2">
+                                                                                                    1 MONTH</option>
+                                                                                                <option value="3">
+                                                                                                    2 MONTH</option>
                                                                                             </select>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div style="
+                                                                                <div
+                                                                                    style="
                                                                                 position: absolute;
                                                                                 width: 100%;
                                                                                 left: 0;
@@ -974,32 +1154,68 @@
                                                                                 overflow: auto;
                                                                                 ">
                                                                                     <table width="100%">
-                                                                                        <tr class="wellness_demo_week-default wellness_demo_week_1">
+                                                                                        <tr
+                                                                                            class="wellness_demo_week-default wellness_demo_week_1">
                                                                                             <td class="text-center">
-                                                                                                <div class="" style="text-transform: uppercase;">
-                                                                                                    <div>YOUR 1 WEEK SOLUTION WILL INCLUDE :</div>
-                                                                                                    <div style="margin-top: 10px;font-size: 30px;">
-                                                                                                        3 <span><img style="height: 33px;padding-bottom: 9px;" src="{{ asset('images/kit.png') }}" alt="KIT" /></span> = 36 <span><img style="height: 33px;padding-bottom: 9px;" src="{{ asset('images/bottle.png') }}" alt="BOTTLE" /></span>
+                                                                                                <div class=""
+                                                                                                    style="text-transform: uppercase;">
+                                                                                                    <div>YOUR 1 WEEK
+                                                                                                        SOLUTION WILL
+                                                                                                        INCLUDE :</div>
+                                                                                                    <div
+                                                                                                        style="margin-top: 10px;font-size: 30px;">
+                                                                                                        3 <span><img
+                                                                                                                style="height: 33px;padding-bottom: 9px;"
+                                                                                                                src="{{ asset('images/kit.png') }}"
+                                                                                                                alt="KIT" /></span>
+                                                                                                        = 36 <span><img
+                                                                                                                style="height: 33px;padding-bottom: 9px;"
+                                                                                                                src="{{ asset('images/bottle.png') }}"
+                                                                                                                alt="BOTTLE" /></span>
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </td>
                                                                                         </tr>
-                                                                                        <tr class="wellness_demo_week-default wellness_demo_month_1">
+                                                                                        <tr
+                                                                                            class="wellness_demo_week-default wellness_demo_month_1">
                                                                                             <td class="text-center">
-                                                                                                <div class="" style="text-transform: uppercase;">
-                                                                                                    <div>YOUR 1 MONTH SOLUTION WILL INCLUDE :</div>
-                                                                                                    <div style="margin-top: 10px;font-size: 30px;">
-                                                                                                        10 <span><img style="height: 33px;padding-bottom: 9px;" src="{{ asset('images/kit.png') }}" alt="KIT" /></span> = 120 <span><img style="height: 33px;padding-bottom: 9px;" src="{{ asset('images/bottle.png') }}" alt="BOTTLE" /></span>
+                                                                                                <div class=""
+                                                                                                    style="text-transform: uppercase;">
+                                                                                                    <div>YOUR 1 MONTH
+                                                                                                        SOLUTION WILL
+                                                                                                        INCLUDE :</div>
+                                                                                                    <div
+                                                                                                        style="margin-top: 10px;font-size: 30px;">
+                                                                                                        10 <span><img
+                                                                                                                style="height: 33px;padding-bottom: 9px;"
+                                                                                                                src="{{ asset('images/kit.png') }}"
+                                                                                                                alt="KIT" /></span>
+                                                                                                        = 120 <span><img
+                                                                                                                style="height: 33px;padding-bottom: 9px;"
+                                                                                                                src="{{ asset('images/bottle.png') }}"
+                                                                                                                alt="BOTTLE" /></span>
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </td>
                                                                                         </tr>
-                                                                                        <tr class="wellness_demo_week-default wellness_demo_month_2">
+                                                                                        <tr
+                                                                                            class="wellness_demo_week-default wellness_demo_month_2">
                                                                                             <td class="text-center">
-                                                                                                <div class="" style="text-transform: uppercase;">
-                                                                                                    <div>YOUR 2 MONTH SOLUTION WILL INCLUDE :</div>
-                                                                                                    <div style="margin-top: 10px;font-size: 30px;">
-                                                                                                        20 <span><img style="height: 33px;padding-bottom: 9px;" src="{{ asset('images/kit.png') }}" alt="KIT" /></span> = 240 <span><img style="height: 33px;padding-bottom: 9px;" src="{{ asset('images/bottle.png') }}" alt="BOTTLE" /></span>
+                                                                                                <div class=""
+                                                                                                    style="text-transform: uppercase;">
+                                                                                                    <div>YOUR 2 MONTH
+                                                                                                        SOLUTION WILL
+                                                                                                        INCLUDE :</div>
+                                                                                                    <div
+                                                                                                        style="margin-top: 10px;font-size: 30px;">
+                                                                                                        20 <span><img
+                                                                                                                style="height: 33px;padding-bottom: 9px;"
+                                                                                                                src="{{ asset('images/kit.png') }}"
+                                                                                                                alt="KIT" /></span>
+                                                                                                        = 240 <span><img
+                                                                                                                style="height: 33px;padding-bottom: 9px;"
+                                                                                                                src="{{ asset('images/bottle.png') }}"
+                                                                                                                alt="BOTTLE" /></span>
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </td>
@@ -1007,7 +1223,7 @@
                                                                                     </table>
                                                                                 </div>
                                                                             </div>
-                                                                      
+
                                                                             {{-- <table style="text-align:center; margin-top: 0px;" border="1px" width="100%">
                                                                                 <tbody>
                                                                                     <tr>
@@ -1032,21 +1248,40 @@
                                                                         </div>
 
                                                                         <div class="carousel-cell">
-                                                                            <h3 class="carousel-title">Delivery Frequency Guide</h3>
-                                                                            <div class="" style="text-align: center;margin-top: 50px;">
+                                                                            <h3 class="carousel-title">Delivery
+                                                                                Frequency Guide</h3>
+                                                                            <div class=""
+                                                                                style="text-align: center;margin-top: 50px;">
                                                                                 <div class="flex_col_sm_7 p-0">
                                                                                     <div class="form_field">
                                                                                         <div class="text-field">
-                                                                                            <select class="selectpicker placeholder form-control" name="demo_package" id="demo_package" required data-dropup-auto="false" title="{{ config('constants.package.default_drop_down_text') }}">
-                                                                                                <option value='0' data-hidden="true" selected>{{ config('constants.package.default_drop_down_text') }}</option>
-                                                                                                <option value="1">1 WEEK WELLNESS</option>
-                                                                                                <option value="2">1 MONTH WELLNESS</option>
-                                                                                                <option value="3">2 MONTH WELLNESS</option>
+                                                                                            <select
+                                                                                                class="selectpicker placeholder form-control"
+                                                                                                name="demo_package"
+                                                                                                id="demo_package"
+                                                                                                required
+                                                                                                data-dropup-auto="false"
+                                                                                                title="{{ config('constants.package.default_drop_down_text') }}">
+                                                                                                <option value='0'
+                                                                                                    data-hidden="true"
+                                                                                                    selected>
+                                                                                                    {{ config('constants.package.default_drop_down_text') }}
+                                                                                                </option>
+                                                                                                <option value="1">
+                                                                                                    1 WEEK WELLNESS
+                                                                                                </option>
+                                                                                                <option value="2">
+                                                                                                    1 MONTH WELLNESS
+                                                                                                </option>
+                                                                                                <option value="3">
+                                                                                                    2 MONTH WELLNESS
+                                                                                                </option>
                                                                                             </select>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div style="
+                                                                                <div
+                                                                                    style="
                                                                                 position: absolute;
                                                                                 width: 100%;
                                                                                 left: 0;
@@ -1055,44 +1290,106 @@
                                                                                 overflow: auto;
                                                                                 ">
                                                                                     <table width="100%">
-                                                                                        <tr class="demo_week-default demo_week_1">
+                                                                                        <tr
+                                                                                            class="demo_week-default demo_week_1">
                                                                                             <td class="text-center">
-                                                                                                <div class="" style="text-transform: uppercase;">3 <span><img style="height: 20px;padding-bottom: 4px;" src="{{ asset('images/kit.png') }}" alt="KIT" /></span><br>delivered on the day of your choice</div>
+                                                                                                <div class=""
+                                                                                                    style="text-transform: uppercase;">
+                                                                                                    3 <span><img
+                                                                                                            style="height: 20px;padding-bottom: 4px;"
+                                                                                                            src="{{ asset('images/kit.png') }}"
+                                                                                                            alt="KIT" /></span><br>delivered
+                                                                                                    on the day of your
+                                                                                                    choice</div>
                                                                                             </td>
                                                                                         </tr>
-                                                                                        <tr class="demo_week-default demo_month_1">
+                                                                                        <tr
+                                                                                            class="demo_week-default demo_month_1">
                                                                                             <td class="text-center">
-                                                                                                <div class="" style="text-transform: uppercase;">5 <span><img style="height: 20px;padding-bottom: 4px;" src="{{ asset('images/kit.png') }}" alt="KIT" /></span><br>delivered every other week for 1 Month, on day of your choice.</div>
+                                                                                                <div class=""
+                                                                                                    style="text-transform: uppercase;">
+                                                                                                    5 <span><img
+                                                                                                            style="height: 20px;padding-bottom: 4px;"
+                                                                                                            src="{{ asset('images/kit.png') }}"
+                                                                                                            alt="KIT" /></span><br>delivered
+                                                                                                    every other week for
+                                                                                                    1 Month, on day of
+                                                                                                    your choice.</div>
                                                                                             </td>
                                                                                         </tr>
-                                                                                        <tr class="demo_week-default demo_month_2">
+                                                                                        <tr
+                                                                                            class="demo_week-default demo_month_2">
                                                                                             <td class="text-center">
-                                                                                                <div class="" style="text-transform: uppercase;">5 <span><img style="height: 20px;padding-bottom: 4px;" src="{{ asset('images/kit.png') }}" alt="KIT" /></span><br>delivered every other week for 2 months, on day of your choice</div>
+                                                                                                <div class=""
+                                                                                                    style="text-transform: uppercase;">
+                                                                                                    5 <span><img
+                                                                                                            style="height: 20px;padding-bottom: 4px;"
+                                                                                                            src="{{ asset('images/kit.png') }}"
+                                                                                                            alt="KIT" /></span><br>delivered
+                                                                                                    every other week for
+                                                                                                    2 months, on day of
+                                                                                                    your choice</div>
                                                                                             </td>
                                                                                         </tr>
 
-                                                                                        <tr class="demo_week-default demo_week_1-2">
-                                                                                            <td class="text-left">WEEK 1</td>
+                                                                                        <tr
+                                                                                            class="demo_week-default demo_week_1-2">
+                                                                                            <td class="text-left">WEEK
+                                                                                                1</td>
                                                                                             <td class="text-right">
-                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">5 <span><img style="height: 20px;padding-bottom: 4px;" src="{{ asset('images/kit.png') }}" alt="KIT" /></span><br>delivered on the day of your choice</div>
+                                                                                                <div class="text-center"
+                                                                                                    style="text-transform: uppercase; display: inline-block;">
+                                                                                                    5 <span><img
+                                                                                                            style="height: 20px;padding-bottom: 4px;"
+                                                                                                            src="{{ asset('images/kit.png') }}"
+                                                                                                            alt="KIT" /></span><br>delivered
+                                                                                                    on the day of your
+                                                                                                    choice</div>
                                                                                             </td>
                                                                                         </tr>
-                                                                                        <tr class="demo_week-default demo_week_3-4">
-                                                                                            <td class="text-left">WEEK 3</td>
+                                                                                        <tr
+                                                                                            class="demo_week-default demo_week_3-4">
+                                                                                            <td class="text-left">WEEK
+                                                                                                3</td>
                                                                                             <td class="text-right">
-                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">5 <span><img style="height: 20px;padding-bottom: 4px;" src="{{ asset('images/kit.png') }}" alt="KIT" /></span><br>delivered on the day of your choice</div>
+                                                                                                <div class="text-center"
+                                                                                                    style="text-transform: uppercase; display: inline-block;">
+                                                                                                    5 <span><img
+                                                                                                            style="height: 20px;padding-bottom: 4px;"
+                                                                                                            src="{{ asset('images/kit.png') }}"
+                                                                                                            alt="KIT" /></span><br>delivered
+                                                                                                    on the day of your
+                                                                                                    choice</div>
                                                                                             </td>
                                                                                         </tr>
-                                                                                        <tr class="demo_week-default demo_week_5-6">
-                                                                                            <td class="text-left">WEEK 5</td>
+                                                                                        <tr
+                                                                                            class="demo_week-default demo_week_5-6">
+                                                                                            <td class="text-left">WEEK
+                                                                                                5</td>
                                                                                             <td class="text-right">
-                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">5 <span><img style="height: 20px;padding-bottom: 4px;" src="{{ asset('images/kit.png') }}" alt="KIT" /></span><br>delivered on the day of your choice</div>
+                                                                                                <div class="text-center"
+                                                                                                    style="text-transform: uppercase; display: inline-block;">
+                                                                                                    5 <span><img
+                                                                                                            style="height: 20px;padding-bottom: 4px;"
+                                                                                                            src="{{ asset('images/kit.png') }}"
+                                                                                                            alt="KIT" /></span><br>delivered
+                                                                                                    on the day of your
+                                                                                                    choice</div>
                                                                                             </td>
                                                                                         </tr>
-                                                                                        <tr class="demo_week-default demo_week_7-8">
-                                                                                            <td class="text-left">WEEK 7</td>
+                                                                                        <tr
+                                                                                            class="demo_week-default demo_week_7-8">
+                                                                                            <td class="text-left">WEEK
+                                                                                                7</td>
                                                                                             <td class="text-right">
-                                                                                                <div class="text-center" style="text-transform: uppercase; display: inline-block;">5 <span><img style="height: 20px;padding-bottom: 4px;" src="{{ asset('images/kit.png') }}" alt="KIT" /></span><br>delivered on the day of your choice</div>
+                                                                                                <div class="text-center"
+                                                                                                    style="text-transform: uppercase; display: inline-block;">
+                                                                                                    5 <span><img
+                                                                                                            style="height: 20px;padding-bottom: 4px;"
+                                                                                                            src="{{ asset('images/kit.png') }}"
+                                                                                                            alt="KIT" /></span><br>delivered
+                                                                                                    on the day of your
+                                                                                                    choice</div>
                                                                                             </td>
                                                                                         </tr>
                                                                                     </table>
@@ -1127,7 +1424,7 @@
                                                                             $('.wellness_demo_month_2').show();
                                                                         }
                                                                     });
-                                                                    
+
                                                                     $('.demo_week-default').hide();
                                                                     $('#demo_package').on('change', function() {
                                                                         var value = (this.value);
@@ -1142,17 +1439,16 @@
                                                                             $('.demo_month_2').show();
                                                                         }
                                                                     });
-
                                                                 </script>
 
                                                                 <script>
                                                                     var element = document.querySelector('.hydration-carousel');
                                                                     var flokty = new Flickity(element, {
                                                                         // options
-                                                                        contain: true
-                                                                        , wrapAround: true
-                                                                        , cellAlign: 'center'
-                                                                        , imagesLoaded: true
+                                                                        contain: true,
+                                                                        wrapAround: true,
+                                                                        cellAlign: 'center',
+                                                                        imagesLoaded: true
                                                                     });
 
                                                                     // element argument can be a selector string
@@ -1162,30 +1458,66 @@
                                                                     });
 
                                                                     var carouselStatuz = document.querySelector('.hydration-status');
-
                                                                 </script>
                                                             </div>
                                                         </div>
-                                                        <div class="elementor-element elementor-element-2c21d9c0 elementor-widget elementor-widget-html" data-id="2c21d9c0" data-element_type="widget" data-widget_type="html.default">
+                                                        <div class="elementor-element elementor-element-2c21d9c0 elementor-widget elementor-widget-html"
+                                                            data-id="2c21d9c0" data-element_type="widget"
+                                                            data-widget_type="html.default">
                                                             <div class="elementor-widget-container">
-                                                                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-                                                                <link rel='stylesheet' id='wp-block-library-css' href='/css/style.min.css?ver=6.0.1' media='all' />
-                                                                <link rel='stylesheet' id='wc-block-vendors-style-css' href='/css/vendors-style.css?ver=4.4.3' media='all' />
-                                                                <link rel='stylesheet' id='wc-block-style-css' href='/css/style.css?ver=4.4.3' media='all' />
-                                                                <link rel='stylesheet' id='contact-form-7-css' href='/css/styles.css?ver=5.4' media='all' />
-                                                                <link rel='stylesheet' id='watr-shop-style-css' href='/css/style.css?ver=1.0.0' media='all' />
-                                                                <link rel='stylesheet' id='watr-shop-woocommerce-style-css' href='/css/woocommerce.css?ver=1.0.0' media='all' />
-                                                                <link rel='stylesheet' id='elementor-icons-css' href='/css/elementor-icons.min.css?ver=5.15.0' media='all' />
-                                                                <link rel='stylesheet' id='elementor-frontend-legacy-css' href='/css/frontend-legacy.min.css?ver=3.6.4' media='all' />
-                                                                <link rel='stylesheet' id='elementor-frontend-css' href='/css/frontend.min.css?ver=3.6.4' media='all' />
-                                                                <link rel='stylesheet' id='elementor-post-24-css' href='/css/post-24.css?ver=1649974449' media='all' />
-                                                                <link rel='stylesheet' id='elementor-pro-css' href='/css/frontend.min.css?ver=3.0.5' media='all' />
-                                                                <link rel='stylesheet' id='elementor-global-css' href='/css/global.css?ver=1649974450' media='all' />
-                                                                <link rel='stylesheet' id='elementor-post-2046-css' href='/css/post-2046.css?ver=1656658355' media='all' />
-                                                                <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" media='all' />
-                                                                <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" media='all' />
-                                                                <link rel='stylesheet' id='e-animations-css' href='/css/animations.min.css?ver=3.6.4' media='all' />
-                                                                <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+                                                                <link rel="stylesheet"
+                                                                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+                                                                    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+                                                                    crossorigin="anonymous" />
+                                                                <link rel='stylesheet' id='wp-block-library-css'
+                                                                    href='/css/style.min.css?ver=6.0.1'
+                                                                    media='all' />
+                                                                <link rel='stylesheet' id='wc-block-vendors-style-css'
+                                                                    href='/css/vendors-style.css?ver=4.4.3'
+                                                                    media='all' />
+                                                                <link rel='stylesheet' id='wc-block-style-css'
+                                                                    href='/css/style.css?ver=4.4.3' media='all' />
+                                                                <link rel='stylesheet' id='contact-form-7-css'
+                                                                    href='/css/styles.css?ver=5.4' media='all' />
+                                                                <link rel='stylesheet' id='watr-shop-style-css'
+                                                                    href='/css/style.css?ver=1.0.0' media='all' />
+                                                                <link rel='stylesheet'
+                                                                    id='watr-shop-woocommerce-style-css'
+                                                                    href='/css/woocommerce.css?ver=1.0.0'
+                                                                    media='all' />
+                                                                <link rel='stylesheet' id='elementor-icons-css'
+                                                                    href='/css/elementor-icons.min.css?ver=5.15.0'
+                                                                    media='all' />
+                                                                <link rel='stylesheet'
+                                                                    id='elementor-frontend-legacy-css'
+                                                                    href='/css/frontend-legacy.min.css?ver=3.6.4'
+                                                                    media='all' />
+                                                                <link rel='stylesheet' id='elementor-frontend-css'
+                                                                    href='/css/frontend.min.css?ver=3.6.4'
+                                                                    media='all' />
+                                                                <link rel='stylesheet' id='elementor-post-24-css'
+                                                                    href='/css/post-24.css?ver=1649974449'
+                                                                    media='all' />
+                                                                <link rel='stylesheet' id='elementor-pro-css'
+                                                                    href='/css/frontend.min.css?ver=3.0.5'
+                                                                    media='all' />
+                                                                <link rel='stylesheet' id='elementor-global-css'
+                                                                    href='/css/global.css?ver=1649974450'
+                                                                    media='all' />
+                                                                <link rel='stylesheet' id='elementor-post-2046-css'
+                                                                    href='/css/post-2046.css?ver=1656658355'
+                                                                    media='all' />
+                                                                <link rel="stylesheet"
+                                                                    href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+                                                                    media='all' />
+                                                                <link rel="stylesheet"
+                                                                    href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+                                                                    media='all' />
+                                                                <link rel='stylesheet' id='e-animations-css'
+                                                                    href='/css/animations.min.css?ver=3.6.4'
+                                                                    media='all' />
+                                                                <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+                                                                    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
                                                                 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
                                                             </div>
                                                         </div>
@@ -1213,7 +1545,8 @@
 
                 <p class="support_note">
                     A RECEIPT FOR YOUR PURCHASE HAS BEEN TEXTED AND EMAILED TO THE CREDENTIALS YOU PROVIDED. FOR ANY
-                    SUPPORT, PLEASE EMAIL <a href="mailto:clarity@drinkwatr.com" target="_blank">CLARITY@DRINKWATR.COM</a>
+                    SUPPORT, PLEASE EMAIL <a href="mailto:clarity@drinkwatr.com"
+                        target="_blank">CLARITY@DRINKWATR.COM</a>
                 </p>
             </div>
         </div>
@@ -1280,8 +1613,7 @@
             jQuery('.droplet-popup a').attr("href", "javascript:void(0)");
             //jQuery('.cust_popup .swiper-slide-active .elementor-button').attr("href","javascript:void(0)");
         });
-        //		
-
+        //
     </script>
 
 
@@ -1291,17 +1623,20 @@
             c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
             document.body.className = c;
         })();
-
     </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
     <link rel='stylesheet' id='wp-block-library-css' href='/css/style.min.css?ver=6.0.1' media='all' />
     <link rel='stylesheet' id='wc-block-vendors-style-css' href='/css/vendors-style.css?ver=4.4.3' media='all' />
     <link rel='stylesheet' id='wc-block-style-css' href='/css/style.css?ver=4.4.3' media='all' />
     <link rel='stylesheet' id='contact-form-7-css' href='/css/styles.css?ver=5.4' media='all' />
     <link rel='stylesheet' id='watr-shop-style-css' href='/css/style.css?ver=1.0.0' media='all' />
-    <link rel='stylesheet' id='watr-shop-woocommerce-style-css' href='/css/woocommerce.css?ver=1.0.0' media='all' />
+    <link rel='stylesheet' id='watr-shop-woocommerce-style-css' href='/css/woocommerce.css?ver=1.0.0'
+        media='all' />
     <link rel='stylesheet' id='elementor-icons-css' href='/css/elementor-icons.min.css?ver=5.15.0' media='all' />
-    <link rel='stylesheet' id='elementor-frontend-legacy-css' href='/css/frontend-legacy.min.css?ver=3.6.4' media='all' />
+    <link rel='stylesheet' id='elementor-frontend-legacy-css' href='/css/frontend-legacy.min.css?ver=3.6.4'
+        media='all' />
     <link rel='stylesheet' id='elementor-frontend-css' href='/css/frontend.min.css?ver=3.6.4' media='all' />
     <link rel='stylesheet' id='elementor-post-24-css' href='/css/post-24.css?ver=1649974449' media='all' />
     <link rel='stylesheet' id='elementor-pro-css' href='/css/frontend.min.css?ver=3.0.5' media='all' />
@@ -1318,12 +1653,10 @@
         wp.i18n.setLocaleData({
             'text direction\u0004ltr': ['ltr']
         });
-
     </script>
     <script src='/js/lodash.min.js?ver=4.17.19' id='lodash-js'></script>
     <script id='lodash-js-after'>
         window.lodash = _.noConflict();
-
     </script>
     <script src='/js/url.min.js?ver=16385e4d69da65c7283790971de6b297' id='wp-url-js'></script>
     <script src='/js/api-fetch.min.js?ver=63050163caffa6aac54e9ebf21fe0472' id='wp-api-fetch-js'></script>
@@ -1333,269 +1666,281 @@
         wp.apiFetch.use(wp.apiFetch.nonceMiddleware);
         wp.apiFetch.use(wp.apiFetch.mediaUploadMiddleware);
         wp.apiFetch.nonceEndpoint = "https://drinkwatr.com/wp-admin/admin-ajax.php?action=rest-nonce";
-
     </script>
     <script id='contact-form-7-js-extra'>
         var wpcf7 = {
             "cached": "1"
         };
-
     </script>
-    <script src='https://drinkwatr.com/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.4' id='contact-form-7-js'></script>
-    <script src='https://drinkwatr.com/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.70' id='jquery-blockui-js'></script>
+    <script src='https://drinkwatr.com/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.4'
+        id='contact-form-7-js'></script>
+    <script
+        src='https://drinkwatr.com/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.70'
+        id='jquery-blockui-js'></script>
     <script id='wc-add-to-cart-js-extra'>
         var wc_add_to_cart_params = {
-            "ajax_url": "\/wp-admin\/admin-ajax.php"
-            , "wc_ajax_url": "\/?wc-ajax=%%endpoint%%"
-            , "i18n_view_cart": "View cart"
-            , "cart_url": "https:\/\/drinkwatr.com\/cart\/"
-            , "is_cart": ""
-            , "cart_redirect_after_add": "no"
+            "ajax_url": "\/wp-admin\/admin-ajax.php",
+            "wc_ajax_url": "\/?wc-ajax=%%endpoint%%",
+            "i18n_view_cart": "View cart",
+            "cart_url": "https:\/\/drinkwatr.com\/cart\/",
+            "is_cart": "",
+            "cart_redirect_after_add": "no"
         };
-
     </script>
-    <script src='https://drinkwatr.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=5.1.3' id='wc-add-to-cart-js'></script>
-    <script src='https://drinkwatr.com/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4' id='js-cookie-js'></script>
+    <script src='https://drinkwatr.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=5.1.3'
+        id='wc-add-to-cart-js'></script>
+    <script src='https://drinkwatr.com/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4'
+        id='js-cookie-js'></script>
     <script id='woocommerce-js-extra'>
         var woocommerce_params = {
-            "ajax_url": "\/wp-admin\/admin-ajax.php"
-            , "wc_ajax_url": "\/?wc-ajax=%%endpoint%%"
+            "ajax_url": "\/wp-admin\/admin-ajax.php",
+            "wc_ajax_url": "\/?wc-ajax=%%endpoint%%"
         };
-
     </script>
-    <script src='https://drinkwatr.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=5.1.3' id='woocommerce-js'></script>
+    <script src='https://drinkwatr.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=5.1.3'
+        id='woocommerce-js'></script>
     <script id='wc-cart-fragments-js-extra'>
         var wc_cart_fragments_params = {
-            "ajax_url": "\/wp-admin\/admin-ajax.php"
-            , "wc_ajax_url": "\/?wc-ajax=%%endpoint%%"
-            , "cart_hash_key": "wc_cart_hash_631074db0316d53ccfb0934eec793508"
-            , "fragment_name": "wc_fragments_631074db0316d53ccfb0934eec793508"
-            , "request_timeout": "5000"
+            "ajax_url": "\/wp-admin\/admin-ajax.php",
+            "wc_ajax_url": "\/?wc-ajax=%%endpoint%%",
+            "cart_hash_key": "wc_cart_hash_631074db0316d53ccfb0934eec793508",
+            "fragment_name": "wc_fragments_631074db0316d53ccfb0934eec793508",
+            "request_timeout": "5000"
         };
-
     </script>
-    <script src='https://drinkwatr.com/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=5.1.3' id='wc-cart-fragments-js'></script>
-    <script src='https://drinkwatr.com/wp-content/themes/watr-shop/js/navigation.js?ver=1.0.0' id='watr-shop-navigation-js'></script>
-    <script src='https://drinkwatr.com/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.6.4' id='elementor-webpack-runtime-js'></script>
-    <script src='https://drinkwatr.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.6.4' id='elementor-frontend-modules-js'></script>
-    <script src='https://drinkwatr.com/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.0.5' id='elementor-sticky-js'></script>
+    <script src='https://drinkwatr.com/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=5.1.3'
+        id='wc-cart-fragments-js'></script>
+    <script src='https://drinkwatr.com/wp-content/themes/watr-shop/js/navigation.js?ver=1.0.0' id='watr-shop-navigation-js'>
+    </script>
+    <script src='https://drinkwatr.com/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.6.4'
+        id='elementor-webpack-runtime-js'></script>
+    <script src='https://drinkwatr.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.6.4'
+        id='elementor-frontend-modules-js'></script>
+    <script src='https://drinkwatr.com/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.0.5'
+        id='elementor-sticky-js'></script>
     <script id='elementor-pro-frontend-js-before'>
         var ElementorProFrontendConfig = {
-            "ajaxurl": "https:\/\/drinkwatr.com\/wp-admin\/admin-ajax.php"
-            , "nonce": "353e0df199"
-            , "i18n": {
+            "ajaxurl": "https:\/\/drinkwatr.com\/wp-admin\/admin-ajax.php",
+            "nonce": "353e0df199",
+            "i18n": {
                 "toc_no_headings_found": "No headings were found on this page."
-            }
-            , "shareButtonsNetworks": {
+            },
+            "shareButtonsNetworks": {
                 "facebook": {
-                    "title": "Facebook"
-                    , "has_counter": true
-                }
-                , "twitter": {
+                    "title": "Facebook",
+                    "has_counter": true
+                },
+                "twitter": {
                     "title": "Twitter"
-                }
-                , "google": {
-                    "title": "Google+"
-                    , "has_counter": true
-                }
-                , "linkedin": {
-                    "title": "LinkedIn"
-                    , "has_counter": true
-                }
-                , "pinterest": {
-                    "title": "Pinterest"
-                    , "has_counter": true
-                }
-                , "reddit": {
-                    "title": "Reddit"
-                    , "has_counter": true
-                }
-                , "vk": {
-                    "title": "VK"
-                    , "has_counter": true
-                }
-                , "odnoklassniki": {
-                    "title": "OK"
-                    , "has_counter": true
-                }
-                , "tumblr": {
+                },
+                "google": {
+                    "title": "Google+",
+                    "has_counter": true
+                },
+                "linkedin": {
+                    "title": "LinkedIn",
+                    "has_counter": true
+                },
+                "pinterest": {
+                    "title": "Pinterest",
+                    "has_counter": true
+                },
+                "reddit": {
+                    "title": "Reddit",
+                    "has_counter": true
+                },
+                "vk": {
+                    "title": "VK",
+                    "has_counter": true
+                },
+                "odnoklassniki": {
+                    "title": "OK",
+                    "has_counter": true
+                },
+                "tumblr": {
                     "title": "Tumblr"
-                }
-                , "delicious": {
+                },
+                "delicious": {
                     "title": "Delicious"
-                }
-                , "digg": {
+                },
+                "digg": {
                     "title": "Digg"
-                }
-                , "skype": {
+                },
+                "skype": {
                     "title": "Skype"
-                }
-                , "stumbleupon": {
-                    "title": "StumbleUpon"
-                    , "has_counter": true
-                }
-                , "mix": {
+                },
+                "stumbleupon": {
+                    "title": "StumbleUpon",
+                    "has_counter": true
+                },
+                "mix": {
                     "title": "Mix"
-                }
-                , "telegram": {
+                },
+                "telegram": {
                     "title": "Telegram"
-                }
-                , "pocket": {
-                    "title": "Pocket"
-                    , "has_counter": true
-                }
-                , "xing": {
-                    "title": "XING"
-                    , "has_counter": true
-                }
-                , "whatsapp": {
+                },
+                "pocket": {
+                    "title": "Pocket",
+                    "has_counter": true
+                },
+                "xing": {
+                    "title": "XING",
+                    "has_counter": true
+                },
+                "whatsapp": {
                     "title": "WhatsApp"
-                }
-                , "email": {
+                },
+                "email": {
                     "title": "Email"
-                }
-                , "print": {
+                },
+                "print": {
                     "title": "Print"
-                }
-                , "weixin": {
+                },
+                "weixin": {
                     "title": "WeChat"
-                }
-                , "weibo": {
+                },
+                "weibo": {
                     "title": "Weibo"
                 }
-            }
-            , "menu_cart": {
-                "cart_page_url": "https:\/\/drinkwatr.com\/cart\/"
-                , "checkout_page_url": "https:\/\/drinkwatr.com\/checkout\/"
-            }
-            , "facebook_sdk": {
-                "lang": "en_US"
-                , "app_id": ""
-            }
-            , "lottie": {
+            },
+            "menu_cart": {
+                "cart_page_url": "https:\/\/drinkwatr.com\/cart\/",
+                "checkout_page_url": "https:\/\/drinkwatr.com\/checkout\/"
+            },
+            "facebook_sdk": {
+                "lang": "en_US",
+                "app_id": ""
+            },
+            "lottie": {
                 "defaultAnimationUrl": "https:\/\/drinkwatr.com\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"
             }
         };
-
     </script>
-    <script src='https://drinkwatr.com/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.0.5' id='elementor-pro-frontend-js'></script>
-    <script src='https://drinkwatr.com/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2' id='elementor-waypoints-js'></script>
+    <script src='https://drinkwatr.com/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.0.5'
+        id='elementor-pro-frontend-js'></script>
+    <script src='https://drinkwatr.com/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2'
+        id='elementor-waypoints-js'></script>
     <script src='/js/jquery/ui/core.min.js?ver=1.13.1' id='jquery-ui-core-js'></script>
-    <script src='https://drinkwatr.com/wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js?ver=5.3.6' id='swiper-js'></script>
-    <script src='https://drinkwatr.com/wp-content/plugins/elementor/assets/lib/share-link/share-link.min.js?ver=3.6.4' id='share-link-js'></script>
-    <script src='https://drinkwatr.com/wp-content/plugins/elementor/assets/lib/dialog/dialog.min.js?ver=4.9.0' id='elementor-dialog-js'></script>
+    <script src='https://drinkwatr.com/wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js?ver=5.3.6'
+        id='swiper-js'></script>
+    <script src='https://drinkwatr.com/wp-content/plugins/elementor/assets/lib/share-link/share-link.min.js?ver=3.6.4'
+        id='share-link-js'></script>
+    <script src='https://drinkwatr.com/wp-content/plugins/elementor/assets/lib/dialog/dialog.min.js?ver=4.9.0'
+        id='elementor-dialog-js'></script>
     <script id='elementor-frontend-js-before'>
         var elementorFrontendConfig = {
             "environmentMode": {
-                "edit": false
-                , "wpPreview": false
-                , "isScriptDebug": false
-            }
-            , "i18n": {
-                "shareOnFacebook": "Share on Facebook"
-                , "shareOnTwitter": "Share on Twitter"
-                , "pinIt": "Pin it"
-                , "download": "Download"
-                , "downloadImage": "Download image"
-                , "fullscreen": "Fullscreen"
-                , "zoom": "Zoom"
-                , "share": "Share"
-                , "playVideo": "Play Video"
-                , "previous": "Previous"
-                , "next": "Next"
-                , "close": "Close"
-            }
-            , "is_rtl": false
-            , "breakpoints": {
-                "xs": 0
-                , "sm": 480
-                , "md": 768
-                , "lg": 1025
-                , "xl": 1440
-                , "xxl": 1600
-            }
-            , "responsive": {
+                "edit": false,
+                "wpPreview": false,
+                "isScriptDebug": false
+            },
+            "i18n": {
+                "shareOnFacebook": "Share on Facebook",
+                "shareOnTwitter": "Share on Twitter",
+                "pinIt": "Pin it",
+                "download": "Download",
+                "downloadImage": "Download image",
+                "fullscreen": "Fullscreen",
+                "zoom": "Zoom",
+                "share": "Share",
+                "playVideo": "Play Video",
+                "previous": "Previous",
+                "next": "Next",
+                "close": "Close"
+            },
+            "is_rtl": false,
+            "breakpoints": {
+                "xs": 0,
+                "sm": 480,
+                "md": 768,
+                "lg": 1025,
+                "xl": 1440,
+                "xxl": 1600
+            },
+            "responsive": {
                 "breakpoints": {
                     "mobile": {
-                        "label": "Mobile"
-                        , "value": 767
-                        , "default_value": 767
-                        , "direction": "max"
-                        , "is_enabled": true
-                    }
-                    , "mobile_extra": {
-                        "label": "Mobile Extra"
-                        , "value": 880
-                        , "default_value": 880
-                        , "direction": "max"
-                        , "is_enabled": false
-                    }
-                    , "tablet": {
-                        "label": "Tablet"
-                        , "value": 1024
-                        , "default_value": 1024
-                        , "direction": "max"
-                        , "is_enabled": true
-                    }
-                    , "tablet_extra": {
-                        "label": "Tablet Extra"
-                        , "value": 1200
-                        , "default_value": 1200
-                        , "direction": "max"
-                        , "is_enabled": false
-                    }
-                    , "laptop": {
-                        "label": "Laptop"
-                        , "value": 1366
-                        , "default_value": 1366
-                        , "direction": "max"
-                        , "is_enabled": false
-                    }
-                    , "widescreen": {
-                        "label": "Widescreen"
-                        , "value": 2400
-                        , "default_value": 2400
-                        , "direction": "min"
-                        , "is_enabled": false
+                        "label": "Mobile",
+                        "value": 767,
+                        "default_value": 767,
+                        "direction": "max",
+                        "is_enabled": true
+                    },
+                    "mobile_extra": {
+                        "label": "Mobile Extra",
+                        "value": 880,
+                        "default_value": 880,
+                        "direction": "max",
+                        "is_enabled": false
+                    },
+                    "tablet": {
+                        "label": "Tablet",
+                        "value": 1024,
+                        "default_value": 1024,
+                        "direction": "max",
+                        "is_enabled": true
+                    },
+                    "tablet_extra": {
+                        "label": "Tablet Extra",
+                        "value": 1200,
+                        "default_value": 1200,
+                        "direction": "max",
+                        "is_enabled": false
+                    },
+                    "laptop": {
+                        "label": "Laptop",
+                        "value": 1366,
+                        "default_value": 1366,
+                        "direction": "max",
+                        "is_enabled": false
+                    },
+                    "widescreen": {
+                        "label": "Widescreen",
+                        "value": 2400,
+                        "default_value": 2400,
+                        "direction": "min",
+                        "is_enabled": false
                     }
                 }
-            }
-            , "version": "3.6.4"
-            , "is_static": false
-            , "experimentalFeatures": {
-                "e_import_export": true
-                , "e_hidden_wordpress_widgets": true
-                , "landing-pages": true
-                , "elements-color-picker": true
-                , "favorite-widgets": true
-                , "admin-top-bar": true
-            }
-            , "urls": {
+            },
+            "version": "3.6.4",
+            "is_static": false,
+            "experimentalFeatures": {
+                "e_import_export": true,
+                "e_hidden_wordpress_widgets": true,
+                "landing-pages": true,
+                "elements-color-picker": true,
+                "favorite-widgets": true,
+                "admin-top-bar": true
+            },
+            "urls": {
                 "assets": "https:\/\/drinkwatr.com\/wp-content\/plugins\/elementor\/assets\/"
-            }
-            , "settings": {
-                "page": []
-                , "editorPreferences": []
-            }
-            , "kit": {
-                "active_breakpoints": ["viewport_mobile", "viewport_tablet"]
-                , "global_image_lightbox": "yes"
-                , "lightbox_enable_counter": "yes"
-                , "lightbox_enable_fullscreen": "yes"
-                , "lightbox_enable_zoom": "yes"
-                , "lightbox_enable_share": "yes"
-                , "lightbox_title_src": "title"
-                , "lightbox_description_src": "description"
-            }
-            , "post": {
-                "id": 2046
-                , "title": "ALKALINE%20%2B%20ELECTROLYTES%20%E2%80%93%20STAY%20STRONG%E2%84%A2"
-                , "excerpt": ""
-                , "featuredImage": false
+            },
+            "settings": {
+                "page": [],
+                "editorPreferences": []
+            },
+            "kit": {
+                "active_breakpoints": ["viewport_mobile", "viewport_tablet"],
+                "global_image_lightbox": "yes",
+                "lightbox_enable_counter": "yes",
+                "lightbox_enable_fullscreen": "yes",
+                "lightbox_enable_zoom": "yes",
+                "lightbox_enable_share": "yes",
+                "lightbox_title_src": "title",
+                "lightbox_description_src": "description"
+            },
+            "post": {
+                "id": 2046,
+                "title": "ALKALINE%20%2B%20ELECTROLYTES%20%E2%80%93%20STAY%20STRONG%E2%84%A2",
+                "excerpt": "",
+                "featuredImage": false
             }
         };
 
         localStorage.clear();
+
+        localStorage.setItem("detail_access_token", '{{ $detail_access_token }}');
 
         $('.select_pure').addClass('d-none');
         $('.select_alka').addClass('d-none');
@@ -1619,18 +1964,32 @@
         });
 
         function setDeliveryFrequency() {
-            $("#delivery_frequency1 option[value='1']").remove();
-            $("#delivery_frequency1 option[value='2']").remove();
-            $('#delivery_frequency1').append($("<option></option>").attr("value", '1').text('UPCOMING SUNDAY'));
-            $('#delivery_frequency1').append($("<option></option>").attr("value", '2').text('UPCOMING MONDAY'));
+            @if ($detail_access_token == 'park-grove')
+                $("#delivery_frequency1 option[value='3']").remove();
+                $("#delivery_frequency1 option[value='4']").remove();
+                $('#delivery_frequency1').append($("<option></option>").attr("value", '3').text('UPCOMING TUESDAY'));
+                $('#delivery_frequency1').append($("<option></option>").attr("value", '4').text('UPCOMING WEDNESDAY'));
+            @else
+                $("#delivery_frequency1 option[value='1']").remove();
+                $("#delivery_frequency1 option[value='2']").remove();
+                $('#delivery_frequency1').append($("<option></option>").attr("value", '1').text('UPCOMING SUNDAY'));
+                $('#delivery_frequency1').append($("<option></option>").attr("value", '2').text('UPCOMING MONDAY'));
+            @endif
             $('#delivery_frequency1').selectpicker('refresh');
         }
 
         function resetDeliveryFrequency() {
-            $("#delivery_frequency1 option[value='1']").remove();
-            $("#delivery_frequency1 option[value='2']").remove();
-            $('#delivery_frequency1').append($("<option></option>").attr("value", '1').text('UPCOMING SUNDAY'));
-            $('#delivery_frequency1').append($("<option></option>").attr("value", '2').text('UPCOMING MONDAY'));
+            @if ($detail_access_token == 'park-grove')
+                $("#delivery_frequency1 option[value='3']").remove();
+                $("#delivery_frequency1 option[value='4']").remove();
+                $('#delivery_frequency1').append($("<option></option>").attr("value", '3').text('UPCOMING TUESDAY'));
+                $('#delivery_frequency1').append($("<option></option>").attr("value", '4').text('UPCOMING WEDNESDAY'));
+            @else
+                $("#delivery_frequency1 option[value='1']").remove();
+                $("#delivery_frequency1 option[value='2']").remove();
+                $('#delivery_frequency1').append($("<option></option>").attr("value", '1').text('UPCOMING SUNDAY'));
+                $('#delivery_frequency1').append($("<option></option>").attr("value", '2').text('UPCOMING MONDAY'));
+            @endif
             $('#delivery_frequency1').selectpicker('refresh');
         }
 
@@ -1696,29 +2055,31 @@
             // location.replace("{{ request()->fullUrlWithQuery(['page' => '2']) }}");
         }
         // hydrationOn(); //remove after
-
     </script>
-    <script src='https://drinkwatr.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.6.4' id='elementor-frontend-js'></script>
-    <script src='https://drinkwatr.com/wp-content/plugins/elementor/assets/js/preloaded-modules.min.js?ver=3.6.4' id='preloaded-modules-js'></script>
+    <script src='https://drinkwatr.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.6.4'
+        id='elementor-frontend-js'></script>
+    <script src='https://drinkwatr.com/wp-content/plugins/elementor/assets/js/preloaded-modules.min.js?ver=3.6.4'
+        id='preloaded-modules-js'></script>
     <script src="{{ asset('js/popper.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap-select.js') }}"></script>
 
-    @if (!empty(session('response_success_msg',null)))
-    <script>
-        $(".main_content").hide();
-        $(".final_form").show();
-
-    </script>
-    @php
-    request()->session()->forget('response_success_msg');
-    @endphp
+    @if (!empty(session('response_success_msg', null)))
+        <script>
+            $(".main_content").hide();
+            $(".final_form").show();
+        </script>
+        @php
+            request()
+                ->session()
+                ->forget('response_success_msg');
+        @endphp
     @else
-    <script>
-        $(".main_content").show();
-        $(".final_form").hide();
-
-    </script>
+        <script>
+            $(".main_content").show();
+            $(".final_form").hide();
+        </script>
     @endif
 </body>
+
 </html>
