@@ -469,9 +469,7 @@
         <a href="#" class="close-button" onclick="paymentValidationOff()"><img
                 src="https://drinkwatr.com/wp-content/uploads/2022/02/close.png" style="max-width: 20px;"></a>
         <div style="margin: 15px; margin-top: 30px; font-size: 17px;" class="text-center">
-            Invoice Payment Failed!
-            <br>
-            Please contact DrinkWatr Support.
+            Payment unsuccessful. Please use an alternative payment source. Thank you for your business. STAY STRONG.
         </div>
     </div>
     <script>

@@ -413,8 +413,23 @@
                                                 title="{{ config('constants.package.delivery_freq_text') }}">
                                                 <option data-hidden="true" selected="selected">
                                                     {{ config('constants.package.delivery_freq_text') }}</option>
-                                                <option value="1">UPCOMING SUNDAY</option>
-                                                <option value="2">UPCOMING MONDAY</option>
+                                                {{-- <option value="1">UPCOMING SUNDAY</option> --}}
+                                                {{-- <option value="2">UPCOMING MONDAY</option> --}}
+                                                @if ($detail_access_token != 'park-grove')
+                                                    <option value="1">
+                                                        UPCOMING SUNDAY
+                                                    </option>
+                                                    <option value="2">
+                                                        UPCOMING MONDAY
+                                                    </option>
+                                                @else
+                                                    <option value="3">
+                                                        UPCOMING TUESDAY
+                                                    </option>
+                                                    <option value="4">
+                                                        UPCOMING WEDNESDAY
+                                                    </option>
+                                                @endif
                                             </select>
                                         </div>
                                     </div>
@@ -569,8 +584,23 @@
                                                 title="{{ config('constants.package.delivery_freq_text') }}">
                                                 <option selected disabled data-hidden="true">
                                                     {{ config('constants.package.delivery_freq_text') }}</option>
-                                                <option value="1">UPCOMING SUNDAY</option>
-                                                <option value="2">UPCOMING MONDAY</option>
+                                                {{-- <option value="1">UPCOMING SUNDAY</option> --}}
+                                                {{-- <option value="2">UPCOMING MONDAY</option> --}}
+                                                @if ($detail_access_token != 'park-grove')
+                                                    <option value="1">
+                                                        UPCOMING SUNDAY
+                                                    </option>
+                                                    <option value="2">
+                                                        UPCOMING MONDAY
+                                                    </option>
+                                                @else
+                                                    <option value="3">
+                                                        UPCOMING TUESDAY
+                                                    </option>
+                                                    <option value="4">
+                                                        UPCOMING WEDNESDAY
+                                                    </option>
+                                                @endif
                                             </select>
                                         </div>
                                     </div>
@@ -737,8 +767,23 @@
                                                 title="{{ config('constants.package.delivery_freq_text') }}">
                                                 <option value="" data-hidden="true">
                                                     {{ config('constants.package.delivery_freq_text') }}</option>
-                                                <option value="1" selected>UPCOMING SUNDAY</option>
-                                                <option value="2">UPCOMING MONDAY</option>
+                                                {{-- <option value="1">UPCOMING SUNDAY</option> --}}
+                                                {{-- <option value="2">UPCOMING MONDAY</option> --}}
+                                                @if ($detail_access_token != 'park-grove')
+                                                    <option value="1">
+                                                        UPCOMING SUNDAY
+                                                    </option>
+                                                    <option value="2">
+                                                        UPCOMING MONDAY
+                                                    </option>
+                                                @else
+                                                    <option value="3">
+                                                        UPCOMING TUESDAY
+                                                    </option>
+                                                    <option value="4">
+                                                        UPCOMING WEDNESDAY
+                                                    </option>
+                                                @endif
                                             </select>
                                         </div>
                                     </div>
@@ -829,8 +874,23 @@
                                                 title="{{ config('constants.package.delivery_freq_text') }}">
                                                 <option value="" data-hidden="true">
                                                     {{ config('constants.package.delivery_freq_text') }}</option>
-                                                <option value="1">UPCOMING SUNDAY</option>
-                                                <option value="2">UPCOMING MONDAY</option>
+                                                {{-- <option value="1">UPCOMING SUNDAY</option> --}}
+                                                {{-- <option value="2">UPCOMING MONDAY</option> --}}
+                                                @if ($detail_access_token != 'park-grove')
+                                                    <option value="1">
+                                                        UPCOMING SUNDAY
+                                                    </option>
+                                                    <option value="2">
+                                                        UPCOMING MONDAY
+                                                    </option>
+                                                @else
+                                                    <option value="3">
+                                                        UPCOMING TUESDAY
+                                                    </option>
+                                                    <option value="4">
+                                                        UPCOMING WEDNESDAY
+                                                    </option>
+                                                @endif
                                             </select>
                                         </div>
                                     </div>
@@ -943,8 +1003,23 @@
                                                 <option value="" data-hidden="true"
                                                     title="{{ config('constants.package.delivery_freq_text') }}">
                                                     {{ config('constants.package.delivery_freq_text') }}</option>
-                                                <option value="1" selected>UPCOMING SUNDAY</option>
-                                                <option value="2">UPCOMING MONDAY</option>
+                                                {{-- <option value="1">UPCOMING SUNDAY</option> --}}
+                                                {{-- <option value="2">UPCOMING MONDAY</option> --}}
+                                                @if ($detail_access_token != 'park-grove')
+                                                    <option value="1">
+                                                        UPCOMING SUNDAY
+                                                    </option>
+                                                    <option value="2">
+                                                        UPCOMING MONDAY
+                                                    </option>
+                                                @else
+                                                    <option value="3">
+                                                        UPCOMING TUESDAY
+                                                    </option>
+                                                    <option value="4">
+                                                        UPCOMING WEDNESDAY
+                                                    </option>
+                                                @endif
                                             </select>
                                             <button type="button" class="edit btn_effect edit_delivery_freq">Edit
                                             </button>

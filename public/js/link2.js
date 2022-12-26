@@ -1,5 +1,6 @@
 var form = document.querySelector('#basic-form');
 var client_token = $('.client_token').val();
+var detail_access_token = localStorage.getItem('detail_access_token');
 
 braintree.dropin.create({
     authorization: client_token,
@@ -219,18 +220,32 @@ $(document).ready(function() {
     });
 
     function setDeliveryFrequency() {
-        $("#delivery_frequency5 option[value='1']").remove();
-        $("#delivery_frequency5 option[value='2']").remove();
-        $('#delivery_frequency5').append($("<option></option>").attr("value", '1').text('UPCOMING SUNDAY'));
-        $('#delivery_frequency5').append($("<option></option>").attr("value", '2').text('UPCOMING MONDAY'));
+        if (detail_access_token == 'park-grove') {
+            $("#delivery_frequency5 option[value='3']").remove();
+            $("#delivery_frequency5 option[value='4']").remove();
+            $('#delivery_frequency5').append($("<option></option>").attr("value", '3').text('UPCOMING TUESDAY'));
+            $('#delivery_frequency5').append($("<option></option>").attr("value", '4').text('UPCOMING WEDNESDAY'));
+        } else {
+            $("#delivery_frequency5 option[value='1']").remove();
+            $("#delivery_frequency5 option[value='2']").remove();
+            $('#delivery_frequency5').append($("<option></option>").attr("value", '1').text('UPCOMING SUNDAY'));
+            $('#delivery_frequency5').append($("<option></option>").attr("value", '2').text('UPCOMING MONDAY'));
+        }
         $('#delivery_frequency5').selectpicker('refresh');
     }
 
     function resetDeliveryFrequency() {
-        $("#delivery_frequency5 option[value='1']").remove();
-        $("#delivery_frequency5 option[value='2']").remove();
-        $('#delivery_frequency5').append($("<option></option>").attr("value", '1').text('UPCOMING SUNDAY'));
-        $('#delivery_frequency5').append($("<option></option>").attr("value", '2').text('UPCOMING MONDAY'));
+        if (detail_access_token == 'park-grove') {
+            $("#delivery_frequency5 option[value='3']").remove();
+            $("#delivery_frequency5 option[value='4']").remove();
+            $('#delivery_frequency5').append($("<option></option>").attr("value", '3').text('UPCOMING TUESDAY'));
+            $('#delivery_frequency5').append($("<option></option>").attr("value", '4').text('UPCOMING WEDNESDAY'));
+        } else {
+            $("#delivery_frequency5 option[value='1']").remove();
+            $("#delivery_frequency5 option[value='2']").remove();
+            $('#delivery_frequency5').append($("<option></option>").attr("value", '1').text('UPCOMING SUNDAY'));
+            $('#delivery_frequency5').append($("<option></option>").attr("value", '2').text('UPCOMING MONDAY'));
+        }
         $('#delivery_frequency5').selectpicker('refresh');
     }
 
