@@ -115,22 +115,13 @@ braintree.client.create({
 
 
 function handleVenmoSuccess(payload) {
-    // Send the payment method nonce to your server, e.g. by injecting
-    // it into your form as a hidden input.
     console.log('Got a payment method nonce:', payload.nonce);
-
-    // Display the Venmo username in your checkout UI.
     console.log('Venmo user:', payload.details.username);
-    var amount = 1;
+    // payload_nonce = "fake-venmo-account-nonce";
+    $('#payment_method_nonce').val(payload.nonce);
+    $('#payment_method_nonce_update').val(payload.nonce);
 
-    //test nonce for venmo
-    payload_nonce = "fake-venmo-account-nonce";
-
-    //uncomment this for live integration
-    var payerID = payload_nonce; //payload.nonce;
-    var deviceDataToken = '{"correlation_id":"bc850bc0840ab2d9e1d34842d0e3ffa5"}';
-    var deviceData = encodeURI(deviceDataToken);
-    var venmo_server_url = '{{url("venmo_server")}}';
+    document.querySelector('#basic-form').submit();
     // window.location = "/Directory_name/venmo_server.php/?payerID=" + payerID + "&deviceData=" + deviceData + "&amount=" + amount;
-    window.location = venmo_server_url + "/?payerID=" + payerID + "&deviceData=" + deviceData + "&amount=" + amount;
+    // window.location = venmo_server_url + "/?payerID=" + payerID + "&deviceData=" + deviceData + "&amount=" + amount;
 }
