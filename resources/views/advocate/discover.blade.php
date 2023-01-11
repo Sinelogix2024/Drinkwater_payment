@@ -576,18 +576,85 @@
 
                                                                             <div class="box-one boxes">
                                                                                 <div class="content-data-add"
-                                                                                    style="text-align: center;max-width: 450px;margin: 0 auto;font-size: 20px;">
+                                                                                    style="text-align: center;max-width: 850px;margin: 0 auto;font-size: 16px;padding-bottom: 20px;">
                                                                                     DRINK WATR and Park Grove Residences
                                                                                     have collaborated in order to
-                                                                                    provide
-                                                                                    your community with premium wellness
-                                                                                    and
-                                                                                    premium daily hydration support.
-                                                                                    Swipe
-                                                                                    left to discover our incredible and
-                                                                                    unique products designed to keep you
-                                                                                    strong.
+                                                                                    provide your community with premium
+                                                                                    wellness and premium daily hydration
+                                                                                    support. <br> <br>
+
+                                                                                    A percentage of revenue goes back to
+                                                                                    your community association to
+                                                                                    protect your fees from increasing,
+                                                                                    and to support community wellness +
+                                                                                    higher quality living. <br><br>
+
+                                                                                    Swipe left to discover our
+                                                                                    incredible and unique products
+                                                                                    designed to keep you strong.<br><br>
+                                                                                    DRINK WATR and Park Grove Residences
+                                                                                    have collaborated in order to
+                                                                                    provide your community with premium
+                                                                                    wellness and premium daily hydration
+                                                                                    support. <br>
+
+                                                                                    A percentage of revenue goes back to
+                                                                                    your community association to
+                                                                                    protect your fees from increasing,
+                                                                                    and to support community wellness +
+                                                                                    higher quality living. <br><br>
+
+                                                                                    Swipe left to discover our
+                                                                                    incredible and unique products
+                                                                                    designed to keep you strong.
+
                                                                                 </div>
+                                                                                {{-- <div class="content-data-add"
+                                                                                    style="text-align: center;max-width: 450px;margin: 0 auto;font-size: 20px;">
+                                                                                    <p>
+                                                                                        DRINK WATR and Park Grove
+                                                                                        Residences
+                                                                                        have collaborated in order to
+                                                                                        provide your community with
+                                                                                        premium
+                                                                                        wellness and premium daily
+                                                                                        hydration
+                                                                                        support.
+
+                                                                                        A percentage of revenue goes
+                                                                                        back to
+                                                                                        your community association to
+                                                                                        protect your fees from
+                                                                                        increasing,
+                                                                                        and to support community
+                                                                                        wellness +
+                                                                                        higher quality living.
+
+                                                                                        Swipe left to discover our
+                                                                                        incredible and unique products
+                                                                                        designed to keep you strong.
+                                                                                        DRINK WATR and Park Grove
+                                                                                        Residences
+                                                                                        have collaborated in order to
+                                                                                        provide your community with
+                                                                                        premium
+                                                                                        wellness and premium daily
+                                                                                        hydration
+                                                                                        support.
+
+                                                                                        A percentage of revenue goes
+                                                                                        back to
+                                                                                        your community association to
+                                                                                        protect your fees from
+                                                                                        increasing,
+                                                                                        and to support community
+                                                                                        wellness +
+                                                                                        higher quality living.
+
+                                                                                        Swipe left to discover our
+                                                                                        incredible and unique products
+                                                                                        designed to keep you strong.</p>
+                                                                                </div> --}}
                                                                                 <style>
                                                                                     figure img {
                                                                                         height: 150px !important;

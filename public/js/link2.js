@@ -542,7 +542,7 @@ $(document).ready(function() {
 
             if (current_tab == 'step5_form') {
                 showLoader();
-                alert(3);
+                // alert(3);
                 // return;
                 // form.submit();
                 $('.package_note_final_page').text($('#package5').children("option:selected").text());
