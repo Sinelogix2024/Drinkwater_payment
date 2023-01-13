@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Advocate\AdvocateController;
 use App\Mail\OrderPlaced;
 use App\Models\Order;
 use App\Models\Advocate;
@@ -71,9 +72,7 @@ Route::get('/discover/{detail_access_token}', function ($detail_access_token) {
     return view('advocate/discover')->with('detail_access_token', $detail_access_token);
 });
 
-Route::get('/home/{detail_access_token}', function ($detail_access_token) {
-    return view('advocate/experience')->with('detail_access_token', $detail_access_token);
-});
+Route::get('/home/{detail_access_token}', [AdvocateController::class, 'GetHomePage']);
 Route::get('/experience/{detail_access_token}', function ($detail_access_token) {
     return view('advocate/drink')->with('detail_access_token', $detail_access_token);
 })->name('experience');
