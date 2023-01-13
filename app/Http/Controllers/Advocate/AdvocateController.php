@@ -16,6 +16,21 @@ use Illuminate\Support\Facades\Mail;
 
 class AdvocateController extends Controller
 {
+    public function GetHomePage(Request $request)
+    {
+        $detail_access_token = $request->detail_access_token;
+
+        $accessTokenData = Advocate::where('adv_detail_access_token', $detail_access_token)->first();
+
+        if (empty($accessTokenData)) {
+            return view('others/no_data_found');
+        }
+
+        if ($accessTokenData->is_collab == 1) {
+            return view('advocate/experience')->with('detail_access_token', $detail_access_token);
+        }
+        return redirect(route('experience', ['detail_access_token' => $detail_access_token]));
+    }
     /**
      * @name : getDetail
      */
