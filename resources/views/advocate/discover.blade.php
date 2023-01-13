@@ -605,13 +605,13 @@
                                                                                         <img decoding="async"
                                                                                             src="{{ asset('images/logowater.png') }}"
                                                                                             class="stk-img2"
-                                                                                            style="text-align: center;display: block;margin: 0 auto;position: relative;max-width: 70px !important;margin-right: -5px;"></a>
+                                                                                            style="height: 100px !important; text-align: center;display: block;margin: 0 auto;position: relative;max-width: 70px !important;margin-right: -5px;"></a>
                                                                                     <span
                                                                                         style="font-size: 30px;line-height: 1;color: #222;margin-top: -15px;font-weight: initial;margin-left: -10px;">+</span>
                                                                                     <img decoding="async"
                                                                                         src="{{ asset('images') . '/park_grove.png' }}"
                                                                                         alt="Logo"
-                                                                                        style="max-width: 150px;">
+                                                                                        style="height: 100px !important; max-width: 150px;">
                                                                                 </div>
                                                                             </div>
                                                                         </div>
