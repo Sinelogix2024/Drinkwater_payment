@@ -368,7 +368,7 @@
                                                                         <td>{{ config('constants.product_name.' . $product->product_name) }}
                                                                         </td>
                                                                         <td>{{ $product->kits }}</td>
-                                                                        <td>{{ $product->price }}</td>
+                                                                        <td>${{ str_replace('$','',$product->price)*$product->kits*12 }}</td>
                                                                     </tr>
                                                                 @endforeach
                                                                 <tr class="lastrow">
@@ -388,9 +388,15 @@
                                                                 <table class="p_total">
                                                                     <tbody>
                                                                         <tr>
+                                                                            <td>Service Fee</td>
+                                                                            <td class="servicefee">
+                                                                                ${{ $invoiceDataObj->odr_service_fee }}
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
                                                                             <td>Subtotal</td>
                                                                             <td class="subtotal">
-                                                                                ${{ $invoiceDataObj->odr_total_amount }}
+                                                                                ${{ $invoiceDataObj->odr_subtotal_amount }}
                                                                             </td>
                                                                         </tr>
                                                                         <tr>

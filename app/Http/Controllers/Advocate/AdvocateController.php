@@ -382,6 +382,8 @@ class AdvocateController extends Controller
                     'odr_transaction_id' => $request->odr_transaction_id,
                     'delivery_fee' => $request->delivery_fee,
                     'odr_total_amount' => $request->odr_total_amount,
+                    'odr_subtotal_amount' => $request->odr_subtotal_amount,
+                    'odr_service_fee' => $request->odr_service_fee,
                     'odr_tax_amount' => $request->odr_tax_amount
                 ]
             );
