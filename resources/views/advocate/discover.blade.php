@@ -646,7 +646,7 @@
 
                                                                                 {{-- <img class="bottlemain"
                                                                                 src="https://drinkwatr.com/wp-content/uploads/2023/02/pure-short-img-rbg-1.png"> --}}
-                                                                                
+
                                                                             </div>
                                                                         <div class="box-three boxes">
                                                                         </div>
