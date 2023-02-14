@@ -1340,7 +1340,7 @@
 <script src="https://js.braintreegateway.com/web/3.77.0/js/data-collector.min.js"></script>
 <script src="{{ asset('js/venmo.js') }}"></script>
 <script src="https://js.braintreegateway.com/web/3.85.5/js/client.min.js"></script>
-<script src="https://js.braintreegateway.com/web/3.85.3/js/apple-pay.min.js"></script>
+<script src="https://js.braintreegateway.com/web/3.85.5/js/apple-pay.min.js"></script>
 <script src="{{ asset('js/applepay.js') }}"></script>
 <script src='https://js.braintreegateway.com/web/3.85.5/js/hosted-fields.min.js'></script>
 <script src="{{ asset('js/hosted-custom.js') }}"></script>
