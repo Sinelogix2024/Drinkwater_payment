@@ -642,12 +642,15 @@
                                                                         </div>
                                                                         <div class="box-two boxes">
                                                                             <img class="bottlemain"
+
                                                                                 src="https://drinkwatr.com/wp-content/uploads/2023/02/DSC03018_E1-1-1-removebg-final.png">
 
                                                                                 {{-- <img class="bottlemain"
                                                                                 src="https://drinkwatr.com/wp-content/uploads/2023/02/pure-short-img-rbg-1.png"> --}}
-                                                                                
+
+
                                                                             </div>
+
                                                                         <div class="box-three boxes">
                                                                         </div>
                                                                     </div>
