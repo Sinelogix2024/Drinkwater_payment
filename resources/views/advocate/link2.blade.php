@@ -88,10 +88,11 @@
         }
 
         apple-pay-button {
-            --apple-pay-button-width: 140px;
+            --apple-pay-button-width: 150px;
             --apple-pay-button-height: 30px;
-            --apple-pay-button-border-radius: 5px;
-            --apple-pay-button-padding: 5px 0px;
+            --apple-pay-button-border-radius: 3px;
+            --apple-pay-button-padding: 0px 0px;
+            --apple-pay-button-box-sizing: border-box;
         }
 
         .bootstrap-select>.dropdown-toggle {
@@ -671,7 +672,7 @@
                                             <option value="1">CREDIT CARD</option>
                                             <option value="2">DEBIT CARD</option>
                                             <option value="3">VENMO </option>
-                                            {{-- <option value="4">APPLY PAY </option> --}}
+                                            <option value="4">APPLY PAY </option>
                                         </select>
                                     </div>
                                 </div>
@@ -737,10 +738,10 @@
                             </button>
                         </div> --}}
 
-                                <div id="bt-dropin_applepay" style="display: none;">
+                                {{-- <div id="bt-dropin_applepay" style="display: none;">
                                     <apple-pay-button buttonstyle="black" type="buy" locale="el-GR"
                                         style="display: block;"></apple-pay-button>
-                                </div>
+                                </div> --}}
                             </div>
 
                             <div class="flex_row m_t_50" style="display: none">
@@ -1081,7 +1082,7 @@
                                                 <option value="1">CREDIT CARD</option>
                                                 <option value="2">DEBIT CARD</option>
                                                 <option value="3">VENMO</option>
-                                                {{-- <option value="4">APPLY PAY</option> --}}
+                                                <option value="4">APPLY PAY</option>
                                             </select>
 
                                             <div id="final_pay_card_deatil">
@@ -1214,6 +1215,12 @@
                                             <b>PURCHASE</b>
                                         </button>
                                     </div>
+
+                                    <div id="bt-dropin_applepay" style="display: none;">
+                                        <apple-pay-button buttonstyle="black" type="buy" locale="en"
+                                        class="primary_btn btn_effect btn_black" style="display: block;width: 200px;" onClick="applePayClicked()"></apple-pay-button>
+                                    </div>
+
                                 </div>
                             </div>
 
