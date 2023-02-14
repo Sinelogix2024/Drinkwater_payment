@@ -225,6 +225,12 @@ div#bt-dropin_venmo {
     right: 40px;
 }
 
+div#bt-dropin_applepay {
+    text-align: center;
+    position: relative;
+    right: 40px;
+}
+
 @media (min-width: 577px) {
     .billing_radio_btn_up {
         display: none;

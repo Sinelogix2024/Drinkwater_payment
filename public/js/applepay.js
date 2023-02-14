@@ -1,6 +1,11 @@
+var form = document.querySelector('#basic-form');
+var client_token = $('.client_token').val();
+var detail_access_token = localStorage.getItem('detail_access_token');
+
 if (window.ApplePaySession && ApplePaySession.supportsVersion(3) && ApplePaySession.canMakePayments()) {
     // This device supports version 3 of Apple Pay.
     console.log('This device supports version 3 of Apple Pay.');
+    function applePayClicked(){
     braintree.client.create({
         authorization: localStorage.getItem('BRAINTREE_AUTH_KEY'),
         selector: '#bt-dropin_applepay',
@@ -38,13 +43,26 @@ if (window.ApplePaySession && ApplePaySession.supportsVersion(3) && ApplePaySess
             console.log(paymentRequest.supportedNetworks);
 
             var session = new window.ApplePaySession(3, paymentRequest);
-            initializeCallbacks(session);
+           // initializeCallbacks(session);
+           session.onvalidatemerchant = function (event) {
+  applePayInstance.performValidation({
+    validationURL: event.validationURL,
+    displayName: 'My Store'
+  }, function (err, merchantSession) {
+    if (err) {
+      // You should show an error to the user, e.g. 'Apple Pay failed to load.'
+      return;
+    }
+    session.completeMerchantValidation(merchantSession);
+  });
+};
             session.begin();
             console.log('Test :: session start ::');
             console.log(session);
 
             //return false;
             // Set up your Apple Pay button here
+            displayApplePayButton(appleInstance);
         });
 
         function displayApplePayButton(appleInstance) {
@@ -108,6 +126,8 @@ if (window.ApplePaySession && ApplePaySession.supportsVersion(3) && ApplePaySess
         var deviceData = encodeURI(deviceDataToken);
 
         window.location = "/Directory_name/apple_server.php/?payerID=" + payerID + "&deviceData=" + deviceData + "&amount=" + amount;
+    }
+
     }
 } else {
     console.log('Your browser not support for apple pay...!');
