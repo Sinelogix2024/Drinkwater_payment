@@ -1217,8 +1217,10 @@
                                     </div>
 
                                     <div id="bt-dropin_applepay" style="display: none;">
+                                        <center>
                                         <apple-pay-button buttonstyle="black" type="buy" locale="en"
                                         class="primary_btn btn_effect btn_black" style="display: block;width: 200px;" onClick="applePayClicked()"></apple-pay-button>
+                                        </center>
                                     </div>
 
                                 </div>
