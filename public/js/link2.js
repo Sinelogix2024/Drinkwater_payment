@@ -261,7 +261,7 @@ $(document).ready(function() {
             $("#bt-dropin").hide();
             $("#bt-dropin_venmo").hide();
             $("#bt-dropin_applepay").show();
-            $(".purchase_button").show();
+            $(".purchase_button").hide();
         } else {
             $("#bt-dropin").show();
             $("#bt-dropin_venmo").hide();
