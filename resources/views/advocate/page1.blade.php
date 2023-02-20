@@ -925,15 +925,25 @@
                                                                                                 selected>
                                                                                                 {{ config('constants.package.default_drop_down_text') }}
                                                                                             </option>
+                                                                                            @if ($advocateData->is_collab==1)
                                                                                             <option value="1">1
                                                                                                 WEEK WELLNESS $78 ( 3
                                                                                                 KITS )</option>
+                                                                                                <option value="2">1
+                                                                                                    MONTH WELLNESS $250 ( 10
+                                                                                                    KITS )</option>
+                                                                                                <option value="3">2
+                                                                                                    MONTH WELLNESS $500 ( 20
+                                                                                                    KITS )</option>
+                                                                                            @endif
+                                                                                            @if ($advocateData->is_collab==0)
                                                                                             <option value="2">1
                                                                                                 MONTH WELLNESS $250 ( 10
                                                                                                 KITS )</option>
-                                                                                            <option value="3">2
-                                                                                                MONTH WELLNESS $500 ( 20
-                                                                                                KITS )</option>
+
+                                                                                            @endif
+
+
                                                                                         </select>
 
                                                                                         <select
@@ -948,15 +958,26 @@
                                                                                                 selected>
                                                                                                 {{ config('constants.package.default_drop_down_text') }}
                                                                                             </option>
+                                                                                            @if ($advocateData->is_collab==1)
                                                                                             <option value="1">1
                                                                                                 WEEK WELLNESS $66 ( 3
                                                                                                 KITS )</option>
+                                                                                                <option value="2">1
+                                                                                                    MONTH WELLNESS $220 ( 10
+                                                                                                    KITS )</option>
+                                                                                                <option value="3">2
+                                                                                                        MONTH WELLNESS $440 ( 20
+                                                                                                    KITS )</option>
+                                                                                            @endif
+                                                                                            @if ($advocateData->is_collab==0)
                                                                                             <option value="2">1
                                                                                                 MONTH WELLNESS $220 ( 10
                                                                                                 KITS )</option>
-                                                                                            <option value="3">2
-                                                                                                MONTH WELLNESS $440 ( 20
-                                                                                                KITS )</option>
+
+                                                                                            @endif
+
+
+
                                                                                         </select>
 
                                                                                     </div>
@@ -1134,12 +1155,22 @@
                                                                                                     selected>SELECT YOUR
                                                                                                     WELLNESS SOLUTION
                                                                                                 </option>
+                                                                                                @if ($advocateData->is_collab==1)
                                                                                                 <option value="1">
                                                                                                     1 WEEK</option>
-                                                                                                <option value="2">
-                                                                                                    1 MONTH</option>
-                                                                                                <option value="3">
-                                                                                                    2 MONTH</option>
+                                                                                                    <option value="2">
+                                                                                                        1 MONTH</option>
+                                                                                                    <option value="3">
+                                                                                                        2 MONTH</option>
+                                                                                            @endif
+                                                                                            @if ($advocateData->is_collab==0)
+                                                                                            <option value="2">
+                                                                                                1 MONTH</option>
+
+                                                                                            @endif
+
+
+
                                                                                             </select>
                                                                                         </div>
                                                                                     </div>
@@ -1267,6 +1298,7 @@
                                                                                                     selected>
                                                                                                     {{ config('constants.package.default_drop_down_text') }}
                                                                                                 </option>
+                                                                                                @if ($advocateData->is_collab==1)
                                                                                                 <option value="1">
                                                                                                     1 WEEK WELLNESS
                                                                                                 </option>
@@ -1276,6 +1308,14 @@
                                                                                                 <option value="3">
                                                                                                     2 MONTH WELLNESS
                                                                                                 </option>
+                                                                                            @endif
+                                                                                            @if ($advocateData->is_collab==0)
+                                                                                            <option value="2">
+                                                                                                1 MONTH WELLNESS
+                                                                                            </option>
+
+                                                                                            @endif
+
                                                                                             </select>
                                                                                         </div>
                                                                                     </div>
