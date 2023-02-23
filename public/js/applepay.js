@@ -27,7 +27,7 @@ if (window.ApplePaySession && ApplePaySession.supportsVersion(3) && ApplePaySess
             var paymentRequest = applePayInstance.createPaymentRequest({
                 total: {
                     label: 'DRINK WATR',
-                    amount: '0.01'
+                    amount: '1.00'
                 },
 
                 // We recommend collecting billing address information, at minimum
