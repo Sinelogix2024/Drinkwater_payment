@@ -26,8 +26,8 @@ if (window.ApplePaySession && ApplePaySession.supportsVersion(3) && ApplePaySess
 
             var paymentRequest = applePayInstance.createPaymentRequest({
                 total: {
-                    label: 'My Store',
-                    amount: '19.99'
+                    label: 'DRINK WATR',
+                    amount: '0.01'
                 },
 
                 // We recommend collecting billing address information, at minimum
@@ -47,7 +47,7 @@ if (window.ApplePaySession && ApplePaySession.supportsVersion(3) && ApplePaySess
            session.onvalidatemerchant = function (event) {
   applePayInstance.performValidation({
     validationURL: event.validationURL,
-    displayName: 'My Store'
+    displayName: 'DRINK WATR'
   }, function (err, merchantSession) {
     if (err) {
       // You should show an error to the user, e.g. 'Apple Pay failed to load.'
@@ -64,6 +64,20 @@ if (window.ApplePaySession && ApplePaySession.supportsVersion(3) && ApplePaySess
             // Set up your Apple Pay button here
             displayApplePayButton(appleInstance);
         });
+
+         braintree.dataCollector.create({
+        client: clientInstance,
+        paypal: true
+    }, function(dataCollectorErr, dataCollectorInstance) {
+        if (dataCollectorErr) {
+            // Handle error in creation of data collector.
+            console.log(dataCollectorErr);
+            return;
+        }
+
+        console.log('dataCollectorInstance:', dataCollectorInstance);
+        console.log('Got device data:', dataCollectorInstance.deviceData);
+    });
 
         function displayApplePayButton(appleInstance) {
             console.log('displayAppleButton');
@@ -108,24 +122,40 @@ if (window.ApplePaySession && ApplePaySession.supportsVersion(3) && ApplePaySess
 
 
 
+    // function handleVenmoSuccess(payload) {
+    //     // Send the payment method nonce to your server, e.g. by injecting
+    //     // it into your form as a hidden input.
+    //     console.log('Got a payment method nonce:', payload.nonce);
+
+    //     // Display the apple username in your checkout UI.
+    //     console.log('apple user:', payload.details.username);
+    //     var amount = 1;
+
+    //     //test nonce for apple
+    //     payload_nonce = "fake-apple-account-nonce";
+
+    //     //uncomment this for live integration
+    //     var payerID = payload_nonce; //payload.nonce;
+    //     var deviceDataToken = '{"correlation_id":"bc850bc0840ab2d9e1d34842d0e3ffa5"}';
+    //     var deviceData = encodeURI(deviceDataToken);
+
+    //     window.location = "/Directory_name/apple_server.php/?payerID=" + payerID + "&deviceData=" + deviceData + "&amount=" + amount;
+    // }
+
     function handleVenmoSuccess(payload) {
-        // Send the payment method nonce to your server, e.g. by injecting
-        // it into your form as a hidden input.
         console.log('Got a payment method nonce:', payload.nonce);
+        //console.log('Venmo user:', payload.details.username);
 
-        // Display the apple username in your checkout UI.
-        console.log('apple user:', payload.details.username);
-        var amount = 1;
-
-        //test nonce for apple
         payload_nonce = "fake-apple-account-nonce";
 
-        //uncomment this for live integration
-        var payerID = payload_nonce; //payload.nonce;
-        var deviceDataToken = '{"correlation_id":"bc850bc0840ab2d9e1d34842d0e3ffa5"}';
-        var deviceData = encodeURI(deviceDataToken);
+         //uncomment this for live integration
+         var payerID = payload_nonce; //payload.nonce;
+        $('#payment_method_nonce').val(payload.nonce);
+        $('#payment_method_nonce_update').val(payload.nonce);
 
-        window.location = "/Directory_name/apple_server.php/?payerID=" + payerID + "&deviceData=" + deviceData + "&amount=" + amount;
+        document.querySelector('#basic-form').submit();
+        // window.location = "/Directory_name/venmo_server.php/?payerID=" + payerID + "&deviceData=" + deviceData + "&amount=" + amount;
+        // window.location = venmo_server_url + "/?payerID=" + payerID + "&deviceData=" + deviceData + "&amount=" + amount;
     }
 
     }
