@@ -134,7 +134,7 @@
                 <table class="p_total"
                             style="border-collapse:collapse;background-color:transparent;width: 90%;color: #000; margin-left:-15px">
                             <tbody>
-                                <tr style="">
+                                {{-- <tr style="">
                                 <td style="padding: 10px;">Service Fee</td>
                                     <td class="subtotal" style="padding: 10px;">
                                         @if (isset($invoiceDataObj->odr_service_fee))
@@ -142,7 +142,7 @@
                                         @endif
 
                                     </td>
-                                </tr>
+                                </tr> --}}
                                 <tr style="">
                                     <td style="padding: 10px;">Subtotal</td>
                                     <td class="subtotal" style="padding: 10px;">
