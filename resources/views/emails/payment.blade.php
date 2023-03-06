@@ -41,7 +41,7 @@
         </div>
     </div> --}}
     <div class="col-sm-12 col-md-12"
-        style="max-width: 75%;padding-right:15px;padding-left:15px;float: right;width: 75%;">
+        style="text-align: center;  margin: 0 auto;  margin-top: 10px;width: 100%;max-width: 700px;margin-bottom: 15px;">
         <div class="preview_right">
             <div class="row" style="margin-right: -15px;margin-left: -15px;">
 
