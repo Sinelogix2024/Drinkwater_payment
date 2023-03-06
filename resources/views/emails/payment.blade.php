@@ -41,7 +41,7 @@
         </div>
     </div> --}}
     <div class="col-sm-12 col-md-12"
-        style="text-align: center;  margin: 0 auto;  margin-top: 10px;width: 100%;max-width: 700px;margin-bottom: 15px;">
+        style="max-width: 75%;padding-right:15px;padding-left:15px;float: right;width: 75%;">
         <div class="preview_right">
             <div class="row" style="margin-right: -15px;margin-left: -15px;">
 
@@ -130,11 +130,19 @@
                         </tr>
                     </tbody>
                 </table>
-                <div class="p_sub_tot_div" style="max-width: max-content;float: right;display: flex;">
-                    <div class="p_sub_totl">
-                        <table class="p_total"
-                            style="border-collapse:collapse;background-color:transparent;margin:0 0 1.5em;width:100%;color: #000;">
+
+                <table class="p_total"
+                            style="border-collapse:collapse;background-color:transparent;width: 90%;color: #000; margin-left:-15px">
                             <tbody>
+                                <tr style="">
+                                <td style="padding: 10px;">Service Fee</td>
+                                    <td class="subtotal" style="padding: 10px;">
+                                        @if (isset($invoiceDataObj->odr_service_fee))
+                                        ${{ $invoiceDataObj->odr_service_fee }}
+                                        @endif
+
+                                    </td>
+                                </tr>
                                 <tr style="">
                                     <td style="padding: 10px;">Subtotal</td>
                                     <td class="subtotal" style="padding: 10px;">
@@ -148,6 +156,9 @@
                                 </tr>
                             </tbody>
                         </table>
+                <div class="p_sub_tot_div" style="max-width: max-content;float: right;display: flex; margin-left:-15px">
+                    <div class="p_sub_totl">
+
                     </div>
                 </div>
             </div>
