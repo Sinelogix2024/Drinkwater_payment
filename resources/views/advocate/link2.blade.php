@@ -672,7 +672,7 @@
                                             <option value="1">CREDIT CARD</option>
                                             <option value="2">DEBIT CARD</option>
                                             <option value="3">VENMO </option>
-                                            <option value="4">APPLE PAY </option>
+                                            {{-- <option value="4">APPLE PAY </option> --}}
                                         </select>
                                     </div>
                                 </div>
@@ -843,7 +843,7 @@
                                                 <option value="1">CREDIT CARD</option>
                                                 <option value="2">DEBIT CARD</option>
                                                 <option value="3">VENMO</option>
-                                                <option value="4">APPLE PAY</option>
+                                                {{-- <option value="4">APPLE PAY</option> --}}
                                             </select>
                                         </div>
                                     </div>
@@ -1082,7 +1082,7 @@
                                                 <option value="1">CREDIT CARD</option>
                                                 <option value="2">DEBIT CARD</option>
                                                 <option value="3">VENMO</option>
-                                                <option value="4">APPLE PAY</option>
+                                                {{-- <option value="4">APPLE PAY</option> --}}
                                             </select>
 
                                             <div id="final_pay_card_deatil">

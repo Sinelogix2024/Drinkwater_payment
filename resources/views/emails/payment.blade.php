@@ -27,7 +27,7 @@
     </div>
 </div>
 <div style="font-size: 14px;color: #584d4d;display: flex;">
-    <div class="col-sm-12 col-md-3" style="/*max-width:25%;width:25%;*/float: left;padding-right: 50px;">
+    {{-- <div class="col-sm-12 col-md-3" style="/*max-width:25%;width:25%;*/float: left;padding-right: 50px;">
         <div class="preview_left">
             <div class="form_field" style="margin-left: 0;margin: 10px;margin-bottom: 15px;">
                 <h3 style="font-weight: 400;margin-bottom: 60px;color: #000;font-size: 1.75rem !important;">PAID INVOICE
@@ -39,12 +39,23 @@
                 </p>
             </div>
         </div>
-    </div>
-    <div class="col-sm-12 col-md-9"
+    </div> --}}
+    <div class="col-sm-12 col-md-12"
         style="max-width: 75%;padding-right:15px;padding-left:15px;float: right;width: 75%;">
         <div class="preview_right">
             <div class="row" style="margin-right: -15px;margin-left: -15px;">
-                <div class="col-sm-6 col-md-12">
+
+                <div class="form_field" style="margin-left: 0;margin: 10px;margin-bottom: 15px;">
+                    {{-- <h3 style="font-weight: 400;margin-bottom: 60px;color: #000;font-size: 1.75rem !important;">PAID INVOICE
+                    </h3> --}}
+                    <p style="margin-top:0;margin-bottom:1rem;color: #000;">
+                        Delivery Set for
+                        <br>
+                        {{ $deliveryObj->d_date }}
+                    </p>
+                </div>
+
+                <div class="col-sm-6 col-md-12 form_field" style="margin-left: 0;margin: 10px;margin-bottom: 15px;">
                     <div class="preview_adr" style="margin-bottom: 40px;color:#000;">
                         <div class="form_field">
                             ATTN: <span id="f_client_name">{{ $invoiceDataObj->odr_contact_name }}</span>
@@ -66,7 +77,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-12">
+                <div class="col-sm-6 col-md-12 form_field" style="margin-left: 0;margin: 10px;margin-bottom: 15px;">
                     <div class="preview_del_date" style="margin-bottom: 20px;color:#000;">
                         <div class="form_field">Date <span
                                 id="f_delivery_date">{{ $invoiceDataObj->created_at->format('m/d/Y') }}</span> </div>
@@ -89,9 +100,9 @@
                     </div>
                 </div>
             </div>
-            <div class="preview_cart" style="max-width: 800px;">
+            <div class="preview_cart" style="max-width: 600px;">
                 <table class="p_detail"
-                    style="border: 1px solid;border-collapse: collapse;background-color: transparent;margin: 0 0 1.5em;width: 100%;color: #000;">
+                style="border: 1px solid;border-collapse: collapse;background-color: transparent;width: 90%;color: #000; margin-left:-15px">
                     <thead>
                         <tr style="border-bottom: 1px solid #848484;text-align: left;">
                             <th scope="col" style="padding: 5px;">PRODUCTS</th>
@@ -146,7 +157,8 @@
 <div class="pre_deli_by" style="text-align: center;margin-bottom: 40px;margin-top: 25px;">
     {{-- <a href="#"
         style="color: #fff;padding: 12px 35px;font-size: 16px;background: #000;border-radius: 25px;width: 120px;position: relative;overflow: hidden;margin-top: 25px;width: 150px;text-decoration: none; width: auto; width: auto;padding-left: 50px;padding-right: 50px; border-radius: 10px; background: #02771d;">PAID</a> --}}
-    <div>Paid Invoice</div>
+    <div><h3 style="font-weight: 400;margin-bottom: 60px;color: #000;font-size: 1.75rem !important;">PAID INVOICE
+    </h3></div>
     <p>DELIVERED BY</p>
     <div class="drop_img" style="padding-bottom: 20px;"><img
             src=" https://invoicing.drinkwatr.com/wp-content/uploads/2022/10/droplet_wellness.png "
