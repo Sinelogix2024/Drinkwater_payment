@@ -211,15 +211,15 @@
 
                                                 <option data-hidden="true">{{config('constants.package.default_drop_down_text')}}</option>
                                                 <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
-                                                <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
-                                                <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
+                                                {{-- <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option> --}}
+                                                {{-- <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option> --}}
                                             </select>
 
                                             <select class="selectpicker placeholder select_pure d-none" name="package" id="package1" required data-dropup-auto="false" title="{{config('constants.package.default_drop_down_text')}}">
                                                 <option data-hidden="true">{{config('constants.package.default_drop_down_text')}}</option>
                                                 <option value="1">1 MONTH OF HYDRATION $220 ( 10 KITS )</option>
-                                                <option value="2">2 MONTH OF HYDRATION $440 ( 20 KITS )</option>
-                                                <option value="3">3 MONTH OF HYDRATION $660 ( 30 KITS )</option>
+                                                {{-- <option value="2">2 MONTH OF HYDRATION $440 ( 20 KITS )</option> --}}
+                                                {{-- <option value="3">3 MONTH OF HYDRATION $660 ( 30 KITS )</option> --}}
                                             </select>
 
                                         </div>
@@ -334,8 +334,8 @@
                                         <select class="selectpicker custom_select" name="package" id="package2" required data-dropup-auto="false" title="{{config('constants.package.default_drop_down_text')}}">
                                             <option selected disabled data-hidden="true">{{config('constants.package.default_drop_down_text')}}</option>
                                             <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
-                                            <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
-                                            <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
+                                            {{-- <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
+                                            <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option> --}}
                                         </select>
                                     </div>
                                 </div>
@@ -433,8 +433,8 @@
                                         <select class="selectpicker custom_select" name="package" id="package4" required data-dropup-auto="false" title="{{config('constants.package.default_drop_down_text')}}">
                                             <option selected disabled data-hidden="true">{{config('constants.package.default_drop_down_text')}}</option>
                                             <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
-                                            <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
-                                            <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
+                                            {{-- <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
+                                            <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option> --}}
                                         </select>
                                     </div>
                                 </div>
@@ -611,8 +611,8 @@
                                         <select class="selectpicker custom_select" name="package" id="package3" required data-dropup-auto="false" title="{{config('constants.package.default_drop_down_text')}}">
                                             <option value="" data-hidden="true">{{config('constants.package.default_drop_down_text')}}</option>
                                             <option value="1">1 MONTH OF HYDRATION $250 ( 10 KITS )</option>
-                                            <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
-                                            <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
+                                            {{-- <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
+                                            <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option> --}}
                                         </select>
                                     </div>
                                 </div>
@@ -685,8 +685,8 @@
                                             <option value="" data-hidden="true">YOUR WELLNESS SOLUTION</option>
                                             <option value="1" selected>1 MONTH OF HYDRATION $250 ( 10 KITS )
                                             </option>
-                                            <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
-                                            <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option>
+                                            {{-- <option value="2">2 MONTH OF HYDRATION $500 ( 20 KITS )</option>
+                                            <option value="3">3 MONTH OF HYDRATION $750 ( 30 KITS )</option> --}}
                                         </select>
 
                                         <button type="button" class="edit btn_effect edit_package">Edit</button>

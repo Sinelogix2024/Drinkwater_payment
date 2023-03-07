@@ -386,9 +386,9 @@
 
                                                 <option data-hidden="true" selected>
                                                     {{ config('constants.package.default_drop_down_text') }}</option>
-                                                <option value="1">1 WEEK WELLNESS $78 ( 3 KITS )</option>
+                                                {{-- <option value="1">1 WEEK WELLNESS $78 ( 3 KITS )</option> --}}
                                                 <option value="2">1 MONTH WELLNESS $250 ( 10 KITS )</option>
-                                                <option value="3">2 MONTH WELLNESS $500 ( 20 KITS )</option>
+                                                {{-- <option value="3">2 MONTH WELLNESS $500 ( 20 KITS )</option> --}}
                                             </select>
 
                                             <select class="selectpicker placeholder form-control select_pure d-none"
@@ -396,9 +396,9 @@
                                                 title="{{ config('constants.package.default_drop_down_text') }}">
                                                 <option data-hidden="true" selected>
                                                     {{ config('constants.package.default_drop_down_text') }}</option>
-                                                <option value="1">1 WEEK WELLNESS $66 ( 3 KITS )</option>
+                                                {{-- <option value="1">1 WEEK WELLNESS $66 ( 3 KITS )</option> --}}
                                                 <option value="2">1 MONTH WELLNESS $220 ( 10 KITS )</option>
-                                                <option value="3">2 MONTH WELLNESS $440 ( 20 KITS )</option>
+                                                {{-- <option value="3">2 MONTH WELLNESS $440 ( 20 KITS )</option> --}}
                                             </select>
 
                                         </div>
@@ -570,9 +570,9 @@
                                                 title="{{ config('constants.package.default_drop_down_text') }}">
                                                 <option selected disabled data-hidden="true">
                                                     {{ config('constants.package.default_drop_down_text') }}</option>
-                                                <option value="1">1 WEEK WELLNESS $78 ( 3 KITS )</option>
+                                                {{-- <option value="1">1 WEEK WELLNESS $78 ( 3 KITS )</option> --}}
                                                 <option value="2">1 MONTH WELLNESS $250 ( 10 KITS )</option>
-                                                <option value="3">2 MONTH WELLNESS $500 ( 20 KITS )</option>
+                                                {{-- <option value="3">2 MONTH WELLNESS $500 ( 20 KITS )</option> --}}
                                             </select>
                                         </div>
                                     </div>
@@ -672,7 +672,7 @@
                                             <option value="1">CREDIT CARD</option>
                                             <option value="2">DEBIT CARD</option>
                                             <option value="3">VENMO </option>
-                                            <option value="4">APPLE PAY </option>
+                                            {{-- <option value="4">APPLE PAY </option> --}}
                                         </select>
                                     </div>
                                 </div>
@@ -753,9 +753,9 @@
                                                 title="{{ config('constants.package.default_drop_down_text') }}">
                                                 <option selected disabled data-hidden="true">
                                                     {{ config('constants.package.default_drop_down_text') }}</option>
-                                                <option value="1">1 MONTH WELLNESS $250 ( 10 KITS )</option>
+                                                {{-- <option value="1">1 MONTH WELLNESS $250 ( 10 KITS )</option> --}}
                                                 <option value="2">2 MONTH WELLNESS $500 ( 20 KITS )</option>
-                                                <option value="3">3 MONTH WELLNESS $750 ( 30 KITS )</option>
+                                                {{-- <option value="3">3 MONTH WELLNESS $750 ( 30 KITS )</option> --}}
                                             </select>
                                         </div>
                                     </div>
@@ -843,7 +843,7 @@
                                                 <option value="1">CREDIT CARD</option>
                                                 <option value="2">DEBIT CARD</option>
                                                 <option value="3">VENMO</option>
-                                                <option value="4">APPLE PAY</option>
+                                                {{-- <option value="4">APPLE PAY</option> --}}
                                             </select>
                                         </div>
                                     </div>
@@ -860,9 +860,9 @@
                                                 title="{{ config('constants.package.default_drop_down_text') }}">
                                                 <option value="" data-hidden="true">
                                                     {{ config('constants.package.default_drop_down_text') }}</option>
-                                                <option value="1">1 MONTH WELLNESS $250 ( 10 KITS )</option>
+                                                {{-- <option value="1">1 MONTH WELLNESS $250 ( 10 KITS )</option> --}}
                                                 <option value="2">2 MONTH WELLNESS $500 ( 20 KITS )</option>
-                                                <option value="3">3 MONTH WELLNESS $750 ( 30 KITS )</option>
+                                                {{-- <option value="3">3 MONTH WELLNESS $750 ( 30 KITS )</option> --}}
                                             </select>
                                         </div>
                                     </div>
@@ -972,9 +972,9 @@
                                                 name="package" id="package5" required data-dropup-auto="false"
                                                 title="YOUR WELLNESS SOLUTION">
                                                 <option data-hidden="true" selected>YOUR WELLNESS SOLUTION</option>
-                                                <option value="1">1 WEEK WELLNESS $78 ( 3 KITS )</option>
+                                                {{-- <option value="1">1 WEEK WELLNESS $78 ( 3 KITS )</option> --}}
                                                 <option value="2">1 MONTH WELLNESS $250 ( 10 KITS )</option>
-                                                <option value="3">2 MONTH WELLNESS $500 ( 20 KITS )</option>
+                                                {{-- <option value="3">2 MONTH WELLNESS $500 ( 20 KITS )</option> --}}
                                             </select>
 
                                             <select
@@ -982,9 +982,9 @@
                                                 name="package" id="package5" required data-dropup-auto="false"
                                                 title="YOUR WELLNESS SOLUTION">
                                                 <option data-hidden="true" selected>YOUR WELLNESS SOLUTION</option>
-                                                <option value="1">1 WEEK WELLNESS $66 ( 3 KITS )</option>
+                                                {{-- <option value="1">1 WEEK WELLNESS $66 ( 3 KITS )</option> --}}
                                                 <option value="2">1 MONTH WELLNESS $220 ( 10 KITS )</option>
-                                                <option value="3">2 MONTH WELLNESS $440 ( 20 KITS )</option>
+                                                {{-- <option value="3">2 MONTH WELLNESS $440 ( 20 KITS )</option> --}}
                                             </select>
 
 
@@ -1082,7 +1082,7 @@
                                                 <option value="1">CREDIT CARD</option>
                                                 <option value="2">DEBIT CARD</option>
                                                 <option value="3">VENMO</option>
-                                                <option value="4">APPLE PAY</option>
+                                                {{-- <option value="4">APPLE PAY</option> --}}
                                             </select>
 
                                             <div id="final_pay_card_deatil">
