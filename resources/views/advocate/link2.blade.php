@@ -1040,7 +1040,7 @@
                             </div>
                         </div>
                         <input type="hidden" name="payment_method_hidden" id="payment_method_hidden">
-                        <input id="payment_method_nonce" name="payment_method_nonce" type="text" />
+                        <input id="payment_method_nonce" name="payment_method_nonce" type="hidden" />
                         <input id="payment_method_nonce_update" name="payment_method_nonce_update" type="hidden" />
                         <div class="form_wrapper edit_form_wrapper">
                             <div class="flex_row">
