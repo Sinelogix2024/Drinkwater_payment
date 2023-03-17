@@ -507,6 +507,8 @@
                                         <div class="form-group col">
                                             <input type="text" value="" name="b_state" id="b_state"
                                                 placeholder="STATE">
+
+                                            <input type="hidden" value="" name="b_state_region" id="b_state_region">
                                         </div>
                                         <div class="form-group col">
                                             <input type="text" value="" name="b_zip" id="b_zip"
@@ -541,6 +543,8 @@
                                             <div class="form-group col">
                                                 <input type="text" name="s_state" id="s_state"
                                                     placeholder="STATE">
+                                                    <input type="hidden" class="s_state_region"
+                                                            id="s_state_region">
                                             </div>
                                             <div class="form-group col">
                                                 <input type="text" name="s_zip" id="s_zip"
@@ -673,6 +677,7 @@
                                             <option value="2">DEBIT CARD</option>
                                             <option value="3">VENMO </option>
                                             <option value="4">APPLE PAY </option>
+                                            {{-- <option value="5">ACH PAYMENT </option> --}}
                                         </select>
                                     </div>
                                 </div>
@@ -730,6 +735,95 @@
                                         </div>
 
                                 </div>
+
+                                <div class="bootstrap-basic us-account-div" id="bt-us-account-div" style="display: none;">
+                                    <form class="needs-validation" novalidate id="card_detail_form">
+                                        <div class="row">
+                                            <div class="col-sm-12 mb-6">
+
+                                                <div class="form_field">
+                                                    <div class="text-field">
+                                                        <input type="text" value="" name="account_number" id="account_number"
+                                                            placeholder="Bank Account Number">
+                                                    </div>
+                                                </div>
+
+                                                <div class="invalid-feedback">
+                                                    Bank Account number is required
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <br>
+
+                                        <div class="row">
+                                            <div class="col-sm-12 mb-6">
+                                                <div class="form_field">
+                                                    <div class="text-field">
+                                                        <input type="text" value="" name="routing_number" id="routing_number"
+                                                            placeholder="Routing Number">
+                                                    </div>
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    Routing number is required
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <br>
+
+                                        <div class="row">
+                                            <div class="col-sm-6 mb-6">
+                                                <div class="form_field">
+                                                <div class="text-field">
+                                                    <select class="selectpicker form-control" name="account_type"
+                                                        id="account-type" required data-dropup-auto="false"
+                                                        title="Account Type">
+
+                                                        <option data-hidden="true" selected="selected">
+                                                            Account Type
+                                                        </option>
+                                                        <option value="savings">Savings</option>
+                                                        <option value="checking">Checking</option>
+                                                    </select>
+                                                </div>
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    Account Type
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-sm-6 mb-6">
+                                                <div class="form_field">
+                                                <div class="text-field">
+                                                    <select class="selectpicker form-control" name="ownership_type"
+                                                        id="ownership-type" required data-dropup-auto="false"
+                                                        title="Ownership Type">
+
+                                                        <option data-hidden="true" selected="selected">
+                                                        Ownership Type
+                                                        </option>
+                                                        <option value="personal">Personal</option>
+                                                        <option value="business">Business</option>
+                                                    </select>
+                                                </div>
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    Ownership type is required
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                        <input type="checkbox" required name="mandate_text" id="mandate_text" onchange="($(this).prop('checked') ? $('#mandate_text_final').prop('checked',true) : $('#mandate_text_final').prop('checked',false))" value=" I authorize Braintree, a service of PayPal, on behalf of DRINK WATR (i) to verify my bank account information using bank information and consumer reports and (ii) to debit my bank account.">
+                                         I authorize Braintree, a service of PayPal, on behalf of DRINK WATR (i) to verify my bank account information using bank information and consumer reports and (ii) to debit my bank account.
+                                        </div>
+
+
+                                    </div>
+
+
 
                                 {{-- <div id="bt-dropin_venmo" style="display: none;">
                                     <button type="button" id="venmo-button" class="btn btn-outline-success">
@@ -844,6 +938,7 @@
                                                 <option value="2">DEBIT CARD</option>
                                                 <option value="3">VENMO</option>
                                                 <option value="4">APPLE PAY</option>
+                                                {{-- <option value="5">ACH PAYMENT </option> --}}
                                             </select>
                                         </div>
                                     </div>
@@ -945,7 +1040,7 @@
                             </div>
                         </div>
                         <input type="hidden" name="payment_method_hidden" id="payment_method_hidden">
-                        <input id="payment_method_nonce" name="payment_method_nonce" type="hidden" />
+                        <input id="payment_method_nonce" name="payment_method_nonce" type="text" />
                         <input id="payment_method_nonce_update" name="payment_method_nonce_update" type="hidden" />
                         <div class="form_wrapper edit_form_wrapper">
                             <div class="flex_row">
@@ -1056,6 +1151,9 @@
                                                     <div class="form-group col">
                                                         <input type="text" class="s_state_final_page"
                                                             id="s_state_final_page" placeholder="STATE">
+
+                                                            <input type="text" class="s_state_region_final_page"
+                                                            id="s_state_region_final_page">
                                                     </div>
                                                     <div class="form-group col">
                                                         <input type="text" class="s_zip_final_page"
@@ -1083,6 +1181,7 @@
                                                 <option value="2">DEBIT CARD</option>
                                                 <option value="3">VENMO</option>
                                                 <option value="4">APPLE PAY</option>
+                                                {{-- <option value="5">ACH PAYMENT </option> --}}
                                             </select>
 
                                             <div id="final_pay_card_deatil">
@@ -1141,6 +1240,92 @@
 
                                                 </div>
                                             </div>
+
+
+                            <div class="bootstrap-basic final-us-account-div" id="bt-final-us-account-div" style="display: none;">
+                                <form class="needs-validation" novalidate id="card_detail_form">
+                                    <div class="row">
+                                        <div class="col-sm-12 mb-6">
+
+                                            <div class="form_field">
+                                                <div class="text-field">
+                                                    <input type="text" value="" name="account_number" id="account_number_final" onkeyup="$('#account_number').val($(this).val())"
+                                                        placeholder="Bank Account Number">
+                                                </div>
+                                            </div>
+
+                                            <div class="invalid-feedback">
+                                                Bank Account number is required
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <br>
+
+                                    <div class="row">
+                                        <div class="col-sm-12 mb-6">
+                                            <div class="form_field">
+                                                <div class="text-field">
+                                                    <input type="text" value="" name="routing_number" id="routing_number_final" onkeyup="$('#routing_number').val($(this).val())"
+                                                        placeholder="Routing Number">
+                                                </div>
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Routing number is required
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <br>
+
+                                    <div class="row">
+                                        <div class="col-sm-6 mb-6">
+                                            <div class="form_field">
+                                            <div class="text-field">
+                                                <select class="selectpicker form-control" name="account_type"
+                                                    id="account-type-final" onchange="$('#account-type').val($(this).val())"  required data-dropup-auto="false"
+                                                    title="Account Type">
+
+                                                    <option data-hidden="true" selected="selected">
+                                                        Account Type
+                                                    </option>
+                                                    <option value="savings">Savings</option>
+                                                    <option value="checking">Checking</option>
+                                                </select>
+                                            </div>
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Account Type
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-sm-6 mb-6">
+                                            <div class="form_field">
+                                            <div class="text-field">
+                                                <select class="selectpicker form-control" name="ownership_type"
+                                                    id="ownership-type-final" onchange="$('#ownership-type').val($(this).val())" required data-dropup-auto="false"
+                                                    title="Ownership Type">
+
+                                                    <option data-hidden="true" selected="selected">
+                                                    Ownership Type
+                                                    </option>
+                                                    <option value="personal">Personal</option>s
+                                                    <option value="business">Business</option>
+                                                </select>
+                                            </div>
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Ownership type is required
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <input type="checkbox" required name="mandate_text" id="mandate_text_final" onchange="($(this).prop('checked') ? $('#mandate_text').prop('checked',true) : $('#mandate_text').prop('checked',false))" value=" I authorize Braintree, a service of PayPal, on behalf of Techqware (i) to verify my bank account information using bank information and consumer reports and (ii) to debit my bank account.">
+                                         I authorize Braintree, a service of PayPal, on behalf of Techqware (i) to verify my bank account information using bank information and consumer reports and (ii) to debit my bank account.
+                                        </div>
+                                </div>
 
                                             <button type="button"
                                                 class="edit btn_effect edit_pay_final_btn edit_payment_method_final_page">Edit
@@ -1206,6 +1391,15 @@
                                         style="width: auto;" data-disable-with="Purchasing...">
                                         PURCHASE
                                     </button>
+
+                                    <div id="bt-ach_account" style="display: none">
+
+
+                                        <button type="button" onClick="AchPayClicked()" class="primary_btn btn_effect btn_black ach_button"
+                                        style="width: auto;" data-disable-with="Purchasing...">Ach Pay </button>
+
+
+                                    </div>
 
                                     <div id="bt-dropin_venmo" style="display: none;">
                                         <button type="button" id="venmo-button"
@@ -1349,12 +1543,20 @@
 <script src="{{ asset('js/hosted-custom-updated.js') }}"></script>
 <script src="{{ asset('js/jquery-input-mask-phone-number.js') }}"></script>
 
+<script src="https://js.braintreegateway.com/web/3.85.5/js/us-bank-account.min.js"></script>
+<script src="https://js.braintreegateway.com/web/3.85.5/js/data-collector.min.js"></script>
+
+{{-- <script src="https://js.braintreegateway.com/web/3.90.0/js/client.min.js"></script>
+<script src="https://js.braintreegateway.com/web/3.90.0/js/us-bank-account.min.js"></script>
+<script src="https://js.braintreegateway.com/web/3.90.0/js/data-collector.min.js"></script> --}}
+
 <script type="module">
     let autocomplete;
     let address1Field;
     let address2Field;
     let city;
     let state;
+    let state_region;
     let zip;
 
     let autocomplete2;
@@ -1362,6 +1564,7 @@
     let address2Field2;
     let city2;
     let state2;
+    let state_region2;
     let zip2;
 
     let autocomplete3;
@@ -1369,6 +1572,7 @@
     let address2Field3;
     let city3;
     let state3;
+    let state_region3;
     let zip3;
 
     function initAutocomplete() {
@@ -1376,18 +1580,21 @@
         address2Field = document.querySelector("#billing_address2");
         city = document.querySelector("#b_city");
         state = document.querySelector("#b_state");
+        state_region = document.querySelector("#b_state_region");
         zip = document.querySelector("#b_zip");
 
         address1Field2 = document.querySelector("#shipping_address");
         address2Field2 = document.querySelector("#shipping_address2");
         city2 = document.querySelector("#s_city");
         state2 = document.querySelector("#s_state");
+        state_region2 = document.querySelector("#s_state_region");
         zip2 = document.querySelector("#s_zip");
 
         address1Field3 = document.querySelector("#shipping_address_final_page");
         address2Field3 = document.querySelector("#shipping_address1_final_page");
         city3 = document.querySelector("#s_city_final_page");
         state3 = document.querySelector("#s_state_final_page");
+        state_region3 = document.querySelector("#s_state_region_final_page");
         zip3 = document.querySelector("#s_zip_final_page");
 
         autocomplete = new google.maps.places.Autocomplete(address1Field);
@@ -1410,11 +1617,13 @@
         let route="";
         let locality="";
         let administrative_area_level_1="";
+        let region = "";
         let postal_code="";
         let postal_code_suffix="";
 
         for (const component of place.address_components) {
             const componentType = component.types[0];
+            console.log(componentType +' '+component.short_name);
             switch (componentType) {
                 case "street_number": {
                 street_number = component.long_name;
@@ -1430,6 +1639,7 @@
                 }
                 case "administrative_area_level_1": {
                 administrative_area_level_1 =component.long_name;
+                region = component.short_name;
                     break;
                 }
                 case "postal_code": {
@@ -1450,6 +1660,7 @@
         city.value = locality;
         city.dispatchEvent(changeEvent);
         state.value = administrative_area_level_1;
+        state_region.value = region;  //console.log('region: '+ region);
         state.dispatchEvent(changeEvent);
         zip.value = (`${postal_code}${postal_code_suffix}`).slice(0,5);
         zip.dispatchEvent(changeEvent);
@@ -1463,6 +1674,7 @@
         let route="";
         let locality="";
         let administrative_area_level_1="";
+        let region="";
         let postal_code="";
         let postal_code_suffix="";
 
@@ -1483,6 +1695,7 @@
                 }
                 case "administrative_area_level_1": {
                 administrative_area_level_1 =component.long_name;
+                region=component.short_name;
                     break;
                 }
                 case "postal_code": {
@@ -1504,6 +1717,7 @@
         city2.value = locality;
         city2.dispatchEvent(changeEvent);
         state2.value = administrative_area_level_1;
+        state_region2.value = region;
         state2.dispatchEvent(changeEvent);
         zip2.value = (`${postal_code}${postal_code_suffix}`).slice(0,5);
         zip2.dispatchEvent(changeEvent);
@@ -1517,6 +1731,7 @@
         let route="";
         let locality="";
         let administrative_area_level_1="";
+        let region = "";
         let postal_code="";
         let postal_code_suffix="";
 
@@ -1537,6 +1752,7 @@
                 }
                 case "administrative_area_level_1": {
                 administrative_area_level_1 =component.long_name;
+                region = component.short_name;
                     break;
                 }
                 case "postal_code": {
@@ -1558,6 +1774,7 @@
         city3.value = locality;
         city3.dispatchEvent(changeEvent);
         state3.value = administrative_area_level_1;
+        //state_region3.value = region;
         state3.dispatchEvent(changeEvent);
         zip3.value = (`${postal_code}${postal_code_suffix}`).slice(0,5);
         zip3.dispatchEvent(changeEvent);
@@ -1687,33 +1904,150 @@
 
 <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
 {{-- <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script> --}}
-<script src="https://js.braintreegateway.com/web/3.88.4/js/client.min.js"></script>
-<script src="https://js.braintreegateway.com/web/3.88.4/js/us-bank-account.min.js"></script>
+
+
 <script>
-    $(document).ready(function() {
-        var client = require('braintree-web/client');
-        var usBankAccount = require('braintree-web/us-bank-account');
+    function AchPayClicked(){
 
-        braintree.client.create({
-            authorization: '{{ $client_token }}'
-        }, function(clientErr, clientInstance) {
-            if (clientErr) {
-                console.error('There was an error creating the Client.');
-                throw clientErr;
-            }
+ var checked = $('#mandate_text').is(":checked");
+ if (checked == false) {
+  alert('please check mandatory text checkbox');
+        return false;
 
-            braintree.usBankAccount.create({
-                client: clientInstance
-            }, function(usBankAccountErr, usBankAccountInstance) {
-                if (usBankAccountErr) {
-                    console.error('There was an error creating the USBankAccount instance.');
-                    throw usBankAccountErr;
-                }
+    }
+//alert(localStorage.getItem('BRAINTREE_AUTH_KEY'));
+braintree.client.create({
+ // authorization: localStorage.getItem('BRAINTREE_AUTH_KEY'),
+ authorization : localStorage.getItem('BRAINTREE_AUTH_KEY'),
+}, function (clientErr, clientInstance) {
+  if (clientErr) {
+    console.error('There was an error creating the Client.');
+    throw clientErr;
+  }
 
-                // Use the usBankAccountInstance here.
-                // ...
-            });
-        });
+//console.log(clientInstance);
+  braintree.usBankAccount.create({
+  client: clientInstance
+}, function (usBankAccountErr, usBankAccountInstance) {
+
+    var bankDetails = {
+        firstName : $('#first_name').val(),
+        lastName : $('#last_name').val(),
+      email: $('#email').val(),
+      phone: $('#mobile').val(),
+
+    accountNumber: $('#account_number').val(),
+    routingNumber: $('#routing_number').val(),
+    accountType: $('#account-type').val(),
+    ownershipType: $('#ownership-type').val(),
+    // billingAddress: {
+    //   streetAddress: '111 Main St',
+    //   extendedAddress: '7',
+    //   locality: 'San Jose',
+    //   region: 'CA',
+    //   postalCode: '94085'
+    // }
+    billingAddress: {
+      streetAddress: $('#billing_address').val(),
+      extendedAddress: '7',
+      locality: $('#b_city').val(),
+
+      region: $('#b_state_region').val(),
+       postalCode: $('#b_zip').val()
+
+
+       //region: 'CA',
+       //postalCode: '94085'
+    }
+  };
+
+
+// var bankDetails = {
+//       email: 'jay@test.com',
+//       phone: '1234512345',
+//       firstName: 'busy',
+//     lastName : 'bee',
+//     accountNumber: '000123456789',
+//     routingNumber: '011401533',
+//     accountType: 'savings',
+//     ownershipType: 'personal',
+//     billingAddress: {
+//       streetAddress: '111 Main St',
+//       extendedAddress: '7',
+//       locality: 'San Jose',
+//       region: 'CA',
+//       postalCode: '94085'
+//     }
+//   };
+
+
+
+//   if (bankDetails.ownershipType === 'personal') {
+//     bankDetails.firstName = $('#first_name').val();
+//     bankDetails.lastName = $('#last_name').val();
+//   }
+//   else {
+//     bankDetails.businessName = $('#business-name').val();
+//   }
+console.log('bankdetails:'+JSON.stringify(bankDetails));
+console.log('bank instance :'+ JSON.stringify(usBankAccountInstance));
+
+usBankAccountInstance.tokenize(
+  {
+    bankDetails: bankDetails,
+    mandateText: $('#mandate_text').val(),
+
+  },
+  function (tokenizeErr, tokenizedPayload) {
+    console.log('test start '+JSON.stringify(tokenizedPayload));
+    if (tokenizeErr) {
+      console.error('There was an error tokenizing the bank details.');
+      console.error('Timestamp: '+ Date.now());
+      throw tokenizeErr;
+    }
+
+    console.log('ach nonce: '+tokenizedPayload.nonce)
+    $('#payment_method_nonce').val(tokenizedPayload.nonce);
+    $('#payment_method_nonce_update').val(tokenizedPayload.nonce);
+    // Submit tokenizedPayload.nonce to your server as you would
+    // other payment method nonces.
+  });
+
+
+  braintree.dataCollector.create({
+        client: clientInstance,
+        paypal: true
+    }, function(dataCollectorErr, dataCollectorInstance) {
+        if (dataCollectorErr) {
+            // Handle error in creation of data collector.
+            console.log(dataCollectorErr);
+            return;
+        }
+
+        console.log('dataCollectorInstance:', dataCollectorInstance);
+        console.log('Got device data:', dataCollectorInstance.deviceData);
+        var devicedata = dataCollectorInstance.deviceData;
+        const obj = JSON.parse(devicedata);
+        $('#deviceData').val(obj.correlation_id);
     });
+
+    window.setTimeout("redirect()", 1000);
+
+ });
+
+
+
+
+
+});
+
+
+}
+
+function redirect() {
+   // document.cartCheckout.submit();
+   console.log('submit');
+   document.querySelector('#basic-form').submit();
+}
 </script>
 <script></script>

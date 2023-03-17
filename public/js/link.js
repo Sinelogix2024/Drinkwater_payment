@@ -165,14 +165,23 @@ $(document).ready(function() {
             $("#bt-dropin").hide();
             $("#bt-dropin_venmo").show();
             $("#bt-dropin_applepay").hide();
+            $("#bt-us-account-div").hide();
         }else if(selected == 4){ // hide card form and show apple
             $("#bt-dropin").hide();
             $("#bt-dropin_venmo").hide();
+            $("#bt-us-account-div").hide();
             $("#bt-dropin_applepay").show();
+        }
+        else if(selected == 5){ // hide card form and show apple
+            $("#bt-us-account-div").show();
+            $("#bt-dropin").hide();
+            $("#bt-dropin_venmo").hide();
+            $("#bt-dropin_applepay").hide();
         }else{
             $("#bt-dropin").show();
             $("#bt-dropin_venmo").hide();
             $("#bt-dropin_applepay").hide();
+            $("#bt-us-account-div").hide();
         }
 
         //return false;

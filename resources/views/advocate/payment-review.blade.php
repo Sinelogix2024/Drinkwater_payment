@@ -345,6 +345,7 @@
                                                                             <p>Transaction ID:
                                                                                 {{ $invoiceDataObj->odr_transaction_id ?? '' }}
                                                                             </p>
+
                                                                         </div>
                                                                     @endif
                                                                 </div>
