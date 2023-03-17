@@ -7,12 +7,16 @@ use Braintree\Gateway;
 use Twilio\Rest\Client;
 use App\Models\Advocate;
 use App\Models\Order;
+use App\Models\AchCustomer;
+use App\Models\InvoiceAchCustomer;
 use App\Mail\OrderPlaced;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Invoice;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use Braintree\Result\UsBankAccountVerification;
+use Carbon\Carbon;
 
 class AdvocateController extends Controller
 {
@@ -63,15 +67,89 @@ class AdvocateController extends Controller
             }
 
             if ($request->method() == 'POST') {
-                // return $request->all();
                 $amount = $request->total_amount ?? 10.00;
+                 if($request->payment_method == 5)
+                 {
+                    $nonceFromTheClient = $request->payment_method_nonce;
+                    $ach_customer = AchCustomer::where('email',$request->email)->first();
+                    if($ach_customer)
+                    {
+                        $cus_id = $ach_customer->customer_id;
+                        $ach_user_id = $ach_customer->id;
+                    }else{
+                        //Create Customer
+                        $result = $gateway->customer()->create([
+                            'firstName' => $request->first_name,
+                            'lastName' => $request->last_name,
+                            'email' => $request->email,
+                            'phone' => $request->mobile
+                            //'company' => $_POST['business-name'],
+                            //'paymentMethodNonce' => $nonceFromTheClient
+                          ]);
+
+                          if ($result->success) {
+                            $cus_id = $result->customer->id;
+
+                          $ach_user_id =  AchCustomer::insertGetId(['first_name'=>$request->first_name,
+                                'last_name'=>$request->last_name,
+                                'email'=>$request->email,
+                                'phone'=> $request->mobile,
+                                'customer_id'=>$cus_id,
+                                'account_number'=> $request->account_number,
+                                'routing_number'=>$request->routing_number,
+                                'account_type'=>$request->account_type,
+                                'ownership_type'=>$request->ownership_type]);
+
+
+                          }
+                        //   else {
+                        //     foreach($result->errors->deepAll() AS $error) {
+                        //         echo($error->code . ": " . $error->message . "\n");
+                        //     }
+                        //   }
+                          // End Create Customer
+                    }
+
+
+                      $result = $gateway->paymentMethod()->create([
+                        'customerId' => $cus_id,
+                        'paymentMethodNonce' => $nonceFromTheClient,
+                        'options' => [
+                            'usBankAccountVerificationMethod' => UsBankAccountVerification::INDEPENDENT_CHECK
+                        ]
+                      ]);
+
+                      if ($result->success) {
+
+                        $vid =  $result->paymentMethod->token;
+                         $usBankAccount = $result->paymentMethod;
+
+                         $verified = $usBankAccount->verified;
+                         $responseCode = $usBankAccount->verifications[0]->processorResponseCode;
+                         //print_r($usBankAccount->verifications[0]->processorResponseCode);
+
+                       }
+
+                      $result = $gateway->transaction()->sale([
+                        'amount' => $amount,
+                        'paymentMethodToken' => $vid,
+                        'deviceData' => "deviceDataFromTheClient",
+                        'options' => [
+                          'submitForSettlement' => True
+                        ]
+                      ]);
+
+
+                 }
+                 else{
+
                 $result = $gateway->transaction()->sale([
                     'amount' => $amount,
                     'paymentMethodNonce' => $request->payment_method_nonce,
                     'deviceData' => "deviceDataFromTheClient",
                     'options' => ['submitForSettlement' => True]
                 ]);
-
+            }
                 $orderId = Order::insertGetId([
                     'odr_id' => 'ordr_dw_' . time() . '_' . date('Y_m_d'),
                     'odr_first_name' => $request->first_name,
@@ -93,7 +171,10 @@ class AdvocateController extends Controller
                     'odr_adv_detail_access_token' => $request->adv_detail_access_token,
                     'odr_tax_amount' => $request->tax_amount,
                 ]);
-
+                if($request->payment_method == 5)
+                {
+                    AchCustomer::where('id',$ach_user_id)->update(['last_order_id'=>$orderId,'next_order_date'=>Carbon::now()->addMonth(),'is_subscribed'=>'1']);
+                }
                 $orderDetail = Order::find($orderId);
                 $advocateData = Advocate::where('adv_detail_access_token', $request->adv_detail_access_token)->first();
 
@@ -295,7 +376,7 @@ class AdvocateController extends Controller
         }
 
         $invoiceStatus = null;
-        if (!empty($invoiceDataObj->odr_transaction_id) && $invoiceDataObj->odr_payment_status == 'success') {
+        if (!empty($invoiceDataObj->odr_transaction_id) && ($invoiceDataObj->odr_payment_status == 'success' || $invoiceDataObj->odr_payment_status == 'Settlement Pending')) {
             $invoiceStatus = 'paid';
         }
 
@@ -314,17 +395,95 @@ class AdvocateController extends Controller
                 'acceptGzipEncoding' => false,
             ]);
 
+
+            $payment_method = $request->payment_method;
             $paymentNonce = $request->payment_method_nonce;
             $invoiceID = $request->invoice_id;
             $orderID = $request->odr_id;
             $amount = $request->odr_total_amount ?? 10.00;
 
-            $result = $gateway->transaction()->sale([
-                'amount' => $amount,
-                'paymentMethodNonce' => $paymentNonce,
-                'deviceData' => "deviceDataFromTheClient",
-                'options' => ['submitForSettlement' => True]
-            ]);
+            if($payment_method==5)
+            {
+                $nonceFromTheClient = $request->payment_method_nonce;
+                    $invoice_ach_customer = InvoiceAchCustomer::where('email',$request->email)->first();
+                    if($invoice_ach_customer)
+                    {
+                        $invoice_cus_id = $invoice_ach_customer->customer_id;
+                        $invoice_ach_user_id = $invoice_ach_customer->id;
+                    }else{
+                        //Create Customer
+                        $result = $gateway->customer()->create([
+                            'company' => $request->businessName,
+                            //'lastName' => $request->last_name,
+                            'email' => $request->email,
+                            'phone' => $request->mobile
+                            //'company' => $_POST['business-name'],
+                            //'paymentMethodNonce' => $nonceFromTheClient
+                          ]);
+
+                          if ($result->success) {
+                            $invoice_cus_id = $result->customer->id;
+
+                          $invoice_ach_user_id =  InvoiceAchCustomer::insertGetId([
+                                'business_name'=>$request->businessName,
+                                'email'=>$request->email,
+                                'phone'=> $request->mobile,
+                                'customer_id'=>$invoice_cus_id,
+                                'account_number'=> $request->account_number,
+                                'routing_number'=>$request->routing_number,
+                                'account_type'=>$request->account_type,
+                                'ownership_type'=>$request->ownership_type]);
+
+
+                          }
+                        //   else {
+                        //     foreach($result->errors->deepAll() AS $error) {
+                        //         echo($error->code . ": " . $error->message . "\n");
+                        //     }
+                        //   }
+                          // End Create Customer
+                    }
+
+
+                      $result = $gateway->paymentMethod()->create([
+                        'customerId' => $invoice_cus_id,
+                        'paymentMethodNonce' => $nonceFromTheClient,
+                        'options' => [
+                            'usBankAccountVerificationMethod' => UsBankAccountVerification::INDEPENDENT_CHECK
+                        ]
+                      ]);
+
+                      if ($result->success) {
+
+                        $vid =  $result->paymentMethod->token;
+                         $usBankAccount = $result->paymentMethod;
+
+                         $verified = $usBankAccount->verified;
+                         $responseCode = $usBankAccount->verifications[0]->processorResponseCode;
+                         //print_r($usBankAccount->verifications[0]->processorResponseCode);
+
+                       }
+
+                      $result = $gateway->transaction()->sale([
+                        'amount' => $amount,
+                        'paymentMethodToken' => $vid,
+                        'deviceData' => "deviceDataFromTheClient",
+                        'options' => [
+                          'submitForSettlement' => True
+                        ]
+                      ]);
+                      $payment_status = 'Settlement Pending';
+            } else {
+                $result = $gateway->transaction()->sale([
+                    'amount' => $amount,
+                    'paymentMethodNonce' => $paymentNonce,
+                    'deviceData' => "deviceDataFromTheClient",
+                    'options' => ['submitForSettlement' => True]
+                ]);
+                $payment_status = 'success';
+            }
+
+
 
             $invoiceObj = null;
             if ($result->success) {
@@ -332,8 +491,13 @@ class AdvocateController extends Controller
                 $invoiceObj->payment_method = $request->payment_method;
                 $invoiceObj->odr_transaction_id = strtoupper($result->transaction->id);
                 // $invoiceObj->odr_payment_status = $result->transaction->status;
-                $invoiceObj->odr_payment_status = 'success';
+                $invoiceObj->odr_payment_status = $payment_status;
                 $invoiceObj->save();
+
+                if($request->payment_method == 5)
+                {
+                    InvoiceAchCustomer::where('id',$invoice_ach_user_id)->update(['last_order_id'=>$invoiceID,'next_order_date'=>Carbon::now()->addMonth(),'is_subscribed'=>'1']);
+                }
 
                 Mail::to($invoiceObj->odr_email)->send(new OrderPlaced($invoiceObj, $products, true));
 

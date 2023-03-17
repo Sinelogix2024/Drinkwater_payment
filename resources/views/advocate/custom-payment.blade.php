@@ -281,7 +281,7 @@
                                 <div class="col"><b style="font-family: 'europa';">INVOICE #</b>:
                                     {{ $invoiceDataObj->odr_id }}</div>
                                 <div class="col"><b style="font-family: 'europa';">Total Amount Due:</b>
-                                    {{ $invoiceDataObj->odr_total_amount }}$
+                                    ${{ $invoiceDataObj->odr_total_amount }}
                                 </div>
                             </div>
                         </div>
@@ -301,10 +301,96 @@
                                             <option value="2">DEBIT CARD</option>
                                             <option value="3">VENMO </option>
                                             {{-- <option value="4">APPLY PAY </option> --}}
+                                            <option value="5">ACH PAYMENT </option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
+
+
+                            <div class="bootstrap-basic us-account-div" id="bt-us-account-div" style="display: none;">
+                                <form class="needs-validation" novalidate id="card_detail_form">
+                                    <div class="row">
+                                        <div class="col-sm-12 mb-6">
+
+                                            <div class="form_field">
+                                                <div class="text-field">
+                                                    <input type="text" value="" name="account_number" id="account_number"
+                                                        placeholder="Bank Account Number">
+                                                </div>
+                                            </div>
+
+                                            <div class="invalid-feedback">
+                                                Bank Account number is required
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <br>
+
+                                    <div class="row">
+                                        <div class="col-sm-12 mb-6">
+                                            <div class="form_field">
+                                                <div class="text-field">
+                                                    <input type="text" value="" name="routing_number" id="routing_number"
+                                                        placeholder="Routing Number">
+                                                </div>
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Routing number is required
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <br>
+
+                                    <div class="row">
+                                        <div class="col-sm-6 mb-6">
+                                            <div class="form_field">
+                                            <div class="text-field">
+                                                <select class="selectpicker form-control" name="account_type"
+                                                    id="account-type" required dfata-dropup-auto="false"
+                                                    title="Account Type">
+
+                                                    <option data-hidden="true" selected="selected">
+                                                        Account Type
+                                                    </option>
+                                                    <option value="savings">Savings</option>
+                                                    <option value="checking">Checking</option>
+                                                </select>
+                                            </div>
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Account Type
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-sm-6 mb-6">
+                                            <div class="form_field">
+                                            <div class="text-field">
+                                                <select class="selectpicker form-control" name="ownership_type"
+                                                    id="ownership-type" required data-dropup-auto="false"
+                                                    title="Ownership Type">
+
+                                                    <option data-hidden="true" selected="selected">
+                                                    Ownership Type
+                                                    </option>
+                                                    <option value="business">Business</option>
+                                                </select>
+                                            </div>
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Ownership type is required
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                    <input type="checkbox" required name="mandate_text" id="mandate_text" value=" I authorize Braintree, a service of PayPal, on behalf of DRINK WATR (i) to verify my bank account information using bank information and consumer reports and (ii) to debit my bank account.">
+                                     I authorize Braintree, a service of PayPal, on behalf of DRINK WATR (i) to verify my bank account information using bank information and consumer reports and (ii) to debit my bank account.
+                                    </div>
+                                </div>
 
                             <div class="bt-drop-in-wrapper text-center">
                                 <div class="bootstrap-basic card-div" id="bt-dropin" style="display: none;">
@@ -366,9 +452,38 @@
                             <input type="hidden" name="odr_id" value="{{ $invoiceDataObj->odr_id }}">
                             <input type="hidden" name="odr_total_amount"
                                 value="{{ $invoiceDataObj->odr_total_amount }}">
+
+                                @php
+                                    $deliveryObj = json_decode($invoiceDataObj->delivery_fee);
+                                    $cityStateZip = json_decode($invoiceDataObj->b_city_state_zip);
+                                  $region = isset($cityStateZip->region) ? $cityStateZip->region : 'US';
+
+                                @endphp
+
+                                <input type="hidden" id="businessName" name="businessName" value="{{ $invoiceDataObj->odr_company_name }}">
+                                {{-- <input type="text" id="extendedAddress" name="extendedAddress"> --}}
+                                <input type="hidden" id="email" name="email" value="{{ $invoiceDataObj->odr_email }}">
+                                <input type="hidden" id="mobile" name="mobile" value="{{$invoiceDataObj->odr_mobile}}">
+                                <input type="hidden" id="billing_address" name="billing_address" value="{{ $invoiceDataObj->billing_address }}">
+                                <input type="hidden" id="b_city" name="b_city" value="{{ $cityStateZip->city }}">
+                                <input type="hidden" id="b_state_region" name="b_state_region" value="{{$region}}">
+                                <input type="hidden" id="b_zip" name="b_zip" value="{{ $cityStateZip->zip }}">
+
+
+
                             <div class="dots_wrapper">
-                                <button type="submit" class="primary_btn"
+                                <button type="submit" class="primary_btn invoice_purchase_button"
                                     onclick="$('#payment_method_nonce').val('')">PAY</button>
+
+                                    <div id="bt-ach_account" style="display:none;">
+
+
+                                        <button type="button" onClick="AchPayClicked()" class="primary_btn btn_effect btn_black ach_button"
+                                        style="width: auto;" data-disable-with="Purchasing...">Ach Pay </button>
+
+
+                                    </div>
+
                                 <div id="bt-dropin_venmo" style="display: none;">
                                     <button type="button" id="venmo-button" class="primary_btn btn_effect btn_black"
                                         style="width: auto;">
@@ -450,13 +565,124 @@
 <script src="https://js.braintreegateway.com/web/3.77.0/js/data-collector.min.js"></script>
 <script src="{{ asset('js/venmo.js') }}"></script>
 <script src="https://js.braintreegateway.com/web/3.85.5/js/client.min.js"></script>
-<script src="https://js.braintreegateway.com/web/3.85.3/js/apple-pay.min.js"></script>
+<script src="https://js.braintreegateway.com/web/3.85.5/js/apple-pay.min.js"></script>
 <script src="{{ asset('js/applepay.js') }}"></script>
 <script src='https://js.braintreegateway.com/web/3.85.5/js/hosted-fields.min.js'></script>
 <script src="{{ asset('js/hosted-custom.js') }}"></script>
 <script src="{{ asset('js/hosted-custom-updated.js') }}"></script>
+
+<script src="https://js.braintreegateway.com/web/3.85.5/js/us-bank-account.min.js"></script>
+<script src="https://js.braintreegateway.com/web/3.85.5/js/data-collector.min.js"></script>
 <script>
     $(document).ready(function() {});
+</script>
+
+
+<script>
+    function AchPayClicked(){
+
+ var checked = $('#mandate_text').is(":checked");
+ if (checked == false) {
+  alert('please check mandatory text checkbox');
+return false;
+
+    }
+//alert(localStorage.getItem('BRAINTREE_AUTH_KEY'));
+braintree.client.create({
+ // authorization: localStorage.getItem('BRAINTREE_AUTH_KEY'),
+ authorization : localStorage.getItem('BRAINTREE_AUTH_KEY'),
+}, function (clientErr, clientInstance) {
+  if (clientErr) {
+    console.error('There was an error creating the Client.');
+    throw clientErr;
+  }
+
+//console.log(clientInstance);
+  braintree.usBankAccount.create({
+  client: clientInstance
+}, function (usBankAccountErr, usBankAccountInstance) {
+
+    var bankDetails = {
+        businessName : $('#businessName').val(),
+      email: $('#email').val(),
+      phone: $('#mobile').val(),
+
+    accountNumber: $('#account_number').val(),
+    routingNumber: $('#routing_number').val(),
+    accountType: $('#account-type').val(),
+    ownershipType: $('#ownership-type').val(),
+
+    billingAddress: {
+      streetAddress: $('#billing_address').val(),
+      extendedAddress: '',
+      locality: $('#b_city').val(),
+      region: $('#b_state_region').val(),
+       postalCode: $('#b_zip').val()
+
+    }
+  };
+
+
+console.log('bankdetails:'+JSON.stringify(bankDetails));
+console.log('bank instance :'+ JSON.stringify(usBankAccountInstance));
+
+usBankAccountInstance.tokenize(
+  {
+    bankDetails: bankDetails,
+    mandateText: $('#mandate_text').val(),
+
+  },
+  function (tokenizeErr, tokenizedPayload) {
+    console.log('test start '+JSON.stringify(tokenizedPayload));
+    if (tokenizeErr) {
+      console.error('There was an error tokenizing the bank details.');
+      console.error('Timestamp: '+ Date.now());
+      throw tokenizeErr;
+    }
+
+    console.log('ach nonce: '+tokenizedPayload.nonce)
+    $('#payment_method_nonce').val(tokenizedPayload.nonce);
+    $('#payment_method_nonce_update').val(tokenizedPayload.nonce);
+    // Submit tokenizedPayload.nonce to your server as you would
+    // other payment method nonces.
+  });
+
+
+  braintree.dataCollector.create({
+        client: clientInstance,
+        paypal: true
+    }, function(dataCollectorErr, dataCollectorInstance) {
+        if (dataCollectorErr) {
+            // Handle error in creation of data collector.
+            console.log(dataCollectorErr);
+            return;
+        }
+
+        console.log('dataCollectorInstance:', dataCollectorInstance);
+        console.log('Got device data:', dataCollectorInstance.deviceData);
+        var devicedata = dataCollectorInstance.deviceData;
+        const obj = JSON.parse(devicedata);
+        $('#deviceData').val(obj.correlation_id);
+    });
+
+    window.setTimeout("redirect()", 1000);
+
+ });
+
+
+
+
+
+});
+
+
+}
+
+function redirect() {
+   // document.cartCheckout.submit();
+   console.log('submit');
+   document.querySelector('#basic-form').submit();
+}
 </script>
 
 <style>
