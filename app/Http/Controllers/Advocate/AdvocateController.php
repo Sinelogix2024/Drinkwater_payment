@@ -20,6 +20,105 @@ use Carbon\Carbon;
 
 class AdvocateController extends Controller
 {
+    public function usToken()
+    {
+
+        return view('advocate.us-bank-account-token');
+    }
+
+    public function invoiceUsBankPaymentProcessing()
+    {
+       $data = Invoice::where('payment_method',5)->whereNull('odr_transaction_id')->with('lastOrder')->get();
+       return view('advocate.us-bank-payment-process',compact('data'));
+    }
+
+    public function usSubmitForSettlement(Request $request)
+    {
+        $gateway = new Gateway([
+            'environment' => env('BRAINTREE_ENV'),
+            'merchantId' => env('BRAINTREE_MERCHANT_ID'),
+            'publicKey' => env('BRAINTREE_PUBLIC_KEY'),
+            'privateKey' => env('BRAINTREE_PRIVATE_KEY'),
+            'acceptGzipEncoding' => false,
+        ]);
+
+           $result = $gateway->paymentMethod()->create([
+        'customerId' => $request->customer_id,
+        'paymentMethodNonce' => $request->payment_method_nonce,
+        'options' => [
+            'usBankAccountVerificationMethod' => UsBankAccountVerification::INDEPENDENT_CHECK
+        ]
+      ]);
+     // \Log::info($result);
+      if ($result->success) {
+
+        $vid =  $result->paymentMethod->token;
+         $usBankAccount = $result->paymentMethod;
+
+         $verified = $usBankAccount->verified;
+         $responseCode = $usBankAccount->verifications[0]->processorResponseCode;
+         //print_r($usBankAccount->verifications[0]->processorResponseCode);
+
+       }
+
+      $result = $gateway->transaction()->sale([
+        'amount' => $request->total_amount,
+        'paymentMethodToken' => $vid,
+        'deviceData' => "deviceDataFromTheClient",
+        'options' => [
+          'submitForSettlement' => True
+        ]
+      ]);
+
+            $invoiceObj = null;
+            if ($result->success) {
+                $invoiceObj = Invoice::find($request->id);
+                $invoiceObj->payment_method = $request->payment_method;
+                $invoiceObj->odr_transaction_id = strtoupper($result->transaction->id);
+                // $invoiceObj->odr_payment_status = $result->transaction->status;
+                $invoiceObj->odr_payment_status = 'Settlement Pending';
+                $invoiceObj->save();
+
+                $products = null;
+
+                $allProducts = json_decode($invoiceObj->odr_product, true);
+                foreach ($allProducts as $key => $value) {
+                $products[] = json_decode($value);
+                }
+                Mail::to($invoiceObj->odr_email)->send(new OrderPlaced($invoiceObj, $products, true));
+
+                try {
+                    $body = "Congratulations " . $invoiceObj->odr_contact_name . " on confirming your path to hydration wellness ! We appreciate your interest in our products, and are here to support your goals. Remember DRINK WATR™.. STAY STRONG®";
+
+                    $accountSid = getenv("TWILIO_ACCOUNT_SID");
+                    $authToken = getenv("TWILIO_AUTH_TOKEN");
+                    $client = new Client($accountSid, $authToken);
+                    $client->messages->create(
+                        '+1' . str_replace("-", "", $request->mobile),
+                        array(
+                            'from' => getenv("TWILIO_NUMBER"),
+                            'body' => $body
+                        )
+                    );
+                } catch (Exception $e) {
+                    Log::info('Twilio Error', [$e]);
+                    // request()->session()->put('response_error_msg', $e->getMessage());
+                }
+
+
+                return $result->transaction->id;
+
+            } else{
+                return false;
+            }
+
+
+
+
+
+
+    }
+
     public function GetHomePage(Request $request)
     {
         $detail_access_token = $request->detail_access_token;
