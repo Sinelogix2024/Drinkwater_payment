@@ -19,3 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('invoice', 'App\Http\Controllers\Advocate\AdvocateController@addInvoiceUser');
+Route::post('edit-invoice', 'App\Http\Controllers\Advocate\AdvocateController@editInvoiceUser');
