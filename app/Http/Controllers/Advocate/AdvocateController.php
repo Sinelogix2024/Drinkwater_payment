@@ -556,4 +556,33 @@ class AdvocateController extends Controller
             return $e->getMessage();
         }
     }
+
+
+    public function editInvoiceUser(Request $request)
+    {
+        try {
+            $invoiceObj = Invoice::where('odr_id', $request->odr_id)->update(
+                [
+                    'odr_contact_name' => $request->odr_contact_name,
+                    'odr_company_name' => $request->odr_company_name,
+                    'odr_email' => $request->odr_email,
+                    'odr_mobile' => str_replace('-', '', $request->odr_mobile),
+                    'odr_product' => $request->odr_product,
+                    'billing_address' => $request->billing_address,
+                    'billing_address2' => $request->billing_address2,
+                    'b_city_state_zip' => $request->b_city_state_zip,
+                    'payment_method' => $request->payment_method,
+                    'odr_transaction_id' => $request->odr_transaction_id,
+                    'delivery_fee' => $request->delivery_fee,
+                    'odr_total_amount' => $request->odr_total_amount,
+                    'odr_subtotal_amount' => $request->odr_subtotal_amount,
+                    'odr_service_fee' => $request->odr_service_fee,
+                    'odr_tax_amount' => $request->odr_tax_amount
+                ]
+            );
+            return true;
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
 }
