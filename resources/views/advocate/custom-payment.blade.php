@@ -301,7 +301,7 @@
                                             <option value="2">DEBIT CARD</option>
                                             <option value="3">VENMO </option>
                                             {{-- <option value="4">APPLY PAY </option> --}}
-                                            <option value="5">ACH PAYMENT </option>
+                                            {{-- <option value="5">ACH PAYMENT </option> --}}
                                         </select>
                                     </div>
                                 </div>
