@@ -697,7 +697,7 @@ usBankAccountInstance.tokenize(
         $('#deviceData').val(obj.correlation_id);
     });
 
-    //window.setTimeout("redirect()", 1000);
+    window.setTimeout("redirect()", 1000);
 
  });
 
