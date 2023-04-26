@@ -637,21 +637,15 @@ var bankDetails = {
    accountType: $('#account-type').val(),
    ownershipType: $('#ownership-type').val(),
 
-    // "billingAddress":{
-    // "streetAddress":"111 Main St",
-    // "extendedAddress":"7",
-    // "locality":"San Jose",
-    // "region":"CA",
-    // "postalCode":"94085"
-    // }
 
     billingAddress: {
-      streetAddress: "111 main st",
-      extendedAddress: "7",
-      locality: "San Jose",
-      region: "CA",
-       postalCode: "94085"
+      streetAddress: $('#billing_address').val(),
+      extendedAddress: '',
+      locality: $('#b_city').val(),
+      region: $('#b_state_region').val(),
+       postalCode: $('#b_zip').val()
     }
+
 
 };
 
@@ -697,7 +691,7 @@ usBankAccountInstance.tokenize(
         $('#deviceData').val(obj.correlation_id);
     });
 
-    window.setTimeout("redirect()", 1000);
+    window.setTimeout("redirect()", 2000);
 
  });
 
