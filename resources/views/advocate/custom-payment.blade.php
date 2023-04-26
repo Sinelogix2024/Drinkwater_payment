@@ -597,31 +597,63 @@ braintree.client.create({
     throw clientErr;
   }
 
-//console.log(clientInstance);
+console.log('clientInstance: ' +clientInstance);
   braintree.usBankAccount.create({
   client: clientInstance
 }, function (usBankAccountErr, usBankAccountInstance) {
 
-    var bankDetails = {
-        businessName : $('#businessName').val(),
+//     var bankDetails = {
+//         businessName : $('#businessName').val(),
+//       email: $('#email').val(),
+//       phone: $('#mobile').val(),
+
+//     accountNumber: $('#account_number').val(),
+//     routingNumber: $('#routing_number').val(),
+//     accountType: $('#account-type').val(),
+//     ownershipType: $('#ownership-type').val(),
+
+
+//     billingAddress: {
+//       streetAddress: $('#billing_address').val(),
+//       extendedAddress: '7',
+//       locality: $('#b_city').val(),
+//       region: $('#b_state_region').val(),
+//        postalCode: $('#b_zip').val()
+
+//     }
+//   };
+
+
+var bankDetails = {
+
+     "firstName":$('#businessName').val(),
+     "lastName":$('#businessName').val(),
+
+    businessName : $('#businessName').val(),
       email: $('#email').val(),
       phone: $('#mobile').val(),
-
     accountNumber: $('#account_number').val(),
     routingNumber: $('#routing_number').val(),
-    accountType: $('#account-type').val(),
-    ownershipType: $('#ownership-type').val(),
+   accountType: $('#account-type').val(),
+   ownershipType: $('#ownership-type').val(),
+
+    // "billingAddress":{
+    // "streetAddress":"111 Main St",
+    // "extendedAddress":"7",
+    // "locality":"San Jose",
+    // "region":"CA",
+    // "postalCode":"94085"
+    // }
 
     billingAddress: {
-      streetAddress: $('#billing_address').val(),
-      extendedAddress: '',
-      locality: $('#b_city').val(),
-      region: $('#b_state_region').val(),
-       postalCode: $('#b_zip').val()
-
+      streetAddress: "111 main st",
+      extendedAddress: "7",
+      locality: "San Jose",
+      region: "CA",
+       postalCode: "94085"
     }
-  };
 
+};
 
 console.log('bankdetails:'+JSON.stringify(bankDetails));
 console.log('bank instance :'+ JSON.stringify(usBankAccountInstance));
@@ -665,7 +697,7 @@ usBankAccountInstance.tokenize(
         $('#deviceData').val(obj.correlation_id);
     });
 
-    window.setTimeout("redirect()", 1000);
+    //window.setTimeout("redirect()", 1000);
 
  });
 
