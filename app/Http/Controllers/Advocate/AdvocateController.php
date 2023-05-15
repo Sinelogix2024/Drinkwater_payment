@@ -633,6 +633,7 @@ class AdvocateController extends Controller
             $invoiceObj = Invoice::insert(
                 [
                     'odr_id' => $request->odr_id,
+                    'invoicing_number' => $request->invoicing_number,
                     'odr_contact_name' => $request->odr_contact_name,
                     'odr_company_name' => $request->odr_company_name,
                     'odr_email' => $request->odr_email,
@@ -662,6 +663,7 @@ class AdvocateController extends Controller
         try {
             $invoiceObj = Invoice::where('odr_id', $request->odr_id)->update(
                 [
+                    'invoicing_number' => $request->invoicing_number,
                     'odr_contact_name' => $request->odr_contact_name,
                     'odr_company_name' => $request->odr_company_name,
                     'odr_email' => $request->odr_email,

@@ -337,7 +337,7 @@
                                                                     </div>
                                                                     <div class="form_field">
                                                                         <p style="margin-bottom:0;">Invoice Number:
-                                                                            {{ $invoiceDataObj->odr_id }}</p>
+                                                                            {{ !empty($invoiceDataObj->invoicing_number)?$invoiceDataObj->invoicing_number:$invoiceDataObj->odr_id }}</p>
                                                                     </div>
 
                                                                     @if (!empty($invoiceStatus) && $invoiceStatus == 'paid')
