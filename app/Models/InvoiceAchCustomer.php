@@ -12,4 +12,9 @@ class InvoiceAchCustomer extends Model
     protected $table = 'invoice_ach_customers';
 
     protected $guarded = [];
+
+    public function lastOrder()
+    {
+        return $this->hasOne('App\Models\Invoice', 'id', 'last_order_id');
+    }
 }

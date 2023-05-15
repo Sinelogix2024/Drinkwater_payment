@@ -64,6 +64,12 @@ use Twilio\Rest\Client;
 // Route::get('/link', function () {
 //     return view('advocate/link');
 // })->name('link');
+
+Route::get('/us-token', 'App\Http\Controllers\Advocate\AdvocateController@usToken')->name('us-token');
+
+Route::get('/invoice-us-bank-payment-processing', 'App\Http\Controllers\Advocate\AdvocateController@invoiceUsBankPaymentProcessing')->name('invoice-us-bank-payment-processing');
+Route::post('/ajax-submit-for-settlement', 'App\Http\Controllers\Advocate\AdvocateController@usSubmitForSettlement');
+
 Route::get('/', function () {
     return view('advocate/experience');
 });
