@@ -279,7 +279,7 @@
 
                             <div class="row">
                                 <div class="col"><b style="font-family: 'europa';">INVOICE #</b>:
-                                    {{ $invoiceDataObj->odr_id }}</div>
+                                    {{ !empty($invoiceDataObj->invoicing_number)?$invoiceDataObj->invoicing_number:$invoiceDataObj->odr_id }}</div>
                                 <div class="col"><b style="font-family: 'europa';">Total Amount Due:</b>
                                     ${{ $invoiceDataObj->odr_total_amount }}
                                 </div>
@@ -301,7 +301,7 @@
                                             <option value="2">DEBIT CARD</option>
                                             <option value="3">VENMO </option>
                                             {{-- <option value="4">APPLY PAY </option> --}}
-                                            <option value="5">ACH PAYMENT </option>
+                                            {{-- <option value="5">ACH PAYMENT </option> --}}
                                         </select>
                                     </div>
                                 </div>
