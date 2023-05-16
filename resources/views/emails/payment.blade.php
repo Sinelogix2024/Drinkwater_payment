@@ -126,7 +126,7 @@
                                 @endif
                             </td>
                             <td style="padding: 5px;"></td>
-                            <td style="padding: 5px;">{{ $deliveryObj->fee }}</td>
+                            <td style="padding: 5px;">{{ !empty($deliveryObj->fee)?$deliveryObj->fee:'$0' }}</td>
                         </tr>
                     </tbody>
                 </table>
