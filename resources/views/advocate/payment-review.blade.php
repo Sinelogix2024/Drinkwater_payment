@@ -380,7 +380,7 @@
                                                                         @endif
                                                                     </td>
                                                                     <td></td>
-                                                                    <td>{{ $deliveryObj->fee }}</td>
+                                                                    <td> {{ !empty($deliveryObj->fee)?$deliveryObj->fee:'$0' }}</td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
@@ -391,13 +391,17 @@
                                                                         <tr>
                                                                             <td>Service Fee</td>
                                                                             <td class="servicefee">
-                                                                                ${{ $invoiceDataObj->odr_service_fee }}
+                                                                                @if(isset($invoiceDataObj->odr_service_fee))
+                                                                                ${{ isset($invoiceDataObj->odr_service_fee)?$invoiceDataObj->odr_service_fee:0 }}
+                                                                                @endif
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>Subtotal</td>
                                                                             <td class="subtotal">
-                                                                                ${{ $invoiceDataObj->odr_subtotal_amount }}
+                                                                                @if(isset($invoiceDataObj->odr_subtotal_amount))
+                                                                                ${{ isset($invoiceDataObj->odr_subtotal_amount)?$invoiceDataObj->odr_subtotal_amount:0 }}
+                                                                                @endif
                                                                             </td>
                                                                         </tr>
                                                                         <tr>
