@@ -385,12 +385,12 @@
                                                 <img decoding="async" src="../wp-content/uploads/2022/07/droplet.png"
                                                     class="stk-img1">
 
+                                              	    <?php $detail_access_token = '' ?>
                                                 <div class="new_logo" style="">
-                                                    <a href="{{ url('/home', $detail_access_token) }}">
-                                                        <img decoding="async"
-                                                            src="../wp-content/uploads/2022/07/logo-latest.png"
-                                                            class="stk-img2" style="margin-top: 0; margin-bottom: 0;">
-                                                    </a>
+                                              
+                                                  
+                                                   <a href="{{ url('/home',  $detail_access_token ?? '') }}">
+                                                 
                                                     @if ($detail_access_token == 'park-grove')
                                                         <span
                                                             style="font-size: 30px;line-height: 1;color: #222;margin-top: -15px;font-weight: initial;margin-left: -10px;">+</span>
@@ -399,8 +399,7 @@
                                                             alt="Logo" style="max-width: 100px;">
                                                     @endif
                                                 </div>
-                                                <a href="{{ url('/experience', $detail_access_token) }}"
-                                                    class="updated-button-set">EXPERIENCE</a>
+                                                <!-- <a href="{{ url('/experience', $detail_access_token) }}" class="updated-button-set">EXPERIENCE</a> -->
                                                 @if ($detail_access_token == 'park-grove')
                                                     <p style="text-align:center;">DRINK WATR AT PARK GROVE RESIDENCES</p>
                                                 @endif

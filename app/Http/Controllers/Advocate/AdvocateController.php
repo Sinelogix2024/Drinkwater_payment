@@ -598,7 +598,8 @@ class AdvocateController extends Controller
                     InvoiceAchCustomer::where('id',$invoice_ach_user_id)->update(['last_order_id'=>$invoiceID,'next_order_date'=>Carbon::now()->addMonth(),'is_subscribed'=>'1']);
                 }
 
-                Mail::to($invoiceObj->odr_email)->send(new OrderPlaced($invoiceObj, $products, true));
+                $recipients = [$invoiceObj->odr_email,'founder@drinkwatr.com'];
+                Mail::to($recipients)->send(new OrderPlaced($invoiceObj, $products, true));
 
                 try {
                     $body = "Congratulations " . $invoiceObj->odr_contact_name . " on confirming your path to hydration wellness ! We appreciate your interest in our products, and are here to support your goals. Remember DRINK WATR™.. STAY STRONG®";
@@ -618,7 +619,7 @@ class AdvocateController extends Controller
                     // request()->session()->put('response_error_msg', $e->getMessage());
                 }
                 request()->session()->put('response_success_msg', 'You will receive a receipt via text and email.');
-                return redirect(route('invoice-route', ['paymentID' => $orderID]));
+                return redirect(route('/invoice-payment/{paymentID}', ['paymentID' => $orderID]));
             } else {
                 request()->session()->put('response_error_msg', 'payment failed');
                 return redirect($request->url());

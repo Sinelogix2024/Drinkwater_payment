@@ -524,7 +524,7 @@
 
     <div class="new-popup-style" id="paymentValidationPopup">
         <a href="#" class="close-button" onclick="paymentValidationOff()"><img
-                src="https://drinkwatr.com/wp-content/uploads/2022/02/close.png" style="max-width: 20px;"></a>
+                src="https://payments.drinkwatr.com/wp-content/uploads/2022/02/close.png" style="max-width: 20px;"></a>
         <div style="margin: 15px; margin-top: 30px; font-size: 17px;" class="text-center">Please enter valid payment
             details.</div>
     </div>

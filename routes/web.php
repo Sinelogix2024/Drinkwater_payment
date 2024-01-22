@@ -1,5 +1,4 @@
 <?php
-
 use App\Http\Controllers\Advocate\AdvocateController;
 use App\Mail\OrderPlaced;
 use App\Models\Order;
@@ -56,14 +55,13 @@ use Twilio\Rest\Client;
 //     return view('emails.order_placed_new');
 // })->name('splash');
 
-// Route::get('/welcome', function () {
-//     return view('drinkWaterWelcome');
-// })->name('welcome');
+Route::get('/welcome', function () {
+    return view('drinkWaterWelcome');
+})->name('welcome');
 
-
-// Route::get('/link', function () {
-//     return view('advocate/link');
-// })->name('link');
+Route::get('/link', function () {
+    return view('advocate/link');
+})->name('link');
 
 Route::get('/us-token', 'App\Http\Controllers\Advocate\AdvocateController@usToken')->name('us-token');
 
@@ -71,6 +69,7 @@ Route::get('/invoice-us-bank-payment-processing', 'App\Http\Controllers\Advocate
 Route::post('/ajax-submit-for-settlement', 'App\Http\Controllers\Advocate\AdvocateController@usSubmitForSettlement');
 
 Route::get('/', function () {
+    // dd(env('APP_DEBUG')); 
     return view('advocate/experience');
 });
 
@@ -108,8 +107,9 @@ Route::match(['get'], '/watr/receipt/{detail_access_token}/receipt/{orderid}', f
 
 Route::match(['get'], '/orderDetail/{order_id}', 'App\Http\Controllers\Advocate\AdvocateController@orderDetail');
 
+
 // Route::match(['post'], '/invoice', 'App\Http\Controllers\Advocate\AdvocateController@getInvoicePayment');
-Route::match(['get'], '/invoice-payment/{paymentID}', 'App\Http\Controllers\Advocate\AdvocateController@getCustomPayment')->name('invoice-route');
+Route::match(['get'], '/invoice-payment/{paymentID}', 'App\Http\Controllers\Advocate\AdvocateController@getCustomPayment');
 Route::match(['post'], '/invoice-payment/{paymentID}', 'App\Http\Controllers\Advocate\AdvocateController@getCustomPayment');
 Route::match(['put'], '/invoice-payment/{paymentID}', 'App\Http\Controllers\Advocate\AdvocateController@getCustomPayment');
 
@@ -140,9 +140,11 @@ Route::get('email', function () {
     // }
 
     $orderDetail = Order::find(28);
+    dd($orderDetail);
     $advocateData = Advocate::where('adv_detail_access_token', 'kny12raph')->first();
     // Mail::to($request->email)->send(new OrderPlaced($advocateData, $orderDetail));
     // Mail::to('jaydeep.khokhar+testemail@techqware.com')->send(new OrderPlaced($advocateData, $orderDetail));
     // return ['advocateData' => $advocateData, 'orderDetail' => $orderDetail];
     return view('emails.order_placed_new', ['advocateData' => $advocateData, 'orderDetail' => $orderDetail]);
 });
+
